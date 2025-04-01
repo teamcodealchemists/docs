@@ -6,13 +6,13 @@ Benvenuto nel repository del gruppo **Code Alchemists (Gruppo 21)**! Qui trovera
 
 Questo repository contiene i file necessari per la documentazione del progetto. La documentazione è scritta utilizzando il linguaggio **Typst**.
 
-### Contenuto
+## Contenuto
 - **`src/`**: Contiene i file sorgente Typst.
 - **`documentazione/`**: Contiene i file typst divisi per consegna.
 - **`assets/`**: Contiene immagini, grafici e altri file di supporto.
 - **`templates/`**: Contiene i file modello per la creazione di nuovi documenti.
 
-### Requisiti
+## Requisiti
 Per lavorare con i file Typst, assicurati di avere installato:
 - [Visual Studio Code](https://code.visualstudio.com/)
 - L'estensione [Tinymist Typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) per un'esperienza di editing migliorata\
