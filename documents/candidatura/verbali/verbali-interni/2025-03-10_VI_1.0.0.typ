@@ -1,4 +1,4 @@
-#import "/template/import/basic.typ": *
+#import "/src/basic.typ": *
 
 // VARIABILI
 #let titolo = "Verbale interno del "
