@@ -1,6 +1,6 @@
-# Repository di Code Alchemists (Gruppo 21) che contine tutti i file typst per la documentazione
+# 🧪 Repository Typst per la Documentazione del Progetto - Code Alchemists (Gruppo 21)
 
-----
+Benvenuto nel repository del gruppo **Code Alchemists (Gruppo 21)**! Qui troverai tutto il necessario per creare e gestire la documentazione del nostro progetto. Sentiti libero di esplorare la struttura del repository e contribuire al miglioramento della documentazione.
 
 ## Struttura del Repository
 
@@ -15,4 +15,4 @@ Questo repository contiene i file necessari per la documentazione del progetto. 
 ### Requisiti
 Per lavorare con i file Typst, assicurati di avere installato:
 - [Visual Studio Code](https://code.visualstudio.com/)
-- L'estensione [Tinymist Typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) per un'esperienza di editing migliorata
+- L'estensione [Tinymist Typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) per un'esperienza di editing migliorata\
