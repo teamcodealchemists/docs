@@ -17,6 +17,8 @@ jobs:
             - name: Checkout source repository
               uses: actions/checkout@v4
 
+            - run: ls
+
             - uses: typst-community/setup-typst@v4
               with:
                 cache-dependency-path: ./src/basic.typ
