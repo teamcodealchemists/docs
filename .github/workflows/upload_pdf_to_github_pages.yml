@@ -21,7 +21,7 @@ jobs:
               with:
                 cache-dependency-path: src/basic.typ
 
-            - run: typst compile documents/glossario/glossario.typ glossario.pdf
+            - run: typst compile --root=/ documents/glossario/glossario.typ glossario.pdf
 
             - uses: actions/upload-artifact@v4
               with:
