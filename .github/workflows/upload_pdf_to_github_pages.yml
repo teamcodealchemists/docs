@@ -18,8 +18,6 @@ jobs:
             - run: ls
 
             - uses: typst-community/setup-typst@v4
-              with:
-                cache-dependency-path: src/basic.typ
 
             - run: typst compile --root=/ documents/glossario/glossario.typ glossario.pdf
 
