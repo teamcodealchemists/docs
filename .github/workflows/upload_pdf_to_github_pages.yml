@@ -23,7 +23,7 @@ jobs:
             - name: Compile .typ files
               run: |
                   mkdir -p compiled
-                  find . -name "*.typ" | while read file; do
+                  find documents -name "*.typ" | while read file; do
                       if [[ "$file" != *"Lettera di Presentazione.typ"* ]]; then
                           output_dir="compiled/$(dirname "$file")"
                           mkdir -p "$output_dir"
