@@ -81,9 +81,9 @@
   )
 
   // PRIMA PAGINA
-  page(background: image("/assets/logoUnipdSfondo.png"))[
+  page(background: image("../assets/logoUnipdSfondo.png"))[
     #align(center)[ // Imposta tutto il testo centrato di default
-      #image("/assets/Logo-nome-motto.png", width: 8cm)
+      #image("../assets/Logo-nome-motto.png", width: 8cm)
   
       //TITOLO
       #text(size: 22pt)[
