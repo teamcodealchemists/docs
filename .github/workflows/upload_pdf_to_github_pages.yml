@@ -17,11 +17,9 @@ jobs:
             - name: Checkout source repository
               uses: actions/checkout@v3
 
-            # Install dependencies for compilation (adjust as needed)
-            - name: Install dependencies
-              run: |
-                  sudo apt-get update
-                  sudo apt-get install -y typst
+            # Set up Typst using the setup-typst action
+            - name: Set up Typst
+              uses: typst-community/setup-typst@v1
 
             # Compile the .typ file(s) while preserving folder structure
             - name: Compile .typ files
