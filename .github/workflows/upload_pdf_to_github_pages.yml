@@ -19,7 +19,7 @@ jobs:
 
             # Set up Typst using the setup-typst action
             - name: Set up Typst
-              uses: typst-community/setup-typst@v1
+              uses: typst-community/setup-typst@v4
 
             # Compile the .typ file(s) while preserving folder structure
             - name: Compile .typ files
