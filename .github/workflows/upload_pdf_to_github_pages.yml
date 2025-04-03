@@ -5,8 +5,6 @@ on:
         branches:
             - main
             - feature/test-action
-        paths:
-            - '**/*.typ'
 
 jobs:
     compile-and-commit:
@@ -21,7 +19,7 @@ jobs:
 
             - uses: typst-community/setup-typst@v4
               with:
-                cache-dependency-path: ./src/basic.typ
+                cache-dependency-path: src\basic.typ
 
             - run: typst compile documents/glossario/glossario.typ glossario.pdf
 
