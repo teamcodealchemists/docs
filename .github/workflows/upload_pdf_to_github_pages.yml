@@ -20,6 +20,8 @@ jobs:
             # Set up Typst using the setup-typst action
             - name: Set up Typst
               uses: typst-community/setup-typst@v4
+              with:
+                cache-dependency-path: src/basic.typ
 
             # Compile the .typ file(s) while preserving folder structure
             - name: Compile .typ files
