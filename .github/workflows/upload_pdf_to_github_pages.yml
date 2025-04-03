@@ -19,28 +19,20 @@ jobs:
 
             - uses: typst-community/setup-typst@v4
 
-            - run: typst compile --root=/ documents/glossario/glossario.typ glossario.pdf
+            # Compile the .typ file(s) while preserving folder structure
+            - name: Compile .typ files
+              run: |
+                  mkdir -p compiled
+                  find . -name "*.typ" | while read file; do
+                      output_dir="compiled/$(dirname "$file")"
+                      mkdir -p "$output_dir"
+                      typst compile --root=/ "$file" "$output_dir/$(basename "${file%.typ}.pdf")"
+                  done
 
             - uses: actions/upload-artifact@v4
               with:
-                name: glossario
-                path: glossario.pdf
-
-        #    # Set up Typst using the setup-typst action
-        #    - name: Set up Typst
-        #      uses: typst-community/setup-typst@v4
-        #      with:
-        #        cache-dependency-path: src/basic.typ
-#
-        #    # Compile the .typ file(s) while preserving folder structure
-        #    - name: Compile .typ files
-        #      run: |
-        #          mkdir -p compiled
-        #          find . -name "*.typ" | while read file; do
-        #              output_dir="compiled/$(dirname "$file")"
-        #              mkdir -p "$output_dir"
-        #              typst compile "$file" "$output_dir/$(basename "${file%.typ}.pdf")"
-        #          done
+                name: Docs
+                path: compiled
 #
         #    # Checkout the target repository
         #    - name: Checkout target repository
