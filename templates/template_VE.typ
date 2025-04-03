@@ -1,4 +1,4 @@
-#import "../src/basic.typ": *
+#import "basic.typ": *
 
 // VARIABILI
 #let titolo = "Verbale esterno del "

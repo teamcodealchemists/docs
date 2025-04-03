@@ -1,4 +1,4 @@
-#import "../src/basic.typ": *
+#import basic: *
 
 /*
   Definire variabili da inserire in prima pagina con #let
