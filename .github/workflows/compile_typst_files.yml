@@ -7,7 +7,7 @@ on:
             - feature/test-action
 
 jobs:
-    compile-and-commit:
+    compile:
         runs-on: ubuntu-latest
 
         steps:
@@ -36,6 +36,8 @@ jobs:
               run: |
                mkdir -p documents_compiled
                cp -r compiled/* documents_compiled/
+               echo "Compiled folder:"
+               find documents_compiled -type f
 
             # Commit the compiled files to the repository
             - name: Commit compiled files
