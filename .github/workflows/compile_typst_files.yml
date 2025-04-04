@@ -37,6 +37,10 @@ jobs:
                mkdir -p documents_compiled
                cp -r compiled/* documents_compiled/ || echo "No files to copy"
 
+            - name: Cartella dove sei?
+              run: |
+                ls -la
+
             # Commit the compiled files to the repository
             - name: Commit compiled files
               run: |
@@ -49,4 +53,4 @@ jobs:
                fi
                git status
                git commit -m "Add compiled .typ files"
-               git push
+               git push origin feature/test-action
