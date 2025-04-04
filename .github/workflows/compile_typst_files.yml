@@ -29,13 +29,17 @@ jobs:
                       fi
                   done
 
+            # Create folder and copy compiled files
+            - name: Create folder and copy compiled files
+              run: |
+               mkdir -p documents_compiled
+               cp -r compiled/* documents_compiled/
+
             # Commit the compiled files to the repository
             - name: Commit compiled files
               run: |
-                git config --global user.name "GitHub Actions"
-                git config --global user.email "actions@github.com"
-                mkdir -p documents_compiled
-                cp -r compiled/* documents_compiled/
-                git add documents_compiled
-                git commit -m "Add compiled .typ files"
-                git push
+               git config --global user.name "GitHub Actions"
+               git config --global user.email "actions@github.com"
+               git add documents_compiled
+               git commit -m "Add compiled .typ files"
+               git push
