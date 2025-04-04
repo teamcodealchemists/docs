@@ -4,6 +4,7 @@ on:
   workflow_run:
     workflows: ["Compile typst Files"]
     types: [completed]
+  workflow_dispatch:
 
 permissions:
   contents: read
