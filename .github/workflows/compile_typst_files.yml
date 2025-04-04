@@ -35,15 +35,17 @@ jobs:
             - name: Create folder and copy compiled files
               run: |
                mkdir -p documents_compiled
-               cp -r compiled/* documents_compiled/
-               echo "Compiled folder:"
-               find documents_compiled -type f
+               cp -r compiled/* documents_compiled/ || echo "No files to copy"
 
             # Commit the compiled files to the repository
             - name: Commit compiled files
               run: |
                git config --global user.name "GitHub Actions"
                git config --global user.email "actions@github.com"
-               git add documents_compiled
+               if [ "$(ls -A documents_compiled)" ]; then
+                   git add documents_compiled
+               else
+                   echo "No files to add to Git"
+               fi
                git commit --allow-empty -m "Add compiled .typ files"
                git push
