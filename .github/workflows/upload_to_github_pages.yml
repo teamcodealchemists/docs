@@ -2,7 +2,7 @@ name: Upload to GitHub Pages
 
 on:
   workflow_run:
-    workflows: ["compile_typst_files"]
+    workflows: ["Compile .typ Files"]
     types:
       - completed
 
