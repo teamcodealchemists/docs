@@ -43,5 +43,5 @@ jobs:
                git config --global user.name "GitHub Actions"
                git config --global user.email "actions@github.com"
                git add documents_compiled
-               git commit -m "Add compiled .typ files"
+               git commit --allow-empty -m "Add compiled .typ files"
                git push
