@@ -40,12 +40,13 @@ jobs:
             # Commit the compiled files to the repository
             - name: Commit compiled files
               run: |
-               git config --global user.name "GitHub Actions"
-               git config --global user.email "actions@github.com"
+               git config --global user.name "github-actions[bot]"
+               git config --global user.email "github-actions[bot]@users.noreply.github.com"
                if [ "$(ls -A documents_compiled)" ]; then
-                   git add documents_compiled
+                   git add documents_compiled/
                else
                    echo "No files to add to Git"
                fi
-               git commit --allow-empty -m "Add compiled .typ files"
+               git status
+               git commit -m "Add compiled .typ files"
                git push
