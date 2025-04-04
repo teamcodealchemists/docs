@@ -2,9 +2,9 @@ name: Upload to GitHub Pages
 
 on:
   workflow_run:
-   workflows: ["compile_typst_files"]
-   types:
-    - completed
+    workflows: ["compile_typst_files"]
+    types:
+      - completed
 
 permissions:
   contents: read
