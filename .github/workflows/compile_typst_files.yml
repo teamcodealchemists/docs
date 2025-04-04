@@ -37,16 +37,12 @@ jobs:
                mkdir -p documents_compiled
                cp -r compiled/documents/* documents_compiled/
 
-            - name: Cartella dove sei?
-              run: |
-                ls -la documents_compiled/glossario
-
             # Commit the compiled files to the repository
             - name: Commit compiled files
               run: |
                git config --global user.name "github-actions[bot]"
                git config --global user.email "github-actions[bot]@users.noreply.github.com"
-               git add documents_compiled/glossario/glossario.pdf
+               git add documents_compiled
                git status
                git commit -m "Add compiled .typ files"
                git push origin feature/test-action
