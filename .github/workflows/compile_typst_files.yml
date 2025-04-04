@@ -28,6 +28,8 @@ jobs:
                           typst compile --root=/ "$file" "$output_dir/$(basename "${file%.typ}.pdf")"
                       fi
                   done
+                  echo "Compiled files:"
+                  find compiled -type f
 
             # Create folder and copy compiled files
             - name: Create folder and copy compiled files
