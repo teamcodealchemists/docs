@@ -3,8 +3,7 @@ name: Upload to GitHub Pages
 on:
   workflow_run:
     workflows: ["Compile .typ Files"]
-    types:
-      - completed
+    types: [completed]
 
 permissions:
   contents: read
