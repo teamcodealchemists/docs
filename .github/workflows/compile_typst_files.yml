@@ -39,7 +39,7 @@ jobs:
 
             - name: Cartella dove sei?
               run: |
-                ls -la documents_compiled
+                ls -la documents_compiled/glossario
 
             # Commit the compiled files to the repository
             - name: Commit compiled files
