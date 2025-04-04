@@ -1,10 +1,10 @@
-name: Compile .typ Files
+name: Compile typst Files
 
 on:
     push:
         branches:
             - main
-            - feature/test-action
+            - feature/test-action #TODO: remove this line when the action is working
 
 jobs:
     compile:
