@@ -12,7 +12,6 @@ permissions:
   id-token: write
   pages: write
 
-
 jobs:
     compile:
         runs-on: ubuntu-latest
