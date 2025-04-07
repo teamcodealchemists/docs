@@ -1,4 +1,4 @@
-name: Compile typst Files
+name: Compile typst files
 
 on:
     push:
