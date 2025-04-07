@@ -41,7 +41,12 @@ jobs:
             - name: Create folder and copy compiled files
               run: |
                mkdir -p documents_compiled
-               cp -r compiled/documents/* documents_compiled/
+               find compiled -name "*.pdf" | while read file; do
+                rel_path="${file#compiled/}"
+                dest="documents_compiled/$rel_path"
+                mkdir -p "$(dirname "$dest")"
+                cp "$file" "$dest"
+               done
 
             # Commit the compiled files to the repository
             - name: Commit compiled files
