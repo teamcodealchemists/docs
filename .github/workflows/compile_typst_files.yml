@@ -1,4 +1,4 @@
-name: Compile
+name: Compile and Upload Typst Files
 
 on:
     push:
@@ -46,3 +46,10 @@ jobs:
                git status
                git commit -m "Add compiled .typ files"
                git push origin feature/test-action
+
+    upload:
+        needs: compile
+        runs-on: ubuntu-latest
+        steps:
+         - name: Echo test
+           run: echo "This is a test"
