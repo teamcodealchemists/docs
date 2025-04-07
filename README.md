@@ -19,10 +19,9 @@ Per mantenere una struttura organizzata e coerente, segui queste linee guida per
 - Usa il formato `snake_case` (es. `nome_file_typst.typ`) per separare le parole.
 - Includi una data nel formato `YYYY-MM-DD` (es. `2023-10-21.typ`).
 - Per i verbali: 
-    - Verbali Interni `DATA_VI_VERSIONE`
-    - Verbali Esterni `DATA_VE_VERSIONE` ed aggiungere `_signed` se si tratta di un documento firmato
-- Per quanto riguarda la documentazione `NOME_VERSIONE`
-
+    - Verbali Interni `DATA_VI_VERSIONE`.
+    - Verbali Esterni `DATA_VE_VERSIONE` ed aggiungere `_signed` se si tratta di un documento firmato.
+- Per quanto riguarda la documentazione `NOME_VERSIONE`, il nome può contenere spazi.
 
 Seguendo queste regole, sarà più semplice navigare e mantenere il repository.
 
