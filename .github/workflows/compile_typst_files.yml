@@ -54,6 +54,7 @@ jobs:
               with:
                   name: compiled-typst-files
                   path: documents_compiled/
+                  retention-days: 1
 
     upload:
         needs: compile
