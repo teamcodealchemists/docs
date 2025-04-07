@@ -27,15 +27,21 @@ jobs:
             - name: Compile .typ files
               run: |
                   mkdir -p compiled
-                  find documents -name "*.typ" | while read file; do
+                    find documents -name "*.typ" | while read file; do
                       if [[ "$file" != *"Lettera di Presentazione.typ"* ]]; then
-                          output_dir="compiled/$(dirname "$file")"
-                          mkdir -p "$output_dir"
+                        output_dir="compiled/$(dirname "$file")"
+                        mkdir -p "$output_dir"
+                        signed_pdf="$(dirname "$file")/$(basename "${file%.typ}_signed.pdf")"
+                        if [[ -f "$signed_pdf" ]]; then
+                          echo "Signed PDF exists for $file, skipping compilation and copying signed PDF."
+                          cp "$signed_pdf" "$output_dir/$(basename "${file%.typ}.pdf")"
+                        else
                           typst compile --root=/ "$file" "$output_dir/$(basename "${file%.typ}.pdf")"
+                        fi
                       fi
-                  done
-                  echo "Compiled files:"
-                  find compiled -type f
+                    done
+                    echo "Compiled files:"
+                    find compiled -type f
 
             # Create folder and copy compiled files
             - name: Create folder and copy compiled files
