@@ -1,4 +1,4 @@
-#import "/src/basic.typ": *
+#import "../../../../src/basic.typ": *
 
 // VARIABILI
 #let titolo = "Verbale interno del "
@@ -89,7 +89,7 @@
   Il logo ufficiale scelto è quello che viene riportato qua di seguito:
      #align(center)[
        #figure(
-          image("/assets/Logo-nome-motto.png", width: 8cm), caption: [Logo del Team Code Alchemists],)
+          image("../../../../assets/Logo-nome-motto.png", width: 8cm), caption: [Logo del Team Code Alchemists],)
     ]\
 
   Il Team ha individuato, oltre al logo, un motto: _"Turning ideas into code, like magic"_
