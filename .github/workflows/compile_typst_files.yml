@@ -1,0 +1,108 @@
+name: Compile and Upload Typst Files
+
+on:
+    push:
+        branches:
+            - main
+
+
+permissions:
+  contents: write
+  id-token: write
+  pages: write
+
+jobs:
+    compile:
+        runs-on: ubuntu-latest
+
+        steps:
+            #Checkout the repository
+            - name: Checkout source repository
+              uses: actions/checkout@v4
+
+            - uses: typst-community/setup-typst@v4
+
+            #Compile the .typ file(s) while preserving folder structure
+            - name: Compile .typ files
+              run: |
+                  mkdir -p compiled
+                    find documents -name "*.typ" | while read file; do
+                      if [[ "$file" != *"Lettera di Presentazione.typ"* ]]; then
+                        output_dir="compiled/$(dirname "$file")"
+                        mkdir -p "$output_dir"
+                        signed_pdf="$(dirname "$file")/$(basename "${file%.typ}_signed.pdf")"
+                        if [[ -f "$signed_pdf" ]]; then
+                          echo "Signed PDF exists for $file, skipping compilation and copying signed PDF."
+                          cp "$signed_pdf" "$output_dir/$(basename "${file%.typ}.pdf")"
+                        else
+                          typst compile --root=/ "$file" "$output_dir/$(basename "${file%.typ}.pdf")"
+                        fi
+                      fi
+                    done
+                    echo "Compiled files:"
+                    find compiled -type f
+
+            # Create folder and copy compiled files
+            - name: Create folder and copy compiled files
+              run: |
+               mkdir -p documents_compiled
+               find compiled -name "*.pdf" | while read file; do
+                rel_path="${file#compiled/}"
+                dest="documents_compiled/$rel_path"
+                mkdir -p "$(dirname "$dest")"
+                cp "$file" "$dest"
+               done
+
+            # Create an artifact with the compiled files
+            - name: Upload compiled files as artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: compiled-typst-files
+                  path: documents_compiled/documents/
+
+    upload:
+        needs: compile
+        runs-on: ubuntu-latest
+        environment:
+         name: github-pages
+         url: ${{ steps.deployment.outputs.page_url }}
+
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Clean up old files in GitHub Pages
+              run: |
+                  git rm -r --cached --ignore-unmatch * || true
+                  git clean -fdx || true
+                  git commit -m "Clean up old files" || true
+
+            - name: Download compiled files artifact
+              uses: actions/download-artifact@v4
+              with:
+                  name: compiled-typst-files
+                  path: documents_compiled/
+
+            - name: Restore Timestamps
+              uses: chetan/git-restore-mtime-action@v2
+
+            - name: Generate Directory Listings
+              uses: jayanta525/github-pages-directory-listing@main
+              with:
+                  FOLDER: documents_compiled
+              env:
+                  TZ: Europe/Rome
+
+            - name: Upload Artifact for Pages
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  name: pages
+                  path: documents_compiled/
+
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
+              with:
+                  artifact_name: pages
