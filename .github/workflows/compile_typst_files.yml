@@ -6,10 +6,12 @@ on:
             - main
             - feature/test-action #TODO: remove this line when the action is working
 
+
 permissions:
-  contents: write
+  contents: read
   id-token: write
-  pages: write 
+  pages: write
+
 
 jobs:
     compile:
@@ -54,12 +56,15 @@ jobs:
 
     upload:
         runs-on: ubuntu-latest
+        environment:
+         name: github-pages
+         url: ${{ steps.deployment.outputs.page_url }}
 
         steps:
             - name: Checkout Repository
               uses: actions/checkout@v4
               with:
-                fetch-depth: 0
+                  fetch-depth: 0
 
             - name: Restore Timestamps
               uses: chetan/git-restore-mtime-action@v2
@@ -67,18 +72,18 @@ jobs:
             - name: Generate Directory Listings
               uses: jayanta525/github-pages-directory-listing@main
               with:
-                FOLDER: documents_compiled
+                  FOLDER: documents
               env:
-                TZ: Europe/Rome
+                  TZ: Europe/Rome
 
             - name: Upload Artifact for Pages
               uses: actions/upload-pages-artifact@v3
               with:
-                name: pages
-                path: documents_compiled/
+                  name: pages
+                  path: documents/
 
             - name: Deploy to GitHub Pages
               id: deployment
               uses: actions/deploy-pages@v4
               with:
-                artifact_name: pages
+                  artifact_name: pages
