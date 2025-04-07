@@ -31,4 +31,4 @@ Per lavorare con i file Typst, assicurati di avere installato:
 - L'estensione [Tinymist Typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) per un'esperienza di editing migliorata\
 
 ## Deploy
-Per effettuare il deploy a github pages basta semplicemente fare una release dalla branch [develop](https://github.com/teamcodealchemists/docs/tree/develop) e la action in automatico compilerà i file per caricarli su pages. In caso di deploy fallito consultare log o contattare @sebamarana.
+Per effettuare il deploy a github pages basta semplicemente fare una release dalla branch [develop](https://github.com/teamcodealchemists/docs/tree/develop) e la action in automatico compilerà i file per caricarli su pages. In caso di deploy fallito consultare log o contattare @sebamrana .
