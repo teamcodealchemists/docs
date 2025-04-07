@@ -6,6 +6,10 @@ on:
             - main
             - feature/test-action #TODO: remove this line when the action is working
 
+permissions:
+  contents: write
+  id-token: write
+
 jobs:
     compile:
         runs-on: ubuntu-latest
