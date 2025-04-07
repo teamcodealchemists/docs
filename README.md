@@ -12,6 +12,20 @@ Questo repository contiene i file necessari per la documentazione del progetto. 
 - **`assets/`**: Contiene immagini, grafici e altri file di supporto.
 - **`templates/`**: Contiene i file modello per la creazione di nuovi documenti.
 
+## Nomenclatura dei File
+
+Per mantenere una struttura organizzata e coerente, segui queste linee guida per la nomenclatura dei file:
+
+- Usa il formato `snake_case` (es. `nome_file_typst.typ`) per separare le parole.
+- Includi una data nel formato `YYYY-MM-DD` (es. `2023-10-21.typ`).
+- Per i verbali: 
+    - Verbali Interni `DATA_VI_VERSIONE`
+    - Verbali Esterni `DATA_VE_VERSIONE` ed aggiungere `_signed` se si tratta di un documento firmato
+- Per quanto riguarda la documentazione `NOME_VERSIONE`
+
+
+Seguendo queste regole, sarà più semplice navigare e mantenere il repository.
+
 ## Requisiti
 Per lavorare con i file Typst, assicurati di avere installato:
 - [Visual Studio Code](https://code.visualstudio.com/)
