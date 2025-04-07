@@ -84,6 +84,12 @@ jobs:
               env:
                   TZ: Europe/Rome
 
+            - name: Clean up old files in GitHub Pages
+              run: |
+                  git rm -r --cached --ignore-unmatch * || true
+                  git clean -fdx || true
+                  git commit -m "Clean up old files" || true
+
             - name: Upload Artifact for Pages
               uses: actions/upload-pages-artifact@v3
               with:
