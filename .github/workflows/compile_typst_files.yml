@@ -68,6 +68,12 @@ jobs:
               with:
                   fetch-depth: 0
 
+            - name: Clean up old files in GitHub Pages
+              run: |
+                  git rm -r --cached --ignore-unmatch * || true
+                  git clean -fdx || true
+                  git commit -m "Clean up old files" || true
+
             - name: Download compiled files artifact
               uses: actions/download-artifact@v4
               with:
@@ -83,12 +89,6 @@ jobs:
                   FOLDER: documents_compiled
               env:
                   TZ: Europe/Rome
-
-            - name: Clean up old files in GitHub Pages
-              run: |
-                  git rm -r --cached --ignore-unmatch * || true
-                  git clean -fdx || true
-                  git commit -m "Clean up old files" || true
 
             - name: Upload Artifact for Pages
               uses: actions/upload-pages-artifact@v3
