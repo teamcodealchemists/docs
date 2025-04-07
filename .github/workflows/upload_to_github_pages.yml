@@ -1,15 +1,10 @@
-name: Upload to GitHub Pages
+name: Upload
 
 on:
   workflow_run:
     workflows: ["Compile"]
     types: 
     - completed
-
-permissions:
-  contents: read
-  id-token: write
-  pages: write
 
 jobs:
   deploy:
