@@ -72,7 +72,7 @@ jobs:
             - name: Generate Directory Listings
               uses: jayanta525/github-pages-directory-listing@main
               with:
-                  FOLDER: documents
+                  FOLDER: documents_compiled
               env:
                   TZ: Europe/Rome
 
@@ -80,7 +80,7 @@ jobs:
               uses: actions/upload-pages-artifact@v3
               with:
                   name: pages
-                  path: documents/
+                  path: documents_compiled/
 
             - name: Deploy to GitHub Pages
               id: deployment
