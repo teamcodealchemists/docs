@@ -40,6 +40,7 @@
   voci: voci_registro
 )
 #show: indice
+
 #show: firma.with(
   destinatario: destinatario
 )

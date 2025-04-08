@@ -1,4 +1,5 @@
-#import "@preview/letter-pro:3.0.0": letter-simple
+#import "@preview/fireside:1.0.0": *
+#metadata[Lettera di candidatura] <titolo>
 
 #set text(
   lang: "it",
@@ -6,95 +7,78 @@
   size: 11pt,
 )
 
-// FOOTER
-#set page(footer: context {
-  if counter(page).get().first() > 1 [
-    #rect(width: 100%, height: 1pt, fill: black)
-    #align(center)[
-      Pagina
-      #counter(page).display("1")
-      di
-      #counter(page).final().first()
+#set page(
+  numbering: "1",
+  footer: [
+    #set align(right)
+    #context [
+      Pagina #counter(page).display(page.numbering) di #counter(page).final().first()
     ]
-  ]
-})
+  ],
+)
 
+#show: fireside.with(
+  background: rgb("fcfaf5"),
 
-#show: letter-simple.with(
-  sender: (
-    name: "Team Code Alchemist",
-    address: "",
-    extra: [
-      *Sito*: #link("https://teamcodealchemists.github.io")[teamcodealchemists.github.io]\
-      *Email*: #link("mailto:team.codealchemists@gmail.com")[team.codealchemists\@gmail.com]\
-    ],
-  ),
-
-recipient: [
-    Alla cortese attenzione di,\
+  title: text(font: "New Computer Modern", size: 30pt)[Candidatura \ Code Alchemists],
+  from-details: text(font: "New Computer Modern", size: 11pt)[
+    Gruppo 21 \
+    Team _Code Alchemists_ \
+    #link("mailto:team.codealchemists@gmail.com")[team.codealchemists\@gmail.com] \ 
+  ],
+  to-details: text(font: "New Computer Modern", size: 11pt)[
+    Alla cortese attenzione di:\
     
     Prof. Tullio Vardanega\
     Prof. Riccardo Cardin\
 
-    Università degli Studi di Padova,\
+    #link("https://www.unipd.it/")[Università degli Studi di Padova],\
     Dipartimento di Matematica c/o Torre Archimede\
-    Via Trieste, 63\
-    35121, Padova\
+    Via Trieste, 63 - 35121, Padova\
   ],
-    
-  date: "Martedì 18 marzo 2025",
-  subject: "Lettera di presentazione del Team Code Alchemists per Capitolato C6"
 )
 
-Distinti Prof. Vardanega e Prof. Cardin,
+#text(font: "New Computer Modern", size: 11pt)[
+
+#show link: underline
+Gentili Proff. Vardanega e Cardin,
 #v(0.5cm)
 
-con la presente, il team _CodeAlchemists_, desidera informare formalmente della propria candidatura per lo sviluppo del progetto dal titolo:\
+Con la presente lettera, il Team _Code Alchemists_ desidera candidarsi formalmente per lo sviluppo del progetto:\
 
 #v(0.2cm)
-#align(center)[
-  *Sistema di gestione di un magazzino distribuito*
-]
+#align(center, text(12pt)[
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[*Sistema di Gestione di un Magazzino Distribuito*]])
 #v(0.2cm)
-  
-come proposto dall’azienda *M31*, relativo al capitolato di progetto *C6*.
+  relativo al capitolato di progetto numero *C6* e proposto dall’azienda *M31*.
 #v(0.5cm)
 
-Di seguito, vengono sintetizzati i principali motivi che hanno portato il team a scegliere questo capitolato:
-
-+ Concept e *logiche applicative interessanti* da affrontare sebbene il progetto sia abbastanza complesso
-
-+ *IA come supporto alla ottimizzazione*, e non come aspetto centrale del progetto
-
-+ Permette in particolare di *spaziare su piu’ aspetti* della gestione di una serie di magazzini decentralizzati
-
-
+  Di seguito si riportano sintenticamente le principali motivazioni che hanno condotto il Team alla scelta del presente capitolato:
+  - Il Concept e le *logiche applicative* risultano particolarmente *interessanti* da approfondire, nonostante la complessità del progetto;
+  - L'*Intelligenza Artificiale* è prevista come *supporto alla ottimizzazione* e non come aspetto centrale del progetto;
+  - La proposta consente di *approfondire diversi aspetti* legati alla gestione di una rete di magazzini decentralizzati.
 
 La documentazione completa è disponibile al seguente indirizzo:\
-#v(0.2cm)
-#align(center)[
+#align(center, text(12pt)[
   #link("https://teamcodealchemists.github.io")[teamcodealchemists.github.io]
-]
+])
 #v(0.2cm)
 
 Nella relativa repository sono inclusi i seguenti file:\
-
   - *Verbali delle riunioni interne*
-
   - *Verbali delle riunioni esterne*
-
   - *Documenti di valutazione:* \
+    -- #link("https://teamcodealchemists.github.io/documents/01_Candidatura/Files_Candidatura/Valutazione_dei_Capitolati_1.0.0.pdf")[Analisi e valutazione dei capitolati]\
+    -- #link("https://teamcodealchemists.github.io/documents/01_Candidatura/Files_Candidatura/Dichiarazione_Impegni_1.0.0.pdf")[Dichiarazione Impegni (con analisi ruoli e costi)]
 
-    -- valutazione capitolati 1.0.pdf -> Analisi e valutazione dei capitolati \
-    -- analisi costi assunzione impegni v1.0.pdf -> Piano di costi e impegni \
-
-
-#v(1cm)  
-  Come indicato nel documento di dichiarazione degli impegni, il team ha stimato un costo complessivo per la realizzazione del progetto pari a *14.430€*, con una scadenza finale fissata per il *  /08/2025*.
-#v(1cm)
+#colbreak()
+#v(0.5cm)
+  Come riportato nel documento di dichiarazione degli impegni, il Team ha stimato un costo complessivo per la realizzazione del progetto pari a *14.430€*, con una scadenza finale prevista per il *29/08/2025*.
+#v(0.5cm)
   Cordiali Saluti, \
-  il team _Code Alchemists_ 
+  il Team _Code Alchemists_ 
 
+#v(2em)
 #align(center)[
   #table(
       columns: (auto, auto,auto,auto),
@@ -112,3 +96,4 @@ Nella relativa repository sono inclusi i seguenti file:\
       [8],[Zangla],[Ramona],[2075546]
     )
   ]
+]
