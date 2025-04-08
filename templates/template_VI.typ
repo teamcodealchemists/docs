@@ -26,8 +26,6 @@
     voce("Distribuzione", distribuzione)
 )
 
-
-
 // CONFIGURAZIONE PAGINE
 #show: conf.with(
   title: [#titolo],
@@ -37,7 +35,6 @@
   voci: voci_registro
 )
 #show: indice
-
 
 // INSERIRE QUI CONTENUTO
 = Titolo
