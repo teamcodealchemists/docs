@@ -165,18 +165,13 @@
 
   v(4pt)
   table(
-    columns: (auto,auto),
+    columns: (1fr,3fr),
     inset: 10pt,
     align: center,
-    table.header(
-      [*ID*], [*Descrizione*]
-    ),
-
+    table.header([*ID*],[*Descrizione*]),
     ..voci   
-
   )
   
   set align(left)
-  
   doc
 }
