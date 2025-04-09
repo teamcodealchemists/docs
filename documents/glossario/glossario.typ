@@ -72,11 +72,6 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
   Svolge un ruolo chiave nelle fasi iniziali, fornendo basi solide a progettisti e programmatori. Il suo impegno orario, inferiore alla media degli altri ruoli, si concentra sull'analisi e la definizione dei requisiti, garantendo chiarezza e completezza delle specifiche progettuali.
 
 #pagebreak()
-= B
-- *Banane*: \
-  Riferimento a un oggetto o entità non specificata, utilizzato per indicare un elemento generico o un placeholder in contesti informatici o di programmazione. Il termine è spesso usato in modo informale per rappresentare qualcosa di non definito o di poco rilevante.
-
-#pagebreak()
 = P
 - *Progettista:* \
   Con un impegno orario medio-alto, garantisce una solida base al progetto. Trasforma i requisiti in un design architetturale strutturato, definendo l’organizzazione del sistema. Un progetto mal progettato può compromettere lo sviluppo, rendendo cruciale il suo ruolo. Assicura soluzioni affidabili, efficienti, sicure e conformi ai requisiti degli utenti finali.
