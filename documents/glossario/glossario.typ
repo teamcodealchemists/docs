@@ -30,13 +30,13 @@
   [0.1.0],
   [28/03/2025],
   [N. Bolzon],
-  [-],
+  [S. Marana],
   [Aggiunta definizioni al glossario],
   
   [0.0.1],
   [26/03/2025],
   [N. Moretto],
-  [-],
+  [N. Bolzon],
   [Creazione template e struttura del documento]
 )
 
@@ -81,8 +81,17 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 
 #pagebreak()
 = R
+- *Repository:*\
+  Archivio centralizzato e strutturato che consente la conservazione, la gestione e la condivisione di risorse digitali, quali codice sorgente, documentazione, librerie, configurazioni e dati. Garantisce la collaborazione tra più sviluppatori, l’integrità e la tracciabilità del progetto nel tempo.
+
+- *Requirements and Technology Baseline:*\
+  Nel contesto dello sviluppo software, la baseline di progetto è un riferimento stabile che definisce i requisiti del sistema e le tecnologie impiegate per la loro realizzazione. Comprende la specifica dei requisiti funzionali e non funzionali, l’elenco delle tecnologie, delle librerie e delle piattaforme adottate, nonché le strategie di sviluppo e testing. Questa baseline è essenziale per il controllo dell’avanzamento del progetto e per la verifica della conformità del prodotto rispetto ai requisiti concordati con il cliente.
+
 - *Responsabile:*\
   Garantisce il completamento efficiente del progetto, rispettando obiettivi, tempistiche e aspettative del committente, coordinando ruoli e risorse. Data la rilevanza economica della posizione, il team ne ottimizza l'impiego per massimizzare l'efficienza e contenere i costi. Il ruolo richiede competenze nella gestione, risoluzione di criticità, coordinamento della comunicazione e pianificazione. Spetta inoltre al Responsabile approvare il rilascio di prodotti parziali o finali, software o documenti.
+  
+- *RTB:*\
+  Acronimo di Requirements and Technology Baseline. Vedere la voce 'Requirements and Technology Baseline'.
   
 #pagebreak()
 = V
