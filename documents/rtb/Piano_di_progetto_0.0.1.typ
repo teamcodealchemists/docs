@@ -16,7 +16,7 @@
 #let titolo = "Piano di Progetto"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "0.0.1"
+#let versione = "0.1.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -27,11 +27,11 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
-  [],
-  [],
-  [],
-  [],
-  [],
+  [0.1.0],
+  [09/04/2025],
+  [N. Moretto],
+  [-],
+  [Inizio redazione documento: Introduzione generale, Introduzione pianificazione a breve termine, Sprint 1],
   
   [0.0.1],
   [08/04/2025],
@@ -74,6 +74,8 @@ Si potrà dedurre che questi documenti potrebbero contenere parole o frasi che n
 - *Capitolato d'appalto C6 - Gestione di un magazzino distribuito - _M31_*\
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")
 
+  //TODO: da completare
+
 #pagebreak()
 = Analisi e gestione dei rischi
 == Introduzione        //UN PUNTO PER OGNI RISCHIO: es. 2.2.1, ecc...
@@ -91,6 +93,25 @@ La redazione di questo paragrafo sarà effettuato in seguito al superamento dell
 #pagebreak()
 = Pianificazione nel breve termine
 == Introduzione
+Il team _Code Alchemists_ ha deciso di adottare la metodologia *Agile#super[G]* per la gestione del progetto. In particolare, si è scelto di utilizzare il framework *Scrum#super[G]*, che prevede l'uso di *sprint#super[G]*, ovvero periodi di tempo definiti in cui il team si concentra su un insieme specifico di attività.\
+Il gruppo ha deciso di mantenere la durata degli sprint di *2 settimane*, in modo da avere un buon equilibrio tra la pianificazione e l'esecuzione delle attività. Durante ogni sprint, il team si riunisce quotidianamente per discutere i progressi e le difficoltà incontrate, in modo da garantire una comunicazione costante e una rapida risoluzione dei problemi.\
+
+Il team ha deciso di utilizzare un approccio *iterativo#super[G]* e *incrementale#super[G]*, in modo da poter adattare il lavoro in base ai feedback ricevuti e alle esigenze del cliente. Inoltre, si è deciso di utilizzare un *sistema di gestione delle attività* per *tenere traccia del lavoro svolto e delle scadenze*.
+In questo modo, sarà possibile garantire una buona pianificazione e una gestione efficace del progetto, riducendo al minimo i rischi e massimizzando le possibilità di successo.
+
+Il team si impegna anche a *concordare delle riunioni periodiche* con il proponente _M31_ per discutere i progressi e le eventuali modifiche al progetto. Queste riunioni saranno utili per garantire che il lavoro svolto sia in linea con le aspettative del cliente e per ricevere feedback su quanto realizzato.
+
+Ora seguiranno le descrizioni dei vari sprint previsti per il progetto, dove verranno riportate:
+- Informazioni generali;
+- Attività da svolgere;
+- Prospetto ore e costi;
+- Rischi attesi;
+- Ore e costi effettivi;
+- Aggiornamento delle risorse rimanenti;
+- Rischi incontrati;
+- Retrospettiva.
+
+#pagebreak()
 == Requirements and Technology Baseline (RTB)
 === Sprint 1    //mantenere le seguenti distanze
 Inizio: #h(1.99cm)*28-03-2025*\
@@ -126,13 +147,27 @@ In particalare, le attività previste sono:
       [Stefano Speranza],[],[],[],[],[],[],
       [Ramona Zangla],[],[],[],[],[],[],
   ),
-  didascalia: "Ore di ogni componente per ciascun ruolo"
+  didascalia: "Sprint 1 - Preventivo ore per ciascun componente"
 )
 ]
 
-
 ==== Consuntivo    //tabella ore effettivamente svolte (stessa tabella di sopra)
 ==== Aggiornamento delle risorse rimanenti   //altra tabella
+#v(1em)
+#align(center)[
+  #tabella_aggiornamento_risorse(
+    dati: (
+      [Responsabile], [30€/h], [-], [-], [-], [-],
+      [Amministratore], [20€/h], [-], [-], [-], [-],
+      [Analista], [20€/h], [-], [-], [-], [-],
+      [Progettista], [20€/h], [-], [-], [-], [-],
+      [Programmatore], [20€/h], [-], [-], [-], [-],
+      [Verificatore], [20€/h], [-], [-], [-], [-],
+      [*Totale*], [*-*], [*-*], [*-*], [*-*], [*-*],
+  ),
+    didascalia: "Sprint 1 - Aggiornamento delle risorse disponibili"
+  )
+]
 ==== Rischi incontrati
 
 === Retrospettiva
