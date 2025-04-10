@@ -99,34 +99,37 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 
 #pagebreak()
 = M
-- *Mentore:* \
+- *Mentore*: \
   Figura esperta che supporta uno sviluppatore o un team junior nell’ambito dell’ingegneria del software, offrendo guida tecnica, consigli pratici e orientamento nel processo di crescita professionale.
 
 #pagebreak()
 = P
-- *Progettista:* \
+- *Progettista*: \
   Con un impegno orario medio-alto, garantisce una solida base al progetto. Trasforma i requisiti in un design architetturale strutturato, definendo l’organizzazione del sistema. Un progetto mal progettato può compromettere lo sviluppo, rendendo cruciale il suo ruolo. Assicura soluzioni affidabili, efficienti, sicure e conformi ai requisiti degli utenti finali.
 
-- *Programmatore:* \
+- *Programmatore*: \
   Figura centrale nello sviluppo, dedica il maggior numero di ore al progetto. È responsabile dell'implementazione del software, rispettando specifiche e requisiti, in collaborazione con il Progettista. Cura l’ottimizzazione del codice per migliorarne le prestazioni e sviluppa funzionalità avanzate, richiedendo competenze nei linguaggi di programmazione, nelle tecnologie adottate e nella risoluzione di problemi tecnici.
+
+- *PoC (Proof of Concept)*: \
+  Dimostrazione pratica, limitata e sperimentale, utilizzata per verificare la fattibilità tecnica o funzionale di un’idea, tecnologia o soluzione software. In ingegneria del software, una PoC serve a validare concetti chiave prima di investire risorse nello sviluppo completo, mostrando che un certo approccio può funzionare in un contesto reale. Non è un prodotto finito, ma uno strumento per ridurre il rischio progettuale e supportare decisioni tecniche o strategiche.
 
 #pagebreak()
 = R
-- *Repository:*\
+- *Repository*: \
   Archivio centralizzato e strutturato che consente la conservazione, la gestione e la condivisione di risorse digitali, quali codice sorgente, documentazione, librerie, configurazioni e dati. Garantisce la collaborazione tra più sviluppatori, l’integrità e la tracciabilità del progetto nel tempo.
 
-- *RTB (Requirements and Technology Baseline):*\
+- *RTB (Requirements and Technology Baseline)*: \
   Nel contesto dello sviluppo software, la baseline di progetto è un riferimento stabile che definisce i requisiti del sistema e le tecnologie impiegate per la loro realizzazione. Comprende la specifica dei requisiti funzionali e non funzionali, l’elenco delle tecnologie, delle librerie e delle piattaforme adottate, nonché le strategie di sviluppo e testing. Questa baseline è essenziale per il controllo dell’avanzamento del progetto e per la verifica della conformità del prodotto rispetto ai requisiti concordati con il cliente.
 
-- *Responsabile:*\
+- *Responsabile*: \
   Garantisce il completamento efficiente del progetto, rispettando obiettivi, tempistiche e aspettative del committente, coordinando ruoli e risorse. Data la rilevanza economica della posizione, il team ne ottimizza l'impiego per massimizzare l'efficienza e contenere i costi. Il ruolo richiede competenze nella gestione, risoluzione di criticità, coordinamento della comunicazione e pianificazione. Spetta inoltre al Responsabile approvare il rilascio di prodotti parziali o finali, software o documenti.
   
 #pagebreak()
 = V
-- *Verificatore:*\
+- *Verificatore*: \
   Assicura l’affidabilità dei test e migliora la qualità del software e della documentazione, rispettando gli standard concordati. Conoscendo il metodo di lavoro, garantisce l’esecuzione precisa di ogni task secondo le best practice. Il suo ruolo è continuo, assicurando il rispetto delle aspettative del cliente e il successo del progetto.
 
 #pagebreak()
 = W
-- *Way of Working:*\
+- *Way of Working*: \
   Approccio operativo e insieme di pratiche adottate da un team o organizzazione per gestire e completare un progetto.
