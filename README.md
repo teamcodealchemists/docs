@@ -1,6 +1,17 @@
+![err_parole_glossario_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Ffeature%2Faction-controlli-testo%2F.github%2Fbadges%2Ferr_parole_glossario_badge.json)
+![gulpease_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Ffeature%2Faction-controlli-testo%2F.github%2Fbadges%2Fgulpease_badge.json)
+![ordinamento_glossario_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Ffeature%2Faction-controlli-testo%2F.github%2Fbadges%2Fordinamento_glossario_badge.json)
+
 # 🧪 Repository Typst per la Documentazione del Progetto - Code Alchemists (Gruppo 21)
 
 Benvenuto nel repository del gruppo **Code Alchemists (Gruppo 21)**! Questo repository è gestito esclusivamente dal team e contiene tutto il necessario per creare e mantenere la documentazione del progetto. Sentiti libero di esplorare la struttura del repository e contribuire al miglioramento della documentazione, rispettando le linee guida interne.
+
+- [Informazioni](#informazioni)
+- [Contenuto](#contenuto)
+- [Nomenclatura dei File](#nomenclatura-dei-file)
+- [Verifica](#verifica)
+- [Requisiti](#requisiti)
+- [Deploy](#deploy)
 
 ## Informazioni
 
@@ -25,10 +36,19 @@ Per mantenere una struttura organizzata e coerente, segui queste linee guida per
 
 Seguendo queste regole, sarà più semplice navigare e mantenere il repository.
 
+## Verifica
+
+In supporto al processo di verifica è stata implementata un'action che esegue diversi script di verifica del testo,
+puoi verificare lo stato dell'ultima modifica dai badge di stato o per più informazioni controllando i log dell'azione.
+
+- **Parole del Glossario non segnate**: Segna il numero di parole trovate nelle documentazione e presenti nel glossario che non hanno G come apice.
+- **Gulpease**: Indica da 0 a 100 [l'indice di Gulpease](https://it.wikipedia.org/wiki/Indice_Gulpease) della documentazione.
+- **Glossario**: Controlla se il glossario è ordinato in modo alfabetico.
+
 ## Requisiti
 Per lavorare con i file Typst, assicurati di avere installato:
 - [Visual Studio Code](https://code.visualstudio.com/)
 - L'estensione [Tinymist Typst](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist) per un'esperienza di editing migliorata\
 
 ## Deploy
-Per effettuare il deploy a github pages basta semplicemente fare una release dalla branch [develop](https://github.com/teamcodealchemists/docs/tree/develop) e la action in automatico compilerà i file per caricarli su pages. In caso di deploy fallito consultare log o contattare @sebamarana .
+Per effettuare il deploy a github pages basta semplicemente fare una release dalla branch [develop](https://github.com/teamcodealchemists/docs/tree/develop) e la action in automatico compilerà i file per caricarli su pages. In caso di deploy fallito consultare log o contattare @sebamarana.
