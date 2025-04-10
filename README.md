@@ -35,15 +35,16 @@ Per mantenere una struttura organizzata e coerente, segui queste linee guida per
 - Per quanto riguarda la documentazione `NOME_VERSIONE`, il nome può contenere spazi.
 
 Seguendo queste regole, sarà più semplice navigare e mantenere il repository.
-
 ## Verifica
 
-In supporto al processo di verifica è stata implementata un'action che esegue diversi script di verifica del testo,
-puoi verificare lo stato dell'ultima modifica dai badge di stato o per più informazioni controllando i log dell'azione.
+Per supportare il processo di verifica, è stata implementata un'azione automatizzata che esegue diversi script di controllo del testo. Puoi verificare lo stato dell'ultima modifica tramite i badge di stato presenti all'inizio del documento o consultando i log dell'azione per maggiori dettagli.
 
-- **Parole del Glossario non segnate**: Segna il numero di parole trovate nelle documentazione e presenti nel glossario che non hanno G come apice.
-- **Gulpease**: Indica da 0 a 100 [l'indice di Gulpease](https://it.wikipedia.org/wiki/Indice_Gulpease) della documentazione.
-- **Glossario**: Controlla se il glossario è ordinato in modo alfabetico.
+### Controlli effettuati:
+- **Parole del Glossario non segnate**: Indica il numero di parole trovate nella documentazione che sono presenti nel glossario ma non contrassegnate con la lettera "G" come apice.
+- **Indice Gulpease**: Fornisce un punteggio da 0 a 100 basato sull'[indice di leggibilità Gulpease](https://it.wikipedia.org/wiki/Indice_Gulpease) della documentazione.
+- **Ordinamento del Glossario**: Verifica che il glossario sia ordinato alfabeticamente.
+
+Assicurati di risolvere eventuali problemi segnalati per mantenere alta la qualità della documentazione.
 
 ## Requisiti
 Per lavorare con i file Typst, assicurati di avere installato:
