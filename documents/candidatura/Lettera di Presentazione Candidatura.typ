@@ -68,8 +68,8 @@ Nella relativa repository sono inclusi i seguenti file:\
   - *Verbali delle riunioni interne*
   - *Verbali delle riunioni esterne*
   - *Documenti di valutazione:* \
-    -- #link("https://teamcodealchemists.github.io/documents/01_Candidatura/Files_Candidatura/Valutazione_dei_Capitolati_1.0.0.pdf")[Analisi e valutazione dei capitolati]\
-    -- #link("https://teamcodealchemists.github.io/documents/01_Candidatura/Files_Candidatura/Dichiarazione_Impegni_1.0.0.pdf")[Dichiarazione Impegni (con analisi ruoli e costi)]
+    -- #link("https://teamcodealchemists.github.io/docs/candidatura/Valutazione%20dei%20Capitolati%201.0.0.pdf")[Analisi e valutazione dei capitolati]\
+    -- #link("https://teamcodealchemists.github.io/docs/candidatura/Dichiarazione%20Impegni%201.0.0.pdf")[Dichiarazione Impegni (con analisi ruoli e costi)]
 
 #colbreak()
 #v(0.5cm)
