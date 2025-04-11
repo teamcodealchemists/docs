@@ -150,7 +150,7 @@
 
   La rotazione dei ruoli avverrà secondo quanto verrà definito nel *Way of Working*, presumibilmente ogni 2 settimane.
   
-  == 2.1 Responsabile 
+  == 2.1 Responsabile
   Il *Responsabile* assicura il completamento del progetto in modo efficiente, nel rispetto degli obiettivi prefissati, delle tempistiche stabilite e delle aspettative del committente, garantendo inoltre il corretto avvicendamento dei ruoli all'interno del Team.
   
   Considerato il maggiore impatto economico associato a tale figura, il team si impegna a svolgere questa funzione con la massima efficienza, prevedendo un impiego medio di ore inferiore rispetto agli altri ruoli, al fine di massimizzare la resa e contenere i costi.
