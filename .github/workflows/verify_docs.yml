@@ -3,10 +3,11 @@ name: Verifica Documenti
 on:
   push:
     paths:
-      - 'documenti/**'
+      - 'documents/**'
   pull_request:
     paths:
-      - 'documenti/**'
+      - 'documents/**'
+  workflow_dispatch:
 
 permissions:
   contents: write
