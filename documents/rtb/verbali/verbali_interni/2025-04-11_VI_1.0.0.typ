@@ -4,8 +4,8 @@
 #let titolo = "Verbale interno del "
 #let data = "11/04/2025"
 #let titolo = titolo + data
-#let status = "In redazione"
-#let versione = "0.1.0"
+#let status = "Approvato"
+#let versione = "1.0.0"
 #let presenze = (
   /* formato: <p.nome,> oppure <"nome",> */
   p.nicolo,
@@ -21,18 +21,16 @@
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
   
-    /*
     [1.0.0],
-    [(Data di Verifica)],
+    [12/04/2025],
     [-],
-    [(Nome Verificatore)],
+    [R. Zangla],
     [Approvazione del documento],
-    */
     
     [0.1.0],
     [11/04/2025],
     [N. Bolzon],
-    [-],
+    [R. Zangla],
     [Prima stesura del documento],
 
 )
