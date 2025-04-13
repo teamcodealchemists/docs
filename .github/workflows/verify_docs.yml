@@ -1,0 +1,51 @@
+name: Verifica Documenti
+
+on:
+  push:
+    paths:
+      - 'documents/**'
+  pull_request:
+    paths:
+      - 'documents/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+  id-token: write
+
+jobs:
+  analisi_documenti:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del repository
+        uses: actions/checkout@v4
+
+      - name: Configurazione di Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: 🧐🔍 Verifica parole del glossario nei documenti
+        id: verifica_glossario
+        run: python .github/workflows/scripts/verifica_glossario.py
+      
+      - name: 📊📖 Calcolo dell'indice di Gulpease
+        run: python .github/workflows/scripts/calcola_gulpease.py
+
+      - name: 🔤✅ Verifica ordinamento alfabetico del glossario
+        run: python .github/workflows/scripts/verifica_ordinamento_glossario.py
+
+      - name: 🛠️ Aggiorna badge nel README con il branch corrente
+        run: |
+          python .github/workflows/scripts/aggiorna_badge_readme.py "$GITHUB_REF_NAME"
+
+      - name: Commit e push del badge aggiornato
+        if: success()
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .github/badges/
+          git add README.md
+          git commit -m "Aggiornati badge e README" || echo "Nessuna modifica da commettere"
+          git push
