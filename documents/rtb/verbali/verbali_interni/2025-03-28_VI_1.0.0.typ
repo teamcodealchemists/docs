@@ -66,7 +66,7 @@
     La riunione si è svolta secondo il seguente ordine del giorno:
 
     == 1.1 Ordine del Giorno
-    + Migliorie alla parte pubblica del repository;
+    + Migliorie alla parte pubblica del repository#super[G];
     + Indicazioni e cambiamenti circa la redazione dei verbali;
     + Decisioni in merito alla rotazione dei ruoli;
     + Redazione di ulteriori documenti _(Norme di Progetto, Glossario, ...)_;
