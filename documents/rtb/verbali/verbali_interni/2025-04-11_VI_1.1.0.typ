@@ -5,7 +5,7 @@
 #let data = "11/04/2025"
 #let titolo = titolo + data
 #let status = "Approvato"
-#let versione = "1.0.0"
+#let versione = "1.1.0"
 #let presenze = (
   /* formato: <p.nome,> oppure <"nome",> */
   p.nicolo,
@@ -20,7 +20,12 @@
 )
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
-  
+    [1.1.0],
+    [14/04/2025],
+    [N. Bolzon],
+    [R. Zangla],
+    [Correzione errore nel corpo del documento],
+
     [1.0.0],
     [12/04/2025],
     [-],
@@ -64,7 +69,7 @@
     
   #pagebreak()
   = 2. Dettagli della riunione
-  Il verbale iniziale viene redatto da *#p.nicolo* e come revisore * *.
+  Il verbale iniziale viene redatto da *#p.nicolo* e come revisore *#p.ramona*.
 
   == 2.1 Verifica del primo sprint (dal 28-03-2025 a 11-04-2025)
   Il meeting odierno è stato convocato con l’obiettivo di verificare le attività svolte da ciascun membro del _Team_, in relazione al proprio ruolo, nel corso del *primo sprint*, avviato il *28 marzo 2025* (28-03-2025) e conclusosi in data odierna, *11 aprile 2025* (11-04-2025). \
