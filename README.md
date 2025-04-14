@@ -27,7 +27,30 @@ Questo repository contiene i file necessari per la documentazione del progetto. 
 
 Per garantire una struttura coerente, ordinata e facilmente navigabile all'interno del repository, attenersi alle seguenti convenzioni di nomenclatura:
 
+**AAAA-MM-DD_TIPO_VERSIONE_\***
 
+### Dove:
+
+- `AAAA-MM-DD`  
+  La data in formato anno-mese-giorno, espressa in sole cifre.  
+  *Può essere omessa per documenti unici* (es. *Piano di Qualifica*).
+
+- `TIPO`  
+  Indica il tipo di documento. Le possibili scelte sono:
+  - `VI`: Verbale Interno  
+  - `VE`: Verbale Esterno  
+  - `G`: Glossario  
+  - `PdQ`: Piano di Qualifica  
+  - `PdP`: Piano di Progetto  
+  - `AdR`: Analisi dei Requisiti  
+  - `NdP`: Norme di Progetto
+
+- `VERSIONE`  
+  La versione corrente del documento, secondo le specifiche di versionamento (Vedi Norme di Progetto).  
+
+- `*` (modificatore del file)  
+  Indica eventuali versioni alternative del file. Le opzioni disponibili sono:
+- `test`: Il documento è in stato di testing tecnico o operativo, da non considerarsi ufficiale.
 
 Seguendo queste regole, sarà più semplice navigare e mantenere il repository.
 
