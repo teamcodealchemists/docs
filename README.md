@@ -23,18 +23,37 @@ Questo repository contiene i file necessari per la documentazione del progetto. 
 - **`assets/`**: Contiene immagini, grafici e altri file di supporto.
 - **`templates/`**: Contiene i file modello per la creazione di nuovi documenti.
 
-## Nomenclatura dei File
+# Nomenclatura Documentazione (Processo di Supporto)
 
-Per mantenere una struttura organizzata e coerente, segui queste linee guida per la nomenclatura dei file:
+Per garantire una struttura coerente, ordinata e facilmente navigabile all'interno del repository, attenersi alle seguenti convenzioni di nomenclatura:
 
-- Usa il formato `snake_case` (es. `nome_file_typst.typ`) per separare le parole.
-- Includi una data nel formato `YYYY-MM-DD` (es. `2023-10-21.typ`).
-- Per i verbali: 
-    - Verbali Interni `DATA_VI_VERSIONE`.
-    - Verbali Esterni `DATA_VE_VERSIONE` ed aggiungere `_signed` se si tratta di un documento firmato.
-- Per quanto riguarda la documentazione `NOME_VERSIONE`, il nome può contenere spazi.
+**AAAA-MM-DD_TIPO_VERSIONE_\***
+
+### Dove:
+
+- `AAAA-MM-DD`  
+  La data in formato anno-mese-giorno, espressa in sole cifre.  
+  *Può essere omessa per documenti unici* (es. *Piano di Qualifica*).
+
+- `TIPO`  
+  Indica il tipo di documento. Le possibili scelte sono:
+  - `VI`: Verbale Interno  
+  - `VE`: Verbale Esterno  
+  - `G`: Glossario  
+  - `PdQ`: Piano di Qualifica  
+  - `PdP`: Piano di Progetto  
+  - `AdR`: Analisi dei Requisiti  
+  - `NdP`: Norme di Progetto
+
+- `VERSIONE`  
+  La versione corrente del documento, secondo le specifiche di versionamento (Vedi Norme di Progetto).  
+
+- `*` (modificatore del file)  
+  Indica eventuali versioni alternative del file. Le opzioni disponibili sono:
+- `test`: Il documento è in stato di testing tecnico o operativo, da non considerarsi ufficiale.
 
 Seguendo queste regole, sarà più semplice navigare e mantenere il repository.
+
 ## Verifica
 
 Per supportare il processo di verifica, è stata implementata un'azione automatizzata che esegue diversi script di controllo del testo. Puoi verificare lo stato dell'ultima modifica tramite i badge di stato presenti all'inizio del documento o consultando i log dell'azione per maggiori dettagli.
