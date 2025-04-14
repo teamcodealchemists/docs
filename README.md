@@ -23,18 +23,14 @@ Questo repository contiene i file necessari per la documentazione del progetto. 
 - **`assets/`**: Contiene immagini, grafici e altri file di supporto.
 - **`templates/`**: Contiene i file modello per la creazione di nuovi documenti.
 
-## Nomenclatura dei File
+# Nomenclatura Documentazione (Processo di Supporto)
 
-Per mantenere una struttura organizzata e coerente, segui queste linee guida per la nomenclatura dei file:
+Per garantire una struttura coerente, ordinata e facilmente navigabile all'interno del repository, attenersi alle seguenti convenzioni di nomenclatura:
 
-- Usa il formato `snake_case` (es. `nome_file_typst.typ`) per separare le parole.
-- Includi una data nel formato `YYYY-MM-DD` (es. `2023-10-21.typ`).
-- Per i verbali: 
-    - Verbali Interni `DATA_VI_VERSIONE`.
-    - Verbali Esterni `DATA_VE_VERSIONE` ed aggiungere `_signed` se si tratta di un documento firmato.
-- Per quanto riguarda la documentazione `NOME_VERSIONE`, il nome può contenere spazi.
+
 
 Seguendo queste regole, sarà più semplice navigare e mantenere il repository.
+
 ## Verifica
 
 Per supportare il processo di verifica, è stata implementata un'azione automatizzata che esegue diversi script di controllo del testo. Puoi verificare lo stato dell'ultima modifica tramite i badge di stato presenti all'inizio del documento o consultando i log dell'azione per maggiori dettagli.
