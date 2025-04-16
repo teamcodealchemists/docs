@@ -73,3 +73,58 @@
             
       )
     }
+
+#let tabella_indici_gravita(
+  dati: array,
+  didascalia: text
+) = {
+      figure(
+        table(
+          columns: (auto, auto, auto, auto),
+          inset:0.6em,
+          fill: (x, y) => if y==0 {
+            luma(235)
+          },
+          stroke: (x, y) => if y >= 0 {
+            1pt + black
+          } else {
+            none
+          },
+          table.header(
+            [*Indice*],
+            [*Tipo*],
+            [*Gravità*],
+            [*Probabilità*],
+          ),
+          ..dati
+        ),
+        caption: [#didascalia]
+            
+      )
+    }
+
+#let tabella_rischi(
+  dati: array,
+  didascalia: text
+) = {
+  figure(
+  table(
+
+    columns: (auto, auto),
+    align: center,
+    fill: (x, y) => if (y == 0) {
+      rgb("#ffffff")
+    } else if (calc.gcd(y, 2) == 2) {
+      rgb("#ffffff")
+    } else {
+      rgb("#ffffff")
+    },
+    table.header(
+      text(12pt, fill: black)[],
+      text(12pt, fill: black)[*Valore*],
+    ),
+    ..dati
+  ),
+  caption: [#didascalia]
+)
+}

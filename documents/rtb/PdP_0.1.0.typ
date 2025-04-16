@@ -1,4 +1,5 @@
 #import "../../src/basic.typ": *
+#import "../../src/tables.typ": *  //importo le tabelle
 
 /*
   Definire variabili da inserire in prima pagina con #let
@@ -26,11 +27,11 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
-  [],
-  [],
-  [],
-  [],
-  [],
+  [0.1.0],
+  [09/04/2025],
+  [N. Moretto],
+  [-],
+  [Inizio redazione documento: Introduzione generale, Introduzione pianificazione a breve termine, Sprint 1],
   
   [0.0.1],
   [08/04/2025],
@@ -60,23 +61,172 @@
 
 = Introduzione
 == Informazioni generali
-== Glossario
-== Fonti   //Inserire riferimenti al capitolato del progetto e a lezioni/slide del professore se necessario
+Il *Piano di Progetto#super[G]* è un documento che definisce le modalità di gestione del progetto, le risorse necessarie e i rischi attesi.\ Il piano di progetto è un documento vivo, che viene aggiornato durante il ciclo di vita del progetto di *Ingegneria del Software*, in quanto le attività vengono pianificate volta per volta e le risorse vengono allocate in base alle necessità. Una progettazione dettagliata sul lungo termine, infatti, si rivelerebbe inefficace.
 
+Il documento è molto importante per permettere una corretta pianificazione del lavoro e dei vari sprint#super[G], analizzando il tempo previsto ed effettivo per ogni attività, tenendo conto dei rischi e delle risorse disponibili.
+
+== Scopo del prodotto
+
+== Glossario
+La realizzazione di un software richiede, ancor prima dello sviluppo, una fase di analisi e progettazione. Dato che il lavoro durante questa fase è svolto da più persone e in modo asincrono, è necessario documentare tutte queste attività per tenere traccia di ciò che è stato fatto e per evitare confusione. 
+
+Si potrà dedurre che questi documenti potrebbero contenere parole o frasi che non sono di uso comune, ma che sono state scelte per essere più specifiche e per evitare ambiguità. Per questo motivo è stato creato un glossario#super[G] che contiene le definizioni di tali termini, al seguente #link("https://teamcodealchemists.github.io/glossario")[#underline[indirizzo]]. 
+
+== Riferimenti   //Inserire riferimenti al capitolato del progetto e a lezioni/slide del professore se necessario
+- *Capitolato d'appalto C6 - Gestione di un magazzino distribuito - _M31_*\
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")
+
+  //TODO: da completare
+
+#pagebreak()
 = Analisi e gestione dei rischi
-== Introduzione        //UN PUNTO PER OGNI RISCHIO: es. 2.2.1, ecc...
+== Introduzione
+
+In questa sezione vengono analizzati i principali rischi che potrebbero manifestarsi durante lo svolgimento
+del progetto, con una valutazione della loro gravità e probabilità di occorrenza. Ad ogni rischio e' associato
+un indice numerico che ne definisce l’intensità e la probabilità, consentendo di determinare la criticità di
+ciascun rischio.
+
+== Definizione degli indici
+
+Per una corretta valutazione dei rischi, sono stati definiti i seguenti fattori chiave:
+
+- *Indice*: un valore numerico progressivo che identifica in modo univoco ogni rischio;
+
+- *Tipo*: rappresenta la categoria di impatto che il rischio potrebbe avere sul progetto, ed è classificato in Basso, Medio o Alto;
+
+- *Gravità*: descrive le conseguenze o l’impatto che un rischio avrebbe se si verificasse, con l’eventuale necessità di modificare la pianificazione o l’approccio al progetto;
+
+- *Probabilità*: indica la possibilità che il rischio si verifichi durante il ciclo di vita del progetto.
+
+#align(center)[
+  #tabella_indici_gravita(
+    dati: (
+      [1], 
+      [Basso], 
+      [L’impatto sul progetto è minimo, ad esempio un lieve rallentamento senza effetti sui tempi di consegna], 
+      [La possibilità che si verifichi è bassa,
+      ma esistono condizioni che potrebbero contribuire alla sua realizzazione],
+
+      [2], 
+      [Medio], 
+      [L’evento richiede risorse aggiuntive o un parziale adattamento del piano, con uno sforzo supplementare ma con un impatto gestibile ], 
+      [Esiste una probabilità media che il rischio si realizzi], 
+
+      [3], 
+      [Alto], 
+      [Il rischio comporta ritardi significativi,
+      un possibile aumento dei costi o un degrado della qualità, impattando negativamente sul raggiungimento degli obiettivi del progetto], 
+      [E altamente probabile che il rischio si verifichi, con diversi segni evidenti che ne indicano la possibilità], 
+
+      [4], 
+      [Serio], 
+      [-], 
+      [-], 
+  ),
+    didascalia: "Sprint 2 - Indici di gravita gestione dei rischi"
+  )
+]
+
+
+== Suddivisione dei rischi // Potremmo invertire l'ordine a quello inglese
+
+I rischi del progetto sono suddivisi in quattro categorie principali, in base al tipo di problematiche che potrebbero verificarsi:
+
+- Rischi nell'organizzazione e gestione del progetto.
+
+- Rischi nella comunicazione;
+
+- Rischi individuali
+
+- Rischi di natura tecnologica;
+
+Ogni rischio è identificato tramite un codice univoco, strutturato come segue:
+
+#align(center, block[*R[Categoria][Indice] - [Nome]*])
+
+Dove:
+
++ *Categoria*: rappresenta la tipologia del rischio, che puo essere:
+
+  - T: per i rischi tecnologici;
+
+  - C: per i rischi comunicativi;
+
+  - P: per i rischi di pianificazione;
+
+  - I: per i rischi individuali;
+
++ *Indice*: è  un identificativo progressivo univoco all’interno della categoria.
+
++ *Nome*: è  una breve descrizione del rischio
+
 == Rischio tecnologico //tecnologie utilizzate ed eventuali errori
+
+===  RT1 - Rischio tecnologico legato alla tecnologica utilizzata
+
+#tabella_rischi(
+  dati: (
+     [*Codice*],
+     [],
+
+    [*Gravità*],
+    [],
+
+    [*Probabilità*],
+    [],
+
+    [*Rilevamento*],
+    [],
+
+    [*Contromisure*], 
+    [],
+  ),
+  didascalia: "RT1"
+)
+
+=== RT2 - Rischio tecnologico legato ad un utilizzo errato
+
+=== RT3 - Rischio tecnologico legato ad errori di programmazione
+
+=== RT4 - Rischio tecnologico legato al supporto e versione
+
+=== RT5 - Rischio tecnologico legato all'ambiente di sviluppo
+
+
+
 == Rischio individuale //altri impegni e attività individuale
 == Rischio globale     //valutare altri rischi
 
+#pagebreak()
 = Pianificazione nel lungo termine
 == Attività previste per la Requirements and Technology Baseline (RTB)
 == Attività previste per la Product Baseline (PB)
 La redazione di questo paragrafo sarà effettuato in seguito al superamento della
 *Requirements and Technology Baseline#super[G] (RTB)*.
 
+#pagebreak()
 = Pianificazione nel breve termine
 == Introduzione
+Il team _Code Alchemists_ ha deciso di adottare la metodologia *Agile#super[G]* per la gestione del progetto. In particolare, si è scelto di utilizzare il framework *Scrum#super[G]*, che prevede l'uso di *sprint#super[G]*, ovvero periodi di tempo definiti in cui il team si concentra su un insieme specifico di attività.\
+Il gruppo ha deciso di mantenere la durata degli sprint di *2 settimane*, in modo da avere un buon equilibrio tra la pianificazione e l'esecuzione delle attività. Durante ogni sprint, il team si riunisce quotidianamente per discutere i progressi e le difficoltà incontrate, in modo da garantire una comunicazione costante e una rapida risoluzione dei problemi.\
+
+Il team ha deciso di utilizzare un approccio *iterativo#super[G]* e *incrementale#super[G]*, in modo da poter adattare il lavoro in base ai feedback ricevuti e alle esigenze del cliente. Inoltre, si è deciso di utilizzare un *sistema di gestione delle attività* per *tenere traccia del lavoro svolto e delle scadenze*.
+In questo modo, sarà possibile garantire una buona pianificazione e una gestione efficace del progetto, riducendo al minimo i rischi e massimizzando le possibilità di successo.
+
+Il team si impegna anche a *concordare delle riunioni periodiche* con il proponente _M31_ per discutere i progressi e le eventuali modifiche al progetto. Queste riunioni saranno utili per garantire che il lavoro svolto sia in linea con le aspettative del cliente e per ricevere feedback su quanto realizzato.
+
+Ora seguiranno le descrizioni dei vari sprint previsti per il progetto, dove verranno riportate:
+- Informazioni generali;
+- Attività da svolgere;
+- Prospetto ore e costi;
+- Rischi attesi;
+- Ore e costi effettivi;
+- Aggiornamento delle risorse rimanenti;
+- Rischi incontrati;
+- Retrospettiva.
+
+#pagebreak()
 == Requirements and Technology Baseline (RTB)
 === Sprint 1    //mantenere le seguenti distanze
 Inizio: #h(1.99cm)*28-03-2025*\
@@ -99,8 +249,40 @@ In particalare, le attività previste sono:
 
 ==== Rischi attesi
 ==== Preventivo    //aggiungere tabella di preventivo (magari un template in un file .typ)
+#v(1em)
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],[],[],[],[],[],[],
+      [Mattia Dalla Pozza],[],[],[],[],[],[],
+      [Sebastiano Marana],[],[],[],[],[],[],
+      [Nicholas Moretto],[],[],[],[],[],[],
+      [Matteo Pretto],[],[],[],[],[],[],
+      [Alex Shu],[],[],[],[],[],[],
+      [Stefano Speranza],[],[],[],[],[],[],
+      [Ramona Zangla],[],[],[],[],[],[],
+  ),
+  didascalia: "Sprint 1 - Preventivo ore per ciascun componente"
+)
+]
+
 ==== Consuntivo    //tabella ore effettivamente svolte (stessa tabella di sopra)
 ==== Aggiornamento delle risorse rimanenti   //altra tabella
+#v(1em)
+#align(center)[
+  #tabella_aggiornamento_risorse(
+    dati: (
+      [Responsabile], [30€/h], [-], [-], [-], [-],
+      [Amministratore], [20€/h], [-], [-], [-], [-],
+      [Analista], [20€/h], [-], [-], [-], [-],
+      [Progettista], [20€/h], [-], [-], [-], [-],
+      [Programmatore], [20€/h], [-], [-], [-], [-],
+      [Verificatore], [20€/h], [-], [-], [-], [-],
+      [*Totale*], [*-*], [*-*], [*-*], [*-*], [*-*],
+  ),
+    didascalia: "Sprint 1 - Aggiornamento delle risorse disponibili"
+  )
+]
 ==== Rischi incontrati
 
 === Retrospettiva
