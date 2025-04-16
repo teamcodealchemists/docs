@@ -31,6 +31,9 @@ jobs:
               id: compila_file_typ
               run: python .github/workflows/scripts/compila_file_typ.py
 
+            - name: List files in the repository
+              run: ls -R
+
             # Create folder and copy compiled files
             - name: Create folder and copy compiled files
               run: |
