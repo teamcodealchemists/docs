@@ -38,7 +38,7 @@ def verifica_file(file_path, glossario):
 
 def verifica_documenti(documenti_dir, glossario):
     """Verifica tutti i file nella cartella documenti, escludendo file specifici in una blacklist e una cartella specifica."""
-    blacklist_file = {"glossario.typ"}  # File da escludere dalla verifica
+    blacklist_file = {"Gls.typ"}  # File da escludere dalla verifica
     blacklist_cartella = {"candidatura"}  # Cartelle da escludere dalla verifica
     errori_totali = 0
     for root, _, files in os.walk(documenti_dir):
