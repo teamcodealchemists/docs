@@ -5,7 +5,7 @@ import json
 
 # Percorsi dei file
 documenti_dir = "documents"
-glossario_file = "documents/glossario/glossario.typ"
+glossario_file = "documents/glossario/Gls.typ"
 
 def carica_glossario(glossario_path):
     """Carica le parole del glossario da un file, rimuovendo caratteri speciali e spazi all'inizio e alla fine, prendendo solo le linee che iniziano con '-'."""
