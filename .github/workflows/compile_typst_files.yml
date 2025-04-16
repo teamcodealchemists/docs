@@ -41,49 +41,49 @@ jobs:
                   name: compiled-typst-files
                   path: compiled/
 
-    #upload:
-    #    needs: compile
-    #    runs-on: ubuntu-latest
-    #    environment:
-    #     name: github-pages
-    #     url: ${{ steps.deployment.outputs.page_url }}
-#
-    #    steps:
-    #        - name: Checkout Repository
-    #          uses: actions/checkout@v4
-    #          with:
-    #              fetch-depth: 0
-#
-    #        - name: Clean up old files in GitHub Pages
-    #          run: |
-    #              git rm -r --cached --ignore-unmatch * || true
-    #              git clean -fdx || true
-    #              git commit -m "Clean up old files" || true
-#
-    #        - name: Download compiled files artifact
-    #          uses: actions/download-artifact@v4
-    #          with:
-    #              name: compiled-typst-files
-    #              path: documents_compiled/
-#
-    #        - name: Restore Timestamps
-    #          uses: chetan/git-restore-mtime-action@v2
-#
-    #        - name: Generate Directory Listings
-    #          uses: jayanta525/github-pages-directory-listing@main
-    #          with:
-    #              FOLDER: documents_compiled
-    #          env:
-    #              TZ: Europe/Rome
-#
-    #        - name: Upload Artifact for Pages
-    #          uses: actions/upload-pages-artifact@v3
-    #          with:
-    #              name: pages
-    #              path: documents_compiled/
-#
-    #        - name: Deploy to GitHub Pages
-    #          id: deployment
-    #          uses: actions/deploy-pages@v4
-    #          with:
-    #              artifact_name: pages
+    upload:
+        needs: compile
+        runs-on: ubuntu-latest
+        environment:
+         name: github-pages
+         url: ${{ steps.deployment.outputs.page_url }}
+
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 0
+
+            - name: Clean up old files in GitHub Pages
+              run: |
+                  git rm -r --cached --ignore-unmatch * || true
+                  git clean -fdx || true
+                  git commit -m "Clean up old files" || true
+
+            - name: Download compiled files artifact
+              uses: actions/download-artifact@v4
+              with:
+                  name: compiled-typst-files
+                  path: documents_compiled/
+
+            - name: Restore Timestamps
+              uses: chetan/git-restore-mtime-action@v2
+
+            - name: Generate Directory Listings
+              uses: jayanta525/github-pages-directory-listing@main
+              with:
+                  FOLDER: documents_compiled
+              env:
+                  TZ: Europe/Rome
+
+            - name: Upload Artifact for Pages
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  name: pages
+                  path: documents_compiled/
+                  
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
+              with:
+                  artifact_name: pages
