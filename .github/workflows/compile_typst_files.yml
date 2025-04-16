@@ -4,6 +4,9 @@ on:
     push:
         branches:
             - feature/SCRUM-87-Automazione-versionamento
+    pull_request:
+        branches:
+            - feature/SCRUM-87-Automazione-versionamento
 
 
 permissions:
@@ -81,7 +84,7 @@ jobs:
               with:
                   name: pages
                   path: documents_compiled/
-                  
+
             - name: Deploy to GitHub Pages
               id: deployment
               uses: actions/deploy-pages@v4
