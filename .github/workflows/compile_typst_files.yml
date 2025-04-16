@@ -8,6 +8,7 @@ on:
         branches:
             - feature/SCRUM-87-Automazione-versionamento
 
+#TODO: Togliere feature e mettere main prima di fare il merge e togliere la rule relativa al push su github pages
 
 permissions:
   contents: write
