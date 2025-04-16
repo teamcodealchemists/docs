@@ -39,15 +39,15 @@ Per garantire una struttura coerente, ordinata e facilmente navigabile all'inter
   Indica il tipo di documento. Le possibili scelte sono:
   - `VI`: Verbale Interno  
   - `VE`: Verbale Esterno  
-  - `G`: Glossario  
+  - `Gls`: Glossario  
   - `PdQ`: Piano di Qualifica  
   - `PdP`: Piano di Progetto  
   - `AdR`: Analisi dei Requisiti  
   - `NdP`: Norme di Progetto
 
 - `VERSIONE`  
-  La versione corrente del documento, secondo le specifiche di versionamento (Vedi Norme di Progetto).  
-
+  La versione corrente del documento, secondo le specifiche di versionamento (Vedi Norme di Progetto).
+  > **Nota**: La versione del documento (`VERSIONE`) viene aggiunta automaticamente durante il processo di conversione del file. Non è necessario inserirla manualmente nel nome del file ma solo all'interno di esso.
 - `*` (modificatore del file)  
   Indica eventuali versioni alternative del file. Le opzioni disponibili sono:
 - `test`: Il documento è in stato di testing tecnico o operativo, da non considerarsi ufficiale.
