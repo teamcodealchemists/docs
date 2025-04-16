@@ -34,23 +34,12 @@ jobs:
             - name: List files in the repository
               run: ls -R
 
-            # Create folder and copy compiled files
-            - name: Create folder and copy compiled files
-              run: |
-               mkdir -p documents_compiled
-               find compiled -name "*.pdf" | while read file; do
-                rel_path="${file#compiled/}"
-                dest="documents_compiled/$rel_path"
-                mkdir -p "$(dirname "$dest")"
-                cp "$file" "$dest"
-               done
-
             # Create an artifact with the compiled files
             - name: Upload compiled files as artifact
               uses: actions/upload-artifact@v4
               with:
                   name: compiled-typst-files
-                  path: documents_compiled/documents/
+                  path: compiled/
 
     #upload:
     #    needs: compile
