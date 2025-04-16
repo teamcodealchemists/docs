@@ -47,10 +47,11 @@ Per garantire una struttura coerente, ordinata e facilmente navigabile all'inter
 
 - `VERSIONE`  
   La versione corrente del documento, secondo le specifiche di versionamento (Vedi Norme di Progetto).
-  > **Nota**: La versione del documento (`VERSIONE`) viene aggiunta automaticamente durante il processo di conversione del file. Non è necessario inserirla manualmente nel nome del file ma solo all'interno di esso.
+  > ⚠️ **Nota**: La versione del documento (`VERSIONE`) viene aggiunta automaticamente durante il processo di conversione del file. Non è necessario inserirla manualmente nel nome del file ma solo all'interno di esso. La versione del documento (`VERSIONE`) viene aggiunta automaticamente durante il processo di conversione del file. Non è necessario inserirla manualmente nel nome del file ma solo all'interno di esso.
 - `*` (modificatore del file)  
   Indica eventuali versioni alternative del file. Le opzioni disponibili sono:
-- `test`: Il documento è in stato di testing tecnico o operativo, da non considerarsi ufficiale.
+-- `test`: Il documento è in stato di testing tecnico o operativo, da non considerarsi ufficiale.
+-- `signed`: Il documento è stato firmato ufficialmente ed è considerato definitivo.
 
 Seguendo queste regole, sarà più semplice navigare e mantenere il repository.
 
