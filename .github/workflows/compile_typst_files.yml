@@ -3,7 +3,7 @@ name: Compile and Upload Typst Files
 on:
     push:
         branches:
-            - main
+            - feature/SCRUM-87-Automazione-versionamento
 
 
 permissions:
