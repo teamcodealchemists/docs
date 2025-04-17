@@ -70,6 +70,10 @@ jobs:
                   name: compiled-typst-files
                   path: documents_compiled/
 
+            - name: Create a json index file
+              id: index_cartella
+              run: python .github/workflows/scripts/index_cartella.py
+
             - name: Restore Timestamps
               uses: chetan/git-restore-mtime-action@v2
 
