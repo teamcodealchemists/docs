@@ -3,12 +3,10 @@ name: Compile and Upload Typst Files
 on:
     push:
         branches:
-            - feature/SCRUM-87-Automazione-versionamento
+            - main
     pull_request:
         branches:
-            - feature/SCRUM-87-Automazione-versionamento
-
-#TODO: Togliere feature e mettere main prima di fare il merge e togliere la rule relativa al push su github pages
+            - main
 
 permissions:
   contents: write
