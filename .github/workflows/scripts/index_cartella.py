@@ -1,5 +1,6 @@
 import os
 import json
+from urllib.parse import quote
 
 # Configura il percorso della cartella e il link base
 folder_path = "documents_compiled/"  # Cambia con il percorso della cartella desiderata
@@ -16,7 +17,7 @@ def create_index_by_folder(folder_path, base_link):
         index[folder_key] = []
         for file in files:
             file_path = os.path.relpath(os.path.join(root, file), folder_path)
-            file_link = f"{base_link}/{file_path.replace(os.sep, '/')}"
+            file_link = f"{base_link}/{quote(file_path.replace(os.sep, '/'))}"
             index[folder_key].append({"name": file, "link": file_link})
     return index
 
