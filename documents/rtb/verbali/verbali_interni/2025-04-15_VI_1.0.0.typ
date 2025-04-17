@@ -22,7 +22,7 @@
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
 
-    [1.0.0], [16/04/2025], [-], [R. Zangla], [Approvazione del documento],
+    [1.0.0], [17/04/2025], [-], [R. Zangla], [Approvazione del documento],
     [0.1.0], [15/04/2025], [N. Bolzon], [R. Zangla], [Prima stesura del documento],
 
 )
@@ -46,8 +46,8 @@
 
 // INSERIRE QUI CONTENUTO
   = 1. Informazioni generali
-    In data *15 aprile 2025*, dalle ore *15:00* alle ore *16:30*, è stata svolta, in modalità telematica sulla piattaforma _Discord_, la riunione interna del _Team Code Alchmists_.\
-    La riunione si è svolta, all'inizio del secondo sprint, a seguito di alcuni consigli ricevuti da parte dell'azienda _M31_ tramite i canali di comunicazione, secondo il seguente ordine del giorno:
+    In data *15 aprile 2025*, dalle ore *15:00* alle ore *16:30*, è stata svolta, in modalità telematica sulla piattaforma _Discord_, la riunione interna del _Team Code Alchemists_.\
+    La riunione si è svolta, all'inizio del secondo sprint, a seguito di alcuni consigli ricevuti da parte dell'azienda _M31_ tramite i canali di comunicazione ufficiali, secondo il seguente ordine del giorno:
 
     == 1.1 Ordine del Giorno
     + Analisi di criticità emerse sulla redazione dei verbali;
@@ -56,12 +56,12 @@
     
   #pagebreak()
   = 2. Dettagli della riunione
-  Il verbale iniziale viene redatto da *#p.nicolo* e come revisore *#p.ramona*.
+  Il verbale iniziale viene redatto da *#p.nicolo* e verificato da *#p.ramona*.
 
   == 2.1 Analisi di criticità emerse sulla redazione dei verbali
   A seguito di alcuni suggerimenti ricevuti in merito alla redazione dei verbali precedenti, successivamente trasmessi all’azienda per l’approvazione esterna, il _Team Code Alchemists_ ha definito una serie di nuove linee guida per la stesura dei verbali, con particolare attenzione a quelli destinati a interlocutori esterni. \
 
-  Nel corso della riunione, il Verbale Esterno del 04-04-2025 è stato revisionato in conformità alle indicazioni ricevute e nuovamente inviato all’azienda per l’approvazione. \
+  Nel corso della riunione, il Verbale Esterno del 04-04-2025 è stato revisionato in conformità alle indicazioni ricevute e nuovamente inviato all’azienda per richiedere la loro approvazione. \
 
   Tra le nuove disposizioni adottate, si evidenziano quelle riportate nel sotto-paragrafo seguente, con specifico riferimento all’introduzione di politiche di comunicazione scritta volte a garantire chiarezza, coerenza e professionalità, in particolare nei contesti di comunicazione esterna.
 
@@ -77,7 +77,7 @@
 
   Contestualmente, sulla scorta delle evidenze emerse dall’analisi, il gruppo procederà ora con lo studio di una possibile architettura del sistema e, parallelamente, con l’avvio dell’analisi dei casi d’uso.
 
-  == 2.2 Utilizzo di _git-flow_
+  == 2.3 Utilizzo di _git-flow_
   È stata avviata una discussione sull’adozione del modello *Git Flow* per la gestione delle repository#super("G") di progetto. Nel corso dell'incontro è stato illustrato il funzionamento del flusso, con particolare attenzione alla struttura basata sui rami principali _main_ e _develop_, e all’impiego di branch secondari dedicati allo sviluppo delle singole funzionalità. È stato chiarito come ciascuna tipologia di ramo risponda a uno scopo specifico all’interno del ciclo di vita del software, consentendo una gestione ordinata e controllata del processo di sviluppo. \
   È stata inoltre raccomandata, ove possibile, l’associazione dei branch relativi a nuove funzionalità alle corrispondenti issue tracciate su *Jira*, adottando una convenzione di nomenclatura coerente _(ad esempio: *feature/SPRINT-55-nome-feature*)_. \
   
@@ -96,7 +96,7 @@
     #let voci_tabella = (
     [D17], [Decisione circa la redazione dei verbali esterni],
     [D18], [Decisione circa l'utilizzo della nomenclatura e sull'uso dei branch di _git-flow_],
-    [D19], [Contattare azienda _M31_ per incontro],
+    [D19], [Contattare l'azienda _M31_ per concordare l'incontro],
     [A16], [Adozione di un file di politiche di comunicazione legato alla redazione dei Verbali Esterni],
     [DOC16], [Stesura del Verbale Interno del 15-04-2025],
   )
