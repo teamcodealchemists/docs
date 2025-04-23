@@ -58,13 +58,65 @@
 
 = 1. Introduzione
 == 1.1 Scopo del documento
-== 1.2 Scopo del prodotto
-== 1.3 Glossario
-== 1.4 Riferimenti
-=== 1.4.1 Riferimenti normativi
 
-- *Standard ISO/IEC 12207:1995* \
-  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")]\
-  Ultimo Accesso: \
-  
-=== 1.4.2 Riferimenti informativi
+Il presente documento ha lo scopo di definire le modalità di qualifica e verifica del prodotto software. Esso rappresenta un indice di valutazione del prodotto software, delle sue componenti e degli strumenti utilizzati, al fine di garantire la qualità del prodotto finale e un continuo miglioramento del processo di sviluppo.
+
+Il Piano di Qualifica#super[G] si divide in tre sezioni principali:
+
+=== 1.1.1 Piano della Qualità
+- Fissare gli standard del prodotto e i tipi di test da effettuare.
+- Indicare gli obbiettivi e le modalità di qualifica.
+- Stabilisce le regole da seguire.
+
+=== 1.1.2 Controllo di Qualità
+- Attuare e assicurare la conformità con le regole da seguire e il Way of Working#super[G].
+- Viene monitorato l'operato tramite il cruscotto di valutazione.
+- Si effettua il Quality Assurance passo-passo per prevenire e mitigare i rischi e verificare la soddisfazione dei requisiti.
+
+=== 1.1.3 Miglioramento continuo
+La qualità non è fissa, ma va migliorata con il tempo:
+- Si impara dagli errori, si sperimenta e si migliora progressivamente.
+- L'obbiettivo è l'aumento dell'efficienza e dell'efficacia dei processi.
+
+== 1.2 Glossario
+Per una corretta comprensione del documento, viene fornito un glossario dei termini utilizzati. Ogni termine è indicato da una "#super[G]" in apice alla parola.
+Per trovare il significato del termine, è possibile consultare il glossario al seguente indirizzo: 
+#underline[#link("https://teamcodealchemists.github.io/glossario.html")]\
+== 1.3 Riferimenti
+
+=== 1.3.1 Riferimenti normativi  
+
+- *Capitolato d'appalto* \
+  *C6 - Sistema di Gestione di un Magazzino Distribuito* \
+  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")]\
+
+=== 1.3.2 Riferimenti informativi
+
+- *Glossario#super[G]* \
+  #underline[#link("https://teamcodealchemists.github.io/glossario.html")]
+
+= 2. Metriche di Qualità
+
+Per garantire un'analisi oggettiva e sistematica della qualità del prodotto software, si fa riferimento allo standard ISO/IEC 14598:1999, il quale propone un metodo per associare metriche quantitative a specifiche sotto-caratteristiche di qualità individuate nello standard ISO 9126.
+
+In particolare, le metriche sono utilizzate per:
+
+- Valutare attributi interni (come la struttura del codice) e attributi esterni (come l'usabilità e l'affidabilità percepita dall'utente).
+
+- Supportare il monitoraggio dell'evoluzione del prodotto durante le fasi di sviluppo e validazione.
+
+- Fornire indicatori oggettivi del raggiungimento degli standard prefissati nel Piano della Qualità.
+
+Sebbene non sempre sia semplice adottare misurazioni formali, l'obiettivo è mantenere un approccio il più possibile oggettivo e ripetibile, riducendo soggettività nelle valutazioni.
+
+== 2.1 Processi Primari
+=== 2.1.1 Fornitura
+=== 2.1.2 Sviluppo
+== 2.2 Processi di Supporto
+== 2.3 Processi Organizzativi
+
+= 3. Metodologie di Testing
+
+= 4. Cruscotto di Valutazione
+
+= 5. Continuo Miglioramento
