@@ -5,7 +5,7 @@ import json
 
 # Percorsi dei file
 documenti_dir = "documents"
-glossario_file = "documents/glossario/glossario.typ"
+glossario_file = "documents/glossario/Gls.typ"
 
 def carica_glossario(glossario_path):
     """Carica le parole del glossario da un file, rimuovendo caratteri speciali e spazi all'inizio e alla fine, prendendo solo le linee che iniziano con '-'."""
@@ -19,30 +19,34 @@ def debug_print(glossario):
         print(f"  - {parola}")
 
 def verifica_file(file_path, glossario):
-    """Verifica che tutte le parole del glossario siano segnate con la super [G] in un file."""
+    """Verifica che tutte le parole del glossario siano segnate con la [G] o ("G") in un file."""
     errori = 0
     with open(file_path, 'r', encoding='utf-8') as file:
         contenuto = file.readlines()
         print(f"\033[94mControllando il file: {file_path}\033[0m")  # Nome del file in blu
         for parola in glossario:
             for numero_riga, riga in enumerate(contenuto, start=1):
-                if parola in riga.lower():
-                    # Verifica che la parola sia seguita da #super[G], ignorando maiuscole e minuscole
-                    pattern = re.escape(parola) + r"#super\[g\]"
+                if re.search(rf"\b{re.escape(parola)}\b", riga, re.IGNORECASE):
+                    # Verifica che la parola sia seguita da #super[G] o #super("G"), ignorando maiuscole e minuscole
+                    pattern = rf"\b{re.escape(parola)}\b\s*#super\[\s*\"?G\"?\s*\]|\b{re.escape(parola)}\b\s*#super\(\s*\"?G\"?\s*\)"
                     if not re.search(pattern, riga, re.IGNORECASE):
-                        print(f"\033[91m  - Errore: la parola '{parola}' nella riga {numero_riga} non è segnata con la [G].\033[0m")  # Errore in rosso
+                        print(f"\033[91m  - Errore: la parola '{parola}' nella riga {numero_riga} non è segnata con la [G] o (G).\033[0m")  # Errore in rosso
                         errori += 1
                     else:
                         print(f"\033[92m  - Parola trovata: '{parola}' nella riga {numero_riga}\033[0m")  # Parola trovata in verde
     return errori
 
 def verifica_documenti(documenti_dir, glossario):
-    """Verifica tutti i file nella cartella documenti, escludendo file specifici in una blacklist."""
-    blacklist = {"glossario.typ"}  # File da escludere dalla verifica
+    """Verifica tutti i file nella cartella documenti, escludendo file specifici in una blacklist e una cartella specifica."""
+    blacklist_file = {"Gls.typ"}  # File da escludere dalla verifica
+    blacklist_cartella = {"candidatura"}  # Cartelle da escludere dalla verifica
     errori_totali = 0
     for root, _, files in os.walk(documenti_dir):
+        # Salta le cartelle nella blacklist
+        if any(blacklisted in root for blacklisted in blacklist_cartella):
+            continue
         for file_name in files:
-            if file_name.endswith(".typ") and file_name not in blacklist:  # Controlla solo file di testo non in blacklist
+            if file_name.endswith(".typ") and file_name not in blacklist_file:  # Controlla solo file di testo non in blacklist
                 file_path = os.path.join(root, file_name)
                 errori_totali += verifica_file(file_path, glossario)
     return errori_totali
