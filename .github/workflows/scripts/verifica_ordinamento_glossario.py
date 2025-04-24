@@ -36,4 +36,4 @@ def verifica_ordinamento_glossario(file_path, output_json_path):
     with open(output_json_path, 'w', encoding='utf-8') as json_file:
         json.dump(result, json_file, ensure_ascii=False, indent=4)
 
-verifica_ordinamento_glossario('documents/glossario/glossario.typ', '.github/badges/ordinamento_glossario_badge.json')
+verifica_ordinamento_glossario('documents/glossario/Gls.typ', '.github/badges/ordinamento_glossario_badge.json')

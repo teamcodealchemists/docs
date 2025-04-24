@@ -4,7 +4,9 @@ on:
     push:
         branches:
             - main
-
+    pull_request:
+        branches:
+            - main
 
 permissions:
   contents: write
@@ -22,43 +24,24 @@ jobs:
 
             - uses: typst-community/setup-typst@v4
 
-            #Compile the .typ file(s) while preserving folder structure
-            - name: Compile .typ files
-              run: |
-                  mkdir -p compiled
-                    find documents -name "*.typ" | while read file; do
-                      if [[ "$file" != *"Lettera di Presentazione.typ"* ]]; then
-                        output_dir="compiled/$(dirname "$file")"
-                        mkdir -p "$output_dir"
-                        signed_pdf="$(dirname "$file")/$(basename "${file%.typ}_signed.pdf")"
-                        if [[ -f "$signed_pdf" ]]; then
-                          echo "Signed PDF exists for $file, skipping compilation and copying signed PDF."
-                          cp "$signed_pdf" "$output_dir/$(basename "${file%.typ}.pdf")"
-                        else
-                          typst compile --root=/ "$file" "$output_dir/$(basename "${file%.typ}.pdf")"
-                        fi
-                      fi
-                    done
-                    echo "Compiled files:"
-                    find compiled -type f
+            - name: Configurazione di Python
+              uses: actions/setup-python@v5
+              with:
+                python-version: '3.x'
 
-            # Create folder and copy compiled files
-            - name: Create folder and copy compiled files
-              run: |
-               mkdir -p documents_compiled
-               find compiled -name "*.pdf" | while read file; do
-                rel_path="${file#compiled/}"
-                dest="documents_compiled/$rel_path"
-                mkdir -p "$(dirname "$dest")"
-                cp "$file" "$dest"
-               done
+            - name: Converte i file .typ in .pdf
+              id: compila_file_typ
+              run: python .github/workflows/scripts/compila_file_typ.py
+
+            - name: List files in the repository
+              run: ls -R
 
             # Create an artifact with the compiled files
             - name: Upload compiled files as artifact
               uses: actions/upload-artifact@v4
               with:
                   name: compiled-typst-files
-                  path: documents_compiled/documents/
+                  path: compiled/
 
     upload:
         needs: compile
@@ -84,6 +67,10 @@ jobs:
               with:
                   name: compiled-typst-files
                   path: documents_compiled/
+
+            - name: Create a json index file
+              id: index_cartella
+              run: python .github/workflows/scripts/index_cartella.py
 
             - name: Restore Timestamps
               uses: chetan/git-restore-mtime-action@v2

@@ -1,6 +1,6 @@
-![err_parole_glossario_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Ffeature%2FSCRUM-59-Continuazione-NdP%2F.github%2Fbadges%2Ferr_parole_glossario_badge.json)
-![gulpease_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Ffeature%2FSCRUM-59-Continuazione-NdP%2F.github%2Fbadges%2Fgulpease_badge.json)
-![ordinamento_glossario_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Ffeature%2FSCRUM-59-Continuazione-NdP%2F.github%2Fbadges%2Fordinamento_glossario_badge.json)
+![err_parole_glossario_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Fdevelop%2F.github%2Fbadges%2Ferr_parole_glossario_badge.json)
+![gulpease_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Fdevelop%2F.github%2Fbadges%2Fgulpease_badge.json)
+![ordinamento_glossario_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Fdevelop%2F.github%2Fbadges%2Fordinamento_glossario_badge.json)
 
 # 🧪 Repository Typst per la Documentazione del Progetto - Code Alchemists (Gruppo 21)
 
@@ -39,24 +39,25 @@ Per garantire una struttura coerente, ordinata e facilmente navigabile all'inter
   Indica il tipo di documento. Le possibili scelte sono:
   - `VI`: Verbale Interno  
   - `VE`: Verbale Esterno  
-  - `G`: Glossario  
+  - `Gls`: Glossario  
   - `PdQ`: Piano di Qualifica  
   - `PdP`: Piano di Progetto  
   - `AdR`: Analisi dei Requisiti  
   - `NdP`: Norme di Progetto
 
-- `VERSIONE`  
-  La versione corrente del documento, secondo le specifiche di versionamento (Vedi Norme di Progetto).  
-
-- `*` (modificatore del file)  
-  Indica eventuali versioni alternative del file. Le opzioni disponibili sono:
-- `test`: Il documento è in stato di testing tecnico o operativo, da non considerarsi ufficiale.
+- `VERSIONE` La versione corrente del documento, secondo le specifiche di versionamento (Vedi Norme di Progetto).
+  > ⚠️ **Nota**: La versione del documento (`VERSIONE`) viene aggiunta automaticamente durante il processo di conversione del file. Non è necessario inserirla manualmente nel nome del file ma solo all'interno di esso. La versione del documento (`VERSIONE`) viene aggiunta automaticamente durante il processo di conversione del file. Non è necessario inserirla manualmente nel nome del file ma solo all'interno di esso.
+- `*` (modificatore del file) Indica eventuali versioni alternative del file. Le opzioni disponibili sono:
+-- `test`: Il documento è in stato di testing tecnico o operativo, da non considerarsi ufficiale.
+-- `signed`: Il documento è stato firmato ufficialmente ed è considerato definitivo.
 
 Seguendo queste regole, sarà più semplice navigare e mantenere il repository.
 
 ## Verifica
 
-Per supportare il processo di verifica, è stata implementata un'azione automatizzata che esegue diversi script di controllo del testo. Puoi verificare lo stato dell'ultima modifica tramite i badge di stato presenti all'inizio del documento o consultando i log dell'azione per maggiori dettagli.
+Per la verifica dei file di documentazione, è necessario aprire una pull request dalla feature branch di lavoro del documento verso la branch `develop`. Sarà compito del **verificatore** esaminare i cambiamenti, segnare la verifica e chiudere la pull request e procedere con il merge su `develop`.
+
+Inoltre per supportare il processo di verifica, è stata implementata un'azione automatizzata che esegue diversi script di controllo del testo. Puoi verificare lo stato dell'ultima modifica tramite i badge di stato presenti all'inizio del documento o consultando i log dell'azione per maggiori dettagli.
 
 ### Controlli effettuati:
 - **Parole del Glossario non segnate**: Indica il numero di parole trovate nella documentazione che sono presenti nel glossario ma non contrassegnate con la lettera "G" come apice.
