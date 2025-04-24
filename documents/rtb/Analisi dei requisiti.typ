@@ -100,7 +100,7 @@ Potrà inoltre essere consultato da altri soggetti coinvolti nel processo di svi
 
 
 /*
-Il documento qui redatto serve per fornire una panoramica quanto piu' possibile dettagliata del prodotto preso in considerazione, meglio descritto al punto 1.2. All' interno È possibile trovare in particolare, la descrizione delle richieste, come si È previsto di implementarle, dal punto di vista architetturale e tecnologico, tutti i riferimenti normativi e informativi utili, i casi d'uso del prodotto dettagliati, e una lista dei diversi requsiti 
+Il documento qui redatto serve per fornire una panoramica quanto piu' possibile dettagliata del prodotto preso in considerazione, meglio descritto al punto 1.2. All' interno È possibile trovare in particolare, la descrizione delle richieste, come si È previsto di implementarle, dal punto di vista architetturale e tecnologico, tutti i riferimenti normativi e informativi utili, i casi d'uso del prodotto dettagliati, e una lista dei diversi requisti 
 */
 
 
@@ -139,10 +139,10 @@ Dopo un'esaustiva ricerca, sono stati identificati alcuni punti chiave che saran
   Ogni microservizio dovrebbe avere un proprio database, e può scegliere il proprio stack tecnologico, in modo da garantire la massima flessibilità e indipendenza.\
 - *Architettura Event-Driven:* l'architettura del sistema dovrebbe essere basata su eventi, in modo da garantire una comunicazione efficiente tra i microservizi e una gestione ottimale delle risorse.\
   In questo modo, ogni microservizio può reagire a eventi specifici e comunicare con gli altri microservizi in modo asincrono, migliorando le prestazioni e la reattività del sistema.\
-- *Tipi di comunicazioni:* Dovremmo scegliere se utilizzare una comunicazione sincrona (REST, gRPC), o asincrona (Kafka o NATS) tra i microservizi.\
-- *Gestione dei dati:* abbiamo notato che molti progetti utilizzano sia database SQL che NoSQL, a seconda delle esigenze specifiche del progetto.\
-  In generale, i database SQL sono più adatti per dati strutturati e relazionali, mentre i database NoSQL sono più adatti per dati non strutturati e distribuiti.\
-  Per il nostro progetto, potrebbe essere utile utilizzare entrambi i tipi di database, a seconda delle esigenze specifiche di ciascun microservizio.\
+- *Tipi di comunicazioni:* È necessario determinare se utilizzare una comunicazione sincrona (REST, gRPC) o asincrona (Kafka o NATS) tra i microservizi.\
+- *Gestione dei dati:* diversi progetti analizzati adottano sia database SQL che NoSQL, in base alle esigenze specifiche.\
+  I database SQL risultano più indicati per dati strutturati e relazionali, mentre i database NoSQL si prestano meglio a dati non strutturati e distribuiti.\
+  Per il progetto in questione, potrebbe essere vantaggioso combinare entrambi i tipi di database, selezionandoli in base alle necessità di ciascun microservizio.\
 - *Coerenza di dati:* è importante garantire la coerenza dei dati tra i diversi microservizi, soprattutto in un sistema distribuito.\
   Ci sono diverse strategie per garantire la coerenza dei dati, come il pattern Saga, l'Outbox pattern, transazioni distribuite, o il modello coerenza finale
 - *Containerizzazione:* l'uso di container (Docker) è diventato uno standard de facto per la distribuzione e l'esecuzione di microservizi.\
@@ -201,7 +201,7 @@ Verranno ora elencati i requisiti del sistema, che sono stati suddivisi in quatt
 - *Requisiti non Funzionali:* sono i requisiti che definiscono le caratteristiche qualitative del sistema, come prestazioni, usabilità, affidabilità e manutenibilità. Questi requisiti non riguardano direttamente le funzionalità del sistema, ma sono comunque cruciali per garantire un'esperienza utente soddisfacente e un funzionamento efficiente del sistema.
 
 == Fonti dei requisiti
-Le fonti dei requisiti sono i documenti e le informazioni da cui sono stati estratti i requisiti stessi, come il capitolato d'appalto, le riunioni con il committente.\
+Le fonti dei requisiti sono i documenti e le informazioni da cui sono stati estratti i requisiti stessi, come il capitolato d'appalto e le riunioni con il committente.\
 Inoltre, alcuni requisiti sono stati derivati dall'analisi allo stato dell'arte e dall'analisi dei casi d'uso.
 
 Tutti i requisiti presenteranno la fonte di provenienza.
@@ -215,11 +215,11 @@ I requisiti funzionali sono preceduti dal prefisso "RF", i requisiti di sicurezz
 - *S* sta per "#strong[S]icurezza"
 - *nF* sta per "#strong[n]on #strong[F]unzionale"
 
-//Aggiungere il fatto di avere vincoli desiderabili: riassortimento preditiivo, GUI (fonte: riunione con M31)
+//Aggiungere il fatto di avere vincoli desiderabili: riassortimento predittivo, GUI (fonte: riunione con M31)
 Alcuni requisiti funzionali sono stati definiti come *"desiderabili"*, in quanto non strettamente necessari ma in grado di apportare un valore aggiunto riconoscibile.\
 Per indicare che un requisito è desiderabile, è stato deciso di aggiungere la lettera *"D"* (Desiderabile) al prefisso del requisito, per indicare che il requisito è desiderabile.\ *RFD*, ad esempio, sta per "Requisito Funzionale Desiderabile".\
 
-Essendoci presenti anche dei requisiti *opzionali*, è stato deciso di aggiunngere la lettera *"O"* (Opzionale) al prefisso del requisito, per indicare che il requisito è opzionale.\ *RFO*, ad esempio, sta per "Requisito Funzionale Opzionale".\
+Essendoci presenti anche dei requisiti *opzionali*, è stato deciso di aggiungere la lettera *"O"* (Opzionale) al prefisso del requisito, per indicare che il requisito è opzionale.\ *RFO*, ad esempio, sta per "Requisito Funzionale Opzionale".\
 
 Inoltre, i requisiti forniti dal capitolato sono molto generali e non specificano in modo dettagliato le funzionalità richieste.
 Per questo motivo, è stato deciso di scomporre i requisiti in requisiti più specifici, cioè chi deve fare cosa, e in che modo.\
@@ -292,7 +292,7 @@ Quindi, la struttura del codice di un requisito è la seguente:
   [*RF08/02*], [Il sistema deve visualizzare i livelli di inventario in ogni magazzino], [capitolato],
   [*RF08/03*], [Il sistema deve aggiornare i dati in tempo reale], [capitolato],
   
-  [*RF09*], [*Permettere il tresferimento di prodotti*], [capitolato],
+  [*RF09*], [*Permettere il trasferimento di prodotti*], [capitolato],
   [*RF09/01*], [Il sistema deve consentire la creazione di ordini di trasferimento], [capitolato],
   [*RF09/02*], [Il sistema deve tracciare il trasferimento dei prodotti], [capitolato],
   [*RF09/03*], [Il sistema deve aggiornare lo stato del trasferimento in tempo reale], [capitolato],
