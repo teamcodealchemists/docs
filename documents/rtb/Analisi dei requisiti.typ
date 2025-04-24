@@ -74,19 +74,19 @@
 #v(0.5cm)
 Il presente documento viene redatto per _l'analisi dei requisiti_ #super[G].
 
-Il presente documento di Analisi dei Requisiti ha lo scopo di fornire una panoramica quanto più possibile dettagliata del prodotto software da sviluppare. Esso rappresenta un riferimento e una linea guida fondamentale per la progettazione, l’implementazione e il collaudo del sistema, garantendo che il prodotto finale soddisfi pienamente le esigenze e le aspettative del committente.
+Il presente documento di Analisi dei Requisiti ha lo scopo di fornire una panoramica quanto più possibile dettagliata del prodotto software da sviluppare. Esso rappresenta un riferimento e una linea guida fondamentale per la progettazione, l'implementazione e il collaudo del sistema, garantendo che il prodotto finale soddisfi pienamente le esigenze e le aspettative del committente.
 
-All’interno del documento sono descritte le richieste del committente, le modalità previste per la loro implementazione dal punto di vista architetturale e tecnologico, nonché i riferimenti normativi e informativi utili. In particolare, vengono forniti una descrizione approfondita dei Casi d’Uso e una lista completa dei requisiti funzionali e non funzionali del sistema.
+All'interno del documento sono descritte le richieste del committente, le modalità previste per la loro implementazione dal punto di vista architetturale e tecnologico, nonché i riferimenti normativi e informativi utili. In particolare, vengono forniti una descrizione approfondita dei Casi d'Uso e una lista completa dei requisiti funzionali e non funzionali del sistema.
 
-Questo documento mira a offrire una visione strutturata e completa del sistema software, delineando i bisogni degli utenti in base alle diverse categorie individuate durante l’analisi del capitolato e gli incontri con il committente. Sono inoltre chiaramente identificati gli attori coinvolti nel sistema e descritte le componenti principali del programma.
+Questo documento mira a offrire una visione strutturata e completa del sistema software, delineando i bisogni degli utenti in base alle diverse categorie individuate durante l'analisi del capitolato e gli incontri con il committente. Sono inoltre chiaramente identificati gli attori coinvolti nel sistema e descritte le componenti principali del programma.
 
-Per agevolare la comprensione, verranno utilizzati i Diagrammi dei Casi d’Uso per visualizzare le interazioni tra attori e sistema. I requisiti identificati sono classificati come segue:
+Per agevolare la comprensione, verranno utilizzati i Diagrammi dei Casi d'Uso per visualizzare le interazioni tra attori e sistema. I requisiti identificati sono classificati come segue:
 
 - *Obbligatori:* irrinunciabili e imprescindibili per il corretto funzionamento del sistema;
 
 - *Desiderabili:* non strettamente necessari ma in grado di apportare un valore aggiunto riconoscibile;
 
-- *Opzionali:* relativamente utili oppure contrattabili per un’eventuale implementazione futura.
+- *Opzionali:* relativamente utili oppure contrattabili per un'eventuale implementazione futura.
 
 Il documento è stato redatto dagli Analisti del team di progetto ed è rivolto a tutti gli interessati ed in particolare: 
 
@@ -100,7 +100,7 @@ Potrà inoltre essere consultato da altri soggetti coinvolti nel processo di svi
 
 
 /*
-Il documento qui redatto serve per fornire una panoramica quanto piu' possibile dettagliata del prodotto preso in considerazione, meglio descritto al punto 1.2. All' interno e' possibile trovare in particolare, la descrizione delle richieste, come si e' previsto di implementarle, dal punto di vista architetturale e tecnologico, tutti i riferimenti normativi e informativi utili, i casi d'uso del prodotto dettagliati, e una lista dei diversi requsiti 
+Il documento qui redatto serve per fornire una panoramica quanto piu' possibile dettagliata del prodotto preso in considerazione, meglio descritto al punto 1.2. All' interno È possibile trovare in particolare, la descrizione delle richieste, come si È previsto di implementarle, dal punto di vista architetturale e tecnologico, tutti i riferimenti normativi e informativi utili, i casi d'uso del prodotto dettagliati, e una lista dei diversi requsiti 
 */
 
 
@@ -110,17 +110,17 @@ Il documento qui redatto serve per fornire una panoramica quanto piu' possibile 
 == Descrizione del prodotto
 #v(0.5cm)
 
-Il progetto ha l’obiettivo di sviluppare un sistema intelligente per la gestione distribuita dell’inventario in una rete di magazzini geograficamente separati. In scenari logistici complessi, come quelli che prevedono la cooperazione tra più sedi operative, è fondamentale garantire disponibilità continua delle scorte, ridurre i tempi di inattività e ottimizzare il flusso di materiali.
+Il progetto ha l'obiettivo di sviluppare un sistema intelligente per la gestione distribuita dell'inventario in una rete di magazzini geograficamente separati. In scenari logistici complessi, come quelli che prevedono la cooperazione tra più sedi operative, è fondamentale garantire disponibilità continua delle scorte, ridurre i tempi di inattività e ottimizzare il flusso di materiali.
 
-Il sistema dovrà permettere di rilevare in tempo reale situazioni critiche, come carenze di prodotto in una sede e surplus in un’altra, intervenendo automaticamente o suggerendo azioni correttive di trasferimento o riassortimento. Sarà inoltre in grado di gestire eventi imprevisti, come l’indisponibilità temporanea di un magazzino, garantendo la continuità operativa attraverso un bilanciamento intelligente delle risorse nei magazzini vicini.
+Il sistema dovrà permettere di rilevare in tempo reale situazioni critiche, come carenze di prodotto in una sede e surplus in un'altra, intervenendo automaticamente o suggerendo azioni correttive di trasferimento o riassortimento. Sarà inoltre in grado di gestire eventi imprevisti, come l'indisponibilità temporanea di un magazzino, garantendo la continuità operativa attraverso un bilanciamento intelligente delle risorse nei magazzini vicini.
 
-Una delle componenti chiave sarà la *visibilità centralizzata e in tempo reale* di tutte le scorte distribuite. Il sistema offrirà funzionalità avanzate per il monitoraggio, la sincronizzazione e l’aggiornamento dell’inventario, supportando decisioni rapide e affidabili.
+Una delle componenti chiave sarà la *visibilità centralizzata e in tempo reale* di tutte le scorte distribuite. Il sistema offrirà funzionalità avanzate per il monitoraggio, la sincronizzazione e l'aggiornamento dell'inventario, supportando decisioni rapide e affidabili.
 
-Sarà adottata *un’architettura scalabile a microservizi*, che garantisca alta disponibilità, interoperabilità tra i nodi della rete, e gestione efficiente del carico, anche in presenza di numerose richieste simultanee. Ogni nodo della rete – cioè ciascun magazzino – potrà operare in modo autonomo, mantenendo però sincronizzazione con un sistema centrale tramite servizi cloud.
+Sarà adottata *un'architettura scalabile a microservizi*, che garantisca alta disponibilità, interoperabilità tra i nodi della rete, e gestione efficiente del carico, anche in presenza di numerose richieste simultanee. Ogni nodo della rete – cioè ciascun magazzino – potrà operare in modo autonomo, mantenendo però sincronizzazione con un sistema centrale tramite servizi cloud.
 
-Il progetto prevede anche *l’integrazione di modelli predittivi* per il riassortimento, sfruttando dati storici, pattern di consumo e stagionalità per anticipare la domanda e ridurre il rischio di esaurimento scorte. M31 supporterà il progetto fornendo un dataset pubblico e una figura tecnica di riferimento per l’analisi dei dati e lo sviluppo dei modelli.
+Il progetto prevede anche *l'integrazione di modelli predittivi* per il riassortimento, sfruttando dati storici, pattern di consumo e stagionalità per anticipare la domanda e ridurre il rischio di esaurimento scorte. M31 supporterà il progetto fornendo un dataset pubblico e una figura tecnica di riferimento per l'analisi dei dati e lo sviluppo dei modelli.
 
-L’obiettivo finale è realizzare una *piattaforma robusta e flessibile* che migliori la resilienza e l’efficienza dell’intera rete logistica, assicurando precisione, tempestività e scalabilità nelle operazioni di gestione dell’inventario.
+L'obiettivo finale è realizzare una *piattaforma robusta e flessibile* che migliori la resilienza e l'efficienza dell'intera rete logistica, assicurando precisione, tempestività e scalabilità nelle operazioni di gestione dell'inventario.
 
 === Architettura
 
@@ -152,13 +152,13 @@ Dopo un'esaustiva ricerca, sono stati identificati alcuni punti chiave che saran
   Ci sono diverse strategie per garantire la resilienza del sistema, come il pattern Circuit Breaker, il retry pattern, e l'uso di meccanismi di failover e bilanciamento del carico.\
 - *Logging:* è importante implementare un sistema di logging centralizzato per monitorare le attività e le prestazioni del sistema.\
   Ci sono diversi strumenti e librerie disponibili per implementare il logging centralizzato, come ELK stack (Elasticsearch, Logstash, Kibana), Grafana Loki, o Prometheus.\
-- Dovremmo valutare la necessità e la complessità di *API Gateway* e *Service Discovery*.\
+- Valutazione della necessità e della complessità di *API Gateway* e *Service Discovery*.\
   L'API Gateway funge da punto di accesso centrale per le richieste degli utenti e può gestire l'autenticazione, la registrazione, il bilanciamento del carico e altre funzionalità.\
   La Service Discovery consente ai microservizi di trovare e comunicare tra loro in modo dinamico, senza la necessità di configurazioni statiche.
 
 == Il Glossario
 #v(0.5cm)
-In questo documento potrebbero essere presenti parole e terminologie complesse, che potrebbero non essere chiare a tutti, anche in relazione al contesto in cui vengono usate. Per questo motivo, e' stato creato un glossario, che contiene le definizioni di alcune parole e termini utilizzati nel documento.
+In questo documento potrebbero essere presenti parole e terminologie complesse, che potrebbero non essere chiare a tutti, anche in relazione al contesto in cui vengono usate. Per questo motivo, È stato creato un glossario, che contiene le definizioni di alcune parole e termini utilizzati nel documento.
 
 Le parole che possiedono un riferimento al glossario vengono evidenziate come segue: *parola*#super[G].
 
@@ -256,9 +256,9 @@ Quindi, la struttura del codice di un requisito è la seguente:
   [*RF01/02*], [Il sistema deve identificare quando le scorte scendono sotto una certa soglia], [capitolato],
   
   [*RF02*], [*Trasferimento di scorte da un magazzino ad un altro*], [capitolato],
-  [*RF02/01*], [Il sistema deve consentire l’invio di richieste di trasferimento tra magazzini],[capitolato],
+  [*RF02/01*], [Il sistema deve consentire l'invio di richieste di trasferimento tra magazzini],[capitolato],
   [*RF02/02*], [Il sistema deve validare la disponibilità delle scorte nel magazzino di origine], [capitolato],
-  [*RF02/03*], [Il sistema deve aggiornare l’inventario#super[G] di entrambi i magazzini coinvolti], [capitolato],
+  [*RF02/03*], [Il sistema deve aggiornare l'inventario#super[G] di entrambi i magazzini coinvolti], [capitolato],
   
   [*RF03*], [*Rilevamento delle scorte minime necessarie e mantenimento*], [capitolato],
   [*RF03/01*], [Il sistema deve calcolare le scorte minime necessarie per ciascun prodotto#super[G]], [capitolato],
@@ -268,7 +268,7 @@ Quindi, la struttura del codice di un requisito è la seguente:
   [*RF04*], [*Bilanciamento delle scorte, il più possibile, in ogni magazzino*], [capitolato],
   [*RF04/01*], [Il sistema deve analizzare la distribuzione delle scorte tra i magazzini], [capitolato],
   [*RF04/02*], [Il sistema deve identificare squilibri nelle scorte, valutando la distribuzione attuale], [capitolato],
-  [*RF04/03*], [Il sistema deve proporre trasferimenti per bilanciare le scorte e migliorare l’efficienza], [capitolato],
+  [*RF04/03*], [Il sistema deve proporre trasferimenti per bilanciare le scorte e migliorare l'efficienza], [capitolato],
   [*RF04/04*], [Il sistema deve automatizzare il processo di riassortimento], [capitolato],
   [*RF04/05*], [Il sistema deve poter attivare trasferimenti interni se necessario], [capitolato],
   [*RF04/06*], [Il sistema deve garantire che le scorte non scendano sotto i livelli di sicurezza], [capitolato],
@@ -299,24 +299,24 @@ Quindi, la struttura del codice di un requisito è la seguente:
   [*RF09/04*], [Il sistema deve aggiornare automaticamente gli inventari coinvolti], [capitolato],
 
   [*RF10*], [*Sistema distribuito, scalabile, con microservizi*], [capitolato],
-  [*RF10/01*], [E’ necessario progettare l’architettura del sistema utilizzando microservizi#super[G]], [capitolato],
-  [*RF10/02*], [E’ necessario garantire la scalabilità#super[G] orizzontale del sistema], [capitolato],
-  [*RF10/03*], [E’ necessario assicurare l’indipendenza e l’interoperabilità dei microservizi], [capitolato],
+  [*RF10/01*], [È necessario progettare l'architettura del sistema utilizzando microservizi#super[G]], [capitolato],
+  [*RF10/02*], [È necessario garantire la scalabilità#super[G] orizzontale del sistema], [capitolato],
+  [*RF10/03*], [È necessario assicurare l'indipendenza e l'interoperabilità dei microservizi], [capitolato],
 
   [*RF11*], [*Operazioni distribuite, prestazioni elevate anche in alto carico di dati e richieste simultanee*], [capitolato],
-  [*RF11/01*], [E’ necessario implementare un bilanciamento del carico tra i servizi#super[G]], [capitolato],
-  [*RF11/02*], [E’ necessario monitorare e gestire le risorse per mantenere le prestazioni], [capitolato],
+  [*RF11/01*], [È necessario implementare un bilanciamento del carico tra i servizi#super[G]], [capitolato],
+  [*RF11/02*], [È necessario monitorare e gestire le risorse per mantenere le prestazioni], [capitolato],
   
   [*RF12*], [*Suggerimento/automatizzazione azioni di riassortimento e trasferimento tra magazzini*], [capitolato],
-  [*RF12/01*], [E’ necessario fornire raccomandazioni per il riassortimento e i trasferimenti], [capitolato],
-  [*RF12/02*], [L’utente deve approvare le azioni di riassortimento e trasferimento], [capitolato],
-  [*RF12/03*], [E’ necessario automatizzare l’esecuzione di tali azioni quando approvate], [capitolato],  
+  [*RF12/01*], [È necessario fornire raccomandazioni per il riassortimento e i trasferimenti], [capitolato],
+  [*RF12/02*], [L'utente deve approvare le azioni di riassortimento e trasferimento], [capitolato],
+  [*RF12/03*], [È necessario automatizzare l'esecuzione di tali azioni quando approvate], [capitolato],  
 
   [*RF13*], [*Aggiornamenti in tempo reale su prelievi, ricezioni (ricevimento merci) e trasferimenti*], [capitolato],
   [*RF13/01*], [Il sistema deve registrare ogni operazione di inventario], [capitolato],
   [*RF13/02*], [Il sistema deve aggiornare immediatamente i dati nel sistema centrale], [capitolato],
   
-  [*RF14*], [*Gestione aggiornamenti simultanei dell’inventario da magazzini differenti, anche per i singoli magazzini quando ricevono ordini per uno stesso prodotto*], [capitolato],
+  [*RF14*], [*Gestione aggiornamenti simultanei dell'inventario da magazzini differenti, anche per i singoli magazzini quando ricevono ordini per uno stesso prodotto*], [capitolato],
   [*RF14/01*], [Il sistema deve gestire le modifiche concorrenti (in simultanea) ai dati di inventario], [capitolato],
   [*RF14/02*], [Il sistema deve implementare meccanismi di controllo delle versioni], [capitolato],
   [*RF14/03*], [Il sistema deve risolvere conflitti di aggiornamento], [capitolato],
@@ -331,8 +331,8 @@ Quindi, la struttura del codice di un requisito è la seguente:
   [*RF16/03*], [Il sistema deve sincronizzare periodicamente con il sistema centrale], [capitolato],
   
   [*RF17*], [*Magazzini gestiti da servizi distribuiti*], [capitolato],
-  [*RF17/01*], [E’ necessario distribuire le funzionalità del sistema su più servizi], [capitolato],
-  [*RF17/02*], [E’ necessario garantire la resilienza e la scalabilità del sistema], [capitolato],
+  [*RF17/01*], [È necessario distribuire le funzionalità del sistema su più servizi], [capitolato],
+  [*RF17/02*], [È necessario garantire la resilienza e la scalabilità del sistema], [capitolato],
   
   [*RF18*], [*Operazioni di inventario indipendenti ma sincronizzate centralmente*], [capitolato],
   [*RF18/01*], [Il magazzino locale deve operare tramite inserimento, modifica, trasferimento, prelievo merci, e aggiornando il magazzino in primo luogo localmente], [capitolato],
@@ -354,38 +354,38 @@ Quindi, la struttura del codice di un requisito è la seguente:
 
   //DA VERIFICARE INSIEME
   [*RFD03*], [*Interfaccia grafica per la visualizzazione e gestione delle scorte, con dashboard centralizzata per monitorare le scorte in tempo reale*], [capitolato],
-  [*RFD03/01*], [Il sistema deve fornire un’interfaccia grafica intuitiva per gli utenti], [capitolato],
+  [*RFD03/01*], [Il sistema deve fornire un'interfaccia grafica intuitiva per gli utenti], [capitolato],
   [*RFD03/02*], [Il sistema deve visualizzare le informazioni sulle scorte in tempo reale], [capitolato],
-  [*RFD03/03*], [Il sistema deve consentire agli utenti di gestire le scorte e le operazioni di inventario tramite l’interfaccia grafica], [capitolato],
+  [*RFD03/03*], [Il sistema deve consentire agli utenti di gestire le scorte e le operazioni di inventario tramite l'interfaccia grafica], [capitolato],
 
   //Requisiti Funzionali opzionali
-  [*RFO01*], [*Integrazione con sistemi di notifica per eventi rilevanti, come il raggiungimento dei livelli minimi di scorte, l’approvazione dei trasferimenti di merci, con alert configurabili in base a regole definite e supporto a più canali di comunicazione (e-mail, SMS, dashboard interna)*], [capitolato],
-  [*RFO01/01*], [E’ necessario supporto per la generazione di notifiche automatiche], [capitolato],
-  [*RFO01/02*], [E’ prevista una notifica per il raggiungimento dei livelli minimi di scorte], [capitolato],
-  [*RFO01/03*], [E’ prevista una notifica per approvazione e/o rifiuto dei trasferimenti di merci], [capitolato],
+  [*RFO01*], [*Integrazione con sistemi di notifica per eventi rilevanti, come il raggiungimento dei livelli minimi di scorte, l'approvazione dei trasferimenti di merci, con alert configurabili in base a regole definite e supporto a più canali di comunicazione (e-mail, SMS, dashboard interna)*], [capitolato],
+  [*RFO01/01*], [È necessario supporto per la generazione di notifiche automatiche], [capitolato],
+  [*RFO01/02*], [È prevista una notifica per il raggiungimento dei livelli minimi di scorte], [capitolato],
+  [*RFO01/03*], [È prevista una notifica per approvazione e/o rifiuto dei trasferimenti di merci], [capitolato],
   [*RFO01/04*], [Il sistema deve notificare le parti interessate delle modifiche ai dati di inventario], [capitolato],
-  [*RFO01/05*], [Il sistema deve notificare eventuali cambi di stato dell’ordine], [capitolato],
-  [*RFO01/06*], [Il sistema deve notificare l’impossibilità di evasione di un ordine], [capitolato],
+  [*RFO01/05*], [Il sistema deve notificare eventuali cambi di stato dell'ordine], [capitolato],
+  [*RFO01/06*], [Il sistema deve notificare l'impossibilità di evasione di un ordine], [capitolato],
   [*RFO01/07*], [Il sistema deve notificare la carenza di scorte], [capitolato],
-  [*RFO01/08*], [Gli alert#super[G] sono configurabili in base a regole definite dall’utente (o dall’amministratore)], [capitolato],
-  [*RFO01/09*], [E’ previsto l’invio di notifiche tramite email e/o SMS], [capitolato],
-  [*RFO01/10*], [E’ prevista la visualizzazione delle notifiche sulla dashboard interna del sistema], [capitolato],
+  [*RFO01/08*], [Gli alert#super[G] sono configurabili in base a regole definite dall'utente (o dall'amministratore)], [capitolato],
+  [*RFO01/09*], [È previsto l'invio di notifiche tramite email e/o SMS], [capitolato],
+  [*RFO01/10*], [È prevista la visualizzazione delle notifiche sulla dashboard interna del sistema], [capitolato],
   
   [*RFO02*], [*Implementazione di meccanismi di autorizzazione e autenticazione, inclusa la gestione di ruoli e permessi differenziati per operatori, supervisori e amministratori*], [capitolato],
-  [*RFO02/01*], [Il sistema prevede l’implementazione dell’autenticazione#super[G] per l’accesso al sistema], [capitolato],
-  [*RFO02/02*], [E’ prevista la possibilità di autenticazione a due fattori (2FA#super[G])], [capitolato],
+  [*RFO02/01*], [Il sistema prevede l'implementazione dell'autenticazione#super[G] per l'accesso al sistema], [capitolato],
+  [*RFO02/02*], [È prevista la possibilità di autenticazione a due fattori (2FA#super[G])], [capitolato],
   [*RFO02/03*], [Il sistema prevede il controllo completo per gli amministratori], [capitolato],
-  [*RFO02/04*], [Il sistema prevede l’autorizzazione a convalidare trasferimenti o ad approvare modifiche per i supervisori], [capitolato],
-  [*RFO02/05*], [Il sistema prevede l’accesso limitato alle operazioni di base per gli operatori], [capitolato],
+  [*RFO02/04*], [Il sistema prevede l'autorizzazione a convalidare trasferimenti o ad approvare modifiche per i supervisori], [capitolato],
+  [*RFO02/05*], [Il sistema prevede l'accesso limitato alle operazioni di base per gli operatori], [capitolato],
   
-  [*RFO03*], [*Backup regolare dei dati, con il sistema centrale incaricato di gestire l’integrità e la conciliazione dei dati, mantenendo copie locali per ogni magazzino e permettendo il ripristino completo dei sistemi in caso di necessità*], [capitolato],
+  [*RFO03*], [*Backup regolare dei dati, con il sistema centrale incaricato di gestire l'integrità e la conciliazione dei dati, mantenendo copie locali per ogni magazzino e permettendo il ripristino completo dei sistemi in caso di necessità*], [capitolato],
   [*RFO03/01*], [Il sistema centrale esegue verifiche periodiche sui dati distribuiti], [capitolato],
   [*RFO03/02*], [Il sistema prevede meccanismi di conciliazione per dati incoerenti], [capitolato],
   [*RFO03/03*], [Ogni nodo mantiene una copia locale dei propri dati come backup#super[G]], [capitolato],
   [*RFO03/04*], [I dati locali possono essere utilizzati per operazioni anche in caso di disconnessione dal centrale], [capitolato],
   [*RFO03/05*], [Il sistema prevede il ripristino dei dati da backup centralizzati], [capitolato],
   [*RFO03/06*], [Il sistema prevede il ripristino delle copie locali in caso di guasto del nodo#super[G]], [capitolato],
-  [*RFO03/07*], [Il sistema prevede una verifica dell’integrità#super[G] post-ripristino], [capitolato],
+  [*RFO03/07*], [Il sistema prevede una verifica dell'integrità#super[G] post-ripristino], [capitolato],
 
 )
 #align(center)[_Tabella #tabella_counter: Requisiti funzionali_]
@@ -421,21 +421,21 @@ Quindi, la struttura del codice di un requisito è la seguente:
 //Requisiti di Sicurezza opzionali
   [*RSO01*], [*Implementare l'autenticazione tra microservizi*], [capitolato],
   [*RSO01/01*], [Il sistema deve garantire che solo i microservizi autorizzati possono comunicare tra loro], [capitolato],
-  [*RSO01/02*], [E’ previsto l’utilizzo di tecnologie di autenticazione tra microservizi], [capitolato],
-  [*RSO01/03*], [E’ necessario cifrare le comunicazioni tra i microservizi, anche all’interno della rete#super[G] interna], [capitolato],
-  [*RSO01/04*], [E’ necessario isolare i microservizi in base alle loro funzioni per limitare l’accesso], [capitolato],
-  [*RSO01/05*], [E’ necessario monitorare e gestire le dipendenze tra microservizi per individuare eventuali vulnerabilità#super[G] esterne], [capitolato],
+  [*RSO01/02*], [È previsto l'utilizzo di tecnologie di autenticazione tra microservizi], [capitolato],
+  [*RSO01/03*], [È necessario cifrare le comunicazioni tra i microservizi, anche all'interno della rete#super[G] interna], [capitolato],
+  [*RSO01/04*], [È necessario isolare i microservizi in base alle loro funzioni per limitare l'accesso], [capitolato],
+  [*RSO01/05*], [È necessario monitorare e gestire le dipendenze tra microservizi per individuare eventuali vulnerabilità#super[G] esterne], [capitolato],
 
   [*RSO02*], [*Backup regolari, ridondanza e piani di ripristino in caso di attacchi o malfunzionamenti*], [capitolato],
   [*RSO02/01*], [Il sistema prevede di eseguire backup periodici dei dati e della configurazione del sistema], [capitolato],
   [*RSO02/02*], [Il sistema prevede la ridondanza#super[G] dei dati (su cloud e in replica locale)], [capitolato],
   [*RSO02/03*], [Il sistema prevede la definizione di un piano di ripristino#super[G] operativo con test regolari di recovery#super[G]], [capitolato],
   
-  [*RSO03*], [*Assicurare che l’autenticazione sia robusta tramite MFA e certificati crittografici*], [capitolato],
-  [*RSO03/01*], [E’ necessario abilitare MFA#super[G] (autenticazione a più fattori) per tutti gli utenti con privilegi], [capitolato],
-  [*RSO03/02*], [E’ necessario utilizzare certificati digitali#super[G] per autenticare utenti e dispositivi], [capitolato],
-  [*RSO03/03*], [E’ necessario consentire l’accesso solo da dispositivi e utenti autorizzati e riconosciuti], [capitolato],
-  [*RSO03/04*], [E’ necessario assicurare l’integrità dei dati scambiati tramite firme digitali#super[G] o hashing#super[G]], [capitolato],
+  [*RSO03*], [*Assicurare che l'autenticazione sia robusta tramite MFA e certificati crittografici*], [capitolato],
+  [*RSO03/01*], [È necessario abilitare MFA#super[G] (autenticazione a più fattori) per tutti gli utenti con privilegi], [capitolato],
+  [*RSO03/02*], [È necessario utilizzare certificati digitali#super[G] per autenticare utenti e dispositivi], [capitolato],
+  [*RSO03/03*], [È necessario consentire l'accesso solo da dispositivi e utenti autorizzati e riconosciuti], [capitolato],
+  [*RSO03/04*], [È necessario assicurare l'integrità dei dati scambiati tramite firme digitali#super[G] o hashing#super[G]], [capitolato],
   
 )
 #align(center)[_Tabella #tabella_counter: Requisiti di sicurezza_]
@@ -469,12 +469,12 @@ Quindi, la struttura del codice di un requisito è la seguente:
 
   [*RnF03*], [*Esecuzione automatica dei test*], [capitolato],
   [*RnF03/01*], [I test devono essere eseguiti automaticamente tramite pipeline CI/CD#super[G]], [capitolato],
-  [*RnF03/02*], [E’ prevista una notifica immediata in caso di fallimento dei test], [capitolato],
+  [*RnF03/02*], [È prevista una notifica immediata in caso di fallimento dei test], [capitolato],
   [*RnF03/03*], [Il sistema deve prevedere automatismi in grado di impedire il rilascio in produzione se i test falliscono], [capitolato],
 
   [*RnF04*], [*Test book per documentare*], [capitolato],
   [*RnF04/01*], [Deve esserci un elenco completo dei casi di test], [capitolato],
-  [*RnF04/02*], [E' prevista una descrizione chiara per ogni test, con tutti i passaggi eseguiti], [capitolato],
+  [*RnF04/02*], [È prevista una descrizione chiara per ogni test, con tutti i passaggi eseguiti], [capitolato],
   [*RnF04/03*], [Deve essere presente una lista di risultati attesi, comparata ai risultati effettivi], [capitolato],
   [*RnF04/04*], [Devono essere specificati i criteri di validazione dei test], [capitolato],
   [*RnF04/05*], [Deve essere presente lo storico aggiornato dei tesi superati e falliti], [capitolato],
@@ -484,10 +484,10 @@ Quindi, la struttura del codice di un requisito è la seguente:
   [*RnF05/02*], [Il comportamento di un magazzino non deve compromettere gli altri], [capitolato],
   [*RnF05/03*], [I microservizi devono essere modulari#super[G]], [capitolato],
   [*RnF05/04*], [I microservizi devono poter essere distribuiti in più istanze in ambiente cloud], [capitolato],
-  [*RnF05/05*], [Deve esserci supporto all’orchestrazione#super[G] tramite strumenti (es. Kubernetes)], [capitolato],
+  [*RnF05/05*], [Deve esserci supporto all'orchestrazione#super[G] tramite strumenti (es. Kubernetes)], [capitolato],
 
   [*RnF06*], [*Versionamento tramite Git*], [capitolato],
-  [*RnF06/01*], [E' previsto l'utilizzo di branch#super[G] per nuove funzionalità, bugfix#super[G] e refactoring#super[G]], [capitolato],
+  [*RnF06/01*], [È previsto l'utilizzo di branch#super[G] per nuove funzionalità, bugfix#super[G] e refactoring#super[G]], [capitolato],
   [*RnF06/02*], [Devono essere ben definite le strategie di merge#super[G]/rebase#super[G]], [capitolato],
   [*RnF06/03*], [I commit#super[G] devono essere frequenti e descrittivi], [capitolato],
   [*RnF06/04*], [Le modifiche devono essere tracciabili nel tempo], [capitolato],
