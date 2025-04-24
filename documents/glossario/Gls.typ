@@ -86,6 +86,8 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 - *Analista*:\
   Svolge un ruolo chiave nelle fasi iniziali, fornendo basi solide a progettisti e programmatori. Il suo impegno orario, inferiore alla media degli altri ruoli, si concentra sull'analisi e la definizione dei requisiti, garantendo chiarezza e completezza delle specifiche progettuali.
 
+- *Approvvigionamento:*\
+  Attività di acquisizione di prodotti o materiali necessari per garantire il funzionamento del magazzino. Include ordini da fornitori esterni o trasferimenti da altri magazzini.
 #pagebreak()
 = C
 - *CTO (Chief Technology Officer)*: \
