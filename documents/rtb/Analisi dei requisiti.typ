@@ -129,15 +129,51 @@ L’obiettivo finale è realizzare una *piattaforma robusta e flessibile* che mi
 === Scelte tecnologiche
 
 == Analisi dello stato dell'arte
+#v(0.5cm)
+Prima di procedere con l'analisi dei requisiti, è stata effettuata un'analisi dello stato dell'arte, al fine di comprendere le tecnologie e le soluzioni già esistenti nel campo della gestione distribuita, dei microservizi e della gestione dei dati.\
+Sono stati analizzati diversi articoli, documenti e libri che trattano questi argomenti, al fine di identificare le migliori pratiche e le soluzioni più adatte per il progetto in questione.
+Sono stati presi in considerazione anche vari progetti esistesti che utilizzano tecnologie simili, al fine di comprendere le sfide e le opportunità che si presentano in questo campo.\
+
+Dopo un'esaustiva ricerca, sono stati identificati alcuni punti chiave che saranno fondamentali per la progettazione e lo sviluppo di un'ipotesi di architettura del sistema:
+- *Microservizi:* come richiesto dal capitolato, il sistema dovrà essere progettato utilizzando un'architettura a microservizi, che consente di suddividere il sistema in componenti più piccoli e indipendenti, facilitando la scalabilità e la manutenibilità del sistema.\
+  Ogni microservizio dovrebbe avere un proprio database, e può scegliere il proprio stack tecnologico, in modo da garantire la massima flessibilità e indipendenza.\
+- *Architettura Event-Driven:* l'architettura del sistema dovrebbe essere basata su eventi, in modo da garantire una comunicazione efficiente tra i microservizi e una gestione ottimale delle risorse.\
+  In questo modo, ogni microservizio può reagire a eventi specifici e comunicare con gli altri microservizi in modo asincrono, migliorando le prestazioni e la reattività del sistema.\
+- *Tipi di comunicazioni:* Dovremmo scegliere se utilizzare una comunicazione sincrona (REST, gRPC), o asincrona (Kafka o NATS) tra i microservizi.\
+- *Gestione dei dati:* abbiamo notato che molti progetti utilizzano sia database SQL che NoSQL, a seconda delle esigenze specifiche del progetto.\
+  In generale, i database SQL sono più adatti per dati strutturati e relazionali, mentre i database NoSQL sono più adatti per dati non strutturati e distribuiti.\
+  Per il nostro progetto, potrebbe essere utile utilizzare entrambi i tipi di database, a seconda delle esigenze specifiche di ciascun microservizio.\
+- *Coerenza di dati:* è importante garantire la coerenza dei dati tra i diversi microservizi, soprattutto in un sistema distribuito.\
+  Ci sono diverse strategie per garantire la coerenza dei dati, come il pattern Saga, l'Outbox pattern, transazioni distribuite, o il modello coerenza finale
+- *Containerizzazione:* l'uso di container (Docker) è diventato uno standard de facto per la distribuzione e l'esecuzione di microservizi.\
+  I container consentono di isolare le dipendenze e le configurazioni di ciascun microservizio, semplificando il processo di distribuzione e gestione del sistema.\
+  Kubernetes è uno strumento popolare per la gestione dei container e l'orchestrazione dei microservizi, che consente di automatizzare il deployment, la scalabilità e la gestione dei container in un cluster.\
+- *Resilienza del sistema:* è fondamentale garantire la resilienza del sistema, in modo da affrontare eventuali guasti o problemi di rete.\
+  Ci sono diverse strategie per garantire la resilienza del sistema, come il pattern Circuit Breaker, il retry pattern, e l'uso di meccanismi di failover e bilanciamento del carico.\
+- *Logging:* è importante implementare un sistema di logging centralizzato per monitorare le attività e le prestazioni del sistema.\
+  Ci sono diversi strumenti e librerie disponibili per implementare il logging centralizzato, come ELK stack (Elasticsearch, Logstash, Kibana), Grafana Loki, o Prometheus.\
+- Dovremmo valutare la necessità e la complessità di *API Gateway* e *Service Discovery*.\
+  L'API Gateway funge da punto di accesso centrale per le richieste degli utenti e può gestire l'autenticazione, la registrazione, il bilanciamento del carico e altre funzionalità.\
+  La Service Discovery consente ai microservizi di trovare e comunicare tra loro in modo dinamico, senza la necessità di configurazioni statiche.
 
 == Il Glossario
 #v(0.5cm)
 In questo documento potrebbero essere presenti parole e terminologie complesse, che potrebbero non essere chiare a tutti, anche in relazione al contesto in cui vengono usate. Per questo motivo, e' stato creato un glossario, che contiene le definizioni di alcune parole e termini utilizzati nel documento.
 
-Le parole che possiedono un riferimento ale glossario vengono evidenziate come segue: *parola*#super[G].
+Le parole che possiedono un riferimento al glossario vengono evidenziate come segue: *parola*#super[G].
 
 
 == Riferimenti
+/* Alcuni link utili per la ricerca di informazioni e documentazione sui microservizi e sull'architettura distribuita(altri sono presenti nei vari documenti di analisi dello stato dell'arte) 
+https://www.sayonetech.com/blog/inventory-management-system-using-microservices/
+Libro: Microservices for the Enterprise - Designing, Developing, and Deploying (Kasun Indrasiri, Prabath Siriwardena)
+https://www.researchgate.net/publication/387822994_Implementing_Microservices_for_Real-Time_Inventory_Tracking_in_Global_Supply_Chains
+https://microservices.io/patterns/index.html
+https://www.researchgate.net/publication/387822806_The_Role_of_Microservices_in_Enhancing_Scalability_and_Flexibility_of_Warehouse_Management_systems
+https://docs.aws.amazon.com/it_it/prescriptive-guidance/latest/modernization-data-persistence/database-per-service.html
+https://www.multiplayer.app/distributed-systems-architecture/
+
+*/
 
 === Normativi
 
