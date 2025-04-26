@@ -29,25 +29,25 @@
   [0.3.0],
   [25/04/2025],
   [R. Zangla],
-  [-],
+  [S. Marana],
   [Ulteriore ristrutturazione del documento e aggiunte note. Modificate le sezioni 4.2 e 8.4.1. Aggiunte informazioni alle sezioni da 4.2.2 a 4.2.4 (sottosezioni incluse), da 5.1.2.1 a 5.1.2.4, 5.2.1, 5.2.3 e 5.2.5.],
 
   [0.2.0],
   [06/04/2025],
   [S. Speranza],
-  [-],
+  [S. Marana],
   [Ristrutturazione del documento, ulteriore stesura],
   
   [0.1.0],
   [29/03/2025],
   [N. Bolzon],
-  [-],
+  [S. Marana],
   [Inizio stesura del documento],
   
   [0.0.1],
   [28/03/2025],
   [S. Speranza],
-  [-],
+  [S. Marana],
   [Creazione template e struttura del documento]
 )
 
@@ -83,14 +83,14 @@
   == Scopo del prodotto
   Il prodotto, detto anche software, oggetto del presente progetto, consiste nella realizzazione di un sistema distribuito e scalabile per la gestione ottimale (intesa come minimizzazione dei tempi di risposta e di ottimizzazione della distribuzione delle scorte) di una rete di magazzini, singolarmente autonomi, in modo da favorire l'interoperabilità tra di essi e centralizzare le informazioni in maniera efficiente e sicura. // Inserire riferimento al capitolato?
 
-  Il presente documento è redatto secondo lo standard _ISO/IEC 12207:1995_, che identifica tre tipologie di processi:
+  Il presente documento è redatto secondo lo standard _ISO/IEC 12207:1995_, che identifica tre tipologie di processi: //Magari descrivere sintatticamente di cosa trattano?
   - Processi primari
   - Processi organizzativi
   - Processi di supporto  
 
   == Entità coinvolte
   Il presente progetto didattico di Ingegneria del Software coinvolge le seguenti entità:
-  - Il proponenente del progetto, _M31_, nei ruoli di:
+  - Il proponente del progetto, _M31_, nei ruoli di:
     - _Cliente_#super[G];
     - _Mentore_#super[G];
   - Il docente, #p.tullio, nel ruolo di _Committente_#super[G]
@@ -111,11 +111,13 @@
     
     === Riferimenti informativi
     - *Glossario* \
-      #underline[#link("")] \
+      #underline[#link("https://teamcodealchemists.github.io/glossario.html")] \ 
       //Ultimo Accesso: \
+
     - *Piano di Qualifica* \
       #underline[#link("")] \
       //Ultimo Accesso: \
+
     - *Piano di Progetto* \
       #underline[#link("")] \
       //Ultimo Accesso: \
@@ -151,9 +153,9 @@
     // Dare soluzioni a requisiti rilevati nell'AdR.
     ==== Fasi di Progettazione  
       ===== Progettazione logica
-      // Descrizione progett. logica
+      // Descrizione progettazione logica
       ===== Progettazione di dettaglio
-      // Descrizione progett. di dettaglio
+      // Descrizione progettazione di dettaglio
     ==== Specifica tecnica
     // Importanza di documentare la progettazione nel documento "Specifica tecnica/Specifica architetturale"
     ==== Framework e tecnologie utilizzate
@@ -184,7 +186,7 @@
       === Documenti prodotti
       // Distinzione documenti formali (interni o esterni) e informali
       === Nomenclatura documenti
-      // Formato data nei documenti, ...
+      // Formato data nei documenti, ... Vedi README di github
       === Struttura documento
       // Prima pagina, registro modifiche, contenuto principale...
           // (Crea sotto-sezioni per ognuna se necessario)
@@ -199,7 +201,7 @@
         // In che cartella sono tenute le immagini, i grafici...
       === Metriche
       // Indice Gulpease
-      // Correttezza Ortografica (se la vogliamo mettere, non mi sembra automatizzata tho)
+      // Correttezza Ortografica (se la vogliamo mettere, non mi sembra automatizzata tho) -> Per il momento no.
       === Manutenzione
       // Fasi di manutenzione di un documento (un esempio può essere: identificazione modifica, valutazione impatto, aggiornamento, push , verifica e validazione)
         ==== Procedure di revisione
@@ -209,7 +211,8 @@
           // Revisione documentazione
           ===== Approvazione 
           // Workflow di approvazione
-          // (Dovrà esser automatizzato che, una volta approvato e pushato nella repo, il documento si aggiorna nel sito)
+          // (Dovrà esser automatizzato che, una volta approvato ed effettuato il push nella repo, il documento si aggiorna nel sito)
+          // Per il Momento quando viene effettuato un push su main viene caricato il documento sul sito, bisogna solo far partire manualmente l'azione di aggiornamento dei link del sito. Provvederò a vedere se si può automatizzare anche questo.
 
     == Gestione della Configurazione
       === Scopo
@@ -241,22 +244,24 @@
 
       === Struttura repository
       // Link alla nostra repo?
-      La repository GitHub configurata ad Organizzazione è strutturato in diverse repository in base alla finalità d’uso delle stesse. All’interno di esse è possibile trovare varie directories descritte dai file README.md presenti, tra cui:
+      La repository GitHub configurata ad Organizzazione è strutturato in diverse repository in base alla finalità d'uso delle stesse. All'interno di esse è possibile trovare varie directories descritte dai file README.md presenti, tra cui:
     
-      - *docs*: Repository contenente tutti i file .typ con la documentazione. In essa sono presenti delle Github Action che permettono il supporto alla verifica e l’auto compilazione dei file per essere caricati su github pages come pdf
+      - *docs*: Repository contenente tutti i file .typ con la documentazione. In essa sono presenti delle Github Action che permettono il supporto alla verifica e l'auto compilazione dei file per essere caricati su github pages come pdf
     
-      - *teamcodealchemists.github.io*:  Repository dove si trova il sito web con tutta la documentazione. All'interno di essa è stata definita una GitHub Action che permette di tenere sincronizzato il glossario nel sito con quello in formato .pdf della documentazione.
+      - *teamcodealchemists.github.io*:  Repository dove si trova il sito web con tutta la documentazione. All'interno di essa sono state definite delle GitHub Action che permettono di tenere sincronizzato il glossario nel sito con quello in formato .pdf della documentazione e di aggiornare automaticamente i link alla documentazione.
+
+      //Prossimamente per l'RTB dovremmo anche avere la repo del POC
 
         ==== Organizzazione Repository
           ===== Modello di branching
           È stato adottato il modello di branching *Git Flow* per la gestione delle repository#super("G") di progetto. 
     
-          Ciascuna tipologia di ramo risponde a uno scopo specifico all’interno del ciclo di vita del software, consentendo una gestione ordinata e controllata del processo di sviluppo.
+          Ciascuna tipologia di ramo risponde a uno scopo specifico all'interno del ciclo di vita del software, consentendo una gestione ordinata e controllata del processo di sviluppo.
 
-          Ogni membro è a conoscenza delle _best practice_ per la creazione, l’unione e la cancellazione dei rami, così da promuovere una collaborazione efficace e strutturata all’interno del team.
+          Ogni membro è a conoscenza delle _best practice_ per la creazione, l'unione e la cancellazione dei rami, così da promuovere una collaborazione efficace e strutturata all'interno del team.
 
           ===== Nomenclatura dei branch
-          È stata raccomandata, ove possibile, l’associazione dei branch relativi a nuove funzionalità (ovvero i branch _feature_) alle corrispondenti issue tracciate su *Jira*, adottando una convenzione di nomenclatura coerente _(ad esempio: *feature/Sprint-55-nome-feature*)_.
+          È stata raccomandata, ove possibile, l'associazione dei branch relativi a nuove funzionalità (ovvero i branch _feature_) alle corrispondenti issue tracciate su *Jira*, adottando una convenzione di nomenclatura coerente _(ad esempio: *feature/Sprint-55-nome-feature*)_.
 
           ===== Branch principali
           La struttura è basata sui rami principali _main_ e _develop_.
@@ -270,10 +275,11 @@
           Essi devono essere creati a partire dal ramo _develop_ e, una volta completati, deve essere effettuato il merge in _develop_. 
     
           La convenzione di nomenclatura per questi branch è consultabile alla sezione 7.2.2.
-          // Modificare 7.2.2 con il numero della sezione "Nomenclatura dei branch"
+          // TODO: Modificare 7.2.2 con il numero della sezione "Nomenclatura dei branch"
 
       === GitHub Action
       // Azioni per controllare glossario e per indice gulpease
+      // Attenderei di ultimarle per scrivere questa parte, in modo da essere più precisi
 
         === Procedure di commit e merge
           ==== Messaggi di commit // formato e convenzioni
@@ -368,11 +374,12 @@
         // In x fase di sviluppo sono richiesti più persone nel ruolo di Y...
 
         ==== Escalation path
-        Durante l'intera fase di sviluppo, potrebbero capitare di venir assegnati alcuni ruoli a più membri del team per lo Sprint corrente (ad esempio, il ruolo di Analista viene assegnato a 4 persone durante l’attuale Sprint poiché è una figura molto richiesta in quella determinata fase di sviluppo). 
+        Durante l'intera fase di sviluppo, potrebbero capitare di venir assegnati alcuni ruoli a più membri del team per lo Sprint corrente (ad esempio, il ruolo di Analista viene assegnato a 4 persone durante l'attuale Sprint poiché è una figura molto richiesta in quella determinata fase di sviluppo). 
       
-        Al fine di coordinare meglio il flusso di lavoro, si è deciso, ad ogni Sprint, di scegliere tra questi membri un “sottoresponsabile”, il quale comunicherà periodicamente e frequentemente con i sottoresponsabili delle altre categorie di ruolo e con il responsabile di turno per tenerli aggiornati sullo stato di avanzamento dello Sprint.
+        Al fine di coordinare meglio il flusso di lavoro, si è deciso, ad ogni Sprint, di scegliere tra questi membri un “sottoresponsabile”, il quale comunicherà periodicamente e frequentemente con i sottoresponsabili delle altre categorie di ruolo e con il responsabile di turno per tenerli aggiornati sullo stato di avanzamento delle attività dello Sprint.
       
         Inoltre, i sottoresponsabili delle categorie di ruolo sono tenuti a mantenere una comunicazione costante con i membri del loro sottogruppo, assicurandosi che ogni task sia eseguita secondo le linee guida stabilite e che eventuali dubbi vengano chiariti prontamente. Questo approccio favorisce una gestione efficiente delle attività e una rapida risoluzione delle problematiche interne.
+        //Spiegherei inoltre che va in aiuto al responsabile facendo in modo che non debba occuparsi di tutto il gruppo, ma solo dei sottoresponsabili.
 
         ==== Orari di disponibilità
         // Documento su Google Sheets
@@ -383,6 +390,7 @@
       // ...
         ==== Durata degli Sprint
         Ogni Sprint ha una durata fissa di due settimane. Questa durata permette al team di concentrarsi su obiettivi concreti per un lasso di tempo sufficientemente ampio e di valutare i progressi in modo regolare, così da permettere un equilibrio tra flessibilità e stabilità.
+        // In realtà possiamo variare dalle due settimane, è solo per l'RTB, ma potremmo diminuire ad una se necessario.
 
         ==== Pianificazione dello Sprint
         Pianificare gli Sprint implica definire gli obiettivi e le attività da completare durante lo Sprint. Durante questa fase, vengono identificati i requisiti, assegnate le responsabilità e stabilite le priorità. Una buona pianificazione è essenziale per il successo dello Sprint.
@@ -391,7 +399,7 @@
         La review dello Sprint è una riunione che si tiene alla fine di ogni Sprint secondo quanto descritto al punto 4.4.2. Durante tale riunione, il team discute a grandi linee su ciò a cui si è lavorato e stabilisce il materiale da presentare agli stakeholder, i quali daranno dei feedback su quanto svolto così da identificare eventuali miglioramenti per il prossimo Sprint.
     
         ==== Retrospettiva dello Sprint
-        La retrospettiva dello Sprint è una fase in cui il team analizza nel dettaglio il proprio lavoro realizato durante lo Sprint. L'obiettivo di questa fase è di identificare ciò che ha funzionato bene e quel che può essere migliorato, promuovendo un continuo miglioramento della qualità del prodotto in sviluppo.
+        La retrospettiva dello Sprint è una fase in cui il team analizza nel dettaglio il proprio lavoro realizzato durante lo Sprint. L'obiettivo di questa fase è di identificare ciò che ha funzionato bene e quel che può essere migliorato, promuovendo un continuo miglioramento della qualità del prodotto in sviluppo.
 
     == Procedure di comunicazione   
       === Comunicazioni interne 
@@ -408,9 +416,9 @@
       // Con che strumenti comunichiamo con proponente e committente, con che cadenza, per cosa..
       === Riunioni interne
       // In che modo si svolgono le riunioni tra di noi, come sono organizzate...
-      Le riunioni interne possono essere indette durante vari momenti strategici dello sviluppo del progetto, soprattutto tra uno Sprint e l’altro. 
+      Le riunioni interne possono essere indette durante vari momenti strategici dello sviluppo del progetto, soprattutto tra uno Sprint e l'altro. 
   
-      Difatti, al termine di ogni Sprint, tutti i membri del team si riuniscono per discutere di quanto svolto nel corso dello Sprint appena concluso. Durante tali incontri, vengono rese note eventuali difficoltà emerse durante l’esecuzione di determinate task e si affrontano possibili soluzioni alle problematiche riscontrate. Inoltre, vengono elencate le prossime task da svolgere per garantire la continuità del lavoro. 
+      Difatti, al termine di ogni Sprint, tutti i membri del team si riuniscono per discutere di quanto svolto nel corso dello Sprint appena concluso. Durante tali incontri, vengono rese note eventuali difficoltà emerse durante l'esecuzione di determinate task e si affrontano possibili soluzioni alle problematiche riscontrate. Inoltre, vengono elencate le prossime task da svolgere per garantire la continuità del lavoro. 
   
       È in questa occasione che viene annunciata la rotazione dei ruoli per il prossimo Sprint e la conseguente assegnazione delle varie task a ogni membro a seconda dello specifico ruolo che ricopre.
   
@@ -451,7 +459,7 @@
         ==== Discord
         // Per le comunicazioni vocali e le riunioni interne. Suddivisione vari canali per ruoli.
         ==== Telegram
-        // Per le comunicazioni testuali più rapide, con tutti i membridel gruppo o singolarmente
+        // Per le comunicazioni testuali più rapide, con tutti i membri del gruppo o singolarmente
         ==== Typst
         // Piattaforma per la stesura della documentazione
         ==== Google Drive
@@ -466,13 +474,14 @@
         // Grafici / schemi vari
 
         // Altri tool che mi sto dimenticando?
+        // Per il momento nulla
 
     == Miglioramento
     // Descrizione del processo di miglioramento
       === Creazione del processo
       // Il processo viene creato seguendo gli standard e il ciclo di vita del SW, essendo documentato e verificato...
       === Valutazione del processo
-      // Revisione del processo ed evenutale pianificazione di miglioramento
+      // Revisione del processo ed eventuale pianificazione di miglioramento
       === Attuazione miglioramento del processo
       // Applicazione miglioramento, tutto documentato evidenziando i vantaggi dati dal miglioramento
 
@@ -480,7 +489,7 @@
       === Scopo
       // Motivi per cui è importante assicurare che tutti i membri siano adeguatamente preparati
       === Metodo di Formazione
-      // In che modo viene assicurato l'accesso alle risorse per la formazione dei membri (indiviudalmente o in gruppo)
+      // In che modo viene assicurato l'accesso alle risorse per la formazione dei membri (individualmente o in gruppo)
       === Materiale formativo
       // Per ogni categoria, tipo architettura a microservizi, NATS, Docker ... indicare che materiale è messo a disposizione
 
