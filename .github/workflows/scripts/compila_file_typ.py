@@ -31,11 +31,11 @@ def compile_typ_files():
                 output_dir = os.path.join(compiled_dir, os.path.relpath(root, documents_dir))
                 os.makedirs(output_dir, exist_ok=True)
 
-                # Se il file si trova nella cartella "presentazioni", copia direttamente i PDF
-                if "presentazioni" in root:
-                    output_pdf = os.path.join(output_dir, file)
-                    shutil.copy(file_path, output_pdf)
-                    print(f"Copied {file_path} to {output_pdf}.")
+                # Controlla se il file è nella cartella "presentazioni"
+                if "presentazioni" in os.path.relpath(root, documents_dir).split(os.sep):
+                    output_file = os.path.join(output_dir, file)
+                    print(f"File in 'presentazioni' found: {file_path}, copying to {output_file}.")
+                    shutil.copy(file_path, output_file)
                     continue
 
                 # Estrai la versione dal file
