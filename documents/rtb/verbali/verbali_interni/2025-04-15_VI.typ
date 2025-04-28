@@ -78,14 +78,14 @@
   Contestualmente, sulla scorta delle evidenze emerse dall’analisi, il gruppo procederà ora con lo studio di una possibile architettura del sistema e, parallelamente, con l’avvio dell’analisi dei casi d’uso.
 
   == 2.3 Utilizzo di _git-flow_
-  È stata avviata una discussione sull’adozione del modello *Git Flow* per la gestione delle repository#super("G") di progetto. Nel corso dell'incontro è stato illustrato il funzionamento del flusso, con particolare attenzione alla struttura basata sui rami principali _main_ e _develop_, e all’impiego di branch secondari dedicati allo sviluppo delle singole funzionalità. È stato chiarito come ciascuna tipologia di ramo risponda a uno scopo specifico all’interno del ciclo di vita del software, consentendo una gestione ordinata e controllata del processo di sviluppo. \
+  È stata avviata una discussione sull’adozione del modello *Git Flow* per la gestione delle repository#super[G]#super("G") di progetto. Nel corso dell'incontro è stato illustrato il funzionamento del flusso, con particolare attenzione alla struttura basata sui rami principali _main_ e _develop_, e all’impiego di branch secondari dedicati allo sviluppo delle singole funzionalità. È stato chiarito come ciascuna tipologia di ramo risponda a uno scopo specifico all’interno del ciclo di vita del software, consentendo una gestione ordinata e controllata del processo di sviluppo. \
   È stata inoltre raccomandata, ove possibile, l’associazione dei branch relativi a nuove funzionalità alle corrispondenti issue tracciate su *Jira*, adottando una convenzione di nomenclatura coerente _(ad esempio: *feature/SPRINT-55-nome-feature*)_. \
   
   Infine, sono state evidenziate le _best practice_ per la creazione, l’unione e la cancellazione dei rami, con l’obiettivo di promuovere una collaborazione efficace e strutturata all’interno del team.
 
   #pagebreak()
   = 3. Esiti della riunione
-  La riunione si conclude con l’assegnazione dei compiti e la definizione delle decisioni e azioni intraprese, ponendo particolare attenzione all’avvio dell’analisi dei requisiti#super("G") del capitolato#super("G"), che sarà oggetto di confronto con l’azienda nel prossimo incontro, previsto indicativamente tra il 28 e il 30 aprile. La data sarà definita tenendo conto delle chiusure aziendali e universitarie in occasione delle festività pasquali e della Festa della Liberazione. \
+  La riunione si conclude con l’assegnazione dei compiti e la definizione delle decisioni e azioni intraprese, ponendo particolare attenzione all’avvio dell’analisi dei requisiti#super("G") del capitolato#super[G]#super("G"), che sarà oggetto di confronto con l’azienda nel prossimo incontro, previsto indicativamente tra il 28 e il 30 aprile. La data sarà definita tenendo conto delle chiusure aziendali e universitarie in occasione delle festività pasquali e della Festa della Liberazione. \
 
   Nel periodo successivo, gli analisti proseguiranno con le attività indicate al punto _*2.2*_ del presente verbale. \
 

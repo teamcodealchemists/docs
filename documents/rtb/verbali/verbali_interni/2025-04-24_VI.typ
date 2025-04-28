@@ -63,16 +63,16 @@
   == 2.1 Lavori svolti durante lo sprint RTB 2
   Durante il secondo sprint, il team ha lavorato su diverse attività. Ogni membro del team ha avuto due minuti di tempo per presentare le attività svolte e i risultati ottenuti. Per praticità, nel presente verbale è stato deciso di suddividere le attività svolte in attività svolte dai vari ruoli e non in base ai membri del team. \
 
-  === 2.1.1 Lavori svolti dal responsabile#super("G")
-  Il responsabile#super("G") si è occupato di coordinare le attività del team e di monitorare l'andamento dei lavori. Ha inoltre partecipato attivamente alla definizione delle attività da intraprendere e ha fornito supporto ai membri del team nella risoluzione di eventuali problematiche. \
+  === 2.1.1 Lavori svolti dal responsabile#super[G]#super("G")
+  Il responsabile#super[G]#super("G") si è occupato di coordinare le attività del team e di monitorare l'andamento dei lavori. Ha inoltre partecipato attivamente alla definizione delle attività da intraprendere e ha fornito supporto ai membri del team nella risoluzione di eventuali problematiche. \
   Si è occupato della comunicazione esterna e interna, e si è occupato di redigere il *Piano di Progetto*#super("G"), documento fondamentale per la pianificazione delle attività del team. \
 
-  === 2.1.2 Lavori svolti dall'amministratore#super("G")
-  L'amministratore#super("G") ha il compito di gestire le varie attività del team e di coordinare le attività di sviluppo. Ha partecipato attivamente alla definizione delle attività da intraprendere e ha fornito supporto ai membri del team nella risoluzione di eventuali problematiche. \
-  Si è occupato della gestione delle repository#super("G") di progetto e del loro sviluppo dal punto di vista tecnico e dinamico. Ha inoltre redatto il *Piano di Qualifica*#super("G"), documento volto a definire le modalità di qualifica e verifica del prodotto#super("G") software. \
+  === 2.1.2 Lavori svolti dall'amministratore#super[G]#super("G")
+  L'amministratore#super[G]#super("G") ha il compito di gestire le varie attività del team e di coordinare le attività di sviluppo. Ha partecipato attivamente alla definizione delle attività da intraprendere e ha fornito supporto ai membri del team nella risoluzione di eventuali problematiche. \
+  Si è occupato della gestione delle repository#super[G]#super("G") di progetto e del loro sviluppo dal punto di vista tecnico e dinamico. Ha inoltre redatto il *Piano di Qualifica*#super("G"), documento volto a definire le modalità di qualifica e verifica del prodotto#super[G]#super("G") software. \
 
   === 2.1.3 Lavori svolti dagli analisti
-  Gli analisti, durante il secondo sprint, hanno portato a termine l'analisi dello stato dell'arte e, sulla base di quanto emerso, hanno prodotto delle scelte architetturali, presentando delle linee guida generali per quanto riguarda la progettazione del sistema, e presentando le problematiche che possono emergere. \
+  Gli analisti, durante il secondo sprint, hanno portato a termine l'analisi dello stato dell'arte e, sulla base di quanto emerso, hanno prodotto#super[G] delle scelte architetturali, presentando delle linee guida generali per quanto riguarda la progettazione del sistema, e presentando le problematiche che possono emergere. \
   Questo documento è un documento interno chiamato _Analisi complessiva_, e presente nella cartella condivisa nella piattaforma _Google Drive_ con i membri del team.
 
   Inoltre è stata continuata la redazione del documento di analisi dei requisiti, con l'aggiunta di nuovi requisiti scomposti e del paragrafo riguardante l'analisi dello stato dell'arte.\
@@ -87,7 +87,7 @@
   == 2.2 Criticità emerse
   Gli analisti hanno fin dall'inizio del secondo sprint definito una modalità di lavoro parallela per quanto riguarda architettura e analisi dei casi d'uso.\
   Dopo che alcuni membri del team hanno sollevato il dubbio circa la modalità di lavoro, gli analisti hanno difeso la loro scelta di lavoro, affermando che, in questo modo, forniranno l'architettura più giusta dato che dovrebbero prendere in considerazione molti più aspetti.\
-  Tuttavia, vista la mole di lavoro, si è deciso di introdurre un nuovo ruolo nel team: il *progettista*#super("G").\
+  Tuttavia, vista la mole di lavoro, si è deciso di introdurre un nuovo ruolo nel team: il *progettista#super[G]*#super("G").\
 
   == 2.3 Definizione del prossimo sprint
   Dopo aver ritenuto concluso il secondo sprint, il team ha deciso di iniziare a definire il terzo sprint.\
@@ -99,14 +99,14 @@
   === 2.3.1 Definizione dei ruoli e delle responsabilità
   Durante la riunione, il team ha discusso e definito i ruoli e le responsabilità di ciascun membro del team.\
   Come previsto dalle Norme di Progetto, il team ha ruotato i ruoli e le responsabilità in questo modo:
-  - *Responsabile#super("G")*: #p.nicholas
-  - *Amministratore#super("G")*: #p.mattia
+  - *Responsabile#super[G]#super("G")*: #p.nicholas
+  - *Amministratore#super[G]#super("G")*: #p.mattia
   - *Analisti*: #p.nicolo, #p.matteo, #p.alex
   - *Progettisti*: #p.stefano, #p.ramona
   - *Verificatori*: #p.sebastiano
 
  === 2.3.2 Definizione delle attività da intraprendere
-  Dopo la riunione, il responsabile#super("G") ha redatto un documento interno di indicazione delle attività di progetto, che è stato condiviso con i membri del team.\ 
+  Dopo la riunione, il responsabile#super[G]#super("G") ha redatto un documento interno di indicazione delle attività di progetto, che è stato condiviso con i membri del team.\ 
   Il seguente documento è consultabile #link("https://docs.google.com/document/d/17DUWgYr5nXG_-uCSHt-M-gOob2vvhaFMKl7MoBQT39o/edit?tab=t.0")[#underline[qui]].
 
   

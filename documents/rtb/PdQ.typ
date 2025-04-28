@@ -59,12 +59,12 @@
 = 1. Introduzione
 == 1.1 Scopo del documento
 
-Il presente documento ha lo scopo di definire le modalità di qualifica e verifica del prodotto software. Esso rappresenta un indice di valutazione del prodotto software, delle sue componenti e degli strumenti utilizzati, al fine di garantire la qualità del prodotto finale e un continuo miglioramento del processo di sviluppo.
+Il presente documento ha lo scopo di definire le modalità di qualifica e verifica del prodotto#super[G] software. Esso rappresenta un indice di valutazione del prodotto#super[G] software, delle sue componenti e degli strumenti utilizzati, al fine di garantire la qualità del prodotto#super[G] finale e un continuo miglioramento del processo di sviluppo.
 
 Il Piano di Qualifica#super[G] si basa su tre aspetti principali:
 
 === 1.1.1 Piano della Qualità
-- Fissare gli standard del prodotto e i tipi di test da effettuare;
+- Fissare gli standard del prodotto#super[G] e i tipi di test da effettuare;
 - Indicare gli obiettivi e le modalità di qualifica;
 - Stabilire le regole a cui attenersi.
 
@@ -86,7 +86,7 @@ Per trovare il significato del termine, è possibile consultare il glossario al 
 
 === 1.3.1 Riferimenti normativi  
 
-- *Capitolato d'appalto* \
+- *Capitolato#super[G] d'appalto* \
   *C6 - Sistema di Gestione di un Magazzino Distribuito* \
   #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")]\
 
@@ -97,13 +97,13 @@ Per trovare il significato del termine, è possibile consultare il glossario al 
 
 = 2. Metriche di Qualità
 
-Per garantire un'analisi oggettiva e sistematica della qualità del prodotto software, si fa riferimento allo standard ISO/IEC 14598:1999, il quale propone un metodo per associare metriche quantitative a specifiche sotto-caratteristiche di qualità individuate nello standard ISO 9126.
+Per garantire un'analisi oggettiva e sistematica della qualità del prodotto#super[G] software, si fa riferimento allo standard ISO/IEC 14598:1999, il quale propone un metodo per associare metriche quantitative a specifiche sotto-caratteristiche di qualità individuate nello standard ISO 9126.
 
 In particolare, le metriche sono utilizzate per:
 
 - Valutare attributi interni (come la struttura del codice) e attributi esterni (come l'usabilità e l'affidabilità percepita dall'utente);
 
-- Supportare il monitoraggio dell'evoluzione del prodotto durante le fasi di sviluppo e validazione;
+- Supportare il monitoraggio dell'evoluzione del prodotto#super[G] durante le fasi di sviluppo e validazione;
 
 - Fornire indicatori oggettivi del raggiungimento degli standard prefissati nel Piano della Qualità.
 
@@ -134,4 +134,4 @@ Sebbene non sempre sia semplice adottare misurazioni formali, l'obiettivo è man
   == 5.1 Valutazioni sull'organizzazione
   == 5.2 Valutazioni sui ruoli
   == 5.3 Valutazioni sugli strumenti
-  == 5.4 Valutazioni sul prodotto
+  == 5.4 Valutazioni sul prodotto#super[G]
