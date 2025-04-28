@@ -15,7 +15,7 @@
 #let titolo = "Glossario"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "0.2.1"
+#let versione = "0.3.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -26,6 +26,12 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+
+  [0.3.0],
+  [28/04/2025],
+  [A. Shu],
+  [S. Marana],
+  [Aggiunta definizioni al glossario],
 
   [0.2.1],
   [15/04/2025],
@@ -102,24 +108,33 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 = B
 - *Backup*:\
   Copia di sicurezza dei dati, utile per ripristinare le informazioni in caso di guasti o perdite.
+- *Backlog*:\
+  Elenco ordinato di attività, funzionalità o modifiche da implementare in un progetto.
+- *Branch*:\
+  Versione separata di un progetto o codice, utilizzata per sviluppare nuove funzionalità senza modificare la versione principale.
 
 #pagebreak()
 = C
 - *Capitolato*: \
   Documento formale che descrive in modo dettagliato le esigenze, i requisiti e i vincoli di un progetto software, forniti dal committente. Costituisce la base per l’analisi dei requisiti e guida lo sviluppo del sistema. Viene utilizzato anche come base per la negoziazione e per la gestione delle modifiche durante l’esecuzione del progetto.
-
+- *Certificati Digitali*:\
+  Documenti elettronici che attestano l'identità di un'entità online, garantendo comunicazioni sicure.
 - *Chief Technology Officer (CTO)*:\
   Dirigente di primo livello responsabile delle scelte tecnologiche di un'azienda. Valuta, seleziona e propone le soluzioni tecniche più adatte per supportare lo sviluppo di prodotti o servizi, garantendo l’allineamento tra innovazione tecnologica e obiettivi strategici dell’organizzazione. Fa parte del consiglio direttivo e collabora con le altre funzioni aziendali per guidare l’evoluzione tecnologica.
-
+- *Cifratura*:\
+  Processo di trasformazione dei dati in un formato illeggibile, al fine di proteggerli da accessi non autorizzati.
+- *CI/CD*:\
+  Insieme di pratiche di integrazione continua (Continuous Integration) e distribuzione continua (Continuous Deployment) per automatizzare test e rilascio del software.
 - *Cliente*: \
   Persona, azienda o ente che commissiona, finanzia e utilizzerà direttamente o indirettamente il prodotto software. Il cliente può coincidere o meno con il committente, e ha interesse nel risultato finale del progetto. È coinvolto nei processi decisionali, nella validazione del prodotto e nella sua eventuale accettazione e manutenzione post-rilascio.
-
+- *Codice*:\
+  Insieme di istruzioni scritte in un linguaggio di programmazione, che costituiscono un software.
+- *Commit*:\
+  Operazione con cui si salvano modifiche al codice sorgente in un sistema di controllo versione.
 - *Committente*: \
   Persona o organizzazione che incarica formalmente un team di sviluppo di realizzare un sistema software. È responsabile della definizione iniziale degli obiettivi, dei requisiti e dei vincoli del progetto, e può partecipare attivamente alle fasi di analisi, verifica e validazione. Il committente rappresenta il punto di riferimento principale per comprendere le esigenze da soddisfare.
-
 - *Connettività*: \
   Capacità dei sistemi dei magazzini di restare collegati alla rete o al sistema centrale.
-
 - *Container*: \
   Ambiente isolato e leggero che include tutto il necessario per eseguire un'applicazione (codice, librerie, dipendenze), utilizzando il kernel del sistema operativo sottostante, garantendo portabilità e coerenza tra diversi sistemi.
 
@@ -134,16 +149,29 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 - *Integrità*:\
   Correttezza e coerenza dei dati nel sistema.
 
+- *Intrusione*:\
+  Accesso non autorizzato a un sistema informatico.
+
 - *Inventario*:\
   Elenco dettagliato e aggiornato delle scorte disponibili in un magazzino.
 #pagebreak()
 
+= L
+
+- *Log*:\
+  Registro cronologico di eventi e operazioni eseguite su un sistema.
+#pagebreak()
 = M
 - *Mentore*: \
   Figura esperta che supporta uno sviluppatore o un team junior nell’ambito dell’ingegneria del software, offrendo guida tecnica, consigli pratici e orientamento nel processo di crescita professionale.
-
+- *Merge*:\
+  Operazione che unisce due rami di sviluppo in un unico ramo.
+- *MFA (Autenticazione a più fattori)*:\
+  Meccanismo di autenticazione che richiede più elementi di verifica per confermare l’identità di un utente.
 - *Microservizi*:\
   Architettura software composta da piccoli servizi indipendenti che comunicano tra loro.
+- *Modulari*:\
+  Caratteristica di un sistema progettato come insieme di componenti indipendenti e riutilizzabili.
 #pagebreak()
 
 = N
@@ -154,8 +182,12 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 = O
 - *Ordini*:\
   Richieste formali per trasferimenti o rifornimenti di prodotti.
+- *Orchestrazione*:\
+  Coordinamento automatico di più servizi o componenti di un sistema complesso.
 #pagebreak()
 = P
+- *Parola*:\
+  Termine utilizzato anche per riferirsi a una password o a un identificatore.
 - *Prodotto*: \
   Oggetto fisico stoccato in un magazzino, trasferibile, vendibile o utilizzabile.
 
@@ -168,6 +200,8 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 - *Proof of Concept (PoC)*: \
   Dimostrazione pratica, limitata e sperimentale, utilizzata per verificare la fattibilità tecnica o funzionale di un’idea, tecnologia o soluzione software. In ingegneria del software, una PoC serve a validare concetti chiave prima di investire risorse nello sviluppo completo, mostrando che un certo approccio può funzionare in un contesto reale. Non è un prodotto finito, ma uno strumento per ridurre il rischio progettuale e supportare decisioni tecniche o strategiche.
 
+- *Protocollo*:\
+  Insieme di regole che regolano la comunicazione tra dispositivi di rete o componenti software.
 #pagebreak()
 = R
 - *Repository*: \
@@ -181,7 +215,14 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 
 - *Riassortimento*:\
   Processo di rifornimento delle scorte per mantenere livelli adeguati di disponibilità. Può essere attivato manualmente o in modo automatico.
+- *Requisiti*:\
+  Specifiche condizioni o capacità che un sistema deve soddisfare per rispondere ai bisogni di business o utente.
 
+- *Ridondanza*:\
+  Duplicazione di componenti critici per garantire la continuità di servizio anche in caso di guasti.
+
+- *Ripristino*:\
+  Procedura per riportare un sistema operativo o dati persi allo stato precedente al guasto
 #pagebreak()
 = S
 - *Scalabilità*:\
@@ -190,6 +231,8 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 - *Scorte*:\
   Quantità di prodotti o materiali presenti in magazzino in un dato momento.
 
+- *Sensibili*:\
+  Dati che richiedono protezione speciale contro accessi non autorizzati o divulgazioni.
 - *Servizi*:\
   Componenti funzionali del sistema, responsabili ciascuno di una specifica attività.
 
@@ -203,7 +246,8 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 = V
 - *Verificatore*: \
   Assicura l’affidabilità dei test e migliora la qualità del software e della documentazione, rispettando gli standard concordati. Conoscendo il metodo di lavoro, garantisce l’esecuzione precisa di ogni task secondo le best practice. Il suo ruolo è continuo, assicurando il rispetto delle aspettative del cliente e il successo del progetto.
-
+- *Vulnerabilità*:\
+  Debolezza o difetto che può essere sfruttato per compromettere la sicurezza o il funzionamento del sistema.
 #pagebreak()
 = W
 - *Way of Working*: \
