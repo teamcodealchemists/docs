@@ -5,7 +5,7 @@
 #let data = "24/04/2025"
 #let titolo = titolo + data
 #let status = "Da Approvare"
-#let versione = "0.1.0"
+#let versione = "1.0.0"
 #let presenze = (
   /* formato: <p.nome,> oppure <"nome",> */
   p.nicolo,
@@ -23,8 +23,8 @@
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
 
-    [1.0.0], [--/04/2025], [-], [-], [Approvazione del documento],
-    [0.1.0], [28/04/2025], [N. Moretto], [-], [Prima stesura del documento],
+    [1.0.0], [28/04/2025], [-], [S. Marana], [Approvazione del documento],
+    [0.1.0], [28/04/2025], [N. Moretto], [S. Marana], [Prima stesura del documento],
 
 )
 #let contenuto = (
@@ -63,13 +63,13 @@
   == 2.1 Lavori svolti durante lo sprint RTB 2
   Durante il secondo sprint, il team ha lavorato su diverse attività. Ogni membro del team ha avuto due minuti di tempo per presentare le attività svolte e i risultati ottenuti. Per praticità, nel presente verbale è stato deciso di suddividere le attività svolte in attività svolte dai vari ruoli e non in base ai membri del team. \
 
-  === 2.1.1 Lavori svolti dal responsabile
-  Il responsabile si è occupato di coordinare le attività del team e di monitorare l'andamento dei lavori. Ha inoltre partecipato attivamente alla definizione delle attività da intraprendere e ha fornito supporto ai membri del team nella risoluzione di eventuali problematiche. \
+  === 2.1.1 Lavori svolti dal responsabile#super("G")
+  Il responsabile#super("G") si è occupato di coordinare le attività del team e di monitorare l'andamento dei lavori. Ha inoltre partecipato attivamente alla definizione delle attività da intraprendere e ha fornito supporto ai membri del team nella risoluzione di eventuali problematiche. \
   Si è occupato della comunicazione esterna e interna, e si è occupato di redigere il *Piano di Progetto*#super("G"), documento fondamentale per la pianificazione delle attività del team. \
 
-  === 2.1.2 Lavori svolti dall'amministratore
-  L'amministratore ha il compito di gestire le varie attività del team e di coordinare le attività di sviluppo. Ha partecipato attivamente alla definizione delle attività da intraprendere e ha fornito supporto ai membri del team nella risoluzione di eventuali problematiche. \
-  Si è occupato della gestione delle repository di progetto e del loro sviluppo dal punto di vista tecnico e dinamico. Ha inoltre redatto il *Piano di Qualifica*#super("G"), documento volto a definire le modalità di qualifica e verifica del prodotto software. \
+  === 2.1.2 Lavori svolti dall'amministratore#super("G")
+  L'amministratore#super("G") ha il compito di gestire le varie attività del team e di coordinare le attività di sviluppo. Ha partecipato attivamente alla definizione delle attività da intraprendere e ha fornito supporto ai membri del team nella risoluzione di eventuali problematiche. \
+  Si è occupato della gestione delle repository#super("G") di progetto e del loro sviluppo dal punto di vista tecnico e dinamico. Ha inoltre redatto il *Piano di Qualifica*#super("G"), documento volto a definire le modalità di qualifica e verifica del prodotto#super("G") software. \
 
   === 2.1.3 Lavori svolti dagli analisti
   Gli analisti, durante il secondo sprint, hanno portato a termine l'analisi dello stato dell'arte e, sulla base di quanto emerso, hanno prodotto delle scelte architetturali, presentando delle linee guida generali per quanto riguarda la progettazione del sistema, e presentando le problematiche che possono emergere. \
@@ -99,14 +99,14 @@
   === 2.3.1 Definizione dei ruoli e delle responsabilità
   Durante la riunione, il team ha discusso e definito i ruoli e le responsabilità di ciascun membro del team.\
   Come previsto dalle Norme di Progetto, il team ha ruotato i ruoli e le responsabilità in questo modo:
-  - *Responsabile*: #p.nicholas
-  - *Amministratore*: #p.mattia
+  - *Responsabile#super("G")*: #p.nicholas
+  - *Amministratore#super("G")*: #p.mattia
   - *Analisti*: #p.nicolo, #p.matteo, #p.alex
   - *Progettisti*: #p.stefano, #p.ramona
   - *Verificatori*: #p.sebastiano
 
  === 2.3.2 Definizione delle attività da intraprendere
-  Dopo la riunione, il responsabile ha redatto un documento interno di indicazione delle attività di progetto, che è stato condiviso con i membri del team.\ 
+  Dopo la riunione, il responsabile#super("G") ha redatto un documento interno di indicazione delle attività di progetto, che è stato condiviso con i membri del team.\ 
   Il seguente documento è consultabile #link("https://docs.google.com/document/d/17DUWgYr5nXG_-uCSHt-M-gOob2vvhaFMKl7MoBQT39o/edit?tab=t.0")[#underline[qui]].
 
   
