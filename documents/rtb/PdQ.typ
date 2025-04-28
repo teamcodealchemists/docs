@@ -71,7 +71,7 @@ Il Piano di Qualifica#super[G] si basa su tre aspetti principali:
 === 1.1.2 Controllo di Qualità
 - Attuare e assicurare la conformità con le regole da seguire e il Way of Working#super[G];
 - L'operato viene monitorato attraverso il Cruscotto di Valutazione;
-- Effettuare il Quality Assurance passo-passo per prevenire e mitigare i rischi e verificare la soddisfazione dei requisiti.
+- Effettuare il Quality Assurance passo-passo per prevenire e mitigare i rischi e verificare la soddisfazione dei requisiti#super[G].
 
 === 1.1.3 Miglioramento continuo
 La qualità non è definitiva, bensì si evolve e va perfezionata nel corso del tempo:
@@ -79,7 +79,7 @@ La qualità non è definitiva, bensì si evolve e va perfezionata nel corso del 
 - L'obiettivo è incrementare nel tempo l'efficienza e l'efficacia dei processi.
 
 == 1.2 Glossario
-Per una corretta comprensione del documento, viene fornito un glossario dei termini utilizzati. Ogni termine è indicato da una "#super[G]" in apice alla parola.
+Per una corretta comprensione del documento, viene fornito un glossario dei termini utilizzati. Ogni termine è indicato da una "#super[G]" in apice alla parola#super[G].
 Per trovare il significato del termine, è possibile consultare il glossario al seguente indirizzo: 
 #underline[#link("https://teamcodealchemists.github.io/glossario.html")]\
 == 1.3 Riferimenti
@@ -101,7 +101,7 @@ Per garantire un'analisi oggettiva e sistematica della qualità del prodotto#sup
 
 In particolare, le metriche sono utilizzate per:
 
-- Valutare attributi interni (come la struttura del codice) e attributi esterni (come l'usabilità e l'affidabilità percepita dall'utente);
+- Valutare attributi interni (come la struttura del codice#super[G]) e attributi esterni (come l'usabilità e l'affidabilità percepita dall'utente);
 
 - Supportare il monitoraggio dell'evoluzione del prodotto#super[G] durante le fasi di sviluppo e validazione;
 

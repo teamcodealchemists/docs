@@ -86,7 +86,7 @@ Il gruppo _Code Alchemists_ ha partecipato all'incontro in modalità mista, come
 - *In videoconferenza:* Matteo Pretto, Alex Shu
 
 == 2.2 Discussione e Q&A sul capitolato#super[G]#super("G")
-L'incontro, richiesto anche per una conoscenza diretta del Team a seguito dell'assegnazione del capitolato#super[G]#super("G"), aveva come scopo principale rispondere ad alcune domande emerse durante una prima analisi dei requisiti#super("G") effettuata dagli Analisti#super("G").
+L'incontro, richiesto anche per una conoscenza diretta del Team a seguito dell'assegnazione del capitolato#super[G]#super("G"), aveva come scopo principale rispondere ad alcune domande emerse durante una prima analisi dei requisiti#super[G]#super("G") effettuata dagli Analisti#super("G").
 
 Per ottimizzare la comunicazione e ridurre al minimo gli sprechi di tempo, le domande sono state inviate all'azienda il giorno precedente alla riunione, come richiesto durante il primo incontro avvenuto prima dell'assegnazione del capitolato#super[G]#super("G") stesso.
 
@@ -112,12 +112,12 @@ Di seguito vengono riportate le domande sottoposte all'azienda e le relative ris
   *A:* Una gestione centralizzata con logica di controllo sui magazzini periferici rappresenta una soluzione efficace. Il team ha proposto l’uso di una coda di ordini#super[G] e il blocco selettivo delle richieste che coinvolgono la merce oggetto del conflitto. Questa proposta è stata ritenuta adeguata. È stato inoltre evidenziato il problema derivante dalla gestione simultanea degli ordini#super[G] da parte del sistema centralizzato e locale, che può causare conflitti. Sebbene la soluzione definitiva emergerà durante lo sviluppo dell’architettura e dei casi d’uso, l’idea iniziale del Team è stata vista positivamente. \
 
 + *Q: Tra le tecnologie consigliate per il caching c'è Redis. Come funziona il caching?*\
-  *A:* Il caching rappresenta un’ottimizzazione del software, finalizzata a migliorare le prestazioni nelle richieste al database. Contrariamente a quanto inizialmente ipotizzato dal team, il caching non è centrale nella gestione del sistema, ma può essere considerato in fase avanzata di progettazione. Si propone di approfondire l’argomento con l’azienda durante l’analisi dettagliata dei requisiti. \
+  *A:* Il caching rappresenta un’ottimizzazione del software, finalizzata a migliorare le prestazioni nelle richieste al database. Contrariamente a quanto inizialmente ipotizzato dal team, il caching non è centrale nella gestione del sistema, ma può essere considerato in fase avanzata di progettazione. Si propone di approfondire l’argomento con l’azienda durante l’analisi dettagliata dei requisiti#super[G]. \
 
 + *Q: Quale tecnologia tra Kafka e NATS è meglio scegliere per la comunicazione tra microservizi#super[G]?*\
   *A:* Il Team aveva inizialmente proposto l’utilizzo di *Kafka* per la comunicazione tra microservizi#super[G], in virtù della sua capacità di gestire grandi volumi di dati, della persistenza e della scalabilità. Si ritiene preferibile l'utilizzo di *NATS* poichè più leggero e semplice da configurare. Inoltre, l’uso di NATS JetStream, compatibile con Docker, si integra bene con l’ambiente di simulazione locale consigliato. \
 
-+ *Q: Nel PoC#super("G") è richiesta la consegna della _gestione di un solo magazzino collegato al nodo#super[G] centrale_. Quali aspetti specifici dobbiamo dimostrare e quali requisiti minimi sono richiesti? Con un solo magazzino il problema della gestione distribuita non si presenterebbe.*\
++ *Q: Nel PoC#super("G") è richiesta la consegna della _gestione di un solo magazzino collegato al nodo#super[G] centrale_. Quali aspetti specifici dobbiamo dimostrare e quali requisiti#super[G] minimi sono richiesti? Con un solo magazzino il problema della gestione distribuita non si presenterebbe.*\
   *A:* Il sistema deve essere predisposto per creare magazzini e gestire ordini#super[G]. L’azienda ribadisce che il PoC#super("G") ha l’obiettivo di dimostrare la validità e il funzionamento dell’architettura sviluppata, attraverso le funzionalità base. Non si tratta di un prodotto#super[G] completo, ma di un prototipo che includa le componenti principali del progetto. È sufficiente un’interfaccia HTTP o CLI; non è necessaria un’interfaccia grafica. L’importante è che quanto progettato e documentato dal team sia coerente e funzionante. \
 
 + *Q: In cosa consiste l'analisi dei sistemi di gestione dell'inventario#super[G] esistenti con focus su quelli distribuiti e basati su microservizi#super[G]? Come avviene questa fase? Saremo supervisionati? Come deve essere condotta questa analisi? Dobbiamo soffermarci su qualche sistema specifico già esistente?*\
@@ -128,7 +128,7 @@ Di seguito vengono riportate le domande sottoposte all'azienda e le relative ris
   *A:* La gestione degli spostamenti delle merci può essere definita liberamente dal Team. È possibile adottare sia una gestione automatica che manuale, a seconda dei casi d’uso specifici. Ad esempio, su nostra proposta, il sistema centrale potrebbe inviare automaticamente gli ordini#super[G] di spostamento, mentre in situazioni critiche, come quando la merce scende sotto una certa soglia di disponibilità, l’approvazione potrebbe essere manuale. La decisione dipenderà dalle necessità operative e dai flussi definiti durante lo sviluppo dell’architettura e dei casi d’uso. \
 
 *Informazioni aggiuntive:*
-  - La parte di *test book* è molto importante: i test sono fondamentali per verificare che i requisiti siano soddisfatti. È essenziale descrivere chiaramente i test e le modalità di funzionamento per garantirne l’efficacia.
+  - La parte di *test book* è molto importante: i test sono fondamentali per verificare che i requisiti#super[G] siano soddisfatti. È essenziale descrivere chiaramente i test e le modalità di funzionamento per garantirne l’efficacia.
   - Gli ordini#super[G] possono partire sia dal magazzino centrale che da quelli locali, quindi è importante tenere in considerazione entrambe le possibilità.
   - Gli Use Case deveono risultare *chiari*. \
 
@@ -141,7 +141,7 @@ Per eventuali necessità, l'azienda ha rinnovato la sua disponibilità tramite i
 
 #pagebreak()
 = 3. Esiti della riunione
-In seguito al momento di Q&A, durante il quale abbiamo ricevuto risposte puntuali alle nostre domande, insieme a preziosi suggerimenti e consigli da parte dell’azienda, il _Team Code Alchemists_ proseguirà, nel prossimo periodo, con un’approfondita analisi allo stato dell’arte. Ci concentreremo in particolare sui *sistemi di gestione dell’inventario#super[G]*, con un focus specifico su quelli *distribuiti* e basati su *architetture a microservizi#super[G]*. Parallelamente, avvieremo l’analisi preliminare dei requisiti del progetto.
+In seguito al momento di Q&A, durante il quale abbiamo ricevuto risposte puntuali alle nostre domande, insieme a preziosi suggerimenti e consigli da parte dell’azienda, il _Team Code Alchemists_ proseguirà, nel prossimo periodo, con un’approfondita analisi allo stato dell’arte. Ci concentreremo in particolare sui *sistemi di gestione dell’inventario#super[G]*, con un focus specifico su quelli *distribuiti* e basati su *architetture a microservizi#super[G]*. Parallelamente, avvieremo l’analisi preliminare dei requisiti#super[G] del progetto.
 
 Al termine di questa fase, provvederemo a ricontattare l’azienda per concordare il prossimo incontro.
 
@@ -151,7 +151,7 @@ Il _Team Code Alchemists_ desidera infine ringraziare l’azienda _M31_ per l’
 = 4. Tabella delle decisioni e azioni
     #let voci_tabella = (
     [A12], [Effettuare un'attenta _"analisi allo stato dell'arte"_],
-    [A13], [Proseguire con l'analisi preliminare dei requisiti del progetto],
+    [A13], [Proseguire con l'analisi preliminare dei requisiti#super[G] del progetto],
     [DOC14], [Stesura del Verbale Esterno del 04-04-2025],
   )
   

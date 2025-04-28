@@ -149,7 +149,7 @@
   ]
 
   dove:
-  - *ID* rappresenta un codice univoco che identifica una decisione presa o un'azione da intraprendere. È strutturato in modo progressivo a partire dal numero 1 e può assumere i seguenti formati:
+  - *ID* rappresenta un codice#super[G] univoco che identifica una decisione presa o un'azione da intraprendere. È strutturato in modo progressivo a partire dal numero 1 e può assumere i seguenti formati:
       - *D\#*: indica una decisione interna del team con effetto immediato.\
       - *A\#*: ndica un'attività o azione che viene registrata nel sistema di Ticketing e Gestione Progetto del team.
       - *DOC\#*: ndica un'attività finalizzata alla modifica o aggiornamento della documentazione.
@@ -201,7 +201,7 @@
   Considerata l'importanza di definire e regolamentare tale aspetto, il team ha stabilito un periodo di rotazione della durata di *due settimane (14 giorni)*. Questo intervallo è stato scelto in quanto rappresenta il tempo minimo necessario per garantire progressi concreti, difficilmente ottenibili con una rotazione più frequente.
 
   == 2.4 Redazione di di ulteriori documenti
-  Il gruppo ha deciso di avviare la redazione del presente verbale, nonché di ulteriori documenti, tra cui il *Glossario*, il documento di *Analisi dei Requisiti* e il documento sulle *Norme di Progetto*.
+  Il gruppo ha deciso di avviare la redazione del presente verbale, nonché di ulteriori documenti, tra cui il *Glossario*, il documento di *Analisi dei Requisiti#super[G]* e il documento sulle *Norme di Progetto*.
   
   == 2.5 Richiesto incontro con _M31_
   Il Team ha deciso di contattare _M31_ tramite la posta elettronica per comunicare l'aggiudicazione del loro capitolato#super[G]#super("G") e concordare un primo incontro dedicato alla definizione delle tecnologie da adottare e di altri aspetti chiave per l'avvio del progetto.
@@ -235,7 +235,7 @@
     #let voci_tabella = (
       [D12], [Assegnazione dei ruoli e compiti fino al 11-04-2025],
       [D13], [Contattare azienda _M31_],
-      [A9], [Prima analisi dei requisiti],
+      [A9], [Prima analisi dei requisiti#super[G]],
       [A10], [Individuazione delle domande per incontro con azienda],
       [A11], [Aggiornamento del sito con nuova veste grafica, aggiunta glossario],
       [DOC10],[Creazione e stesura del Glossario],

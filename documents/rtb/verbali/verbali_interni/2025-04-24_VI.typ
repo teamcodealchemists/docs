@@ -75,10 +75,10 @@
   Gli analisti, durante il secondo sprint, hanno portato a termine l'analisi dello stato dell'arte e, sulla base di quanto emerso, hanno prodotto#super[G] delle scelte architetturali, presentando delle linee guida generali per quanto riguarda la progettazione del sistema, e presentando le problematiche che possono emergere. \
   Questo documento è un documento interno chiamato _Analisi complessiva_, e presente nella cartella condivisa nella piattaforma _Google Drive_ con i membri del team.
 
-  Inoltre è stata continuata la redazione del documento di analisi dei requisiti, con l'aggiunta di nuovi requisiti scomposti e del paragrafo riguardante l'analisi dello stato dell'arte.\
-  La scomposizione dei requisiti si è rivelata un'attività necessaria per una maggiore comprensione del sistema e per una migliore definizione dei requisiti stessi, dato che i requisiti iniziali erano stati presentati in modo articolato e complesso. \
+  Inoltre è stata continuata la redazione del documento di analisi dei requisiti#super[G], con l'aggiunta di nuovi requisiti#super[G] scomposti e del paragrafo riguardante l'analisi dello stato dell'arte.\
+  La scomposizione dei requisiti#super[G] si è rivelata un'attività necessaria per una maggiore comprensione del sistema e per una migliore definizione dei requisiti#super[G] stessi, dato che i requisiti#super[G] iniziali erano stati presentati in modo articolato e complesso. \
 
-  Infine è stata iniziata *l'analisi dei casi d'uso*, che ha portato alla definizione di alcuni casi d'uso e alla loro scomposizione in sotto-casi d'uso. In merito a questo, è stato sollevato un dubbio riguardante la correttezza degli stessi, dato che non sono molto in linea con l'analisi dei requisiti.\
+  Infine è stata iniziata *l'analisi dei casi d'uso*, che ha portato alla definizione di alcuni casi d'uso e alla loro scomposizione in sotto-casi d'uso. In merito a questo, è stato sollevato un dubbio riguardante la correttezza degli stessi, dato che non sono molto in linea con l'analisi dei requisiti#super[G].\
   Questa attività è stata svolta in modo iniziale, e si prevede di analizzarli in modo più approfondito nei prossimi incontri.\
 
   === 2.1.4 Lavori svolti dai verificatori
@@ -93,7 +93,7 @@
   Dopo aver ritenuto concluso il secondo sprint, il team ha deciso di iniziare a definire il terzo sprint.\
   Il terzo sprint avrà una durata di due settimane: inizierà il *26 aprile* e terminerà il *09 maggio*.\
   Si farà riferimento a questo sprint come _Sprint RTB 3_.\
-  Durante il terzo sprint, il team si concentrerà principalmente *sull'analisi dei requisiti e sulla definizione dei casi d'uso*.\
+  Durante il terzo sprint, il team si concentrerà principalmente *sull'analisi dei requisiti#super[G] e sulla definizione dei casi d'uso*.\
   Inoltre si lavorera sulla *definizione dell'architettura del PoC*, e, se possibile, si inizierà a lavorare sulla *progettazione del PoC*.\
 
   === 2.3.1 Definizione dei ruoli e delle responsabilità
@@ -112,7 +112,7 @@
   
   #pagebreak()
   = 3. Esiti della riunione
-  La riunione si conclude con l’assegnazione dei compiti e la definizione delle decisioni e azioni intraprese, ponendo particolare attenzione al completamento dell’analisi dei requisiti#super("G") e dell'avvio dell'architettura#super("G"), che sarà oggetto di confronto con l’azienda nel prossimo incontro, previsto per il 5 maggio. \
+  La riunione si conclude con l’assegnazione dei compiti e la definizione delle decisioni e azioni intraprese, ponendo particolare attenzione al completamento dell’analisi dei requisiti#super[G]#super("G") e dell'avvio dell'architettura#super("G"), che sarà oggetto di confronto con l’azienda nel prossimo incontro, previsto per il 5 maggio. \
 
   Nel periodo successivo, il team continuerà con le attività previste indicate al punto 2.3.2. \
 

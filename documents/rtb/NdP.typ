@@ -140,17 +140,17 @@
   === Scopo
   // Descrizione Sviluppo
   
-  === Analisi dei Requisiti
+  === Analisi dei Requisiti#super[G]
     ==== Scopo
     // Descrizione documento AdR
     ==== Casi d'uso
     // Descrizione e nomenclatura use case
-    ==== Requisiti
-    // Nomenclatura Requisiti + riferimento all'AdR
+    ==== Requisiti#super[G]
+    // Nomenclatura Requisiti#super[G] + riferimento all'AdR
   
   === Progettazione
     ==== Scopo
-    // Dare soluzioni a requisiti rilevati nell'AdR.
+    // Dare soluzioni a requisiti#super[G] rilevati nell'AdR.
     ==== Fasi di Progettazione  
       ===== Progettazione logica
       // Descrizione progettazione logica
@@ -220,7 +220,7 @@
       /* Menzionare che:  
       Il ciclo di vita del software che è obiettivo di questo progetto è strutturato nelle seguenti fasi:
           1. Inizializzazione e pianificazione
-          2. Analisi dei requisiti
+          2. Analisi dei requisiti#super[G]
           3. Progettazione
           4. Implementazione
           5. Verifica e validazione
@@ -260,31 +260,31 @@
 
           Ogni membro è a conoscenza delle _best practice_ per la creazione, l'unione e la cancellazione dei rami, così da promuovere una collaborazione efficace e strutturata all'interno del team.
 
-          ===== Nomenclatura dei branch
-          È stata raccomandata, ove possibile, l'associazione dei branch relativi a nuove funzionalità (ovvero i branch _feature_) alle corrispondenti issue tracciate su *Jira*, adottando una convenzione di nomenclatura coerente _(ad esempio: *feature/Sprint-55-nome-feature*)_.
+          ===== Nomenclatura dei branch#super[G]
+          È stata raccomandata, ove possibile, l'associazione dei branch#super[G] relativi a nuove funzionalità (ovvero i branch#super[G] _feature_) alle corrispondenti issue tracciate su *Jira*, adottando una convenzione di nomenclatura coerente _(ad esempio: *feature/Sprint-55-nome-feature*)_.
 
-          ===== Branch principali
+          ===== Branch#super[G] principali
           La struttura è basata sui rami principali _main_ e _develop_.
 
-          Il ramo _main_ è destinato alle versioni stabili del progetto, verificate, testate e pronte per essere rilasciate. Ogni commit su _main_ dovrebbe quindi rappresentare una versione stabile e testata del software e/o del documento in questione.
+          Il ramo _main_ è destinato alle versioni stabili del progetto, verificate, testate e pronte per essere rilasciate. Ogni commit#super[G] su _main_ dovrebbe quindi rappresentare una versione stabile e testata del software e/o del documento in questione.
 
-          Il ramo _develop_, invece, è destinato a raccogliere tutte le nuove funzionalità che saranno incluse nel prossimo rilascio. I commit sul _develop_ possono contenere codice che si trova ancora in fase di sviluppo e test.
+          Il ramo _develop_, invece, è destinato a raccogliere tutte le nuove funzionalità che saranno incluse nel prossimo rilascio. I commit#super[G] sul _develop_ possono contenere codice#super[G] che si trova ancora in fase di sviluppo e test.
 
-          ===== Feature branch
-          I branch secondari _feature_ sono dedicati allo sviluppo delle singole nuove funzionalità.
-          Essi devono essere creati a partire dal ramo _develop_ e, una volta completati, deve essere effettuato il merge in _develop_. 
+          ===== Feature branch#super[G]
+          I branch#super[G] secondari _feature_ sono dedicati allo sviluppo delle singole nuove funzionalità.
+          Essi devono essere creati a partire dal ramo _develop_ e, una volta completati, deve essere effettuato il merge#super[G] in _develop_. 
     
-          La convenzione di nomenclatura per questi branch è consultabile alla sezione 7.2.2.
-          // TODO: Modificare 7.2.2 con il numero della sezione "Nomenclatura dei branch"
+          La convenzione di nomenclatura per questi branch#super[G] è consultabile alla sezione 7.2.2.
+          // TODO: Modificare 7.2.2 con il numero della sezione "Nomenclatura dei branch#super[G]"
 
       === GitHub Action
       // Azioni per controllare glossario e per indice gulpease
       // Attenderei di ultimarle per scrivere questa parte, in modo da essere più precisi
 
-        === Procedure di commit e merge
-          ==== Messaggi di commit // formato e convenzioni
-          ==== Dimensione dei commit //linee guida
-          ==== Pull/Merge request // processo e approvazioni
+        === Procedure di commit#super[G] e merge#super[G]
+          ==== Messaggi di commit#super[G] // formato e convenzioni
+          ==== Dimensione dei commit#super[G] //linee guida
+          ==== Pull/Merge#super[G] request // processo e approvazioni
           ==== Gestione dei conflitti // procedure e responsabilità
 
         === Baseline e rilasci
@@ -393,7 +393,7 @@
         // In realtà possiamo variare dalle due settimane, è solo per l'RTB, ma potremmo diminuire ad una se necessario.
 
         ==== Pianificazione dello Sprint
-        Pianificare gli Sprint implica definire gli obiettivi e le attività da completare durante lo Sprint. Durante questa fase, vengono identificati i requisiti, assegnate le responsabilità e stabilite le priorità. Una buona pianificazione è essenziale per il successo dello Sprint.
+        Pianificare gli Sprint implica definire gli obiettivi e le attività da completare durante lo Sprint. Durante questa fase, vengono identificati i requisiti#super[G], assegnate le responsabilità e stabilite le priorità. Una buona pianificazione è essenziale per il successo dello Sprint.
 
         ==== Review dello Sprint
         La review dello Sprint è una riunione che si tiene alla fine di ogni Sprint secondo quanto descritto al punto 4.4.2. Durante tale riunione, il team discute a grandi linee su ciò a cui si è lavorato e stabilisce il materiale da presentare agli stakeholder, i quali daranno dei feedback su quanto svolto così da identificare eventuali miglioramenti per il prossimo Sprint.
@@ -452,7 +452,7 @@
           // I vari parametri accettati che usiamo su Jira nel creare una task
           ===== Assegnazione task
           // A chi viene assegnata una task (spieghiamo come viene scelto magari il Sottoresponsabile analista#super[G] che rappresenta l'intero gruppo di analisti)
-          ===== Automazione task-branch
+          ===== Automazione task-branch#super[G]
           // Automazione Git-Jira
           ===== Automazione release
           // Automazione pubblicazione documenti pronti nel sito web
