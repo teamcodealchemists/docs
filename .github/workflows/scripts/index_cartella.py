@@ -35,7 +35,7 @@ folder_json = create_folder_structure_json(folder_path)
 folder_json_str = json.dumps(folder_json, indent=4) 
 
 # Specify the path to the output file 
-output_file = 'index.json'
+output_file = 'documents_compiled/index.json'
 
 
 # Save the JSON representation of a folder structure 
