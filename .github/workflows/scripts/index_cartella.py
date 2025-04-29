@@ -1,32 +1,47 @@
-import os
-import json
-from urllib.parse import quote
+import os 
+import json 
 
-# Configura il percorso della cartella e il link base
-folder_path = "documents_compiled/"  # Cambia con il percorso della cartella desiderata
-base_link = "https://teamcodealchemists.github.io/docs"  # Sostituisci con il link base desiderato
+def create_folder_structure_json(path): 
+	# Initialize the result dictionary with 
+	# folder name, type, and an empty list for children 
+	result = {'name': os.path.basename(path), 
+			'type': 'folder', 'children': []} 
 
-# Funzione per creare l'indice dei file divisi per cartelle
-def create_index_by_folder(folder_path, base_link):
-    index = {}
-    for root, _, files in os.walk(folder_path):
-        relative_root = os.path.relpath(root, folder_path)
-        if relative_root == ".":
-            relative_root = ""
-        folder_key = relative_root.replace(os.sep, "/")
-        index[folder_key] = []
-        for file in files:
-            file_path = os.path.relpath(os.path.join(root, file), folder_path)
-            file_link = f"{base_link}/{quote(file_path.replace(os.sep, '/'))}"
-            index[folder_key].append({"name": file, "link": file_link})
-    return index
+	# Check if the path is a directory 
+	if not os.path.isdir(path): 
+		return result 
 
-# Creazione dell'indice
-index = create_index_by_folder(folder_path, base_link)
+	# Iterate over the entries in the directory 
+	for entry in os.listdir(path): 
+	# Create the full path for the current entry 
+		entry_path = os.path.join(path, entry) 
 
-# Salvataggio in un file JSON
-output_file = os.path.join(folder_path, "index.json")
-with open(output_file, "w", encoding="utf-8") as f:
-    json.dump(index, f, indent=4, ensure_ascii=False)
+		# If the entry is a directory, recursively call the function 
+		if os.path.isdir(entry_path): 
+			result['children'].append(create_folder_structure_json(entry_path)) 
+		else: # If the entry is a file, create a dictionary with name and type 
+			result['children'].append({'name': entry, 'type': 'file'}) 
 
-print(f"File index.json creato con successo in: {output_file}")
+	return result 
+
+	
+# Specify the path to the folder you want to create the JSON for 
+folder_path = 'documents'
+
+# Call the function to create the JSON representation 
+folder_json = create_folder_structure_json(folder_path) 
+
+# Convert the dictionary to a JSON string with indentation 
+folder_json_str = json.dumps(folder_json, indent=4) 
+
+# Specify the path to the output file 
+output_file = 'index.json'
+
+
+# Save the JSON representation of a folder structure 
+with open(output_file, 'w') as f: 
+# Write the JSON string to the file 
+	f.write(folder_json_str) 
+
+# Print a confirmation message with the output file path 
+print("JSON saved to", output_file)
