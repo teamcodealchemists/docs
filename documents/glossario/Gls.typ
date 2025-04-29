@@ -31,7 +31,7 @@
   [28/04/2025],
   [A. Shu],
   [S. Marana],
-  [Aggiunta definizioni al glossario],
+  [Aggiunte definizioni al glossario],
 
   [0.2.1],
   [15/04/2025],
@@ -87,7 +87,7 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
   Segnalazioni automatiche generate dal sistema in risposta a eventi rilevanti, come esaurimento scorte, errori di trasferimento, o necessità di approvazione.
 
 - *Amministratore*: \
-  Ricopre un ruolo di alto livello e dedica il minor numero di ore, in quanto non è costantemente coinvolto nello sviluppo. È responsabile di garantire l’efficacia delle tecnologie e degli strumenti utilizzati, supportando la collaborazione del team con attività come test automatici e risoluzione di malfunzionamenti. Assicura l’efficienza di procedure, strumenti e tecnologie a supporto del Way of Working, contribuendo alla stabilità del progetto e riducendo i tempi di inattività, migliorando così l’efficienza complessiva.
+  Ricopre un ruolo di alto livello e dedica il minor numero di ore, in quanto non è costantemente coinvolto nello sviluppo. È responsabile di garantire l'efficacia delle tecnologie e degli strumenti utilizzati, supportando la collaborazione del team con attività come test automatici e risoluzione di malfunzionamenti. Assicura l'efficienza di procedure, strumenti e tecnologie a supporto del Way of Working, contribuendo alla stabilità del progetto e riducendo i tempi di inattività, migliorando così l'efficienza complessiva.
 
 - *Analisi dei requisiti*: \
   Processo di esame e interpretazione del capitolato per individuare i bisogni del committente, formalizzare i requisiti funzionali e non funzionali del sistema, e proporre soluzioni che li soddisfino. Il risultato è un documento strutturato che guida lo sviluppo del software, assicurando coerenza tra le aspettative del cliente e il prodotto finale.
@@ -99,7 +99,7 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
   Attività di acquisizione di prodotti o materiali necessari per garantire il funzionamento del magazzino. Include ordini da fornitori esterni o trasferimenti da altri magazzini.
 
 - *Autenticazione*:\
-  Meccanismo per verificare l’identità di un utente prima di concedere accesso al sistema.
+  Meccanismo per verificare l'identità di un utente prima di concedere accesso al sistema.
 
 - *Autenticazione a due fattori (2FA)*:\
   Sistema di autenticazione che richiede due forme di verifica (es. password + codice via SMS) per garantire una maggiore sicurezza.
@@ -116,11 +116,11 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 #pagebreak()
 = C
 - *Capitolato*: \
-  Documento formale che descrive in modo dettagliato le esigenze, i requisiti e i vincoli di un progetto software, forniti dal committente. Costituisce la base per l’analisi dei requisiti e guida lo sviluppo del sistema. Viene utilizzato anche come base per la negoziazione e per la gestione delle modifiche durante l’esecuzione del progetto.
+  Documento formale che descrive in modo dettagliato le esigenze, i requisiti e i vincoli di un progetto software, forniti dal committente. Costituisce la base per l'analisi dei requisiti e guida lo sviluppo del sistema. Viene utilizzato anche come base per la negoziazione e per la gestione delle modifiche durante l'esecuzione del progetto.
 - *Certificati Digitali*:\
   Documenti elettronici che attestano l'identità di un'entità online, garantendo comunicazioni sicure.
 - *Chief Technology Officer (CTO)*:\
-  Dirigente di primo livello responsabile delle scelte tecnologiche di un'azienda. Valuta, seleziona e propone le soluzioni tecniche più adatte per supportare lo sviluppo di prodotti o servizi, garantendo l’allineamento tra innovazione tecnologica e obiettivi strategici dell’organizzazione. Fa parte del consiglio direttivo e collabora con le altre funzioni aziendali per guidare l’evoluzione tecnologica.
+  Dirigente di primo livello responsabile delle scelte tecnologiche di un'azienda. Valuta, seleziona e propone le soluzioni tecniche più adatte per supportare lo sviluppo di prodotti o servizi, garantendo l'allineamento tra innovazione tecnologica e obiettivi strategici dell'organizzazione. Fa parte del consiglio direttivo e collabora con le altre funzioni aziendali per guidare l'evoluzione tecnologica.
 - *Cifratura*:\
   Processo di trasformazione dei dati in un formato illeggibile, al fine di proteggerli da accessi non autorizzati.
 - *CI/CD*:\
@@ -163,11 +163,11 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 #pagebreak()
 = M
 - *Mentore*: \
-  Figura esperta che supporta uno sviluppatore o un team junior nell’ambito dell’ingegneria del software, offrendo guida tecnica, consigli pratici e orientamento nel processo di crescita professionale.
+  Figura esperta che supporta uno sviluppatore o un team junior nell'ambito dell'ingegneria del software, offrendo guida tecnica, consigli pratici e orientamento nel processo di crescita professionale.
 - *Merge*:\
   Operazione che unisce due rami di sviluppo in un unico ramo.
 - *MFA (Autenticazione a più fattori)*:\
-  Meccanismo di autenticazione che richiede più elementi di verifica per confermare l’identità di un utente.
+  Meccanismo di autenticazione che richiede più elementi di verifica per confermare l'identità di un utente.
 - *Microservizi*:\
   Architettura software composta da piccoli servizi indipendenti che comunicano tra loro.
 - *Modulari*:\
@@ -192,23 +192,23 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
   Oggetto fisico stoccato in un magazzino, trasferibile, vendibile o utilizzabile.
 
 - *Progettista*: \
-  Con un impegno orario medio-alto, garantisce una solida base al progetto. Trasforma i requisiti in un design architetturale strutturato, definendo l’organizzazione del sistema. Un progetto mal progettato può compromettere lo sviluppo, rendendo cruciale il suo ruolo. Assicura soluzioni affidabili, efficienti, sicure e conformi ai requisiti degli utenti finali.
+  Con un impegno orario medio-alto, garantisce una solida base al progetto. Trasforma i requisiti in un design architetturale strutturato, definendo l'organizzazione del sistema. Un progetto mal progettato può compromettere lo sviluppo, rendendo cruciale il suo ruolo. Assicura soluzioni affidabili, efficienti, sicure e conformi ai requisiti degli utenti finali.
 
 - *Programmatore*: \
-  Figura centrale nello sviluppo, dedica il maggior numero di ore al progetto. È responsabile dell'implementazione del software, rispettando specifiche e requisiti, in collaborazione con il Progettista. Cura l’ottimizzazione del codice per migliorarne le prestazioni e sviluppa funzionalità avanzate, richiedendo competenze nei linguaggi di programmazione, nelle tecnologie adottate e nella risoluzione di problemi tecnici.
+  Figura centrale nello sviluppo, dedica il maggior numero di ore al progetto. È responsabile dell'implementazione del software, rispettando specifiche e requisiti, in collaborazione con il Progettista. Cura l'ottimizzazione del codice per migliorarne le prestazioni e sviluppa funzionalità avanzate, richiedendo competenze nei linguaggi di programmazione, nelle tecnologie adottate e nella risoluzione di problemi tecnici.
 
 - *Proof of Concept (PoC)*: \
-  Dimostrazione pratica, limitata e sperimentale, utilizzata per verificare la fattibilità tecnica o funzionale di un’idea, tecnologia o soluzione software. In ingegneria del software, una PoC serve a validare concetti chiave prima di investire risorse nello sviluppo completo, mostrando che un certo approccio può funzionare in un contesto reale. Non è un prodotto finito, ma uno strumento per ridurre il rischio progettuale e supportare decisioni tecniche o strategiche.
+  Dimostrazione pratica, limitata e sperimentale, utilizzata per verificare la fattibilità tecnica o funzionale di un'idea, tecnologia o soluzione software. In ingegneria del software, una PoC serve a validare concetti chiave prima di investire risorse nello sviluppo completo, mostrando che un certo approccio può funzionare in un contesto reale. Non è un prodotto finito, ma uno strumento per ridurre il rischio progettuale e supportare decisioni tecniche o strategiche.
 
 - *Protocollo*:\
   Insieme di regole che regolano la comunicazione tra dispositivi di rete o componenti software.
 #pagebreak()
 = R
 - *Repository*: \
-  Archivio centralizzato e strutturato che consente la conservazione, la gestione e la condivisione di risorse digitali, quali codice sorgente, documentazione, librerie, configurazioni e dati. Garantisce la collaborazione tra più sviluppatori, l’integrità e la tracciabilità del progetto nel tempo.
+  Archivio centralizzato e strutturato che consente la conservazione, la gestione e la condivisione di risorse digitali, quali codice sorgente, documentazione, librerie, configurazioni e dati. Garantisce la collaborazione tra più sviluppatori, l'integrità e la tracciabilità del progetto nel tempo.
 
 - *Requirements and Technology Baseline (RTB)*: \
-  Nel contesto dello sviluppo software, la baseline di progetto è un riferimento stabile che definisce i requisiti del sistema e le tecnologie impiegate per la loro realizzazione. Comprende la specifica dei requisiti funzionali e non funzionali, l’elenco delle tecnologie, delle librerie e delle piattaforme adottate, nonché le strategie di sviluppo e testing. Questa baseline è essenziale per il controllo dell’avanzamento del progetto e per la verifica della conformità del prodotto rispetto ai requisiti concordati con il cliente.
+  Nel contesto dello sviluppo software, la baseline di progetto è un riferimento stabile che definisce i requisiti del sistema e le tecnologie impiegate per la loro realizzazione. Comprende la specifica dei requisiti funzionali e non funzionali, l'elenco delle tecnologie, delle librerie e delle piattaforme adottate, nonché le strategie di sviluppo e testing. Questa baseline è essenziale per il controllo dell'avanzamento del progetto e per la verifica della conformità del prodotto rispetto ai requisiti concordati con il cliente.
 
 - *Responsabile*: \
   Garantisce il completamento efficiente del progetto, rispettando obiettivi, tempistiche e aspettative del committente, coordinando ruoli e risorse. Data la rilevanza economica della posizione, il team ne ottimizza l'impiego per massimizzare l'efficienza e contenere i costi. Il ruolo richiede competenze nella gestione, risoluzione di criticità, coordinamento della comunicazione e pianificazione. Spetta inoltre al Responsabile approvare il rilascio di prodotti parziali o finali, software o documenti.
@@ -245,7 +245,7 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 #pagebreak()
 = V
 - *Verificatore*: \
-  Assicura l’affidabilità dei test e migliora la qualità del software e della documentazione, rispettando gli standard concordati. Conoscendo il metodo di lavoro, garantisce l’esecuzione precisa di ogni task secondo le best practice. Il suo ruolo è continuo, assicurando il rispetto delle aspettative del cliente e il successo del progetto.
+  Assicura l'affidabilità dei test e migliora la qualità del software e della documentazione, rispettando gli standard concordati. Conoscendo il metodo di lavoro, garantisce l'esecuzione precisa di ogni task secondo le best practice. Il suo ruolo è continuo, assicurando il rispetto delle aspettative del cliente e il successo del progetto.
 - *Vulnerabilità*:\
   Debolezza o difetto che può essere sfruttato per compromettere la sicurezza o il funzionamento del sistema.
 #pagebreak()
