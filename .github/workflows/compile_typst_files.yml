@@ -33,6 +33,10 @@ jobs:
               id: compila_file_typ
               run: python .github/workflows/scripts/compila_file_typ.py
 
+            - name: Create a json index file
+              id: index_cartella
+              run: python .github/workflows/scripts/index_cartella.py
+
             - name: List files in the repository
               run: ls -R
 
@@ -67,10 +71,6 @@ jobs:
               with:
                   name: compiled-typst-files
                   path: documents_compiled/
-
-            - name: Create a json index file
-              id: index_cartella
-              run: python .github/workflows/scripts/index_cartella.py
 
             - name: Restore Timestamps
               uses: chetan/git-restore-mtime-action@v2
