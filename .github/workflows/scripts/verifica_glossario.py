@@ -51,6 +51,47 @@ def verifica_documenti(documenti_dir, glossario):
                 errori_totali += verifica_file(file_path, glossario)
     return errori_totali
 
+def correggi_file(file_path, glossario):
+    """Corregge il file aggiungendo #super[G] accanto alle parole del glossario mancanti."""
+    with open(file_path, 'r', encoding='utf-8') as file:
+        contenuto = file.readlines()
+
+    modificato = False
+    with open(file_path, 'w', encoding='utf-8') as file:
+        for numero_riga, riga in enumerate(contenuto, start=1):
+            nuova_riga = riga
+            for parola in glossario:
+                if re.search(rf"\b{re.escape(parola)}\b", riga, re.IGNORECASE):
+                    # Verifica che la parola sia seguita da #super[G]
+                    pattern = rf"\b{re.escape(parola)}\b#super\[G\]"
+                    if not re.search(pattern, riga, re.IGNORECASE):
+                        # Aggiungi #super[G] direttamente accanto alla parola
+                        nuova_riga = re.sub(
+                            rf"(\b{re.escape(parola)}\b)(?!#super\[G\])",
+                            r"\1#super[G]",
+                            nuova_riga,
+                            flags=re.IGNORECASE
+                        )
+                        modificato = True
+                        print(f"\033[93m  - Correzione: aggiunto #super[G] alla parola '{parola}' nella riga {numero_riga}.\033[0m")  # Correzione in giallo
+            file.write(nuova_riga)
+
+    if not modificato:
+        print(f"\033[92m  - Nessuna modifica necessaria per il file: {file_path}\033[0m")  # Nessuna modifica in verde
+
+def correggi_documenti(documenti_dir, glossario):
+    """Corregge tutti i file nella cartella documenti."""
+    blacklist_file = {"Gls.typ"}  # File da escludere dalla correzione
+    blacklist_cartella = {"candidatura"}  # Cartelle da escludere dalla correzione
+    for root, _, files in os.walk(documenti_dir):
+        # Salta le cartelle nella blacklist
+        if any(blacklisted in root for blacklisted in blacklist_cartella):
+            continue
+        for file_name in files:
+            if file_name.endswith(".typ") and file_name not in blacklist_file:  # Controlla solo file di testo non in blacklist
+                file_path = os.path.join(root, file_name)
+                correggi_file(file_path, glossario)
+
 def salva_badge_errori(numero_errori):
     badge = {
         "schemaVersion": 1,
@@ -64,5 +105,23 @@ def salva_badge_errori(numero_errori):
 if __name__ == "__main__":
     glossario = carica_glossario(glossario_file)
     #debug_print(glossario)
-    errori = verifica_documenti(documenti_dir, glossario)
-    salva_badge_errori(errori)
+    
+    # Prima verifica
+    errori_iniziali = verifica_documenti(documenti_dir, glossario)
+    print(f"\033[93mNumero di errori trovati prima della correzione: {errori_iniziali}\033[0m")
+    
+    # Correzione dei documenti
+    correggi_documenti(documenti_dir, glossario)
+    
+    # Seconda verifica
+    errori_finali = verifica_documenti(documenti_dir, glossario)
+    print(f"\033[93mNumero di errori trovati dopo la correzione: {errori_finali}\033[0m")
+    
+    # Salva il badge con il numero di errori finali
+    salva_badge_errori(errori_finali)
+    
+    # Messaggio finale
+    if errori_finali == 0:
+        print("\033[92mTutti gli errori sono stati corretti con successo!\033[0m")
+    else:
+        print("\033[91mAlcuni errori non sono stati corretti. Controlla i file manualmente.\033[0m")

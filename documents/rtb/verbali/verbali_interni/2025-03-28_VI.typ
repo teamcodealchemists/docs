@@ -77,7 +77,7 @@
   = 2. Dettagli della riunione
   Il verbale iniziale viene redatto da *Nicolò Bolzon* e come revisore *Nicholas Moretto*.
 
-  == 2.1 Migliorie alla parte pubblica del repository#super("G")
+  == 2.1 Migliorie alla parte pubblica del repository#super[G]#super("G")
   In seguito al riscontro del prof. Vardanega, è stato accolto il suggerimento di migliorare il sito del Team, con l'obiettivo di valorizzare la documentazione.\
   
   A tal fine, alcune sezioni verranno riorganizzate per *centralizzare i contenuti*, mentre il sito subirà un restyling volto a renderlo più *moderno, accessibile e conforme agli standard attuali*. In particolare, sarà adottato un *layout più ampio e chiaro* per ottimizzare la fruibilità delle informazioni.\
@@ -149,7 +149,7 @@
   ]
 
   dove:
-  - *ID* rappresenta un codice univoco che identifica una decisione presa o un'azione da intraprendere. È strutturato in modo progressivo a partire dal numero 1 e può assumere i seguenti formati:
+  - *ID* rappresenta un codice#super[G] univoco che identifica una decisione presa o un'azione da intraprendere. È strutturato in modo progressivo a partire dal numero 1 e può assumere i seguenti formati:
       - *D\#*: indica una decisione interna del team con effetto immediato.\
       - *A\#*: ndica un'attività o azione che viene registrata nel sistema di Ticketing e Gestione Progetto del team.
       - *DOC\#*: ndica un'attività finalizzata alla modifica o aggiornamento della documentazione.
@@ -171,15 +171,15 @@
     [D7], [Contattare azienda _M31_],
     [D8], [Contattare azienda _VarGroup_],
     [D9], [Contattare azienda _SyncLab_],
-    [D10],[Scelta finale del capitolato#super("G") *C6* avente come proponente _M31_],
-    [D11],[Invio email di candidatura per il capitolato#super("G") *C6* ai docenti],
+    [D10],[Scelta finale del capitolato#super[G]#super("G") *C6* avente come proponente _M31_],
+    [D11],[Invio email di candidatura per il capitolato#super[G]#super("G") *C6* ai docenti],
     [A1], [Creazione account Google per email],
     [A2], [Creazione canali di comunicazione (Telegram, Discord)],
-    [A3], [Creazione dashboard su _Jira_ per monitoraggio ticketing e gestione],
+    [A3], [Creazione dashboard#super[G] su _Jira_ per monitoraggio ticketing e gestione],
     [A5], [Invio Verbale Esterno ad azienda _SyncLab_ per approvazione],
     [A6], [Invio Verbale Esterno ad azienda _M31_ per approvazione],
     [A7], [Invio Verbale Esterno ad azienda _VarGroup_ per approvazione],
-    [A8], [Creazione repository#super("G") e sito di riflessione documentazione su _GitHub_],
+    [A8], [Creazione repository#super[G]#super("G") e sito di riflessione documentazione su _GitHub_],
     [DOC1], [Stesura del Verbale Interno del 06-03-2025],
     [DOC2], [Stesura del Verbale Interno del 10-03-2025],
     [DOC3], [Stesura del documento "Valutazione Capitolati"],
@@ -201,10 +201,10 @@
   Considerata l'importanza di definire e regolamentare tale aspetto, il team ha stabilito un periodo di rotazione della durata di *due settimane (14 giorni)*. Questo intervallo è stato scelto in quanto rappresenta il tempo minimo necessario per garantire progressi concreti, difficilmente ottenibili con una rotazione più frequente.
 
   == 2.4 Redazione di di ulteriori documenti
-  Il gruppo ha deciso di avviare la redazione del presente verbale, nonché di ulteriori documenti, tra cui il *Glossario*, il documento di *Analisi dei Requisiti* e il documento sulle *Norme di Progetto*.
+  Il gruppo ha deciso di avviare la redazione del presente verbale, nonché di ulteriori documenti, tra cui il *Glossario*, il documento di *Analisi dei Requisiti#super[G]* e il documento sulle *Norme di Progetto*.
   
   == 2.5 Richiesto incontro con _M31_
-  Il Team ha deciso di contattare _M31_ tramite la posta elettronica per comunicare l'aggiudicazione del loro capitolato#super("G") e concordare un primo incontro dedicato alla definizione delle tecnologie da adottare e di altri aspetti chiave per l'avvio del progetto.
+  Il Team ha deciso di contattare _M31_ tramite la posta elettronica per comunicare l'aggiudicazione del loro capitolato#super[G]#super("G") e concordare un primo incontro dedicato alla definizione delle tecnologie da adottare e di altri aspetti chiave per l'avvio del progetto.
 
   _M31_ ha risposto tempestivamente, confermando la riunione per *venerdì 4 aprile 2025 (04-04-2025) alle ore 10:00*, in presenza presso la loro sede per 5-6 membri del Team, con la possibilità di partecipazione online per gli assenti.
 
@@ -228,14 +228,14 @@
 
   Il Team, e in particolare gli analisti#super[G], si impegnerà nel prossimo periodo ad esaminare approfonditamente il capitolato#super[G], al fine di garantire una discussione strutturata con l’azienda durante la riunione già programmata, come indicato al punto *2.5* del presente verbale. \
 
-  I risultati derivanti dalla lettura del capitolato#super("G"), dall'analisi correlata e dalle discussioni con l'azienda saranno esaminati e formalizzati per iscritto nelle prossime riunioni del Team. \
+  I risultati derivanti dalla lettura del capitolato#super[G]#super("G"), dall'analisi correlata e dalle discussioni con l'azienda saranno esaminati e formalizzati per iscritto nelle prossime riunioni del Team. \
 
   #pagebreak()
   = 4. Tabella delle decisioni e azioni
     #let voci_tabella = (
       [D12], [Assegnazione dei ruoli e compiti fino al 11-04-2025],
       [D13], [Contattare azienda _M31_],
-      [A9], [Prima analisi dei requisiti],
+      [A9], [Prima analisi dei requisiti#super[G]],
       [A10], [Individuazione delle domande per incontro con azienda],
       [A11], [Aggiornamento del sito con nuova veste grafica, aggiunta glossario],
       [DOC10],[Creazione e stesura del Glossario],

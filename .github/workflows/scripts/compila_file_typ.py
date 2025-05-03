@@ -23,6 +23,19 @@ def compile_typ_files():
     # Percorso della directory dei documenti relativa alla root del progetto
     documents_dir = "./documents"
 
+    # Copia la cartella "presentazioni" e tutto il suo contenuto nella directory compilata
+    presentazioni_src = os.path.join(documents_dir, "presentazioni")
+    presentazioni_dest = os.path.join(compiled_dir, "presentazioni")
+
+    if os.path.exists(presentazioni_src):
+        try:
+            shutil.copytree(presentazioni_src, presentazioni_dest, dirs_exist_ok=True)
+            print(f"Copied 'presentazioni' folder and all its content from {presentazioni_src} to {presentazioni_dest}.")
+        except Exception as e:
+            print(f"Error copying 'presentazioni' folder: {e}")
+    else:
+        print(f"'presentazioni' folder not found in {documents_dir}.")
+
     # Cerca tutti i file .typ nella directory dei documenti
     for root, _, files in os.walk(documents_dir):
         for file in files:
@@ -69,3 +82,4 @@ def compile_typ_files():
 
 if __name__ == "__main__":
     compile_typ_files()
+    
