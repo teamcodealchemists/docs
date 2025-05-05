@@ -118,11 +118,6 @@ Per una corretta valutazione dei rischi, sono stati definiti i seguenti fattori 
       [Il rischio comporta ritardi significativi,
       un possibile aumento dei costi o un degrado della qualità, impattando negativamente sul raggiungimento degli obiettivi del progetto], 
       [E altamente probabile che il rischio si verifichi, con diversi segni evidenti che ne indicano la possibilità], 
-
-      [4], 
-      [Serio], 
-      [-], 
-      [-], 
   ),
     didascalia: "Sprint 2 - Indici di gravita gestione dei rischi"
   )
@@ -177,13 +172,15 @@ Dove:
     [Alta],
 
     [*Descrizione*],
-    [Inesperienza e poca conoscenza di una o piu' tecnologie utilizzate nel progetto],
+    [Inesperienza nell'uso di una o piu' tecnologie utilizzate nel progetto],
 
     [*Rilevamento*],
     [Comunicazione da parte dei membri del team e rallentamenti nello sviluppo ],
 
     [*Contromisure*], 
-    [In primo luogo grazie ad un impegno parallelo da parte del team di aggiornarsi ed imparare dove necessario. Inoltre dalla condivisone di materiale informativo/didattico, e dall'organizzazione di riunione/incontri rivolte ad aiutare membri del team in difficoltà],
+    [In primo luogo grazie ad un impegno parallelo da parte del team di aggiornarsi ed imparare dove necessario. 
+    In aggiunta dalla condivisone di materiale informativo/didattico, e dall'organizzazione di riunione/incontri 
+    rivolte ad aiutare membri del team in difficoltà],
   ),
   didascalia: "RT1"
 )
@@ -209,7 +206,8 @@ Dove:
     [Problemi di configurazione e funzionamento degli elementi costitutivi dell'architettura in uso],
 
     [*Contromisure*], 
-    [Studio piu' approfondito e mirato alle singole componenti del sistema da parte di uno o piu' membri del team per ottenre una panoramica migliore al fine di risolvere il problema],
+    [Studio piu' approfondito e mirato alle singole componenti del sistema da parte di uno o piu' membri del team 
+    per ottenre una panoramica migliore al fine di risolvere il problema],
   ),
   didascalia: "RT1"
 )
@@ -237,8 +235,8 @@ Dove:
     [*Contromisure*], 
     [In caso di codice non funzionante il
     programmatore cerchera di risolvere il problema approfondendo
-    la tecnologia in uso e l'argomento. In caso di insuccesso
-    un sistema di ticket condiviso con gli altri programmatori
+    la tecnologia in uso e l'argomento al fine di trovare una soluzione indipendetemente. 
+    In caso di insuccesso un sistema di ticket condiviso con gli altri programmatori
     potrebbe aiutare a condividere informazioni per ottenre una soluzione alternativa. 
     Se il problema dovesse diventare centrale i programmatori si impegneranno 
     a lavorare assieme per la risoluzione],
@@ -264,29 +262,8 @@ Dove:
 
     [*Contromisure*], 
     [Il team si impegna sin dall'inzio della progettazione architetturale di utilizzare tecnologie stabili
-    e in vasto uso nel mercato, come anche gli endpoint di eventuali API ],
-  ),
-  didascalia: "RT1"
-)
-
-=== RT5 - Rischio tecnologico legato all'ambiente di sviluppo
-
-#tabella_rischi(
-  dati: (
-     [*Codice*],
-     [],
-
-    [*Gravità*],
-    [],
-
-    [*Probabilità*],
-    [],
-
-    [*Rilevamento*],
-    [],
-
-    [*Contromisure*], 
-    [],
+    e in vasto uso nel mercato, come anche gli endpoint delle API messe a dispozione, al fine di ridurre
+    al minimo l'eventulita' del problema ],
   ),
   didascalia: "RT1"
 )
@@ -307,20 +284,74 @@ Dove:
     [Bassa],
 
     [*Descrizione*],
-    [Rischio legato ad una comunciazione lenta da parte di uno o piu' componenti del team al fine della risoluzione di una problematica o a fine organizzaztivo],
+    [Rischio legato ad una comunciazione lenta da parte di uno o piu' componenti del team al fine della risoluzione 
+    di una problematica o a fine organizzaztivo],
 
     [*Rilevamento*],
     [Rilevamento implicito da parte dei restanti componenti del team],
 
     [*Contromisure*], 
-    [I membri del team si impegnano a fissare incontri frequenti e di lavorare assieme su canali comunciativi come discord. In piu', grazie al sistema di sottoresponsabili adottato, data la dimensione del team, aiutera' a responsabilizzare i membri e effettuare check-up frequenti dei restanti membri],
+    [I membri del team si impegnano a fissare incontri frequenti e di lavorare assieme su canali comunciativi di diversa natura. 
+    In piu', grazie al sistema di sottoresponsabili adottato, data la dimensione del team, la responsabilizzare dei membri 
+    ottenuta aiutera' ad effettuare check-up frequenti dei restanti membri, garantendo quindi una comunciazione frequente e granulare],
   ),
   didascalia: "RT1"
 )
 
 === RC2 - Malcomprensione degli obbiettivi del team
 
+#tabella_rischi(
+  dati: (
+    [*Codice*],
+    [RC2],
+
+    [*Gravità*],
+    [Alta],
+
+    [*Probabilità*],
+    [Bassa],
+
+    [*Descrizione*],
+    [Rischio legato alla malcomprensione di uno o piu' obbiettivi dello sprint in corso],
+
+    [*Rilevamento*],
+    [Frequenti discussioni con opinioni molto contrastanti e nessun esito],
+
+    [*Contromisure*], 
+    [Il responsabile del team si occupera' di monitorare costantemnte i membri del gruppo al fine di comprendere
+    eventuali incomprensioni e risolverle al piu' presto. In particolare la struttura a sottoresponsabili e sottogruppi
+    aiutera' a individuare piu' facilmente chi sono i membri in questinone],
+  ),
+  didascalia: "RT1"
+)
+
+
 === RC3 - Mancanza di comunciazione con l'azienda 
+
+#tabella_rischi(
+  dati: (
+    [*Codice*],
+    [RC2],
+
+    [*Gravità*],
+    [Alta],
+
+    [*Probabilità*],
+    [Bassa],
+
+    [*Descrizione*],
+    [Rischio legato ad una comunicazione ],
+
+    [*Rilevamento*],
+    [Discussioni frequenti con opinioni molto contrastanti e nessun esito],
+
+    [*Contromisure*], 
+    [Il responsabile del team si occupera' di monitorare costantemnte i membri del gruppo al fine di comprendere
+    eventuali incomprensioni e risolverle al piu' presto. In particolare la struttura a sottoresponsabili e sottogruppi
+    aiutera' a individuare piu' facilmente chi sono i membri in questione],
+  ),
+  didascalia: "RT1"
+)
 
 
 
@@ -328,16 +359,166 @@ Dove:
 
 === RI1 - Impegni personali, universitari e indisponibilita'
 
-=== RT2 - Scarsa collaborazione
+#tabella_rischi(
+  dati: (
+    [*Codice*],
+    [RI1],
 
-=== RT3 - Difficoltà di "comprensione" 
+    [*Gravità*],
+    [Media],
+
+    [*Probabilità*],
+    [Alta],
+
+    [*Descrizione*],
+    [Essendo il progetto stesso di SWE un dei molteplici corsi universitari,
+    i membri del team potrebbero essere costretti in alcuni casi 
+    a periodi o momenti di indisponibilità dati da quest'ultimi.
+    Si considerano inoltre momenti di assenza dati da impegni esterni 
+    inderogabili e malessere personale.
+ ],
+
+    [*Rilevamento*],
+    [I membri del team si impegnano a mantenere un orario settimanale costantemente aggiornato
+    della disponibilita' di ciascuno e di informare i restanti membri in casi diversi],
+
+    [*Contromisure*], 
+    [L'orario settimanale condivisio verra' utilizzato per pianificare le attività e suddividere il lavoro
+    in modo da mantenere la disponibilita necessaria],
+  ),
+  didascalia: "RI1"
+)
+
+
+=== RI2 - Scarsa collaborazione
+
+#tabella_rischi(
+  dati: (
+    [*Codice*],
+    [RI2],
+
+    [*Gravità*],
+    [Alta],
+
+    [*Probabilità*],
+    [Bassa],
+
+    [*Descrizione*],
+    [La possibilita che alcuni membri del gruppo non collaborino attivamente al progetto],
+
+    [*Rilevamento*],
+    [implicitamente dagli altri membri del gruppo],
+
+    [*Contromisure*], 
+    [Gli incontri regolari predispoti dal team aiuteranno a favorire il dialogo trasparente, la collaborazione e 
+    mantenere attivo l'impegno di ciascun membro. Inoltre la scala della responsabilita'
+    piu' granulare aiutera' ad avere un riscontro continuo e piu' diretto.],
+  ),
+  didascalia: "RI2"
+)
+
+=== RI3 - Difficoltà di "comprensione" 
+
+#tabella_rischi(
+  dati: (
+    [*Codice*],
+    [RI3],
+
+    [*Gravità*],
+    [Media],
+
+    [*Probabilità*],
+    [Bassa],
+
+    [*Descrizione*],
+    [La possibilita che alcuni membri del gruppo non siano in grado di portare avanti il lavoro indipendetemente],
+
+    [*Rilevamento*],
+    [Comunicazione al resto del team],
+
+    [*Contromisure*], 
+    [I membri del team si impegnano a comunicare in modo trasparente e onesto difficoltà nello svolgere
+    il lavoro assegnato proponendosi di aiutare chi si trova in tale situazione],
+  ),
+  didascalia: "RI3"
+)
 
 
 == Rischio globale //valutare altri rischi
 
 === RG1 - Malcomprensione degli obbiettivi del capitolato  
 
+#tabella_rischi(
+  dati: (
+    [*Codice*],
+    [RG1],
+
+    [*Gravità*],
+    [Alta],
+
+    [*Probabilità*],
+    [Media],
+
+    [*Descrizione*],
+    [La possibilita che il gruppo sviluppi una soluzione ad un sotto problema 
+    diversa da quella intesa dall'azienda proponente ],
+
+    [*Rilevamento*],
+    [Comunicazione da parte dell'azienda proponente del progetto],
+
+    [*Contromisure*], 
+    [I membri del team si sono impegnati sin dall'inzio nello svolgere un accurata lettura del capitolato di progetto
+    al fine di individuare precisamente le richieste, nonche' di avere una comunicazione frequente con l'azienda ],
+  ),
+  didascalia: "RG1"
+)
+
 === RG2 - Pareri contrastanti
+
+#tabella_rischi(
+  dati: (
+    [*Codice*],
+    [RG2],
+
+    [*Gravità*],
+    [Bassa],
+
+    [*Probabilità*],
+    [Bassa],
+
+    [*Descrizione*],
+    [La possibilita che il gruppo sviluppi opinioni contrastanti in merito allo sviluppo, organizzazione e pianificazione. ],
+
+    [*Rilevamento*],
+    [Implicito dato da un frequente disaccordo],
+
+    [*Contromisure*], 
+    [I membri durante le riunioni interne si impegnano ad ascoltare ciascuno le motvazioni altrui al fine
+    di raggiungere la soluzione ottimale o un compromesso. Inoltre se questo non dovesse bastare, delle votazioni
+    anonime a maggioranza verrano indette al fine di raggiunere una decisione.],
+  ),
+  didascalia: "RG1"
+)
+
+
+= Tabella Riassuntiva
+
+#tabella_riassuntiva_rischi(
+  dati: (
+    [*Codice*],
+    [RG2],
+
+    [*Rischio*],
+    [Bassa],
+
+    [*Gravità*],
+    [Bassa],
+
+    [*Probabilità*],
+    [],
+  ),
+  didascalia: "Tabella riassuntiva dei rischi"
+)
 
 #pagebreak()
 = Pianificazione nel lungo termine
@@ -419,26 +600,27 @@ In particalare, le attività previste sono:
 - Effettuare un incontro con _M31_;
 
 
-==== Rischi attesi //Da sistemare in base ai rischi aggiunti
+==== Rischi attesi 
 
 I possibili rischi :
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata
-- RI1: Rischio Individuale derivante dalle altre attività universitarie
-- RG2: Rischio Globale derivato da malcomprensione del capitolatoG
+- RI1: Rischio Individuale derivante dalle altre attività
+- RG1: Rischio Globale derivato da malcomprensione del capitolatoG
+- RG2: Rischio Globale legato a pareri contrastanti
 
 ==== Preventivo    //aggiungere tabella di preventivo (magari un template in un file .typ)
 #v(1em)
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
-    [Nicolò Bolzon],[],[],[],[],[],[4],
-      [Mattia Dalla Pozza],[],[],[5],[],[],[],
-      [Sebastiano Marana],[1],[],[],[],[],[],
-      [Nicholas Moretto],[],[],[5],[],[],[],
-      [Matteo Pretto],[],[],[],[],[],[2],
-      [Alex Shu],[],[],[],[],[2],[],
-      [Stefano Speranza],[],[],[5],[],[],[],
-      [Ramona Zangla],[],[],[5],[],[],[],
+    [Nicolò Bolzon],[],[],[],[],[],[5],
+      [Mattia Dalla Pozza],[],[],[7],[],[],[],
+      [Sebastiano Marana],[5],[],[],[],[],[],
+      [Nicholas Moretto],[],[],[6],[],[],[],
+      [Matteo Pretto],[],[],[],[],[],[5],
+      [Alex Shu],[],[],[],[],[3],[],
+      [Stefano Speranza],[],[],[6],[],[],[],
+      [Ramona Zangla],[],[],[6],[],[],[],
   ),
   didascalia: "Sprint 1 - Preventivo ore per ciascun componente"
 )
@@ -450,14 +632,14 @@ I possibili rischi :
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
-    [Nicolò Bolzon],[],[],[],[],[],[4 + (2)],
-      [Mattia Dalla Pozza],[],[],[5],[],[],[],
-      [Sebastiano Marana],[1],[],[],[],[],[],
-      [Nicholas Moretto],[],[],[5],[],[],[],
-      [Matteo Pretto],[],[],[],[],[],[4 - (3)],
-      [Alex Shu],[],[],[],[],[2],[],
-      [Stefano Speranza],[],[],[5],[],[],[],
-      [Ramona Zangla],[],[],[5],[],[],[],
+    [Nicolò Bolzon],[],[],[],[],[],[5 (+3)],
+      [Mattia Dalla Pozza],[],[],[7],[],[],[],
+      [Sebastiano Marana],[5],[],[],[],[],[],
+      [Nicholas Moretto],[],[],[6],[],[],[],
+      [Matteo Pretto],[],[],[],[],[],[5 (-3)],
+      [Alex Shu],[],[],[],[],[3],[],
+      [Stefano Speranza],[],[],[6],[],[],[],
+      [Ramona Zangla],[],[],[6],[],[],[],
   ),
   didascalia: "Sprint 1 - Consuntivo ore per ciascun componente"
 )
@@ -468,13 +650,13 @@ I possibili rischi :
 #align(center)[
   #tabella_aggiornamento_risorse(
     dati: (
-      [Responsabile], [30€/h], [-], [-], [-], [-],
-      [Amministratore], [20€/h], [-], [-], [-], [-],
-      [Analista], [20€/h], [-], [-], [-], [-],
-      [Progettista], [20€/h], [-], [-], [-], [-],
-      [Programmatore], [20€/h], [-], [-], [-], [-],
-      [Verificatore], [20€/h], [-], [-], [-], [-],
-      [*Totale*], [*-*], [*-*], [*-*], [*-*], [*-*],
+      [Responsabile], [30€/h], [5], [150€], [67 (-5)], [2010€ (-150€)],
+      [Amministratore], [20€/h], [-], [-], [61], [1220€],
+      [Analista], [25€/h], [25], [625€], [76 (-25)], [1900€ (-625€)],
+      [Progettista], [25€/h], [-], [-], [156], [3900€],
+      [Programmatore], [15€/h], [3], [45€], [218 (-3)], [3270€ (-45€)],
+      [Verificatore], [15€/h], [10], [150€], [142 (-10)], [2130€ (-150€)],
+      [*Totale*], [*-*], [*43*], [*970€*], [*720 (-43)*], [*14430€ (-970€)*],
   ),
     didascalia: "Sprint 1 - Aggiornamento delle risorse disponibili"
   )
@@ -484,24 +666,25 @@ I possibili rischi :
 Durante questo primo sprint abbiamo avuto principalmente
 difficoltà con una distribuzione dell'impegno non
 completamente equo. L'indisponibilità poi di un membro del team ha 
-portato gli altri membri del team a dover ulteriormente assorbire 
+portato gli altri membri a dover ulteriormente assorbire 
 il lavoro in eccesso.
 
 Alcuni rallentamenti inoltre sono stati dovuti ad un primo periodo
 di approccio a JIRA da parte del gruppo non efficente, dovuto all'inesperienza
 dell'utilizzo dello strumento e in aggiunta di un 
-organizzazione degli incontri piu' spontanea e meno organizzata
+organizzazione degli incontri piu' spontanea e meno organizzata.
 
 === Retrospettiva
 
 Durante lo sprint ci siamo dedicati principalmente ad una prima impostazione del
 progetto, tramite automazioni e organizzazione github, alla progettazione di una
-prima ipotesi architetturale/tecnologica a freddo e alla prima stesura
+prima ipotesi architetturale/tecnologica a caldo e alla prima stesura
 dei documenti necessari con un discreto sucesso, almeno come primo inizio di progetto.
 Non siamo riusciti tuttavia a rendere l'ipotesi architetturale definitiva, in quanto
-ovviamente effettuata precedentemnte da una ricerca dello stato dell'arte approfondita.
+effettuata precedentemnte da una ricerca dello stato dell'arte approfondita e quindi
+da una scarsita di informazioni.
 
-=== Sprint 2    //mantenere le seguenti distanze
+=== Sprint 2   
 Inizio: #h(1.99cm)*11-04-2025*\
 Fine Prevista: #h(0.65cm)*24-04-2025*\
 Fine Reale: #h(1.12cm)*24-04-2025*\
@@ -522,26 +705,30 @@ In particalare, le attività previste sono:
 - Continuazione delle Norme di Progetto
 - Continuazione del Piano di Progetto
 - Continuazione dell'Analisi dei Requisiti
-- Miglioramento di JIRA 
+- Miglioramento dell'utilizzo di JIRA 
 - Automazioni Github 
 
 
 ==== Rischi attesi
 
+I possibili rischi :
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
+- RI1: Rischio Individuale derivante dalle altre attività
+- RG2: Rischio Globale legato a pareri contrastanti
 
 ==== Preventivo    //aggiungere tabella di preventivo (magari un template in un file .typ)
 #v(1em)
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
-    [Nicolò Bolzon],[],[],[1],[],[],[],
-      [Mattia Dalla Pozza],[1],[],[],[],[],[],
-      [Sebastiano Marana],[],[1],[],[],[],[],
-      [Nicholas Moretto],[],[],[1],[],[],[],
-      [Matteo Pretto],[],[],[1],[],[],[],
-      [Alex Shu],[],[],[],[],[],[1],
-      [Stefano Speranza],[],[],[1],[],[],[],
-      [Ramona Zangla],[],[],[],[],[],[1],
+    [Nicolò Bolzon],[],[],[6],[],[],[],
+      [Mattia Dalla Pozza],[5],[],[],[],[],[],
+      [Sebastiano Marana],[],[4],[],[],[],[],
+      [Nicholas Moretto],[],[],[7],[],[],[],
+      [Matteo Pretto],[],[],[6],[],[],[],
+      [Alex Shu],[],[],[],[],[],[5],
+      [Stefano Speranza],[],[],[6],[],[],[],
+      [Ramona Zangla],[],[],[],[],[],[6],
   ),
   didascalia: "Sprint 2 - Preventivo ore per ciascun componente"
 )
@@ -553,14 +740,14 @@ In particalare, le attività previste sono:
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
-    [Nicolò Bolzon],[],[],[],[],[],[],
-      [Mattia Dalla Pozza],[],[],[],[],[],[],
-      [Sebastiano Marana],[],[],[],[],[],[],
-      [Nicholas Moretto],[],[],[],[],[],[],
-      [Matteo Pretto],[],[],[],[],[],[],
-      [Alex Shu],[],[],[],[],[],[],
-      [Stefano Speranza],[],[],[],[],[],[],
-      [Ramona Zangla],[],[],[],[],[],[],
+      [Nicolò Bolzon],[],[],[6 (-1)],[],[],[],
+      [Mattia Dalla Pozza],[5],[],[],[],[],[],
+      [Sebastiano Marana],[],[4],[],[],[],[],
+      [Nicholas Moretto],[],[],[7 (-2)],[],[],[],
+      [Matteo Pretto],[],[],[6 (-1)],[],[],[],
+      [Alex Shu],[],[],[],[],[],[5 (-1)],
+      [Stefano Speranza],[],[],[6 (-1)],[],[],[],
+      [Ramona Zangla],[],[],[],[],[],[6 (-1)],
   ),
   didascalia: "Sprint 2 - Preventivo ore per ciascun componente"
 )
@@ -571,13 +758,13 @@ In particalare, le attività previste sono:
 #align(center)[
   #tabella_aggiornamento_risorse(
     dati: (
-      [Responsabile], [30€/h], [-], [-], [-], [-],
-      [Amministratore], [20€/h], [-], [-], [-], [-],
-      [Analista], [20€/h], [-], [-], [-], [-],
-      [Progettista], [20€/h], [-], [-], [-], [-],
-      [Programmatore], [20€/h], [-], [-], [-], [-],
-      [Verificatore], [20€/h], [-], [-], [-], [-],
-      [*Totale*], [*-*], [*-*], [*-*], [*-*], [*-*],
+      [Responsabile], [30€/h], [5], [150€], [67 (-5)], [2010€ (-150€)],
+      [Amministratore], [20€/h], [4], [-], [61 (-4)], [1220€],
+      [Analista], [25€/h], [20], [625€], [76 (-20)], [1900€ (-625€)],
+      [Progettista], [25€/h], [-], [-], [156], [3900€],
+      [Programmatore], [15€/h], [-], [45€], [218], [3270€ (-45€)],
+      [Verificatore], [15€/h], [9], [150€], [142 (-9)], [2130€ (-150€)],
+      [*Totale*], [*-*], [*43*], [*970€*], [*720 (-43)*], [*14430€ (-970€)*],
   ),
     didascalia: "Sprint 1 - Aggiornamento delle risorse disponibili"
   )
@@ -585,7 +772,7 @@ In particalare, le attività previste sono:
 ==== Rischi incontrati
 
 Il principale rischio di questo secondo sprint e' stato il lungo periodo 
-di festivita' come quello pasquale che ha rallentato particolarmente
+di festivita', come quello pasquale, che ha rallentato notevolmente
 il progresso di tutte le attività attese.
 
 Inoltre, un iniziale difficoltà nell'identificare con decisione i principali

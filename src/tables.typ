@@ -128,3 +128,33 @@
   caption: [#didascalia]
 )
 }
+
+
+#let tabella_riassuntiva_rischi(
+  dati: array,
+  didascalia: text
+) = {
+      figure(
+        table(
+          columns: (auto, auto, auto, auto),
+          inset:0.6em,
+          fill: (x, y) => if y==0 {
+            luma(235)
+          },
+          stroke: (x, y) => if y >= 0 {
+            1pt + black
+          } else {
+            none
+          },
+          table.header(
+            [*Codice*],
+            [*Rischio*],
+            [*Gravità*],
+            [*Probabilità*],
+          ),
+          ..dati
+        ),
+        caption: [#didascalia]
+            
+      )
+    }
