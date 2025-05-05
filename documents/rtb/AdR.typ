@@ -15,7 +15,7 @@
 #let titolo = "Analisi dei requisiti#super[G]"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "0.0.3"
+#let versione = "0.3.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */

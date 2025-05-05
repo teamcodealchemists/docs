@@ -15,7 +15,7 @@
 #let titolo = "Piano di Qualifica"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "0.1.0"
+#let versione = "0.0.1"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
