@@ -21,8 +21,8 @@
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
 
-    [1.0.0], [--/05/2025], [-], [-], [Approvazione del documento],
-    [0.1.0], [03/05/2025], [N. Moretto], [-], [Prima stesura del documento],
+    [1.0.0], [05/05/2025], [-], [S. Marana], [Approvazione del documento],
+    [0.1.0], [03/05/2025], [N. Moretto], [S. Marana], [Prima stesura del documento],
 
 )
 #let contenuto = (
@@ -61,10 +61,11 @@
   Durante questa settimana, il team ha lavorato su diverse attività. Ogni sotto-responsabile#super[G] dei vari gruppi di lavoro ha avuto due minuti di tempo per presentare le attività svolte e i risultati ottenuti. Per praticità, nel presente verbale è stato deciso di suddividere le attività svolte in attività svolte dai vari ruoli e non in base ai membri del team. \
 
   === 2.1.1 Lavori svolti dagli analisti
-  Gli analisti hanno proseguito con l'analisi dei casi d'uso. Stanno considerando quanti più casi possibili, in modo da arrivare ad avere un quadro completo. \
+  Gli analisti hanno proseguito l'attività di analisi dei casi d'uso, cercando di considerare il maggior numero possibile di scenari al fine di ottenere un quadro complessivo quanto più esaustivo. \
 
-  Durante la riunione è emerso un dubbio riguardante la correttezza dei casi d'uso, dato che non sono molto in linea con l'analisi dei requisiti#super[G]. Alcuni requisiti#super[G] sono opzionali, mentre gli analisti, per i casi d'uso che stanno considerando, ritengono che alcuni di questi siano necessari. Hanno portato l'esempio delle tipologie di utente (requisito indicato come opzionale dall'azienda proponente): considerando che arrivano degli ordini#super[G] di magazzini, si può supporre di prevedere un utente di tipo cliente#super[G], oppure di gestire il tutto dall'esterno.\
-  Dopo aver posto il dubbio, i progettisti hanno illustrato il loro punto di vista, schiarendo le idee agli analisti, che continueranno a lavorare in modo parallelo.\
+  Durante la riunione è emersa una perplessità riguardo alla coerenza dei casi d'uso con l'analisi dei requisiti#super[G]. In particolare, alcuni requisiti#super[G] sono stati indicati come opzionali, mentre gli analisti, nell’elaborazione dei casi d’uso attualmente in esame, li considerano necessari. È stato citato, a titolo esemplificativo, il requisito relativo alle tipologie di utente, indicato come opzionale dall’azienda proponente: dal momento che si prevede la ricezione di ordini#super[G] da parte dei magazzini, si è ipotizzata la presenza di un utente di tipo cliente#super[G], oppure l’eventualità di gestire tali ordini tramite un sistema esterno. \
+
+  Successivamente alla segnalazione della questione, i progettisti hanno illustrato il proprio punto di vista, contribuendo a chiarire le idee degli analisti, i quali proseguiranno le attività in parallelo. \
 
   === 2.1.2 Lavori svolti dai progettisti
   I progettisti hanno iniziato a lavorare sull'architettura del PoC. Dopo alcune proposte, hanno scelto di presentare quella più efficiente dal punto di vista del tempo di esecuzione e dalle prestazioni.\
@@ -96,15 +97,15 @@
   
   #pagebreak()
   = 3. Esiti della riunione
-  La riunione si conclude con l’assegnazione dei compiti e la definizione delle decisioni e azioni intraprese, ponendo particolare attenzione al completamento dell’analisi dei requisiti#super[G]#super("G") e del completamento dell'architettura#super("G"), che sarà oggetto di confronto con l’azienda nel prossimo incontro, previsto per il 5 maggio. \
+  La riunione si è conclusa con l’assegnazione dei compiti e la definizione delle decisioni e delle azioni intraprese, con particolare attenzione al completamento dell’analisi dei requisiti#super[G] e dell’architettura#super[G]. Quest’ultima sarà oggetto di confronto con l’azienda in occasione del prossimo incontro, previsto per il 5 maggio. \
 
   Eventuali risultati emersi o criticità riscontrate saranno affrontati e formalizzati nei prossimi incontri.
 
   #pagebreak()
   = 4. Tabella delle decisioni e azioni
     #let voci_tabella = (
-    [D23], [Decisione di avere due tipi di utente: amministratore#super[G] globale e supervisore locale],
-    [D24], [Miglioramento del documento prodotto#super[G] dai progettisti, per presentarlo all'azienda],
+    [D23], [Decisione di avere due tipi di utente: supervisore globale e supervisore locale],
+    [D24], [Miglioramento del documento redatto dai progettisti, per presentarlo all'azienda],
     [DOC18], [Stesura del Verbale Interno del 02-05-2025],
     [DOC19], [Stesura del Verbale Esterno del 05-05-2025],
   )
