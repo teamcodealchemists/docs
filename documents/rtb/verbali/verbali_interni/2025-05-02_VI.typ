@@ -63,7 +63,7 @@
   === 2.1.1 Lavori svolti dagli analisti
   Gli analisti hanno proseguito l'attività di analisi dei casi d'uso, cercando di considerare il maggior numero possibile di scenari al fine di ottenere un quadro complessivo quanto più esaustivo. \
 
-  Durante la riunione è emersa una perplessità riguardo alla coerenza dei casi d'uso con l'analisi dei requisiti#super[G]. In particolare, alcuni requisiti#super[G] sono stati indicati come opzionali, mentre gli analisti, nell’elaborazione dei casi d’uso attualmente in esame, li considerano necessari. È stato citato, a titolo esemplificativo, il requisito relativo alle tipologie di utente, indicato come opzionale dall’azienda proponente: dal momento che si prevede la ricezione di ordini#super[G] da parte dei magazzini, si è ipotizzata la presenza di un utente di tipo cliente#super[G], oppure l’eventualità di gestire tali ordini tramite un sistema esterno. \
+  Durante la riunione è emersa una perplessità riguardo alla coerenza dei casi d'uso con l'analisi dei requisiti#super[G]. In particolare, alcuni requisiti#super[G] sono stati indicati come opzionali, mentre gli analisti, nell'elaborazione dei casi d'uso attualmente in esame, li considerano necessari. È stato citato, a titolo esemplificativo, il requisito relativo alle tipologie di utente, indicato come opzionale dall'azienda proponente: dal momento che si prevede la ricezione di ordini#super[G] da parte dei magazzini, si è ipotizzata la presenza di un utente di tipo cliente#super[G], oppure l'eventualità di gestire tali ordini tramite un sistema esterno. \
 
   Successivamente alla segnalazione della questione, i progettisti hanno illustrato il proprio punto di vista, contribuendo a chiarire le idee degli analisti, i quali proseguiranno le attività in parallelo. \
 
@@ -97,7 +97,7 @@
   
   #pagebreak()
   = 3. Esiti della riunione
-  La riunione si è conclusa con l’assegnazione dei compiti e la definizione delle decisioni e delle azioni intraprese, con particolare attenzione al completamento dell’analisi dei requisiti#super[G] e dell’architettura#super[G]. Quest’ultima sarà oggetto di confronto con l’azienda in occasione del prossimo incontro, previsto per il 5 maggio. \
+  La riunione si è conclusa con l'assegnazione dei compiti e la definizione delle decisioni e delle azioni intraprese, con particolare attenzione al completamento dell'analisi dei requisiti#super[G] e dell'architettura#super[G]. Quest'ultima sarà oggetto di confronto con l'azienda in occasione del prossimo incontro, previsto per il 5 maggio. \
 
   Eventuali risultati emersi o criticità riscontrate saranno affrontati e formalizzati nei prossimi incontri.
 
