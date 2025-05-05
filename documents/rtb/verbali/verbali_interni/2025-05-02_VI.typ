@@ -4,8 +4,8 @@
 #let titolo = "Verbale interno del "
 #let data = "02/05/2025"
 #let titolo = titolo + data
-#let status = "Da Approvare"
-#let versione = "0.1.0"
+#let status = "Approvato"
+#let versione = "1.0.0"
 #let presenze = (
   /* formato: <p.nome,> oppure <"nome",> */
   p.nicolo,
@@ -57,18 +57,18 @@
   = 2. Dettagli della riunione
   Il verbale iniziale viene redatto da *#p.nicholas* e verificato da *#p.sebastiano*.
 
-  == 2.1 Lavori svolti durante la prima settimana di RTB 3
+  == 2.1 Lavori svolti durante la prima settimana di RTB#super[G] 3
   Durante questa settimana, il team ha lavorato su diverse attività. Ogni sotto-responsabile#super[G] dei vari gruppi di lavoro ha avuto due minuti di tempo per presentare le attività svolte e i risultati ottenuti. Per praticità, nel presente verbale è stato deciso di suddividere le attività svolte in attività svolte dai vari ruoli e non in base ai membri del team. \
 
-  === 2.1.1 Lavori svolti dagli analisti
-  Gli analisti hanno proseguito l'attività di analisi dei casi d'uso, cercando di considerare il maggior numero possibile di scenari al fine di ottenere un quadro complessivo quanto più esaustivo. \
+  === 2.1.1 Lavori svolti dagli analisti#super[G]
+  Gli analisti#super[G] hanno proseguito l'attività di analisi dei casi d'uso, cercando di considerare il maggior numero possibile di scenari al fine di ottenere un quadro complessivo quanto più esaustivo. \
 
-  Durante la riunione è emersa una perplessità riguardo alla coerenza dei casi d'uso con l'analisi dei requisiti#super[G]. In particolare, alcuni requisiti#super[G] sono stati indicati come opzionali, mentre gli analisti, nell'elaborazione dei casi d'uso attualmente in esame, li considerano necessari. È stato citato, a titolo esemplificativo, il requisito relativo alle tipologie di utente, indicato come opzionale dall'azienda proponente: dal momento che si prevede la ricezione di ordini#super[G] da parte dei magazzini, si è ipotizzata la presenza di un utente di tipo cliente#super[G], oppure l'eventualità di gestire tali ordini tramite un sistema esterno. \
+  Durante la riunione è emersa una perplessità riguardo alla coerenza dei casi d'uso con l'analisi dei requisiti#super[G]. In particolare, alcuni requisiti#super[G] sono stati indicati come opzionali, mentre gli analisti#super[G], nell'elaborazione dei casi d'uso attualmente in esame, li considerano necessari. È stato citato, a titolo esemplificativo, il requisito#super[G] relativo alle tipologie di utente, indicato come opzionale dall'azienda proponente: dal momento che si prevede la ricezione di ordini#super[G] da parte dei magazzini, si è ipotizzata la presenza di un utente di tipo cliente#super[G], oppure l'eventualità di gestire tali ordini#super[G] tramite un sistema esterno. \
 
-  Successivamente alla segnalazione della questione, i progettisti hanno illustrato il proprio punto di vista, contribuendo a chiarire le idee degli analisti, i quali proseguiranno le attività in parallelo. \
+  Successivamente alla segnalazione della questione, i progettisti#super[G] hanno illustrato il proprio punto di vista, contribuendo a chiarire le idee degli analisti#super[G], i quali proseguiranno le attività in parallelo. \
 
-  === 2.1.2 Lavori svolti dai progettisti
-  I progettisti hanno iniziato a lavorare sull'architettura del PoC. Dopo alcune proposte, hanno scelto di presentare quella più efficiente dal punto di vista del tempo di esecuzione e dalle prestazioni.\
+  === 2.1.2 Lavori svolti dai progettisti#super[G]
+  I progettisti#super[G] hanno iniziato a lavorare sull'architettura del PoC#super[G]. Dopo alcune proposte, hanno scelto di presentare quella più efficiente dal punto di vista del tempo di esecuzione e dalle prestazioni.\
 
   Hanno previsto un *Client (esterno)*, in cui l'utente può interagire con il sistema.\
 
@@ -84,7 +84,7 @@
   Infine, ogni *magazzino (locale)* ha i microservizi#super[G] in locale per far funzionare il sistema anche offline.\
 
   === 2.1.3 Materiale da portare all'incontro con l'azienda
-  È stato deciso di portare all'incontro con l'azienda il documento prodotto#super[G] dai progettisti, che contiene l'architettura del PoC.\
+  È stato deciso di portare all'incontro con l'azienda il documento prodotto#super[G] dai progettisti#super[G], che contiene l'architettura del PoC#super[G].\
   Il documento in oggetto sarà migliorato e reso più specifico riguardo l'architettura e le tecnologie che saranno utilizzate.\
 
   === 2.1.4 Diario di Bordo
@@ -93,7 +93,7 @@
 
   == 2.2 Risoluzione delle criticità
   Riguardo le criticità emerse e menzionate nel paragrafo 2.1.1, la discussione ha portato a una possibile soluzione: è stato pensato di inserire gli ordini#super[G] manualmente, tramite l'amministratore#super[G] che può individuare gli ordini#super[G]. In un'ottica più ampia, si prevederebbe di avere un sistema di gestione degli ordini#super[G] che arrivano dall'esterno in modo automatico.\
-  Gli analisti hanno quindi deciso di avere due tipi di utente: un *amministratore#super[G] globale*, che ha accesso completo al sistema, e un *supervisore locale*, che ha accesso completo a uno o più magazzini locali.\
+  Gli analisti#super[G] hanno quindi deciso di avere due tipi di utente: un *amministratore#super[G] globale*, che ha accesso completo al sistema, e un *supervisore locale*, che ha accesso completo a uno o più magazzini locali.\
   
   #pagebreak()
   = 3. Esiti della riunione
@@ -105,7 +105,7 @@
   = 4. Tabella delle decisioni e azioni
     #let voci_tabella = (
     [D23], [Decisione di avere due tipi di utente: supervisore globale e supervisore locale],
-    [D24], [Miglioramento del documento redatto dai progettisti, per presentarlo all'azienda],
+    [D24], [Miglioramento del documento redatto dai progettisti#super[G], per presentarlo all'azienda],
     [DOC18], [Stesura del Verbale Interno del 02-05-2025],
     [DOC19], [Stesura del Verbale Esterno del 05-05-2025],
   )
