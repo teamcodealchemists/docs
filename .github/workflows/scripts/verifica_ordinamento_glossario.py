@@ -25,7 +25,7 @@ def verifica_ordinamento_glossario(file_path, output_json_path):
         print("\033[1;31mLe parole nel glossario non sono in ordine alfabetico.\033[0m\n")
         print("Ecco l'ordine corretto diviso per lettera:")
         current_letter = None
-        for parola in parole_non_ordinate:
+        for i, parola in enumerate(parole_non_ordinate):
             parola_pulita = normalizza_parola(parola)
             if not parola_pulita:
                 continue
@@ -34,7 +34,11 @@ def verifica_ordinamento_glossario(file_path, output_json_path):
                 current_letter = first_letter
                 print(f"\n\033[1;34m{current_letter}\033[0m")  # Colore blu per la lettera
                 print("-" * 20)  # Divider per sezione
-            print(f"  {parola}")
+            # Evidenzia in rosso le parole fuori ordine
+            if i < len(parole) and parola != parole[i]:
+                print(f"\033[1;31m  {parola}\033[0m")  # Colore rosso per parole fuori ordine
+            else:
+                print(f"  {parola}")
         result = {"schemaVersion": 1, "label": "Glossario", "message": "non ordinato", "color": "red"}
 
     os.makedirs(os.path.dirname(output_json_path), exist_ok=True)  # Ensure the directory exists
