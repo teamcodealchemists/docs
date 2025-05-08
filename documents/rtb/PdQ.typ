@@ -93,6 +93,17 @@ Per trovare il significato del termine, è possibile consultare il glossario al 
 
 === 1.3.2 Riferimenti informativi
 
+- *Qualità del software* \
+  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf")]\
+
+- *Qualità del processo* \
+  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf")]\
+
+- *Verifica e Validazione#super[G]* \
+  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T09.pdf")]\
+  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T10.pdf")]\
+  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T11.pdf")]\
+
 - *Glossario#super[G]* \
   #underline[#link("https://teamcodealchemists.github.io/glossario.html")]
 
