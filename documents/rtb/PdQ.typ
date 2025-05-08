@@ -125,38 +125,168 @@ Sebbene non sempre sia semplice adottare misurazioni formali, l'obiettivo è man
 === 2.1.1 Fornitura
 
 #let voci_tabella_fornitura = (
-    [PDP-09000], [Piano di Piano], [>=60], [>=90]
+    [ABC01], [Piano di Piano], [>= 60], [>= 90]
   )
 #let caption_fornitura = (
   [Metriche di qualità per il processo di fornitura]
 )
-
 #show: qualifica_table.with(
   voci: voci_tabella_fornitura,
   caption: caption_fornitura
-
 )
 === 2.1.2 Sviluppo
 
+#let voci_tabella_sviluppo = (
+    [ABC01], [Piano di Piano], [>= 60], [>= 90]
+  )
+#let caption_sviluppo = (
+  [Metriche di qualità per il processo di sviluppo]
+)
+#show: qualifica_table.with(
+  voci: voci_tabella_sviluppo,
+  caption: caption_sviluppo
+)
+
 == 2.2 Processi di Supporto
 === 2.2.1 Documentazione
+
+#let voci_tabella_documentazione = (
+    [ABC01], [Piano di Piano], [>= 60], [>= 90]
+  )
+#let caption_documentazione = (
+  [Metriche di qualità per il processo di documentazione]
+)
+#show: qualifica_table.with(
+  voci: voci_tabella_documentazione,
+  caption: caption_documentazione
+)
+
+=== 2.2.2 Verifica
+
+#let voci_tabella_verifica = (
+    [ABC01], [Piano di Piano], [>= 60], [>= 90]
+  )
+#let caption_verifica = (
+  [Metriche di qualità per il processo di verifica]
+)
+#show: qualifica_table.with(
+  voci: voci_tabella_verifica,
+  caption: caption_verifica
+)
+
 === 2.2.3 Gestione della Qualità
+
+#let voci_tabella_qualità = (
+    [ABC01], [Piano di Piano], [>= 60], [>= 90]
+  )
+#let caption_qualità = (
+  [Metriche di qualità per il processo di gestione della qualità]
+)
+#show: qualifica_table.with(
+  voci: voci_tabella_qualità,
+  caption: caption_qualità
+)
 
 == 2.3 Processi Organizzativi
 === 2.3.1 Gestione dei processi
+#let voci_tabella_processi = (
+    [ABC01], [Piano di Piano], [>= 60], [>= 90]
+  )
+#let caption_processi = (
+  [Metriche di qualità per il processo di gestione dei processi]
+)
+#show: qualifica_table.with(
+  voci: voci_tabella_processi,
+  caption: caption_processi
+)
 
 = 3. Metodologie di Testing
- == 3.1 Test di unità
- == 3.2 Test di integrazione
- == 3.3 Test di sistema
- == 3.4 Test di regressione
+Per garantire la qualità del prodotto#super[G] software, è fondamentale adottare metodologie di testing adeguate.
+
+Ad ogni test è stato attribuito un codice univoco per facilitarne l'identificazione e la tracciabilità. Il codice è strutturato come segue: tipoXX, dove "tipo" rappresenta il tipo di test e "XX" è un numero progressivo che identifica il test specifico. I tipi di test sono i seguenti:
+- *TdU*: Test di unità
+- *TdI*: Test di integrazione
+- *TdS*: Test di sistema
+- *TdR*: Test di regressione
+// Test di accettazione?
+/*I test di accettazione vengono eseguiti per verificare che il software soddisfi i requisiti concordati con il cliente o l’utente finale. Sono spesso definiti sulla base di scenari realistici o specifiche formali (come le User Story o i Criteri di Accettazione). Questi test rappresentano l’ultima fase di verifica prima del rilascio del prodotto e determinano se esso può essere considerato “pronto per l’uso”.*/
+
+Per ogni test viene specificato uno stato, che può essere:
+- *NI*: Non Implementato
+- *IP*: In fase di Implementazione
+- *TS*: Test Superato
+- *TF*: Test Fallito
+
+#pagebreak()
+
+== 3.1 Test di unità
+
+I test di unità verificano il comportamento corretto delle singole unità di codice, come funzioni, metodi o classi. Vengono scritti e mantenuti dagli sviluppatori durante la fase di sviluppo e servono a garantire che ogni componente, isolato dal resto, produca il risultato atteso per diversi input. Sono fondamentali per individuare rapidamente errori logici a livello di codice sorgente.
+
+#let voci_test_unità = (
+    [TdU01], [Verificare che che si possa rilevare la carenza di scorte in un magazzino], [RF01], [NI]
+  )
+#let caption_test_unità = (
+  [Test di unità]
+)
+#show: test_table.with(
+  voci: voci_test_unità,
+  caption: caption_test_unità
+)
+
+== 3.2 Test di integrazione
+
+I test di integrazione servono a verificare che più unità di codice funzionino correttamente insieme. L’obiettivo è individuare problemi che emergono quando i vari moduli interagiscono tra loro, ad esempio errori di comunicazione tra componenti o malintesi sui formati di dati scambiati. Questi test sono particolarmente utili quando si integrano sistemi esterni come database, API o servizi di terze parti.
+
+#let voci_test_integrazione = (
+    [TdI01], [Lorem ipsum], [---], [NI]
+  )
+#let caption_test_integrazione = (
+  [Test di integrazione]
+)
+#show: test_table.with(
+  voci: voci_test_integrazione,
+  caption: caption_test_integrazione
+)
+
+== 3.3 Test di sistema
+
+I test di sistema valutano il comportamento del software nel suo complesso, simulando l’uso reale da parte dell’utente in un ambiente quanto più possibile simile alla produzione. Questo tipo di test include tutti i componenti integrati e mira a verificare che il sistema nel suo insieme soddisfi i requisiti funzionali e non funzionali. È un passaggio fondamentale prima del collaudo finale.
+
+#let voci_test_sistema = (
+    [TdS01], [Lorem ipsum], [---], [NI]
+  )
+#let caption_test_sistema = (
+  [Test di sistema]
+)
+#show: test_table.with(
+  voci: voci_test_sistema,
+  caption: caption_test_sistema
+)
+
+#pagebreak()
+
+== 3.4 Test di regressione
+
+I test di regressione hanno lo scopo di assicurare che le nuove modifiche al codice, come correzioni di bug o l’introduzione di nuove funzionalità, non abbiano introdotto errori in funzionalità esistenti. Vengono eseguiti regolarmente durante lo sviluppo continuo e sono spesso automatizzati per garantire un controllo rapido ed efficace ogni volta che il software viene aggiornato.
+
+#let voci_test_regressione = (
+  [TdR01], [Lorem ipsum], [---], [NI]
+  )
+#let caption_test_regressione = (
+  [Test di regressione]
+)
+#show: test_table.with(
+  voci: voci_test_regressione,
+  caption: caption_test_regressione
+)
 
 = 4. Cruscotto di Valutazione
-  == 4.1 Valutazione della documentazione 
-  == 4.2 Valutazione dei processi
+== 4.1 Valutazione della documentazione 
+== 4.2 Valutazione dei processi
 
 = 5. Considerazioni di Miglioramento Continuo
-  == 5.1 Valutazioni sull'organizzazione
-  == 5.2 Valutazioni sui ruoli
-  == 5.3 Valutazioni sugli strumenti
-  == 5.4 Valutazioni sul prodotto#super[G]
+== 5.1 Valutazioni sull'organizzazione
+== 5.2 Valutazioni sui ruoli
+== 5.3 Valutazioni sugli strumenti
+== 5.4 Valutazioni sul prodotto#super[G]

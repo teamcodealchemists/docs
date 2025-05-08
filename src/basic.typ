@@ -186,6 +186,7 @@
 }
 
 #let qualifica_table(
+
   voci: (),
   caption: (),
   doc
@@ -218,6 +219,50 @@
         columns: (1fr, 2fr, 1fr, 1fr),
         table.header(
           [*Codice*], [*Nome*], [*Valore Ammissibile*], [*Valore Ottimale*]
+        ),
+        ..voci,
+      ),
+      caption: caption
+    )
+  )
+  
+  set align(left)
+  doc
+}
+
+#let test_table(
+  voci: (),
+  caption: (),
+  doc
+) = {
+  set align(center)
+
+  set box(
+  width: 95%,
+  )
+
+  set table(
+    align: (center, center, center, center),
+    fill:(_,y)=>if y==0 {silver},
+    inset: (_, y) => if y == 0 { 7pt } else { 10pt }
+  )
+
+  set text(
+    size: 11pt,
+    hyphenate: false
+  )
+
+  set table.cell(
+    align: horizon
+  )
+
+  v(4pt)
+  box(
+    figure(
+      table(
+        columns: (1fr, 3fr, 1fr, 1fr),
+        table.header(
+          [*Codice*], [*Descrizione*], [*Codice Requisito*], [*Stato*]
         ),
         ..voci,
       ),
