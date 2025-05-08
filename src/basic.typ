@@ -140,6 +140,15 @@
   doc
 }
 
+#let indice_tabelle(doc) = {
+  outline(
+    title: [*Indice Tabelle*],
+    target: figure.where(kind: table)
+  )
+  pagebreak()
+  doc
+}
+
 #let firma(
   destinatario: [],
   doc
@@ -170,6 +179,50 @@
     align: center,
     table.header([*ID*],[*Descrizione*]),
     ..voci   
+  )
+  
+  set align(left)
+  doc
+}
+
+#let qualifica_table(
+  voci: (),
+  caption: (),
+  doc
+) = {
+  set align(center)
+
+  set box(
+  width: 90%,
+  )
+
+  set table(
+    align: (center, left, center, center),
+    fill:(_,y)=>if y==0 {silver},
+    inset: (_, y) => if y == 0 { 7pt } else { 10pt }
+  )
+
+  set text(
+    size: 11pt,
+    hyphenate: false
+  )
+
+  set table.cell(
+    align: horizon
+  )
+
+  v(4pt)
+  box(
+    figure(
+      table(
+        columns: (1fr, 2fr, 1fr, 1fr),
+        table.header(
+          [*Codice*], [*Nome*], [*Valore Ammissibile*], [*Valore Ottimale*]
+        ),
+        ..voci,
+      ),
+      caption: caption
+    )
   )
   
   set align(left)

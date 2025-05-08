@@ -55,6 +55,7 @@
   voci: voci_registro
 )
 #show: indice
+#show: indice_tabelle
 
 = 1. Introduzione
 == 1.1 Scopo del documento
@@ -111,6 +112,19 @@ Sebbene non sempre sia semplice adottare misurazioni formali, l'obiettivo è man
 
 == 2.1 Processi Primari
 === 2.1.1 Fornitura
+
+#let voci_tabella_fornitura = (
+    [PDP-09000], [Piano di Piano], [>=60], [>=90]
+  )
+#let caption_fornitura = (
+  [Metriche di qualità per il processo di fornitura]
+)
+
+#show: qualifica_table.with(
+  voci: voci_tabella_fornitura,
+  caption: caption_fornitura
+
+)
 === 2.1.2 Sviluppo
 
 == 2.2 Processi di Supporto
