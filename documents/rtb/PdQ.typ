@@ -224,7 +224,7 @@ Per ogni test viene specificato uno stato, che può essere:
 I test di unità verificano il comportamento corretto delle singole unità di codice, come funzioni, metodi o classi. Vengono scritti e mantenuti dagli sviluppatori durante la fase di sviluppo e servono a garantire che ogni componente, isolato dal resto, produca il risultato atteso per diversi input. Sono fondamentali per individuare rapidamente errori logici a livello di codice sorgente.
 
 #let voci_test_unità = (
-    [TdU01], [Verificare che che si possa rilevare la carenza di scorte in un magazzino], [RF01], [NI]
+    [---], [---], [---], [NI]
   )
 #let caption_test_unità = (
   [Test di unità]
@@ -236,10 +236,10 @@ I test di unità verificano il comportamento corretto delle singole unità di co
 
 == 3.2 Test di integrazione
 
-I test di integrazione servono a verificare che più unità di codice funzionino correttamente insieme. L’obiettivo è individuare problemi che emergono quando i vari moduli interagiscono tra loro, ad esempio errori di comunicazione tra componenti o malintesi sui formati di dati scambiati. Questi test sono particolarmente utili quando si integrano sistemi esterni come database, API o servizi di terze parti.
+I test di integrazione servono a verificare che più unità di codice funzionino correttamente insieme. L'obiettivo è individuare problemi che emergono quando i vari moduli interagiscono tra loro, ad esempio errori di comunicazione tra componenti o malintesi sui formati di dati scambiati. Questi test sono particolarmente utili quando si integrano sistemi esterni come database, API o servizi di terze parti.
 
 #let voci_test_integrazione = (
-    [TdI01], [Lorem ipsum], [---], [NI]
+    [---], [---], [---], [NI]
   )
 #let caption_test_integrazione = (
   [Test di integrazione]
@@ -251,10 +251,10 @@ I test di integrazione servono a verificare che più unità di codice funzionino
 
 == 3.3 Test di sistema
 
-I test di sistema valutano il comportamento del software nel suo complesso, simulando l’uso reale da parte dell’utente in un ambiente quanto più possibile simile alla produzione. Questo tipo di test include tutti i componenti integrati e mira a verificare che il sistema nel suo insieme soddisfi i requisiti funzionali e non funzionali. È un passaggio fondamentale prima del collaudo finale.
+I test di sistema valutano il comportamento del software nel suo complesso, simulando l'uso reale da parte dell'utente in un ambiente quanto più possibile simile alla produzione. Questo tipo di test include tutti i componenti integrati e mira a verificare che il sistema nel suo insieme soddisfi i requisiti funzionali e non funzionali. È un passaggio fondamentale prima del collaudo finale.
 
 #let voci_test_sistema = (
-    [TdS01], [Lorem ipsum], [---], [NI]
+    [---], [---], [---], [NI]
   )
 #let caption_test_sistema = (
   [Test di sistema]
@@ -268,7 +268,7 @@ I test di sistema valutano il comportamento del software nel suo complesso, simu
 
 == 3.4 Test di regressione
 
-I test di regressione hanno lo scopo di assicurare che le nuove modifiche al codice, come correzioni di bug o l’introduzione di nuove funzionalità, non abbiano introdotto errori in funzionalità esistenti. Vengono eseguiti regolarmente durante lo sviluppo continuo e sono spesso automatizzati per garantire un controllo rapido ed efficace ogni volta che il software viene aggiornato.
+I test di regressione hanno lo scopo di assicurare che le nuove modifiche al codice, come correzioni di bug o l'introduzione di nuove funzionalità, non abbiano introdotto errori in funzionalità esistenti. Vengono eseguiti regolarmente durante lo sviluppo continuo e sono spesso automatizzati per garantire un controllo rapido ed efficace ogni volta che il software viene aggiornato.
 
 #let voci_test_regressione = (
   [TdR01], [Lorem ipsum], [---], [NI]
@@ -289,4 +289,4 @@ I test di regressione hanno lo scopo di assicurare che le nuove modifiche al cod
 == 5.1 Valutazioni sull'organizzazione
 == 5.2 Valutazioni sui ruoli
 == 5.3 Valutazioni sugli strumenti
-== 5.4 Valutazioni sul prodotto#super[G]
+== 5.4 Valutazioni sul prodotto
