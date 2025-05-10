@@ -12,7 +12,7 @@
   Nota: inserire virgola dopo ciascun uso della funzione voce (anche se singola)
 */
 
-#let titolo = "Analisi dei requisiti#super[G]"
+#let titolo = "Analisi dei requisiti"
 #let status = "In redazione"
 #let destinatario = "M31"
 #let versione = "0.3.0"
