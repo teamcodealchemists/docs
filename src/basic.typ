@@ -273,3 +273,50 @@
   set align(left)
   doc
 }
+
+#let automiglioramento_table(
+  header: (),
+  voci: (),
+  caption: (),
+  doc
+) = {
+  set align(center)
+
+  set box(
+  width: 95%,
+  )
+
+  set table(
+    align: (center, center, center, center),
+    fill:(_,y)=>if y==0 {silver},
+    inset: (_, y) => if y == 0 { 7pt } else { 10pt },
+    columns:if header.len() == 4 {(auto,auto,auto,auto)} 
+    else if header.len() == 3 {(auto,auto,auto)}
+    else if header.len() == 2 {(auto,auto)}
+  )
+
+  set text(
+    size: 11pt,
+    hyphenate: false
+  )
+
+  set table.cell(
+    align: horizon
+  )
+
+  v(4pt)
+  box(
+    figure(
+      table(
+        table.header(
+          ..header
+        ),
+        ..voci,
+      ),
+      caption: caption
+    )
+  )
+  
+  set align(left)
+  doc
+}

@@ -15,7 +15,7 @@
 #let titolo = "Piano di Qualifica"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "0.0.1"
+#let versione = "0.1.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -26,11 +26,11 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [0.1.0],
+  [10/05/2025],
+  [S. Marana],
   [],
-  [],
-  [],
-  [],
-  [],
+  [Compilazione base del Documento e creazione tabelle],
   
   [0.0.1],
   [22/04/2025],
@@ -208,8 +208,7 @@ Ad ogni test è stato attribuito un codice univoco per facilitarne l'identificaz
 - *TdI*: Test di integrazione
 - *TdS*: Test di sistema
 - *TdR*: Test di regressione
-// Test di accettazione?
-/*I test di accettazione vengono eseguiti per verificare che il software soddisfi i requisiti concordati con il cliente o l’utente finale. Sono spesso definiti sulla base di scenari realistici o specifiche formali (come le User Story o i Criteri di Accettazione). Questi test rappresentano l’ultima fase di verifica prima del rilascio del prodotto e determinano se esso può essere considerato “pronto per l’uso”.*/
+- *TdA*: Test di accettazione
 
 Per ogni test viene specificato uno stato, che può essere:
 - *NI*: Non Implementato
@@ -271,7 +270,7 @@ I test di sistema valutano il comportamento del software nel suo complesso, simu
 I test di regressione hanno lo scopo di assicurare che le nuove modifiche al codice, come correzioni di bug o l'introduzione di nuove funzionalità, non abbiano introdotto errori in funzionalità esistenti. Vengono eseguiti regolarmente durante lo sviluppo continuo e sono spesso automatizzati per garantire un controllo rapido ed efficace ogni volta che il software viene aggiornato.
 
 #let voci_test_regressione = (
-  [TdR01], [Lorem ipsum], [---], [NI]
+  [---], [---], [---], [NI]
   )
 #let caption_test_regressione = (
   [Test di regressione]
@@ -281,12 +280,94 @@ I test di regressione hanno lo scopo di assicurare che le nuove modifiche al cod
   caption: caption_test_regressione
 )
 
+== 3.5 Test di accettazione
+
+I test di accettazione vengono eseguiti per verificare che il software soddisfi i requisiti concordati con il cliente o l'utente finale. Sono spesso definiti sulla base di scenari realistici o specifiche formali (come le User Story o i Criteri di Accettazione). Questi test rappresentano l'ultima fase di verifica prima del rilascio del prodotto e determinano se esso può essere considerato “pronto per l'uso”.
+
+#let voci_test_accettazione = (
+  [---], [---], [---], [NI]
+  )
+#let caption_test_accettazione = (
+  [Test di Accettazione]
+)
+#show: test_table.with(
+  voci: voci_test_accettazione,
+  caption: caption_test_accettazione
+)
+
 = 4. Cruscotto di Valutazione
-== 4.1 Valutazione della documentazione 
-== 4.2 Valutazione dei processi
+// Inserire qui i vari punti di valutazione delle metriche in base alle metriche di qualità che verranno riportate nella sezione 2, per il momento si può lasciare vuoto
 
 = 5. Considerazioni di Miglioramento Continuo
-== 5.1 Valutazioni sull'organizzazione
-== 5.2 Valutazioni sui ruoli
-== 5.3 Valutazioni sugli strumenti
-== 5.4 Valutazioni sul prodotto
+== 5.1 Introduzione
+Il miglioramento continuo è un processo fondamentale per garantire la qualità del prodotto#super[G] software e il successo del progetto. Attraverso l'analisi delle metriche di qualità, delle valutazioni e dei feedback ricevuti (Interni ed Esterni), è possibile identificare aree di miglioramento e implementare azioni correttive.
+Il gruppo di lavoro si impegna a monitorare costantemente le metriche e a raccogliere feedback per garantire un miglioramento continuo del processo di sviluppo e del prodotto#super[G] finale.
+
+//I periodi possono essere indicati come sprint, generalmente (per esempio inizio progetto) o con delle date specifiche
+
+== 5.2 Valutazioni sull'organizzazione
+
+#let header_autovalutazione_organizzazione = (
+  [*Periodo*],[*Problema*],[*Soluzione*]
+)
+#let voci_autovalutazione_organizzazione = (
+  [---], [---], [---],
+  )
+#let caption_autovalutazione_organizzazione = (
+  [Valutazioni sull'organizzazione]
+)
+#show: automiglioramento_table.with(
+  header: header_autovalutazione_organizzazione,
+  voci: voci_autovalutazione_organizzazione,
+  caption: caption_autovalutazione_organizzazione
+)
+== 5.3 Valutazioni sui ruoli
+
+#let header_autovalutazione_ruoli = (
+  [*Periodo*],[*Ruolo*],[*Problema*],[*Soluzione*]
+)
+#let voci_autovalutazione_ruoli = (
+  [---], [---], [---], [---]
+  )
+#let caption_autovalutazione_ruoli = (
+  [Valutazioni sui ruoli]
+)
+#show: automiglioramento_table.with(
+  header: header_autovalutazione_ruoli,
+  voci: voci_autovalutazione_ruoli,
+  caption: caption_autovalutazione_ruoli
+)
+
+== 5.4 Valutazioni sugli strumenti
+
+#let header_autovalutazione_strumenti = (
+  [*Periodo*],[*Strumento*],[*Problema*],[*Soluzione*]
+)
+#let voci_autovalutazione_strumenti = (
+  [---], [---], [---], [---]
+  )
+#let caption_autovalutazione_strumenti = (
+  [Valutazioni sugli strumenti]
+)
+#show: automiglioramento_table.with(
+  header: header_autovalutazione_strumenti,
+  voci: voci_autovalutazione_strumenti,
+  caption: caption_autovalutazione_strumenti
+)
+
+== 5.5 Valutazioni sul prodotto
+
+#let header_autovalutazione_prodotto = (
+  [*Periodo*],[*Riferimento*],[*Problema*],[*Soluzione*]
+)
+#let voci_autovalutazione_prodotto = (
+  [---], [---], [---], [---]
+  )
+#let caption_autovalutazione_prodotto = (
+  [Valutazioni sul prodotto]
+)
+#show: automiglioramento_table.with(
+  header: header_autovalutazione_prodotto,
+  voci: voci_autovalutazione_prodotto,
+  caption: caption_autovalutazione_prodotto
+)
