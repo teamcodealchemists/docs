@@ -27,11 +27,20 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+
+  [1.0.0],
+  [11/05/2025],
+  [D.P Mattia],
+  [-],
+  [Aggiunta del contenuto: Rischi, Sprint e altri],
+
+
+
   [0.1.0],
   [09/04/2025],
   [N. Moretto],
   [-],
-  [Inizio redazione documento: Introduzione generale, Introduzione pianificazione a breve termine, Sprint 1],
+  [Inizio redazione documento: Introduzione generale],
   
   [0.0.1],
   [08/04/2025],
