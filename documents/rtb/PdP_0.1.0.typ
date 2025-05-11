@@ -16,7 +16,7 @@
 #let titolo = "Piano di Progetto"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "0.1.0"
+#let versione = "0.2.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -28,24 +28,22 @@
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
 
-  [1.0.0],
+  [0.2.0],
   [11/05/2025],
   [D.P Mattia],
-  [-],
+  [S. Marana],
   [Aggiunta del contenuto: Rischi, Sprint e altri],
-
-
 
   [0.1.0],
   [09/04/2025],
   [N. Moretto],
-  [-],
+  [S. Marana],
   [Inizio redazione documento: Introduzione generale],
   
   [0.0.1],
   [08/04/2025],
   [N. Moretto],
-  [-],
+  [S. Marana],
   [Creazione template e struttura del documento]
 )
 
@@ -66,11 +64,13 @@
 )
 #show: indice
 
+//TODO: Integrare indice delle tabelle dal PdQ, senti @sebamarana
+
 #set heading(numbering: "1.1.")
 
 = Introduzione
 == Informazioni generali
-Il *Piano di Progetto#super[G]* è un documento che definisce le modalità di gestione del progetto, le risorse necessarie e i rischi attesi.\ Il piano di progetto è un documento vivo, che viene aggiornato durante il ciclo di vita del progetto di *Ingegneria del Software*, in quanto le attività vengono pianificate volta per volta e le risorse vengono allocate in base alle necessità. Una progettazione dettagliata sul lungo termine, infatti, si rivelerebbe inefficace.
+Il *Piano di Progetto#super[G]* è un documento che definisce le modalità di gestione del progetto, le risorse necessarie e i rischi attesi.\ Il piano di progetto è un documento vivo, che viene aggiornato durante il ciclo di vita del progetto di *Ingegneria del Software*, in quanto le attività vengono pianificate volta per volta e le risorse vengono allocate in base alle necessità. Una progettazione dettagliata sul lungo termine, infatti, si rivelerebbe inefficace in quanto sensibile ad imprevisti ed esigenze del cliente o di sviluppo.
 
 Il documento è molto importante per permettere una corretta pianificazione del lavoro e dei vari sprint#super[G], analizzando il tempo previsto ed effettivo per ogni attività, tenendo conto dei rischi e delle risorse disponibili.
 
@@ -93,7 +93,7 @@ Si potrà dedurre che questi documenti potrebbero contenere parole o frasi che n
 #v(0.5em)
 In questa sezione del documento vengono analizzati i principali rischi in cui il team potrebbe incorrere durante lo svolgimento
 del progetto. Ad ognuno viene associata una valutazione della probabilità di occorrenza e gravità, oltre che ad una descrizione 
-ed una sezione relativa al rilevamento e alle contrimisure. 
+ed una sezione relativa al rilevamento e alle contromisure. 
 
 // Infine ogni rischio viene associato ad un indice numerico consentendo quindi di determinarne la criticità di ciascuno facilmente.
 
@@ -105,7 +105,7 @@ Per valutare nel migliore modo possibile i rischi sono stati definiti i seguenti
 
 - *Tipo*: Rappresenta l'impatto che il rischio potrebbe avere sul progetto, ed è classificato in Basso, Medio o Alto
 
-- *Gravità*: Descrive le conseguenze che un rischio ha se si verifica, con l’eventuale possibilità di modifica alla pianificazione o al progetto
+- *Gravità*: Descrive le conseguenze che un rischio ha se si verifica, con l'eventuale possibilità di modifica alla pianificazione o al progetto
 
 - *Probabilità*: Indica, come da nome, la probabilità che il rischio si verifichi durante lo sviluppo del progetto
 
@@ -115,20 +115,20 @@ Per valutare nel migliore modo possibile i rischi sono stati definiti i seguenti
     dati: (
       [1], 
       [Basso], 
-      [L’impatto sul progetto è minimo, un lieve rallentamento che non modifica i tempi di consegna], 
-      [è molto improbabile che si verifichi,
+      [L'impatto sul progetto è minimo, un lieve rallentamento che non modifica i tempi di consegna], 
+      [È molto improbabile che si verifichi,
       ma esistono situazioni che potrebbero contribuirne alla nascita],
 
       [2], 
       [Medio], 
-      [L’evento richiede un parziale adattamento al piano e l'organizzazione iniziale, con uno sforzo supplementare ma con un impatto gestibile], 
+      [L'evento richiede un parziale adattamento al piano e l'organizzazione iniziale, con uno sforzo supplementare ma con un impatto gestibile], 
       [Esiste una probabilità media che il rischio si realizzi], 
 
       [3], 
       [Alto], 
       [Il rischio comporta ritardi significativi,
-      un possibile aumento dei costi o un degrado della qualità, impattando negativamente sul raggiungimento degli obiettivi del progetto], 
-      [Altamente probabile che il rischio si verifichi, con diversi segni evidenti che ne indicano la possibilità], 
+      un possibile aumento dei costi o un degrado della qualità, impattando negativamente sul raggiungimento degli obbiettivi del progetto], 
+      [Altamente probabile che il rischio si verifichi, con diversi segni evidenti che ne indicano la possibilità che accada], 
   ),
     didascalia: "Indici di gravità e probabilità gestione dei rischi"
   )
@@ -156,21 +156,21 @@ Dove:
 
 + *Categoria*: Rappresenta la tipologia del rischio, che puo essere:
 
-  - P: per i rischi di pianificazione
+  - *P*: per i rischi di pianificazione
 
-  - C: per i rischi comunicativi
+  - *C*: per i rischi comunicativi
 
-  - I: per i rischi individuali
+  - *I*: per i rischi individuali
 
-  - T: per i rischi tecnologici
+  - *T*: per i rischi tecnologici
 
-+ *Indice*: Identificativo progressivo univoco all’interno della categoria.
++ *Indice*: Identificativo progressivo univoco all'interno della categoria.
 
 + *Nome*: Una breve descrizione del rischio
 
-== Rischii tecnologici //tecnologie utilizzate ed eventuali errori
+== Rischi tecnologici //tecnologie utilizzate ed eventuali errori
 
-=== RT1 - Rischio tecnologico legato alle tecnologie utilizzate
+=== RT1 - Inesperienza nell'uso delle tecnologie
 #v(1em)
 
 #tabella_rischi(
@@ -199,7 +199,7 @@ Dove:
 )
 #v(1em)
 
-=== RT2 - Rischio tecnologico legato ad un utilizzo errato
+=== RT2 - Uso errato delle tecnologie
 #v(1em)
 
 #tabella_rischi(
@@ -228,7 +228,7 @@ Dove:
 )
 #v(1em)
 
-=== RT3 - Rischio tecnologico legato ad errori di programmazione
+=== RT3 - Errori di codifica o programmazione
 #v(1em)
 
 #tabella_rischi(
@@ -238,7 +238,7 @@ Dove:
 
     [*Descrizione*],
     [Lo sviluppo software prevede implicitamente la possibilità di scrivere codice non completamente corretto, 
-    a maggior ragione se il linguaggio in uso e il suo funzionamento non è ben consciuto],
+    a maggior ragione se il linguaggio in uso e il suo funzionamento non sono ben conosciuti],
 
     [*Gravità*],
     [Bassa],
@@ -254,7 +254,7 @@ Dove:
     programmatore cercherà di risolvere il problema approfondendo
     la tecnologia in uso e l'argomento al fine di trovare una soluzione indipendentemente. 
     In caso di insuccesso un sistema di ticket condiviso con gli altri programmatori
-    potrebbe aiutare a condividere informazioni per ottenre una soluzione alternativa. 
+    potrebbe aiutare a condividere informazioni per ottenere una soluzione alternativa. 
     Se il problema dovesse diventare centrale i programmatori si impegneranno 
     a lavorare assieme per la risoluzione],
   ),
@@ -262,7 +262,7 @@ Dove:
 )
 #v(1em)
 
-=== RT4 - Rischio tecnologico legato al supporto e versione
+=== RT4 - Rischio di supporto e versione delle tecnologie
 #v(1em)
 
 #tabella_rischi(
@@ -281,8 +281,8 @@ Dove:
 
     [*Contromisure*], 
     [Il team si impegna sin dall'inizio della progettazione architetturale di utilizzare tecnologie stabili
-    e in vasto uso nel mercato, come anche gli endpoint delle API messe a dispozione, al fine di ridurre
-    al minimo l'eventulità del problema],
+    e in vasto uso nel mercato, come anche gli endpoint delle API messe a disposizione, al fine di ridurre
+    al minimo l'eventualità del problema],
   ),
   didascalia: "Tabella RT4"
 )
@@ -305,8 +305,8 @@ Dove:
     [Bassa],
 
     [*Descrizione*],
-    [Rischio legato ad una comunciazione lenta da parte di uno o più componenti del team al fine della risoluzione 
-    di una problematica o a fine organizzaztivo],
+    [Rischio legato ad una comunicazione lenta da parte di uno o più componenti del team al fine della risoluzione 
+    di una problematica o a fine organizzativo],
 
     [*Rilevamento*],
     [Rilevamento implicito da parte dei restanti componenti del team],
@@ -314,13 +314,13 @@ Dove:
     [*Contromisure*], 
     [I membri del team si impegnano a fissare incontri frequenti e di lavorare assieme su canali comunicativi di diversa natura. 
     In più, grazie al sistema di sottoresponsabili adottato, data la dimensione del team, la responsabilizzazione dei membri 
-    ottenuta aiuterà ad effettuare check-up frequenti dei restanti membri, garantendo quindi una comunciazione frequente e granulare],
+    ottenuta aiuterà a effettuare check-up frequenti dei restanti membri, garantendo quindi una comunicazione frequente e granulare],
   ),
   didascalia: "Tabella RC1"
 )
 #v(1em)
 
-=== RC2 - Malcomprensione degli obbiettivi del team
+=== RC2 - Incomprensione degli obbiettivi del team
 #v(1em)
 
 #tabella_rischi(
@@ -335,13 +335,13 @@ Dove:
     [Bassa],
 
     [*Descrizione*],
-    [Rischio legato alla malcomprensione di uno o più obbiettivi dello sprint in corso],
+    [Rischio legato all'incomprensione di uno o più obbiettivi dello sprint in corso],
 
     [*Rilevamento*],
     [Frequenti discussioni con opinioni molto contrastanti e nessun esito],
 
     [*Contromisure*], 
-    [Il responsabile del team si occuperà di monitorare costantemnte i membri del gruppo al fine di comprendere
+    [Il responsabile del team si occuperà di monitorare costantemente i membri del gruppo al fine di comprendere
     eventuali incomprensioni e risolverle al più presto. In particolare la struttura a sottoresponsabili e sottogruppi
     aiuterà a individuare più facilmente i membri in questione],
   ),
@@ -349,7 +349,7 @@ Dove:
 )
 #v(1em)
 
-=== RC3 - Mancanza di comunciazione con l'azienda 
+=== RC3 - Mancanza di comunicazione con l'azienda 
 #v(1em)
 
 #tabella_rischi(
@@ -370,8 +370,8 @@ Dove:
     [Tempi di risposta lunghi e poco frequenti],
 
     [*Contromisure*], 
-    [Il team si impegna a cercare di organizzarsi nel migliore dei modi affinchè l'azienda proponente
-    possa trovarsi nelle condizioni di avere una comunciazione facile e veloce],
+    [Il team si impegna a cercare di organizzarsi nel migliore dei modi affinché l'azienda proponente
+    possa trovarsi nelle condizioni di avere una comunicazione facile e veloce],
   ),
   didascalia: "Tabella RC3"
 )
@@ -396,7 +396,7 @@ Dove:
     [Alta],
 
     [*Descrizione*],
-    [Essendo il progetto stesso di SWE un dei molteplici corsi universitari,
+    [Essendo il progetto stesso di SWE uno dei molteplici corsi universitari,
     i membri del team potrebbero essere costretti in alcuni casi 
     a periodi o momenti di indisponibilità dati da quest'ultimi.
     Si considerano inoltre momenti di assenza dati da impegni esterni 
@@ -407,7 +407,7 @@ Dove:
     della disponibilità di ciascuno e di informare i restanti membri in casi diversi],
 
     [*Contromisure*], 
-    [L'orario settimanale condivisio verrà utilizzato per pianificare le attività e suddividere il lavoro
+    [L'orario settimanale condiviso verrà utilizzato per pianificare le attività e suddividere il lavoro
     in modo da mantenere la disponibilità necessaria],
   ),
   didascalia: "Tabella RI1"
@@ -435,15 +435,15 @@ Dove:
     [Implicitamente dagli altri membri del gruppo],
 
     [*Contromisure*], 
-    [Gli incontri regolari predispoti dal responsabile del team aiuteranno a favorire il dialogo trasparente, la collaborazione e 
+    [Gli incontri regolari predisposti dal responsabile del team aiuteranno a favorire il dialogo trasparente, la collaborazione e 
     mantenere attivo l'impegno di ciascun membro. Inoltre la scala della responsabilità
     più granulare aiuterà ad avere un riscontro continuo più diretto.],
   ),
-  didascalia: "Tabellla RI2"
+  didascalia: "Tabella RI2"
 )
 #v(1em)
 
-=== RI3 - Difficoltà di "comprensione" 
+=== RI3 - Difficoltà di "comprensione" o lavoro
 
 #tabella_rischi(
   dati: (
@@ -474,7 +474,7 @@ Dove:
 == Rischio globale //valutare altri rischi
 #v(1em)
 
-=== RG1 - Malcomprensione degli obbiettivi del capitolato  
+=== RG1 - Incomprensione degli obbiettivi del capitolato  
 #v(1em)
 
 #tabella_rischi(
@@ -496,8 +496,8 @@ Dove:
     [Comunicazione da parte dell'azienda proponente del progetto],
 
     [*Contromisure*], 
-    [I membri del team si sono impegnati sin dall'inzio nello svolgere un accurata lettura del capitolato di progetto
-    al fine di individuare precisamente le richieste, nonchè di avere una comunicazione frequente con l'azienda per 
+    [I membri del team si sono impegnati sin dall'inizio nello svolgere un'accurata lettura del capitolato di progetto
+    al fine di individuare precisamente le richieste, nonché di avere una comunicazione frequente con l'azienda per 
     individuare eventuali incomprensioni],
   ),
   didascalia: "Tabella RG1"
@@ -525,9 +525,9 @@ Dove:
     [Implicito dato da un frequente disaccordo],
 
     [*Contromisure*], 
-    [I membri durante le riunioni interne si impegnano ad ascoltare ciascuno le motvazioni altrui al fine
+    [I membri durante le riunioni interne si impegnano ad ascoltare ciascuno le motivazioni altrui al fine
     di raggiungere la soluzione ottimale o un compromesso. Se questo non dovesse bastare, delle votazioni
-    anonime a maggioranza verrano indette al fine di raggiunere una decisione],
+    anonime a maggioranza verranno indette al fine di raggiungere una decisione],
   ),
   didascalia: "Tabella RG2"
 )
@@ -544,12 +544,12 @@ Dove:
     [RT3],[Errori di programmazione],[Bassa],[Alta],
     [RT4],[Supporto e versione delle tecnologie],[Alta],[Bassa],
     [RC1],[Tempi di risposta lunghi],[Media],[Bassa],
-    [RC2],[Malcomprensione degli obbiettivi],[Alta],[Bassa],
-    [RC3],[Mancanza di comunciazione con l'azienda],[Alta],[Bassa],
+    [RC2],[Incomprensione degli obbiettivi],[Alta],[Bassa],
+    [RC3],[Mancanza di comunicazione con l'azienda],[Alta],[Bassa],
     [RI1],[Impegni personali, universitari e indisponibilità],[Media],[Alta],
     [RI2],[Scarsa collaborazione],[Alta],[Bassa],
     [RI3],[Difficoltà di comprensione],[Media],[Bassa],
-    [RG1],[Malcomprensione degli obbiettivi del capitolato],[Alta],[Bassa],
+    [RG1],[Incomprensione degli obbiettivi del capitolato],[Alta],[Bassa],
     [RG2],[Pareri contrastanti],[Bassa],[Media],
       
   ),
@@ -570,13 +570,13 @@ La redazione di questo paragrafo sarà effettuato in seguito al superamento dell
 #v(1em)
 
 A seguito del primo incontro di gruppo Il team _Code Alchemists_ ha deciso di impegnarsi ad adottare come strumento di sviluppo
-princiaple la metodologia *Agile#super[G]* per tutto quello che riguarda la gestione del progetto. 
+principale la metodologia *Agile#super[G]* per tutto quello che riguarda la gestione del progetto. 
 In particolare, si è deciso di utilizzare il framework *Scrum#super[G]*, che prevede numerosi *sprint#super[G]*, 
 ovvero periodi di tempo ben definiti da una data di inizio e una data di fine in cui il team 
 si impegna a concentrarsi su un insieme specifico e finito di attività.\
 Il team ha deciso di utilizzare una durata dello sprint pari a *2 settimane*, 
 questo aiutera ad ottenere un buon bilanciamento tra pianificazione e esecuzione delle attività. 
-Inoltre durante ogni sprint, verrano effettuate diverse riunioni per discutere
+Inoltre durante ogni sprint, verranno effettuate diverse riunioni per discutere
 sia i progressi di ogni membro e le difficoltà riscontrate, per permettere una comunicazione continua tra i membri
 e una rapida risoluzione dei problemi che potrebbero insorgere.\
 #v(1em)
@@ -585,23 +585,23 @@ Il team ha deciso di utilizzare un approccio *iterativo#super[G]* e di miglioram
 per permettere di adattare il lavoro in base alle esigenze del cliente, feedback ricevuti e necessità. 
 Inoltre, si è deciso di utilizzare un *gestore di attività*, in particolare JIRA, per 
 *tracciare il lavoro svolto e le scadenze*.
-Questo garantirà inanzitutto una buona gestione del progetto ma anche una migliore pianificazione, 
+Questo garantirà innanzitutto una buona gestione del progetto ma anche una migliore pianificazione, 
 riducendo al minimo i potenziali rischi e massimizzando le possibilità di successo.
 #v(1em)
 
 Inoltre alcune particolari caratteristiche che il team ha deciso di adottare dopo un primo periodo di prova includono:
 
-- L'uso di sottoresponsabili informali per responsabilizzare maggiormente più membri e ottenere una comunciazione più efficace e diretta
+- L'uso di sottoresponsabili informali per responsabilizzare maggiormente più membri e ottenere una comunicazione più efficace e diretta
 - La redazione di una "Lettera di sprint" da parte del responsabile entrante per definire meglio gli obbiettivi attuali, la quale
    viene redatta e diventa presenta almeno il giorno prima dell'inizio del nuovo sprint
 - Un cambio di ruoli per sprint basato sul ruolo della persona e dalle competenze ottenute nello sprint appena terminato.
-   Questo permette in particolare, oltre a ruotare i ruoli tra i membri, di svolgere una transzione molto più fluida e funzionale tra sprint
+   Questo permette in particolare, oltre a ruotare i ruoli tra i membri, di svolgere una transizione molto più fluida e funzionale tra sprint
 #v(1em)
 
 Infine il team si impegna a *concordare riunioni periodiche* con l'azienda proponente del progetto _M31_ 
 per discutere progressi ed eventuali modifiche in corso d'opera. 
 Le riunioni garantiranno che il lavoro svolto sia in coerente con le aspettative 
-del cliente e per ottenre feedback su quanto realizzato.
+del cliente e per ottenere feedback su quanto realizzato.
 
 Di seguito vengono riportate le caratteristiche previste per ogni sprint successivamente descritte:
 - Informazioni generali;
@@ -626,12 +626,12 @@ Giorni di ritardo: #h(0.15cm)*0*
 ==== Informazioni generali e attività da svolgere
 #v(1em)
 
-Questo sprint ha come obiettivo quello di risolvere le osservazioni 
+Questo sprint ha come obbiettivo quello di risolvere le osservazioni 
 ricevute dopo la presentazione della candidatura. 
 Successivamente, avverrà la redazione dei primi documenti 
 necessari per iniziare i lavori.
 
-In particalare, le attività previste sono:
+In particolare, le attività previste sono:
 - Miglioramento grafico del sito web;
 - Miglioramento della navigabilità delle risorse del sito web;
 - Indicazione dei criteri di rotazione dei ruoli;
@@ -649,7 +649,7 @@ In particalare, le attività previste sono:
 I possibili rischi :
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata
 - RI1: Rischio Individuale derivante dalle altre attività
-- RG1: Rischio Globale derivato da malcomprensione del capitolatoG
+- RG1: Rischio Globale derivato da incomprensione del capitolato#super[G]
 - RG2: Rischio Globale legato a pareri contrastanti
 
 ==== Preventivo
@@ -718,7 +718,7 @@ portato gli altri membri a dover ulteriormente assorbire
 il lavoro in eccesso.
 
 Alcuni rallentamenti inoltre sono stati dovuti ad un primo periodo
-di approccio a JIRA da parte del gruppo non efficente, dovuto all'inesperienza
+di approccio a JIRA da parte del gruppo non efficiente, dovuto all'inesperienza
 dell'utilizzo dello strumento e in aggiunta di un 
 organizzazione degli incontri più spontanea e meno organizzata.
 
@@ -728,10 +728,10 @@ organizzazione degli incontri più spontanea e meno organizzata.
 Durante lo sprint ci siamo dedicati principalmente ad una prima impostazione del
 progetto, tramite automazioni e organizzazione github, alla progettazione di una
 prima ipotesi architetturale/tecnologica a caldo e alla prima stesura
-dei documenti necessari con un discreto sucesso, almeno come primo inizio di progetto.
+dei documenti necessari con un discreto successo, almeno come primo inizio di progetto.
 Non siamo riusciti tuttavia a rendere l'ipotesi architetturale definitiva, in quanto
-effettuata precedentemnte da una ricerca dello stato dell'arte approfondita e quindi
-da una scarsita di informazioni.
+effettuata precedentemente da una ricerca dello stato dell'arte approfondita e quindi
+da una scarsità di informazioni.
 
 === Sprint 2
 #v(1em)
@@ -743,11 +743,11 @@ Giorni di ritardo: #h(0.15cm)*0*
 ==== Informazioni generali e attività da svolgere
 #v(1em)
 
-Questo secondo sprint ha avuto principalmente come obiettivo la continuazione
+Questo secondo sprint ha avuto principalmente come obbiettivo la continuazione
 e il miglioramento di quanto iniziato nel primo sprint basandoci inoltre
 su quanto discusso con l'azienda proponente.
 
-In particalare, le attività previste sono:
+In particolare, le attività previste sono:
 
 - Analisi dello stato dell'arte
 - Continuazione dell'ipotesi architetturale e tecnologica
@@ -831,7 +831,7 @@ di festività, come quello pasquale, che ha rallentato notevolmente
 il progresso di tutte le attività attese.
 
 Inoltre, un iniziale difficoltà nell'identificare con decisione i principali
-punti su cui concetrarsi per avanzare nella produzione di un POC hanno portato
+punti su cui concentrarsi per avanzare nella produzione di un POC hanno portato
 il team ad effettuare un analisi dello stato dell'arte, posponendo quindi l'avanzamento
 dell'ipotesi architetturale e quindi della produzione stessa del POC.
 
@@ -840,7 +840,7 @@ dell'ipotesi architetturale e quindi della produzione stessa del POC.
 #v(1em)
 
 Le difficoltà incontrare hanno portato alla luce come fosse e sia essenziale avere una
-migliore panoramica dell'ambito di sviluppo del progetto, e di come inizare a sviluppare
+migliore panoramica dell'ambito di sviluppo del progetto, e di come iniziare a sviluppare
 parallelamente una prima base di POC sia essenziale al fine stesso di capire meglio
 il contesto e identificare in anticipo eventuali issue.
 
@@ -855,7 +855,7 @@ Giorni di ritardo: #h(0.15cm)*0*
 ==== Informazioni generali e attività da svolgere
 #v(1em)
 
-In particalare, le attività previste sono:
+In particolare, le attività previste sono:
 
 ==== Rischi attesi
 #v(1em)
