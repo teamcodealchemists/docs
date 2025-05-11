@@ -111,7 +111,7 @@
   table(
 
     columns: (auto, auto),
-    align: center,
+    align: left,
     fill: (x, y) => if (y == 0) {
       rgb("#ffffff")
     } else if (calc.gcd(y, 2) == 2) {
@@ -136,6 +136,7 @@
 ) = {
       figure(
         table(
+          align:left,
           columns: (auto, auto, auto, auto),
           inset:0.6em,
           fill: (x, y) => if y==0 {

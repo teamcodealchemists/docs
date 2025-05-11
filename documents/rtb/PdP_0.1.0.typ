@@ -526,22 +526,22 @@ Dove:
 
 
 == Tabella Riassuntiva
+#v(1em)
 
 #tabella_riassuntiva_rischi(
   dati: (
-    [RT1],[Inesperienza nell'uso delle tecnologie nel progetto],[Alta],[Alta],
-    [RT2],[Utilizzo errato o non ottimale delle tecnologie],[Media],[Alta],
-    [RT3],[Errori di programmazione],[Bassa],[Media],
+    [RT1],[Inesperienza nell'uso delle tecnologie nel progetto],[Media],[Media],
+    [RT2],[Utilizzo errato o non ottimale delle tecnologie],[Bassa],[Media],
+    [RT3],[Errori di programmazione],[Bassa],[Alta],
     [RT4],[Supporto e versione delle tecnologie],[Alta],[Bassa],
     [RC1],[Tempi di risposta lunghi],[Media],[Bassa],
     [RC2],[Malcomprensione degli obbiettivi],[Alta],[Bassa],
-    [RC3],[Mancanza di comunciazione con l'azienda],[],[],
+    [RC3],[Mancanza di comunciazione con l'azienda],[Alta],[Bassa],
     [RI1],[Impegni personali, universitari e indisponibilità],[Media],[Alta],
     [RI2],[Scarsa collaborazione],[Alta],[Bassa],
     [RI3],[Difficoltà di comprensione],[Media],[Bassa],
-    [RG1],[Malcomprensione degli obbiettivi del capitolato],[Alta],[Media],
-    [RG2],[Pareri contrastanti],[Bassa],[Bassa],
-    [],[],[],[],
+    [RG1],[Malcomprensione degli obbiettivi del capitolato],[Alta],[Bassa],
+    [RG2],[Pareri contrastanti],[Bassa],[Media],
       
   ),
   didascalia: "Tabella riassuntiva dei rischi"
@@ -556,7 +556,10 @@ La redazione di questo paragrafo sarà effettuato in seguito al superamento dell
 
 #pagebreak()
 = Pianificazione nel breve termine
+#v(1em)
 == Introduzione
+#v(1em)
+
 A seguito del primo incontro di gruppo Il team _Code Alchemists_ ha deciso di impegnarsi ad adottare come strumento di sviluppo
 princiaple la metodologia *Agile#super[G]* per tutto quello che riguarda la gestione del progetto. 
 In particolare, si è deciso di utilizzare il framework *Scrum#super[G]*, che prevede numerosi *sprint#super[G]*, 
@@ -567,6 +570,7 @@ questo aiutera ad ottenere un buon bilanciamento tra pianificazione e esecuzione
 Inoltre durante ogni sprint, verrano effettuate diverse riunioni per discutere
 sia i progressi di ogni membro e le difficoltà riscontrate, per permettere una comunicazione continua tra i membri
 e una rapida risoluzione dei problemi che potrebbero insorgere.\
+#v(1em)
 
 Il team ha deciso di utilizzare un approccio *iterativo#super[G]* e di miglioramento *incrementale#super[G]*, 
 per permettere di adattare il lavoro in base alle esigenze del cliente, feedback ricevuti e necessità. 
@@ -574,7 +578,7 @@ Inoltre, si è deciso di utilizzare un *gestore di attività*, in particolare JI
 *tracciare il lavoro svolto e le scadenze*.
 Questo garantirà inanzitutto una buona gestione del progetto ma anche una migliore pianificazione, 
 riducendo al minimo i potenziali rischi e massimizzando le possibilità di successo.
-
+#v(1em)
 
 Inoltre alcune particolari caratteristiche che il team ha deciso di adottare dopo un primo periodo di prova includono:
 
@@ -583,7 +587,7 @@ Inoltre alcune particolari caratteristiche che il team ha deciso di adottare dop
    viene redatta e diventa presenta almeno il giorno prima dell'inizio del nuovo sprint
 - Un cambio di ruoli per sprint basato sul ruolo della persona e dalle competenze ottenute nello sprint appena terminato.
    Questo permette in particolare, oltre a ruotare i ruoli tra i membri, di svolgere una transzione molto più fluida e funzionale tra sprint
-
+#v(1em)
 
 Infine il team si impegna a *concordare riunioni periodiche* con l'azienda proponente del progetto _M31_ 
 per discutere progressi ed eventuali modifiche in corso d'opera. 
@@ -602,13 +606,16 @@ Di seguito vengono riportate le caratteristiche previste per ogni sprint success
 
 #pagebreak()
 == Requirements and Technology Baseline (RTB)
+#v(1em)
 === Sprint 1    //mantenere le seguenti distanze
+#v(1em)
 Inizio: #h(1.99cm)*28-03-2025*\
 Fine Prevista: #h(0.65cm)*11-04-2025*\
 Fine Reale: #h(1.12cm)*11-04-2025*\
 Giorni di ritardo: #h(0.15cm)*0*
 
 ==== Informazioni generali e attività da svolgere
+#v(1em)
 
 Questo sprint ha come obiettivo quello di risolvere le osservazioni 
 ricevute dopo la presentazione della candidatura. 
@@ -628,6 +635,7 @@ In particalare, le attività previste sono:
 
 
 ==== Rischi attesi 
+#v(1em)
 
 I possibili rischi :
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata
@@ -635,7 +643,7 @@ I possibili rischi :
 - RG1: Rischio Globale derivato da malcomprensione del capitolatoG
 - RG2: Rischio Globale legato a pareri contrastanti
 
-==== Preventivo    //aggiungere tabella di preventivo (magari un template in un file .typ)
+==== Preventivo
 #v(1em)
 #align(center)[
 #tabella_preventivo_consuntivo(
@@ -652,6 +660,7 @@ I possibili rischi :
   didascalia: "Sprint 1 - Preventivo ore per ciascun componente"
 )
 ]
+#v(1em)
 
 ==== Consuntivo
 
@@ -671,8 +680,10 @@ I possibili rischi :
   didascalia: "Sprint 1 - Consuntivo ore per ciascun componente"
 )
 ]
+#v(1em)
 
-==== Aggiornamento delle risorse rimanenti   //altra tabella
+==== Aggiornamento delle risorse rimanenti  
+
 #v(1em)
 #align(center)[
   #tabella_aggiornamento_risorse(
@@ -689,6 +700,7 @@ I possibili rischi :
   )
 ]
 ==== Rischi incontrati
+#v(1em)
 
 Durante questo primo sprint abbiamo avuto principalmente
 difficoltà con una distribuzione dell'impegno non
@@ -702,6 +714,7 @@ dell'utilizzo dello strumento e in aggiunta di un
 organizzazione degli incontri più spontanea e meno organizzata.
 
 === Retrospettiva
+#v(1em)
 
 Durante lo sprint ci siamo dedicati principalmente ad una prima impostazione del
 progetto, tramite automazioni e organizzazione github, alla progettazione di una
@@ -711,13 +724,16 @@ Non siamo riusciti tuttavia a rendere l'ipotesi architetturale definitiva, in qu
 effettuata precedentemnte da una ricerca dello stato dell'arte approfondita e quindi
 da una scarsita di informazioni.
 
-=== Sprint 2   
+=== Sprint 2
+#v(1em)
 Inizio: #h(1.99cm)*11-04-2025*\
 Fine Prevista: #h(0.65cm)*24-04-2025*\
 Fine Reale: #h(1.12cm)*24-04-2025*\
 Giorni di ritardo: #h(0.15cm)*0*
 
 ==== Informazioni generali e attività da svolgere
+#v(1em)
+
 Questo secondo sprint ha avuto principalmente come obiettivo la continuazione
 e il miglioramento di quanto iniziato nel primo sprint basandoci inoltre
 su quanto discusso con l'azienda proponente.
@@ -737,13 +753,14 @@ In particalare, le attività previste sono:
 
 
 ==== Rischi attesi
+#v(1em)
 
 I possibili rischi :
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata
 - RI1: Rischio Individuale derivante dalle altre attività
 - RG2: Rischio Globale legato a pareri contrastanti
 
-==== Preventivo    //aggiungere tabella di preventivo (magari un template in un file .typ)
+==== Preventivo 
 #v(1em)
 #align(center)[
 #tabella_preventivo_consuntivo(
@@ -762,7 +779,6 @@ I possibili rischi :
 ]
 
 ==== Consuntivo
-
 #v(1em)
 #align(center)[
 #tabella_preventivo_consuntivo(
@@ -771,7 +787,7 @@ I possibili rischi :
       [Mattia Dalla Pozza],[5],[],[],[],[],[],
       [Sebastiano Marana],[],[4],[],[],[],[],
       [Nicholas Moretto],[],[],[7 (-2)],[],[],[],
-      [Matteo Pretto],[],[],[6 (-1)],[],[],[],
+      [Matteo Pretto],[],[],[6 (-4)],[],[],[],
       [Alex Shu],[],[],[],[],[],[5 (-1)],
       [Stefano Speranza],[],[],[6 (-1)],[],[],[],
       [Ramona Zangla],[],[],[],[],[],[6 (-1)],
@@ -780,23 +796,26 @@ I possibili rischi :
 )
 ]
 
-==== Aggiornamento delle risorse rimanenti   //altra tabella
+==== Aggiornamento delle risorse rimanenti 
 #v(1em)
 #align(center)[
   #tabella_aggiornamento_risorse(
     dati: (
       [Responsabile], [30€/h], [5], [150€], [62 (-5)], [1860€ (-150€)],
       [Amministratore], [20€/h], [4], [80€], [61 (-4)], [1220€ (-80€)],
-      [Analista], [25€/h], [20], [500€], [51 (-20)], [1275€ (-500€)],
+      [Analista], [25€/h], [17], [500€], [51 (-17)], [1275€ (-425€)],
       [Progettista], [25€/h], [-], [-], [156], [3900€],
       [Programmatore], [15€/h], [-], [-], [215], [3225€],
       [Verificatore], [15€/h], [9], [135€], [130 (-9)], [1980€ (-135€)],
-      [*Totale*], [*-*], [*38*], [*865€*], [*675 (-43)*], [*13460€ (-970€)*],
+      [*Totale*], [*-*], [*38*], [*865€*], [*675 (-43)*], [*13460€ (-790€)*],
   ),
     didascalia: "Sprint 1 - Aggiornamento delle risorse disponibili"
   )
 ]
+#v(1em)
+
 ==== Rischi incontrati
+#v(1em)
 
 Il principale rischio di questo secondo sprint è stato il lungo periodo 
 di festività, come quello pasquale, che ha rallentato notevolmente
@@ -809,6 +828,7 @@ dell'ipotesi architetturale e quindi della produzione stessa del POC.
 
 
 === Retrospettiva
+#v(1em)
 
 Le difficoltà incontrare hanno portato alla luce come fosse e sia essenziale avere una
 migliore panoramica dell'ambito di sviluppo del progetto, e di come inizare a sviluppare
@@ -816,52 +836,41 @@ parallelamente una prima base di POC sia essenziale al fine stesso di capire meg
 il contesto e identificare in anticipo eventuali issue.
 
 
-// Sprint 3 da completare
---------------------------------
-
-=== Sprint 3   
+=== Sprint 3
+#v(1em)
 Inizio: #h(1.99cm)*25-04-2025*\
 Fine Prevista: #h(0.65cm)*09-05-2025*\
 Fine Reale: #h(1.12cm)*Da inserire*\
 Giorni di ritardo: #h(0.15cm)*0*
 
 ==== Informazioni generali e attività da svolgere
+#v(1em)
 
 In particalare, le attività previste sono:
 
-- Miglioramento dell'ipotesi architetturale e tecnologica
-  - Approfondimento delle tecnologie proposte
-- Continuazione del Glossario
-- Continuazione delle Norme di Progetto
-- Continuazione del Piano di Progetto
-- Continuazione dell'Analisi dei Requisiti
-- Secondo incontro con M31
-  - Proposta architetturale
-
-
 ==== Rischi attesi
+#v(1em)
 
 I possibili rischi :
-- RI1: Rischio Individuale derivante dalle altre attività
-- RG2: Rischio Globale legato a pareri contrastanti
 
 ==== Preventivo
 #v(1em)
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
-    [Nicolò Bolzon],[],[],[1],[],[],[],
-      [Mattia Dalla Pozza],[],[1],[],[],[],[],
-      [Sebastiano Marana],[],[],[],[],[],[1],
-      [Nicholas Moretto],[1],[],[],[],[],[],
-      [Matteo Pretto],[],[],[1],[],[],[],
-      [Alex Shu],[],[],[1],[],[],[],
-      [Stefano Speranza],[],[],[],[1],[],[],
-      [Ramona Zangla],[],[],[],[1],[],[],
+    [Nicolò Bolzon],[],[],[-],[],[],[],
+      [Mattia Dalla Pozza],[],[-],[],[],[],[],
+      [Sebastiano Marana],[],[],[],[],[],[-],
+      [Nicholas Moretto],[-],[],[],[],[],[],
+      [Matteo Pretto],[],[],[-],[],[],[],
+      [Alex Shu],[],[],[-],[],[],[],
+      [Stefano Speranza],[],[],[],[-],[],[],
+      [Ramona Zangla],[],[],[],[-],[],[],
   ),
   didascalia: "Sprint 3 - Preventivo ore per ciascun componente"
 )
 ]
+#v(1em)
 
 ==== Consuntivo
 
@@ -869,36 +878,40 @@ I possibili rischi :
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
-      [Nicolò Bolzon],[],[],[1],[],[],[],
-      [Mattia Dalla Pozza],[],[1],[],[],[],[],
-      [Sebastiano Marana],[],[],[],[],[],[1],
-      [Nicholas Moretto],[1],[],[],[],[],[],
-      [Matteo Pretto],[],[],[1],[],[],[],
-      [Alex Shu],[],[],[1],[],[],[],
-      [Stefano Speranza],[],[],[],[1],[],[],
-      [Ramona Zangla],[],[],[],[1],[],[],
+      [Nicolò Bolzon],[],[],[-],[],[],[],
+      [Mattia Dalla Pozza],[],[-],[],[],[],[],
+      [Sebastiano Marana],[],[],[],[],[],[-],
+      [Nicholas Moretto],[-],[],[],[],[],[],
+      [Matteo Pretto],[],[],[-],[],[],[],
+      [Alex Shu],[],[],[-],[],[],[],
+      [Stefano Speranza],[],[],[],[-],[],[],
+      [Ramona Zangla],[],[],[],[-],[],[],
   ),
-  didascalia: "Sprint 3 - Preventivo ore per ciascun componente"
+  didascalia: "Sprint 3 - Consuntivo ore per ciascun componente"
 )
 ]
+#v(1em)
 
-==== Aggiornamento delle risorse rimanenti   //altra tabella
+==== Aggiornamento delle risorse rimanenti  
 #v(1em)
 #align(center)[
   #tabella_aggiornamento_risorse(
     dati: (
-      [Responsabile], [30€/h], [], [150€], [(-5)], [€],
-      [Amministratore], [20€/h], [4], [80€], [(-4)], [€],
-      [Analista], [25€/h], [20], [500€], [(-20)], [€],
-      [Progettista], [25€/h], [-], [-], [156], [€],
-      [Programmatore], [15€/h], [-], [-], [215], [€],
-      [Verificatore], [15€/h], [9], [135€], [(-9)], [€)],
-      [*Totale*], [*-*], [*38*], [*865€*], [**], [**],
+      [Responsabile], [30€/h], [], [], [], [],
+      [Amministratore], [20€/h], [], [], [], [],
+      [Analista], [25€/h], [], [], [], [],
+      [Progettista], [25€/h], [], [], [], [],
+      [Programmatore], [15€/h], [], [], [], [],
+      [Verificatore], [15€/h], [], [], [], [],
+      [*Totale*], [*-*], [**], [**], [**], [**],
   ),
-    didascalia: "Sprint 1 - Aggiornamento delle risorse disponibili"
+    didascalia: "Sprint 3 - Aggiornamento delle risorse disponibili"
   )
 ]
-==== Rischi incontrati
+#v(1em)
 
+==== Rischi incontrati
+#v(1em)
 
 === Retrospettiva
+#v(1em)
