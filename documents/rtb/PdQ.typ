@@ -29,7 +29,7 @@
   [0.1.0],
   [10/05/2025],
   [S. Marana],
-  [],
+  [N. Moretto],
   [Compilazione base del Documento e creazione tabelle],
   
   [0.0.1],
