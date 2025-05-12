@@ -4,8 +4,8 @@
 #let titolo = "Verbale interno del "
 #let data = "09/05/2025"
 #let titolo = titolo + data
-#let status = "Da approvare"
-#let versione = "0.1.0"
+#let status = "Approvato"
+#let versione = "1.0.0"
 #let presenze = (
   /* formato: <p.nome,> oppure <"nome",> */
   p.nicolo,
@@ -23,8 +23,8 @@
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
 
-    [1.0.0], [12/05/2025], [-], [-], [Approvazione del documento],
-    [0.1.0], [12/05/2025], [N. Moretto], [-], [Prima stesura del documento],
+    [1.0.0], [12/05/2025], [-], [S. Marana], [Approvazione del documento],
+    [0.1.0], [12/05/2025], [N. Moretto], [S. Marana], [Prima stesura del documento],
 
 )
 #let contenuto = (
@@ -88,7 +88,7 @@
 
   == 2.2 Criticità emerse
   Gli analisti hanno sollevato un problema riguardante un membro del team che non si è distinto per il suo lavoro. \
-  Il membro del team in questione, secondo gli analisti, dopo aver consegnato in modo frettoloso una lista di casi d'uso non completamente analizzati, non ha partecipato attivamente alle attività di analisi e non ha fornito un contributo significativo al lavoro del team. \ Il team ha deciso di dare un'altra possibilità a questo membro, ma ha avvertito che, se non dovesse migliorare, sarà necessario prendere provvedimenti. \
+  Il membro del team in questione, secondo gli analisti, dopo aver consegnato in modo frettoloso una lista di casi d'uso non completamente analizzati, non ha partecipato attivamente alle attività di analisi e non ha fornito un contributo significativo al lavoro del team. \ Il team ha deciso di cercare un riscontro diretto con questo membro, se non dovessero esserci miglioramenti, sarà necessario prendere provvedimenti. \
 
   Viste le conclusioni dei vari lavori, e l'imminente inizio del PoC#super[G], si è deciso di introdurre un nuovo ruolo nel team: il *programmatore#super[G]*.\
 
@@ -115,7 +115,7 @@
   
   #pagebreak()
   = 3. Esiti della riunione
-  La riunione si conclude con l’assegnazione dei compiti e la definizione delle decisioni e azioni intraprese, ponendo particolare attenzione al completamento dell’analisi dei casi d'uso e della progettazione architetturale.\
+  La riunione si conclude con l'assegnazione dei compiti e la definizione delle decisioni e azioni intraprese, ponendo particolare attenzione al completamento dell'analisi dei casi d'uso e della progettazione architetturale.\
 
   Nel periodo successivo, il team continuerà con le attività previste indicate al punto 2.3.2. \
 
