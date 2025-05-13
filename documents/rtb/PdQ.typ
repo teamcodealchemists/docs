@@ -1,4 +1,7 @@
 #import "../../src/basic.typ": *
+#import "../../src/graphs.typ": *
+#import "@local/cetz:0.3.4": *
+#import "@local/cetz-plot:0.1.1": *
 
 /*
   Definire variabili da inserire in prima pagina con #let
@@ -297,6 +300,14 @@ I test di accettazione vengono eseguiti per verificare che il software soddisfi 
 
 = 4. Cruscotto di Valutazione
 // Inserire qui i vari punti di valutazione delle metriche in base alle metriche di qualità che verranno riportate nella sezione 2, per il momento si può lasciare vuoto
+
+#let valori_grafico_gulpease = (
+  (1,70), (2,63), (4,60), (5,54)
+)
+
+#show : graph_gulpease.with(
+  data: valori_grafico_gulpease
+)
 
 = 5. Considerazioni di Miglioramento Continuo
 == 5.1 Introduzione
