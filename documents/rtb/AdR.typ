@@ -31,25 +31,25 @@
   [13/05/2025],
   [N. Bolzon],
   [N. Moretto],
-  [Modifica dei requisiti#super[G] sulla base delle osservazioni dei progettisti#super[G]],
+  [Modifica dei requisiti#super[G] sulla base delle osservazioni dei progettisti#super[G].],
 
   [0.1.0],
   [17/04/2025],
   [N. Moretto],
   [S. Marana],
-  [Aggiunta descrizione glossario, descrizione requisiti#super[G] e aggiunta di tutti i requisiti#super[G]],
+  [Aggiunta descrizione glossario, descrizione requisiti#super[G] e aggiunta di tutti i requisiti#super[G].],
   
   [0.0.2],
   [12/04/2025],
   [M. Dalla Pozza],
   [N. Bolzon],
-  [Aggiunto primo contenuto],
+  [Aggiunto primo contenuto.],
   
   [0.0.1],
   [28/03/2025],
   [S. Speranza],
   [N. Moretto],
-  [Creazione template e struttura del documento]
+  [Creazione template e struttura del documento.]
 )
 
 #let contenuto = (
@@ -80,7 +80,7 @@
 #v(0.5cm)
 Il presente documento viene redatto per _l'analisi dei requisiti_ #super[G].
 
-Il presente documento di Analisi dei Requisiti#super[G] ha lo scopo di fornire una panoramica quanto più possibile dettagliata del prodotto#super[G] software da sviluppare. Esso rappresenta un riferimento e una linea guida fondamentale per la progettazione, l'implementazione e il collaudo del sistema, garantendo che il prodotto#super[G] finale soddisfi pienamente le esigenze e le aspettative del committente#super[G].
+Il presente documento di Analisi dei Requisiti#super[G] ha lo scopo di fornire una panoramica quanto più possibile dettagliata del prodotto#super[G] software da sviluppare. Esso rappresenta un riferimento e una linea guida fondamentale per la progettazione, l'implementazione e il collaudo del sistema. Garantisce che il prodotto#super[G] finale soddisfi pienamente le esigenze e le aspettative del committente#super[G].
 
 All'interno del documento sono descritte le richieste del committente#super[G], le modalità previste per la loro implementazione dal punto di vista architetturale e tecnologico, nonché i riferimenti normativi e informativi utili. In particolare, vengono forniti una descrizione approfondita dei Casi d'Uso e una lista completa dei requisiti#super[G] funzionali e non funzionali del sistema.
 
@@ -268,32 +268,33 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RF02/04*], [Il sistema deve tracciare il trasferimento#super[G] dei prodotti#super[G].], [capitolato#super[G]],
   [*RF02/05*], [Il sistema deve aggiornare lo stato del trasferimento#super[G] in tempo reale.], [capitolato#super[G]],
   
-  [*RF03*], [*Rilevamento delle scorte#super[G] minime necessarie e mantenimento.*], [capitolato#super[G]],
+  [*RF03*], [*Rilevamento delle scorte#super[G] minime necessarie.*], [capitolato#super[G]],
   [*RF03/01*], [Deve essere possibile poter definire un livello minimo di scorte#super[G] per ciascun prodotto#super[G].], [progettazione],
   [*RF03/02*], [Il sistema deve calcolare le scorte#super[G] minime necessarie per ciascun prodotto#super[G].], [capitolato#super[G]],
   [*RF03/03*], [Il sistema deve monitorare le scorte#super[G] attuali rispetto alle scorte#super[G] minime, ottimizzandone la quantità], [capitolato#super[G].],
-  [*RF03/04*], [Il sistema deve attivare processi di riassortimento#super[G] quando necessario.], [capitolato#super[G]],
   
   [*RF04*], [*Bilanciamento delle scorte#super[G], il più possibile, in ogni magazzino per ridurre i livelli medi di scorte (riassortimento#super[G]).*], [capitolato#super[G]],
   [*RF04/01*], [Il sistema deve analizzare la distribuzione delle scorte#super[G] tra i magazzini.], [capitolato#super[G]],
   [*RF04/02*], [Il sistema deve identificare squilibri nelle scorte#super[G], valutando la distribuzione attuale.], [capitolato#super[G]],
-  [*RF04/03*], [Il sistema deve proporre trasferimenti#super[G] interni per bilanciare le scorte#super[G] e migliorare l'efficienza.], [capitolato#super[G]],
+  [*RF04/03*], [Il sistema deve effettuare trasferimenti#super[G] interni per bilanciare le scorte#super[G] e migliorare l'efficienza.], [capitolato#super[G]],
   [*RF04/04*], [Il sistema deve automatizzare il processo di riassortimento#super[G].], [capitolato#super[G]],
 
   [*RF05*], [*Suggerimento su azioni di riassortimento#super[G] e trasferimento#super[G] tra magazzini.*], [capitolato#super[G]],
   [*RF05/01*], [È necessario fornire raccomandazioni per il riassortimento#super[G] e i trasferimenti#super[G].], [capitolato#super[G]],
-  [*RF05/02*], [L'utente deve approvare le azioni di riassortimento#super[G] e trasferimento#super[G].], [capitolato#super[G]],
+  [*RF05/02*], [L'amministratore locale deve approvare le azioni di riassortimento#super[G] e trasferimento#super[G].], [capitolato#super[G]],
+  //se l'utente dice di no? 
 
   [*RF06*], [*Individuazione di magazzini offline.*], [capitolato#super[G]],
   [*RF06/01*], [Il sistema deve monitorare la connettività#super[G] di ciascun magazzino.], [capitolato#super[G]],
   [*RF06/02*], [Il sistema deve segnalare tempestivamente eventuali disconnessioni.], [capitolato#super[G]],
+  [*RF06/03*], [Il sistema deve correttamente segnalare lo stato del magazzino (offline, online, non operativo, operativo).], [progettazione],
 
-  [*RF07*], [*Riempire magazzini vicini ad uno offline, per sopperire al disservizio.*], [capitolato#super[G]],
+  [*RF07*], [*Gestione dei disservizi.*], [capitolato#super[G]],
   [*RF07/01*], [Il sistema deve determinare i magazzini vicini disponibili.], [capitolato#super[G]],
-  [*RF07/02*], [Il sistema deve trasferire scorte#super[G] ai magazzini vicini per sopperire al disservizio.], [capitolato#super[G]],
-  [*RF07/03*], [Deve essere definito un disservizio di tipo fisico. Tale disservizio viene segnalato come "non operativo".], [progettazione],
-  [*RF07/04*], [Deve essere definito un disservizio di rete. Tale disservizio viene segnalato come "offline".], [progettazione],
-  [*RF07/05*], [Gestire il caso in cui un magazzino è offline, e mentre è offline diventa non operativo.], [progettazione],
+  [*RF07/02*], [Deve essere definito un disservizio di tipo fisico. Tale disservizio viene segnalato come "non operativo".], [progettazione],
+  [*RF07/03*], [Deve essere definito un disservizio di rete. Tale disservizio viene segnalato come "offline".], [progettazione],
+  [*RF07/04*], [Gestire il caso in cui un magazzino è offline, e mentre è offline diventa non operativo.], [progettazione],
+  [*RF07/05*], [Il sistema deve trasferire scorte#super[G] ai magazzini vicini per sopperire al disservizio nel caso in cui il magazzino è non operativo.], [progettazione],
   
   
   [*RF08*], [*Gestione magazzino che torna online.*], [capitolato#super[G]],
@@ -313,6 +314,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RF11/01*], [ Il sistema deve implementare un meccanismo di bilanciamento del carico tra i servizi#super[G] per distribuire in modo efficiente le richieste.], [capitolato#super[G]],
   [*RF11/02*], [Il sistema deve monitorare l'utilizzo delle risorse in tempo reale (es. memoria, rete, CPU, ...).], [capitolato#super[G]],
   [*RF11/03*], [Il sistema deve gestire le risorse in modo dinamico evitando problemi prestazionali (es. gestione code, scalabilità automatica).], [capitolato#super[G]],
+  //probabilmente non è necessario, in quanto il sistema deve essere progettato per gestire carichi elevati di dati e richieste simultanee, a livello di codice e di struttura.
   
   [*RF12*], [*Gestione aggiornamenti simultanei dell'inventario#super[G] da magazzini differenti, anche per i singoli magazzini.*], [capitolato#super[G]],
   [*RF12/01*], [Il sistema deve gestire le modifiche concorrenti (in simultanea) ai dati di inventario#super[G].], [capitolato#super[G]],
@@ -366,10 +368,11 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RFO01/05*], [Il sistema deve notificare eventuali cambi di stato dell'ordine#super[G].], [capitolato#super[G]],
   [*RFO01/06*], [Il sistema deve notificare l'impossibilità di evasione di un ordine#super[G].], [capitolato#super[G]],
   [*RFO01/07*], [Il sistema deve notificare la carenza di scorte#super[G]], [capitolato#super[G].],
-  [*RFO01/08*], [Il sistema deve notificare in caso di soglie critiche di utilizzo delle risorse per il funzionamento del sistema.], [capitolato#super[G]],
-  [*RFO01/09*], [Gli alert#super[G] sono configurabili in base a regole definite dall'utente (o dall'amministratore#super[G]).], [capitolato#super[G]],
-  [*RFO01/10*], [È previsto l'invio di notifiche tramite email e/o SMS], [capitolato#super[G].],
-  [*RFO01/11*], [È prevista la visualizzazione delle notifiche sulla dashboard#super[G] interna del sistema.], [capitolato#super[G]],
+  [*RFO01/08*], [Il sistema deve notificare in caso di soglie critiche di utilizzo delle risorse per il funzionamento del sistema.], [capitolato#super[G]],//da valutare
+  [*RFO01/09*], [Il sistema deve notificare in caso di cambiamento di stato di un magazzino (offline, online, non operativo, operativo).], [progettazione],
+  [*RFO01/10*], [Gli alert#super[G] sono configurabili in base a regole definite dall'utente (o dall'amministratore#super[G]).], [capitolato#super[G]],
+  [*RFO01/11*], [È previsto l'invio di notifiche tramite email e/o SMS], [capitolato#super[G].],
+  [*RFO01/12*], [È prevista la visualizzazione delle notifiche sulla dashboard#super[G] interna del sistema.], [capitolato#super[G]],
   
   [*RFO02*], [*Implementazione di meccanismi di autorizzazione e autenticazione#super[G], inclusa la gestione di ruoli e permessi differenziati per operatori, supervisori e amministratori*#super[G].], [capitolato#super[G]],
   [*RFO02/01*], [È prevista la possibilità di autenticazione#super[G] a due fattori (2FA#super[G]).], [capitolato#super[G]],
