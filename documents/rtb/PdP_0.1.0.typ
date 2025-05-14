@@ -70,11 +70,24 @@
 
 = Introduzione
 == Informazioni generali
-Il *Piano di Progetto#super[G]* è un documento che definisce le modalità di gestione del progetto, le risorse necessarie e i rischi attesi.\ Il piano di progetto è un documento vivo, che viene aggiornato durante il ciclo di vita del progetto di *Ingegneria del Software*, in quanto le attività vengono pianificate volta per volta e le risorse vengono allocate in base alle necessità. Una progettazione dettagliata sul lungo termine, infatti, si rivelerebbe inefficace.
+#v(1em)
+Il *Piano di Progetto#super[G]* è un documento che definisce le modalità di gestione del progetto, le risorse necessarie e i rischi attesi.\ 
+
+Il piano di progetto è un documento vivo, che viene aggiornato durante il ciclo di vita del progetto di *Ingegneria del Software*, in quanto le attività vengono pianificate volta per volta e le risorse vengono allocate in base alle necessità. Una progettazione dettagliata sul lungo termine, infatti, si rivelerebbe inefficace.
 
 Il documento è molto importante per permettere una corretta pianificazione del lavoro e dei vari sprint#super[G], analizzando il tempo previsto ed effettivo per ogni attività, tenendo conto dei rischi e delle risorse disponibili.
 
-== Scopo del prodotto
+== Informazioni sul prodotto
+#v(1em)
+
+Il progetto riguarda lo sviluppo di un sistema di gestione per magazzini distribuiti, con l'obiettivo di ottimizzare la gestione dell'inventario in una rete di magazzini geograficamente separati. Questo sistema deve garantire che i flussi di materiali e prodotti tra i magazzini siano gestiti in tempo reale, evitando rotture di stock e migliorando la distribuzione delle scorte. Il sistema dovrà anche ridurre i livelli medi di inventario, mantenendo però scorte di sicurezza per gestire variazioni nella domanda o ritardi nelle consegne.
+
+La soluzione proposta si baserà su un'architettura a microservizi, che permetterà a ogni magazzino di gestire autonomamente il proprio inventario, mentre le informazioni verranno sincronizzate in tempo reale con un sistema centrale. Il sistema dovrà essere in grado di monitorare i livelli di inventario, gestire conflitti derivanti da aggiornamenti simultanei, implementare riassortimenti predittivi basati su machine learning e garantire una visibilità centralizzata in tempo reale delle operazioni. Inoltre, saranno utilizzate tecnologie moderne e scalabili come Node.js, Typescript, Go, Nats e Docker, per garantire prestazioni elevate e l'interoperabilità tra i magazzini.
+
+In sintesi, il progetto si propone di migliorare l’efficienza operativa della gestione logistica, riducendo i rischi legati alla gestione delle scorte e ottimizzando i flussi tra i magazzini.
+
+
+
 
 == Glossario
 La realizzazione di un software richiede, ancor prima dello sviluppo, una fase di analisi e progettazione. Dato che il lavoro durante questa fase è svolto da più persone e in modo asincrono, è necessario documentare tutte queste attività per tenere traccia di ciò che è stato fatto e per evitare confusione. 
