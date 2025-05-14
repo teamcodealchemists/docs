@@ -274,7 +274,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RF03/03*], [Il sistema deve monitorare le scorte#super[G] attuali rispetto alle scorte#super[G] minime, ottimizzandone la quantità], [capitolato#super[G].],
   [*RF03/04*], [Il sistema deve attivare processi di riassortimento#super[G] quando necessario.], [capitolato#super[G]],
   
-  [*RF04*], [*Bilanciamento delle scorte#super[G], il più possibile, in ogni magazzino per ridurre i livelli medi di scorte (riassortimento).*], [capitolato#super[G]],
+  [*RF04*], [*Bilanciamento delle scorte#super[G], il più possibile, in ogni magazzino per ridurre i livelli medi di scorte (riassortimento#super[G]).*], [capitolato#super[G]],
   [*RF04/01*], [Il sistema deve analizzare la distribuzione delle scorte#super[G] tra i magazzini.], [capitolato#super[G]],
   [*RF04/02*], [Il sistema deve identificare squilibri nelle scorte#super[G], valutando la distribuzione attuale.], [capitolato#super[G]],
   [*RF04/03*], [Il sistema deve proporre trasferimenti#super[G] interni per bilanciare le scorte#super[G] e migliorare l'efficienza.], [capitolato#super[G]],
@@ -291,6 +291,10 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RF07*], [*Riempire magazzini vicini ad uno offline, per sopperire al disservizio.*], [capitolato#super[G]],
   [*RF07/01*], [Il sistema deve determinare i magazzini vicini disponibili.], [capitolato#super[G]],
   [*RF07/02*], [Il sistema deve trasferire scorte#super[G] ai magazzini vicini per sopperire al disservizio.], [capitolato#super[G]],
+  [*RF07/03*], [Deve essere definito un disservizio di tipo fisico. Tale disservizio viene segnalato come "non operativo".], [progettazione],
+  [*RF07/04*], [Deve essere definito un disservizio di rete. Tale disservizio viene segnalato come "offline".], [progettazione],
+  [*RF07/05*], [Gestire il caso in cui un magazzino è offline, e mentre è offline diventa non operativo.], [progettazione],
+  
   
   [*RF08*], [*Gestione magazzino che torna online.*], [capitolato#super[G]],
   [*RF08/01*], [Il sistema deve riconoscere quando un magazzino torna online.], [capitolato#super[G]],
@@ -299,7 +303,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   
   [*RF09*], [*Visibilità centrale in tempo reale di tutte le scorte#super[G] distribuite (monitoraggio livelli inventario#super[G]), di ogni magazzino (anche indipendentemente).*], [capitolato#super[G]],
   [*RF09/01*], [Il sistema deve fornire una dashboard#super[G] centralizzata per monitorare le scorte#super[G].], [capitolato#super[G]],
-  [*RF09/02*], [Il sistema deve interrogare il database di aggregazione del microservizio#super[G] di inventario#super[G] su cloud per avere una visione centralizzata delle scorte di ogni magazzino.], [capitolato#super[G]],
+  [*RF09/02*], [Il sistema deve interrogare il database di aggregazione del microservizio#super[G] di inventario#super[G] su cloud per avere una visione centralizzata delle scorte#super[G] di ogni magazzino.], [capitolato#super[G]],
 
   [*RF10*], [*Mantenimento dei livelli di sicurezza delle scorte#super[G] in ogni magazzino in caso di carenze o ritardi.*], [capitolato#super[G]],
   [*RF10/01*], [Definire una soglia temporale massima come tempo stimato di arrivo di una richiesta.], [capitolato#super[G]],
@@ -401,7 +405,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
     [*Codice#super[G]*], [*Descrizione*], [*Fonti*]
   ),
 
-  [*RS01*], [*Autenticazione semplice*], [capitolato#super[G]],
+  [*RS01*], [*Autenticazione#super[G] semplice*], [capitolato#super[G]],
   [*RS01/01*], [Il sistema prevede l'implementazione dell'autenticazione#super[G] per l'accesso al sistema stesso.], [capitolato#super[G]],
   [*RS01/02*], [Il sistema deve garantire la protezione dei dati sensibili durante il processo di autenticazione#super[G].], [capitolato#super[G]],
   [*RS01/03*], [Il sistema deve prevedere il logout.], [capitolato#super[G]],
