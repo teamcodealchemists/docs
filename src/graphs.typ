@@ -1,5 +1,5 @@
-#import "@local/cetz:0.3.4": *
-#import "@local/cetz-plot:0.1.1": *
+#import "@preview/cetz:0.3.4": *
+#import "@preview/cetz-plot:0.1.1": *
 
 #let graph_gulpease(
   data: (),

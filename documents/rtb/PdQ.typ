@@ -1,7 +1,5 @@
 #import "../../src/basic.typ": *
 #import "../../src/graphs.typ": *
-#import "@local/cetz:0.3.4": *
-#import "@local/cetz-plot:0.1.1": *
 
 /*
   Definire variabili da inserire in prima pagina con #let
