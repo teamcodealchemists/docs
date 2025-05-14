@@ -571,6 +571,32 @@ Dove:
 
 #pagebreak()
 = Pianificazione nel lungo termine
+
+== Struttura del team
+#v(1em)
+
+Di seguito vengono brevemente descritti i ruoli previsti all'interno del team, equamente distribuiti e ruotati tra i membri con cadenza bisettimanale. Ogni ruolo prevede specifiche mansioni e obiettivi:
+
+- *Responsabile*: coordina il gruppo di lavoro, assegnando i compiti, monitorando le attività e gestendo l’utilizzo delle risorse. Garantisce l’avanzamento del progetto e il rispetto delle tempistiche e delle risorse disponibili.
+
+
+- *Amministratore*: si occupa della gestione delle infrastrutture, incluso il setup degli strumenti utilizzati per la produzione del software e della documentazione, nonché dell’organizzazione e della produttività del team.
+
+
+- *Analista*: è responsabile della definizione dei requisiti di progetto e dell’analisi delle funzionalità del software, al fine di determinare i casi d’uso. Il suo contributo è fondamentale nella fase iniziale, per permettere una progettazione ottimale da parte dei progettisti e, successivamente, una corretta implementazione da parte dei programmatori.
+
+
+- *Progettista*: definisce l’architettura del software, individuando i componenti e le interazioni tra essi sulla base dell’analisi dei requisiti fornita dagli analisti. Il ruolo è cruciale per una progettazione efficace del prodotto, sia nella fase preliminare del Proof of Concept (POC), sia nella realizzazione del Minimum Viable Product (MVP).
+
+
+- *Programmatore*: sviluppa il codice del software secondo l’architettura definita dai progettisti. Oltre a ricoprire il ruolo chiave nella realizzazione del prodotto, ha anche il compito implicito di validare le scelte effettuate da analisti e progettisti.
+
+
+- *Verificatore*: controlla, durante tutte le fasi dello sviluppo, che il software e la documentazione rispettino le specifiche e le norme adottate. Il suo ruolo è essenziale per individuare tempestivamente eventuali errori o incongruenze.
+#v(1em)
+
+
+
 == Attività previste per la Requirements and Technology Baseline (RTB)
 == Attività previste per la Product Baseline (PB)
 La redazione di questo paragrafo sarà effettuato in seguito al superamento della
