@@ -595,10 +595,224 @@ Di seguito vengono brevemente descritti i ruoli previsti all'interno del team, e
 - *Verificatore*: controlla, durante tutte le fasi dello sviluppo, che il software e la documentazione rispettino le specifiche e le norme adottate. Il suo ruolo è essenziale per individuare tempestivamente eventuali errori o incongruenze.
 #v(1em)
 
+#pagebreak()
+== Budget e risorse
+#v(1em)
+
+Il gruppo prevede di terminare il progetto
+entro il giorno 29/08/2025 con un budget di spesa fissato a Euro 14.430 come indicato nella *Dichiarazione degli impegni*.
+
+Di seguito sono indicati i costi previsti durante la candidatura :
+
+ #align(center)[
+    #figure(
+      table(
+        columns: (auto,auto,auto,auto),
+        inset: 10pt,
+        align: center,
+        table.header(
+          [*Ruolo*], [*Costo Orario*], [*Ore*], [*Costo Totale*]
+        ),
+        
+        [Responsabile],[30€/h],[67],[2.010€],
+        [Analista],[25€/h],[76],[1.900€],
+        [Progettista],[25€/h],[156],[3.900€],
+        [Amministratore],[20€/h],[61],[1.220€],
+        [Programmatore],[15€/h],[218],[3.270€],
+        [Verificatore],[15€/h],[142],[2.130€],
+        [*Totale*],[-],[*720*],[*14.430€*]
+      ),
+      caption: [Ripartizione dei costi per ore e ruolo],
+    )
+  ]
+
+/*
+  #v(1em)
+  Si riporta un grafico a torta raffigurante la ripartizione percentuale delle ore per ruolo sul totale delle ore disponibili:
+
+  #align(center)[
+    #figure(
+      image("assets/chart.png", width: 13cm),
+      caption: [Ripartizione percentuale delle ore per ruolo sul totale delle ore disponibili]
+    )
+  ]
+*/
+
+=== Distribuzione ore per membri
+
+I componenti del Team CodeAlchemists si impegnano in particolare a dedicare un totale di 90 ore ciascuno di lavoro ripartite come segue:
+
+
+ #align(center)[
+    #{
+    show table.cell: cl => if cl.x == 0 and cl.y != 0 {
+      align(left, cl)
+    } else if cl.x == 0 {
+      align(bottom + left, cl)
+    } else if cl.y == 0 {
+      rotate(-45deg, reflow: false, align(left, cl))
+    } else {
+      align(bottom + center, cl)
+    }
+    figure(
+      table(
+        columns: (3fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+        inset: 1.1em,
+        stroke: (x, y) => if y >= 1 {
+          1pt + black
+        } else {
+          none
+        },
+        table.header(
+          [],
+          [*Responsabile*],
+          [*Amministratore*],
+          [*Analista*],
+          [*Progettista*],
+          [*Programmatore*],
+          [*Verificatore*],
+          [*Totale*],
+        ),
+  
+      [Nicolò Bolzon],[8],[8],[9],[19],[26],[20],[*90*],
+      [Mattia Dalla Pozza],[8],[8],[9],[20],[29],[16],[*90*],
+      [Sebastiano Marana],[8],[7],[10],[19],[28],[18],[*90*],
+      [Nicholas Moretto],[9],[7],[10],[19],[28],[18],[*90*],
+      [Matteo Pretto],[9],[8],[10],[19],[26],[18],[*90*],
+      [Alex Shu],[8],[8],[9],[19],[26],[20],[*90*],
+      [Stefano Speranza],[9],[7],[10],[20],[27],[17],[*90*],
+      [Ramona Zangla],[8],[8],[9],[20],[29],[16],[*90*],
+      [*Totale*],[*67*],[*61*],[*76*],[*156*],[*218*],[*142*],[*720*]
+      ),
+      caption: [Ore di ogni componente per ciascun ruolo],
+    )
+  }
+]
 
 
 == Attività previste per la Requirements and Technology Baseline (RTB)
+#v(1em)
+
+Durante l'RTB sono previste due attività principali:
+
+  - Redazione di documenti
+
+  - Sviluppo
+
+La prima verra portata avanti durante tutti gli sprint a seconda
+delle esigenze e necessità del mmomento.
+La seconda verra iniziata successivamente alla produzione di:
+Analisi dei Requisiti; Casi d'uso; Architettura preliminare.
+
+Di seguito venongo indicate le più nel dettaglio le principali 
+attività previste durante la fase RTB del progetto: 
+
+#v(1em)
+1. *Redazione Analisi dei Requisiti* (in stesura)
+
+  - Stesura della struttura
+
+  - Lettura accurata del capitolato
+
+  - Estrapolazione dei requisiti
+
+  - Creazione dei casi d'uso
+
+#v(1em)
+2. *Redazione Piano di progetto* (in stesura)
+
+  - Stesura della struttura
+
+  - Introduzione ai rischi
+
+    - Organizzativi
+
+    - Comunicativi
+
+    - Individuali 
+
+    - Tecnologici
+
+  - Pianificazione lungo termine
+
+  - Pianificazione breve termine 
+
+  - Redazione continua degli sprint
+
+#v(1em)
+3. *Redazione piano di Qualifica* (in stesura)
+
+  - Stesura della struttura
+
+  - Metriche di monitoraggio
+
+  - Implementazione del cruscotto di valutazione
+
+    - aggiornamento continuo delle metriche
+
+  - Compilazione e ricerca per le considerazioni di miglioramento continuo
+
+  - Definizione di test sulla base dell'analisi dei requsiti 
+
+#v(1em)
+4. *Redazione Norme di progetto* (in stesura)
+
+  - Stesura della struttura
+    - Test delle tecnologie scelte
+
+  - Processi Primari
+
+  - Processi di Supporto
+
+  - Processi Organizzativi
+
+  - Metriche utilizzate
+
+#v(1em)
+5. *Redazione del Glossario* (in stesura)
+
+  - Stesura della struttura
+
+  - Aggiunta automatizzata dei termini
+
+#v(1em)
+6. *Sviluppo POC (Proof of concept)* (in stesura)
+
+  - Definizione di una possibile architettura
+  
+  - Sviluppo
+
+    - Magazzino locale
+
+    - Cloud 
+
+    - Sistema centralizzato
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 == Attività previste per la Product Baseline (PB)
+#v(1em)
+
 La redazione di questo paragrafo sarà effettuato in seguito al superamento della
 *Requirements and Technology Baseline#super[G] (RTB)*.
 
