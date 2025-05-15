@@ -123,10 +123,26 @@ In particolare, le metriche sono utilizzate per:
 Sebbene non sempre sia semplice adottare misurazioni formali, l'obiettivo è mantenere un approccio il più possibile oggettivo e ripetibile, riducendo soggettività nelle valutazioni.
 
 == 2.1 Processi Primari
+
+I processi primari sono quelli che riguardano direttamente la realizzazione del prodotto#super[G] software. Essi comprendono le attività di fornitura e sviluppo.
+
+È stato deciso di utilizzare la seguente nomenclatura per per identificare in modo univoco le metriche di qualità:
+- *PPF*: Processi Primari di Fornitura
+- *PPS*: Processi Primari di Sviluppo
+Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
+
 === 2.1.1 Fornitura
 
 #let voci_tabella_fornitura = (
-    [ABC01], [Piano di Piano], [>= 60], [>= 90]
+    [PPF01], [Valore atteso], [>= 0], [>= BAC],
+    [PPF02], [Costo attuale], [>= 0], [>= EAC],
+    [PPF03], [Valore effettuvi], [>= 0], [>= EAC],
+    [PPF04], [Indice di prestazione dei costi], [>= 0], [>= 1],
+    [PPF05], [Indice di prestazione dei tempi], [>= 0], [>= 1],
+    [PPF06], [Preventivo al completamento], [>= 0], [>= BAC],
+    [PPF07], [Preventivo da completare], [>= 0], [>= BAC],
+    [PPF08], [Tempo di completamento del preventivo], [>= 0], [>= Durata pianificata],
+
   )
 #let caption_fornitura = (
   [Metriche di qualità per il processo di fornitura]
@@ -136,9 +152,8 @@ Sebbene non sempre sia semplice adottare misurazioni formali, l'obiettivo è man
   caption: caption_fornitura
 )
 === 2.1.2 Sviluppo
-
 #let voci_tabella_sviluppo = (
-    [ABC01], [Piano di Piano], [>= 60], [>= 90]
+    [PPS01], [Indice di stabilità dei requisiti], [>= 70%], [100%],
   )
 #let caption_sviluppo = (
   [Metriche di qualità per il processo di sviluppo]
@@ -149,10 +164,19 @@ Sebbene non sempre sia semplice adottare misurazioni formali, l'obiettivo è man
 )
 
 == 2.2 Processi di Supporto
+I processi di supporto sono quelli che non riguardano direttamente la realizzazione del prodotto#super[G] software, ma che sono comunque necessari per il suo sviluppo. Essi comprendono le attività di documentazione, verifica e gestione della qualità.
+I processi di supporto sono identificati dalla seguente nomenclatura:
+- *PSD*: Processi di Supporto alla Documentazione
+- *PSV*: Processi di Supporto alla Verifica
+- *PSQ*: Processi di Supporto alla Qualità
+Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
+
 === 2.2.1 Documentazione
 
 #let voci_tabella_documentazione = (
-    [ABC01], [Piano di Piano], [>= 60], [>= 90]
+    [PSD01], [Indice di Gulpease], [>= 60%], [100%],
+    [PSD02], [Parole del glossario contrassegnate con #super[G]], [>= 60%], [100%],
+    [PSD03], [Glossario ordinato], [ordinato], [ordinato],
   )
 #let caption_documentazione = (
   [Metriche di qualità per il processo di documentazione]
@@ -165,7 +189,8 @@ Sebbene non sempre sia semplice adottare misurazioni formali, l'obiettivo è man
 === 2.2.2 Verifica
 
 #let voci_tabella_verifica = (
-    [ABC01], [Piano di Piano], [>= 60], [>= 90]
+    [PSV01], [Code Coverage], [da definire], [100%],
+    [PSV02], [Grado di successo dei test], [100%], [100%],
   )
 #let caption_verifica = (
   [Metriche di qualità per il processo di verifica]
@@ -178,7 +203,7 @@ Sebbene non sempre sia semplice adottare misurazioni formali, l'obiettivo è man
 === 2.2.3 Gestione della Qualità
 
 #let voci_tabella_qualità = (
-    [ABC01], [Piano di Piano], [>= 60], [>= 90]
+    [PSQ01], [Metriche di qualità soddisfatte], [>= 70%], [100%]
   )
 #let caption_qualità = (
   [Metriche di qualità per il processo di gestione della qualità]
@@ -189,9 +214,15 @@ Sebbene non sempre sia semplice adottare misurazioni formali, l'obiettivo è man
 )
 
 == 2.3 Processi Organizzativi
+I processi organizzativi sono quelli che riguardano la gestione del progetto e delle risorse. Essi comprendono le attività di pianificazione, monitoraggio e controllo del progetto, gestione delle risorse umane e gestione dei fornitori.
+I processi organizzativi sono identificati dalla seguente nomenclatura:
+- *POG*: Gestione dei processi
+
+Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
+//in caso potremmo aggiungere altre metriche
 === 2.3.1 Gestione dei processi
 #let voci_tabella_processi = (
-    [ABC01], [Piano di Piano], [>= 60], [>= 90]
+    [POG01], [Efficienza in termini di tempo], [>= 60%], [100%],
   )
 #let caption_processi = (
   [Metriche di qualità per il processo di gestione dei processi]
