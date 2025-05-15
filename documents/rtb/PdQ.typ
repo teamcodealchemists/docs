@@ -201,6 +201,8 @@ Sebbene non sempre sia semplice adottare misurazioni formali, l'obiettivo è man
   caption: caption_processi
 )
 
+// TODO: Per il PB inserire le qualità di prodotto
+
 = 3. Metodologie di Testing
 Per garantire la qualità del prodotto#super[G] software, è fondamentale adottare metodologie di testing adeguate.
 
