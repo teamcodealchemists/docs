@@ -35,25 +35,25 @@
   [0.3.0],
   [25/04/2025],
   [R. Zangla],
-  [-],
+  [S. Marana],
   [Ulteriore ristrutturazione del documento e aggiunte note. Modificate le sezioni 4.2 e 8.4.1. Aggiunte informazioni alle sezioni da 4.2.2 a 4.2.4 (sottosezioni incluse), da 5.1.2.1 a 5.1.2.4, 5.2.1, 5.2.3 e 5.2.5.],
 
   [0.2.0],
   [06/04/2025],
   [S. Speranza],
-  [-],
+  [S. Marana],
   [Ristrutturazione del documento, ulteriore stesura],
   
   [0.1.0],
   [29/03/2025],
   [N. Bolzon],
-  [-],
+  [S. Marana],
   [Inizio stesura del documento],
   
   [0.0.1],
   [28/03/2025],
   [S. Speranza],
-  [-],
+  [S. Marana],
   [Creazione template e struttura del documento]
 )
 
@@ -86,17 +86,17 @@
   == Scopo del documento
   Il presente documento viene redatto per descrivere il _Way of Working_#super[G] adottato dal Team _Code Alchemists_ per lo svolgimento del progetto didattico di Ingegneria del Software. Esso stabilisce le linee guida, i processi, le metodologie e gli standard inerenti tutte le attività associate all'intero ciclo di vita del software, in modo da garantire coerenza, efficienza, efficacia e qualità.
 
-  == Scopo del prodotto
-  Il prodotto, detto anche software, oggetto del presente progetto, consiste nella realizzazione di un sistema distribuito e scalabile per la gestione ottimale (intesa come minimizzazione dei tempi di risposta e di ottimizzazione della distribuzione delle scorte) di una rete di magazzini, singolarmente autonomi, in modo da favorire l'interoperabilità tra di essi e centralizzare le informazioni in maniera efficiente e sicura. // Inserire riferimento al capitolato?
+  == Scopo del prodotto#super[G]
+  Il prodotto#super[G], detto anche software, oggetto del presente progetto, consiste nella realizzazione di un sistema distribuito e scalabile per la gestione ottimale (intesa come minimizzazione dei tempi di risposta e di ottimizzazione della distribuzione delle scorte#super[G]) di una rete di magazzini, singolarmente autonomi, in modo da favorire l'interoperabilità tra di essi e centralizzare le informazioni in maniera efficiente e sicura. // Inserire riferimento al capitolato#super[G]?
 
-  Il presente documento è redatto secondo lo standard _ISO/IEC 12207:1995_, che identifica tre tipologie di processi:
+  Il presente documento è redatto secondo lo standard _ISO/IEC 12207:1995_, che identifica tre tipologie di processi: //Magari descrivere sintatticamente di cosa trattano?
   - Processi primari
   - Processi organizzativi
   - Processi di supporto  
 
   == Entità coinvolte
   Il presente progetto didattico di Ingegneria del Software coinvolge le seguenti entità:
-  - Il proponenente del progetto, _M31_, nei ruoli di:
+  - Il proponente del progetto, _M31_, nei ruoli di:
     - _Cliente_#super[G];
     - _Mentore_#super[G];
   - Il docente, #p.tullio, nel ruolo di _Committente_#super[G]
@@ -106,7 +106,7 @@
   Le parole contrassegnate in apice con la lettera #super[G] sono intese con la loro definizione specificata nel documento _Glossario_.
   == Riferimenti
     === Riferimenti normativi
-    - *Capitolato d'appalto* \
+    - *Capitolato#super[G] d'appalto* \
       *C6 - Sistema di Gestione di un Magazzino Distribuito* \
       #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")]\
       //Ultimo Accesso: \
@@ -117,11 +117,13 @@
     
     === Riferimenti informativi
     - *Glossario* \
-      #underline[#link("")] \
+      #underline[#link("https://teamcodealchemists.github.io/glossario.html")] \ 
       //Ultimo Accesso: \
+
     - *Piano di Qualifica* \
       #underline[#link("")] \
       //Ultimo Accesso: \
+
     - *Piano di Progetto* \
       #underline[#link("")] \
       //Ultimo Accesso: \
@@ -196,8 +198,8 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     L'analisi si concretizza in un documento strutturato che raccoglie i casi d'uso, i requisiti funzionali e non funzionali, e le fonti da cui sono stati derivati. Questo documento rappresenta un riferimento essenziale per la progettazione, la pianificazione e la fase di verifica, garantendo che il sistema soddisfi pienamente le aspettative del cliente e gli obiettivi stabiliti. Inoltre, è strettamente collegato al Piano di Qualifica, che consente di monitorare la conformità ai requisiti attraverso test specifici.
     ==== Casi d'uso
     // Descrizione e nomenclatura use case
-    ==== Requisiti
-    // Nomenclatura Requisiti + riferimento all'AdR
+    ==== Requisiti#super[G]
+    // Nomenclatura Requisiti#super[G] + riferimento all'AdR
   
   === Progettazione
     ==== Scopo
@@ -343,7 +345,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         // In che cartella sono tenute le immagini, i grafici...
       === Metriche
       // Indice Gulpease
-      // Correttezza Ortografica (se la vogliamo mettere, non mi sembra automatizzata tho)
+      // Correttezza Ortografica (se la vogliamo mettere, non mi sembra automatizzata tho) -> Per il momento no.
       === Manutenzione
       // Fasi di manutenzione di un documento (un esempio può essere: identificazione modifica, valutazione impatto, aggiornamento, push , verifica e validazione)
         ==== Procedure di revisione
@@ -353,7 +355,8 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
           // Revisione documentazione
           ===== Approvazione 
           // Workflow di approvazione
-          // (Dovrà esser automatizzato che, una volta approvato e pushato nella repo, il documento si aggiorna nel sito)
+          // (Dovrà esser automatizzato che, una volta approvato ed effettuato il push nella repo, il documento si aggiorna nel sito)
+          // Per il Momento quando viene effettuato un push su main viene caricato il documento sul sito, bisogna solo far partire manualmente l'azione di aggiornamento dei link del sito. Provvederò a vedere se si può automatizzare anche questo.
 
     == Gestione della Configurazione
       === Scopo
@@ -361,7 +364,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       /* Menzionare che:  
       Il ciclo di vita del software che è obiettivo di questo progetto è strutturato nelle seguenti fasi:
           1. Inizializzazione e pianificazione
-          2. Analisi dei requisiti
+          2. Analisi dei requisiti#super[G]
           3. Progettazione
           4. Implementazione
           5. Verifica e validazione
@@ -383,46 +386,49 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       === Sistema di Versionamento
       //  Git
 
-      === Struttura repository
+      === Struttura repository#super[G]
       // Link alla nostra repo?
-      La repository GitHub configurata ad Organizzazione è strutturato in diverse repository in base alla finalità d’uso delle stesse. All’interno di esse è possibile trovare varie directories descritte dai file README.md presenti, tra cui:
+      La repository#super[G] GitHub configurata ad Organizzazione è strutturato in diverse repository#super[G] in base alla finalità d'uso delle stesse. All'interno di esse è possibile trovare varie directories descritte dai file README.md presenti, tra cui:
     
-      - *docs*: Repository contenente tutti i file .typ con la documentazione. In essa sono presenti delle Github Action che permettono il supporto alla verifica e l’auto compilazione dei file per essere caricati su github pages come pdf
+      - *docs*: Repository#super[G] contenente tutti i file .typ con la documentazione. In essa sono presenti delle Github Action che permettono il supporto alla verifica e l'auto compilazione dei file per essere caricati su github pages come pdf
     
-      - *teamcodealchemists.github.io*:  Repository dove si trova il sito web con tutta la documentazione. All'interno di essa è stata definita una GitHub Action che permette di tenere sincronizzato il glossario nel sito con quello in formato .pdf della documentazione.
+      - *teamcodealchemists.github.io*:  Repository#super[G] dove si trova il sito web con tutta la documentazione. All'interno di essa sono state definite delle GitHub Action che permettono di tenere sincronizzato il glossario nel sito con quello in formato .pdf della documentazione e di aggiornare automaticamente i link alla documentazione.
 
-        ==== Organizzazione Repository
+      //Prossimamente per l'RTB dovremmo anche avere la repo del POC
+
+        ==== Organizzazione Repository#super[G]
           ===== Modello di branching
-          È stato adottato il modello di branching *Git Flow* per la gestione delle repository#super("G") di progetto. 
+          È stato adottato il modello di branching *Git Flow* per la gestione delle repository#super[G]#super("G") di progetto. 
     
-          Ciascuna tipologia di ramo risponde a uno scopo specifico all’interno del ciclo di vita del software, consentendo una gestione ordinata e controllata del processo di sviluppo.
+          Ciascuna tipologia di ramo risponde a uno scopo specifico all'interno del ciclo di vita del software, consentendo una gestione ordinata e controllata del processo di sviluppo.
 
-          Ogni membro è a conoscenza delle _best practice_ per la creazione, l’unione e la cancellazione dei rami, così da promuovere una collaborazione efficace e strutturata all’interno del team.
+          Ogni membro è a conoscenza delle _best practice_ per la creazione, l'unione e la cancellazione dei rami, così da promuovere una collaborazione efficace e strutturata all'interno del team.
 
-          ===== Nomenclatura dei branch
-          È stata raccomandata, ove possibile, l’associazione dei branch relativi a nuove funzionalità (ovvero i branch _feature_) alle corrispondenti issue tracciate su *Jira*, adottando una convenzione di nomenclatura coerente _(ad esempio: *feature/Sprint-55-nome-feature*)_.
+          ===== Nomenclatura dei branch#super[G]
+          È stata raccomandata, ove possibile, l'associazione dei branch#super[G] relativi a nuove funzionalità (ovvero i branch#super[G] _feature_) alle corrispondenti issue tracciate su *Jira*, adottando una convenzione di nomenclatura coerente _(ad esempio: *feature/Sprint-55-nome-feature*)_.
 
-          ===== Branch principali
+          ===== Branch#super[G] principali
           La struttura è basata sui rami principali _main_ e _develop_.
 
-          Il ramo _main_ è destinato alle versioni stabili del progetto, verificate, testate e pronte per essere rilasciate. Ogni commit su _main_ dovrebbe quindi rappresentare una versione stabile e testata del software e/o del documento in questione.
+          Il ramo _main_ è destinato alle versioni stabili del progetto, verificate, testate e pronte per essere rilasciate. Ogni commit#super[G] su _main_ dovrebbe quindi rappresentare una versione stabile e testata del software e/o del documento in questione.
 
-          Il ramo _develop_, invece, è destinato a raccogliere tutte le nuove funzionalità che saranno incluse nel prossimo rilascio. I commit sul _develop_ possono contenere codice che si trova ancora in fase di sviluppo e test.
+          Il ramo _develop_, invece, è destinato a raccogliere tutte le nuove funzionalità che saranno incluse nel prossimo rilascio. I commit#super[G] sul _develop_ possono contenere codice#super[G] che si trova ancora in fase di sviluppo e test.
 
-          ===== Feature branch
-          I branch secondari _feature_ sono dedicati allo sviluppo delle singole nuove funzionalità.
-          Essi devono essere creati a partire dal ramo _develop_ e, una volta completati, deve essere effettuato il merge in _develop_. 
+          ===== Feature branch#super[G]
+          I branch#super[G] secondari _feature_ sono dedicati allo sviluppo delle singole nuove funzionalità.
+          Essi devono essere creati a partire dal ramo _develop_ e, una volta completati, deve essere effettuato il merge#super[G] in _develop_. 
     
           La convenzione di nomenclatura per questi branch è consultabile alla sezione 4.2.4.1.2 ("Nomenclatura dei branch").
           // Modificare 7.2.2 con il numero della sezione "Nomenclatura dei branch"
 
       === GitHub Action
       // Azioni per controllare glossario e per indice gulpease
+      // Attenderei di ultimarle per scrivere questa parte, in modo da essere più precisi
 
-        === Procedure di commit e merge
-          ==== Messaggi di commit // formato e convenzioni
-          ==== Dimensione dei commit //linee guida
-          ==== Pull/Merge request // processo e approvazioni
+        === Procedure di commit#super[G] e merge#super[G]
+          ==== Messaggi di commit#super[G] // formato e convenzioni
+          ==== Dimensione dei commit#super[G] //linee guida
+          ==== Pull/Merge#super[G] request // processo e approvazioni
           ==== Gestione dei conflitti // procedure e responsabilità
 
         === Baseline e rilasci
@@ -485,12 +491,12 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       === Pianificazione delle risorse umane
         ==== Ruoli e Responsabilità
         I ruoli all'interno del team sono suddivisi tra i seguenti:
-        - Responsabile
-        - Amministratore
-        - Analista
-        - Progettista
-        - Programmatore
-        - Verificatore
+        - Responsabile#super[G]
+        - Amministratore#super[G]
+        - Analista#super[G]
+        - Progettista#super[G]
+        - Programmatore#super[G]
+        - Verificatore#super[G]
   
         Le responsabilità dei ruoli qui elencati sono consultabili nel Glossario.
 
@@ -504,7 +510,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
           La rotazione dei ruoli avviene tipicamente all'inizio di ogni Sprint, ovvero ogni due settimane.
           Questo, però, non significa che tra uno Sprint e l'altro ogni singolo membro del team debba assumere un ruolo diverso nello Sprint che sta per iniziare rispetto a quello assunto durante l'ultimo Sprint.
           
-          Per favorire il cambio dei ruoli ad ogni Sprint e facilitare la transizione, infatti, si è deciso di mantenere almeno un componente di un gruppo di ruoli nello stesso ruolo come “Mentore”. In questo modo, i mentori potranno aggiornare e supportare i nuovi arrivati nel suddetto ruolo, permettendo allo sviluppo di continuare in modo più fluido e coerente con quanto realizzato nello Sprint precedente.
+          Per favorire il cambio dei ruoli ad ogni Sprint e facilitare la transizione, infatti, si è deciso di mantenere almeno un componente di un gruppo di ruoli nello stesso ruolo come “Mentore#super[G]”. In questo modo, i mentori potranno aggiornare e supportare i nuovi arrivati nel suddetto ruolo, permettendo allo sviluppo di continuare in modo più fluido e coerente con quanto realizzato nello Sprint precedente.
 
           I criteri di rotazione dei ruoli devono inoltre consentire una suddivisione bilanciata dei ruoli tra i membri sull'intero arco del progetto, permettendo quindi una certa flessibilità sul breve periodo.
 
@@ -512,11 +518,12 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         // In x fase di sviluppo sono richiesti più persone nel ruolo di Y...
 
         ==== Escalation path
-        Durante l'intera fase di sviluppo, potrebbero capitare di venir assegnati alcuni ruoli a più membri del team per lo Sprint corrente (ad esempio, il ruolo di Analista viene assegnato a 4 persone durante l’attuale Sprint poiché è una figura molto richiesta in quella determinata fase di sviluppo). 
+        Durante l'intera fase di sviluppo, potrebbero capitare di venir assegnati alcuni ruoli a più membri del team per lo Sprint corrente (ad esempio, il ruolo di Analista#super[G] viene assegnato a 4 persone durante l'attuale Sprint poiché è una figura molto richiesta in quella determinata fase di sviluppo). 
       
-        Al fine di coordinare meglio il flusso di lavoro, si è deciso, ad ogni Sprint, di scegliere tra questi membri un “sottoresponsabile”, il quale comunicherà periodicamente e frequentemente con i sottoresponsabili delle altre categorie di ruolo e con il responsabile di turno per tenerli aggiornati sullo stato di avanzamento dello Sprint.
+        Al fine di coordinare meglio il flusso di lavoro, si è deciso, ad ogni Sprint, di scegliere tra questi membri un “sottoresponsabile”, il quale comunicherà periodicamente e frequentemente con i sottoresponsabili delle altre categorie di ruolo e con il responsabile#super[G] di turno per tenerli aggiornati sullo stato di avanzamento delle attività dello Sprint.
       
         Inoltre, i sottoresponsabili delle categorie di ruolo sono tenuti a mantenere una comunicazione costante con i membri del loro sottogruppo, assicurandosi che ogni task sia eseguita secondo le linee guida stabilite e che eventuali dubbi vengano chiariti prontamente. Questo approccio favorisce una gestione efficiente delle attività e una rapida risoluzione delle problematiche interne.
+        //Spiegherei inoltre che va in aiuto al responsabile#super[G] facendo in modo che non debba occuparsi di tutto il gruppo, ma solo dei sottoresponsabili.
 
         ==== Orari di disponibilità
         // Documento su Google Sheets
@@ -527,29 +534,30 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       // ...
         ==== Durata degli Sprint
         Ogni Sprint ha una durata fissa di due settimane. Questa durata permette al team di concentrarsi su obiettivi concreti per un lasso di tempo sufficientemente ampio e di valutare i progressi in modo regolare, così da permettere un equilibrio tra flessibilità e stabilità.
+        // In realtà possiamo variare dalle due settimane, è solo per l'RTB, ma potremmo diminuire ad una se necessario.
 
         ==== Pianificazione dello Sprint
-        Pianificare gli Sprint implica definire gli obiettivi e le attività da completare durante lo Sprint. Durante questa fase, vengono identificati i requisiti, assegnate le responsabilità e stabilite le priorità. Una buona pianificazione è essenziale per il successo dello Sprint.
+        Pianificare gli Sprint implica definire gli obiettivi e le attività da completare durante lo Sprint. Durante questa fase, vengono identificati i requisiti#super[G], assegnate le responsabilità e stabilite le priorità. Una buona pianificazione è essenziale per il successo dello Sprint.
 
         ==== Review dello Sprint
         La review dello Sprint è una riunione che si tiene alla fine di ogni Sprint secondo quanto descritto al punto 5.2.3. Durante tale riunione, il team discute a grandi linee su ciò a cui si è lavorato e stabilisce il materiale da presentare agli stakeholder, i quali daranno dei feedback su quanto svolto così da identificare eventuali miglioramenti per il prossimo Sprint.
     
         ==== Retrospettiva dello Sprint
-        La retrospettiva dello Sprint è una fase in cui il team analizza nel dettaglio il proprio lavoro realizato durante lo Sprint. L'obiettivo di questa fase è di identificare ciò che ha funzionato bene e quel che può essere migliorato, promuovendo un continuo miglioramento della qualità del prodotto in sviluppo.
+        La retrospettiva dello Sprint è una fase in cui il team analizza nel dettaglio il proprio lavoro realizzato durante lo Sprint. L'obiettivo di questa fase è di identificare ciò che ha funzionato bene e quel che può essere migliorato, promuovendo un continuo miglioramento della qualità del prodotto#super[G] in sviluppo.
 
     == Procedure di comunicazione   
       === Comunicazioni interne 
       // Da migliorare: Con che strumenti comunichiamo tra di noi, in che momenti etc...
       Durante l'intero ciclo di sviluppo del progetto, la comunicazione tra i membri del team è facilitata attraverso i canali ufficiali Discord e Telegram, scelti per la loro efficienza e versatilità.
 
-      -	_Discord_ è stato selezionato per la sua praticità d'uso e per la possibilità di creare canali dedicati per ogni ruolo specifico, quali analista, programmatore e verificatore. Questa suddivisione assicura che ogni ruolo possa discutere direttamente delle proprie attività e delle difficoltà incontrate, facilitando il coordinamento e l'implementazione delle soluzioni.
+      -	_Discord_ è stato selezionato per la sua praticità d'uso e per la possibilità di creare canali dedicati per ogni ruolo specifico, quali analista#super[G], programmatore#super[G] e verificatore#super[G]. Questa suddivisione assicura che ogni ruolo possa discutere direttamente delle proprie attività e delle difficoltà incontrate, facilitando il coordinamento e l'implementazione delle soluzioni.
 
       -	_Telegram_ è stato scelto per la sua semplicità e immediatezza nella comunicazione. Esso consente infatti di inviare messaggi rapidi e di condividere documenti e aggiornamenti in tempo reale. In questo modo, è possibile garantire che tutte le informazioni rilevanti siano facilmente accessibili a tutti i membri del team in qualsiasi momento.
 
       L'uso combinato di Discord e Telegram risulta dunque più che valido nel coprire tutte le esigenze comunicative nel corso delle varie fasi di sviluppo, assicurando che ogni membro del team possa interagire efficacemente e contribuire al raggiungimento degli obiettivi comuni.
 
       === Comunicazioni esterne
-      // Con che strumenti comunichiamo con proponente e committente, con che cadenza, per cosa..
+      // Con che strumenti comunichiamo con proponente e committente#super[G], con che cadenza, per cosa..
       === Riunioni interne
       // In che modo si svolgono le riunioni tra di noi, come sono organizzate...
       Le riunioni interne possono essere indette durante vari momenti strategici dello sviluppo del progetto, soprattutto tra uno Sprint e l'altro. 
@@ -561,12 +569,12 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       Durante l'intera fase di sviluppo, lì dove necessario, possono essere organizzate brevi riunioni interne tra più sottogruppi al fine di chiarire eventuali dubbi riguardo alle attività svolte nei precedenti Sprint.
 
       === Riunioni esterne
-      // In che modo si svolgono le riunioni con proponente e committente, come sono organizzate...
+      // In che modo si svolgono le riunioni con proponente e committente#super[G], come sono organizzate...
     
       === Reportistica
-      A seguito di ogni riunione, la stesura del corrispondente verbale viene assegnato, se disponibile, a uno dei verificatori. In questo modo, un altro verificatore avrà il compito di effettuare una cross-verifica del verbale redatto, assicurando così che tutte le informazioni siano corrette e che eventuali errori siano prontamente individuati e corretti.
+      A seguito di ogni riunione, la stesura del corrispondente verbale viene assegnato, se disponibile, a uno dei verificatori. In questo modo, un altro verificatore#super[G] avrà il compito di effettuare una cross-verifica del verbale redatto, assicurando così che tutte le informazioni siano corrette e che eventuali errori siano prontamente individuati e corretti.
     
-      Nel caso in cui i verificatori siano già impegnati in altre attività di priorità più alta, la stesura del verbale viene assegnata a un altro membro del team. Questo approccio flessibile garantisce che la documentazione delle riunioni non subisca ritardi e che ogni riunione sia adeguatamente registrata. Il membro del team incaricato di redigere il verbale è responsabile di seguire le linee guida stabilite per la stesura, assicurando che il documento finale sia più chiaro, conciso e completo possibile.
+      Nel caso in cui i verificatori siano già impegnati in altre attività di priorità più alta, la stesura del verbale viene assegnata a un altro membro del team. Questo approccio flessibile garantisce che la documentazione delle riunioni non subisca ritardi e che ogni riunione sia adeguatamente registrata. Il membro del team incaricato di redigere il verbale è responsabile#super[G] di seguire le linee guida stabilite per la stesura, assicurando che il documento finale sia più chiaro, conciso e completo possibile.
     
       La verifica dello stesso sarà assegnata a uno dei verificatori, che avrà cura di controllare, ed eventualmente correggere, quanto riportato nel verbale non appena gli sarà possibile.
     
@@ -577,9 +585,9 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         // A cosa servono gli elementi dell'infrastruttura organizzativa
       === Strumenti
         ==== GitHub
-        // Hosting repo, tutte le funzioni e i servizi che offre...
+        // Hosting repo, tutte le funzioni e i servizi#super[G] che offre...
         ==== GitHub Pages
-        // Per la presentazione del repository
+        // Per la presentazione del repository#super[G]
         ==== GitHub Flow
         // Come metodo di branching
         ==== Jira
@@ -587,15 +595,15 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
           ===== Creazione task
           // I vari parametri accettati che usiamo su Jira nel creare una task
           ===== Assegnazione task
-          // A chi viene assegnata una task (spieghiamo come viene scelto magari il Sottoresponsabile analista che rappresenta l'intero gruppo di analisti)
-          ===== Automazione task-branch
+          // A chi viene assegnata una task (spieghiamo come viene scelto magari il Sottoresponsabile analista#super[G] che rappresenta l'intero gruppo di analisti)
+          ===== Automazione task-branch#super[G]
           // Automazione Git-Jira
           ===== Automazione release
           // Automazione pubblicazione documenti pronti nel sito web
         ==== Discord
         // Per le comunicazioni vocali e le riunioni interne. Suddivisione vari canali per ruoli.
         ==== Telegram
-        // Per le comunicazioni testuali più rapide, con tutti i membridel gruppo o singolarmente
+        // Per le comunicazioni testuali più rapide, con tutti i membri del gruppo o singolarmente
         ==== Typst
         // Piattaforma per la stesura della documentazione
         ==== Google Drive
@@ -605,18 +613,19 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         ==== Google Sheets
         // Usato per assegnamento ruoli, orari disponibilità...
         ==== Gmail
-        // Nostro indirizzo email per comunicare con proponente e committente
+        // Nostro indirizzo email per comunicare con proponente e committente#super[G]
         ==== Draw.io
         // Grafici / schemi vari
 
         // Altri tool che mi sto dimenticando?
+        // Per il momento nulla
 
     == Miglioramento
     // Descrizione del processo di miglioramento
       === Creazione del processo
       // Il processo viene creato seguendo gli standard e il ciclo di vita del SW, essendo documentato e verificato...
       === Valutazione del processo
-      // Revisione del processo ed evenutale pianificazione di miglioramento
+      // Revisione del processo ed eventuale pianificazione di miglioramento
       === Attuazione miglioramento del processo
       // Applicazione miglioramento, tutto documentato evidenziando i vantaggi dati dal miglioramento
 
@@ -624,9 +633,9 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       === Scopo
       // Motivi per cui è importante assicurare che tutti i membri siano adeguatamente preparati
       === Metodo di Formazione
-      // In che modo viene assicurato l'accesso alle risorse per la formazione dei membri (indiviudalmente o in gruppo)
+      // In che modo viene assicurato l'accesso alle risorse per la formazione dei membri (individualmente o in gruppo)
       === Materiale formativo
-      // Per ogni categoria, tipo architettura a microservizi, NATS, Docker ... indicare che materiale è messo a disposizione
+      // Per ogni categoria, tipo architettura a microservizi#super[G], NATS, Docker ... indicare che materiale è messo a disposizione
 
 /*
   = Standard qualità ISO/IEC ....

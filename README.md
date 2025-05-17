@@ -1,6 +1,6 @@
-![err_parole_glossario_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Ffeature%2FSCRUM-65-Scheletro-PdQ%2F.github%2Fbadges%2Ferr_parole_glossario_badge.json)
-![gulpease_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Ffeature%2FSCRUM-65-Scheletro-PdQ%2F.github%2Fbadges%2Fgulpease_badge.json)
-![ordinamento_glossario_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Ffeature%2FSCRUM-65-Scheletro-PdQ%2F.github%2Fbadges%2Fordinamento_glossario_badge.json)
+![err_parole_glossario_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Fdevelop%2F.github%2Fbadges%2Ferr_parole_glossario_badge.json)
+![gulpease_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Fdevelop%2F.github%2Fbadges%2Fgulpease_badge.json)
+![ordinamento_glossario_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Fdevelop%2F.github%2Fbadges%2Fordinamento_glossario_badge.json)
 
 # 🧪 Repository Typst per la Documentazione del Progetto - Code Alchemists (Gruppo 21)
 
@@ -44,6 +44,7 @@ Per garantire una struttura coerente, ordinata e facilmente navigabile all'inter
   - `PdP`: Piano di Progetto  
   - `AdR`: Analisi dei Requisiti  
   - `NdP`: Norme di Progetto
+  - `DdB`: Diario di Bordo
 
 - `VERSIONE` La versione corrente del documento, secondo le specifiche di versionamento (Vedi Norme di Progetto).
   > ⚠️ **Nota**: La versione del documento (`VERSIONE`) viene aggiunta automaticamente durante il processo di conversione del file. Non è necessario inserirla manualmente nel nome del file ma solo all'interno di esso. La versione del documento (`VERSIONE`) viene aggiunta automaticamente durante il processo di conversione del file. Non è necessario inserirla manualmente nel nome del file ma solo all'interno di esso.

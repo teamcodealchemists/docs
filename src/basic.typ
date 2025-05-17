@@ -140,6 +140,15 @@
   doc
 }
 
+#let indice_tabelle(doc) = {
+  outline(
+    title: [*Indice Tabelle*],
+    target: figure.where(kind: table)
+  )
+  pagebreak()
+  doc
+}
+
 #let firma(
   destinatario: [],
   doc
@@ -170,6 +179,142 @@
     align: center,
     table.header([*ID*],[*Descrizione*]),
     ..voci   
+  )
+  
+  set align(left)
+  doc
+}
+
+#let qualifica_table(
+
+  voci: (),
+  caption: (),
+  doc
+) = {
+  set align(center)
+
+  set box(
+  width: 90%,
+  )
+
+  set table(
+    align: (center, left, center, center),
+    fill:(_,y)=>if y==0 {silver},
+    inset: (_, y) => if y == 0 { 7pt } else { 10pt }
+  )
+
+  set text(
+    size: 11pt,
+    hyphenate: false
+  )
+
+  set table.cell(
+    align: horizon
+  )
+
+  v(4pt)
+  box(
+    figure(
+      table(
+        columns: (1fr, 2fr, 1fr, 1fr),
+        table.header(
+          [*Codice*], [*Nome*], [*Valore Ammissibile*], [*Valore Ottimale*]
+        ),
+        ..voci,
+      ),
+      caption: caption
+    )
+  )
+  
+  set align(left)
+  doc
+}
+
+#let test_table(
+  voci: (),
+  caption: (),
+  doc
+) = {
+  set align(center)
+
+  set box(
+  width: 95%,
+  )
+
+  set table(
+    align: (center, center, center, center),
+    fill:(_,y)=>if y==0 {silver},
+    inset: (_, y) => if y == 0 { 7pt } else { 10pt }
+  )
+
+  set text(
+    size: 11pt,
+    hyphenate: false
+  )
+
+  set table.cell(
+    align: horizon
+  )
+
+  v(4pt)
+  box(
+    figure(
+      table(
+        columns: (1fr, 3fr, 1fr, 1fr),
+        table.header(
+          [*Codice*], [*Descrizione*], [*Codice Requisito*], [*Stato*]
+        ),
+        ..voci,
+      ),
+      caption: caption
+    )
+  )
+  
+  set align(left)
+  doc
+}
+
+#let automiglioramento_table(
+  header: (),
+  voci: (),
+  caption: (),
+  doc
+) = {
+  set align(center)
+
+  set box(
+  width: 95%,
+  )
+
+  set table(
+    align: (center, center, center, center),
+    fill:(_,y)=>if y==0 {silver},
+    inset: (_, y) => if y == 0 { 7pt } else { 10pt },
+    columns:if header.len() == 4 {(auto,auto,auto,auto)} 
+    else if header.len() == 3 {(auto,auto,auto)}
+    else if header.len() == 2 {(auto,auto)}
+  )
+
+  set text(
+    size: 11pt,
+    hyphenate: false
+  )
+
+  set table.cell(
+    align: horizon
+  )
+
+  v(4pt)
+  box(
+    figure(
+      table(
+        table.header(
+          ..header
+        ),
+        ..voci,
+      ),
+      caption: caption
+    )
   )
   
   set align(left)
