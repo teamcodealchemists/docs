@@ -61,7 +61,7 @@
 = 1. Introduzione
 == 1.1 Scopo del documento
 
-Il presente documento ha lo scopo di definire le modalità di qualifica e verifica del prodotto#super[G] software. Esso rappresenta un indice di valutazione del prodotto#super[G] software, delle sue componenti e degli strumenti utilizzati, al fine di garantire la qualità del prodotto#super[G] finale e un continuo miglioramento del processo di sviluppo.
+Il presente documento ha lo scopo di definire le modalità di qualifica e verifica del prodotto#super[G] software. Esso rappresenta un indice di valutazione del prodotto#super[G] software, delle sue componenti e degli strumenti utilizzati. L'obiettivo è quello di garantire la qualità del prodotto#super[G] finale e un continuo miglioramento del processo di sviluppo.
 
 Il Piano di Qualifica#super[G] si basa su tre aspetti principali:
 
@@ -71,7 +71,7 @@ Il Piano di Qualifica#super[G] si basa su tre aspetti principali:
 - Stabilire le regole a cui attenersi.
 
 === 1.1.2 Controllo di Qualità
-- Attuare e assicurare la conformità con le regole da seguire e il Way of Working#super[G];
+- Attuare e assicurare la conformità con le regole da seguire e il Way of Working#super[G] ;
 - L'operato viene monitorato attraverso il Cruscotto di Valutazione;
 - Effettuare il Quality Assurance passo-passo per prevenire e mitigare i rischi e verificare la soddisfazione dei requisiti#super[G].
 
@@ -110,7 +110,7 @@ Per trovare il significato del termine, è possibile consultare il glossario al 
 
 = 2. Metriche di Qualità
 
-Per garantire un'analisi oggettiva e sistematica della qualità del prodotto#super[G] software, si fa riferimento allo standard ISO/IEC 14598:1999, il quale propone un metodo per associare metriche quantitative a specifiche sotto-caratteristiche di qualità individuate nello standard ISO 9126.
+Per garantire un'analisi oggettiva e sistematica della qualità del prodotto#super[G] software, si fa riferimento allo standard ISO/IEC 14598:1999. Esso propone un metodo per associare metriche quantitative a specifiche sotto-caratteristiche di qualità individuate nello standard ISO 9126.
 
 In particolare, le metriche sono utilizzate per:
 
@@ -127,8 +127,8 @@ Sebbene non sempre sia semplice adottare misurazioni formali, l'obiettivo è man
 I processi primari sono quelli che riguardano direttamente la realizzazione del prodotto#super[G] software. Essi comprendono le attività di fornitura e sviluppo.
 
 È stato deciso di utilizzare la seguente nomenclatura per per identificare in modo univoco le metriche di qualità:
-- *PPF*: Processi Primari di Fornitura
-- *PPS*: Processi Primari di Sviluppo
+- *PPF*: Processi Primari di Fornitura;
+- *PPS*: Processi Primari di Sviluppo.
 Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
 
 === 2.1.1 Fornitura
@@ -136,12 +136,12 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
 #let voci_tabella_fornitura = (
     [PPF01], [Valore atteso], [>= 0], [>= BAC],
     [PPF02], [Costo attuale], [>= 0], [>= EAC],
-    [PPF03], [Valore effettuvi], [>= 0], [>= EAC],
-    [PPF04], [Indice di prestazione dei costi], [>= 0], [>= 1],
-    [PPF05], [Indice di prestazione dei tempi], [>= 0], [>= 1],
+    [PPF03], [Valore effettivi], [>= 0], [>= EAC],
+    [PPF04], [Indice di prestazione dei costi], [>= 0], [1],
+    [PPF05], [Indice di prestazione dei tempi], [>= 0], [1],
     [PPF06], [Preventivo al completamento], [>= 0], [>= BAC],
     [PPF07], [Preventivo da completare], [>= 0], [>= BAC],
-    [PPF08], [Tempo di completamento del preventivo], [>= 0], [>= Durata pianificata],
+    [PPF08], [Tempo di completamento del preventivo], [>= 0], [<= Durata pianificata],
 
   )
 #let caption_fornitura = (
@@ -153,7 +153,7 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
 )
 === 2.1.2 Sviluppo
 #let voci_tabella_sviluppo = (
-    [PPS01], [Indice di stabilità dei requisiti], [>= 70%], [100%],
+    [PPS01], [Indice di stabilità dei requisiti#super[G]], [>= 70%], [100%],
   )
 #let caption_sviluppo = (
   [Metriche di qualità per il processo di sviluppo]
@@ -166,16 +166,16 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
 == 2.2 Processi di Supporto
 I processi di supporto sono quelli che non riguardano direttamente la realizzazione del prodotto#super[G] software, ma che sono comunque necessari per il suo sviluppo. Essi comprendono le attività di documentazione, verifica e gestione della qualità.
 I processi di supporto sono identificati dalla seguente nomenclatura:
-- *PSD*: Processi di Supporto alla Documentazione
-- *PSV*: Processi di Supporto alla Verifica
-- *PSQ*: Processi di Supporto alla Qualità
+- *PSD*: Processi di Supporto alla Documentazione;
+- *PSV*: Processi di Supporto alla Verifica;
+- *PSQ*: Processi di Supporto alla Qualità.
 Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
 
 === 2.2.1 Documentazione
 
 #let voci_tabella_documentazione = (
     [PSD01], [Indice di Gulpease], [>= 60%], [100%],
-    [PSD02], [Parole del glossario contrassegnate con #super[G]], [>= 60%], [100%],
+    [PSD02], [Parole#super[G] del glossario contrassegnate con #super[G]], [>= 60%], [100%],
     [PSD03], [Glossario ordinato], [ordinato], [ordinato],
   )
 #let caption_documentazione = (
@@ -237,24 +237,24 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
 = 3. Metodologie di Testing
 Per garantire la qualità del prodotto#super[G] software, è fondamentale adottare metodologie di testing adeguate.
 
-Ad ogni test è stato attribuito un codice univoco per facilitarne l'identificazione e la tracciabilità. Il codice è strutturato come segue: tipoXX, dove "tipo" rappresenta il tipo di test e "XX" è un numero progressivo che identifica il test specifico. I tipi di test sono i seguenti:
-- *TdU*: Test di unità
-- *TdI*: Test di integrazione
-- *TdS*: Test di sistema
-- *TdR*: Test di regressione
-- *TdA*: Test di accettazione
+Ad ogni test è stato attribuito un codice#super[G] univoco per facilitarne l'identificazione e la tracciabilità. Il codice#super[G] è strutturato come segue: tipoXX, dove "tipo" rappresenta il tipo di test e "XX" è un numero progressivo che identifica il test specifico. I tipi di test sono i seguenti:
+- *TdU*: Test di unità;
+- *TdI*: Test di integrazione;
+- *TdS*: Test di sistema;
+- *TdR*: Test di regressione;
+- *TdA*: Test di accettazione.
 
 Per ogni test viene specificato uno stato, che può essere:
-- *NI*: Non Implementato
-- *IP*: In fase di Implementazione
-- *TS*: Test Superato
-- *TF*: Test Fallito
+- *NI*: Non Implementato;
+- *IP*: In fase di Implementazione;
+- *TS*: Test Superato;
+- *TF*: Test Fallito.
 
 #pagebreak()
 
 == 3.1 Test di unità
 
-I test di unità verificano il comportamento corretto delle singole unità di codice, come funzioni, metodi o classi. Vengono scritti e mantenuti dagli sviluppatori durante la fase di sviluppo e servono a garantire che ogni componente, isolato dal resto, produca il risultato atteso per diversi input. Sono fondamentali per individuare rapidamente errori logici a livello di codice sorgente.
+I test di unità verificano il comportamento corretto delle singole unità di codice#super[G], come funzioni, metodi o classi. Vengono scritti e mantenuti dagli sviluppatori durante la fase di sviluppo e servono a garantire che ogni componente, isolato dal resto, produca il risultato atteso per diversi input. Sono fondamentali per individuare rapidamente errori logici a livello di codice#super[G] sorgente.
 
 #let voci_test_unità = (
     [---], [---], [---], [NI]
@@ -269,7 +269,7 @@ I test di unità verificano il comportamento corretto delle singole unità di co
 
 == 3.2 Test di integrazione
 
-I test di integrazione servono a verificare che più unità di codice funzionino correttamente insieme. L'obiettivo è individuare problemi che emergono quando i vari moduli interagiscono tra loro, ad esempio errori di comunicazione tra componenti o malintesi sui formati di dati scambiati. Questi test sono particolarmente utili quando si integrano sistemi esterni come database, API o servizi di terze parti.
+I test di integrazione servono a verificare che più unità di codice#super[G] funzionino correttamente insieme. L'obiettivo è individuare problemi che emergono quando i vari moduli interagiscono tra loro, ad esempio errori di comunicazione tra componenti o malintesi sui formati di dati scambiati. Questi test sono particolarmente utili quando si integrano sistemi esterni come database, API o servizi#super[G] di terze parti.
 
 #let voci_test_integrazione = (
     [---], [---], [---], [NI]
@@ -284,7 +284,7 @@ I test di integrazione servono a verificare che più unità di codice funzionino
 
 == 3.3 Test di sistema
 
-I test di sistema valutano il comportamento del software nel suo complesso, simulando l'uso reale da parte dell'utente in un ambiente quanto più possibile simile alla produzione. Questo tipo di test include tutti i componenti integrati e mira a verificare che il sistema nel suo insieme soddisfi i requisiti funzionali e non funzionali. È un passaggio fondamentale prima del collaudo finale.
+I test di sistema valutano il comportamento del software nel suo complesso, simulando l'uso reale da parte dell'utente in un ambiente quanto più possibile simile alla produzione. Questo tipo di test include tutti i componenti integrati e mira a verificare che il sistema nel suo insieme soddisfi i requisiti#super[G] funzionali e non funzionali. È un passaggio fondamentale prima del collaudo finale.
 
 #let voci_test_sistema = (
     [---], [---], [---], [NI]
@@ -301,7 +301,7 @@ I test di sistema valutano il comportamento del software nel suo complesso, simu
 
 == 3.4 Test di regressione
 
-I test di regressione hanno lo scopo di assicurare che le nuove modifiche al codice, come correzioni di bug o l'introduzione di nuove funzionalità, non abbiano introdotto errori in funzionalità esistenti. Vengono eseguiti regolarmente durante lo sviluppo continuo e sono spesso automatizzati per garantire un controllo rapido ed efficace ogni volta che il software viene aggiornato.
+I test di regressione hanno lo scopo di assicurare che le nuove modifiche al codice#super[G], come correzioni di bug o l'introduzione di nuove funzionalità, non abbiano introdotto errori in funzionalità esistenti. Vengono eseguiti regolarmente durante lo sviluppo continuo e sono spesso automatizzati per garantire un controllo rapido ed efficace ogni volta che il software viene aggiornato.
 
 #let voci_test_regressione = (
   [---], [---], [---], [NI]
@@ -316,7 +316,7 @@ I test di regressione hanno lo scopo di assicurare che le nuove modifiche al cod
 
 == 3.5 Test di accettazione
 
-I test di accettazione vengono eseguiti per verificare che il software soddisfi i requisiti concordati con il cliente o l'utente finale. Sono spesso definiti sulla base di scenari realistici o specifiche formali (come le User Story o i Criteri di Accettazione). Questi test rappresentano l'ultima fase di verifica prima del rilascio del prodotto e determinano se esso può essere considerato “pronto per l'uso”.
+I test di accettazione vengono eseguiti per verificare che il software soddisfi i requisiti#super[G] concordati con il cliente#super[G] o l'utente finale. Sono spesso definiti sulla base di scenari realistici o specifiche formali (come le User Story o i Criteri di Accettazione). Questi test rappresentano l'ultima fase di verifica prima del rilascio del prodotto#super[G] e determinano se esso può essere considerato “pronto per l'uso”.
 
 #let voci_test_accettazione = (
   [---], [---], [---], [NI]
@@ -331,6 +331,37 @@ I test di accettazione vengono eseguiti per verificare che il software soddisfi 
 
 = 4. Cruscotto di Valutazione
 // Inserire qui i vari punti di valutazione delle metriche in base alle metriche di qualità che verranno riportate nella sezione 2, per il momento si può lasciare vuoto
+//4.1 Valutazione dei costi (costo attuale e costo pianificato per ogni sprint)
+== 4.1 Valutazione dei costi
+
+#let valori_grafico_costi_atteso = (
+  (1,970), (2,1020), 
+)
+#let valori_grafico_costi_reale = (
+  (1,970), (2,790), 
+)
+#show : graph_line.with(
+  data_atteso: valori_grafico_costi_atteso,
+  data_reale: valori_grafico_costi_reale,
+  label_atteso: "Costo atteso",
+  label_reale: "Costo reale",
+  label_x: "Sprint",
+  label_y: "Costo",
+  y-max: 1400,
+  y-min: 0,
+  y-tick-step: 100
+)
+
+//4.2 Grafico valore atteso ed effettivo
+//4.3 Indice di prestazione dei tempi (tempo attuale e tempo pianificato per ogni sprint) [grafico a barre eventualmente]
+//4.4 Grafico indice di stabilità dei requisiti#super[G] 
+//4.5 Grafico indice di Gulpease (generale) [grafico a barre eventualmente]
+//4.6 Grafico di efficienza in termini di tempo
+// 
+// sopra ogni grafico scrivere una breve descrizione del grafico che si sta per visualizzare
+// 
+
+
 
 #let valori_grafico_gulpease = (
   (1,70), (2,63), (4,60), (5,54)
@@ -397,7 +428,7 @@ Il gruppo di lavoro si impegna a monitorare costantemente le metriche e a raccog
   caption: caption_autovalutazione_strumenti
 )
 
-== 5.5 Valutazioni sul prodotto
+== 5.5 Valutazioni sul prodotto#super[G]
 
 #let header_autovalutazione_prodotto = (
   [*Periodo*],[*Riferimento*],[*Problema*],[*Soluzione*]
@@ -406,7 +437,7 @@ Il gruppo di lavoro si impegna a monitorare costantemente le metriche e a raccog
   [---], [---], [---], [---]
   )
 #let caption_autovalutazione_prodotto = (
-  [Valutazioni sul prodotto]
+  [Valutazioni sul prodotto#super[G]]
 )
 #show: automiglioramento_table.with(
   header: header_autovalutazione_prodotto,
