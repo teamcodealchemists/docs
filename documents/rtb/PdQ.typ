@@ -129,7 +129,7 @@ I processi primari sono quelli che riguardano direttamente la realizzazione del 
 È stato deciso di utilizzare la seguente nomenclatura per per identificare in modo univoco le metriche di qualità:
 - *PPF*: Processi Primari di Fornitura;
 - *PPS*: Processi Primari di Sviluppo.
-Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
+Per ogni categoria, i codici#super[G] definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
 
 === 2.1.1 Fornitura
 
@@ -169,7 +169,7 @@ I processi di supporto sono identificati dalla seguente nomenclatura:
 - *PSD*: Processi di Supporto alla Documentazione;
 - *PSV*: Processi di Supporto alla Verifica;
 - *PSQ*: Processi di Supporto alla Qualità.
-Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
+Per ogni categoria, i codici#super[G] definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
 
 === 2.2.1 Documentazione
 
@@ -218,7 +218,7 @@ I processi organizzativi sono quelli che riguardano la gestione del progetto e d
 I processi organizzativi sono identificati dalla seguente nomenclatura:
 - *POG*: Gestione dei processi
 
-Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
+Per ogni categoria, i codici#super[G] definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
 //in caso potremmo aggiungere altre metriche
 === 2.3.1 Gestione dei processi
 #let voci_tabella_processi = (
@@ -232,7 +232,7 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
   caption: caption_processi
 )
 
-// TODO: Per il PB inserire le qualità di prodotto
+// TODO: Per il PB inserire le qualità di prodotto#super[G] 
 
 = 3. Metodologie di Testing
 Per garantire la qualità del prodotto#super[G] software, è fondamentale adottare metodologie di testing adeguate.
