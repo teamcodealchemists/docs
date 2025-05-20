@@ -44,6 +44,7 @@ Per garantire una struttura coerente, ordinata e facilmente navigabile all'inter
   - `PdP`: Piano di Progetto  
   - `AdR`: Analisi dei Requisiti  
   - `NdP`: Norme di Progetto
+  - `DdB`: Diario di Bordo
 
 - `VERSIONE` La versione corrente del documento, secondo le specifiche di versionamento (Vedi Norme di Progetto).
   > ⚠️ **Nota**: La versione del documento (`VERSIONE`) viene aggiunta automaticamente durante il processo di conversione del file. Non è necessario inserirla manualmente nel nome del file ma solo all'interno di esso. La versione del documento (`VERSIONE`) viene aggiunta automaticamente durante il processo di conversione del file. Non è necessario inserirla manualmente nel nome del file ma solo all'interno di esso.

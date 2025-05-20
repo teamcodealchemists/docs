@@ -17,6 +17,7 @@
 #let destinatario = "M31"
 #let versione = "0.1.1"
 
+
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
   "Code Alchemists",
@@ -27,6 +28,7 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+
   [0.1.1],
   [13/05/2025],
   [N. Bolzon],
@@ -80,6 +82,7 @@
 #v(0.5cm)
 Il presente documento viene redatto per _l'analisi dei requisiti_ #super[G].
 
+
 Il presente documento di Analisi dei Requisiti#super[G] ha lo scopo di fornire una panoramica quanto più possibile dettagliata del prodotto#super[G] software da sviluppare. Esso rappresenta un riferimento e una linea guida fondamentale per la progettazione, l'implementazione e il collaudo del sistema. Garantisce che il prodotto#super[G] finale soddisfi pienamente le esigenze e le aspettative del committente#super[G].
 
 All'interno del documento sono descritte le richieste del committente#super[G], le modalità previste per la loro implementazione dal punto di vista architetturale e tecnologico, nonché i riferimenti normativi e informativi utili. In particolare, vengono forniti una descrizione approfondita dei Casi d'Uso e una lista completa dei requisiti#super[G] funzionali e non funzionali del sistema.
@@ -122,6 +125,7 @@ Il sistema dovrà permettere di rilevare in tempo reale situazioni critiche, com
 
 Una delle componenti chiave sarà la *visibilità centralizzata e in tempo reale* di tutte le scorte#super[G] distribuite. Il sistema offrirà funzionalità avanzate per il monitoraggio, la sincronizzazione e l'aggiornamento dell'inventario#super[G], supportando decisioni rapide e affidabili.
 
+
 Sarà adottata *un'architettura scalabile a microservizi#super[G]*, che garantisca alta disponibilità, interoperabilità tra i nodi#super[G] della rete, e gestione efficiente del carico, anche in presenza di numerose richieste simultanee. Ogni nodo#super[G] della rete – cioè ciascun magazzino – potrà operare in modo autonomo, mantenendo però sincronizzazione con un sistema centrale tramite servizi#super[G] cloud.
 
 Il progetto prevede anche *l'integrazione di modelli predittivi* per il riassortimento#super[G], sfruttando dati storici, pattern di consumo e stagionalità per anticipare la domanda e ridurre il rischio di esaurimento scorte#super[G]. M31 supporterà il progetto fornendo un dataset pubblico e una figura tecnica di riferimento per l'analisi dei dati e lo sviluppo dei modelli.
@@ -141,6 +145,7 @@ Sono stati analizzati diversi articoli, documenti e libri che trattano questi ar
 Sono stati presi in considerazione anche vari progetti esistesti che utilizzano tecnologie simili, al fine di comprendere le sfide e le opportunità che si presentano in questo campo.\
 
 Dopo un'esaustiva ricerca, sono stati identificati alcuni punti chiave che saranno fondamentali per la progettazione e lo sviluppo di un'ipotesi di architettura del sistema:
+
 - *Microservizi#super[G]:* come richiesto dal capitolato#super[G], il sistema dovrà essere progettato utilizzando un'architettura a microservizi#super[G], che consente di suddividere il sistema in componenti più piccoli e indipendenti, facilitando la scalabilità#super[G] e la manutenibilità del sistema.\
   Ogni microservizio#super[G] dovrebbe avere un proprio database, e può scegliere il proprio stack tecnologico, in modo da garantire la massima flessibilità e indipendenza.\
 - *Architettura Event-Driven:* l'architettura del sistema dovrebbe essere basata su eventi, in modo da garantire una comunicazione efficiente tra i microservizi#super[G] e una gestione ottimale delle risorse.\
@@ -154,6 +159,7 @@ Dopo un'esaustiva ricerca, sono stati identificati alcuni punti chiave che saran
 - *Containerizzazione:* l'uso di container#super[G] (Docker) è diventato uno standard de facto per la distribuzione e l'esecuzione di microservizi#super[G].\
   I container#super[G] consentono di isolare le dipendenze e le configurazioni di ciascun microservizio#super[G], semplificando il processo di distribuzione e gestione del sistema.\
   Kubernetes è uno strumento popolare per la gestione dei container#super[G] e l'orchestrazione#super[G] dei microservizi#super[G], che consente di automatizzare il deployment, la scalabilità#super[G] e la gestione dei container#super[G] in un cluster.\
+
 - *Resilienza del sistema:* è fondamentale garantire la resilienza del sistema, in modo da affrontare eventuali guasti o problemi di rete.\
   Ci sono diverse strategie per garantire la resilienza del sistema, come il pattern Circuit Breaker, il retry pattern, e l'uso di meccanismi di failover e bilanciamento del carico.\
 - *Logging:* è importante implementare un sistema di logging centralizzato per monitorare le attività e le prestazioni del sistema.\
@@ -164,6 +170,7 @@ Dopo un'esaustiva ricerca, sono stati identificati alcuni punti chiave che saran
 
 == Il Glossario
 #v(0.5cm)
+
 In questo documento potrebbero essere presenti parole#super[G] e terminologie complesse, che potrebbero non essere chiare a tutti, anche in relazione al contesto in cui vengono usate. Per questo motivo, È stato creato un glossario, che contiene le definizioni di alcune parole#super[G] e termini utilizzati nel documento.
 
 Le parole#super[G] che possiedono un riferimento al glossario vengono evidenziate come segue: *parola#super[G]*#super[G].
@@ -202,6 +209,7 @@ Verranno ora elencati i requisiti#super[G] del sistema, che sono stati suddivisi
 == Classificazione dei requisiti#super[G]
 - *Requisiti#super[G] Funzionali:* sono i requisiti#super[G] che definiscono le funzionalità e i comportamenti del sistema. Questi requisiti#super[G] specificano cosa il sistema deve fare e come deve interagire con gli utenti e altri sistemi. I requisiti#super[G] funzionali sono essenziali per garantire che il sistema soddisfi le esigenze degli utenti e raggiunga gli obiettivi prefissati.
 
+
 - *Requisiti#super[G] di Sicurezza:* sono i requisiti#super[G] che definiscono le misure di sicurezza e protezione dei dati all'interno del sistema. Questi requisiti#super[G] sono fondamentali per garantire la riservatezza, l'integrità#super[G] e la disponibilità delle informazioni trattate dal sistema.
 
 - *Requisiti#super[G] non Funzionali:* sono i requisiti#super[G] che definiscono le caratteristiche qualitative del sistema, come prestazioni, usabilità, affidabilità e manutenibilità. Questi requisiti#super[G] non riguardano direttamente le funzionalità del sistema, ma sono comunque cruciali per garantire un'esperienza utente soddisfacente e un funzionamento efficiente del sistema.
@@ -213,6 +221,7 @@ Inoltre, alcuni requisiti#super[G] sono stati derivati dall'analisi allo stato d
 Tutti i requisiti#super[G] presenteranno la fonte di provenienza.
 
 == Codifica dei requisiti#super[G]
+
 I requisiti#super[G] sono stati codificati in modo da facilitarne la lettura e la comprensione. La codifica è composta da un prefisso che indica il tipo di requisito#super[G], seguito da un numero progressivo.\
 
 I requisiti#super[G] funzionali sono preceduti dal prefisso "RF", i requisiti#super[G] di sicurezza dal prefisso "RS", i requisiti#super[G] non funzionali dal prefisso "RnF" e i requisiti#super[G] di vincolo dal prefisso "RV", dove:
@@ -223,6 +232,7 @@ I requisiti#super[G] funzionali sono preceduti dal prefisso "RF", i requisiti#su
 
 //Aggiungere il fatto di avere vincoli desiderabili: riassortimento#super[G] predittivo, GUI (fonte: riunione con M31)
 Alcuni requisiti#super[G] funzionali sono stati definiti come *"desiderabili"*, in quanto non strettamente necessari ma in grado di apportare un valore aggiunto riconoscibile.\
+
 Per indicare che un requisito#super[G] è desiderabile, è stato deciso di aggiungere la lettera *"D"* (Desiderabile) al prefisso del requisito#super[G], per indicare che il requisito#super[G] è desiderabile.\ *RFD*, ad esempio, sta per "Requisito#super[G] Funzionale Desiderabile".\
 
 Essendoci presenti anche dei requisiti#super[G] *opzionali*, è stato deciso di aggiungere la lettera *"O"* (Opzionale) al prefisso del requisito#super[G], per indicare che il requisito#super[G] è opzionale.\ *RFO*, ad esempio, sta per "Requisito#super[G] Funzionale Opzionale".\
@@ -256,6 +266,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   table.header(
     [*Codice#super[G]*], [*Descrizione*], [*Fonti*]
   ),
+
 
   [*RF01*], [*Rilevamento di carenza di scorte#super[G] di un magazzino.*], [capitolato#super[G]],
   [*RF01/01*], [Il sistema deve monitorare costantemente le scorte#super[G].], [capitolato#super[G]],
@@ -406,6 +417,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
     [*Codice#super[G]*], [*Descrizione*], [*Fonti*]
   ),
 
+
   [*RS01*], [*Autenticazione#super[G] semplice*], [capitolato#super[G]],
   [*RS01/01*], [Il sistema prevede l'implementazione dell'autenticazione#super[G] per l'accesso al sistema stesso.], [capitolato#super[G]],
   [*RS01/02*], [Il sistema deve garantire la protezione dei dati sensibili durante il processo di autenticazione#super[G].], [capitolato#super[G]],
@@ -463,6 +475,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
     [*Codice#super[G]*], [*Descrizione*], [*Fonti*]
   ),
 
+
   [*RnF01*], [*Test unitari per garantire la correttezza delle funzioni sviluppate, anche dopo modifiche.*], [capitolato#super[G]],
   [*RnF01/01*], [Il sistema deve verificare automaticamente il corretto comportamento delle singole funzioni.], [capitolato#super[G]],
   [*RnF01/02*], [I test devono essere eseguiti dopo ogni modifica al codice#super[G].], [capitolato#super[G]],
@@ -500,6 +513,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
     
   [*RnF07*], [*Progettazione architetturale ben documentata, presentata con diagrammi a blocchi e derivata da analisi dei requisiti#super[G] e dal contesto distribuito.*
   ], [capitolato#super[G]],
+
 )
 #align(center)[_Tabella #tabella_counter: Requisiti#super[G] non funzionali_]
 
