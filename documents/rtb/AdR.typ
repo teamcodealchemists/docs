@@ -337,9 +337,6 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RF16*], [*Operazioni di inventario#super[G] indipendenti ma sincronizzate centralmente.*], [capitolato#super[G]],
   [*RF16/01*], [Il magazzino locale deve operare tramite inserimento, modifica, trasferimento#super[G].], [capitolato#super[G]],
   [*RF16/02*], [Aggiornare il magazzino in primo luogo localmente], [capitolato#super[G]],
-  
-  [*RF17*], [*Progettazione architetturale ben documentata, presentata con diagrammi a blocchi e derivata da analisi dei requisiti#super[G] e dal contesto distribuito.*
-  ], [capitolato#super[G]],
 
   [*RFD01*], [*Gestione della variabilità della domanda e tempi di consegna con modelli predittivi.*], [capitolato#super[G]],
   [*RFD01/01*], [Il sistema deve prevedere la domanda futura per ciascun prodotto#super[G].], [capitolato#super[G]],
@@ -360,6 +357,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RFD03/03*], [Il sistema deve consentire agli utenti di gestire le scorte#super[G] e le operazioni di inventario#super[G] tramite l'interfaccia grafica.], [capitolato#super[G]],
 
   //Requisiti#super[G] Funzionali opzionali
+  //commentare se decidiamo di toglierli
   [*RFO01*], [*Integrazione con sistemi di notifica per eventi rilevanti, come il raggiungimento dei livelli minimi di scorte#super[G], l'approvazione dei trasferimenti#super[G] di merci, con alert#super[G] configurabili in base a regole definite e supporto a più canali di comunicazione (e-mail, SMS, dashboard#super[G] interna).*], [capitolato#super[G]],
   [*RFO01/01*], [È necessario supporto per la generazione di notifiche automatiche.], [capitolato#super[G]],
   [*RFO01/02*], [È prevista una notifica per il raggiungimento dei livelli minimi di scorte#super[G].], [capitolato#super[G]],
@@ -499,6 +497,9 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RnF06/02*], [Devono essere ben definite le strategie di merge#super[G]/rebase#super[G].], [capitolato#super[G]],
   [*RnF06/03*], [I commit#super[G] devono essere frequenti e descrittivi.], [capitolato#super[G]],
   [*RnF06/04*], [Le modifiche devono essere tracciabili nel tempo.], [capitolato#super[G]],
+    
+  [*RnF07*], [*Progettazione architetturale ben documentata, presentata con diagrammi a blocchi e derivata da analisi dei requisiti#super[G] e dal contesto distribuito.*
+  ], [capitolato#super[G]],
 )
 #align(center)[_Tabella #tabella_counter: Requisiti#super[G] non funzionali_]
 
