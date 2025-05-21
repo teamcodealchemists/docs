@@ -219,12 +219,12 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     ==== Requisiti#super[G]
     // Nomenclatura Requisiti#super[G] + riferimento all'AdR
     I requisiti#super[G]; sono stati codificati in modo da facilitarne la lettura e la comprensione. La codifica
-    è composta da un prefisso che indica il tipo di requisitoG, seguito da un numero progressivo.
+    è composta da un prefisso che indica il tipo di requisito#super[G], seguito da un numero progressivo.
     
     I requisiti#super[G]; funzionali sono preceduti dal prefisso «RF», i requisiti#super[G]; di sicurezza dal prefisso
     «RS», i requisiti#super[G]; non funzionali dal prefisso «RnF» e i requisiti#super[G]; di vincolo dal prefisso «RV»,
     dove:
-    - *R* sta per «Requisito»
+    - *R* sta per «Requisito#super[G]»
     - *F* sta per «Funzionale»
     - *S* sta per «Sicurezza»
     - *nF* sta per «non Funzionale»
@@ -360,7 +360,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         - *Pianificazione*: organizzazione delle informazioni e definizione della struttura del documento, inclusi intestazioni, header e footer.
         - *Redazione*: assegnazione del compito di stesura del documento a un membro del team, utilizzo di strumenti di versionamento (GitHub) per tracciare le modifiche e avvio della stesura dei contenuti.
         - *Verifica*: ogni sezione viene revisionata da un membro distinto dal redattore, per garantire accuratezza e qualità. Per la documentazione esterna, viene effettuata una ulteriore validazione dagli enti terzi.
-        - *Approvazione*: il responsabile di progetto analizza il documento nella sua interezza, verificando la coerenza e l'adeguatezza dei contenuti prima della pubblicazione.
+        - *Approvazione*: il responsabile#super[G] di progetto analizza il documento nella sua interezza, verificando la coerenza e l'adeguatezza dei contenuti prima della pubblicazione.
         - *Pubblicazione*: il documento viene reso disponibile nel repository#super[G] GitHub ufficiale "docs" solo dopo una verifica positiva, assicurando la presenza esclusiva di documenti validati e coerenti.
        
         Questa suddivisione garantisce un processo documentale chiaro ed efficace, facilitando la gestione e l'evoluzione dei documenti nel tempo.
@@ -456,7 +456,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         ==== Procedure di revisione
         Il processo di revisione è un'attività fondamentale per verificare la conformità del lavoro svolto agli standard di qualità e ai requisiti#super[G] fondamentali. Questa fase prevede diverse operazioni: la revisione del codice#super[G], l'esecuzione dei test di accettazione e la risoluzione di eventuali discrepanze. 
         
-          Il materiale da sottoporre a revisione viene definito e assegnato ai revisori tramite Jira. Una volta completata la revisione, le modifiche vengono proposte ai responsabili di quello specifico materiale e, se necessario, ricevono feedback anche dal resto del team. Infine, i risultati della revisione e le problematiche individuate vengono documentati attraverso un verbale interno.
+          Il materiale da sottoporre a revisione viene definito e assegnato ai revisori tramite Jira. Una volta completata la revisione, le modifiche vengono proposte ai responsabili#super[G] di quello specifico materiale e, se necessario, ricevono feedback anche dal resto del team. Infine, i risultati della revisione e le problematiche individuate vengono documentati attraverso un verbale interno.
           ===== Revisione tecnica
           // Revisione software
           La revisione tecnica serve a garantire che il software sia corretto, sicuro e conforme agli standard. Il codice#super[G] viene analizzato allo scopo di individuare errori, migliorare le prestazioni e assicurare la manutenibilità del sistema. Inoltre, si effettuano test per verificare la stabilità e il rispetto dei requisiti#super[G] tecnici. 
