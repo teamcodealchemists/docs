@@ -66,8 +66,8 @@
   Si è inoltre occupato della comunicazione esterna e interna. \
 
   === 2.1.2 Lavori svolti dall'amministratore#super[G]
-  L'amministratore#super[G] ha il compito di gestire le varie attività del team e di coordinare le attività di sviluppo. Ha partecipato attivamente alla definizione delle attività da intraprendere e ha fornito supporto ai membri del team nella risoluzione di eventuali problematiche: si è interfacciato con gli analisti#super[G] per l'analisi dei casi d'uso.  \
-  Ha inoltre studiato autonomamente i vari ambienti di sviluppo (ad esempio NATS) cercando di capire il suo funzionamento. \
+  L'amministratore#super[G] ha il compito di gestire le varie attività del team e di coordinare le attività di sviluppo. \
+  Ha studiato autonomamente i vari ambienti di sviluppo (ad esempio NATS, Docker, ...) cercando di capire il suo funzionamento per trasmettere quando appreso ai membri del Team facilitando poi lo sviluppo del PoC#super[G]. \
 
   === 2.1.3 Lavori svolti dagli analisti#super[G]
   Gli analisti#super[G], durante il quarto sprint hanno continuato *l'analisi dei casi d'uso*. Tale attività si è resa più dispendiosa del previsto. Si è cercato di adottare delle migliorie in due diversi modalità: migliorando la leggibilità della tabella e rendendo i requisiti#super[G] meno prolissi cercando, inoltre, di evitare ridondanza. \
