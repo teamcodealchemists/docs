@@ -23,7 +23,7 @@
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
 
-    [0.1.0], [19/05/2025], [M. Pretto], [Prima stesura del documento],
+    [0.1.0], [19/05/2025], [M. Pretto],[-], [Prima stesura del documento]
 
 )
 #let contenuto = (
