@@ -117,7 +117,7 @@ Il _Team Code Alchemists_ desidera infine ringraziare l'azienda _M31_ per la con
     [A18], [Iniziare con la programmazione del sistema],
     [A16], [Far visionare il documento dei casi d'uso al *#p.cardin*],
     [D25], [Aggiunto requisito#super[G] di autenticazione#super[G] semplice dell'utente],
-    [DOC22], [Stesura del Verbale Esterno del 05-05-2025],
+    [DOC22], [Stesura del Verbale Esterno del 21-05-2025],
   )
   
   #show: decision_table.with(
