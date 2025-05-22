@@ -334,7 +334,11 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 #pagebreak()
 = V
 - *Validazione*:\
-  È il processo di verificare che un software, un sistema o un processo informatico soddisfi determinati requisiti, standard o aspettative, e che sia idoneo all'uso previsto. 
+  È il processo di verificare che un software, un sistema o un processo informatico soddisfi determinati requisiti, standard o aspettative, e che sia idoneo all'uso previsto.
+  Viene fatto una volta completato il progetto, confrontando il prodotto finale con le specifiche concordate. 
+
+- *Verifica*:\
+  È un'attività continua. Accerta che l'esecuzione delle attività attuate nel periodo concordato non abbia introdotto errori. La verifica viene eseguita ad ogni avanzamento intermedio meritevole di attenzione.
   
 - *Verificatore*: \
   Assicura l'affidabilità dei test e migliora la qualità del software e della documentazione, rispettando gli standard concordati. Conoscendo il metodo di lavoro, garantisce l'esecuzione precisa di ogni task secondo le best practice. Il suo ruolo è continuo, assicurando il rispetto delle aspettative del cliente e il successo del progetto.
