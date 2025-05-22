@@ -27,6 +27,12 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [0.1.0],
+  [22/05/2025],
+  [A. Shu],
+  [N. Moretto],
+  [Aggiunta descrizioni dei casi d'uso con immagine fino al UC 10.5],
+
   [0.0.3],
   [17/04/2025],
   [N. Moretto],
