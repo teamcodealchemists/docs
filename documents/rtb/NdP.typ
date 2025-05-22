@@ -165,12 +165,14 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
   // Descrizione documento PdP
   Il Piano di Progetto è un documento strategico che guida la pianificazione e l'esecuzione del progetto, garantendo un utilizzo ottimale delle risorse e il rispetto degli obiettivi. 
   
+
   Redatto dal Responsabile#super[G]; con il supporto degli Amministratori#super[G], include l'analisi dei rischi, la metodologia di sviluppo basata su Scrum#super[G], la roadmap delle attività e la gestione dei costi. Inoltre, il piano prevede monitoraggio#super[G] continuo attraverso un confronto costante tra il preventivo e il consuntivo volto ad analizzare la fase attuale e migliorare le fasi future. 
   
   Questo piano facilita la comunicazione tra fornitore e proponente, assicurando trasparenza e coordinazione efficace durante l'intero processo.
 
   === Piano di Qualifica#super[G]
   // Descrizione documento PdQ
+
 
   Il Piano di Qualifica#super[G] definisce le strategie per garantire la qualità del prodotto, stabilendo standard di sviluppo, criteri di verifica#super[G] e test per la conformità ai requisiti#super[G]. 
   
@@ -203,7 +205,9 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     // Descrizione documento AdR
     L'Analisi dei Requisiti#super[G]; è la fase preliminare dello sviluppo software, finalizzata a identificare e documentare in modo accurato le esigenze del proponente e degli utenti. Questo processo consente di definire il fine del prodotto, gli attori del sistema e le funzionalità chiave, fornendo ai progettisti#super[G] una visione chiara del problema e ai verificatori#super[G] una base per le attività di test. 
     
+
     L'analisi si concretizza in un documento strutturato che raccoglie i casi d'uso, i requisiti#super[G] funzionali e non funzionali, e le fonti da cui sono stati derivati. Questo documento rappresenta un riferimento essenziale per la progettazione, la pianificazione e la fase di verifica#super[G], garantendo che il sistema soddisfi pienamente le aspettative del cliente#super[G] e gli obiettivi stabiliti. Inoltre, è strettamente collegato al Piano di Qualifica#super[G], che consente di monitorare la conformità ai requisiti#super[G] attraverso test specifici.
+
     ==== Casi d'uso
     // Descrizione e nomenclatura use case
     I casi d’uso sono codificati utilizzando la seguente notazione:
@@ -257,16 +261,18 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
   === Progettazione
     ==== Scopo
     // Dare soluzioni a requisiti rilevati nell'AdR.
+
     La progettazione software definisce le soluzioni tecniche per soddisfare i requisiti#super[G] individuati, trasformandoli in un'architettura#super[G] strutturata e modulare#super[G]. 
     
     Si suddivide in:
     - *Progettazione Logica*, che motiva la scelta di tecnologie e framework e include il PoC#super[G];
     - *Progettazione di dettaglio*, che specifica l'architettura#super[G] con diagrammi delle classi e test di unità. 
-    
+  
     Per garantire un sistema efficiente e scalabile, la progettazione segue principi di modularità#super[G], flessibilità e affidabilità, assicurando una struttura chiara e facilmente manutenibile prima della fase di sviluppo.
     ==== Fasi di Progettazione  
       ===== Progettazione logica
       // Descrizione progett. logica
+
       La progettazione logica definisce la struttura di alto livello del software, traducendo i requisiti#super[G] in un'architettura#super[G] chiara e coerente. Comprende la scelta di framework, tecnologie e librerie, validandone l'adeguatezza tramite un Proof of Concept#super[G] (PoC#super[G]). Inoltre, include diagrammi UML per rappresentare l'interazione tra i componenti. 
       
       I progettisti#super[G] devono garantire l'assegnazione e il dettaglio dei requisiti#super[G], progettare interfacce e strutture dati, definire test di integrazione e revisionare l'architettura#super[G] in collaborazione con il team e il cliente#super[G], assicurando che il sistema sia ben strutturato e facilmente manutenibile.
@@ -299,7 +305,9 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     // Descrizione Codifica
     La codifica, affidata ai programmatori#super[G], è una fase essenziale dello sviluppo software, finalizzata a tradurre le scelte progettuali in codice#super[G] sorgente funzionante. 
     
+
     Per garantire uniformità, leggibilità e manutenibilità, vengono seguite precise linee guida sulla formattazione, la nomenclatura e la struttura del codice#super[G]. Queste regole contribuiscono a semplificare la verifica#super[G], il debugging e l'estensione del software, assicurando un prodotto finale robusto e di alta qualità.
+    
     ==== Convenzioni di sintassi
     // Nomi da assegnare, in che lingua, che stile di case seguire, indentazione, spaziatura...
     Le norme di scrittura del codice#super[G] del prodotto software mirano a garantire leggibilità, uniformità e manutenibilità. Di seguito sono definite le principali convenzioni da seguire.
@@ -427,6 +435,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         // In che modo dividiamo i documenti nella repo docs (in x cartella sono contenuti...)
           La nostra repository#super[G] _docs_  contiene al suo interno la cartella "documents", la quale contiene tutti i documenti redatti, ed è a sua volta è suddivisa in varie sottocartelle, tra cui:
           - *"candidatura/"*: raccoglie tutti i documenti redatti in fase di candidatura;
+
           - *"glossario#super[G]/"*: contiene il file .typ del glossario#super[G];
           - *"presentazioni/"*: raccoglie tutti i file in formato .pdf dei vari Diari di Bordo redatti;
           - *"rtb#super[G]/"*: contiene al suo interno in formato .typ i vari documenti informali e formali (interni ed esterni), come ad esempio l'AdR oppure i vari verbali;
@@ -440,9 +449,11 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       // Indice Gulpease
       // Correttezza Ortografica (se la vogliamo mettere, non mi sembra automatizzata tho) -> Per il momento no.
       I documenti sono sottoposti a dei controlli di qualità, le quali sono:
+
       - *Parole del Glossario#super[G] non segnate*: Indica il numero di parole trovate nella documentazione che sono presenti nel glossario#super[G] ma non contrassegnate con la lettera "G" come apice.
       - *Indice Gulpease*: Fornisce un punteggio da 0 a 100 basato sull'indice di leggibilità Gulpease della documentazione.
       - *Ordinamento del Glossario#super[G]*: Verifica che il glossario#super[G] sia ordinato alfabeticamente.
+      
       === Manutenzione
       // Fasi di manutenzione di un documento 
       La manutenzione della documentazione è fondamentale per aggiornare il documento con informazioni nuove e/o più accurate. Il processo di manutenzione prevede le seguenti fasi:
@@ -573,6 +584,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       Questo metodo ci permette di affinare costantemente i nostri processi e garantire risultati sempre più performanti.
 
       === Piano di Qualifica#super[G]
+
       // Descrizione PdQ (che copre gli obiettivi di questo processo)
       Il Piano di Qualifica#super[G]; è un documento che definisce strategie, obiettivi e attività per garantire la qualità del prodotto e del processo di sviluppo. 
       Tali parametri vengono stabiliti in accordo ai requisiti#super[G] e alle aspettative del proponente e talvolta a discrezione del team sulla base delle valutazioni fatte nel corso di studi.
@@ -615,10 +627,12 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     == Verifica#super[G]
       === Scopo
       // Descrizione Verifica
+
       Il processo di Verifica#super[G] del software ha l'obiettivo di garantire che lo sviluppo sia eseguito correttamente e che il prodotto finale rispetti i requisiti#super[G] del cliente#super[G]. 
       Durante questa fase, vengono individuati eventuali difetti nelle prime fasi del ciclo di vita, riducendo così costi e tempi di correzione.
 
       La verifica#super[G] assicura la conformità del prodotto ai requisiti#super[G] stabiliti nel Piano di Qualifica#super[G], garantendo completezza e correttezza attraverso evidenze misurabili. 
+
       Ogni produzione viene sottoposta a controlli prima di essere pubblicata nel repository#super[G] GitHub, con verificatori#super[G] indipendenti per evitare conflitti di interesse.
 
       Questo processo viene applicato continuamente, sia nella documentazione che nello sviluppo del software, con verifiche specifiche per garantire l’accuratezza delle attività svolte. 
@@ -869,7 +883,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       A seguito di ogni riunione, la stesura del corrispondente verbale viene assegnato, se disponibile, a uno dei verificatori#super[G]. In questo modo, un altro verificatore#super[G] avrà il compito di effettuare una cross-verifica del verbale redatto, assicurando così che tutte le informazioni siano corrette e che eventuali errori siano prontamente individuati e corretti.
     
       Nel caso in cui i verificatori#super[G] siano già impegnati in altre attività di priorità più alta, la stesura del verbale viene assegnata a un altro membro del team. Questo approccio flessibile garantisce che la documentazione delle riunioni non subisca ritardi e che ogni riunione sia adeguatamente registrata. Il membro del team incaricato di redigere il verbale è responsabile#super[G] di seguire le linee guida stabilite per la stesura, assicurando che il documento finale sia più chiaro, conciso e completo possibile.
-    
+
       La verifica#super[G] dello stesso sarà assegnata a uno dei verificatori#super[G], che avrà cura di controllare, ed eventualmente correggere, quanto riportato nel verbale non appena gli sarà possibile.
     
       Questo processo strutturato e collaborativo assicura che i verbali interni siano sempre accurati e tempestivi, facilitando la comunicazione e la trasparenza all'interno del team.
