@@ -15,7 +15,7 @@
 #let titolo = "Glossario"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "0.3.0"
+#let versione = "0.4.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -26,6 +26,12 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+
+  [0.4.0],
+  [22/05/2025],
+  [N. Moretto],
+  [S. Marana],
+  [Aggiunte definizioni al glossario e riordino dei vocaboli],
 
   [0.3.0],
   [28/04/2025],
@@ -83,6 +89,9 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 
 #pagebreak()
 = A
+- *AGILE*:\
+  Modello iterativo/incrementale che si basa sulla comunicazione/collaborazione. Lo scopo di questo modello è di suddividere il lavoro a piccoli incrementi a valore aggiunto, realizzati in sequenza continua dall'analisi all'integrazione, dimostrando in modo trasparente al cliente quanto fatto e tracciando l'avanzamento secondo un progresso reale e concreto.
+  
 - *Alert*:\
   Segnalazioni automatiche generate dal sistema in risposta a eventi rilevanti, come esaurimento scorte, errori di trasferimento, o necessità di approvazione.
 
@@ -95,8 +104,14 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 - *Analista*:\
   Svolge un ruolo chiave nelle fasi iniziali, fornendo basi solide a progettisti e programmatori. Il suo impegno orario, inferiore alla media degli altri ruoli, si concentra sull'analisi e la definizione dei requisiti, garantendo chiarezza e completezza delle specifiche progettuali.
 
+- *API*:\
+  Sta per "Application Programming Interface" e significa "interfaccia di programmazione delle applicazioni". È un insieme di regole e protocolli che consentono a diverse applicazioni software di interagire e scambiarsi dati e funzionalità.
+
 - *Approvvigionamento*:\
   Attività di acquisizione di prodotti o materiali necessari per garantire il funzionamento del magazzino. Include ordini da fornitori esterni o trasferimenti da altri magazzini.
+
+- *Architettura*:\
+  Struttura organizzativa di un sistema, sia esso hardware, software o di rete, che definisce come i suoi componenti interagiscono e cooperano per svolgere le funzioni richieste. Si tratta di una progettazione che include dettagli come l'organizzazione fisica dei componenti, i protocolli di comunicazione e le interazioni tra i diversi elementi. 
 
 - *Autenticazione*:\
   Meccanismo per verificare l'identità di un utente prima di concedere accesso al sistema.
@@ -112,8 +127,14 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 - *Backup*:\
   Copia di sicurezza dei dati, utile per ripristinare le informazioni in caso di guasti o perdite.
 
+- *Baseline*:\
+  La baseline di progetto è un punto di riferimento fisso utilizzato per confrontare le prestazioni dei progetti nel tempo. Le baseline di progetto sono utilizzate dai project manager per verificare l'andamento dell'ambito, della programmazione e dei costi del progetto fino al suo completamento.
+
 - *Branch*:\
   Versione separata di un progetto o codice, utilizzata per sviluppare nuove funzionalità senza modificare la versione principale.
+
+- *Bugfix*:\
+  Correzione di un bug, ovvero di un errore nel software o nel codice.
 
 #pagebreak()
 = C
@@ -131,6 +152,9 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 
 - *Cifratura*:\
   Processo di trasformazione dei dati in un formato illeggibile, al fine di proteggerli da accessi non autorizzati.
+
+- *Client*:\
+  È un componente software o hardware che accede ai servizi o risorse di un "server". In sostanza, il client è il programma o dispositivo che effettua una richiesta al server per ricevere dati, servizi o per eseguire un'azione.
 
 - *Cliente*: \
   Persona, azienda o ente che commissiona, finanzia e utilizzerà direttamente o indirettamente il prodotto software. Il cliente può coincidere o meno con il committente, e ha interesse nel risultato finale del progetto. È coinvolto nei processi decisionali, nella validazione del prodotto e nella sua eventuale accettazione e manutenzione post-rilascio.
@@ -151,13 +175,31 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
   Ambiente isolato e leggero che include tutto il necessario per eseguire un'applicazione (codice, librerie, dipendenze), utilizzando il kernel del sistema operativo sottostante, garantendo portabilità e coerenza tra diversi sistemi.
 
 #pagebreak()
-
 = D
 - *Dashboard*:\
   Interfaccia utente centralizzata che visualizza in tempo reale informazioni sul sistema.
-#pagebreak()
 
+#pagebreak()
+= F
+- *Firma Digitale*:\
+  È un metodo sicuro e legale per firmare documenti digitali, garantendo l'autenticità, l'integrità e il non ripudio del firmatario.
+
+#pagebreak()
+= G
+- *Glossario*:\
+  Documento contenente parole o frasi che non sono di uso comune, ma che sono state scelte per essere più specifiche e per evitare ambiguità.
+
+#pagebreak()
+= H
+- *Hashing*:\
+  Processo che converte un input di dati di lunghezza variabile in un output di lunghezza fissa, chiamato "hash" o "digest". Questo output è una sequenza di caratteri che può essere utilizzata per rappresentare in modo compatto l'input originale, e che cambia in modo sensibile al cambiamento del contenuto dell'input.
+  L'obiettivo principale dell'hashing è garantire l'integrità dei dati e convalidare i dati originali.
+
+#pagebreak()
 = I
+- *Incrementale*:\
+  Qualcosa che viene sviluppato o costruito in modo graduale, per piccoli passi, aggiungendo funzionalità o miglioramenti a una versione precedente.
+
 - *Integrità*:\
   Correttezza e coerenza dei dati nel sistema.
 
@@ -166,12 +208,16 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 
 - *Inventario*:\
   Elenco dettagliato e aggiornato delle scorte disponibili in un magazzino.
-#pagebreak()
 
+- *Iterativo*:\
+  Un processo iterativo è un ciclo di lavoro ripetuto in cui un team crea, prototipizza, testa e migliora un prodotto o un progetto fino a raggiungere il risultato desiderato. Questo approccio è molto comune nello sviluppo software, dove si suddivide il progetto in cicli o iterazioni più piccoli, permettendo di ricevere feedback e apportare modifiche in corso d'opera.
+  
+#pagebreak()
 = L
 
 - *Log*:\
   Registro cronologico di eventi e operazioni eseguite su un sistema.
+
 #pagebreak()
 = M
 - *Mentore*: \
@@ -189,13 +235,15 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 - *Modulari*:\
   Caratteristica di un sistema progettato come insieme di componenti indipendenti e riutilizzabili.
 
-#pagebreak()
+- *Monitoraggio*:\
+  Processo di osservazione, controllo e valutazione delle prestazioni di un sistema, di un componente o di un servizio informatico. Questo processo permette di monitorare lo stato attuale e le prestazioni di un sistema per individuare eventuali problemi o anomalie. 
 
+#pagebreak()
 = N
 - *Nodo*:\
   Unità del sistema distribuito che può operare in modo autonomo e sincronizzarsi con il sistema centrale.
-#pagebreak()
 
+#pagebreak()
 = O
 - *Orchestrazione*:\
   Coordinamento automatico di più servizi o componenti di un sistema complesso.
@@ -208,6 +256,9 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 - *Parola*:\
   Termine utilizzato anche per riferirsi a una password o a un identificatore.
 
+- *Piano di Qualifica*:\
+  Documento che ha lo scopo di definire le modalità di qualifica e verifica del prodotto software. Esso rappresenta un indice di valutazione del prodotto software, delle sue componenti e degli strumenti utilizzati, al fine di garantire la qualità del prodotto finale e un continuo miglioramento del processo di sviluppo.
+  
 - *Prodotto*: \
   Oggetto fisico stoccato in un magazzino, trasferibile, vendibile o utilizzabile.
 
@@ -222,8 +273,18 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 
 - *Protocollo*:\
   Insieme di regole che regolano la comunicazione tra dispositivi di rete o componenti software.
+
 #pagebreak()
 = R
+- *Rebase*:\
+  Soprattutto nel contesto di Git, "rebase" significa ricalcolare o riapplicare i commit di un branch (una linea di sviluppo) su un altro branch, creando una cronologia lineare e pulita. In pratica, si muovono i commit di un branch su un altro, come se fossero stati fatti in sequenza invece di essere stati originati da un punto di divergenza. 
+
+- *Recovery*:\
+  Indica il processo di ripristino di dati, applicazioni o sistemi informatici dopo un malfunzionamento, un errore o un disastro. Questo può includere il ripristino di dati da un backup, il recupero di file cancellati, o la riattivazione di un sistema interrotto. 
+
+- *Refactoring*:\
+  È una tecnica di ingegneria del software che consiste nel ristrutturare il codice sorgente di un programma, senza alterare il suo comportamento esterno, per migliorarne la qualità, leggibilità e manutenibilità. L'obiettivo è rendere il codice più semplice, efficiente e più facile da comprendere per gli sviluppatori. 
+  
 - *Repository*: \
   Archivio centralizzato e strutturato che consente la conservazione, la gestione e la condivisione di risorse digitali, quali codice sorgente, documentazione, librerie, configurazioni e dati. Garantisce la collaborazione tra più sviluppatori, l'integrità e la tracciabilità del progetto nel tempo.
 
@@ -244,6 +305,7 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 
 - *Ripristino*:\
   Procedura per riportare un sistema operativo o dati persi allo stato precedente al guasto
+
 #pagebreak()
 = S
 - *Scalabilità*:\
@@ -252,25 +314,34 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 - *Scorte*:\
   Quantità di prodotti o materiali presenti in magazzino in un dato momento.
 
+- *Scrum*:\
+  È un framework agile che definisce un modo di lavorare per gestire progetti di sviluppo software in modo iterativo e incrementale. Si tratta di un approccio strutturato che aiuta i team a collaborare in modo efficace e a fornire risultati di alta qualità. 
+
 - *Sensibili*:\
   Dati che richiedono protezione speciale contro accessi non autorizzati o divulgazioni.
 
 - *Servizi*:\
   Componenti funzionali del sistema, responsabili ciascuno di una specifica attività.
 
+- *Sprint*:\
+  Periodo di tempo specifico (timebox) in cui un team di sviluppo lavora in modo coordinato, seguendo una metodologia agile come Scrum, per completare una determinata quantità di lavoro. 
+
 #pagebreak()
-
 = T
-
 - *Trasferimento*:\
   Operazione che comporta lo spostamento fisico di prodotti tra magazzini.
+
 #pagebreak()
 = V
+- *Validazione*:\
+  È il processo di verificare che un software, un sistema o un processo informatico soddisfi determinati requisiti, standard o aspettative, e che sia idoneo all'uso previsto. 
+  
 - *Verificatore*: \
   Assicura l'affidabilità dei test e migliora la qualità del software e della documentazione, rispettando gli standard concordati. Conoscendo il metodo di lavoro, garantisce l'esecuzione precisa di ogni task secondo le best practice. Il suo ruolo è continuo, assicurando il rispetto delle aspettative del cliente e il successo del progetto.
 
 - *Vulnerabilità*:\
   Debolezza o difetto che può essere sfruttato per compromettere la sicurezza o il funzionamento del sistema.
+
 #pagebreak()
 = W
 - *Way of Working*: \
