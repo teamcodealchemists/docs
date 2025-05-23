@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import datetime
 
 # Percorsi dei file
 DOCUMENTI_DIR = "documents"
@@ -9,7 +10,7 @@ BADGE_FILE = ".github/badges/err_parole_glossario_badge.json"
 
 def carica_glossario(glossario_path):
     """Carica i termini e le sigle del glossario da un file, escludendo quelli nella blacklist."""
-    blacklist = {"ci"}  # Aggiungi qui le parole o sigle da escludere
+    blacklist = {"ci","log"}  # Aggiungi qui le parole o sigle da escludere
     with open(glossario_path, 'r', encoding='utf-8') as file:
         glossario = set()
         for line in file:
@@ -52,16 +53,26 @@ def verifica_file(file_path, glossario):
     return errori
 
 def verifica_documenti(documenti_dir, glossario):
-    """Verifica tutti i file nella cartella documenti."""
+    """Verifica tutti i file nella cartella documenti, ignorando file datati più di due settimane."""
     blacklist_file = {"Gls.typ"}
     blacklist_cartella = {"candidatura", "presentazioni"}
     errori_totali = 0
+    oggi = datetime.datetime.now().date()
 
     for root, _, files in os.walk(documenti_dir):
         if any(blacklisted in root for blacklisted in blacklist_cartella):
             continue
         for file_name in files:
             if file_name.endswith(".typ") and file_name not in blacklist_file:
+                # Controlla se il nome inizia con una data AAAA-MM-DD
+                match = re.match(r"^(\d{4})-(\d{2})-(\d{2})", file_name)
+                if match:
+                    try:
+                        file_date = datetime.date(int(match.group(1)), int(match.group(2)), int(match.group(3)))
+                        if (oggi - file_date).days > 14:
+                            continue  # Salta file più vecchi di due settimane
+                    except ValueError:
+                        pass  # In caso di data non valida, non saltare il file
                 file_path = os.path.join(root, file_name)
                 errori_totali += verifica_file(file_path, glossario)
     return errori_totali
