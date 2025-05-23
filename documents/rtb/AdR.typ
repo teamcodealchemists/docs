@@ -15,7 +15,7 @@
 #let titolo = "Analisi dei requisiti"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "0.1.2"
+#let versione = "0.1.3"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -27,6 +27,12 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [0.1.3],
+  [23/05/2025],
+  [A. Shu],
+  [N. Moretto],
+  [Completamento della documentazione dei casi d'uso],
+
   [0.1.2],
   [22/05/2025],
   [A. Shu],
@@ -1010,205 +1016,1063 @@ https://www.multiplayer.app/distributed-systems-architecture/
   - #link(label("uc-5"))[UC 5]
 === - UC 11: Gestione magazzino che torna online
 #label("uc-11")
-
+#image("assets/Casi d'uso-UC11.drawio.png")
+- *Attori Principali*: Sistema, Supervisore Locale, Supervisore Globale
+- *Precondizioni*:
+  - Il magazzino è stato precedentemente segnalato come offline
+  - Il sistema è attivo e in ascolto di segnali di ritorno online
+- *Postcondizioni*:
+  - Il magazzino è marcato come online e operativo
+  - I dati locali sono sincronizzati con il sistema centrale
+  - Eventuali conflitti di dati sono gestiti
+- *Scenario principale*:
+  - Il sistema rileva che il magazzino è tornato online → #link(label("uc-11.1"))[UC 11.1]
+  - Avvia la sincronizzazione dei dati → #link(label("uc-11.2"))[UC 11.2]
+  - Verifica eventuali conflitti tra dati locali e cloud → #link(label("uc-11.3"))[UC 11.3]
+  - Aggiorna lo stato del magazzino a "operativo"
+  - Notifica ai supervisori
+- *Inclusioni*:
+  - #link(label("uc-11.1"))[UC 11.1]
+  - #link(label("uc-11.2"))[UC 11.2]
+- *Estensioni*:
+  - #link(label("uc-11.3"))[UC 11.3]
+  - #link(label("uc-9.2"))[UC 9.2]
+  - #link(label("uc-14.3"))[UC 14.3]
+- *Trigger*:
+  - Il sistema riceve un segnale dal magazzino
 ==== - UC 11.1: Rilevamento ritorno online
 #label("uc-11.1")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Il magazzino era offline
+  - Il sistema monitora attivamente la rete
+- *Postcondizioni*:
+  - Il sistema identifica il ritorno online del magazzino
+  - Stato aggiornato a "online"
+- *Scenario principale*:
+  - Il sistema riceve un segnale
+  - Valida che la comunicazione è stabile
+  - Aggiorna lo stato del magazzino
 ==== - UC 11.2: Sincronizzazione dati inventario
 #label("uc-11.2")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Il magazzino è tornato online
+  - Sono disponibili dati locali modificati
+- *Postcondizioni*:
+  - I dati di inventario sono sincronizzati tra magazzino e cloud
+  - Conflitti (se presenti) sono rilevati → gestiti in #link(label("uc-11.3"))[UC 11.3]
+- *Scenario principale*:
+  - Il sistema accede ai dati locali di inventario
+  - Confronta con il cloud
+  - Sincronizza i dati coerenti
+  - Se ci sono conflitti → invoca #link(label("uc-11.3"))[UC 11.3]
+- *Estensioni*:
+  - #link(label("uc-11.3"))[UC 11.3]
+  - #link(label("uc-14.3"))[UC 14.3]
 ==== - UC 11.3: Risoluzione conflitti di dati
 #label("uc-11.3")
-
+- *Attori Principali*: Sistema, eventualmente Supervisore Locale
+- *Precondizioni*:
+  - Sono stati rilevati conflitti nei dati durante la sincronizzazione
+- *Postcondizioni*:
+  - I dati sono risolti secondo politiche predefinite o approvazione supervisore
+  - Il magazzino ha inventario aggiornato e coerente
+- *Scenario principale*:
+  - Il sistema analizza la natura dei conflitti (es. scorte diverse, timestamp)
+  - Applica una strategia:
+    - priorità temporale
+    - priorità cloud
+    - intervento supervisore
+  - Aggiorna l’inventario finale
+  - Registra conflitto e risoluzione nel log
+- *Scenario alternativo*:
+  - Il sistema non riesce a risolvere automaticamente
+  - Convalida manuale dati da parte del supervisore
 === - UC 12: Monitoraggio centralizzato delle scorte
 #label("uc-12")
-
+#image("assets/Casi d'uso-UC12.drawio.png")
+- *Attori Principali*: Sistema, Supervisore Globale, Supervisore Locale
+- *Precondizioni*:
+  - Il sistema è online
+  - I microservizi di inventario dei magazzini sono sincronizzati con il cloud
+- *Postcondizioni*:
+  - Il supervisore visualizza in tempo reale le scorte di tutti i magazzini
+- *Scenario principale*:
+  - Il Supervisore accede al sistema
+  - Il Sistema interroga il microservizio cloud per i dati aggregati delle scorte
+  - Il Sistema mostra la dashboard con i livelli di inventario per ciascun magazzino
+  - Il Supervisore analizza la situazione e può intervenire con azioni gestionali (es. riassortimento, trasferimento)
+- *Scenari alternativi*:
+  - Il sistema segnala l’indisponibilità temporanea dei dati per un magazzino offline → #link(label("uc-9"))[UC 9]
+- *Inclusioni*:
+  - #link(label("uc-12.1"))[UC 12.1]
+  - #link(label("uc-12.2"))[UC 12.2]
+- *Estensioni*:
+  - #link(label("uc-9.1"))[UC 9.1]
+  - #link(label("uc-9.3"))[UC 9.3]
+  - #link(label("uc-11"))[UC 11]
+- *Trigger*:
+  - Il supervisore accede alla dashboard di monitoraggio centralizzato
+#pagebreak()
 ==== - UC 12.1: Visualizzazione dashboard scorte distribuite
 #label("uc-12.1")
+- *Attori Principali*: Supervisore Globale, Supervisore Locale
+- *Precondizioni*:
+  - L’utente è autenticato con ruolo autorizzato
+- *Postcondizioni*:
+  - La dashboard è aggiornata e visibile
+- *Scenario principale*:
+  - L’utente accede alla sezione “Monitoraggio Scorte”
+  - Il sistema presenta una dashboard con livelli per ogni magazzino
+  - L’utente può filtrare, ordinare e consultare i dati
 
 ==== - UC 12.2: Interrogazione microservizio cloud inventario
 #label("uc-12.2")
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - I microservizi locali sono sincronizzati con il microservizio cloud
+- *Postcondizioni*:
+  - I dati aggiornati delle scorte sono ottenuti
+- *Scenario principale*:
+  - Il sistema invia una richiesta al database del microservizio cloud
+  - Riceve i dati aggiornati delle scorte per tutti i magazzini
+  - Aggiorna la dashboard centralizzata
 
 ==== - UC 12.3: Notifica automatica in caso di soglia critica raggiunta
 #label("uc-12.3")
-
+- *Attori Principali*: Sistema
+- *Attori Secondari*: Supervisore Locale, Supervisore Globale
+- *Precondizioni*:
+  - I livelli minimi di scorta sono stati definiti (vedi UC 6.1)
+  - La dashboard è attiva (UC 12.1) e il sistema ha accesso ai dati aggiornati (UC 12.2)
+- *Postcondizioni*:
+  - Il supervisore riceve una notifica in tempo reale relativa al magazzino e al prodotto che ha superato la soglia critica
+- *Scenario principale*:
+  - Il sistema monitora in background i dati di scorta provenienti dal microservizio cloud
+  - Rileva che per un determinato prodotto in un magazzino la quantità è scesa sotto la soglia critica
+  - Il sistema genera una notifica contenente:
+    - Nome del prodotto
+    - Quantità residua
+    - Magazzino interessato
+    - Data e ora del rilevamento
+  - La notifica viene mostrata in tempo reale nella dashboard del supervisore (oppure invio SMS/Email)
+- *Inclusioni*:
+  - #link(label("uc-6.1"))[UC 6.1]
+  - #link(label("uc-12.2"))[UC 12.2]
+- *Estensioni*:
+  - #link(label("uc-12"))[UC 12]
+- *Trigger*:
+  - Il sistema rileva che la scorta attuale di un prodotto è pari o inferiore alla soglia minima definita
 === - UC 13: Mantenimento livelli di sicurezza scorte
 #label("uc-13")
-
+#image("assets/Casi d'uso-UC13.drawio.png")
+- *Attori Principali*: Sistema
+- *Attori Secondari*: Supervisore Locale, Supervisore Globale
+- *Precondizioni*:
+  - Esistono richieste di riassortimento o trasferimento in sospeso
+  - I livelli di sicurezza delle scorte sono stati definiti → #link(label("uc-6.1"))[UC 6.1]
+  - Le soglie temporali di attesa sono state definite → #link(label("uc-13.1"))[UC 13.1]
+- *Postcondizioni*:
+  - Il sistema rileva il superamento della soglia temporale massima e avvia azioni correttive → #link(label("uc-13.2"))[UC 13.2]
+- *Scenario principale*:
+  - Il sistema monitora costantemente le scorte in ciascun magazzino → #link(label("uc-4"))[UC 4]
+  - Se rileva che le scorte sono inferiori alla soglia minima:
+    - Verifica se sono già in arrivo ordini o trasferimenti.
+    - Se un’azione di riassortimento è già pianificata, il sistema:
+      - Controlla se il tempo stimato di arrivo supera la soglia definita → #link(label("uc-13.1"))[UC 13.1]
+      - Se la soglia è superata:
+        - Il sistema attiva azioni correttive (es. invio nuovo ordine, richiesta trasferimento interno) → #link(label("uc-13.2"))[UC 13.2]
+- *Scenari alternativi*:
+  - Tempo stimato viene aggiornato da un supervisore:
+    - Il sistema rivaluta la soglia in base al nuovo tempo.
+  - Il magazzino è non operativo:
+    - Attiva trasferimento emergenziale verso magazzini vicini → #link(label("uc-10.5"))[UC 10.5]
+- *Inclusioni*:
+  - #link(label("uc-4"))[UC 4]
+  - #link(label("uc-6.1"))[UC 6.1]
+  - #link(label("uc-13.1"))[UC 13.1]
+- *Estensioni*:
+  - #link(label("uc-13.2"))[UC 13.2]
+  - #link(label("uc-10.5"))[UC 10.5]
+- *Trigger*:
+  - Tempo trascorso da una richiesta supera la soglia massima.
 ==== - UC 13.1: Definizione soglia temporale massima
 #label("uc-13.1")
-
+- *Attori Principali*: Supervisore Locale, Supervisore Globale
+- *Precondizioni*:
+  - Accesso al sistema e ai parametri configurabili.
+- *Postcondizioni*:
+  - Ogni categoria di richiesta ha una soglia temporale definita.
+- *Scenario principale*:
+  - Il supervisore accede alla sezione di configurazione.
+  - Seleziona una categoria di richiesta (riassortimento o trasferimento).
+  - Imposta il valore di soglia in ore/giorni.
+  - Conferma la modifica e il sistema salva il valore.
+- *Scenari alternativi*:
+  - Valore non valido:
+    - Il sistema notifica l’errore e richiede correzione.
 ==== - UC 13.2: Attivazione azioni correttive
 #label("uc-13.2")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Una richiesta attiva ha superato la soglia massima → rilevato da #link(label("uc-13"))[UC 13]
+- *Postcondizioni*:
+  - Il sistema invia una nuova richiesta o avvia un trasferimento alternativo.
+- *Scenario principale*:
+  - Il sistema identifica la richiesta che ha superato la soglia.
+  - Verifica la disponibilità di altri magazzini per soddisfare la richiesta.
+  - Genera una nuova richiesta di trasferimento o approvvigionamento.
+  - Notifica il supervisore dell’intervento.
+- *Scenari alternativi*:
+  - Nessun magazzino disponibile:
+    - Il sistema invia una notifica di allerta al supervisore
+  - Magazzino non operativo → estende #link(label("uc-10.5"))[UC 10.5]
+- *Inclusioni*:
+  - #link(label("uc-5"))[UC 5]
+  - #link(label("uc-8.1"))[UC 8.1]
 === - UC 14: Gestione delle prestazioni sotto carico
 #label("uc-14")
-
+#image("assets/Casi d'uso-UC14.drawio.png", width:75%)
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Il sistema è operativo e riceve richieste da più magazzini/dispositivi.
+- *Postcondizioni*:
+  - Le richieste sono gestite efficientemente; il sistema mantiene performance accettabili.
+- *Scenario principale*:
+  - Il sistema rileva un aumento nel carico di lavoro.
+  - Viene attivato il bilanciamento del carico tra i servizi → #link(label("uc-14.1"))[UC 14.1]
+  - Il sistema monitora in tempo reale l’utilizzo delle risorse → #link(label("uc-14.2"))[UC 14.2]
+  - Se necessario, attiva meccanismi di scaling automatico o gestione dinamica delle risorse → #link(label("uc-14.3"))[UC 14.3]
+  - Il sistema mantiene le performance al di sopra delle soglie minime.
+- *Scenari alternativi*:
+  - Il monitoraggio rileva un “collo di bottiglia”:
+    - Il sistema notifica il Supervisore Globale → #link(label("uc-14.4"))[UC 14.4]
+  - Il sistema non riesce a gestire dinamicamente il carico:
+    - Si attiva un fallback su risorse di backup → #link(label("uc-14.5"))[UC 14.5]
+- *Inclusioni*:
+  - #link(label("uc-14.1"))[UC 14.1]
+  - #link(label("uc-14.2"))[UC 14.2]
+  - #link(label("uc-14.3"))[UC 14.3]
+  - #link(label("uc-15"))[UC 15] → se le scritture simultanee impattano le prestazioni
+- *Estensioni*:
+  - #link(label("uc-14.4"))[UC 14.4]
+  - #link(label("uc-14.5"))[UC 14.5]
+- *Trigger*:
+  - Aumento significativo del carico o numero di richieste simultanee.
 ==== - UC 14.1: Bilanciamento del carico
 #label("uc-14.1")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Il sistema è in condizioni di carico elevato.
+- *Postcondizioni*:
+  - Le richieste sono distribuite efficientemente.
+- *Scenario principale*:
+  - Il sistema rileva che un nodo o servizio è sovraccarico.
+  - Identifica nodi disponibili con risorse libere.
+  - Ridistribuisce dinamicamente le richieste verso nodi meno carichi.
 ==== - UC 14.2: Monitoraggio in tempo reale delle risorse
 #label("uc-14.2")
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Il sistema è attivo.
+- *Postcondizioni*:
+  - Stato aggiornato delle risorse è disponibile per decisioni di bilanciamento.
+- *Scenario principale*:
+  - Il sistema raccoglie metriche sulle risorse di sistema (hardware, software).
+  - Elabora i dati e rileva eventuali sovraccarichi o anomalie.
+  - Salva le metriche per analisi successive.
 
 ==== - UC 14.3: Gestione dinamica delle risorse
 #label("uc-14.3")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - È in corso un monitoraggio attivo delle risorse.
+- *Postcondizioni*:
+  - Le risorse sono riallocate o scalate dinamicamente.
+- *Scenario principale*:
+  - Il sistema rileva utilizzo eccessivo delle risorse.
+  - Valuta possibili azioni correttive (scaling, throttling, code).
+  - Applica la strategia ottimale per evitare il degrado delle prestazioni.
 ==== - UC 14.4: Notifica collo di bottiglia
 #label("uc-14.4")
-
+- *Attori Principali*: Sistema, Supervisore Globale
+- *Precondizioni*:
+  - Il sistema rileva una congestione persistente.
+- *Postcondizioni*:
+  - Supervisore viene informato così può intervenire.
+- *Scenario principale*:
+  - Il sistema identifica una soglia critica superata.
+  - Genera una notifica in tempo reale per il Supervisore Globale.
+  - La notifica contiene metriche e suggerimenti.
+#pagebreak()
 ==== - UC 14.5: Attivazione fallback su risorse di backup
 #label("uc-14.5")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Il sistema non riesce a ridistribuire efficacemente il carico.
+- *Postcondizioni*:
+  - Le richieste sono deviate verso risorse di backup.
+- *Scenario principale*:
+  - Il sistema valuta che il carico non può essere bilanciato con le risorse attuali.
+  - Attiva container di backup o nodi in standby.
+  - Le richieste vengono elaborate dai nodi di backup.
+#pagebreak()
 === - UC 15: Gestione aggiornamenti simultanei dell’inventario
 #label("uc-15")
+#image("assets/Casi d'uso-UC14.drawio.png", width : 75%)
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Due o più magazzini tentano di aggiornare simultaneamente lo stesso dato di inventario.
+- *Postcondizioni*:
+  - Gli aggiornamenti vengono gestiti correttamente, senza perdita o corruzione di dati.
+- *Scenario principale*:
+  - Due o più magazzini inviano aggiornamenti concorrenti.
+  - Il sistema riceve le richieste e ne verifica la concorrenza.
+  - Applica un meccanismo di controllo versioni/timestamp → #link(label("uc-15.1"))[UC 15.1]
+  - Identifica conflitti, se presenti → #link(label("uc-15.2"))[UC 15.2]
+  - Risolve i conflitti secondo una politica definita → #link(label("uc-15.3"))[UC 15.3]
+  - Aggiorna correttamente il dato finale e notifica i magazzini coinvolti.
+- *Scenari alternativi*:
+  - Gli aggiornamenti non sono concorrenti:
+    - il sistema li elabora normalmente.
+  - Il conflitto non può essere risolto automaticamente:
+    - Viene generata una segnalazione al Supervisore Locale → #link(label("uc-15.4"))[UC 15.4]
+- *Inclusioni*:
+  - #link(label("uc-15.1"))[UC 15.1]
+  - #link(label("uc-15.2"))[UC 15.2]
+  - #link(label("uc-15.3"))[UC 15.3]
+- *Estensioni*:
+  - #link(label("uc-15.4"))[UC 15.4]
+  - #link(label("uc-11.3"))[UC 11.3]
+- *Trigger*:
+  - Invio simultaneo di aggiornamenti da più magazzini sullo stesso prodotto o voce di inventario.
 
 ==== - UC 15.1: Applicazione controllo versioni o timestamp
 #label("uc-15.1")
-
+*Attori Principali*: Sistema
+- *Precondizioni*:
+  - È in corso un aggiornamento dell’inventario.
+- *Postcondizioni*:
+  - Le modifiche sono tracciate con una versione/timestamp.
+- *Scenario principale*:
+  - Ogni richiesta di aggiornamento include un identificatore temporale o di versione.
+  - Il sistema confronta la versione con lo stato attuale dell’inventario.
+  - Salva l’aggiornamento o lo mette in attesa se non coerente.
+- *Inclusioni*:
+  - #link(label("uc-16.1"))[UC 16.1] → accodamento e gestione simultaneità
 ==== - UC 15.2: Identificazione di conflitti di aggiornamento
 #label("uc-15.2")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Sono presenti richieste concorrenti per lo stesso dato.
+- *Postcondizioni*:
+  - Il conflitto è riconosciuto e pronto per essere gestito.
+- *Scenario principale*:
+  - Il sistema rileva che due aggiornamenti sono incompatibili o simultanei.
+  - Marca il conflitto e prepara un’azione correttiva.
 ==== - UC 15.3: Risoluzione dei conflitti di aggiornamento
 #label("uc-15.3")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - È stato rilevato un conflitto.
+- *Postcondizioni*:
+  - Il conflitto è stato risolto e l’inventario è stato aggiornato.
+- *Scenario principale*:
+  - Il sistema applica una politica di risoluzione (es. “vince” ultima modifica).
+  - Genera log dell’operazione per revisione e tracciabilità.
+  - Notifica gli attori coinvolti se necessario.
 ==== - UC 15.4: Segnalazione conflitto irrisolto
 #label("uc-15.4")
-
+- *Attori Principali*: Sistema, Supervisore Locale
+- *Precondizioni*:
+  - Il conflitto non può essere risolto automaticamente.
+- *Postcondizioni*:
+  - Il Supervisore riceve una notifica con i dettagli del conflitto.
+- *Scenario principale*:
+  - Il sistema rileva che il conflitto richiede l’intervento di un supervisore.
+  - Invia una notifica al Supervisore Locale con i dettagli dei tentativi di aggiornamento.
+  - Il Supervisore decide come procedere (manualmente o tramite strumenti di amministrazione).
 === - UC 16: Gestione ordini simultanei per uno stesso prodotto
 #label("uc-16")
-
+#image("assets/Casi d'uso-UC16.drawio.png", width : 75%)
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Più richieste di ordine per lo stesso prodotto arrivano in contemporanea da uno o più magazzini.
+- *Postcondizioni*:
+  - Gli ordini sono processati in modo coordinato e coerente, secondo criteri di assegnazione e priorità.
+- *Scenario principale*:
+  - Il sistema riceve più ordini contemporanei per lo stesso prodotto.
+  - Il sistema verifica la disponibilità attuale delle scorte per quel prodotto.
+  - Il sistema attiva il coordinamento tra gli ordini simultanei → #link(label("uc-16.1"))[UC 16.1]
+  - Il sistema assegna le scorte disponibili secondo criteri predefiniti → #link(label("uc-16.2"))[UC 16.2]
+  - In caso di conflitto (scorte insufficienti), applica una politica di priorità → #link(label("uc-16.3"))[UC 16.3]
+  - Aggiorna l’inventario e notifica i magazzini interessati.
+- *Scenari alternativi*:
+  - Le scorte sono sufficienti per tutti gli ordini:
+    - procedere con elaborazione diretta.
+  - Nessun criterio di priorità consente la decisione:
+    - Estensione di → #link(label("uc-16.4"))[UC 16.4]
+- *Inclusioni*:
+  - #link(label("uc-16.1"))[UC 16.1]
+  - #link(label("uc-16.2"))[UC 16.2]
+  - #link(label("uc-16.3"))[UC 16.3]
+- *Estensioni*:
+  - #link(label("uc-16.4"))[UC 16.4]
+  - #link(label("uc-13"))[UC 13] → nel caso in cui esito della gestione ordini riduca le scorte sotto la soglia critica
+- *Trigger*:
+  - Invio simultaneo di più ordini per lo stesso prodotto.
 ==== - UC 16.1: Coordinamento ordini simultanei
 #label("uc-16.1")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Il sistema riceve più ordini per lo stesso prodotto in un breve intervallo di tempo.
+- *Postcondizioni*:
+  - Gli ordini sono messi in coda o raggruppati per una valutazione centralizzata.
+- *Scenario principale*:
+  - Il sistema identifica gli ordini concorrenti.
+  - Li inserisce in una struttura di gestione condivisa.
+  - Avvia la valutazione di assegnazione.
 ==== - UC 16.2: Assegnazione delle scorte secondo criteri predefiniti
 #label("uc-16.2")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Sono presenti ordini concorrenti e scorte limitate.
+- *Postcondizioni*:
+  - Le scorte sono assegnate secondo una logica deterministica (es. ordine temporale, località, criticità).
+- *Scenario principale*:
+  - Il sistema valuta le richieste in base ai criteri impostati (es. priorità geografica, urgenza, data di richiesta).
+  - Assegna le scorte disponibili agli ordini soddisfabili.
+  - Rilascia una risposta di conferma, conferma parziale o rifiuto.
 ==== - UC 16.3: Applicazione di criteri di priorità
 #label("uc-16.3")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Gli ordini sono in conflitto e le scorte non bastano.
+- *Postcondizioni*:
+  - L’ordine prioritario viene soddisfatto.
+- *Scenario principale*:
+  - Il sistema recupera la configurazione dei criteri di priorità.
+  - Ordina gli ordini per livello di priorità.
+  - Applica le assegnazioni seguendo l’ordine definito.
+  - Per tracciabilità scrive le scelte effettuate nel log.
 ==== - UC 16.4: Segnalazione ordine in conflitto non risolvibile
 #label("uc-16.4")
-
+- *Attori Principali*: Sistema, Supervisore Locale
+- *Precondizioni*:
+  - Il sistema non riesce a decidere l’assegnazione tra ordini concorrenti.
+- *Postcondizioni*:
+  - Un Supervisore prende una decisione manuale.
+- *Scenario principale*:
+  - Il sistema rileva che i criteri non portano a una decisione univoca.
+  - Genera una notifica per il Supervisore Locale.
+  - Il Supervisore visualizza i dettagli dei conflitti e decide quale ordine soddisfare.
+  - Il sistema applica la scelta e aggiorna i dati.
 === - UC 17: Gestione autonoma delle operazioni di magazzino come edge nodes
 #label("uc-17")
-
+#image("assets/Casi d'uso-UC17.drawio.png")
+- *Attori Principali*: Sistema
+- *Attori Secondari*: Supervisore Locale, Supervisore Globale
+- *Precondizioni*:
+  - Il magazzino è operativo, connesso localmente, anche se non connesso al cloud.
+- *Postcondizioni*:
+  - Le operazioni sono gestite in locale, con sincronizzazione in cloud quando necessario.
+- *Scenario principale*:
+  - Il sistema rileva una richiesta di operazione sui dati di inventario da parte del magazzino locale.
+  - Il sistema valuta se l’operazione può essere gestita in locale.
+  - Se sì, esegue l’elaborazione localmente per ridurre il traffico di rete → #link(label("uc-17.1"))[UC 17.1] e #link(label("uc-17.2"))[UC 17.2]
+  - Se l’operazione è di scrittura, il sistema attiva la sincronizzazione col cloud → #link(label("uc-17.3"))[UC 17.3]
+  - Il sistema aggiorna lo stato delle scorte localmente e nel cloud (se necessario).
+  - Il Supervisore Locale o Globale può essere notificato di eventuali discrepanze.
+- *Scenari alternativi*:
+  - L’elaborazione locale non è possibile (es. dati incoerenti o nodo non operativo) → #link(label("uc-17.4"))[UC 17.4]
+  - Il cloud non è raggiungibile → #link(label("uc-17.5"))[UC 17.5]
+- *Inclusioni*:
+  - #link(label("uc-17.1"))[UC 17.1]
+  - #link(label("uc-17.2"))[UC 17.2]
+  - #link(label("uc-17.3"))[UC 17.3]
+- *Estensioni*:
+  - #link(label("uc-17.4"))[UC 17.4]
+  - #link(label("uc-17.5"))[UC 17.5]
+- *Trigger*:
+  - Richiesta locale di elaborazione o modifica ai dati di inventario.
 ==== - UC 17.1: Abilitazione operazioni locali su inventario
 #label("uc-17.1")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Il magazzino ha una copia locale dell’inventario.
+- *Postcondizioni*:
+  - Le operazioni possono essere effettuate localmente.
+- *Scenario principale*:
+  - Il sistema verifica lo stato di aggiornamento locale dei dati.
+  - Abilita lettura e scrittura sull’inventario locale, se i dati sono coerenti.
 ==== - UC 17.2: Esecuzione elaborazioni locali
 #label("uc-17.2")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - È attiva la modalità edge computing.
+- *Postcondizioni*:
+  - I dati sono aggiornati in locale.
+- *Scenario principale*:
+  - Il sistema riceve una richiesta (es. calcolo disponibilità, assegnazione ordine).
+  - Esegue l’elaborazione localmente senza coinvolgere il cloud.
+  - Restituisce l’esito all’attore interessato (o ad un altro microservizio).
 ==== - UC 17.3: Sincronizzare con il cloud in seguito a operazione di scrittura
 #label("uc-17.3")
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - È stata effettuata una modifica locale ai dati (scrittura).
+- *Postcondizioni*:
+  - Il dato è sincronizzato con il cloud.
+- *Scenario principale*:
+  - Il sistema intercetta la scrittura effettuata localmente.
+  - Invia l’aggiornamento al cloud.
+  - Risolve eventuali conflitti tramite logica di controllo versioni o timestamp → #link(label("uc-15.2"))[UC 15.2], #link(label("uc-15.3"))[UC 15.3]
+  - Conferma l’avvenuta sincronizzazione.
+
+- *Inclusioni*:
+  - #link(label("uc-15.2"))[UC 15.2]
+  - #link(label("uc-15.3"))[UC 15.3]
 
 ==== - UC 17.4: Delega elaborazione al cloud
 #label("uc-17.4")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - L’elaborazione locale fallisce.
+- *Postcondizioni*:
+  - L’elaborazione viene effettuata sul cloud.
+- *Scenario principale*:
+  - Il sistema rileva che l’elaborazione locale non è possibile.
+  - Reindirizza la richiesta al microservizio cloud corrispondente.
+  - Il cloud esegue l’elaborazione e restituisce l’esito.
 ==== - UC 17.5: Sincronizzare posticipata
 #label("uc-17.5")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Il cloud è irraggiungibile al momento della scrittura locale.
+- *Postcondizioni*:
+  - I dati saranno sincronizzati alla prima occasione utile.
+- *Scenario principale*:
+  - Il sistema salva localmente le modifiche in una coda di sincronizzazione.
+  - Tenta periodicamente di contattare il cloud.
+  - Alla riconnessione, invia le modifiche e gestisce eventuali conflitti.
+#pagebreak()
 === - UC 18: Gestione distribuita dei servizi per i magazzini
 #label("uc-18")
-
+#image("assets/Casi d'uso-UC18.drawio.png", width : 72%)
+- *Attori Principali*: Sistema
+- *Attori Secondari*: Supervisore Locale, Supervisore Globale
+- *Precondizioni*:
+  - Il sistema è attivo e i microservizi sono registrati nel sistema di orchestrazione.
+- *Postcondizioni*:
+  - Le funzionalità del sistema sono distribuite tra più servizi scalabili.
+- *Scenario principale*:
+  - Il sistema rileva l’esigenza di eseguire un’operazione complessa o distribuita.
+  - Determina il microservizio o gruppo di microservizi adatti a svolgere tale operazione.
+  - Inoltra la richiesta ai servizi corretti.
+  - I microservizi comunicano tra loro secondo il protocollo definito.
+  - Il sistema aggrega le risposte e restituisce il risultato.
+  - Eventuali guasti sono gestiti grazie alla resilienza del sistema → #link(label("uc-18.2"))[UC 18.2]
+  - Il carico è bilanciato tra i servizi → #link(label("uc-18.3"))[UC 18.3], #link(label("uc-14.1"))[UC 14.1]
+- *Scenari alternativi*:
+  - Un microservizio non risponde → #link(label("uc-18.4"))[UC 18.4]
+  - La rete è congestionata o rallentata → #link(label("uc-18.4"))[UC 18.4]
+- *Inclusioni*:
+  - #link(label("uc-18.1"))[UC 18.1]
+  - #link(label("uc-18.2"))[UC 18.2]
+  - #link(label("uc-18.3"))[UC 18.3]
+  - #link(label("uc-14.1"))[UC 14.1]
+- *Estensioni*:
+  - #link(label("uc-18.4"))[UC 18.4]
+  - #link(label("uc-18.5"))[UC 18.5]
+- *Trigger*:
+  - Avvio del sistema o evento che richiede scalabilità oppure resilienza (es. carico aumentato, guasto di un servizio, …)
 ==== - UC 18.1: Distribuzione funzionalità su microservizi
 #label("uc-18.1")
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Il sistema è attivo e configurato per la gestione distribuita.
+- *Postcondizioni*:
+  - Ogni funzionalità viene assegnata a un microservizio.
+- *Scenario principale*:
+  - Il sistema analizza le funzionalità richieste.
+  - Assegna a ciascun microservizio una responsabilità (es. inventario, ordini, sincronizzazione).
+  - Registra i microservizi con i relativi endpoint e capacità.
 
 ==== - UC 18.2: Gestione resilienza dei servizi
 #label("uc-18.2")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - I microservizi sono attivi e comunicano tra loro.
+- *Postcondizioni*:
+  - Il sistema mantiene attiva l’operatività anche in caso di errore.
+- *Scenario principale*:
+  - Il sistema monitora la salute dei microservizi.
+  - Se un servizio fallisce, attiva un servizio di backup (failover).
+  - Riavvia o sostituisce i servizi non funzionanti senza interruzione.
 ==== - UC 18.3: Gestione scalabilità dei servizi
 #label("uc-18.3")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Il carico sulle risorse è crescente.
+- *Postcondizioni*:
+  - Il sistema scala dinamicamente i servizi per gestire la domanda.
+- *Scenario principale*:
+  - Il sistema rileva un aumento del carico (RAM, CPU, traffico rete,…).
+  - Istanzia nuove repliche dei microservizi in esecuzione.
+  - Aggiorna il bilanciatore per distribuire correttamente le richieste.
+==== - UC 18.4: Failover e resilienza del servizio
+#label("uc-18.4")
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Uno o più servizi sono non disponibili.
+- *Postcondizioni*:
+  - Le operazioni continuano tramite backup.
+- *Scenario principale*:
+  - Il sistema rileva l’inattività di un microservizio.
+  - Reindirizza le richieste a un’istanza secondaria o ad altri nodi.
+  - Segnala l’errore e continua le operazioni.
+#pagebreak()
+==== - UC 18.5: Scalabilità automatica dei microservizi
+#label("uc-18.5")
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Il sistema è configurato per l’auto-scaling.
+- *Postcondizioni*:
+  - I microservizi aumentano o diminuiscono in base alla richiesta.
+- *Scenario principale*:
+  - Il sistema misura in tempo reale le risorse utilizzate.
+  - Se il carico è alto, crea nuove istanze.
+  - Se il carico scende, dismette le istanze in eccesso.
+#pagebreak()
 === - UC 19: Monitoraggio continuo delle attività di sistema
 #label("uc-19")
-
+#image("assets/Casi d'uso-UC19.drawio.png", width : 90%)
+- *Attori Principali*: Supervisore Locale, Sistema
+- *Attori Secondari*: Supervisore Globale
+- *Precondizioni*:
+  - Il magazzino locale è operativo e connesso al sistema centrale o abilitato a operare in locale.
+- *Postcondizioni*:
+  - Le operazioni di inventario vengono eseguite localmente e sincronizzate con il sistema centrale.
+- *Scenario principale*:
+  - Il Supervisore Locale esegue un’operazione sull’inventario: inserimento, modifica o trasferimento → #link(label("uc-19.1"))[UC 19.1]
+  - Il sistema locale aggiorna l’inventario internamente → #link(label("uc-19.2"))[UC 19.2]
+  - Il sistema centrale viene notificato dell’operazione.
+  - Avviene la sincronizzazione automatica con il cloud → #link(label("uc-11.2"))[UC 11.2]
+  - In caso di conflitto con dati centrali, il sistema avvia una procedura di risoluzione → #link(label("uc-11.3"))[UC 11.3]
+- *Scenari alternativi*:
+  - Connessione al cloud è temporaneamente assente:
+    - I dati sono messi in coda e sincronizzati appena disponibile → #link(label("uc-19.3"))[UC 19.3]
+  - Il conflitto non è risolvibile automaticamente:
+    - Richiede intervento del Supervisore Globale → #link(label("uc-19.4"))[UC 19.4]
+- *Inclusioni*:
+  - #link(label("uc-19.1"))[UC 19.1]
+  - #link(label("uc-19.2"))[UC 19.2]
+  - #link(label("uc-11.2"))[UC 11.2]
+- *Estensioni*:
+  - #link(label("uc-19.3"))[UC 19.3]
+  - #link(label("uc-19.4"))[UC 19.4]
+  - #link(label("uc-11.3"))[UC 11.3]
+- *Trigger*:
+  - Inizio di un’operazione locale su inventario (inserimento, modifica o trasferimento).
 ==== - UC 19.1: Raccolta log e metriche
 #label("uc-19.1")
-
+- *Attori Principali*: Supervisore Locale
+- *Precondizioni*:
+  - Il magazzino locale è disponibile e configurato per operazioni autonome.
+- *Postcondizioni*:
+  - Un'operazione di inventario è completata localmente.
+- *Scenario principale*:
+  - Il Supervisore Locale seleziona il tipo di operazione (es. inserimento nuovo stock, modifica quantità, trasferimento ad altro magazzino).
+  - Inserisce i dati necessari.
+  - Conferma l’operazione.
+  - Il sistema locale registra il cambiamento.
 ==== - UC 19.2: Analisi eventi anomali
 #label("uc-19.2")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - È stata eseguita un’operazione locale di inventario.
+- *Postcondizioni*:
+  - L’inventario locale è aggiornato.
+- *Scenario principale*:
+  - Il sistema riceve la modifica da #link(label("uc-19.1"))[UC 19.1]
+  - Aggiorna lo stato locale dell’inventario.
+  - Prepara i dati per la sincronizzazione con il sistema centrale.
 ==== - UC 19.3: Generazione report periodici
 #label("uc-19.3")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - L’operazione locale è stata effettuata, ma il cloud non è raggiungibile.
+- *Postcondizioni*:
+  - I dati sono messi in coda per la sincronizzazione successiva.
+- *Scenario principale*:
+  - Il sistema rileva l’assenza di rete.
+  - Memorizza l’operazione in una coda locale.
+  - Appena disponibile la connessione, invia i dati al cloud.
 ==== - UC 19.4: Notifica automatica di eventi critici
 #label("uc-19.4")
-
+- *Attori Principali*: Sistema, Supervisore Globale
+- *Precondizioni*:
+  - La sincronizzazione ha generato un conflitto non risolvibile automaticamente.
+- *Postcondizioni*:
+  - Il conflitto è risolto manualmente e i dati sono aggiornati.
+- *Scenario principale*:
+  - Il sistema notifica un conflitto di aggiornamento.
+  - Il Supervisore Globale accede alla dashboard di risoluzione.
+  - Analizza i dati locali e centrali.
+  - Decide quale versione mantenere e conferma la scelta.
+  - Il sistema aggiorna i dati in base alla decisione.
 === - UC 20: Gestione sicurezza accessi e autorizzazioni
 #label("uc-20")
-
+#image("assets/Casi d'uso-UC20.drawio.png", width : 86%)
+- *Attori Principali*: Sistema
+- *Attori Secondari*: Supervisore Locale, Supervisore Globale
+- *Precondizioni*:
+  - Il sistema è operativo.
+  - I servizi di monitoraggio sono attivi.
+- *Postcondizioni*:
+  - Le attività sospette sono state rilevate, tracciate e notificate.
+  - I log delle operazioni sono aggiornati.
+- *Scenario principale*:
+  - Il sistema attiva i moduli di monitoraggio centralizzato → #link(label("uc-20.1"))[UC 20.1]
+  - Il sistema registra tutti gli accessi (inclusi login/logout) e le operazioni rilevanti → #link(label("uc-20.3"))[UC 20.3]
+  - Il sistema analizza in tempo reale il comportamento degli utenti e dei componenti distribuiti.
+  - Se viene rilevata un'attività sospetta o anomala:
+    - Il sistema genera una notifica per i supervisori.
+    - L’attività viene registrata nei log.
+    - I Supervisori possono visualizzare e analizzare i log attraverso l'interfaccia.
+- *Scenari alternativi*:
+  - Il sistema rileva numerosi tentativi di accesso falliti → #link(label("uc-20.4"))[UC 20.4]
+  - Il sistema registra accessi da IP non noti o da località insolite → #link(label("uc-20.2"))[UC 20.2]
+  - Il Supervisore analizza i log in seguito a una notifica → può avviare un’azione correttiva
+- *Inclusioni*:
+  - #link(label("uc-20.1"))[UC 20.1]
+  - #link(label("uc-20.2"))[UC 20.2]
+  - #link(label("uc-20.3"))[UC 20.3]
+  - #link(label("uc-20.4"))[UC 20.4]
+- *Trigger*:
+  - Attività da parte di utenti o sistemi (es. login, operazioni sui dati).
+  - Tentativi di accesso anomalo.
 ==== - UC 20.1: Autenticazione utenti
 #label("uc-20.1")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Sistema in esecuzione
+- *Postcondizioni*:
+  - Monitoraggio avviato
+- *Scenario principale*:
+  - Il sistema attiva i moduli di monitoraggio durante l’avvio.
+  - I componenti di rete e autenticazione iniziano a comunicare con il modulo centralizzato.
+  - Il sistema conferma l’attivazione.
+- *Trigger*:
+  - Avvio del sistema
 ==== - UC 20.2: Autorizzazione operazioni per ruolo
 #label("uc-20.2")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Monitoraggio attivo
+- *Postcondizioni*:
+  - Attività sospetta rilevata e registrata
+- *Scenario principale*:
+  - Il sistema valuta il comportamento degli utenti (frequenza accessi, IP, orari).
+  - Identifica pattern anomali.
+  - Registra l’evento e genera un allarme.
+- *Estensioni*:
+  - In caso di accessi anomali → #link(label("uc-1"))[UC 1]
+  - In caso di tentativi ripetuti falliti → #link(label("uc-2"))[UC 2]
 ==== - UC 20.3: Registrazione attività utente
 #label("uc-20.3")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Monitoraggio attivo
+- *Postcondizioni*:
+  - Log aggiornato
+- *Scenario principale*:
+  - Il sistema registra ogni login → #link(label("uc-1"))[UC 1]
+  - Registra ogni tentativo fallito → #link(label("uc-2"))[UC 2]
+  - Registra ogni logout → #link(label("uc-3"))[UC 3]
+  - Ogni operazione rilevante viene associata a timestamp, ID utente e contesto.
+- *Inclusioni*:
+  - #link(label("uc-1"))[UC 1]
+  - #link(label("uc-2"))[UC 2]
+  - #link(label("uc-3"))[UC 3]
+#pagebreak()
 ==== - UC 20.4: Invio allarmi in tempo reale
 #label("uc-20.4")
-
+- *Attori Principali*: Sistema
+- *Attori Secondari*: Supervisore Locale, Supervisore Globale
+- *Precondizioni*:
+  - Attività anomala rilevata
+- *Postcondizioni*:
+  - Supervisore notificato
+- *Scenario principale*:
+  - Il sistema rileva un comportamento sospetto.
+  - Invio di notifica al supervisore interessato.
+  - L’evento viene registrato nel log.
+- *Estensioni*:
+  - In caso di eventi critici → #link(label("uc-20.2"))[UC 20.2]
+#pagebreak()
 === - UC 21: Backup e ripristino dati
 #label("uc-21")
+#image("assets/Casi d'uso-UC21.drawio.png", width : 86%)
+- *Attori Principali*: Sistema
+- *Attori Secondari*: Supervisore Locale, Supervisore Globale
+- *Precondizioni*:
+  - Il sistema è attivo e ha accesso a dati storici sulle vendite e alle scorte correnti.
+  - I moduli predittivi sono correttamente configurati.
+- *Postcondizioni*:
+  - Sono generate previsioni di domanda.
+  - Sono pianificati riassortimenti preventivi per evitare carenze.
+- *Scenario principale*:
+  - Il sistema raccoglie dati storici di vendita e disponibilità attuale delle scorte.
+  - Il sistema analizza i dati con un modello predittivo (es. machine learning).
+  - Il sistema genera una previsione di domanda per ciascun prodotto.
+  - Il sistema pianifica automaticamente i riassortimenti in base alle previsioni.
+  - Se un prodotto rischia di andare in esaurimento, il sistema attiva azioni preventive (es. proposta d'ordine o avviso al supervisore).
+  - Il Supervisore Locale/Globale può visualizzare i dati generati e validare eventuali modifiche.
+- *Scenari alternativi*:
+  - I dati storici sono incompleti:
+    - Il sistema utilizza euristiche di fallback → #link(label("uc-21.1"))[UC 21.1]
+  - Il Supervisore modifica manualmente le proposte del sistema → #link(label("uc-21.2"))[UC 21.2]
+  - Il riassortimento automatico non può essere pianificato per problemi logistici:
+    - Viene generato un avviso → #link(label("uc-21.3"))[UC 21.3]
+- *Inclusioni*:
+  - #link(label("uc-21.1"))[UC 21.1]
+  - #link(label("uc-21.2"))[UC 21.2]
+  - #link(label("uc-21.3"))[UC 21.3]
+- *Trigger*:
+  - Esecuzione periodica automatica (es. ogni notte o settimanalmente).
+  - Modifica importante dello storico o dei pattern di acquisto.
 
 ==== - UC 21.1: Backup periodico inventario
 #label("uc-21.1")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Accesso ai dati storici e alle informazioni correnti sulle scorte
+- *Postcondizioni*:
+  - Previsioni generate per ciascun prodotto
+- *Scenario principale*:
+  - Il sistema raccoglie ed elabora i dati storici e attuali.
+  - Il modello predittivo produce una stima della domanda futura.
+  - Le previsioni vengono salvate nel sistema.
+- *Trigger*:
+  - Esecuzione pianificata o evento esterno (es. cambio stagionale)
 ==== - UC 21.2: Ripristino da backup
 #label("uc-21.2")
-
+- *Attori Principali*: Sistema
+- *Attori Secondari*: Supervisore Locale, Supervisore Globale
+- *Precondizioni*:
+  - Previsioni disponibili
+- *Postcondizioni*:
+  - Riassortimenti pianificati automaticamente
+- *Scenario principale*:
+  - Il sistema valuta se le scorte previste soddisfano la domanda prevista.
+  - Pianifica un riassortimento (ordine o trasferimento).
+  - Notifica il Supervisore per conferma o revisione.
+- *Scenario alternativo*:
+  - Il Supervisore modifica le quantità → aggiornamento dei dati
+- *Inclusioni*:
+  - #link(label("uc-21.1"))[UC 21.1]
 ==== - UC 21.3: Verifica integrità dati backup
 #label("uc-21.3")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Domanda prevista > scorte disponibili
+- *Postcondizioni*:
+  - Azioni preventive attivate
+- *Scenario principale*:
+  - Il sistema rileva un rischio di esaurimento.
+  - Verifica le opzioni disponibili: nuovo ordine, trasferimento da altro magazzino, limitazione ordini.
+  - Propone un'azione o la attua automaticamente (se configurato).
+  - Notifica il supervisore.
+- *Inclusioni*:
+  - #link(label("uc-21.1"))[UC 21.1]
+- *Estensioni*:
+  - #link(label("uc-13"))[UC 13] (per garantire livelli minimi)
+  - Possibili casi: #link(label("uc-5"))[UC 5], #link(label("uc-7"))[UC 7]
 === - UC 22: Reportistica e analisi dati
 #label("uc-22")
-
+#image("assets/Casi d'uso-UC22.drawio.png", width : 95%)
+- *Attori Principali*: Sistema
+- *Attori Secondari*: Supervisore Locale, Supervisore Globale
+- *Precondizioni*:
+  - Il sistema ha accesso ai dati storici di vendita e consegna.
+  - I modelli statistici predittivi sono disponibili e attivi.
+  - Le strategie di approvvigionamento sono configurabili.
+- *Postcondizioni*:
+  - Il sistema ha calcolato le previsioni di domanda.
+  - Sono state adattate le strategie di approvvigionamento.
+  - Sono stati generati piani di riassortimento ottimizzati.
+- *Scenario principale*:
+  - Il sistema raccoglie e analizza i dati storici di vendita e consegna.
+  - Applica modelli statistici per identificare pattern stagionali e tendenze di consumo.
+  - Prevede la domanda futura per ciascun prodotto.
+  - Adatta le strategie di approvvigionamento in base ai risultati.
+  - Calcola i livelli ottimali di scorte da mantenere.
+  - Genera raccomandazioni o azioni automatiche di riassortimento.
+  - Il Supervisore può visualizzare, approvare o modificare le raccomandazioni.
+- *Scenari alternativi*:
+  - I dati storici sono incompleti:
+    - Il sistema utilizza valori medi o interpolazioni → #link(label("uc-22.1"))[UC 22.1]
+  - I modelli predittivi rilevano anomalie nei pattern:
+    - L’output viene validato manualmente → #link(label("uc-22.2"))[UC 22.2]
+  - Il supervisore impone strategie fisse:
+    - Il sistema sospende l’adattamento automatico → #link(label("uc-22.3"))[UC 22.3]
+  - Il magazzino è già pieno o sottodimensionato:
+    - Il sistema propone misure correttive → #link(label("uc-22.4"))[UC 22.4]
+- *Inclusioni*:
+  - #link(label("uc-22.1"))[UC 22.1]
+  - #link(label("uc-22.2"))[UC 22.2]
+  - #link(label("uc-22.3"))[UC 22.3]
+  - #link(label("uc-22.4"))[UC 22.4]
+- *Trigger*:
+  - Pianificazione periodica automatica (es. settimanale/mensile).
+  - Attivazione manuale da parte del Supervisore.
+  - Modifica nei dati o parametri (es. cambi stagionali, cambi tendenziali).
 ==== - UC 22.1: Generazione report periodici
 #label("uc-22.1")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Disponibilità dei dati storici
+- *Postcondizioni*:
+  - Dati strutturati pronti per la previsione
+- *Scenario principale*:
+  - Il sistema raccoglie i dati da magazzini locali e cloud.
+  - Elimina outlier e dati incompleti.
+  - Aggrega i dati per prodotto, zona, periodo.
+  - Prepara i dataset per l’elaborazione statistica.
+- *Trigger*:
+  - Esecuzione periodica o richiesta manuale
 ==== - UC 22.2: Analisi trend scorte
 #label("uc-22.2")
-
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Dataset analizzato disponibile
+- *Postcondizioni*:
+  - Previsioni generate per ogni prodotto
+- *Scenario principale*:
+  - Il sistema applica modelli (es. regressione, reti neurali).
+  - Identifica stagionalità e trend nei dati.
+  - Elabora le previsioni a breve e medio termine.
+  - Salva le previsioni nel sistema centrale.
+- *Inclusioni*:
+  - #link(label("uc-22.1"))[UC 22.1]
+#pagebreak()
 ==== - UC 22.3: Personalizzazione report
 #label("uc-22.3")
-
+- *Attori Principali*: Sistema
+- *Attori Secondari*: Supervisore Locale, Supervisore Globale
+- *Precondizioni*:
+  - Previsioni disponibili
+- *Postcondizioni*:
+  - Strategia di riassortimento aggiornata
+- *Scenario principale*:
+  - Il sistema confronta la previsione con la politica attuale di approvvigionamento.
+  - Valuta lead time, frequenza ordini e soglie minime.
+  - Suggerisce modifiche o automatizza gli aggiustamenti.
+  - Il supervisore può confermare, rifiutare o modificare la proposta.
+- *Inclusioni*:
+  - #link(label("uc-22.2"))[UC 22.2]
+==== - UC 22.4: Ottimizzazione dei livelli di scorte
+#label("uc-22.4")
+- *Attori Principali*: Sistema
+- *Precondizioni*:
+  - Strategia aggiornata e previsione disponibile
+- *Postcondizioni*:
+  - Livelli ottimali calcolati e azioni di riassortimento pianificate
+- *Scenario principale*:
+  - Il sistema determina le soglie ottimali per ciascun prodotto.
+  - Calcola quanto e quando riassortire.
+  - Genera automaticamente richieste o suggerimenti.
+  - Il supervisore può intervenire o confermare.
+- *Inclusioni*:
+  - #link(label("uc-22.3"))[UC 22.3]
+- *Estensioni*:
+  - #link(label("uc-13"))[UC 13] (per garantire sicurezza scorte)
 === - UC 23: Gestione notifiche e allarmi
 #label("uc-23")
-
+#image("assets/Casi d'uso-UC23.drawio.png", width : 85%)
+- *Attori Principali*: Sistema
+- *Attori Secondari*: Supervisore Locale, Supervisore Globale
+- *Precondizioni*:
+  - L’utente è autenticato
+  - L’interfaccia utente è accessibile e funzionante.
+- *Postcondizioni*:
+  - L’utente ha visualizzato e/o modificato le informazioni di inventario.
+  - Eventuali modifiche sono state salvate e propagate al sistema centrale.
+  - I dati visualizzati riflettono lo stato aggiornato delle scorte in tempo reale.
+- *Scenario principale*:
+  - Il Supervisore Locale o Globale accede all’interfaccia grafica.
+  - Il sistema carica e visualizza in tempo reale le scorte disponibili.
+  - L’utente esplora il contenuto della dashboard e i dati per magazzino/prodotto.
+  - L’utente seleziona un’azione (es. modifica scorte, trasferimento, riordino).
+  - Il sistema aggiorna l’inventario e sincronizza le modifiche con il cloud.
+  - L’utente riceve conferma dell’operazione.
+- *Scenari alternativi*:
+  - La visualizzazione delle scorte fallisce:
+    - Viene mostrato un messaggio di errore e suggerito il ripristino → #link(label("uc-23.2"))[UC 23.2]
+  - L’utente non ha i privilegi per alcune operazioni:
+    - Alcune funzionalità risultano disabilitate
+  - L’utente annulla un’operazione:
+    - Nessuna modifica viene salvata → #link(label("uc-23.3"))[UC 23.3]
+- *Inclusioni*:
+  - #link(label("uc-1"))[UC 1]
+  - #link(label("uc-5"))[UC 5]
+  - #link(label("uc-7"))[UC 7]
+  - #link(label("uc-8"))[UC 8]
+  - #link(label("uc-11"))[UC 11]
+- *Estensioni*:
+  - #link(label("uc-23.1"))[UC 23.1]
+  - #link(label("uc-23.2"))[UC 23.2]
+  - #link(label("uc-23.3"))[UC 23.3]
+- *Trigger*:
+  - Accesso alla dashboard da parte di un supervisore.
+  - Necessità di aggiornare o monitorare lo stato delle scorte.
 ==== - UC 23.1: Configurazione soglie notifiche
 #label("uc-23.1")
-
+- *Attori Principali*: Supervisore Locale, Supervisore Globale
+- *Precondizioni*:
+  - Supervisore autenticato.
+  - Connessione attiva al sistema.
+- *Postcondizioni*:
+  - Le scorte sono visualizzate in tempo reale.
+- *Scenario principale*:
+  - Il supervisore accede alla dashboard.
+  - Il sistema recupera i dati di inventario aggiornati.
+  - Le scorte vengono presentate in una vista tabellare/grafica.
+  - Il sistema aggiorna i dati ogni X secondi o su richiesta.
+- *Inclusioni*:
+  - #link(label("uc-11"))[UC 11] (visualizzazione stato magazzino)
 ==== - UC 23.2: Invio notifiche automatiche
 #label("uc-23.2")
-
+- *Attori Principali*: Sistema
+- *Attori Secondari*: Supervisore Locale, Supervisore Globale
+- *Precondizioni*:
+  - Connessione instabile o servizi non disponibili.
+- *Postcondizioni*:
+  - Viene notificato il fallimento della visualizzazione.
+- *Scenario principale*:
+  - Il supervisore accede alla dashboard.
+  - Il sistema tenta di caricare i dati.
+  - Si verifica un errore (es. timeout, servizio cloud non raggiungibile).
+  - Il sistema mostra un messaggio con opzioni di riprova o offline mode.
 ==== - UC 23.3: Gestione conferma e escalation
 #label("uc-23.3")
-
-=== - UC 24: Integrazione con sistemi esterni
-#label("uc-24")
-
-==== - UC 24.1: Sincronizzazione dati con ERP
-#label("uc-24.1")
-
-==== - UC 24.2: Interfaccia API per terze parti
-#label("uc-24.2")
-
-==== - UC 24.3: Gestione errori di integrazione
-#label("uc-24.3")
-
-=== - UC 25: Manutenzione e aggiornamento sistema
-#label("uc-25")
-
-==== - UC 25.1: Aggiornamento software
-#label("uc-25.1")
-
-==== - UC 25.2: Monitoraggio stato sistema
-#label("uc-25.2")
-
-==== - UC 25.3: Intervento manutentivo
-#label("uc-25.3")
-
+- *Attori Principali*: Supervisore Locale, Supervisore Globale
+- *Precondizioni*:
+  - Supervisore autenticato e dati caricati.
+- *Postcondizioni*:
+  - Operazione di inventario completata.
+- *Scenario principale*:
+  - Il supervisore seleziona un’operazione (aggiunta, modifica, trasferimento).
+  - Il sistema mostra un modulo dedicato all’azione scelta.
+  - L’utente compila e conferma il modulo.
+  - Il sistema salva l’azione e aggiorna lo stato delle scorte.
+  - Il cloud viene sincronizzato con l’operazione effettuata.
+- *Inclusioni*:
+  - #link(label("uc-5"))[UC 5]
+  - #link(label("uc-7"))[UC 7]
+  - #link(label("uc-8"))[UC 8]
 
 = Requisiti#super[G]
 #v(0.5cm)
