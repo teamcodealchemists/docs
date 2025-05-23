@@ -16,7 +16,7 @@
 #let titolo = "Piano di Progetto"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "0.2.0"
+#let versione = "0.3.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -27,24 +27,30 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [0.3.0],
+  [23/05/2025],
+  [M. Dalla Pozza],
+  [N. Moretto],
+  [Aggiunta del contenuto: Struttura del team, Budget e risorse.],
+
 
   [0.2.0],
   [11/05/2025],
-  [D.P Mattia],
+  [M. Dalla Pozza],
   [S. Marana],
-  [Aggiunta del contenuto: Rischi, Sprint e altri],
+  [Aggiunta del contenuto: Rischi, Sprint#super[G] e altri.],
 
   [0.1.0],
   [09/04/2025],
   [N. Moretto],
   [S. Marana],
-  [Inizio redazione documento: Introduzione generale],
+  [Inizio redazione documento: Introduzione generale.],
   
   [0.0.1],
   [08/04/2025],
   [N. Moretto],
   [S. Marana],
-  [Creazione template e struttura del documento]
+  [Creazione template e struttura del documento.]
 )
 
 #let contenuto = (
@@ -70,36 +76,29 @@
 
 = Introduzione
 == Informazioni generali
-<<<<<<< HEAD
-#v(1em)
-Il *Piano di Progetto#super[G]* è un documento che definisce le modalità di gestione del progetto, le risorse necessarie e i rischi attesi.\ 
-
-Il piano di progetto è un documento vivo, che viene aggiornato durante il ciclo di vita del progetto di *Ingegneria del Software*, in quanto le attività vengono pianificate volta per volta e le risorse vengono allocate in base alle necessità. Una progettazione dettagliata sul lungo termine, infatti, si rivelerebbe inefficace.
-=======
-Il *Piano di Progetto#super[G]* è un documento che definisce le modalità di gestione del progetto, le risorse necessarie e i rischi attesi.\ Il piano di progetto è un documento vivo, che viene aggiornato durante il ciclo di vita del progetto di *Ingegneria del Software*, in quanto le attività vengono pianificate volta per volta e le risorse vengono allocate in base alle necessità. Una progettazione dettagliata sul lungo termine, infatti, si rivelerebbe inefficace in quanto sensibile ad imprevisti ed esigenze del cliente o di sviluppo.
->>>>>>> 22558aedc260aa8994aae582e6fcc6bd93f444a6
+Il *Piano di Progetto#super[G]* è un documento che definisce le modalità di gestione del progetto, le risorse necessarie e i rischi attesi.\ Il piano di progetto è un documento vivo, che viene aggiornato durante il ciclo di vita del progetto di *Ingegneria del Software*, in quanto le attività vengono pianificate volta per volta e le risorse vengono allocate in base alle necessità. Una progettazione dettagliata sul lungo termine, infatti, si rivelerebbe inefficace in quanto sensibile#super[G] ad imprevisti ed esigenze del cliente#super[G] o di sviluppo.
 
 Il documento è molto importante per permettere una corretta pianificazione del lavoro e dei vari sprint#super[G], analizzando il tempo previsto ed effettivo per ogni attività, tenendo conto dei rischi e delle risorse disponibili.
 
 == Informazioni sul prodotto
 #v(1em)
 
-Il progetto riguarda lo sviluppo di un sistema di gestione per magazzini distribuiti, con l'obiettivo di ottimizzare la gestione dell'inventario in una rete di magazzini geograficamente separati. Questo sistema deve garantire che i flussi di materiali e prodotti tra i magazzini siano gestiti in tempo reale, evitando rotture di stock e migliorando la distribuzione delle scorte. Il sistema dovrà anche ridurre i livelli medi di inventario, mantenendo però scorte di sicurezza per gestire variazioni nella domanda o ritardi nelle consegne.
+Il progetto riguarda lo sviluppo di un sistema di gestione per magazzini distribuiti, con l'obiettivo di ottimizzare la gestione dell'inventario#super[G] in una rete di magazzini geograficamente separati. Questo sistema deve garantire che i flussi di materiali e prodotti tra i magazzini siano gestiti in tempo reale, evitando rotture di stock e migliorando la distribuzione delle scorte#super[G]. Il sistema dovrà anche ridurre i livelli medi di inventario#super[G], mantenendo però scorte#super[G] di sicurezza per gestire variazioni nella domanda o ritardi nelle consegne.
 
-La soluzione proposta si baserà su un'architettura a microservizi, che permetterà a ogni magazzino di gestire autonomamente il proprio inventario, mentre le informazioni verranno sincronizzate in tempo reale con un sistema centrale. Il sistema dovrà essere in grado di monitorare i livelli di inventario, gestire conflitti derivanti da aggiornamenti simultanei, implementare riassortimenti predittivi basati su machine learning e garantire una visibilità centralizzata in tempo reale delle operazioni. Inoltre, saranno utilizzate tecnologie moderne e scalabili come Node.js, Typescript, Go, Nats e Docker, per garantire prestazioni elevate e l'interoperabilità tra i magazzini.
+La soluzione proposta si baserà su un'architettura#super[G] a microservizi#super[G], che permetterà a ogni magazzino di gestire autonomamente il proprio inventario#super[G], mentre le informazioni verranno sincronizzate in tempo reale con un sistema centrale. Il sistema dovrà essere in grado di monitorare i livelli di inventario#super[G], gestire conflitti derivanti da aggiornamenti simultanei, implementare riassortimenti#super[G] predittivi basati su machine learning e garantire una visibilità centralizzata in tempo reale delle operazioni. Inoltre, saranno utilizzate tecnologie moderne e scalabili come Node.js, Typescript, Go, Nats e Docker, per garantire prestazioni elevate e l'interoperabilità tra i magazzini.
 
-In sintesi, il progetto si propone di migliorare l’efficienza operativa della gestione logistica, riducendo i rischi legati alla gestione delle scorte e ottimizzando i flussi tra i magazzini.
-
-
+In sintesi, il progetto si propone di migliorare l’efficienza operativa della gestione logistica, riducendo i rischi legati alla gestione delle scorte#super[G] e ottimizzando i flussi tra i magazzini.
 
 
-== Glossario
+
+
+== Glossario#super[G]
 La realizzazione di un software richiede, ancor prima dello sviluppo, una fase di analisi e progettazione. Dato che il lavoro durante questa fase è svolto da più persone e in modo asincrono, è necessario documentare tutte queste attività per tenere traccia di ciò che è stato fatto e per evitare confusione. 
 
 Si potrà dedurre che questi documenti potrebbero contenere parole o frasi che non sono di uso comune, ma che sono state scelte per essere più specifiche e per evitare ambiguità. Per questo motivo è stato creato un glossario#super[G] che contiene le definizioni di tali termini, al seguente #link("https://teamcodealchemists.github.io/glossario")[#underline[indirizzo]]. 
 
 == Riferimenti   //Inserire riferimenti al capitolato del progetto e a lezioni/slide del professore se necessario
-- *Capitolato d'appalto C6 - Gestione di un magazzino distribuito - _M31_*\
+- *Capitolato#super[G] d'appalto C6 - Gestione di un magazzino distribuito - _M31_*\
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")
 
   //TODO: da completare
@@ -120,11 +119,11 @@ Per valutare nel migliore modo possibile i rischi sono stati definiti i seguenti
 
 //- *Indice*: un valore numerico che indica in modo univoco ogni rischio;
 
-- *Tipo*: Rappresenta l'impatto che il rischio potrebbe avere sul progetto, ed è classificato in Basso, Medio o Alto
+- *Tipo*: Rappresenta l'impatto che il rischio potrebbe avere sul progetto, ed è classificato in Basso, Medio o Alto;
 
-- *Gravità*: Descrive le conseguenze che un rischio ha se si verifica, con l'eventuale possibilità di modifica alla pianificazione o al progetto
+- *Gravità*: Descrive le conseguenze che un rischio ha se si verifica, con l'eventuale possibilità di modifica alla pianificazione o al progetto;
 
-- *Probabilità*: Indica, come da nome, la probabilità che il rischio si verifichi durante lo sviluppo del progetto
+- *Probabilità*: Indica, come da nome, la probabilità che il rischio si verifichi durante lo sviluppo del progetto.
 
 #v(1em)
 #align(center)[
@@ -132,20 +131,20 @@ Per valutare nel migliore modo possibile i rischi sono stati definiti i seguenti
     dati: (
       [1], 
       [Basso], 
-      [L'impatto sul progetto è minimo, un lieve rallentamento che non modifica i tempi di consegna], 
+      [L'impatto sul progetto è minimo, un lieve rallentamento che non modifica i tempi di consegna.], 
       [È molto improbabile che si verifichi,
-      ma esistono situazioni che potrebbero contribuirne alla nascita],
+      ma esistono situazioni che potrebbero contribuirne alla nascita.],
 
       [2], 
       [Medio], 
-      [L'evento richiede un parziale adattamento al piano e l'organizzazione iniziale, con uno sforzo supplementare ma con un impatto gestibile], 
-      [Esiste una probabilità media che il rischio si realizzi], 
+      [L'evento richiede un parziale adattamento al piano e l'organizzazione iniziale, con uno sforzo supplementare ma con un impatto gestibile.], 
+      [Esiste una probabilità media che il rischio si realizzi.], 
 
       [3], 
       [Alto], 
       [Il rischio comporta ritardi significativi,
-      un possibile aumento dei costi o un degrado della qualità, impattando negativamente sul raggiungimento degli obbiettivi del progetto], 
-      [Altamente probabile che il rischio si verifichi, con diversi segni evidenti che ne indicano la possibilità che accada], 
+      un possibile aumento dei costi o un degrado della qualità, impattando negativamente sul raggiungimento degli obbiettivi del progetto.], 
+      [Altamente probabile che il rischio si verifichi, con diversi segni evidenti che ne indicano la possibilità che accada.], 
   ),
     didascalia: "Indici di gravità e probabilità gestione dei rischi"
   )
@@ -157,13 +156,13 @@ Per valutare nel migliore modo possibile i rischi sono stati definiti i seguenti
 
 I rischi del progetto sono suddivisi in quattro categorie principali, in base al tipo di problematiche che potrebbero verificarsi:
 
-- Rischi nell'organizzazione e gestione del progetto
+- Rischi nell'organizzazione e gestione del progetto;
 
-- Rischi nella comunicazione
+- Rischi nella comunicazione;
 
-- Rischi individuali
+- Rischi individuali;
 
-- Rischi di natura tecnologica
+- Rischi di natura tecnologica.
 
 Ogni rischio è identificato tramite un codice univoco, strutturato come segue:
 
@@ -173,17 +172,17 @@ Dove:
 
 + *Categoria*: Rappresenta la tipologia del rischio, che puo essere:
 
-  - *P*: per i rischi di pianificazione
+  - *P*: per i rischi di pianificazione;
 
-  - *C*: per i rischi comunicativi
+  - *C*: per i rischi comunicativi;
 
-  - *I*: per i rischi individuali
+  - *I*: per i rischi individuali;
 
-  - *T*: per i rischi tecnologici
+  - *T*: per i rischi tecnologici.
 
 + *Indice*: Identificativo progressivo univoco all'interno della categoria.
 
-+ *Nome*: Una breve descrizione del rischio
++ *Nome*: Una breve descrizione del rischio.
 
 == Rischi tecnologici //tecnologie utilizzate ed eventuali errori
 
@@ -202,15 +201,15 @@ Dove:
     [Media],
 
     [*Descrizione*],
-    [Inesperienza nell'uso di una o più tecnologie utilizzate nel progetto],
+    [Inesperienza nell'uso di una o più tecnologie utilizzate nel progetto.],
 
     [*Rilevamento*],
-    [Comunicazione da parte dei membri del team e rallentamenti nello sviluppo],
+    [Comunicazione da parte dei membri del team e rallentamenti nello sviluppo.],
 
     [*Contromisure*], 
     [In primo luogo grazie ad un impegno parallelo da parte del team di aggiornarsi ed imparare dove necessario. 
     In aggiunta dalla condivisone di materiale informativo/didattico e dall'organizzazione di riunioni/incontri 
-    rivolti ad aiutare membri del team in difficoltà],
+    rivolti ad aiutare membri del team in difficoltà.],
   ),
   didascalia: "Tabella RT1"
 )
@@ -232,14 +231,14 @@ Dove:
 
     [*Descrizione*],
     [Rischio legato ad un utilizzo errato o non ottimale delle tecnologie in uso nel progetto che potrebbero portare ad
-    errori e rallentamenti],
+    errori e rallentamenti.],
 
     [*Rilevamento*],
-    [Problemi di configurazione e funzionamento degli elementi costitutivi dell'architettura in uso],
+    [Problemi di configurazione e funzionamento degli elementi costitutivi dell'architettura#super[G] in uso.],
 
     [*Contromisure*], 
     [Studio più approfondito e mirato alle singole componenti del sistema da parte di uno o più membri del team 
-    per ottenere una panoramica migliore al fine di risolvere il problema],
+    per ottenere una panoramica migliore al fine di risolvere il problema.],
   ),
   didascalia: "Tabella RT2"
 )
@@ -254,8 +253,8 @@ Dove:
     [RT3],
 
     [*Descrizione*],
-    [Lo sviluppo software prevede implicitamente la possibilità di scrivere codice non completamente corretto, 
-    a maggior ragione se il linguaggio in uso e il suo funzionamento non sono ben conosciuti],
+    [Lo sviluppo software prevede implicitamente la possibilità di scrivere codice#super[G] non completamente corretto, 
+    a maggior ragione se il linguaggio in uso e il suo funzionamento non sono ben conosciuti.],
 
     [*Gravità*],
     [Bassa],
@@ -264,16 +263,16 @@ Dove:
     [Alta],
 
     [*Rilevamento*],
-    [Output dell' algoritmo o della porzione di codice inaspettato],
+    [Output dell' algoritmo o della porzione di codice#super[G] inaspettato.],
 
     [*Contromisure*], 
-    [In caso di codice non funzionante il
-    programmatore cercherà di risolvere il problema approfondendo
+    [In caso di codice#super[G] non funzionante il
+    programmatore#super[G] cercherà di risolvere il problema approfondendo
     la tecnologia in uso e l'argomento al fine di trovare una soluzione indipendentemente. 
-    In caso di insuccesso un sistema di ticket condiviso con gli altri programmatori
+    In caso di insuccesso un sistema di ticket condiviso con gli altri programmatori#super[G]
     potrebbe aiutare a condividere informazioni per ottenere una soluzione alternativa. 
-    Se il problema dovesse diventare centrale i programmatori si impegneranno 
-    a lavorare assieme per la risoluzione],
+    Se il problema dovesse diventare centrale i programmatori#super[G] si impegneranno 
+    a lavorare assieme per la risoluzione.],
   ),
   didascalia: "Tabella RT3"
 )
@@ -294,12 +293,12 @@ Dove:
     [Bassa],
 
     [*Rilevamento*],
-    [Una parte del sistema smette di funzionare o si comporta in modo anomalo],
+    [Una parte del sistema smette di funzionare o si comporta in modo anomalo.],
 
     [*Contromisure*], 
     [Il team si impegna sin dall'inizio della progettazione architetturale di utilizzare tecnologie stabili
-    e in vasto uso nel mercato, come anche gli endpoint delle API messe a disposizione, al fine di ridurre
-    al minimo l'eventualità del problema],
+    e in vasto uso nel mercato, come anche gli endpoint delle API#super[G] messe a disposizione, al fine di ridurre
+    al minimo l'eventualità del problema.],
   ),
   didascalia: "Tabella RT4"
 )
@@ -323,15 +322,15 @@ Dove:
 
     [*Descrizione*],
     [Rischio legato ad una comunicazione lenta da parte di uno o più componenti del team al fine della risoluzione 
-    di una problematica o a fine organizzativo],
+    di una problematica o a fine organizzativo.],
 
     [*Rilevamento*],
-    [Rilevamento implicito da parte dei restanti componenti del team],
+    [Rilevamento implicito da parte dei restanti componenti del team.],
 
     [*Contromisure*], 
     [I membri del team si impegnano a fissare incontri frequenti e di lavorare assieme su canali comunicativi di diversa natura. 
     In più, grazie al sistema di sottoresponsabili adottato, data la dimensione del team, la responsabilizzazione dei membri 
-    ottenuta aiuterà a effettuare check-up frequenti dei restanti membri, garantendo quindi una comunicazione frequente e granulare],
+    ottenuta aiuterà a effettuare check-up frequenti dei restanti membri, garantendo quindi una comunicazione frequente e granulare.],
   ),
   didascalia: "Tabella RC1"
 )
@@ -352,15 +351,15 @@ Dove:
     [Bassa],
 
     [*Descrizione*],
-    [Rischio legato all'incomprensione di uno o più obbiettivi dello sprint in corso],
+    [Rischio legato all'incomprensione di uno o più obbiettivi dello sprint#super[G] in corso.],
 
     [*Rilevamento*],
-    [Frequenti discussioni con opinioni molto contrastanti e nessun esito],
+    [Frequenti discussioni con opinioni molto contrastanti e nessun esito.],
 
     [*Contromisure*], 
-    [Il responsabile del team si occuperà di monitorare costantemente i membri del gruppo al fine di comprendere
+    [Il responsabile#super[G] del team si occuperà di monitorare costantemente i membri del gruppo al fine di comprendere
     eventuali incomprensioni e risolverle al più presto. In particolare la struttura a sottoresponsabili e sottogruppi
-    aiuterà a individuare più facilmente i membri in questione],
+    aiuterà a individuare più facilmente i membri in questione.],
   ),
   didascalia: "Tabella RC2"
 )
@@ -381,14 +380,14 @@ Dove:
     [Bassa],
 
     [*Descrizione*],
-    [Rischio legato ad una comunicazione sporadica con l'azienda proponente],
+    [Rischio legato ad una comunicazione sporadica con l'azienda proponente.],
 
     [*Rilevamento*],
-    [Tempi di risposta lunghi e poco frequenti],
+    [Tempi di risposta lunghi e poco frequenti.],
 
     [*Contromisure*], 
     [Il team si impegna a cercare di organizzarsi nel migliore dei modi affinché l'azienda proponente
-    possa trovarsi nelle condizioni di avere una comunicazione facile e veloce],
+    possa trovarsi nelle condizioni di avere una comunicazione facile e veloce.],
   ),
   didascalia: "Tabella RC3"
 )
@@ -421,11 +420,11 @@ Dove:
 
     [*Rilevamento*],
     [I membri del team si impegnano a mantenere un orario settimanale costantemente aggiornato
-    della disponibilità di ciascuno e di informare i restanti membri in casi diversi],
+    della disponibilità di ciascuno e di informare i restanti membri in casi diversi.],
 
     [*Contromisure*], 
     [L'orario settimanale condiviso verrà utilizzato per pianificare le attività e suddividere il lavoro
-    in modo da mantenere la disponibilità necessaria],
+    in modo da mantenere la disponibilità necessaria.],
   ),
   didascalia: "Tabella RI1"
 )
@@ -446,13 +445,13 @@ Dove:
     [Bassa],
 
     [*Descrizione*],
-    [La possibilita che alcuni membri del gruppo non collaborino attivamente al progetto],
+    [La possibilita che alcuni membri del gruppo non collaborino attivamente al progetto.],
 
     [*Rilevamento*],
-    [Implicitamente dagli altri membri del gruppo],
+    [Implicitamente dagli altri membri del gruppo.],
 
     [*Contromisure*], 
-    [Gli incontri regolari predisposti dal responsabile del team aiuteranno a favorire il dialogo trasparente, la collaborazione e 
+    [Gli incontri regolari predisposti dal responsabile#super[G] del team aiuteranno a favorire il dialogo trasparente, la collaborazione e 
     mantenere attivo l'impegno di ciascun membro. Inoltre la scala della responsabilità
     più granulare aiuterà ad avere un riscontro continuo più diretto.],
   ),
@@ -474,14 +473,14 @@ Dove:
     [Bassa],
 
     [*Descrizione*],
-    [La possibilità che alcuni membri del gruppo non siano in grado di portare avanti il lavoro indipendentemente],
+    [La possibilità che alcuni membri del gruppo non siano in grado di portare avanti il lavoro indipendentemente.],
 
     [*Rilevamento*],
-    [Comunicazione al resto del team],
+    [Comunicazione al resto del team.],
 
     [*Contromisure*], 
     [I membri del team si impegnano a comunicare in modo trasparente e onesto difficoltà nello svolgere
-    il lavoro assegnato, mentre i restanti si impegnano ad aiutare chi si trova in tale situazione],
+    il lavoro assegnato, mentre i restanti si impegnano ad aiutare chi si trova in tale situazione.],
   ),
   didascalia: "Tabella RI3"
 )
@@ -491,7 +490,7 @@ Dove:
 == Rischio globale //valutare altri rischi
 #v(1em)
 
-=== RG1 - Incomprensione degli obbiettivi del capitolato  
+=== RG1 - Incomprensione degli obbiettivi del capitolato#super[G] 
 #v(1em)
 
 #tabella_rischi(
@@ -507,15 +506,15 @@ Dove:
 
     [*Descrizione*],
     [La possibilità che il gruppo sviluppi una soluzione ad un sotto problema 
-    diversa da quella intesa dall'azienda proponente],
+    diversa da quella intesa dall'azienda proponente.],
 
     [*Rilevamento*],
-    [Comunicazione da parte dell'azienda proponente del progetto],
+    [Comunicazione da parte dell'azienda proponente del progetto.],
 
     [*Contromisure*], 
-    [I membri del team si sono impegnati sin dall'inizio nello svolgere un'accurata lettura del capitolato di progetto
+    [I membri del team si sono impegnati sin dall'inizio nello svolgere un'accurata lettura del capitolato#super[G] di progetto
     al fine di individuare precisamente le richieste, nonché di avere una comunicazione frequente con l'azienda per 
-    individuare eventuali incomprensioni],
+    individuare eventuali incomprensioni.],
   ),
   didascalia: "Tabella RG1"
 )
@@ -536,15 +535,15 @@ Dove:
     [Media],
 
     [*Descrizione*],
-    [La possibilità che il gruppo sviluppi opinioni contrastanti in merito allo sviluppo, organizzazione e pianificazione],
+    [La possibilità che il gruppo sviluppi opinioni contrastanti in merito allo sviluppo, organizzazione e pianificazione.],
 
     [*Rilevamento*],
-    [Implicito dato da un frequente disaccordo],
+    [Implicito dato da un frequente disaccordo.],
 
     [*Contromisure*], 
     [I membri durante le riunioni interne si impegnano ad ascoltare ciascuno le motivazioni altrui al fine
     di raggiungere la soluzione ottimale o un compromesso. Se questo non dovesse bastare, delle votazioni
-    anonime a maggioranza verranno indette al fine di raggiungere una decisione],
+    anonime a maggioranza verranno indette al fine di raggiungere una decisione.],
   ),
   didascalia: "Tabella RG2"
 )
@@ -556,18 +555,18 @@ Dove:
 
 #tabella_riassuntiva_rischi(
   dati: (
-    [RT1],[Inesperienza nell'uso delle tecnologie nel progetto],[Media],[Media],
-    [RT2],[Utilizzo errato o non ottimale delle tecnologie],[Bassa],[Media],
-    [RT3],[Errori di programmazione],[Bassa],[Alta],
-    [RT4],[Supporto e versione delle tecnologie],[Alta],[Bassa],
-    [RC1],[Tempi di risposta lunghi],[Media],[Bassa],
-    [RC2],[Incomprensione degli obbiettivi],[Alta],[Bassa],
-    [RC3],[Mancanza di comunicazione con l'azienda],[Alta],[Bassa],
-    [RI1],[Impegni personali, universitari e indisponibilità],[Media],[Alta],
-    [RI2],[Scarsa collaborazione],[Alta],[Bassa],
-    [RI3],[Difficoltà di comprensione],[Media],[Bassa],
-    [RG1],[Incomprensione degli obbiettivi del capitolato],[Alta],[Bassa],
-    [RG2],[Pareri contrastanti],[Bassa],[Media],
+    [RT1],[Inesperienza nell'uso delle tecnologie nel progetto.],[Media],[Media],
+    [RT2],[Utilizzo errato o non ottimale delle tecnologie.],[Bassa],[Media],
+    [RT3],[Errori di programmazione.],[Bassa],[Alta],
+    [RT4],[Supporto e versione delle tecnologie.],[Alta],[Bassa],
+    [RC1],[Tempi di risposta lunghi.],[Media],[Bassa],
+    [RC2],[Incomprensione degli obbiettivi.],[Alta],[Bassa],
+    [RC3],[Mancanza di comunicazione con l'azienda.],[Alta],[Bassa],
+    [RI1],[Impegni personali, universitari e indisponibilità.],[Media],[Alta],
+    [RI2],[Scarsa collaborazione.],[Alta],[Bassa],
+    [RI3],[Difficoltà di comprensione.],[Media],[Bassa],
+    [RG1],[Incomprensione degli obbiettivi del capitolato#super[G].],[Alta],[Bassa],
+    [RG2],[Pareri contrastanti.],[Bassa],[Media],
       
   ),
   didascalia: "Tabella riassuntiva dei rischi"
@@ -581,22 +580,22 @@ Dove:
 
 Di seguito vengono brevemente descritti i ruoli previsti all'interno del team, equamente distribuiti e ruotati tra i membri con cadenza bisettimanale. Ogni ruolo prevede specifiche mansioni e obiettivi:
 
-- *Responsabile*: coordina il gruppo di lavoro, assegnando i compiti, monitorando le attività e gestendo l’utilizzo delle risorse. Garantisce l’avanzamento del progetto e il rispetto delle tempistiche e delle risorse disponibili.
+- *Responsabile#super[G]*: coordina il gruppo di lavoro, assegnando i compiti, monitorando le attività e gestendo l’utilizzo delle risorse. Garantisce l’avanzamento del progetto e il rispetto delle tempistiche e delle risorse disponibili.
 
 
-- *Amministratore*: si occupa della gestione delle infrastrutture, incluso il setup degli strumenti utilizzati per la produzione del software e della documentazione, nonché dell’organizzazione e della produttività del team.
+- *Amministratore#super[G]*: si occupa della gestione delle infrastrutture, incluso il setup degli strumenti utilizzati per la produzione del software e della documentazione, nonché dell’organizzazione e della produttività del team.
 
 
-- *Analista*: è responsabile della definizione dei requisiti di progetto e dell’analisi delle funzionalità del software, al fine di determinare i casi d’uso. Il suo contributo è fondamentale nella fase iniziale, per permettere una progettazione ottimale da parte dei progettisti e, successivamente, una corretta implementazione da parte dei programmatori.
+- *Analista#super[G]*: è responsabile della definizione dei requisiti#super[G] di progetto e dell’analisi delle funzionalità del software, al fine di determinare i casi d’uso. Il suo contributo è fondamentale nella fase iniziale, per permettere una progettazione ottimale da parte dei progettisti#super[G] e, successivamente, una corretta implementazione da parte dei programmatori#super[G].
 
 
-- *Progettista*: definisce l’architettura del software, individuando i componenti e le interazioni tra essi sulla base dell’analisi dei requisiti fornita dagli analisti. Il ruolo è cruciale per una progettazione efficace del prodotto, sia nella fase preliminare del Proof of Concept (POC), sia nella realizzazione del Minimum Viable Product (MVP).
+- *Progettista#super[G]*: definisce l’architettura#super[G] del software, individuando i componenti e le interazioni tra essi sulla base dell’analisi dei requisiti#super[G] fornita dagli analisti. Il ruolo è cruciale per una progettazione efficace del prodotto, sia nella fase preliminare del Proof of Concept#super[G] (POC#super[G]), sia nella realizzazione del Minimum Viable Product (MVP).
 
 
-- *Programmatore*: sviluppa il codice del software secondo l’architettura definita dai progettisti. Oltre a ricoprire il ruolo chiave nella realizzazione del prodotto, ha anche il compito implicito di validare le scelte effettuate da analisti e progettisti.
+- *Programmatore#super[G]*: sviluppa il codice#super[G] del software secondo l’architettura#super[G] definita dai progettisti#super[G]. Oltre a ricoprire il ruolo chiave nella realizzazione del prodotto, ha anche il compito implicito di validare le scelte effettuate da analisti e progettisti#super[G].
 
 
-- *Verificatore*: controlla, durante tutte le fasi dello sviluppo, che il software e la documentazione rispettino le specifiche e le norme adottate. Il suo ruolo è essenziale per individuare tempestivamente eventuali errori o incongruenze.
+- *Verificatore#super[G]*: controlla, durante tutte le fasi dello sviluppo, che il software e la documentazione rispettino le specifiche e le norme adottate. Il suo ruolo è essenziale per individuare tempestivamente eventuali errori o incongruenze.
 #v(1em)
 
 #pagebreak()
@@ -618,12 +617,12 @@ Di seguito sono indicati i costi previsti durante la candidatura :
           [*Ruolo*], [*Costo Orario*], [*Ore*], [*Costo Totale*]
         ),
         
-        [Responsabile],[30€/h],[67],[2.010€],
-        [Analista],[25€/h],[76],[1.900€],
-        [Progettista],[25€/h],[156],[3.900€],
-        [Amministratore],[20€/h],[61],[1.220€],
-        [Programmatore],[15€/h],[218],[3.270€],
-        [Verificatore],[15€/h],[142],[2.130€],
+        [Responsabile#super[G]],[30€/h],[67],[2.010€],
+        [Analista#super[G]],[25€/h],[76],[1.900€],
+        [Progettista#super[G]],[25€/h],[156],[3.900€],
+        [Amministratore#super[G]],[20€/h],[61],[1.220€],
+        [Programmatore#super[G]],[15€/h],[218],[3.270€],
+        [Verificatore#super[G]],[15€/h],[142],[2.130€],
         [*Totale*],[-],[*720*],[*14.430€*]
       ),
       caption: [Ripartizione dei costi per ore e ruolo],
@@ -669,12 +668,12 @@ I componenti del Team CodeAlchemists si impegnano in particolare a dedicare un t
         },
         table.header(
           [],
-          [*Responsabile*],
-          [*Amministratore*],
-          [*Analista*],
-          [*Progettista*],
-          [*Programmatore*],
-          [*Verificatore*],
+          [*Responsabile#super[G]*],
+          [*Amministratore#super[G]*],
+          [*Analista#super[G]*],
+          [*Progettista#super[G]*],
+          [*Programmatore#super[G]*],
+          [*Verificatore#super[G]*],
           [*Totale*],
         ),
   
@@ -694,105 +693,103 @@ I componenti del Team CodeAlchemists si impegnano in particolare a dedicare un t
 ]
 
 
-== Attività previste per la Requirements and Technology Baseline (RTB)
+== Attività previste per la Requirements and Technology Baseline#super[G] (RTB#super[G])
 #v(1em)
 
-Durante l'RTB sono previste due attività principali:
+Durante l'RTB#super[G] sono previste due attività principali:
 
-  - Redazione di documenti
+  - Redazione di documenti;
 
-  - Sviluppo
+  - Sviluppo.
 
-La prima verra portata avanti durante tutti gli sprint a seconda
-delle esigenze e necessità del mmomento.
+La prima verra portata avanti durante tutti gli sprint#super[G] a seconda
+delle esigenze e necessità del momento.
 La seconda verra iniziata successivamente alla produzione di:
-Analisi dei Requisiti; Casi d'uso; Architettura preliminare.
+Analisi dei Requisiti#super[G]; Casi d'uso; Architettura#super[G] preliminare.
 
-Di seguito venongo indicate le più nel dettaglio le principali 
-attività previste durante la fase RTB del progetto: 
+Di seguito vengono indicate le più nel dettaglio le principali 
+attività previste durante la fase RTB#super[G] del progetto: 
 
 #v(1em)
-1. *Redazione Analisi dei Requisiti* (in stesura)
+1. *Redazione Analisi dei Requisiti#super[G]* (in stesura)
 
-  - Stesura della struttura
+  - Stesura della struttura;
 
-  - Lettura accurata del capitolato
+  - Lettura accurata del capitolato#super[G];
 
-  - Estrapolazione dei requisiti
+  - Estrapolazione dei requisiti#super[G];
 
-  - Creazione dei casi d'uso
+  - Creazione dei casi d'uso.
 
 #v(1em)
 2. *Redazione Piano di progetto* (in stesura)
 
-  - Stesura della struttura
+  - Stesura della struttura;
 
-  - Introduzione ai rischi
+  - Introduzione ai rischi;
 
-    - Organizzativi
+    - Organizzativi;
 
-    - Comunicativi
+    - Comunicativi;
 
-    - Individuali 
+    - Individuali ;
 
-    - Tecnologici
+    - Tecnologici.
 
-  - Pianificazione lungo termine
+  - Pianificazione lungo termine;
 
-  - Pianificazione breve termine 
+  - Pianificazione breve termine;
 
-  - Redazione continua degli sprint
+  - Redazione continua degli sprint#super[G].
 
 #v(1em)
-3. *Redazione piano di Qualifica* (in stesura)
+3. *Redazione piano di Qualifica#super[G]* (in stesura)
 
-  - Stesura della struttura
+  - Stesura della struttura;
 
-  - Metriche di monitoraggio
+  - Metriche di monitoraggio#super[G];
 
-  - Implementazione del cruscotto di valutazione
+  - Implementazione del cruscotto di valutazione;
 
-    - aggiornamento continuo delle metriche
+    - aggiornamento continuo delle metriche.
 
-  - Compilazione e ricerca per le considerazioni di miglioramento continuo
+  - Compilazione e ricerca per le considerazioni di miglioramento continuo;
 
-  - Definizione di test sulla base dell'analisi dei requsiti 
+  - Definizione di test sulla base dell'analisi dei requisiti#super[G]. 
 
 #v(1em)
 4. *Redazione Norme di progetto* (in stesura)
 
-  - Stesura della struttura
-    - Test delle tecnologie scelte
+  - Stesura della struttura;
+    - Test delle tecnologie scelte.
 
-  - Processi Primari
+  - Processi Primari;
 
-  - Processi di Supporto
+  - Processi di Supporto;
 
-  - Processi Organizzativi
+  - Processi Organizzativi;
 
-  - Metriche utilizzate
-
-#v(1em)
-5. *Redazione del Glossario* (in stesura)
-
-  - Stesura della struttura
-
-  - Aggiunta automatizzata dei termini
+  - Metriche utilizzate.
 
 #v(1em)
-6. *Sviluppo POC (Proof of concept)* (in stesura)
+5. *Redazione del Glossario#super[G]* (in stesura)
 
-  - Definizione di una possibile architettura
+  - Stesura della struttura;
+
+  - Aggiunta automatizzata dei termini.
+
+#v(1em)
+6. *Sviluppo POC#super[G] (Proof of concept#super[G])* (in stesura)
+
+  - Definizione di una possibile architettura#super[G];
   
-  - Sviluppo
+  - Sviluppo;
 
-    - Magazzino locale
+    - Magazzino locale;
 
-    - Cloud 
+    - Cloud;
 
-    - Sistema centralizzato
-
-
+    - Sistema centralizzato.
 
 
 
@@ -814,11 +811,13 @@ attività previste durante la fase RTB del progetto:
 
 
 
-== Attività previste per la Product Baseline (PB)
+
+
+== Attività previste per la Product Baseline#super[G] (PB)
 #v(1em)
 
 La redazione di questo paragrafo sarà effettuato in seguito al superamento della
-*Requirements and Technology Baseline#super[G] (RTB)*.
+*Requirements and Technology Baseline#super[G] (RTB#super[G])*.
 
 #pagebreak()
 = Pianificazione nel breve termine
@@ -828,18 +827,18 @@ La redazione di questo paragrafo sarà effettuato in seguito al superamento dell
 
 A seguito del primo incontro di gruppo Il team _Code Alchemists_ ha deciso di impegnarsi ad adottare come strumento di sviluppo
 principale la metodologia *Agile#super[G]* per tutto quello che riguarda la gestione del progetto. 
-In particolare, si è deciso di utilizzare il framework *Scrum#super[G]*, che prevede numerosi *sprint#super[G]*, 
+In particolare, si è deciso di utilizzare il framework *Scrum#super[G]*, che prevede numerosi *#super[G]#super[G]*, 
 ovvero periodi di tempo ben definiti da una data di inizio e una data di fine in cui il team 
 si impegna a concentrarsi su un insieme specifico e finito di attività.\
-Il team ha deciso di utilizzare una durata dello sprint pari a *2 settimane*, 
+Il team ha deciso di utilizzare una durata dello sprint#super[G] pari a *2 settimane*, 
 questo aiutera ad ottenere un buon bilanciamento tra pianificazione e esecuzione delle attività. 
-Inoltre durante ogni sprint, verranno effettuate diverse riunioni per discutere
+Inoltre durante ogni sprint#super[G], verranno effettuate diverse riunioni per discutere
 sia i progressi di ogni membro e le difficoltà riscontrate, per permettere una comunicazione continua tra i membri
 e una rapida risoluzione dei problemi che potrebbero insorgere.\
 #v(1em)
 
 Il team ha deciso di utilizzare un approccio *iterativo#super[G]* e di miglioramento *incrementale#super[G]*, 
-per permettere di adattare il lavoro in base alle esigenze del cliente, feedback ricevuti e necessità. 
+per permettere di adattare il lavoro in base alle esigenze del cliente#super[G], feedback ricevuti e necessità. 
 Inoltre, si è deciso di utilizzare un *gestore di attività*, in particolare JIRA, per 
 *tracciare il lavoro svolto e le scadenze*.
 Questo garantirà innanzitutto una buona gestione del progetto ma anche una migliore pianificazione, 
@@ -848,19 +847,19 @@ riducendo al minimo i potenziali rischi e massimizzando le possibilità di succe
 
 Inoltre alcune particolari caratteristiche che il team ha deciso di adottare dopo un primo periodo di prova includono:
 
-- L'uso di sottoresponsabili informali per responsabilizzare maggiormente più membri e ottenere una comunicazione più efficace e diretta
-- La redazione di una "Lettera di sprint" da parte del responsabile entrante per definire meglio gli obbiettivi attuali, la quale
-   viene redatta e diventa presenta almeno il giorno prima dell'inizio del nuovo sprint
-- Un cambio di ruoli per sprint basato sul ruolo della persona e dalle competenze ottenute nello sprint appena terminato.
-   Questo permette in particolare, oltre a ruotare i ruoli tra i membri, di svolgere una transizione molto più fluida e funzionale tra sprint
+- L'uso di sottoresponsabili informali per responsabilizzare maggiormente più membri e ottenere una comunicazione più efficace e diretta;
+- La redazione di una "Lettera di sprint#super[G]" da parte del responsabile#super[G] entrante per definire meglio gli obbiettivi attuali, la quale
+   viene redatta e diventa presenta almeno il giorno prima dell'inizio del nuovo sprint#super[G];
+- Un cambio di ruoli per sprint#super[G] basato sul ruolo della persona e dalle competenze ottenute nello sprint#super[G] appena terminato.
+   Questo permette in particolare, oltre a ruotare i ruoli tra i membri, di svolgere una transizione molto più fluida e funzionale tra sprint#super[G].
 #v(1em)
 
 Infine il team si impegna a *concordare riunioni periodiche* con l'azienda proponente del progetto _M31_ 
 per discutere progressi ed eventuali modifiche in corso d'opera. 
 Le riunioni garantiranno che il lavoro svolto sia in coerente con le aspettative 
-del cliente e per ottenere feedback su quanto realizzato.
+del cliente#super[G] e per ottenere feedback su quanto realizzato.
 
-Di seguito vengono riportate le caratteristiche previste per ogni sprint successivamente descritte:
+Di seguito vengono riportate le caratteristiche previste per ogni sprint#super[G] successivamente descritte:
 - Informazioni generali;
 - Attività da svolgere;
 - Previsione di ore e costi;
@@ -871,9 +870,9 @@ Di seguito vengono riportate le caratteristiche previste per ogni sprint success
 - Retrospettiva.
 
 #pagebreak()
-== Requirements and Technology Baseline (RTB)
+== Requirements and Technology Baseline#super[G] (RTB#super[G])
 #v(1em)
-=== Sprint 1    //mantenere le seguenti distanze
+=== Sprint#super[G] 1    //mantenere le seguenti distanze
 #v(1em)
 Inizio: #h(1.99cm)*28-03-2025*\
 Fine Prevista: #h(0.65cm)*11-04-2025*\
@@ -883,7 +882,7 @@ Giorni di ritardo: #h(0.15cm)*0*
 ==== Informazioni generali e attività da svolgere
 #v(1em)
 
-Questo sprint ha come obbiettivo quello di risolvere le osservazioni 
+Questo sprint#super[G] ha come obbiettivo quello di risolvere le osservazioni 
 ricevute dopo la presentazione della candidatura. 
 Successivamente, avverrà la redazione dei primi documenti 
 necessari per iniziare i lavori.
@@ -892,11 +891,11 @@ In particolare, le attività previste sono:
 - Miglioramento grafico del sito web;
 - Miglioramento della navigabilità delle risorse del sito web;
 - Indicazione dei criteri di rotazione dei ruoli;
-- Prima redazione del Glossario#super[G];
-- Prima redazione delle Norme di Progetto#super[G];
-- Prima redazione del Piano di Progetto#super[G];
-- Prima redazione dell'Analisi dei Requisiti#super[G];
-- Prime ipotesi architetturali e tecnologiche 
+- Prima redazione del Glossario#super[G] ;
+- Prima redazione delle Norme di Progetto#super[G] ;
+- Prima redazione del Piano di Progetto#super[G] ;
+- Prima redazione dell'Analisi dei Requisiti#super[G] ;
+- Prime ipotesi architetturali e tecnologiche;
 - Effettuare un incontro con _M31_;
 
 
@@ -904,10 +903,10 @@ In particolare, le attività previste sono:
 #v(1em)
 
 I possibili rischi :
-- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
-- RI1: Rischio Individuale derivante dalle altre attività
-- RG1: Rischio Globale derivato da incomprensione del capitolato#super[G]
-- RG2: Rischio Globale legato a pareri contrastanti
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
+- RI1: Rischio Individuale derivante dalle altre attività;
+- RG1: Rischio Globale derivato da incomprensione del capitolato#super[G] ;
+- RG2: Rischio Globale legato a pareri contrastanti.
 
 ==== Preventivo
 #v(1em)
@@ -954,12 +953,12 @@ I possibili rischi :
 #align(center)[
   #tabella_aggiornamento_risorse(
     dati: (
-      [Responsabile], [30€/h], [5], [150€], [67 (-5)], [2010€ (-150€)],
-      [Amministratore], [20€/h], [-], [-], [61], [1220€],
-      [Analista], [25€/h], [25], [625€], [76 (-25)], [1900€ (-625€)],
-      [Progettista], [25€/h], [-], [-], [156], [3900€],
-      [Programmatore], [15€/h], [3], [45€], [218 (-3)], [3270€ (-45€)],
-      [Verificatore], [15€/h], [10], [150€], [142 (-10)], [2130€ (-150€)],
+      [Responsabile#super[G]], [30€/h], [5], [150€], [67 (-5)], [2010€ (-150€)],
+      [Amministratore#super[G]], [20€/h], [-], [-], [61], [1220€],
+      [Analista#super[G]], [25€/h], [25], [625€], [76 (-25)], [1900€ (-625€)],
+      [Progettista#super[G]], [25€/h], [-], [-], [156], [3900€],
+      [Programmatore#super[G]], [15€/h], [3], [45€], [218 (-3)], [3270€ (-45€)],
+      [Verificatore#super[G]], [15€/h], [10], [150€], [142 (-10)], [2130€ (-150€)],
       [*Totale*], [*-*], [*43*], [*970€*], [*720 (-43)*], [*14430€ (-970€)*],
   ),
     didascalia: "Sprint 1 - Aggiornamento delle risorse disponibili"
@@ -968,7 +967,7 @@ I possibili rischi :
 ==== Rischi incontrati
 #v(1em)
 
-Durante questo primo sprint abbiamo avuto principalmente
+Durante questo primo sprint#super[G] abbiamo avuto principalmente
 difficoltà con una distribuzione dell'impegno non
 completamente equo. L'indisponibilità poi di un membro del team ha 
 portato gli altri membri a dover ulteriormente assorbire 
@@ -982,7 +981,7 @@ organizzazione degli incontri più spontanea e meno organizzata.
 === Retrospettiva
 #v(1em)
 
-Durante lo sprint ci siamo dedicati principalmente ad una prima impostazione del
+Durante lo sprint#super[G] ci siamo dedicati principalmente ad una prima impostazione del
 progetto, tramite automazioni e organizzazione github, alla progettazione di una
 prima ipotesi architetturale/tecnologica a caldo e alla prima stesura
 dei documenti necessari con un discreto successo, almeno come primo inizio di progetto.
@@ -990,7 +989,7 @@ Non siamo riusciti tuttavia a rendere l'ipotesi architetturale definitiva, in qu
 effettuata precedentemente da una ricerca dello stato dell'arte approfondita e quindi
 da una scarsità di informazioni.
 
-=== Sprint 2
+=== Sprint#super[G] 2
 #v(1em)
 Inizio: #h(1.99cm)*11-04-2025*\
 Fine Prevista: #h(0.65cm)*24-04-2025*\
@@ -1000,31 +999,31 @@ Giorni di ritardo: #h(0.15cm)*0*
 ==== Informazioni generali e attività da svolgere
 #v(1em)
 
-Questo secondo sprint ha avuto principalmente come obbiettivo la continuazione
-e il miglioramento di quanto iniziato nel primo sprint basandoci inoltre
+Questo secondo sprint#super[G] ha avuto principalmente come obbiettivo la continuazione
+e il miglioramento di quanto iniziato nel primo sprint#super[G] basandoci inoltre
 su quanto discusso con l'azienda proponente.
 
 In particolare, le attività previste sono:
 
-- Analisi dello stato dell'arte
-- Continuazione dell'ipotesi architetturale e tecnologica
-  - Approfondimento delle tecnologie proposte
-- Redazione dei casi d'uso
-- Continuazione del Glossario
-- Continuazione delle Norme di Progetto
-- Continuazione del Piano di Progetto
-- Continuazione dell'Analisi dei Requisiti
-- Miglioramento dell'utilizzo di JIRA 
-- Automazioni Github 
+- Analisi dello stato dell';
+- Continuazione dell'ipotesi architetturale e tecnologica;
+  - Approfondimento delle tecnologie proposte.
+- Redazione dei casi d'uso;
+- Continuazione del Glossario#super[G];
+- Continuazione delle Norme di Progetto;
+- Continuazione del Piano di Progetto;
+- Continuazione dell'Analisi dei Requisiti#super[G];
+- Miglioramento dell'utilizzo di JIRA ;
+- Automazioni Github.
 
 
 ==== Rischi attesi
 #v(1em)
 
 I possibili rischi :
-- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
-- RI1: Rischio Individuale derivante dalle altre attività
-- RG2: Rischio Globale legato a pareri contrastanti
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
+- RI1: Rischio Individuale derivante dalle altre attività;
+- RG2: Rischio Globale legato a pareri contrastanti.
 
 ==== Preventivo 
 #v(1em)
@@ -1067,12 +1066,12 @@ I possibili rischi :
 #align(center)[
   #tabella_aggiornamento_risorse(
     dati: (
-      [Responsabile], [30€/h], [5], [150€], [62 (-5)], [1860€ (-150€)],
-      [Amministratore], [20€/h], [4], [80€], [61 (-4)], [1220€ (-80€)],
-      [Analista], [25€/h], [17], [500€], [51 (-17)], [1275€ (-425€)],
-      [Progettista], [25€/h], [-], [-], [156], [3900€],
-      [Programmatore], [15€/h], [-], [-], [215], [3225€],
-      [Verificatore], [15€/h], [9], [135€], [130 (-9)], [1980€ (-135€)],
+      [Responsabile#super[G]], [30€/h], [5], [150€], [62 (-5)], [1860€ (-150€)],
+      [Amministratore#super[G]], [20€/h], [4], [80€], [61 (-4)], [1220€ (-80€)],
+      [Analista#super[G]], [25€/h], [17], [500€], [51 (-17)], [1275€ (-425€)],
+      [Progettista#super[G]], [25€/h], [-], [-], [156], [3900€],
+      [Programmatore#super[G]], [15€/h], [-], [-], [215], [3225€],
+      [Verificatore#super[G]], [15€/h], [9], [135€], [130 (-9)], [1980€ (-135€)],
       [*Totale*], [*-*], [*38*], [*865€*], [*675 (-43)*], [*13460€ (-790€)*],
   ),
     didascalia: "Sprint 1 - Aggiornamento delle risorse disponibili"
@@ -1083,14 +1082,14 @@ I possibili rischi :
 ==== Rischi incontrati
 #v(1em)
 
-Il principale rischio di questo secondo sprint è stato il lungo periodo 
+Il principale rischio di questo secondo sprint#super[G] è stato il lungo periodo 
 di festività, come quello pasquale, che ha rallentato notevolmente
 il progresso di tutte le attività attese.
 
 Inoltre, un iniziale difficoltà nell'identificare con decisione i principali
-punti su cui concentrarsi per avanzare nella produzione di un POC hanno portato
+punti su cui concentrarsi per avanzare nella produzione di un POC#super[G] hanno portato
 il team ad effettuare un analisi dello stato dell'arte, posponendo quindi l'avanzamento
-dell'ipotesi architetturale e quindi della produzione stessa del POC.
+dell'ipotesi architetturale e quindi della produzione stessa del POC#super[G].
 
 
 === Retrospettiva
@@ -1098,11 +1097,11 @@ dell'ipotesi architetturale e quindi della produzione stessa del POC.
 
 Le difficoltà incontrare hanno portato alla luce come fosse e sia essenziale avere una
 migliore panoramica dell'ambito di sviluppo del progetto, e di come iniziare a sviluppare
-parallelamente una prima base di POC sia essenziale al fine stesso di capire meglio
+parallelamente una prima base di POC#super[G] sia essenziale al fine stesso di capire meglio
 il contesto e identificare in anticipo eventuali issue.
 
 
-=== Sprint 3
+=== Sprint#super[G] 3
 #v(1em)
 Inizio: #h(1.99cm)*25-04-2025*\
 Fine Prevista: #h(0.65cm)*09-05-2025*\
@@ -1114,20 +1113,20 @@ Giorni di ritardo: #h(0.15cm)*0*
 
 In particolare, le attività previste sono:
 
-- Termine architettura POC
-- Continuazione stesura documenti
-  - Piano di progetto
-  - Piano di qualifica
-  - Glossario
-  - Analisi dei requisiti
-  - Norme di progetto
+- Termine architettura#super[G] POC#super[G];
+- Continuazione stesura documenti;
+  - Piano di progetto;
+  - Piano di qualifica#super[G];
+  - Glossario#super[G];
+  - Analisi dei requisiti#super[G];
+  - Norme di progetto.
 
 
 ==== Rischi attesi
 #v(1em)
 
 I possibili rischi :
-- RI1: Rischio Individuale derivante dalle altre attività
+- RI1: Rischio Individuale derivante dalle altre attività.
 
 
 
@@ -1175,12 +1174,12 @@ I possibili rischi :
 #align(center)[
   #tabella_aggiornamento_risorse(
     dati: (
-      [Responsabile], [30€/h], [], [], [], [],
-      [Amministratore], [20€/h], [], [], [], [],
-      [Analista], [25€/h], [], [], [], [],
-      [Progettista], [25€/h], [], [], [], [],
-      [Programmatore], [15€/h], [], [], [], [],
-      [Verificatore], [15€/h], [], [], [], [],
+      [Responsabile#super[G]], [30€/h], [], [], [], [],
+      [Amministratore#super[G]], [20€/h], [], [], [], [],
+      [Analista#super[G]], [25€/h], [], [], [], [],
+      [Progettista#super[G]], [25€/h], [], [], [], [],
+      [Programmatore#super[G]], [15€/h], [], [], [], [],
+      [Verificatore#super[G]], [15€/h], [], [], [], [],
       [*Totale*], [*-*], [**], [**], [**], [**],
   ),
     didascalia: "Sprint 3 - Aggiornamento delle risorse disponibili"
