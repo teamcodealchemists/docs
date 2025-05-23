@@ -304,7 +304,7 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
   Duplicazione di componenti critici per garantire la continuità di servizio anche in caso di guasti.
 
 - *Ripristino*:\
-  Procedura per riportare un sistema operativo o dati persi allo stato precedente al guasto
+  Procedura per riportare un sistema operativo o dati persi allo stato precedente al guasto.
 
 #pagebreak()
 = S
