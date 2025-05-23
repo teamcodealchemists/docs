@@ -1110,10 +1110,22 @@ Giorni di ritardo: #h(0.15cm)*0*
 
 In particalare, le attività previste sono:
 
+- Termine architettura POC
+- Continuazione stesura documenti
+  - Piano di progetto
+  - Piano di qualifica
+  - Glossario
+  - Analisi dei requisiti
+  - Norme di progetto
+
+
 ==== Rischi attesi
 #v(1em)
 
 I possibili rischi :
+- RI1: Rischio Individuale derivante dalle altre attività
+
+
 
 ==== Preventivo
 #v(1em)
