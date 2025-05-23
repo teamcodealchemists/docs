@@ -15,6 +15,7 @@
 #let titolo = "Analisi dei requisiti"
 #let status = "In redazione"
 #let destinatario = "M31"
+
 #let versione = "0.1.3"
 
 #let distribuzione = (
@@ -27,6 +28,7 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+
   [0.1.3],
   [23/05/2025],
   [A. Shu],
@@ -38,6 +40,7 @@
   [A. Shu],
   [N. Moretto],
   [Aggiunta i casi d'uso fino al UC 10.5],
+
 
   [0.1.1],
   [13/05/2025],
@@ -51,23 +54,18 @@
   [S. Marana],
   [Aggiunta descrizione glossario#super[G], descrizione requisiti#super[G] e aggiunta di tutti i requisiti#super[G]],
 
-  [0.0.3],
-  [17/04/2025],
-  [N. Moretto],
-  [S. Marana],
-  [Aggiunta descrizione glossario#super[G], descrizione requisiti#super[G] e aggiunta di tutti i requisiti#super[G]],
   
   [0.0.2],
   [12/04/2025],
   [M. Dalla Pozza],
   [N. Bolzon],
-  [Aggiunto primo contenuto],
+  [Aggiunto primo contenuto.],
   
   [0.0.1],
   [28/03/2025],
   [S. Speranza],
   [N. Moretto],
-  [Creazione template e struttura del documento]
+  [Creazione template e struttura del documento.]
 )
 
 #let contenuto = (
@@ -98,6 +96,7 @@
 #v(0.5cm)
 Il presente documento viene redatto per _l'analisi dei requisiti#super[G]_.
 
+
 Il presente documento di Analisi dei Requisiti#super[G] ha lo scopo di fornire una panoramica quanto più possibile dettagliata del prodotto#super[G] software da sviluppare. Esso rappresenta un riferimento e una linea guida fondamentale per la progettazione, l'implementazione e il collaudo del sistema. Garantisce che il prodotto#super[G] finale soddisfi pienamente le esigenze e le aspettative del committente#super[G].
 
 All'interno del documento sono descritte le richieste del committente#super[G], le modalità previste per la loro implementazione dal punto di vista architetturale e tecnologico, nonché i riferimenti normativi e informativi utili. In particolare, vengono forniti una descrizione approfondita dei Casi d'Uso e una lista completa dei requisiti#super[G] funzionali e non funzionali del sistema.
@@ -112,13 +111,17 @@ Per agevolare la comprensione, verranno utilizzati i Diagrammi dei Casi d'Uso pe
 
 - *Opzionali:* relativamente utili oppure contrattabili per un'eventuale implementazione futura.
 
+
 - Il documento è stato redatto dagli Analisti#super[G] del team di progetto ed è rivolto a tutti gli interessati ed in particolare: 
+
 
 - Il Committente#super[G], che potrà verificare che i requisiti#super[G] siano stati correttamente interpretati e documentati secondo le proprie specifiche;
 
 - Il Team di Progettisti#super[G] e Programmatori#super[G], che utilizzerà il documento come guida per la realizzazione del sistema;
 
+
 - Il Team di Verificatori#super[G], che lo adotterà come base per la definizione dei casi di test e la verifica#super[G] del corretto funzionamento del prodotto#super[G].
+
 
 Potrà inoltre essere consultato da altri soggetti coinvolti nel processo di sviluppo, come Amministratori#super[G] e Responsabili#super[G] di Progetto, al fine di acquisire una comprensione esauriente delle specifiche del sistema.
 
@@ -174,6 +177,7 @@ Dopo un'esaustiva ricerca, sono stati identificati alcuni punti chiave che saran
 - *Containerizzazione:* l'uso di container#super[G] (Docker) è diventato uno standard de facto per la distribuzione e l'esecuzione di microservizi#super[G].\
   I container#super[G] consentono di isolare le dipendenze e le configurazioni di ciascun microservizio#super[G], semplificando il processo di distribuzione e gestione del sistema.\
   Kubernetes è uno strumento popolare per la gestione dei container#super[G] e l'orchestrazione#super[G] dei microservizi#super[G], che consente di automatizzare il deployment, la scalabilità#super[G] e la gestione dei container#super[G] in un cluster.\
+
 - *Resilienza del sistema:* è fondamentale garantire la resilienza del sistema, in modo da affrontare eventuali guasti o problemi di rete.\
   Ci sono diverse strategie per garantire la resilienza del sistema, come il pattern Circuit Breaker, il retry pattern, e l'uso di meccanismi di failover e bilanciamento del carico.\
 - *Logging:* è importante implementare un sistema di logging centralizzato per monitorare le attività e le prestazioni del sistema.\
@@ -184,6 +188,7 @@ Dopo un'esaustiva ricerca, sono stati identificati alcuni punti chiave che saran
 
 == Il Glossario#super[G]
 #v(0.5cm)
+
 In questo documento potrebbero essere presenti parole#super[G] e terminologie complesse, che potrebbero non essere chiare a tutti, anche in relazione al contesto in cui vengono usate. Per questo motivo, È stato creato un glossario#super[G], che contiene le definizioni di alcune parole#super[G] e termini utilizzati nel documento.
 
 Le parole#super[G] che possiedono un riferimento al glossario #super[G]vengono evidenziate come segue: *parola#super[G]*#super[G].
@@ -2092,6 +2097,7 @@ Inoltre, alcuni requisiti#super[G] sono stati derivati dall'analisi allo stato d
 Tutti i requisiti#super[G] presenteranno la fonte di provenienza.
 
 == Codifica dei requisiti#super[G]
+
 I requisiti#super[G] sono stati codificati in modo da facilitarne la lettura e la comprensione. La codifica è composta da un prefisso che indica il tipo di requisito#super[G], seguito da un numero progressivo.\
 
 I requisiti#super[G] funzionali sono preceduti dal prefisso "RF", i requisiti#super[G] di sicurezza dal prefisso "RS", i requisiti#super[G] non funzionali dal prefisso "RnF" e i requisiti#super[G] di vincolo dal prefisso "RV", dove:
@@ -2112,6 +2118,7 @@ Per questo motivo, è stato deciso di scomporre i requisiti#super[G] in requisit
 Per indicare che un requisito#super[G] è secondario, è stato deciso di aggiungere la dicitura *"/nr"* al codice#super[G] del requisito#super[G] principale, dove *nr* è il numero progressivo del requisito#super[G] secondario.\
 
 Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente:
+
 - RF01: Requisito#super[G] Funzionale principale 01;
 - RF01/01: Requisito#super[G] Funzionale secondario 01/01;
 - RS01: Requisito#super[G] di Sicurezza principale 01;
@@ -2136,6 +2143,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   table.header(
     [*Codice*], [*Descrizione*], [*Fonti*]
   ),
+
 
   [*RF01*], [*Rilevamento di carenza di scorte#super[G] di un magazzino.*], [capitolato#super[G]],
   [*RF01/01*], [Il sistema deve monitorare costantemente le scorte#super[G].], [capitolato#super[G]],
@@ -2252,14 +2260,12 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RFO01/10*], [Gli alert#super[G] sono configurabili in base a regole definite dall'utente (o dall'amministratore#super[G]).], [capitolato#super[G]],
   [*RFO01/11*], [È previsto l'invio di notifiche tramite email e/o SMS], [capitolato#super[G].],
   [*RFO01/12*], [È prevista la visualizzazione delle notifiche sulla dashboard#super[G] interna del sistema.], [capitolato#super[G]],
-
   
   [*RFO02*], [*Implementazione di meccanismi di autorizzazione e autenticazione#super[G], inclusa la gestione di ruoli e permessi differenziati per operatori, supervisori e amministratori*#super[G].], [capitolato#super[G]],
   [*RFO02/01*], [È prevista la possibilità di autenticazione#super[G] a due fattori (2FA#super[G]).], [capitolato#super[G]],
   [*RFO02/02*], [Il sistema prevede il controllo completo per gli amministratori#super[G].], [capitolato#super[G]],
   [*RFO02/03*], [Il sistema prevede l'autorizzazione a convalidare trasferimenti#super[G] o ad approvare modifiche per i supervisori.], [capitolato#super[G]],
   [*RFO02/04*], [Il sistema prevede l'accesso limitato alle operazioni di base per gli operatori.], [capitolato#super[G]],
-
   
   [*RFO03*], [*Backup#super[G] regolare dei dati, con il sistema centrale incaricato di gestire l'integrità#super[G] e la conciliazione dei dati, mantenendo copie locali per ogni magazzino e permettendo il ripristino#super[G] completo dei sistemi in caso di necessità.*], [capitolato#super[G]],
   [*RFO03/01*], [Il sistema centrale esegue verifiche periodiche sui dati distribuiti.], [capitolato#super[G]],
@@ -2268,6 +2274,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RFO03/04*], [I dati locali possono essere utilizzati per operazioni anche in caso di disconnessione dal centrale.], [capitolato#super[G]],
   [*RFO03/05*], [Il sistema prevede il ripristino#super[G] dei dati da backup#super[G] centralizzati.], [capitolato#super[G]],
   [*RFO03/06*], [Il sistema prevede il ripristino#super[G] delle copie locali in caso di guasto del nodo#super[G].], [capitolato#super[G]],
+
   [*RFO03/07*], [Il sistema prevede una verifica#super[G] dell'integrità#super[G] post-ripristino#super[G].], [capitolato#super[G]],
 
 
@@ -2289,6 +2296,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   table.header(
     [*Codice*], [*Descrizione*], [*Fonti*]
   ),
+
 
     [*RS01*], [*Autenticazione#super[G] semplice*], [capitolato#super[G]],
   [*RS01/01*], [Il sistema prevede l'implementazione dell'autenticazione#super[G] per l'accesso al sistema stesso.], [capitolato#super[G]],
@@ -2325,7 +2333,6 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RSO03/02*], [È necessario utilizzare certificati digitali#super[G] per autenticare utenti e dispositivi.], [capitolato#super[G]],
   [*RSO03/03*], [È necessario consentire l'accesso solo da dispositivi e utenti autorizzati e riconosciuti.], [capitolato#super[G]],
   [*RSO03/04*], [È necessario assicurare l'integrità#super[G] dei dati scambiati tramite firme digitali#super[G] o hashing#super[G].], [capitolato#super[G]],
-
   
 )
 #align(center)[_Tabella #tabella_counter: Requisiti#super[G] di sicurezza_]
@@ -2349,17 +2356,19 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
 
   ),
 
+
   [*RnF01*], [*Test unitari per garantire la correttezza delle funzioni sviluppate, anche dopo modifiche.*], [capitolato#super[G]],
   [*RnF01/01*], [Il sistema deve verificare#super[G] automaticamente il corretto comportamento delle singole funzioni.], [capitolato#super[G]],
   [*RnF01/02*], [I test devono essere eseguiti dopo ogni modifica al codice#super[G].], [capitolato#super[G]],
   [*RnF01/03*], [I test devono essere ripetibili e facilmente estendibili.], [capitolato#super[G]],
 
-
   [*RnF02*], [*Percentuale minima di copertura del codice#super[G].*], [capitolato#super[G]],
   [*RnF02/01*], [La percentuale di copertura del codice#super[G], concordata con M31, è da rispettare costantemente durante tutto lo sviluppo.], [capitolato#super[G]],
   [*RnF02/02*], [Il sistema deve monitorare automaticamente la copertura del codice#super[G] con strumenti dedicati.], [capitolato#super[G]],
 
-    [*RnF03/01*], [I test devono essere eseguiti automaticamente tramite pipeline CI/CD#super[G].], [capitolato#super[G]],
+
+  [*RnF03*], [*Esecuzione automatica dei test*], [capitolato#super[G]],
+  [*RnF03/01*], [I test devono essere eseguiti automaticamente tramite pipeline CI/CD#super[G].], [capitolato#super[G]],
   [*RnF03/02*], [È prevista una notifica immediata in caso di fallimento dei test.], [capitolato#super[G]],
   [*RnF03/03*], [Il sistema deve prevedere automatismi in grado di impedire il rilascio in produzione se i test falliscono.], [capitolato#super[G]],
 
@@ -2368,6 +2377,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RnF04/02*], [È prevista una descrizione chiara per ogni test, con tutti i passaggi eseguiti.], [capitolato#super[G]],
   [*RnF04/03*], [Deve essere presente una lista di risultati attesi, comparata ai risultati effettivi.], [capitolato#super[G]],
   [*RnF04/04*], [Devono essere specificati i criteri di validazione#super[G] dei test.], [capitolato#super[G]],
+
   [*RnF04/05*], [Deve essere presente lo storico aggiornato dei tesi superati e falliti.], [capitolato#super[G]],
 
   [*RnF05*], [*Sistema scalabile orizzontalmente; Microservizi#super[G] modulari#super[G] e distribuibili in più istanze cloud.*], [capitolato#super[G]],
@@ -2386,6 +2396,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
     
   [*RnF07*], [*Progettazione architetturale ben documentata, presentata con diagrammi a blocchi e derivata da analisi dei requisiti#super[G] e dal contesto distribuito.*
   ], [capitolato#super[G]],
+
 )
 #align(center)[_Tabella #tabella_counter: Requisiti#super[G] non funzionali_]
 #pagebreak()
