@@ -20,6 +20,9 @@ jobs:
     steps:
       - name: Checkout del repository
         uses: actions/checkout@v4
+        with:
+         ref: ${{ github.ref }}
+         fetch-depth: 0
 
       - name: Configurazione di Python
         uses: actions/setup-python@v5
@@ -46,6 +49,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add .github/badges/
+          git add documents/
           git add README.md
           git commit -m "Aggiornati badge e README" || echo "Nessuna modifica da commettere"
           git push
