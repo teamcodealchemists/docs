@@ -97,7 +97,7 @@ La realizzazione di un software richiede, ancor prima dello sviluppo, una fase d
 
 Si potrà dedurre che questi documenti potrebbero contenere parole o frasi che non sono di uso comune, ma che sono state scelte per essere più specifiche e per evitare ambiguità. Per questo motivo è stato creato un glossario#super[G] che contiene le definizioni di tali termini, al seguente #link("https://teamcodealchemists.github.io/glossario")[#underline[indirizzo]]. 
 
-== Riferimenti   //Inserire riferimenti al capitolato del progetto e a lezioni/slide del professore se necessario
+== Riferimenti   //Inserire riferimenti al capitolato#super[G] del progetto e a lezioni/slide del professore se necessario
 - *Capitolato#super[G] d'appalto C6 - Gestione di un magazzino distribuito - _M31_*\
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")
 
@@ -589,10 +589,10 @@ Di seguito vengono brevemente descritti i ruoli previsti all'interno del team, e
 - *Analista#super[G]*: è responsabile della definizione dei requisiti#super[G] di progetto e dell’analisi delle funzionalità del software, al fine di determinare i casi d’uso. Il suo contributo è fondamentale nella fase iniziale, per permettere una progettazione ottimale da parte dei progettisti#super[G] e, successivamente, una corretta implementazione da parte dei programmatori#super[G].
 
 
-- *Progettista#super[G]*: definisce l’architettura#super[G] del software, individuando i componenti e le interazioni tra essi sulla base dell’analisi dei requisiti#super[G] fornita dagli analisti. Il ruolo è cruciale per una progettazione efficace del prodotto, sia nella fase preliminare del Proof of Concept#super[G] (POC#super[G]), sia nella realizzazione del Minimum Viable Product (MVP).
+- *Progettista#super[G]*: definisce l’architettura#super[G] del software, individuando i componenti e le interazioni tra essi sulla base dell’analisi dei requisiti#super[G] fornita dagli analisti#super[G]. Il ruolo è cruciale per una progettazione efficace del prodotto, sia nella fase preliminare del Proof of Concept#super[G] (POC#super[G]), sia nella realizzazione del Minimum Viable Product (MVP).
 
 
-- *Programmatore#super[G]*: sviluppa il codice#super[G] del software secondo l’architettura#super[G] definita dai progettisti#super[G]. Oltre a ricoprire il ruolo chiave nella realizzazione del prodotto, ha anche il compito implicito di validare le scelte effettuate da analisti e progettisti#super[G].
+- *Programmatore#super[G]*: sviluppa il codice#super[G] del software secondo l’architettura#super[G] definita dai progettisti#super[G]. Oltre a ricoprire il ruolo chiave nella realizzazione del prodotto, ha anche il compito implicito di validare le scelte effettuate da analisti#super[G] e progettisti#super[G].
 
 
 - *Verificatore#super[G]*: controlla, durante tutte le fasi dello sviluppo, che il software e la documentazione rispettino le specifiche e le norme adottate. Il suo ruolo è essenziale per individuare tempestivamente eventuali errori o incongruenze.
