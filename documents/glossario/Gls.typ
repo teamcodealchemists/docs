@@ -27,7 +27,11 @@
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
 
-  
+  [0.4.1],
+  [26/05/2025],
+  [N. Bolzon],
+  [R. Zangla],
+  [Revisione di alcune voci del glossario al fine di eliminare ambiguità e migliorare la chiarezza.],
 
   [0.4.0],
   [22/05/2025],
