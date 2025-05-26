@@ -27,6 +27,8 @@
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
 
+  
+
   [0.4.0],
   [22/05/2025],
   [N. Moretto],
@@ -129,6 +131,9 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 
 - *Baseline*:\
   La baseline di progetto è un punto di riferimento fisso utilizzato per confrontare le prestazioni dei progetti nel tempo. Le baseline di progetto sono utilizzate dai project manager per verificare l'andamento dell'ambito, della programmazione e dei costi del progetto fino al suo completamento.
+
+- *Bilanciamento*: \
+  Sinonimo di Riassortimento. Per maggiori dettagli, si veda la voce "Riassortimento" in questo glossario.
 
 - *Branch*:\
   Versione separata di un progetto o codice, utilizzata per sviluppare nuove funzionalità senza modificare la versione principale.
@@ -298,10 +303,13 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
   Garantisce il completamento efficiente del progetto, rispettando obiettivi, tempistiche e aspettative del committente, coordinando ruoli e risorse. Data la rilevanza economica della posizione, il team ne ottimizza l'impiego per massimizzare l'efficienza e contenere i costi. Il ruolo richiede competenze nella gestione, risoluzione di criticità, coordinamento della comunicazione e pianificazione. Spetta inoltre al Responsabile approvare il rilascio di prodotti parziali o finali, software o documenti.
 
 - *Riassortimento*:\
-  Processo di rifornimento delle scorte per mantenere livelli adeguati di disponibilità. Può essere attivato manualmente o in modo automatico.
+  Processo di trasferimento interno tra magazzini finalizzato a garantire la disponibilità delle scorte nei magazzini, nel rispetto dei livelli minimi. Può essere avviato manualmente o attivato automaticamente.
 
 - *Ridondanza*:\
   Duplicazione di componenti critici per garantire la continuità di servizio anche in caso di guasti.
+
+- *Rifornimento*:\
+  Processo mediante il quale si effettuano ordini da fornitori esterni per approvigionare nuova merce.
 
 - *Ripristino*:\
   Procedura per riportare un sistema operativo o dati persi allo stato precedente al guasto.
@@ -329,7 +337,7 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 #pagebreak()
 = T
 - *Trasferimento*:\
-  Operazione che comporta lo spostamento fisico di prodotti tra magazzini.
+  Operazione che comporta lo spostamento fisico di prodotti tra magazzini all'interno del sistema.
 
 #pagebreak()
 = V
