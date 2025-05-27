@@ -27,6 +27,12 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [0.2.0],
+  [27/05/2025],
+  [S. Marana],
+  [],
+  [Aggiunta delle tabelle di continuo miglioramento e delle metriche di qualità per il processo di sviluppo],
+
   [0.1.0],
   [10/05/2025],
   [S. Marana],
@@ -361,16 +367,6 @@ I test di accettazione vengono eseguiti per verificare che il software soddisfi 
 // sopra ogni grafico scrivere una breve descrizione del grafico che si sta per visualizzare
 // 
 
-
-
-#let valori_grafico_gulpease = (
-  (1,70), (2,63), (4,60), (5,54)
-)
-
-#show : graph_gulpease.with(
-  data: valori_grafico_gulpease
-)
-
 = 5. Considerazioni di Miglioramento Continuo
 == 5.1 Introduzione
 Il miglioramento continuo è un processo fondamentale per garantire la qualità del prodotto#super[G] software e il successo del progetto. Attraverso l'analisi delle metriche di qualità, delle valutazioni e dei feedback ricevuti (Interni ed Esterni), è possibile identificare aree di miglioramento e implementare azioni correttive.
@@ -380,12 +376,16 @@ Il gruppo di lavoro si impegna a monitorare costantemente le metriche e a raccog
 
 == 5.2 Valutazioni sull'organizzazione
 
+Raccoglie eventuali criticità emerse nella gestione del progetto, nella comunicazione interna o nella distribuzione delle attività, indicando le soluzioni adottate per migliorare l'efficienza organizzativa.
+
 #let header_autovalutazione_organizzazione = (
   [*Periodo*],[*Problema*],[*Soluzione*]
 )
 #let voci_autovalutazione_organizzazione = (
-  [---], [---], [---],
-  )
+  [Primo Sprint], [Alcune task su Jira risultavano non assegnate.], [Il team si impegna a mantenere le task assegnate a un membro del team, in modo da garantire che ogni task abbia un responsabile e che le attività siano distribuite equamente. Vedi *A14* del *verbale interno del 2025-04-11*.],
+  [Primo e Secondo Sprint], [Scrittura di un verbale esterno in modo non adeguato.], [In riferimento alla *A16* del *verbale interno del 2025-04-15* sono state introdotte politiche di comunicazione scritta volte a garantire chiarezza, coerenza e professionalità, in particolare nei contesti di comunicazione esterna.],
+
+)
 #let caption_autovalutazione_organizzazione = (
   [Valutazioni sull'organizzazione]
 )
@@ -394,13 +394,18 @@ Il gruppo di lavoro si impegna a monitorare costantemente le metriche e a raccog
   voci: voci_autovalutazione_organizzazione,
   caption: caption_autovalutazione_organizzazione
 )
+
+#pagebreak()
 == 5.3 Valutazioni sui ruoli
+
+Analizza eventuali problematiche legate all'assegnazione dei ruoli o alla copertura delle responsabilità, proponendo modifiche per garantire una gestione più equilibrata e funzionale del team.
 
 #let header_autovalutazione_ruoli = (
   [*Periodo*],[*Ruolo*],[*Problema*],[*Soluzione*]
 )
 #let voci_autovalutazione_ruoli = (
-  [---], [---], [---], [---]
+  [Primo Sprint],[Verificatore], [I verificatori#super[G] non is accorgevano di documenti/task da verificare su Jira.], [In riferimento alla *D15* del *verbale interno del 2025-04-11* è stato deciso di menzionare il ruolo di verificatori all'assegnazione della task per generare una notifica.],
+  [Primo Sprint], [Tutti], [Incertezza nell'assunzione dei nuovi ruoli per mancanza di indicazioni chiare su compiti e responsabilità.], [In riferimento al *verbale interno del 2025-04-11* è stato deciso che per garantire continuità al lavoro svolto che almeno un membro del team di lavoro dovrà mantenere il ruolo per lo sprint successivo.],
   )
 #let caption_autovalutazione_ruoli = (
   [Valutazioni sui ruoli]
@@ -410,14 +415,17 @@ Il gruppo di lavoro si impegna a monitorare costantemente le metriche e a raccog
   voci: voci_autovalutazione_ruoli,
   caption: caption_autovalutazione_ruoli
 )
-
+#pagebreak()
 == 5.4 Valutazioni sugli strumenti
+
+Valuta l'efficacia degli strumenti software e tecnici utilizzati durante il progetto, evidenziando limiti o difficoltà e suggerendo soluzioni o alternative più adeguate.
 
 #let header_autovalutazione_strumenti = (
   [*Periodo*],[*Strumento*],[*Problema*],[*Soluzione*]
 )
 #let voci_autovalutazione_strumenti = (
-  [---], [---], [---], [---]
+  [Primo Sprint], [Jira], [Tracciabilità del tempo impiegato per portare a compimento le task.], [È stata sottolineata l'importanza, per ogni membro del Team, di registrare il tempo dedicato all'esecuzione delle proprie task in un apposito campo. Tale accorgimento faciliterà la rendicontazione finale delle ore suddivise per membro e per ruolo, al termine di ciascuno sprint. Vedi *A15* del *verbale interno del 2025-04-11*.],
+  [Primo e Secondo Sprint],[Github],[Politica di commit e sviluppo su branch non chiara.],[In merito alla *D18* del *verbale interno del 2025-04-15* si ha adottato la nomenclatura e l'uso del modello di branching git-flow.],
   )
 #let caption_autovalutazione_strumenti = (
   [Valutazioni sugli strumenti]
@@ -427,8 +435,11 @@ Il gruppo di lavoro si impegna a monitorare costantemente le metriche e a raccog
   voci: voci_autovalutazione_strumenti,
   caption: caption_autovalutazione_strumenti
 )
+#pagebreak()
 
 == 5.5 Valutazioni sul prodotto#super[G]
+
+Riporta le osservazioni sul prodotto finale, inclusi eventuali difetti, mancanze o miglioramenti suggeriti, con l'obiettivo di incrementarne la qualità e soddisfare meglio le aspettative degli stakeholder.
 
 #let header_autovalutazione_prodotto = (
   [*Periodo*],[*Riferimento*],[*Problema*],[*Soluzione*]
