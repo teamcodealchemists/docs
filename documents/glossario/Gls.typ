@@ -15,7 +15,7 @@
 #let titolo = "Glossario"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "0.4.0"
+#let versione = "0.4.1"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
