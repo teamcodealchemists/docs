@@ -16,7 +16,7 @@
 #let status = "In redazione"
 #let destinatario = "M31"
 
-#let versione = "0.1.7"
+#let versione = "0.5.1"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -28,41 +28,47 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
-  [0.1.7],
+  [0.5.1],
   [28/05/2025],
-  [N. Bolzon \ N. Moretto \ S. Marana],
+  [N. Bolzon \ N. Moretto \ S. Marana \ S. Speranza],
   [R. Zangla],
-  [Inserimento tabella di tracciamento dei casi d'uso],
+  [Modifica attori e immagini dei casi d'uso.],
 
-  [0.1.6],
+  [0.5.0],
   [28/05/2025],
-  [N. Bolzon \ N. Moretto \ S. Marana],
+  [N. Bolzon \ N. Moretto],
   [R. Zangla],
-  [Aggiornamento di alcuni casi d'uso dopo revisione fino al UC21],
+  [Inserimento tabella di tracciamento dei casi d'uso.],
 
-  [0.1.5],
+  [0.4.2],
+  [28/05/2025],
+  [N. Bolzon \ N. Moretto \ S. Marana \ S. Speranza],
+  [R. Zangla],
+  [Aggiornamento di alcuni casi d'uso dopo revisione fino al UC21.],
+
+  [0.4.1],
   [27/05/2025],
-  [N. Bolzon \ N. Moretto \ S. Marana],
+  [N. Bolzon \ N. Moretto \ S. Marana \ S. Speranza],
   [R. Zangla],
-  [Aggiornamento di alcuni casi d'uso dopo revisione fino al UC8],
+  [Aggiornamento di alcuni casi d'uso dopo revisione fino al UC8.],
 
-  [0.1.4],
+  [0.4.0],
   [27/05/2025],
   [N. Bolzon],
   [R. Zangla],
-  [Aggiunta informazioni di introduzione ai casi d'uso],
+  [Aggiunta informazioni di introduzione ai casi d'uso.],
 
-  [0.1.3],
+  [0.3.0],
   [23/05/2025],
   [A. Shu],
   [N. Moretto],
-  [Aggiunta dei casi d'uso fino al UC 23],
+  [Aggiunta dei casi d'uso fino al UC 23.],
 
-  [0.1.2],
+  [0.2.0],
   [22/05/2025],
   [A. Shu],
   [N. Moretto],
-  [Aggiunta dei casi d'uso fino al UC 10.5],
+  [Aggiunta dei casi d'uso fino al UC 10.5.],
 
   [0.1.1],
   [13/05/2025],
@@ -74,15 +80,14 @@
   [17/04/2025],
   [N. Moretto],
   [S. Marana],
-  [Aggiunta descrizione glossario#super[G], descrizione requisiti#super[G] e aggiunta di tutti i requisiti#super[G]],
+  [Aggiunta descrizione glossario#super[G], descrizione requisiti#super[G] e aggiunta di tutti i requisiti#super[G].],
 
-  
   [0.0.2],
   [12/04/2025],
   [M. Dalla Pozza],
   [N. Bolzon],
   [Aggiunto primo contenuto.],
-  
+
   [0.0.1],
   [28/03/2025],
   [S. Speranza],
@@ -273,7 +278,7 @@ In questa sezione del documento vengono esposti gli attori utilizzati nel sistem
     [*Utente*], [Utente che vuole accedere per usufruire del Sistema.],
     [*Supervisore\ Globale*], [Gestisce l’intero sistema di magazzini con visualizzazione globale.],
     [*Supervisore\ Locale*], [Gestisce uno o più magazzini a lui affidati dal Supervisore Globale.],
-    [*Sistema*],[Rappresenta le funzioni automatiche del software, come controlli, aggiornamenti, notifiche e calcoli. Agisce senza intervento umano, in risposta a eventi o comandi degli utenti _(tra cui Supervisore Locale e Supervisore Globale)_.],
+    [*Sistema\ Centralizzato*],[Rappresenta le funzioni automatiche del server centrale, come controlli, aggiornamenti, notifiche e calcoli. Agisce senza intervento umano, in risposta a eventi o comandi degli utenti _(tra cui Supervisore Locale e Supervisore Globale)_.],
 )
 
 
@@ -399,25 +404,25 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   image("assets/Casi d'uso-UC4.drawio.png"),
   caption: [UC4 - Rilevamento carenza scorte]
 )
-- *Attore Principale*: Supervisore Locale, Supervisore Globale, Sistema
+- *Attore Principale*: Supervisore Locale, Supervisore Globale, Sistema Centralizzato.
 - *Precondizioni*: 
   - Il Sistema è attivo, in modalità online o offline.
   - Le Soglie minime per i prodotti#super[G] sono definite nel Sistema.
 - *Postcondizioni*: 
   - I Supervisori sono notificati della carenza di scorte#super[G]. L’evento è tracciato.
 - *Scenario principale*:
-  + Il Sistema monitora le scorte#super[G] periodicamente.
-  + Il Sistema verifica se qualche scorta#super[G] è inferiore alla soglia minima.
-  + Il Sistema, se rileva una carenza, genera un evento.
-  + Il sistema genera una notifica email inviata ai Supervisori contenente:
+  + Il Sistema Centralizzato monitora le scorte#super[G] periodicamente.
+  + Il Sistema Centralizzato verifica se qualche scorta#super[G] è inferiore alla soglia minima.
+  + Il Sistema Centralizzato, se rileva una carenza, genera un evento.
+  + Il Sistema Centralizzato genera una notifica email inviata ai Supervisori contenente:
     - Nome del prodotto#super[G].
-    - Quantià residua.
+    - Quantità residua.
     - Magazzino interessato.
     - Data e ora del rilevamento.
   + La notifica viene mostrata in tempo reale anche nella dashboard del supervisore
   + I supervisori accedono al sistema per visualizzare le carenze.
 - *Scenario alternativo*:
-  - La soglia minima non è definita → il Sistema salta il controllo per quel prodotto#super[G] e genera un avviso di configurazione mancante.
+  - La soglia minima non è definita → il Sistema Centralizzato salta il controllo per quel prodotto#super[G] e genera un avviso di configurazione mancante.
 - *Inclusioni*:
   - #link(label("uc-4.1"), underline("[UC 4.1]"))
   - #link(label("uc-4.2"), underline("[UC 4.2]"))
@@ -426,17 +431,17 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 4.1: Monitoraggio#super[G] continuo delle scorte#super[G]
 #label("uc-4.1")
-- *Attore Principale*: Sistema
+- *Attore Principale*: Sistema Centralizzato.
 - *Precondizioni*: 
   - Il Sistema è attivo, in modalità online o offline.
   - Il Database delle giacenze è disponibile.
 - *Postcondizioni*: 
   - Il rilevamento aggiornato delle risorse è stato effettuato.
 - *Scenario principale*:
-  + Il Sistema interroga il database su cloud o riceve input aggiornati.
-  + Il Sistema passa i dati aggiornati al modulo di identificazione carenza. → #link(label("uc-4.2"), underline("[UC 4.2]"))
+  + Il Sistema Centralizzato interroga il database su cloud o riceve input aggiornati.
+  + Il Sistema Centralizzato passa i dati aggiornati al modulo di identificazione carenza. → #link(label("uc-4.2"), underline("[UC 4.2]"))
 - *Scenario alternativo*:
-  - Il database è temporaneamente non accessibile → il Sistema tenta nuovamente dopo un intervallo definito. → #link(label("uc-4.1"), underline("[UC 4.1]"))
+  - Il database è temporaneamente non accessibile → il Sistema Centralizzato tenta nuovamente dopo un intervallo definito. → #link(label("uc-4.1"), underline("[UC 4.1]"))
 - *Estensioni*:
   - #link(label("uc-4.1.1"), underline("[UC 4.1.1]"))
 - *Trigger*:
@@ -444,11 +449,11 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ===== - UC 4.1.1: Errore nel caricamento dei dati scorte#super[G]
 #label("uc-4.1.1")
-- *Attore Principale*: Sistema
+- *Attore Principale*: Sistema Centralizzato.
 - *Scenario principale*:
-  + Il sistema riceve un errore
+  + Il sistema centralizzato riceve un errore
   + Se fallisce, notifica il fallimento.
-  + Il sistema attende che il database ritorni operativo a generare eventi
+  + Il sistema centralizzato attende che il database ritorni operativo a generare eventi
 - *Inclusioni*: 
   - #link(label("uc-4.1"), underline("[UC 4.1]"))
 - *Trigger*: 
@@ -456,18 +461,18 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 4.2: Identificazione carenza scorte#super[G]
 #label("uc-4.2")
-- *Attore Principale*: Sistema
+- *Attore Principale*: Sistema Centralizzato.
 - *Precondizioni*: 
   - Il Sistema è attivo, in modalità online o offline.
   - Sono disponibili dati aggiornati sulle giacenze e soglie minime.
 - *Postcondizioni*: 
   - Per ogni prodotto#super[G] sotto soglia, viene inviata una notifica email ai supervisori.
 - *Scenario principale*:
-  + Il Sistema confronta la quantità disponibile con la soglia minima.
+  + Il Sistema Centralizzato confronta la quantità disponibile con la soglia minima.
   + Se la quantità è sotto soglia, registra un evento di carenza.
   + Notifica i Supervisori.
 - *Scenario alternativo*:
-  - Il database è temporaneamente non accessibile → il Sistema rimane in attesa che il Database ritorni disponibile.
+  - Il database è temporaneamente non accessibile → il Sistema Centralizzato rimane in attesa che il Database ritorni disponibile.
 - *Trigger*: 
   - Invocazione da #link(label("uc-4.1"), underline("[UC 4.1]"))
 
@@ -476,8 +481,8 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Attore Principale*: Supervisore Locale, Supervisore Globale.
 - *Scenario principale*:
   - Il Supervisore tenta di visualizzare l’evento.
-  - Il Sistema non riesce a caricare i dati.
-  - Il Sistema notifica il fallimento.
+  - Il Sistema Centralizzato non riesce a caricare i dati.
+  - Il Sistema Centralizzato notifica il fallimento.
 - *Inclusioni*: 
   - #link(label("uc-4.1"), underline("[UC 4.1]"))
 - *Trigger*: 
@@ -490,7 +495,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   image("assets/Casi d'uso-UC5.drawio.png"),
   caption: [UC5 - Trasferimento di scorte]
 )
-- *Attore Principale*: Supervisore Locale, Supervisore Globale, Sistema
+- *Attore Principale*: Supervisore Locale, Supervisore Globale, Sistema Centralizzato.
 - *Precondizioni*:
   - Il Sistema è attivo, in modalità online o offline.
   - L’Utente è autenticato con i permessi necessari (Supervisore Locale o Globale).
@@ -499,14 +504,14 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - L’inventario#super[G] globale viene aggiornato in entrambi i magazzini.
   - La richiesta viene registrata e tracciata nel Sistema.
 - *Scenario Principale*:
-  + Il Supervisore o il sistema richiedono un trasferimento#super[G] tra magazzini → #link(label("uc-5.1"), underline("[UC 5.1]"))
-  + Il sistema verifica la disponibilità delle scorte#super[G] nel magazzino di origine → #link(label("uc-5.2"), underline("[UC 5.2]"))
-  + Nel caso di un trasferimento interno, se la verifica è positiva, il sistema aggiorna l’inventario#super[G] di origine e destinazione → #link(label("uc-5.3"), underline("[UC 5.3]")). Altrimenti, nel caso di un trasferimento verso l'esterno, se la verifica è positiva, il sistema aggiorna solo l'inventario di origine.
-  + Il sistema genera un ID di tracciamento del trasferimento#super[G] → #link(label("uc-5.4"), underline("[UC 5.4]"))
+  + Il Supervisore o il sistema centralizzato richiedono un trasferimento#super[G] tra magazzini → #link(label("uc-5.1"), underline("[UC 5.1]"))
+  + Il sistema centralizzato verifica la disponibilità delle scorte#super[G] nel magazzino di origine → #link(label("uc-5.2"), underline("[UC 5.2]"))
+  + Nel caso di un trasferimento interno, se la verifica è positiva, il sistema centralizzato aggiorna l’inventario#super[G] di origine e destinazione → #link(label("uc-5.3"), underline("[UC 5.3]")). Altrimenti, nel caso di un trasferimento verso l'esterno, se la verifica è positiva, il sistema centralizzato aggiorna solo l'inventario di origine.
+  + Il sistema centralizzato genera un ID di tracciamento del trasferimento#super[G] → #link(label("uc-5.4"), underline("[UC 5.4]"))
   + Lo stato del trasferimento#super[G] viene aggiornato in tempo reale fino al completamento → #link(label("uc-5.5"), underline("[UC 5.5]"))
 - *Scenario Alternativo*:
   - Le scorte#super[G] richieste non sono disponibili → #link(label("uc-8"), underline("[UC 8]"))
-  - Il tracciamento in tempo reale fallisce → il sistema registra aggiornamenti asincroni.
+  - Il tracciamento in tempo reale fallisce → il sistema centralizzato registra aggiornamenti asincroni.
 - *Inclusioni*:
   - #link(label("uc-5.1"), underline("[UC 5.1]"))
   - #link(label("uc-5.2"), underline("[UC 5.2]"))
@@ -523,56 +528,56 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 5.1: Invio richiesta di trasferimento#super[G]
 #label("uc-5.1")
-- *Attore Principale*: Supervisore Locale, Supervisore Generale, Sistema
+- *Attore Principale*: Supervisore Locale, Supervisore Globale, Sistema Centralizzato.
 - *Precondizioni*:
   - Supervisore è autenticato.
   - I magazzini selezionati esistono nel sistema.
 - *Postcondizioni*:
-  - Una richiesta formale di trasferimento#super[G] è inviata al sistema.
+  - Una richiesta formale di trasferimento#super[G] è inviata al sistema centralizzato.
 - *Scenario Principale*:
   + Il supervisore seleziona magazzino di origine e destinazione.
   + Inserisce i prodotti#super[G] e le quantità da trasferire.
   + Invia la richiesta.
-  + Il sistema la registra e passa alla fase di validazione#super[G].
+  + Il sistema centralizzato la registra e passa alla fase di validazione#super[G].
 
 ==== - UC 5.2: Validazione#super[G] disponibilità scorte#super[G]
 #label("uc-5.2")
-- *Attore Principale*: Sistema
+- *Attore Principale*: Sistema Centralizzato.
 - *Precondizioni*:
   - È stata inviata una richiesta di trasferimento#super[G].
 - *Postcondizioni*:
   - Le quantità richieste sono validate o rifiutate.
 - *Scenario Principale*:
-  + Il sistema recupera i dati dell’inventario#super[G] del magazzino di origine.
+  + Il sistema centralizzato recupera i dati dell’inventario#super[G] del magazzino di origine.
   + Confronta la quantità richiesta con quella disponibile.
   + Se la disponibilità è sufficiente, prosegue con il trasferimento#super[G].
 - *Scenari Alternativi*:
-  - Scorte#super[G] non sufficienti → il Sistema annulla la richiesta e notifica l’errore.
+  - Scorte#super[G] non sufficienti → il Sistema centralizzato annulla la richiesta e notifica l’errore.
   - Il Supervisore può modificare la quantità o annullare l’operazione.
 
 ==== - UC 5.3: Aggiornamento inventario#super[G] di entrambi i magazzini
 #label("uc-5.3")
-- *Attore Principale*: Sistema
+- *Attore Principale*: Sistema Centralizzato.
 - *Precondizioni*:
   - La disponibilità delle scorte#super[G] è stata validata.
 - *Postcondizioni*:
   - L’inventario#super[G] del magazzino di origine viene decrementato.
   - L’inventario#super[G] del magazzino di destinazione viene incrementato.
 - *Scenario Principale*:
-  + Il sistema decrementa le quantità dal magazzino di origine nel momento di accettazione dell'ordine.
+  + Il sistema centralizzato decrementa le quantità dal magazzino di origine nel momento di accettazione dell'ordine.
   + L'ordine viene a tutti gli effetti spedito verso il magazzino di destinazione.
   + Al completamento del trasferimento, incrementa le quantità nel magazzino di destinazione.
   + Registra l’operazione.
 
 ==== - UC 5.4: Tracciamento del trasferimento#super[G] dei prodotti#super[G]
 #label("uc-5.4")
-- *Attore Principale*: Sistema
+- *Attore Principale*: Sistema Centralizzato.
 - *Precondizioni*:
   - Il trasferimento è stato avviato.
 - *Postcondizioni*:
   - Il trasferimento è assegnato ad un ID tracciabile.
 - *Scenario Principale*:
-  + Il sistema assegna un ID univoco al trasferimento.
+  + Il sistema centralizzato assegna un ID univoco al trasferimento.
   + Registra varie informazioni sul trasferimento (orari, quantità, origine, destinazione, ...)
   + Rende i dati consultabili ai supervisori.
 - *Estensioni*:
@@ -580,15 +585,15 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 5.5: Aggiornamento stato del trasferimento#super[G]
 #label("uc-5.5")
-- *Attore Principale*: Sistema, Supervisore
+- *Attore Principale*: Supervisore Locale.
 - *Precondizioni*:
   - Il trasferimento#super[G] è in corso.
 - *Postcondizioni*:
   - Lo stato viene aggiornato fino a “Completato” o “Fallito”.
 - *Scenario Principale*:
-  + Il sistema aggiorna lo stato mano a mano che il processo avanza (es. preparazione, transito, consegnato…).
+  + Il supervisore locale può aggiornare lo stato mano a mano che il processo avanza (es. preparazione, transito, consegnato…).
   + Eventuali anomalie vengono registrate e notificate.
-  + Al completamento, lo stato è impostato su “Completato”.
+  + Al completamento, lo stato può essere impostato su “Completato” dal supervisore locale.
 - *Estensioni*:
   - #link(label("uc-5.7"), underline("[UC 5.7]"))
 
@@ -603,34 +608,34 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Scenario Principale*:
   + Il supervisore seleziona un trasferimento#super[G] in stato "In attesa".
   + Il supervisore "Annulla".
-  + Il sistema conferma l’intenzione.
-  + Il sistema aggiorna lo stato a “Annullato”.
+  + Il sistema centrale conferma l’intenzione.
+  + Il sistema centrale aggiorna lo stato a “Annullato”.
   + Eventuali risorse prenotate (es. veicoli, operatori) vengono liberate.
 /* Non si può annullare un trasferimento che è in stato "in transito"*/
 
 ==== - UC 5.7: Notifica automatica esito trasferimento#super[G]
 #label("uc-5.7")
-- *Attore Principale*: Sistema, Supervisore Globale, Supervisore Locale
+- *Attore Principale*: Sistema Centralizzato, Supervisore Globale, Supervisore Locale.
 - *Precondizioni*:
   - Il trasferimento#super[G] ha cambiato stato (es. da “In transito” a “Consegnato”).
 - *Postcondizioni*:
   - L’utente supervisore riceve una notifica con lo stato aggiornato.
 - *Scenario Principale*:
-  + Il sistema monitora il cambiamento dello stato
-  + Quando il trasferimento#super[G] passa a “Consegnato” o “Fallito”, il sistema invia una notifica.
+  + Il sistema centralizzato monitora il cambiamento dello stato
+  + Quando il trasferimento#super[G] passa a “Consegnato” o “Fallito”, il sistema centralizzato invia una notifica.
   + Il supervisore riceve una notifica.
 - *Trigger*:
-  - Il sistema rileva una modifica di stato rilevante.
+  - Il sistema centralizzato rileva una modifica di stato rilevante.
 
 ==== - UC 5.8: Registrazione storico trasferimenti#super[G]
 #label("uc-5.8")
-- *Attore Principale*: Sistema
+- *Attore Principale*: Sistema Centralizzato.
 - *Precondizioni*:
   - Il trasferimento#super[G] è stato registrato e ha un ID.
 - *Postcondizioni*:
   - I dati vengono salvati in archivio storico che può essere consultato.
 - *Scenario Principale*:
-  + Al termine del trasferimento#super[G], il sistema raccoglie tutti i dati associati.
+  + Al termine del trasferimento#super[G], il sistema centralizzato raccoglie tutti i dati associati.
   + Salva il record in un archivio storico.
   + Il record è consultabile da reportistica o cruscotti.
 - *Trigger*:
@@ -643,7 +648,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   image("assets/Casi d'uso-UC6.drawio.png"),
   caption: [UC6 - Gestione scorte minime necessarie]
 )
-- *Attori Principali*: Sistema, Supervisore Locale, Supervisore. Globale
+- *Attori Principali*: Sistema Centralizzato, Supervisore Locale, Supervisore Globale.
 - *Precondizioni*:
   - Il Sistema è attivo e in esecuzione periodica o su richiesta.
   - L’utente ha accesso al sistema come supervisore.
@@ -653,11 +658,11 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Scenario principale*:
   + Il supervisore accede al sistema.
   + Definisce manualmente i livelli minimi per ciascun prodotto#super[G] → #link(label("uc-6.1"), underline("[UC 6.1]"))
-  + Il sistema calcola dinamicamente i livelli minimi suggeriti → #link(label("uc-6.2"), underline("[UC 6.2]"))
-  + Il sistema monitora in tempo reale le scorte#super[G] rispetto al minimo → #link(label("uc-6.3"), underline("[UC 6.3]"))
+  + Il sistema centralizzato calcola dinamicamente i livelli minimi suggeriti → #link(label("uc-6.2"), underline("[UC 6.2]"))
+  + Il sistema centralizzato monitora in tempo reale le scorte#super[G] rispetto al minimo → #link(label("uc-6.3"), underline("[UC 6.3]"))
   + Se necessario, vengono suggerite o attivate azioni correttive → #link(label("uc-6.4"), underline("[UC 6.4]")), #link(label("uc-6.5"), underline("[UC 6.5]"))
 - *Scenario alternativo*:
-  - Il Sistema notifica l’anomalia al Supervisore Globale.
+  - Il Sistema centralizzato notifica l’anomalia al Supervisore Globale.
 - *Inclusioni*:
   - #link(label("uc-6.1"), underline("[UC 6.1]"))
   - #link(label("uc-6.2"), underline("[UC 6.2]"))
@@ -683,20 +688,20 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Scenario principale*:
   + Il supervisore seleziona un prodotto#super[G].
   + Inserisce la soglia minima desiderata.
-  + Il sistema salva il valore nel database.
+  + Il sistema centralizzato salva il valore nel database.
 - *Scenari alternativi*:
   - Il supervisore inserisce una soglia non valida.
-  - Il sistema mostra un errore a schermo.
+  - Il sistema centralizzato mostra un errore a schermo.
 
 ==== - UC 6.2: Calcolo automatico del livello minimo di scorte#super[G]
 #label("uc-6.2")
-- *Attori Principali*: Sistema
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Sono disponibili dati storici di consumo per il prodotto#super[G].
 - *Postcondizioni*:
   - Viene calcolata una soglia minima suggerita (basata su media o modelli previsionali).
 - *Scenario principale*:
-  + Il sistema analizza i dati di vendita e consumo.
+  + Il sistema centralizzato analizza i dati di vendita e consumo.
   + Applica una formula (es. media giornaliera…).
   + Salva il livello suggerito.
   + Notifica al supervisore dell'applicazione di una nuova soglia minima.
@@ -706,14 +711,14 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 6.3: Monitoraggio#super[G] scorte#super[G] minime
 #label("uc-6.3")
-- *Attori Principali*: Sistema
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - I livelli minimi sono definiti o calcolati.
   - L’inventario#super[G] è aggiornato.
 - *Postcondizioni*:
-  - Il sistema rileva eventuali scorte#super[G] sotto la soglia e può generare estensioni.
+  - Il sistema centralizzato rileva eventuali scorte#super[G] sotto la soglia e può generare estensioni.
 - *Scenario principale*:
-  + Il sistema confronta costantemente scorte#super[G] attuali e soglie minime.
+  + Il sistema centralizzato confronta costantemente scorte#super[G] attuali e soglie minime.
   + Quando rileva un prodotto#super[G] sotto soglia → #link(label("uc-6.4"), underline("[UC 6.4]")), #link(label("uc-6.5"), underline("[UC 6.5]"))
 - *Estensioni*:
   - #link(label("uc-6.4"), underline("[UC 6.4]"))
@@ -721,7 +726,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 6.4: Suggerimento azioni di riassortimento#super[G]
 #label("uc-6.4")
-- *Attori Principali*: Sistema, Supervisore Locale, Supervisore Globale.
+- *Attori Principali*: Sistema Centralizzato, Supervisore Locale, Supervisore Globale.
 - *Precondizioni*:
   - Il sistema ha rilevato scorte#super[G] inferiori alla soglia minima.
 - *Postcondizioni*:
@@ -735,7 +740,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 6.5: Notifica superamento soglia critica
 #label("uc-6.5")
-- *Attori Principali*: Sistema, Supervisore Locale, Supervisore Globale.
+- *Attori Principali*: Sistema Centralizzato, Supervisore Locale, Supervisore Globale.
 - *Precondizioni*:
   - Le scorte#super[G] di un prodotto#super[G] sono scese sotto un livello critico predefinito (ancora più basso della soglia minima).
 - *Postcondizioni*:
@@ -753,22 +758,22 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   caption: [UC7 - Bilanciamento scorte tra magazzini]
 )
 
-- *Attori Principali*: Sistema, Supervisore Globale.
+- *Attori Principali*: Sistema Centralizzato, Supervisore Globale.
 - *Precondizioni*:
-  - Il Sistema dispone di dati aggiornati sui livelli di sicurezza delle scorte#super[G].
+  - Il Sistema centralizzato dispone di dati aggiornati sui livelli di sicurezza delle scorte#super[G].
   - Sono definiti i criteri di bilanciamento.
 - *Postcondizioni*:
-  - Il sistema ha valutato la distribuzione delle scorte#super[G].
+  - Il sistema centralizzato ha valutato la distribuzione delle scorte#super[G].
   - Sono state proposte o avviati i trasferimenti#super[G] o altre azioni correttive.
 - *Scenario principale*:
-  + Il Sistema analizza la distribuzione delle scorte#super[G] → #link(label("uc-7.1"), underline("[UC 7.1]"))
+  + Il Sistema centralizzato analizza la distribuzione delle scorte#super[G] → #link(label("uc-7.1"), underline("[UC 7.1]"))
   + Identifica eventuali squilibri → #link(label("uc-7.2"), underline("[UC 7.2]"))
   + Valuta se effettuare il riassortimento in modo automatica → #link(label("uc-7.3"), underline("[UC 7.3]"))
   + Effettua il riassortimento → #link(label("uc-7.4"), underline("[UC 7.4]"))
   + Verifica che i livelli minimi di sicurezza siano rispettati → #link(label("uc-4"), underline("[UC 4]"))
 - *Scenari alternativi*:
   - Le proposte di trasferimento#super[G] violano i livelli minimi → scartate.
-  - Il Supervisore richiede intervento manuale → sistema non automatizza.
+  - Il Supervisore richiede intervento manuale → sistema centralizzato non automatizza.
 - *Inclusioni*:
   - #link(label("uc-7.1"), underline("[UC 7.1]"))
   - #link(label("uc-7.2"), underline("[UC 7.2]"))
@@ -782,13 +787,13 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 7.1: Analisi distribuzione delle scorte#super[G]
 #label("uc-7.1")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - I dati di inventario#super[G] sono disponibili e aggiornati.
 - *Postcondizioni*:
-  - Il sistema ha ottenuto una lista della distribuzione per prodotto#super[G].
+  - Il sistema centralizzato ha ottenuto una lista della distribuzione per prodotto#super[G].
 - *Scenario principale*:
-  + Il Sistema raccoglie dati da tutti i magazzini.
+  + Il Sistema centralizzato raccoglie dati da tutti i magazzini.
   + Analizza le quantità e il fabbisogno previsto.
   + Elabora un report con la situazione attuale.
 - *Trigger*:
@@ -796,39 +801,39 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 7.2: Identificazione squilibri tra magazzini
 #label("uc-7.2")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - è disponibile il risultato dell’analisi → #link(label("uc-7.1"), underline("[UC 7.1]"))
 - *Postcondizioni*:
   - Viene individuata una lista di squilibri significativi.
 - *Scenario principale*:
-  + Il Sistema confronta i livelli di stock tra magazzini.
+  + Il Sistema centralizzato confronta i livelli di stock tra magazzini.
   + Applica regole predefinite per identificare squilibri.
   + Memorizza gli esiti per successive valutazioni.
 
-==== - UC 7.3: Valutazione effetuazione del riassortimento in modo automatico
+==== - UC 7.3: Valutazione effettuazione del riassortimento in modo automatico
 #label("uc-7.3")
-- *Attori Principali*: Sistema, Supervisore Globale.
+- *Attori Principali*: Sistema Centralizzato, Supervisore Globale.
 - *Precondizioni*:
-  - Il sistema ha identificato squilibri di prodotto in almeno un magazzino.
+  - Il sistema centralizzato ha identificato squilibri di prodotto in almeno un magazzino.
 - *Postcondizioni*:
   - Il riassortimento#super[G] può essere avviato automaticamente.
 - *Scenario principale*:
-  + Il Sistema verifica i criteri per l’automazione (es. peso, costo, ...).
+  + Il Sistema centralizzato verifica i criteri per l’automazione (es. peso, costo, ...).
   + Se i criteri sono rispettati, genera l’ordine di riassortimento#super[G].
   + Aggiorna lo stato operativo.
 
-==== - UC 7.4: Effettuazione del riassorimento
+==== - UC 7.4: Effettuazione del riassortimento
 #label("uc-7.4")
-- *Attori Principali*: Sistema, Supervisore Locale.
+- *Attori Principali*: Sistema Centralizzato, Supervisore Locale.
 - *Precondizioni*:
   - I criteri sono rispettati, quindi si può effettuare il riassortimento.
 - *Postcondizioni*:
-  - Il sistema ha inserito nel sistema degli ordini di trasferimento#super[G] interno.
+  - Il sistema centralizzato ha inserito nel sistema degli ordini di trasferimento#super[G] interno.
 - *Scenario principale*:
   + I criteri sono rispettati, quindi si può effettuare il riassortimento.
   + Invia la notifica ai Supervisori.
-  + Vengono inseriti nel sistema gli ordini di trasferimento.
+  + Vengono inseriti nel sistema centralizzato gli ordini di trasferimento.
 
 #pagebreak()
 === - UC 8: Gestione ordini con scorte insufficienti
@@ -838,14 +843,14 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   caption: [UC8 - Gestione ordini con scorte insufficienti]
 )
 
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Magazzino Locale.
 - *Precondizioni*:
-  - Ordine in eleborazione in un magazzino, ma la quantità di scorte per soddifare l'ordine sono insufficienti.
+  - Ordine in elaborazione in un magazzino, ma la quantità di scorte per soddisfare l'ordine sono insufficienti.
 - *Postcondizioni*:
   - Le scorte per soddisfare l'ordine sono inviate al magazzino.
 - *Scenario principale*:
-  + Il magazzino comunica al sistema centrale la quantià di scorte richiesta.
-  + Il sistema centrale elabora la richeista, ovvero decide da quali magazzini inviare la merce.
+  + Il magazzino comunica al sistema centrale la quantità di scorte richiesta.
+  + Il sistema centralizzato elabora la richiesta, ovvero decide da quali magazzini inviare la merce.
   + Vengono richiesti trasferimento di merce da magazzini selezionati dal sistema a magazzino richiedente per carenza merce. → #link(label("uc-5"), underline("[UC 5]"))
 - *Inclusioni*:
   - #link(label("uc-5"), underline("[UC 5]"))
@@ -859,7 +864,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   image("assets/Casi d'uso-UC9.drawio.png"),
   caption: [UC9 - Individuazione di magazzini offline]
 )
-- *Attori Principali*: Sistema, Supervisore Locale, Supervisore Globale.
+- *Attori Principali*: Sistema Centralizzato, Supervisore Locale, Supervisore Globale.
 - *Precondizioni*:
   - Il sistema è operativo e tutti i magazzini sono registrati.
   - Le connessioni sono attive o monitorabili.
@@ -867,10 +872,10 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Lo stato di connettività#super[G] di ciascun magazzino è aggiornato.
   - Eventuali disconnessioni sono rilevate e notificate.
 - *Scenario principale*:
-  + Il sistema esegue periodicamente controlli di connettività#super[G]. → #link(label("uc-9.1"), underline("[UC 9.1]"))
-  + In caso di disconnessione, il sistema genera una segnalazione. → #link(label("uc-9.2"), underline("[UC 9.2]"))
+  + Il sistema centralizzato esegue periodicamente controlli di connettività#super[G]. → #link(label("uc-9.1"), underline("[UC 9.1]"))
+  + In caso di disconnessione, il sistema centralizzato genera una segnalazione. → #link(label("uc-9.2"), underline("[UC 9.2]"))
   + Lo stato di un magazzino viene aggiornato come offline, online, non operativo, operativo. → #link(label("uc-9.3"), underline("[UC 9.3]"))
-  + Se un magazzino va offline, si attiva un timer oltre il quale gli ordini di elaborazione del magazzino vengono annullati ed elaborati dal sistema centrale.
+  + Se un magazzino va offline, si attiva un timer oltre il quale gli ordini di elaborazione del magazzino vengono annullati ed elaborati dal sistema centralizzato.
   + Se un magazzino torna online, prima dello scadere del timer, lo stato viene aggiornato e le operazioni riprendono normalmente.
 - *Inclusioni*:
   - #link(label("uc-9.1"), underline("[UC 9.1]"))
@@ -884,14 +889,14 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 9.1: Controllo periodico della connettività#super[G]
 #label("uc-9.1")
-- *Attori Principali*: Sistema
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - I magazzini sono registrati nel sistema.
   - La rete è parzialmente o totalmente attiva.
 - *Postcondizioni*:
   - Lo stato di connessione viene aggiornato.
 - *Scenario principale*:
-  + Il sistema effettua un ping o heartbeat a ogni magazzino.
+  + Il sistema centralizzato effettua un ping o heartbeat a ogni magazzino.
   + Attende la risposta per un periodo massimo definito.
   + Se la risposta non arriva → attiva #link(label("uc-9.2"), underline("[UC 9.2]"))
   + Se la risposta è positiva → stato “online”.
@@ -901,29 +906,29 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 9.2: Generazione notifica di disconnessione
 #label("uc-9.2")
-- *Attori Principali*: Sistema, Supervisore Locale, Supervisore Globale.
+- *Attori Principali*: Sistema centralizzato, Supervisore Locale, Supervisore Globale.
 - *Precondizioni*:
   - Un magazzino non ha risposto alla verifica#super[G] di connettività#super[G].
 - *Postcondizioni*:
-  - Il sistema invia una notifica dell’anomalia al Supervisore.
+  - Il sistema centralizzato invia una notifica dell’anomalia al Supervisore.
   - Lo stato del magazzino è aggiornato a “offline”.
 - *Scenario principale*:
-  + Il sistema rileva che il magazzino non risponde.
+  + Il sistema centralizzato rileva che il magazzino non risponde.
   + Crea una notifica di disconnessione.
   + Invia la notifica email ai supervisori globali e al supervisore locale responsabile del magazzino
   + Aggiorna lo stato del magazzino in “offline”.
 
 ==== - UC 9.3: Aggiornamento stato del magazzino
 #label("uc-9.3")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema centralizzato.
 - *Attori Secondari*: Supervisore Globale, Supervisore Locale.
 
 - *Precondizioni*:
-  - Il sistema ha eseguito un controllo o ha ricevuto un evento dallo stato operativo del nodo#super[G].
+  - Il sistema centralizzato ha eseguito un controllo o ha ricevuto un evento dallo stato operativo del nodo#super[G].
 - *Postcondizioni*:
   - Lo stato del magazzino viene aggiornato e reso visibile ai supervisori.
 - *Scenario principale*:
-  + Il sistema rileva o riceve una variazione di stato (manuale o automatica).
+  + Il sistema centralizzato rileva o riceve una variazione di stato (manuale o automatica).
   + Classifica il magazzino come:
     - Online: connesso e funzionante.
     - Offline: disservizio di rete = non connesso.
@@ -939,7 +944,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   caption: [UC10 - Gestione dei disservizi]
 )
 
-- *Attori Principali*: Sistema, Supervisore Locale, Supervisore Globale.
+- *Attori Principali*: Sistema Centralizzato, Supervisore Locale, Supervisore Globale.
 - *Precondizioni*:
   - Il sistema è attivo.
   - I magazzini sono registrati.
@@ -949,13 +954,13 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Lo stato del magazzino viene aggiornato.
   - Se necessario, viene attivato un trasferimento#super[G] di scorte#super[G] a magazzini vicini.
 - *Scenario principale*:
-  + Il sistema monitora costantemente i magazzini → #link(label("uc-10.1"), underline("[UC 10.1]"))
+  + Il sistema centralizzato monitora costantemente i magazzini → #link(label("uc-10.1"), underline("[UC 10.1]"))
   + Un magazzino risulta non raggiungibile o guasto
-  + Il sistema classifica il disservizio:
+  + Il sistema centralizzato classifica il disservizio:
     - Se di rete → #link(label("uc-10.3"), underline("[UC 10.3]"))
     - Se fisico → #link(label("uc-10.2"), underline("[UC 10.2]"))
   + Se un magazzino offline diventa non operativo → #link(label("uc-10.4"), underline("[UC 10.4]"))
-  + Se il magazzino è non operativo, il sistema attiva il trasferimento#super[G] di scorte#super[G] → #link(label("uc-10.5"), underline("[UC 10.5]"))
+  + Se il magazzino è non operativo, il sistema centralizzato attiva il trasferimento#super[G] di scorte#super[G] → #link(label("uc-10.5"), underline("[UC 10.5]"))
   + Supervisori sono informati via notifica email.
 - *Inclusioni*:
   - #link(label("uc-10.1"), underline("[UC 10.1]"))
@@ -970,14 +975,14 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 10.1: Monitoraggio#super[G] stato operativo
 #label("uc-10.1")
-- *Attori Principali*: Sistema, Supervisore Globale, Supervisore Locale.
+- *Attori Principali*: Sistema Centralizzato, Supervisore Globale, Supervisore Locale.
 - *Precondizioni*:
   - Il sistema è attivo.
   - I magazzini inviano segnali periodici.
 - *Postcondizioni*:
   - Stato aggiornato come operativo/non operativo/offline.
 - *Scenario principale*:
-  + Il sistema verifica#super[G] connettività#super[G] e integrità#super[G] dei nodi#super[G].
+  + Il sistema centralizzato verifica#super[G] connettività#super[G] e integrità#super[G] dei nodi#super[G].
   + Se fallisce uno dei due controlli → attiva estensione #link(label("uc-10.2"), underline("[UC 10.2]")) o #link(label("uc-10.3"), underline("[UC 10.3]"))
 - *Scenario alternativo*:
   - I Supervisori Locali o Globali modificano manualmente lo stato del magazzino per disservizio.
@@ -987,33 +992,33 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 10.2: Rilevamento disservizio fisico
 #label("uc-10.2")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Ricevuti segnali di guasto hardware o software critico.
 - *Postcondizioni*:
   - Stato magazzino impostato a non operativo.
   - Supervisori informati.
 - *Scenario principale*:
-  + Il sistema riceve un errore hardware o di servizio locale.
+  + Il sistema centralizzato riceve un errore hardware o di servizio locale.
   + Aggiorna lo stato del magazzino in non operativo.
   + Notifica il disservizio.
 
 ==== - UC 10.3: Rilevamento disservizio di rete
 #label("uc-10.3")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Magazzino non risponde ai ping o segnali di rete.
 - *Postcondizioni*:
   - Stato aggiornato a offline.
 - *Scenario principale*:
-  + Il sistema rileva assenza di connessione.
-  + Il sistema notifica i supervisori.
+  + Il sistema centralizzato rileva assenza di connessione.
+  + Il sistema centralizzato notifica i supervisori.
   + Imposta lo stato a offline.
   + Avvia monitoraggio#super[G] continuato (con timer).
 
 ==== - UC 10.4: Transizione da offline a non operativo
 #label("uc-10.4")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Un magazzino è già offline.
   - Si rileva successivamente un errore hardware.
@@ -1022,7 +1027,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Scenario principale*:
   + Magazzino è offline → #link(label("uc-10.3"), underline("[UC 10.3]"))
   + Viene rilevato un guasto hardware in parallelo.
-  + Il sistema aggiorna lo stato a non operativo.
+  + Il sistema centralizzato aggiorna lo stato a non operativo.
   + Attiva trasferimento#super[G] scorte#super[G] → #link(label("uc-10.5"), underline("[UC 10.5]"))
 - *Inclusioni*:
   - #link(label("uc-10.3"), underline("[UC 10.3]"))
@@ -1031,37 +1036,37 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 10.5: Sopperimento ordini
 #label("uc-10.5")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Un magazzino è non operativo.
   - Altri magazzini hanno disponibilità di scorte#super[G].
 - *Postcondizioni*:
   - Le scorte#super[G] sono riposizionate presso i magazzini vicini.
 - *Scenario principale*:
-  + Il sistema valuta le scorte#super[G] nei magazzini circostanti.
+  + Il sistema centralizzato valuta le scorte#super[G] nei magazzini circostanti.
   + Determina quantità e priorità dei prodotti#super[G] da trasferire.
   + Attiva un flusso di trasferimento#super[G] automatizzato → #link(label("uc-5"), underline("[UC 5]"))
 - *Estensioni*:
   - #link(label("uc-5"), underline("[UC 5]"))
 
 #pagebreak()
-=== - UC 11: Gestione magazzino che torna online
+=== - UC 11: Gestione magazzino online
 #label("uc-11")
 #figure(
   image("assets/Casi d'uso-UC11.drawio.png"),
   caption: [UC11 - Gestione magazzino che torna online]
 )
 
-- *Attori Principali*: Sistema, Supervisore Locale, Supervisore Globale.
+- *Attori Principali*: Sistema Centralizzato, Supervisore Locale, Supervisore Globale.
 - *Precondizioni*:
   - Il magazzino è stato precedentemente segnalato come offline.
-  - Il sistema è attivo e in ascolto di segnali di ritorno online.
+  - Il sistema centralizzato è attivo e in ascolto di segnali di ritorno online.
 - *Postcondizioni*:
   - Il magazzino è marcato come online e operativo.
-  - I dati locali sono sincronizzati con il sistema centrale.
+  - I dati locali sono sincronizzati con il sistema centralizzato centrale.
   - Eventuali conflitti di dati sono gestiti.
 - *Scenario principale*:
-  + Il sistema rileva che il magazzino è tornato online → #link(label("uc-11.1"), underline("[UC 11.1]"))
+  + Il sistema centralizzato rileva che il magazzino è tornato online → #link(label("uc-11.1"), underline("[UC 11.1]"))
   + Avvia la sincronizzazione dei dati → #link(label("uc-11.2"), underline("[UC 11.2]"))
   + Verifica#super[G] eventuali conflitti tra dati locali e cloud → #link(label("uc-11.3"), underline("[UC 11.3]"))
   + Aggiorna lo stato del magazzino a "operativo".
@@ -1077,29 +1082,29 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 11.1: Rilevamento ritorno online
 #label("uc-11.1")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Il magazzino era offline.
-  - Il sistema monitora attivamente la rete.
+  - Il sistema centralizzato monitora attivamente la rete.
 - *Postcondizioni*:
-  - Il sistema identifica il ritorno online del magazzino.
+  - Il sistema centralizzato identifica il ritorno online del magazzino.
   - Stato aggiornato a "online".
 - *Scenario principale*:
-  + Il sistema riceve un segnale.
+  + Il sistema centralizzato riceve un segnale.
   + Valida che la comunicazione è stabile.
   + Aggiorna lo stato del magazzino.
 
 ==== - UC 11.2: Sincronizzazione dati inventario#super[G]
 #label("uc-11.2")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
-  - Il magazzino è tornato online.
+  - Il magazzino è online.
   - Sono disponibili dati locali modificati.
 - *Postcondizioni*:
   - I dati di inventario#super[G] sono sincronizzati tra magazzino e cloud.
   - Conflitti (se presenti) sono rilevati → gestiti in #link(label("uc-11.3"), underline("[UC 11.3]"))
 - *Scenario principale*:
-  + Il sistema accede ai dati locali di inventario#super[G].
+  + Il sistema centralizzato accede ai dati locali di inventario#super[G].
   + Confronta con il cloud.
   + Sincronizza i dati coerenti.
   + Se ci sono conflitti → invoca #link(label("uc-11.3"), underline("[UC 11.3]"))
@@ -1108,21 +1113,21 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 11.3: Risoluzione conflitti di dati
 #label("uc-11.3")
-- *Attori Principali*: Sistema, eventualmente Supervisore Locale.
+- *Attori Principali*: Sistema Centralizzato, eventualmente Supervisore Locale.
 - *Precondizioni*:
   - Sono stati rilevati conflitti nei dati durante la sincronizzazione.
 - *Postcondizioni*:
   - I dati sono risolti secondo politiche predefinite o approvazione supervisore.
   - Il magazzino ha inventario#super[G] aggiornato e coerente.
 - *Scenario principale*:
-  + Il sistema analizza la natura dei conflitti (es. scorte#super[G]diverse, timestamp).
+  + Il sistema centralizzato analizza la natura dei conflitti (es. scorte#super[G]diverse, timestamp).
   + Applica una strategia:
     - priorità temporale.
     - priorità cloud.
     - intervento supervisore.
   + Aggiorna l’inventario#super[G] finale.
 - *Scenario alternativo*:
-  - Il sistema non riesce a risolvere automaticamente, quindi avviene una convalida manuale dati da parte del supervisore.
+  - Il sistema centralizzato non riesce a risolvere automaticamente, quindi avviene una convalida manuale dati da parte del supervisore.
 
 === - UC 12: Monitoraggio#super[G] centralizzato delle scorte#super[G]
 #label("uc-12")
@@ -1131,7 +1136,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   caption: [UC12 - Monitoraggio centralizzato delle scorte]
 )
 
-- *Attori Principali*: Sistema, Supervisore Globale, Supervisore Locale.
+- *Attori Principali*: Sistema Centralizzato, Supervisore Globale, Supervisore Locale.
 - *Precondizioni*:
   - Il sistema è online.
   - I microservizi#super[G] di inventario#super[G] dei magazzini sono sincronizzati con il cloud.
@@ -1139,11 +1144,11 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il supervisore visualizza in tempo reale le scorte#super[G] di tutti i magazzini.
 - *Scenario principale*:
   + Il Supervisore accede al sistema.
-  + Il Sistema interroga il microservizio#super[G] cloud per i dati aggregati delle scorte#super[G].
-  + Il Sistema mostra la dashboard#super[G] con i livelli di inventario#super[G] per ciascun magazzino.
+  + Il Sistema centralizzato interroga il microservizio#super[G] cloud per i dati aggregati delle scorte#super[G].
+  + Il Sistema centralizzato mostra la dashboard#super[G] con i livelli di inventario#super[G] per ciascun magazzino.
   + Il Supervisore analizza la situazione e può intervenire con azioni gestionali (es. riassortimento#super[G], trasferimento#super[G]).
 - *Scenario alternativo*:
-  - Il sistema segnala l’indisponibilità temporanea dei dati per un magazzino offline → #link(label("uc-9"), underline("[UC 9]"))
+  - Il sistema centralizzato segnala l’indisponibilità temporanea dei dati per un magazzino offline → #link(label("uc-9"), underline("[UC 9]"))
 - *Inclusioni*:
   - #link(label("uc-12.1"), underline("[UC 12.1]"))
   - #link(label("uc-12.2"), underline("[UC 12.2]"))
@@ -1169,13 +1174,13 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 12.2: Interrogazione microservizio#super[G] cloud inventario#super[G]
 #label("uc-12.2")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - I microservizi#super[G] locali sono sincronizzati con il microservizio#super[G] cloud.
 - *Postcondizioni*:
   - I dati aggiornati delle scorte#super[G] sono ottenuti.
 - *Scenario principale*:
-  + Il sistema invia una richiesta al database del microservizio#super[G] cloud.
+  + Il sistema centralizzato invia una richiesta al database del microservizio#super[G] cloud.
   + Riceve i dati aggiornati delle scorte#super[G] per tutti i magazzini.
   + Aggiorna la dashboard#super[G] centralizzata.
 
@@ -1186,7 +1191,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   image("assets/Casi d'uso-UC13.drawio.png"),
   caption: [UC13 - Gestione aggiornamenti simultanei dell'inventario]
 )
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Attori Secondari:*: Supervisore Globale, Supervisore Locale.
 - *Precondizioni*:
   - Due o più magazzini tentano di aggiornare simultaneamente lo stesso dato di inventario#super[G].
@@ -1194,14 +1199,14 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Gli aggiornamenti vengono gestiti correttamente, senza perdita o corruzione di dati.
 - *Scenario principale*:
   + Due o più magazzini inviano aggiornamenti concorrenti.
-  + Il sistema riceve le richieste e ne verifica la concorrenza.
+  + Il sistema centralizzato riceve le richieste e ne verifica la concorrenza.
   + Applica un meccanismo di controllo versioni/timestamp → #link(label("uc-13.1"), underline("[UC 13.1]"))
   + Identifica conflitti, se presenti → #link(label("uc-13.2"), underline("[UC 13.2]"))
   + Risolve i conflitti secondo una politica definita → #link(label("uc-13.3"), underline("[UC 13.3]"))
   + Aggiorna correttamente il dato finale e notifica i magazzini coinvolti.
 - *Scenari alternativi*:
   - Gli aggiornamenti non sono concorrenti:
-    - il sistema li elabora normalmente.
+    - il sistema centralizzato li elabora normalmente.
   - Il conflitto non può essere risolto automaticamente:
     - Viene generata una segnalazione al Supervisore Locale → #link(label("uc-13.4"))[UC 15.4]
 - *Inclusioni*:
@@ -1216,50 +1221,50 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 13.1: Applicazione controllo versioni o timestamp
 #label("uc-13.1")
-*Attori Principali*: Sistema.
+*Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - È in corso un aggiornamento dell’inventario#super[G].
 - *Postcondizioni*:
   - Le modifiche sono tracciate con una versione/timestamp.
 - *Scenario principale*:
   + Ogni richiesta di aggiornamento include un identificatore temporale o di versione.
-  + Il sistema confronta la versione con lo stato attuale dell’inventario#super[G].
+  + Il sistema centralizzato confronta la versione con lo stato attuale dell’inventario#super[G].
   + Salva l’aggiornamento o lo mette in attesa se non coerente.
 - *Inclusioni*:
   - #link(label("uc-14.1"), underline("[UC 14.1]")) → accodamento e gestione simultaneità.
 
 ==== - UC 13.2: Identificazione di conflitti di aggiornamento
 #label("uc-13.2")
-- *Attori Principali*: Sistema
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Sono presenti richieste concorrenti per lo stesso dato.
 - *Postcondizioni*:
   - Il conflitto è riconosciuto e pronto per essere gestito.
 - *Scenario principale*:
-  + Il sistema rileva che due aggiornamenti sono incompatibili o simultanei.
+  + Il sistema centralizzato rileva che due aggiornamenti sono incompatibili o simultanei.
   + Marca il conflitto e prepara un’azione correttiva.
 
 ==== - UC 13.3: Risoluzione dei conflitti di aggiornamento
 #label("uc-13.3")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Attori Secondari*: Supervisore Globale, Supervisore Locale.
 - *Precondizioni*:
   - È stato rilevato un conflitto.
 - *Postcondizioni*:
   - Il conflitto è stato risolto e l’inventario#super[G] è stato aggiornato.
 - *Scenario principale*:
-  + Il sistema applica una politica di risoluzione (es. “vince” ultima modifica).
+  + Il sistema centralizzato applica una politica di risoluzione (es. “vince” ultima modifica).
   + Notifica gli attori coinvolti se necessario.
 
 ==== - UC 13.4: Segnalazione conflitto irrisolto
 #label("uc-13.4")
-- *Attori Principali*: Sistema, Supervisore Locale.
+- *Attori Principali*: Sistema Centralizzato, Supervisore Locale.
 - *Precondizioni*:
   - Il conflitto non può essere risolto automaticamente.
 - *Postcondizioni*:
   - Il Supervisore riceve una notifica con i dettagli del conflitto.
 - *Scenario principale*:
-  + Il sistema rileva che il conflitto richiede l’intervento di un supervisore.
+  + Il sistema centralizzato rileva che il conflitto richiede l’intervento di un supervisore.
   + Invia una notifica al Supervisore Locale con i dettagli dei tentativi di aggiornamento.
   + Il Supervisore decide come procedere (manualmente o tramite strumenti di amministrazione).
 
@@ -1270,15 +1275,15 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   image("assets/Casi d'uso-UC14.drawio.png"),
   caption: [UC14 - Gestione ordini simultanei per uno stesso prodotto]
 )
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Più richieste di ordine#super[G] per lo stesso prodotto#super[G] arrivano in contemporanea da uno o più magazzini.
 - *Postcondizioni*:
   - Gli ordini#super[G] sono processati in modo coordinato e coerente, secondo criteri di assegnazione e priorità.
 - *Scenario principale*:
-  + Il sistema riceve più ordini#super[G] contemporanei per lo stesso prodotto#super[G].
-  + Il sistema attiva la gestione della coda per gli ordini#super[G] simultanei → #link(label("uc-14.1"), underline("[UC 14.1]"))
-  + Il sistema assegna le scorte#super[G] disponibili secondo criteri predefiniti → #link(label("uc-14.2"), underline("[UC 14.2]"))
+  + Il sistema centralizzato riceve più ordini#super[G] contemporanei per lo stesso prodotto#super[G].
+  + Il sistema centralizzato attiva la gestione della coda per gli ordini#super[G] simultanei → #link(label("uc-14.1"), underline("[UC 14.1]"))
+  + Il sistema centralizzato assegna le scorte#super[G] disponibili secondo criteri predefiniti → #link(label("uc-14.2"), underline("[UC 14.2]"))
   + In caso di conflitto (scorte#super[G] insufficienti), applica una politica di priorità → #link(label("uc-14.3"), underline("[UC 14.3]"))
   + Aggiorna l’inventario#super[G] e notifica i magazzini interessati.
 - *Scenari alternativi*:
@@ -1298,52 +1303,52 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 14.1: Gestione coda per ordini simultanei
 #label("uc-14.1")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
-  - Il sistema riceve più ordini#super[G] per lo stesso prodotto#super[G] in un breve intervallo di tempo.
+  - Il sistema centralizzato riceve più ordini#super[G] per lo stesso prodotto#super[G] in un breve intervallo di tempo.
 - *Postcondizioni*:
   - Gli ordini#super[G] sono messi in coda.
 - *Scenario principale*:
-  + Il sistema identifica gli ordini#super[G] concorrenti.
+  + Il sistema centralizzato identifica gli ordini#super[G] concorrenti.
   + Gli ordini vengono valutati e messi in coda con una politica FCFS _(First Come, First Served)_.
 
 ==== - UC 14.2: Assegnazione delle scorte#super[G] secondo criteri predefiniti
 #label("uc-14.2")
-- *Attori Principali*: Sistema
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Sono presenti ordini#super[G] concorrenti e scorte#super[G] limitate.
 - *Postcondizioni*:
   - Le scorte#super[G] sono assegnate secondo una logica deterministica (es. ordine temporale, località, criticità).
 - *Scenario principale*:
-  + Il sistema valuta le richieste in base ai criteri impostati (es. priorità geografica, urgenza, data di richiesta).
+  + Il sistema centralizzato valuta le richieste in base ai criteri impostati (es. priorità geografica, urgenza, data di richiesta).
   + Assegna le scorte#super[G] disponibili agli ordini#super[G] soddisfacibili.
   + Rilascia una risposta di conferma, conferma parziale o rifiuto.
 
 ==== - UC 14.3: Applicazione di criteri di priorità
 #label("uc-14.3")
-- *Attori Principali*: Sistema
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Gli ordini#super[G] sono in conflitto e le scorte#super[G] non bastano.
 - *Postcondizioni*:
   - L’ordine prioritario viene soddisfatto.
 - *Scenario principale*:
-  + Il sistema recupera la configurazione dei criteri di priorità.
+  + Il sistema centralizzato recupera la configurazione dei criteri di priorità.
   + Ordina gli ordini#super[G] per livello di priorità.
   + Applica le assegnazioni seguendo l’ordine definito.
   + Per tracciabilità scrive le scelte effettuate nel log#super[G].
 
 ==== - UC 14.4: Segnalazione ordine#super[G] in conflitto non risolvibile
 #label("uc-14.4")
-- *Attori Principali*: Sistema, Supervisore Locale
+- *Attori Principali*: Sistema Centralizzato, Supervisore Locale
 - *Precondizioni*:
-  - Il sistema non riesce a decidere l’assegnazione tra ordini#super[G] concorrenti.
+  - Il sistema centralizzato non riesce a decidere l’assegnazione tra ordini#super[G] concorrenti.
 - *Postcondizioni*:
   - Un Supervisore prende una decisione manuale.
 - *Scenario principale*:
-  + Il sistema rileva che i criteri non portano a una decisione univoca.
+  + Il sistema centralizzato rileva che i criteri non portano a una decisione univoca.
   + Genera una notifica per il Supervisore Locale.
   + Il Supervisore visualizza i dettagli dei conflitti e decide quale ordine#super[G] soddisfare.
-  + Il sistema applica la scelta e aggiorna i dati.
+  + Il sistema centralizzato applica la scelta e aggiorna i dati.
 
 #pagebreak()
 === - UC 15: Gestione autonoma delle operazioni di magazzino come edge nodes
@@ -1353,18 +1358,18 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   caption: [UC15 - Gestione autonoma delle operazioni di magazzino come edge nodes]
 )
 
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Attori Secondari*: Supervisore Locale, Supervisore Globale.
 - *Precondizioni*:
   - Il magazzino è operativo, connesso localmente, anche se non connesso al cloud.
 - *Postcondizioni*:
   - Le operazioni sono gestite in locale, con sincronizzazione in cloud quando necessario.
 - *Scenario principale*:
-  + Il sistema rileva una richiesta di operazione sui dati di inventario#super[G] da parte del magazzino locale.
-  + Il sistema valuta se l’operazione può essere gestita in locale.
+  + Il sistema centralizzato rileva una richiesta di operazione sui dati di inventario#super[G] da parte del magazzino locale.
+  + Il sistema centralizzato valuta se l’operazione può essere gestita in locale.
   + Se sì, esegue l’elaborazione localmente per ridurre il traffico di rete → #link(label("uc-15.1"), underline("[UC 15.1]")) e #link(label("uc-15.2"), underline("[UC 15.2]"))
-  + Se l’operazione è di scrittura, il sistema attiva la sincronizzazione col cloud → #link(label("uc-15.3"), underline("[UC 15.3]"))
-  + Il sistema aggiorna lo stato delle scorte#super[G] localmente e nel cloud (se necessario).
+  + Se l’operazione è di scrittura, il sistema centralizzato attiva la sincronizzazione col cloud → #link(label("uc-15.3"), underline("[UC 15.3]"))
+  + Il sistema centralizzato aggiorna lo stato delle scorte#super[G] localmente e nel cloud (se necessario).
   + Il Supervisore Locale o Globale può essere notificato di eventuali discrepanze.
 - *Inclusioni*:
   - #link(label("uc-15.1"), underline("[UC 15.1]"))
@@ -1375,35 +1380,35 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 15.1: Abilitazione operazioni locali su inventario#super[G]
 #label("uc-15.1")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Il magazzino ha una copia locale dell’inventario#super[G].
 - *Postcondizioni*:
   - Le operazioni possono essere effettuate localmente.
 - *Scenario principale*:
-  + Il sistema verifica#super[G] lo stato di aggiornamento locale dei dati.
+  + Il sistema centralizzato verifica#super[G] lo stato di aggiornamento locale dei dati.
   + Abilita lettura e scrittura sull’inventario#super[G] locale, se i dati sono coerenti (per elaborazione degli ordini).
 
 ==== - UC 15.2: Esecuzione elaborazioni locali
 #label("uc-15.2")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Supervisore Locale.
 - *Precondizioni*:
   - Il magazzino riceve una richiesta (calcolo disponibilità, assegnazione ordine, ...)
 - *Postcondizioni*:
   - I dati sono aggiornati in locale.
 - *Scenario principale*:
-  + Esegue l’elaborazione localmente senza coinvolgere il cloud.
+  + Il supervisore locale esegue l’elaborazione localmente senza coinvolgere il cloud.
   + Restituisce l’esito all’attore interessato (o ad un altro microservizio#super[G]).
 
 ==== - UC 15.3: Sincronizzare con il cloud in seguito a operazione di scrittura
 #label("uc-15.3")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - È stata effettuata una modifica locale ai dati (scrittura).
 - *Postcondizioni*:
   - Il dato è sincronizzato con il cloud.
 - *Scenario principale*:
-  + Il sistema intercetta la scrittura effettuata localmente.
+  + Il sistema centralizzato intercetta la scrittura effettuata localmente.
   + Invia l’aggiornamento al cloud.
   + Risolve eventuali conflitti tramite logica di controllo versioni o timestamp → #link(label("uc-13.2"), underline("[UC 13.2]")), #link(label("uc-13.3"), underline("[UC 13.3]"))
 
@@ -1418,13 +1423,13 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   image("assets/Casi d'uso-UC16.drawio.png"),
   caption: [UC16 - Sincronizzazione posticipata]
 )
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Il cloud è irraggiungibile al momento della scrittura locale.
 - *Postcondizioni*:
   - I dati saranno sincronizzati alla prima occasione utile.
 - *Scenario principale*:
-  + Il sistema salva localmente le modifiche in una coda di sincronizzazione.
+  + Il sistema centralizzato salva localmente le modifiche in una coda di sincronizzazione.
   + Alla riconnessione, invia le modifiche e gestisce eventuali conflitti.
 
 #pagebreak()
@@ -1434,30 +1439,29 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   image("assets/Casi d'uso-UC17.drawio.png"),
   caption: [UC17 - Gestione indipendente e sincronizzata dell'inventario]
 )
-- *Attori Principali*: Supervisore Locale, Sistema.
+- *Attori Principali*: Supervisore Locale, Sistema Centralizzato.
 - *Attori Secondari*: Supervisore Globale.
 - *Precondizioni*:
   - Il magazzino locale è operativo e connesso al sistema centrale o abilitato a operare in locale.
 - *Postcondizioni*:
-  - Le operazioni di inventario#super[G] vengono eseguite localmente e sincronizzate con il sistema centrale.
+  - Le operazioni di inventario#super[G] vengono eseguite localmente e sincronizzate con il sistema centralizzato.
 - *Scenario principale*:
   + Il Supervisore Locale esegue un’operazione sull’inventario#super[G]: inserimento, modifica o trasferimento#super[G] → #link(label("uc-17.1"), underline("[UC 17.1]"))
-  + Il sistema locale aggiorna l’inventario#super[G] internamente → #link(label("uc-17.2"), underline("[UC 17.2]"))
-  + Il sistema centrale riceve un evento dell'operazione di aggiornamento.
+  + Il sistema locale aggiorna l’inventario#super[G] internamente.
+  + Il sistema centralizzato riceve un evento dell'operazione di aggiornamento.
   + Avviene la sincronizzazione automatica con il cloud → #link(label("uc-11.2"), underline("[UC 11.2]"))
-  + In caso di conflitto con dati centrali, il sistema avvia una procedura di risoluzione → #link(label("uc-11.3"), underline("[UC 11.3]"))
+  + In caso di conflitto con dati centrali, il sistema centralizzato avvia una procedura di risoluzione → #link(label("uc-11.3"), underline("[UC 11.3]"))
 - *Scenari alternativi*:
   - Connessione al cloud è temporaneamente assente:
-    - I dati sono messi in coda e sincronizzati appena disponibile → #link(label("uc-17.3"), underline("[UC 17.3]"))
+    - I dati sono messi in coda e sincronizzati appena disponibile → #link(label("uc-17.2"), underline("[UC 17.2]"))
   - Il conflitto non è risolvibile automaticamente:
-    - Richiede intervento del Supervisore Globale → #link(label("uc-17.4"), underline("[UC 17.4]"))
+    - Richiede intervento del Supervisore Globale → #link(label("uc-17.3"), underline("[UC 17.3]"))
 - *Inclusioni*:
   - #link(label("uc-17.1"), underline("[UC 17.1]"))
-  - #link(label("uc-17.2"), underline("[UC 17.2]"))
   - #link(label("uc-11.2"), underline("[UC 11.2]"))
 - *Estensioni*:
-  - #link(label("uc-17.3"), underline("[UC 17.3]"))
-  - #link(label("uc-17.4"), underline("[UC 17.4]"))
+  - #link(label("uc-17.2"), underline("[UC 17.3]"))
+  - #link(label("uc-17.3"), underline("[UC 17.4]"))
   - #link(label("uc-11.3"), underline("[UC 11.3]"))
 - *Trigger*:
   - Inizio di un’operazione locale su inventario#super[G] (inserimento, modifica o trasferimento#super[G]).
@@ -1473,45 +1477,33 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   + Il Supervisore Locale seleziona il tipo di operazione (es. inserimento nuovo stock, modifica quantità, trasferimento#super[G] ad altro magazzino).
   + Inserisce i dati necessari.
   + Conferma l’operazione.
-  + Il sistema locale registra il cambiamento.
+  + Viene registrato il cambiamento nel magazzino locale.
 
-==== - UC 17.2: Aggiornamento locale del magazzino
+==== - UC 17.2: Sincronizzazione differita (mancanza di rete)
 #label("uc-17.2")
-- *Attori Principali*: Sistema.
-- *Precondizioni*:
-  - È stata eseguita un’operazione locale di inventario#super[G].
-- *Postcondizioni*:
-  - L’inventario#super[G] locale è aggiornato.
-- *Scenario principale*:
-  + Il sistema riceve la modifica da #link(label("uc-17.1"), underline("[UC 17.1]")).
-  + Aggiorna lo stato locale dell’inventario#super[G].
-  + Prepara i dati per la sincronizzazione con il sistema centrale.
-
-==== - UC 17.3: Sincronizzazione differita (mancanza di rete)
-#label("uc-17.3")
-- *Attori Principali*: Sistema
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - L’operazione locale è stata effettuata, ma il cloud non è raggiungibile.
 - *Postcondizioni*:
   - I dati sono messi in coda per la sincronizzazione successiva.
 - *Scenario principale*:
-  + Il sistema rileva l’assenza di rete.
+  + Il sistema centralizzato rileva l’assenza di rete.
   + Memorizza l’operazione in una coda locale.
   + Appena disponibile la connessione, invia i dati al cloud.
 
-==== - UC 17.4: Risoluzione manuale conflitti di sincronizzazione
-#label("uc-17.4")
-- *Attori Principali*: Sistema, Supervisore Globale.
+==== - UC 17.3: Risoluzione manuale conflitti di sincronizzazione
+#label("uc-17.3")
+- *Attori Principali*: Sistema Centralizzato, Supervisore Globale.
 - *Precondizioni*:
   - La sincronizzazione ha generato un conflitto non risolvibile automaticamente.
 - *Postcondizioni*:
   - Il conflitto è risolto manualmente e i dati sono aggiornati.
 - *Scenario principale*:
-  + Il sistema invia una notifica email di un conflitto di aggiornamento.
+  + Il sistema centralizzato invia una notifica email di un conflitto di aggiornamento.
   + Il Supervisore Globale accede alla dashboard#super[G] di risoluzione.
   + Analizza i dati locali e centrali.
   + Decide quale versione mantenere e conferma la scelta.
-  + Il sistema aggiorna i dati in base alla decisione.
+  + Il sistema centralizzato aggiorna i dati in base alla decisione.
 
 #pagebreak()
 === - UC 18: Monitoraggio continuo delle attività di sistema
@@ -1520,7 +1512,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   image("assets/Casi d'uso-UC18.drawio.png"),
   caption: [UC18 - Monitoraggio continuo delle attività di sistema]
 )
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Attori Secondari*: Supervisore Locale, Supervisore Globale.
 - *Precondizioni*:
   - Il sistema è operativo.
@@ -1529,16 +1521,16 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Le attività sospette sono state rilevate, tracciate e notificate.
   - I log#super[G] delle operazioni sono aggiornati.
 - *Scenario principale*:
-  + Il sistema attiva i moduli di monitoraggio#super[G] centralizzato → #link(label("uc-18.1"), underline("[UC 18.1]"))
-  + Il sistema registra tutti gli accessi (inclusi login/logout) e le operazioni rilevanti → #link(label("uc-18.3"), underline("[UC 18.3]"))
-  + Il sistema analizza in tempo reale il comportamento degli utenti e dei componenti distribuiti.
+  + Il sistema centralizzato attiva i moduli di monitoraggio#super[G] centralizzato → #link(label("uc-18.1"), underline("[UC 18.1]"))
+  + Il sistema centralizzato registra tutti gli accessi (inclusi login/logout) e le operazioni rilevanti → #link(label("uc-18.3"), underline("[UC 18.3]"))
+  + Il sistema centralizzato analizza in tempo reale il comportamento degli utenti e dei componenti distribuiti.
   + Se viene rilevata un'attività sospetta o anomala:
-    - Il sistema genera una notifica per i supervisori.
+    - Il sistema centralizzato genera una notifica per i supervisori.
     - L’attività viene registrata nei log#super[G].
     - I Supervisori possono visualizzare e analizzare i log#super[G] attraverso l'interfaccia.
 - *Scenari alternativi*:
-  - Il sistema rileva numerosi tentativi di accesso falliti → #link(label("uc-18.4"), underline("[UC 18.4]"))
-  - Il sistema registra accessi da IP non noti o da località insolite → #link(label("uc-18.2"), underline("[UC 18.2]"))
+  - Il sistema centralizzato rileva numerosi tentativi di accesso falliti → #link(label("uc-18.4"), underline("[UC 18.4]"))
+  - Il sistema centralizzato registra accessi da IP non noti o da località insolite → #link(label("uc-18.2"), underline("[UC 18.2]"))
   - Il Supervisore analizza i log#super[G] in seguito a una notifica → può avviare un’azione correttiva
 - *Inclusioni*:
   - #link(label("uc-18.1"), underline("[UC 18.1]"))
@@ -1551,27 +1543,27 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 18.1: Attivazione monitoraggio centralizzato
 #label("uc-18.1")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Sistema in esecuzione.
 - *Postcondizioni*:
   - Monitoraggio#super[G] avviato.
 - *Scenario principale*:
-  + Il sistema attiva i moduli di monitoraggio#super[G] durante l’avvio.
+  + Il sistema centralizzato attiva i moduli di monitoraggio#super[G] durante l’avvio.
   + I componenti di rete e autenticazione#super[G] iniziano a comunicare con il modulo centralizzato.
-  + Il sistema conferma l’attivazione.
+  + Il sistema centralizzato conferma l’attivazione.
 - *Trigger*:
   - Avvio del sistema.
 
 ==== - UC 18.2: Rilevamento attività sospette
 #label("uc-18.2")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Monitoraggio#super[G] attivo.
 - *Postcondizioni*:
   - Attività sospetta rilevata e registrata.
 - *Scenario principale*:
-  + Il sistema valuta il comportamento degli utenti (frequenza accessi, IP, orari).
+  + Il sistema centralizzato valuta il comportamento degli utenti (frequenza accessi, IP, orari).
   + Identifica pattern anomali.
   + Registra l’evento e genera un allarme.
 - *Estensioni*:
@@ -1580,13 +1572,13 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 18.3: Registrazione accessi e operazioni
 #label("uc-18.3")
-- *Attori Principali*: Sistema
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Monitoraggio#super[G] attivo.
 - *Postcondizioni*:
   - Log#super[G] aggiornato.
 - *Scenario principale*:
-  + Il sistema registra ogni login → #link(label("uc-1"), underline("[UC 1]"))
+  + Il sistema centralizzato registra ogni login → #link(label("uc-1"), underline("[UC 1]"))
   + Registra ogni tentativo fallito → #link(label("uc-2"), underline("[UC 2]"))
   + Registra ogni logout → #link(label("uc-3"), underline("[UC 3]"))
   + Ogni operazione rilevante viene associata a timestamp, ID utente e contesto.
@@ -1597,14 +1589,14 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 18.4: Invio allarmi in tempo reale
 #label("uc-18.4")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Attori Secondari*: Supervisore Locale, Supervisore Globale.
 - *Precondizioni*:
   - Attività anomala rilevata.
 - *Postcondizioni*:
   - Supervisore notificato.
 - *Scenario principale*:
-  + Il sistema rileva un comportamento sospetto.
+  + Il sistema centralizzato rileva un comportamento sospetto.
   + Invio di notifica al supervisore interessato.
   + L’evento viene registrato nel log#super[G].
 - *Estensioni*:
@@ -1617,7 +1609,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   image("assets/Casi d'uso-UC19.drawio.png"),
   caption: [UC19 - Gestione predittiva della domanda e del riassortimento]
 )
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Attori Secondari*: Supervisore Locale, Supervisore Globale.
 - *Precondizioni*:
   - Il sistema è attivo e ha accesso a dati storici sulle vendite e alle scorte#super[G] correnti.
@@ -1626,16 +1618,16 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Sono generate previsioni di domanda.
   - Sono pianificati riassortimenti preventivi per evitare carenze.
 - *Scenario principale*:
-  + Il sistema raccoglie dati storici di vendita e disponibilità attuale delle scorte#super[G].
-  + Il sistema analizza i dati con un modello predittivo (es. machine learning).
-  + Il sistema genera una previsione di domanda per ciascun prodotto#super[G].
-  + Il sistema pianifica automaticamente i riassortimenti in base alle previsioni.
-  + Se un prodotto#super[G] rischia di andare in esaurimento, il sistema attiva azioni preventive (es. proposta d'ordine#super[G] o avviso al supervisore).
+  + Il sistema centralizzato raccoglie dati storici di vendita e disponibilità attuale delle scorte#super[G].
+  + Il sistema centralizzato analizza i dati con un modello predittivo (es. machine learning).
+  + Il sistema centralizzato genera una previsione di domanda per ciascun prodotto#super[G].
+  + Il sistema centralizzato pianifica automaticamente i riassortimenti in base alle previsioni.
+  + Se un prodotto#super[G] rischia di andare in esaurimento, il sistema centralizzato attiva azioni preventive (es. proposta d'ordine#super[G] o avviso al supervisore).
   + Il Supervisore Locale o Globale può visualizzare i dati generati e validare eventuali modifiche.
 - *Scenari alternativi*:
   - I dati storici sono incompleti:
-    - Il sistema utilizza euristiche di fallback → #link(label("uc-19.1"), underline("[UC 19.1]"))
-  - Il Supervisore modifica manualmente le proposte del sistema → #link(label("uc-19.2"), underline("[UC 19.2]"))
+    - Il sistema centralizzato utilizza euristiche di fallback → #link(label("uc-19.1"), underline("[UC 19.1]"))
+  - Il Supervisore modifica manualmente le proposte del sistema centralizzato → #link(label("uc-19.2"), underline("[UC 19.2]"))
   - Il riassortimento#super[G] automatico non può essere pianificato per problemi logistici:
     - Viene generato un avviso → #link(label("uc-19.3"), underline("[UC 19.3]"))
 - *Inclusioni*:
@@ -1648,15 +1640,15 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 19.1: Generazione previsioni di domanda
 #label("uc-19.1")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Accesso ai dati storici e alle informazioni correnti sulle scorte#super[G].
 - *Postcondizioni*:
   - Previsioni generate per ciascun prodotto#super[G].
 - *Scenario principale*:
-  + Il sistema raccoglie ed elabora i dati storici e attuali.
+  + Il sistema centralizzato raccoglie ed elabora i dati storici e attuali.
   + Il modello predittivo produce una stima della domanda futura.
-  + Le previsioni vengono salvate nel sistema.
+  + Le previsioni vengono salvate nel sistema centralizzato.
 - *Trigger*:
   - Esecuzione pianificata o evento esterno (es. cambio stagionale).
 
@@ -1669,7 +1661,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Postcondizioni*:
   - Riassortimenti pianificati automaticamente.
 - *Scenario principale*:
-  + Il sistema valuta se le scorte#super[G] previste soddisfano la domanda prevista.
+  + Il sistema centralizzato valuta se le scorte#super[G] previste soddisfano la domanda prevista.
   + Pianifica un riassortimento#super[G] (ordine#super[G] o trasferimento#super[G]).
   + Notifica il Supervisore per conferma o revisione.
 - *Scenario alternativo*:
@@ -1679,13 +1671,13 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 19.3: Attivazione di meccanismi preventivi
 #label("uc-19.3")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Domanda prevista > scorte#super[G] disponibili.
 - *Postcondizioni*:
   - Azioni preventive attivate.
 - *Scenario principale*:
-  + Il sistema rileva un rischio di esaurimento.
+  + Il sistema centralizzato rileva un rischio di esaurimento.
   + Verifica le opzioni disponibili: nuovo ordine#super[G], trasferimento#super[G] da altro magazzino, limitazione ordini#super[G].
   + Propone un'azione o la attua automaticamente (se configurato).
   + Notifica il supervisore.
@@ -1701,18 +1693,18 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   image("assets/Casi d'uso-UC20.drawio.png"),
   caption: [UC20 - Riassortimento predittivo tramite analisi storica e previsione della domanda]
 )
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Attori Secondari*: Supervisore Locale, Supervisore Globale.
 - *Precondizioni*:
   - Il sistema ha accesso ai dati storici di vendita e consegna.
   - I modelli statistici predittivi sono disponibili e attivi.
   - Le strategie di approvvigionamento#super[G] sono configurabili.
 - *Postcondizioni*:
-  - Il sistema ha calcolato le previsioni di domanda.
+  - Il sistema centralizzato ha calcolato le previsioni di domanda.
   - Sono state adattate le strategie di approvvigionamento#super[G].
   - Sono stati generati piani di riassortimento#super[G] ottimizzati.
 - *Scenario principale*:
-  + Il sistema raccoglie e analizza i dati storici di vendita e consegna.
+  + Il sistema centralizzato raccoglie e analizza i dati storici di vendita e consegna.
   + Applica modelli statistici per identificare pattern stagionali e tendenze di consumo.
   + Prevede la domanda futura per ciascun prodotto#super[G].
   + Adatta le strategie di approvvigionamento#super[G] in base ai risultati.
@@ -1721,13 +1713,13 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   + Il Supervisore può visualizzare, approvare o modificare le raccomandazioni.
 - *Scenari alternativi*:
   - I dati storici sono incompleti:
-    - Il sistema utilizza valori medi o interpolazioni → #link(label("uc-20.1"), underline("[UC 20.1]"))
+    - Il sistema centralizzato utilizza valori medi o interpolazioni → #link(label("uc-20.1"), underline("[UC 20.1]"))
   - I modelli predittivi rilevano anomalie nei pattern:
     - L’output viene validato manualmente → #link(label("uc-20.2"), underline("[UC 20.2]"))
   - Il supervisore impone strategie fisse:
-    - Il sistema sospende l’adattamento automatico → #link(label("uc-20.3"), underline("[UC 20.3]"))
+    - Il sistema centralizzato sospende l’adattamento automatico → #link(label("uc-20.3"), underline("[UC 20.3]"))
   - Il magazzino è già pieno o sottodimensionato:
-    - Il sistema propone misure correttive → #link(label("uc-20.4"), underline("[UC 20.4]"))
+    - Il sistema centralizzato propone misure correttive → #link(label("uc-20.4"), underline("[UC 20.4]"))
 - *Inclusioni*:
   - #link(label("uc-20.1"), underline("[UC 20.1]"))
   - #link(label("uc-20.2"), underline("[UC 20.2]"))
@@ -1740,13 +1732,13 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 20.1: Analisi dati storici di vendita e consegna
 #label("uc-20.1")
-- *Attori Principali*: Sistema
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Disponibilità dei dati storici.
 - *Postcondizioni*:
   - Dati strutturati pronti per la previsione.
 - *Scenario principale*:
-  + Il sistema raccoglie i dati da magazzini locali e cloud.
+  + Il sistema centralizzato raccoglie i dati da magazzini locali e cloud.
   + Elimina outlier e dati incompleti.
   + Aggrega i dati per prodotto#super[G], zona, periodo.
   + Prepara i dataset per l’elaborazione statistica.
@@ -1755,29 +1747,29 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 20.2: Analisi trend scorte#super[G]
 #label("uc-20.2")
-- *Attori Principali*: Sistema
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Dataset analizzato disponibile.
 - *Postcondizioni*:
   - Previsioni generate per ogni prodotto#super[G].
 - *Scenario principale*:
-  + Il sistema applica modelli (es. regressione, reti neurali).
+  + Il sistema centralizzato applica modelli (es. regressione, reti neurali).
   + Identifica stagionalità e trend nei dati.
   + Elabora le previsioni a breve e medio termine.
-  + Salva le previsioni nel sistema centrale.
+  + Salva le previsioni nel sistema centralizzato.
 - *Inclusioni*:
   - #link(label("uc-20.1"), underline("[UC 20.1]"))
 
-==== - UC 20.3: Adattamento delle strategie di approvigionamento
+==== - UC 20.3: Adattamento delle strategie di approvvigionamento
 #label("uc-20.3")
-- *Attori Principali*: Sistema
+- *Attori Principali*: Sistema Centralizzato.
 - *Attori Secondari*: Supervisore Locale, Supervisore Globale.
 - *Precondizioni*:
   - Previsioni disponibili.
 - *Postcondizioni*:
   - Strategia di riassortimento#super[G] aggiornata.
 - *Scenario principale*:
-  + Il sistema confronta la previsione con la politica attuale di approvvigionamento#super[G].
+  + Il sistema centralizzato confronta la previsione con la politica attuale di approvvigionamento#super[G].
   + Valuta lead time, frequenza ordini#super[G] e soglie minime.
   + Suggerisce modifiche o automatizza gli aggiustamenti.
   + Il supervisore può confermare, rifiutare o modificare la proposta.
@@ -1786,13 +1778,13 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 ==== - UC 20.4: Ottimizzazione dei livelli di scorte#super[G]
 #label("uc-20.4")
-- *Attori Principali*: Sistema
+- *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Strategia aggiornata e previsione disponibile.
 - *Postcondizioni*:
   - Livelli ottimali calcolati e azioni di riassortimento#super[G] pianificate.
 - *Scenario principale*:
-  + Il sistema determina le soglie ottimali per ciascun prodotto#super[G].
+  + Il sistema centralizzato determina le soglie ottimali per ciascun prodotto#super[G].
   + Calcola quanto e quando riassortire.
   + Genera automaticamente richieste o suggerimenti.
   + Il supervisore può intervenire o confermare.
@@ -1806,21 +1798,21 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   image("assets/Casi d'uso-UC21.drawio.png"),
   caption: [UC21 - Visualizzazione e gestione Scorte tramite interfaccia grafica]
 )
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Attori Secondari*: Supervisore Locale, Supervisore Globale.
 - *Precondizioni*:
   - L’utente è autenticato.
   - L’interfaccia utente è accessibile e funzionante.
 - *Postcondizioni*:
   - L’utente ha visualizzato e/o modificato le informazioni di inventario#super[G].
-  - Eventuali modifiche sono state salvate e propagate al sistema centrale.
+  - Eventuali modifiche sono state salvate e propagate al sistema centralizzato.
   - I dati visualizzati riflettono lo stato aggiornato delle scorte#super[G] in tempo reale.
 - *Scenario principale*:
   + Il Supervisore Locale o Globale accede all’interfaccia grafica.
-  + Il sistema carica e visualizza in tempo reale le scorte disponibili.
+  + Il sistema centralizzato carica e visualizza in tempo reale le scorte disponibili.
   + L'utente esplora il contenuto della dashboard e i dati per magazzino/prodotto.
   + L’utente seleziona un'azione (es. modifica scorte, trasferimento, riordino).
-  + Il sistema aggiorna l'inventario e sincronizza le modifiche con il cloud.
+  + Il sistema centralizzato aggiorna l'inventario e sincronizza le modifiche con il cloud.
   + L'utente riceve conferma dell'operazione.
   + L’utente visualizza le notifiche badge.
 - *Scenari alternativi*:
@@ -1854,15 +1846,15 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Le scorte#super[G] sono visualizzate in tempo reale.
 - *Scenario principale*:
   - Il supervisore accede alla dashboard#super[G].
-  - Il sistema recupera i dati di inventario#super[G] aggiornati.
+  - Il sistema centralizzato recupera i dati di inventario#super[G] aggiornati.
   - Le scorte#super[G] vengono presentate in una vista tabellare/grafica.
-  - Il sistema aggiorna i dati ogni X secondi o su richiesta.
+  - Il sistema centralizzato aggiorna i dati ogni X secondi o su richiesta.
 - *Inclusioni*:
   - #link(label("uc-11"), underline("[UC 11]")) (visualizzazione stato magazzino).
 
 ==== - UC 21.2: Errore nella visualizzazione dati
 #label("uc-21.2")
-- *Attori Principali*: Sistema.
+- *Attori Principali*: Sistema Centralizzato.
 - *Attori Secondari*: Supervisore Locale, Supervisore Globale.
 - *Precondizioni*:
   - Connessione instabile o servizi#super[G] non disponibili.
@@ -1870,9 +1862,9 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Viene notificato il fallimento della visualizzazione.
 - *Scenario principale*:
   - Il supervisore accede alla dashboard#super[G].
-  - Il sistema tenta di caricare i dati.
+  - Il sistema centralizzato tenta di caricare i dati.
   - Si verifica un errore (es. timeout, servizio#super[G] cloud non raggiungibile).
-  - Il sistema mostra un messaggio con opzioni di riprova o offline mode.
+  - Il sistema centralizzato mostra un messaggio con opzioni di riprova o offline mode.
 
 ==== - UC 21.3: Gestione inventario tramite GUI
 #label("uc-21.3")
@@ -1883,9 +1875,9 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Operazione di inventario#super[G] completata.
 - *Scenario principale*:
   - Il supervisore seleziona un’operazione (aggiunta, modifica, trasferimento#super[G]).
-  - Il sistema mostra un modulo dedicato all’azione scelta.
+  - Il sistema centralizzato mostra un modulo dedicato all’azione scelta.
   - L’utente compila e conferma il modulo.
-  - Il sistema salva l’azione e aggiorna lo stato delle scorte#super[G].
+  - Il sistema centralizzato salva l’azione e aggiorna lo stato delle scorte#super[G].
   - Il cloud viene sincronizzato con l’operazione effettuata.
 - *Inclusioni*:
   - #link(label("uc-5"), underline("[UC 5]"))
