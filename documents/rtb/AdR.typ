@@ -289,7 +289,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 1: Autenticazione#super[G]
 #label("uc-1")
 #figure(
-  image("assets/Casi d'uso-UC1.drawio.png"),
+  image("assets/Casi d'uso-UC1.drawio.png", width: 90%),
   caption: [UC1 - Autenticazione]
 )
 - *Attore Principale*: Utente
@@ -350,7 +350,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 2: Autenticazione#super[G] non riuscita
 #label("uc-2")
 #figure(
-  image("assets/Casi d'uso-UC2.drawio.png"),
+  image("assets/Casi d'uso-UC2.drawio.png", width: 90%),
   caption: [UC2 - Autenticazione non riuscita]
 )
 - *Attore Principale*: Utente
@@ -375,7 +375,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 3: Logout
 #label("uc-3")
 #figure(
-  image("assets/Casi d'uso-UC3.drawio.png"),
+  image("assets/Casi d'uso-UC3.drawio.png", width: 90%),
   caption: [UC3 - Logout]
 )
 
@@ -401,7 +401,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 4: Rilevamento carenza scorte#super[G]
 #label("uc-4")
 #figure(
-  image("assets/Casi d'uso-UC4.drawio.png"),
+  image("assets/Casi d'uso-UC4.drawio.png", width: 90%),
   caption: [UC4 - Rilevamento carenza scorte]
 )
 - *Attore Principale*: Supervisore Locale, Supervisore Globale, Sistema Centralizzato.
@@ -492,7 +492,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 5: Trasferimento#super[G] di scorte#super[G]
 #label("uc-5")
 #figure(
-  image("assets/Casi d'uso-UC5.drawio.png"),
+  image("assets/Casi d'uso-UC5.drawio.png", width: 90%),
   caption: [UC5 - Trasferimento di scorte]
 )
 - *Attore Principale*: Supervisore Locale, Supervisore Globale, Sistema Centralizzato.
@@ -645,7 +645,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 6: Gestione scorte#super[G] minime necessarie
 #label("uc-6")
 #figure(
-  image("assets/Casi d'uso-UC6.drawio.png"),
+  image("assets/Casi d'uso-UC6.drawio.png", width: 90%),
   caption: [UC6 - Gestione scorte minime necessarie]
 )
 - *Attori Principali*: Sistema Centralizzato, Supervisore Locale, Supervisore Globale.
@@ -754,7 +754,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 7: Bilanciamento scorte#super[G] tra magazzini
 #label("uc-7")
 #figure(
-  image("assets/Casi d'uso-UC7.drawio.png"),
+  image("assets/Casi d'uso-UC7.drawio.png", width: 90%),
   caption: [UC7 - Bilanciamento scorte tra magazzini]
 )
 
@@ -839,7 +839,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 8: Gestione ordini con scorte insufficienti
 #label("uc-8")
 #figure(
-  image("assets/Casi d'uso-UC8.drawio.png"),
+  image("assets/Casi d'uso-UC8.drawio.png", width: 60%),
   caption: [UC8 - Gestione ordini con scorte insufficienti]
 )
 
@@ -861,7 +861,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 9: Individuazione di magazzini offline
 #label("uc-9")
 #figure(
-  image("assets/Casi d'uso-UC9.drawio.png"),
+  image("assets/Casi d'uso-UC9.drawio.png", width: 90%),
   caption: [UC9 - Individuazione di magazzini offline]
 )
 - *Attori Principali*: Sistema Centralizzato, Supervisore Locale, Supervisore Globale.
@@ -940,7 +940,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 10: Gestione dei disservizi
 #label("uc-10")
 #figure(
-  image("assets/Casi d'uso-UC10.drawio.png"),
+  image("assets/Casi d'uso-UC10.drawio.png", width: 90%),
   caption: [UC10 - Gestione dei disservizi]
 )
 
@@ -1053,7 +1053,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 11: Gestione magazzino online
 #label("uc-11")
 #figure(
-  image("assets/Casi d'uso-UC11.drawio.png"),
+  image("assets/Casi d'uso-UC11.drawio.png", width: 90%),
   caption: [UC11 - Gestione magazzino che torna online]
 )
 
@@ -1132,7 +1132,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 12: Monitoraggio#super[G] centralizzato delle scorte#super[G]
 #label("uc-12")
 #figure(
-  image("assets/Casi d'uso-UC12.drawio.png"),
+  image("assets/Casi d'uso-UC12.drawio.png", width: 90%),
   caption: [UC12 - Monitoraggio centralizzato delle scorte]
 )
 
@@ -1188,7 +1188,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 13: Gestione aggiornamenti simultanei dell’inventario#super[G]
 #label("uc-13")
 #figure(
-  image("assets/Casi d'uso-UC13.drawio.png"),
+  image("assets/Casi d'uso-UC13.drawio.png", width: 90%),
   caption: [UC13 - Gestione aggiornamenti simultanei dell'inventario]
 )
 - *Attori Principali*: Sistema Centralizzato.
@@ -1272,7 +1272,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 14: Gestione ordini#super[G] simultanei per uno stesso prodotto#super[G]
 #label("uc-14")
 #figure(
-  image("assets/Casi d'uso-UC14.drawio.png"),
+  image("assets/Casi d'uso-UC14.drawio.png", width: 90%),
   caption: [UC14 - Gestione ordini simultanei per uno stesso prodotto]
 )
 - *Attori Principali*: Sistema Centralizzato.
@@ -1354,7 +1354,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 15: Gestione autonoma delle operazioni di magazzino come edge nodes
 #label("uc-15")
 #figure(
-  image("assets/Casi d'uso-UC15.drawio.png"),
+  image("assets/Casi d'uso-UC15.drawio.png", width: 90%),
   caption: [UC15 - Gestione autonoma delle operazioni di magazzino come edge nodes]
 )
 
@@ -1420,7 +1420,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 16: Sincronizzazione posticipata
 #label("uc-16")
 #figure(
-  image("assets/Casi d'uso-UC16.drawio.png"),
+  image("assets/Casi d'uso-UC16.drawio.png", width: 60%),
   caption: [UC16 - Sincronizzazione posticipata]
 )
 - *Attori Principali*: Sistema Centralizzato.
@@ -1436,7 +1436,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 17: Gestione indipendente e sincronizzata dell'inventario
 #label("uc-17")
 #figure(
-  image("assets/Casi d'uso-UC17.drawio.png"),
+  image("assets/Casi d'uso-UC17.drawio.png", width: 90%),
   caption: [UC17 - Gestione indipendente e sincronizzata dell'inventario]
 )
 - *Attori Principali*: Supervisore Locale, Sistema Centralizzato.
@@ -1509,7 +1509,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 18: Monitoraggio continuo delle attività di sistema
 #label("uc-18")
 #figure(
-  image("assets/Casi d'uso-UC18.drawio.png"),
+  image("assets/Casi d'uso-UC18.drawio.png", width: 90%),
   caption: [UC18 - Monitoraggio continuo delle attività di sistema]
 )
 - *Attori Principali*: Sistema Centralizzato.
@@ -1606,7 +1606,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 19: Gestione predittiva della domanda e del riassortimento
 #label("uc-19")
 #figure(
-  image("assets/Casi d'uso-UC19.drawio.png"),
+  image("assets/Casi d'uso-UC19.drawio.png", width: 90%),
   caption: [UC19 - Gestione predittiva della domanda e del riassortimento]
 )
 - *Attori Principali*: Sistema Centralizzato.
@@ -1690,7 +1690,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 20: Riassortimento predittivo tramite analisi storica e previsione della domanda
 #label("uc-20")
 #figure(
-  image("assets/Casi d'uso-UC20.drawio.png"),
+  image("assets/Casi d'uso-UC20.drawio.png", width: 90%),
   caption: [UC20 - Riassortimento predittivo tramite analisi storica e previsione della domanda]
 )
 - *Attori Principali*: Sistema Centralizzato.
@@ -1795,8 +1795,8 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 21: Visualizzazione e Gestione scorte tramite interfaccia grafica
 #label("uc-21")
 #figure(
-  image("assets/Casi d'uso-UC21.drawio.png"),
-  caption: [UC21 - Visualizzazione e gestione Scorte tramite interfaccia grafica]
+  image("assets/Casi d'uso-UC21.drawio.png", width: 90%),
+  caption: [UC21 - Visualizzazione e gestione Scorte tramite interfaccia grafica],
 )
 - *Attori Principali*: Sistema Centralizzato.
 - *Attori Secondari*: Supervisore Locale, Supervisore Globale.
