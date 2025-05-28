@@ -16,7 +16,7 @@
 #let status = "In redazione"
 #let destinatario = "M31"
 
-#let versione = "0.1.6"
+#let versione = "0.1.7"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -28,6 +28,12 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [0.1.7],
+  [28/05/2025],
+  [N. Bolzon \ N. Moretto \ S. Marana],
+  [R. Zangla],
+  [Inserimento tabella di tracciamento dei casi d'uso],
+
   [0.1.6],
   [28/05/2025],
   [N. Bolzon \ N. Moretto \ S. Marana],
@@ -1952,7 +1958,6 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
     [*Codice*], [*Descrizione*], [*Fonti*]
   ),
 
-
   [*RF01*], [*Rilevamento di carenza di scorte#super[G] di un magazzino.*], [capitolato#super[G]],
   [*RF01/01*], [Il sistema deve monitorare costantemente le scorte#super[G].], [capitolato#super[G]],
   [*RF01/02*], [Il sistema deve identificare quando le scorte#super[G] scendono sotto una certa soglia.], [capitolato#super[G]],
@@ -1963,13 +1968,11 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RF02/03*], [Il sistema deve aggiornare l'inventario#super[G] di entrambi i magazzini coinvolti.], [capitolato#super[G]],
   [*RF02/04*], [Il sistema deve tracciare il trasferimento#super[G] dei prodotti#super[G].], [capitolato#super[G]],
   [*RF02/05*], [Il sistema deve aggiornare lo stato del trasferimento#super[G] in tempo reale.], [capitolato#super[G]],
-
   
   [*RF03*], [*Rilevamento delle scorte#super[G] minime necessarie.*], [capitolato#super[G]],
   [*RF03/01*], [Deve essere possibile poter definire un livello minimo di scorte#super[G] per ciascun prodotto#super[G].], [progettazione],
   [*RF03/02*], [Il sistema deve calcolare le scorte#super[G] minime necessarie per ciascun prodotto#super[G].], [capitolato#super[G]],
   [*RF03/03*], [Il sistema deve monitorare le scorte#super[G] attuali rispetto alle scorte#super[G] minime, ottimizzandone la quantità], [capitolato#super[G].],
-
   
   [*RF04*], [*Bilanciamento delle scorte#super[G], il più possibile, in ogni magazzino per ridurre i livelli medi di scorte (riassortimento#super[G]).*], [capitolato#super[G]],
   [*RF04/01*], [Il sistema deve analizzare la distribuzione delle scorte#super[G] tra i magazzini.], [capitolato#super[G]],
@@ -1980,37 +1983,33 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RF05*], [*Suggerimento su azioni di riassortimento#super[G] e trasferimento#super[G] tra magazzini.*], [capitolato#super[G]],
   [*RF05/01*], [È necessario fornire raccomandazioni al sistema per il riassortimento#super[G] e i trasferimenti#super[G].], [capitolato#super[G]],
 
-  [*RF06*], [*Individuazione di magazzini offline.*], [capitolato#super[G]],
-  [*RF06/01*], [Il sistema deve monitorare la connettività#super[G] di ciascun magazzino.], [capitolato#super[G]],
-  [*RF06/02*], [Il sistema deve segnalare tempestivamente eventuali disconnessioni.], [capitolato#super[G]],
-  [*RF06/03*], [Il sistema deve correttamente segnalare lo stato del magazzino (offline, online, non operativo, operativo).], [progettazione],
+  [*RF06*], [*Gestione degli ordini con scorte insufficienti*], [progettazione],
+  [*RF06/01*], [Il sistema deve gestire le scorte insufficienti in un magazzino che deve evadere un ordine], [progettazione],
 
-  [*RF07*], [*Gestione dei disservizi.*], [capitolato#super[G]],
-  [*RF07/01*], [Il sistema deve determinare i magazzini vicini disponibili.], [capitolato#super[G]],
-  [*RF07/02*], [Deve essere definito un disservizio di tipo fisico. Tale disservizio viene segnalato come "non operativo".], [progettazione],
-  [*RF07/03*], [Deve essere definito un disservizio di rete. Tale disservizio viene segnalato come "offline".], [progettazione],
-  [*RF07/04*], [Gestire il caso in cui un magazzino è offline, e mentre è offline diventa non operativo.], [progettazione],
-  [*RF07/05*], [Il sistema deve trasferire scorte#super[G] ai magazzini vicini per sopperire al disservizio nel caso in cui il magazzino è non operativo.], [progettazione],
+  [*RF07*], [*Individuazione di magazzini offline.*], [capitolato#super[G]],
+  [*RF07/01*], [Il sistema deve monitorare la connettività#super[G] di ciascun magazzino.], [capitolato#super[G]],
+  [*RF07/02*], [Il sistema deve segnalare tempestivamente eventuali disconnessioni.], [capitolato#super[G]],
+  [*RF07/03*], [Il sistema deve correttamente segnalare lo stato del magazzino (offline, online, non operativo, operativo).], [progettazione],
+
+  [*RF08*], [*Gestione dei disservizi.*], [capitolato#super[G]],
+  [*RF08/01*], [Il sistema deve determinare i magazzini vicini disponibili.], [capitolato#super[G]],
+  [*RF08/02*], [Deve essere definito un disservizio di tipo fisico. Tale disservizio viene segnalato come "non operativo".], [progettazione],
+  [*RF08/03*], [Deve essere definito un disservizio di rete. Tale disservizio viene segnalato come "offline".], [progettazione],
+  [*RF08/04*], [Gestire il caso in cui un magazzino è offline, e mentre è offline diventa non operativo.], [progettazione],
+  [*RF08/05*], [Il sistema deve trasferire scorte#super[G] ai magazzini vicini per sopperire al disservizio nel caso in cui il magazzino è non operativo.], [progettazione],
   
-  [*RF08*], [*Gestione magazzino che torna online.*], [capitolato#super[G]],
-  [*RF08/01*], [Il sistema deve riconoscere quando un magazzino torna online.], [capitolato#super[G]],
-  [*RF08/02*], [Il sistema deve sincronizzare i dati di inventario#super[G] con il cloud.], [capitolato#super[G]],
-  [*RF08/03*], [Il sistema deve risolvere eventuali conflitti di dati], [capitolato#super[G].],
-
+  [*RF09*], [*Gestione magazzino che torna online.*], [capitolato#super[G]],
+  [*RF09/01*], [Il sistema deve riconoscere quando un magazzino torna online.], [capitolato#super[G]],
+  [*RF09/02*], [Il sistema deve sincronizzare i dati di inventario#super[G] con il cloud.], [capitolato#super[G]],
+  [*RF09/03*], [Il sistema deve risolvere eventuali conflitti di dati], [capitolato#super[G].],
   
-    [*RF09*], [*Visibilità centrale in tempo reale di tutte le scorte#super[G] distribuite (monitoraggio#super[G] livelli inventario#super[G]), di ogni magazzino (anche indipendentemente).*], [capitolato#super[G]],
-  [*RF09/01*], [Il sistema deve fornire una dashboard#super[G] centralizzata per monitorare le scorte#super[G].], [capitolato#super[G]],
-  [*RF09/02*], [Il sistema deve interrogare il database di aggregazione del microservizio#super[G] di inventario#super[G] su cloud per avere una visione centralizzata delle scorte#super[G] di ogni magazzino.], [capitolato#super[G]],
+  [*RF10*], [*Visibilità centrale in tempo reale di tutte le scorte#super[G] distribuite (monitoraggio#super[G] livelli inventario#super[G]), di ogni magazzino (anche indipendentemente).*], [capitolato#super[G]],
+  [*RF10/01*], [Il sistema deve fornire una dashboard#super[G] centralizzata per monitorare le scorte#super[G].], [capitolato#super[G]],
+  [*RF10/02*], [Il sistema deve interrogare il database di aggregazione del microservizio#super[G] di inventario#super[G] su cloud per avere una visione centralizzata delle scorte#super[G] di ogni magazzino.], [capitolato#super[G]],
 
-  [*RF10*], [*Mantenimento dei livelli di sicurezza delle scorte#super[G] in ogni magazzino in caso di carenze o ritardi.*], [capitolato#super[G]],
-  [*RF10/01*], [Definire una soglia temporale massima come tempo stimato di arrivo di una richiesta.], [capitolato#super[G]],
-  [*RF10/02*], [In caso di superamento della soglia, il sistema deve attivare delle azioni correttive (es.: invio di nuove richieste).], [capitolato#super[G]],
-
-    [*RF11*], [*Mantenimento di prestazioni elevate anche con carichi elevati di dati e richieste simultanee.*], [capitolato#super[G]],
-  [*RF11/01*], [ Il sistema deve implementare un meccanismo di bilanciamento del carico tra i servizi#super[G] per distribuire in modo efficiente le richieste.], [capitolato#super[G]],
-  [*RF11/02*], [Il sistema deve monitorare l'utilizzo delle risorse in tempo reale.], [capitolato#super[G]],
-  [*RF11/03*], [Il sistema deve gestire le risorse in modo dinamico evitando problemi prestazionali (es. gestione code, scalabilità#super[G] automatica).], [capitolato#super[G]],
-  //probabilmente non è necessario, in quanto il sistema deve essere progettato per gestire carichi elevati di dati e richieste simultanee, a livello di codice e di struttura.
+  [*RF11*], [*Mantenimento dei livelli di sicurezza delle scorte#super[G] in ogni magazzino in caso di carenze o ritardi.*], [capitolato#super[G]],
+  [*RF11/01*], [Definire una soglia temporale massima come tempo stimato di arrivo di una richiesta, dopo la quale viene aggiornato lo stato del trasferimento.], [capitolato#super[G]],
+  [*RF11/02*], [In caso di superamento della soglia, il sistema deve attivare delle azioni correttive (es.: invio di nuove richieste).], [capitolato#super[G]],
   
   [*RF12*], [*Gestione aggiornamenti simultanei dell'inventario#super[G] da magazzini differenti, anche per i singoli magazzini.*], [capitolato#super[G]],
   [*RF12/01*], [Il sistema deve gestire le modifiche concorrenti (in simultanea) ai dati di inventario#super[G].], [capitolato#super[G]],
@@ -2027,13 +2026,9 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RF14/02*], [Il sistema deve eseguire elaborazioni locali per ridurre il carico sulla rete.], [capitolato#super[G]],
   [*RF14/03*], [Il magazzino locale deve sincronizzarsi con il cloud nel momento in cui avviene un'operazione di scrittura.], [capitolato#super[G]],
 
-  [*RF15*], [*Magazzini gestiti da servizi#super[G] distribuiti.*], [capitolato#super[G]],
-  [*RF15/01*], [È necessario distribuire le funzionalità del sistema su più servizi#super[G].], [capitolato#super[G]],
-  [*RF15/02*], [È necessario garantire la resilienza e la scalabilità#super[G] del sistema.], [capitolato#super[G]],
-
-  [*RF16*], [*Operazioni di inventario#super[G] indipendenti ma sincronizzate centralmente.*], [capitolato#super[G]],
-  [*RF16/01*], [Il magazzino locale deve operare tramite inserimento, modifica, trasferimento#super[G].], [capitolato#super[G]],
-  [*RF16/02*], [Aggiornare il magazzino in primo luogo localmente], [capitolato#super[G]],
+  [*RF15*], [*Operazioni di inventario#super[G] indipendenti ma sincronizzate centralmente.*], [capitolato#super[G]],
+  [*RF15/01*], [Il magazzino locale deve operare tramite inserimento, modifica, trasferimento#super[G].], [capitolato#super[G]],
+  [*RF15/02*], [Aggiornare il magazzino in primo luogo localmente], [capitolato#super[G]],
 
   [*RFD01*], [*Gestione della variabilità della domanda e tempi di consegna con modelli predittivi.*], [capitolato#super[G]],
   [*RFD01/01*], [Il sistema deve prevedere la domanda futura per ciascun prodotto#super[G].], [capitolato#super[G]],
@@ -2084,8 +2079,6 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RFO03/06*], [Il sistema prevede il ripristino#super[G] delle copie locali in caso di guasto del nodo#super[G].], [capitolato#super[G]],
 
   [*RFO03/07*], [Il sistema prevede una verifica#super[G] dell'integrità#super[G] post-ripristino#super[G].], [capitolato#super[G]],
-
-
 )
 #align(center)[_Tabella #tabella_counter: Requisiti#super[G] funzionali_]
 
@@ -2105,8 +2098,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
     [*Codice*], [*Descrizione*], [*Fonti*]
   ),
 
-
-    [*RS01*], [*Autenticazione#super[G] semplice*], [capitolato#super[G]],
+  [*RS01*], [*Autenticazione#super[G] semplice*], [capitolato#super[G]],
   [*RS01/01*], [Il sistema prevede l'implementazione dell'autenticazione#super[G] per l'accesso al sistema stesso.], [capitolato#super[G]],
   [*RS01/02*], [Il sistema deve garantire la protezione dei dati sensibili#super[G] durante il processo di autenticazione#super[G].], [capitolato#super[G]],
   [*RS01/03*], [Il sistema deve prevedere il logout.], [capitolato#super[G]],
@@ -2145,9 +2137,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
 )
 #align(center)[_Tabella #tabella_counter: Requisiti#super[G] di sicurezza_]
 
-
-
-== Requisiti#super[G] non Funzionali
+== Requisiti#super[G] NON Funzionali
 //incremento tabella_counter
 #let tabella_counter = tabella_counter + 1
 
@@ -2164,7 +2154,6 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
 
   ),
 
-
   [*RnF01*], [*Test unitari per garantire la correttezza delle funzioni sviluppate, anche dopo modifiche.*], [capitolato#super[G]],
   [*RnF01/01*], [Il sistema deve verificare#super[G] automaticamente il corretto comportamento delle singole funzioni.], [capitolato#super[G]],
   [*RnF01/02*], [I test devono essere eseguiti dopo ogni modifica al codice#super[G].], [capitolato#super[G]],
@@ -2173,7 +2162,6 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RnF02*], [*Percentuale minima di copertura del codice#super[G].*], [capitolato#super[G]],
   [*RnF02/01*], [La percentuale di copertura del codice#super[G], concordata con M31, è da rispettare costantemente durante tutto lo sviluppo.], [capitolato#super[G]],
   [*RnF02/02*], [Il sistema deve monitorare automaticamente la copertura del codice#super[G] con strumenti dedicati.], [capitolato#super[G]],
-
 
   [*RnF03*], [*Esecuzione automatica dei test*], [capitolato#super[G]],
   [*RnF03/01*], [I test devono essere eseguiti automaticamente tramite pipeline CI/CD#super[G].], [capitolato#super[G]],
@@ -2201,11 +2189,138 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RnF06/02*], [Devono essere ben definite le strategie di merge#super[G]/rebase#super[G].], [capitolato#super[G]],
   [*RnF06/03*], [I commit#super[G] devono essere frequenti e descrittivi.], [capitolato#super[G]],
   [*RnF06/04*], [Le modifiche devono essere tracciabili nel tempo.], [capitolato#super[G]],
-    
-  [*RnF07*], [*Progettazione architetturale ben documentata, presentata con diagrammi a blocchi e derivata da analisi dei requisiti#super[G] e dal contesto distribuito.*
-  ], [capitolato#super[G]],
+
+  [*RnF07*], [*Mantenimento di prestazioni elevate anche con carichi elevati di dati e richieste simultanee.*], [capitolato#super[G]],
+  [*RnF07/01*], [ Il sistema deve implementare un meccanismo di bilanciamento del carico tra i servizi#super[G] per distribuire in modo efficiente le richieste.], [capitolato#super[G]],
+  [*RnF07/02*], [Il sistema deve monitorare l'utilizzo delle risorse in tempo reale.], [capitolato#super[G]],
+  [*RnF07/03*], [Il sistema deve gestire le risorse in modo dinamico evitando problemi prestazionali (es. gestione code, scalabilità#super[G] automatica).], [capitolato#super[G]],
+
+  [*RnF08*], [*Magazzini gestiti da servizi#super[G] distribuiti.*], [capitolato#super[G]],
+  [*RnF08/01*], [È necessario distribuire le funzionalità del sistema su più servizi#super[G].], [capitolato#super[G]],
+  [*RnF08/02*], [È necessario garantire la resilienza e la scalabilità#super[G] del sistema.], [capitolato#super[G]],
+
+  [*RnF09*], [*Progettazione architetturale ben documentata, presentata con diagrammi a blocchi e derivata da analisi dei requisiti#super[G] e dal contesto distribuito.*], [capitolato#super[G]],
 
 )
 #align(center)[_Tabella #tabella_counter: Requisiti#super[G] non funzionali_]
 #pagebreak()
+
 == Tracciamento dei casi d'uso
+
+
+#let tabella_counter = tabella_counter + 1
+
+#set table(
+  fill:(_,y)=>if y==0 {rgb("#2599ff")}
+)
+
+#table(
+  columns: (1fr, 1fr),
+  inset: 10pt,
+  align: center,
+  table.header(
+    [*Requisito*], [*Casi d'Uso*],
+
+  ),
+
+  [*RF01*], [#link(label("uc-4"), underline("[UC 4]"))],
+  [*RF01/01*], [#link(label("uc-4.1"), underline("[UC 4.1]"))],
+  [*RF01/02*], [#link(label("uc-4.2"), underline("[UC 4.2]"))],
+
+  [*RF02*], [#link(label("uc-5"), underline("[UC 5]"))],
+  [*RF02/01*], [#link(label("uc-5.1"), underline("[UC 5.1]"))],
+  [*RF02/02*], [#link(label("uc-5.2"), underline("[UC 5.2]"))],
+  [*RF02/03*], [#link(label("uc-5.3"), underline("[UC 5.3]"))],
+  [*RF02/04*], [#link(label("uc-5.4"), underline("[UC 5.4]"))],
+  [*RF02/05*], [#link(label("uc-5.5"), underline("[UC 5.5]"))],
+
+  [*RF03*], [#link(label("uc-6"), underline("[UC 6]"))],
+  [*RF03/01*], [#link(label("uc-6.1"), underline("[UC 6.1]"))],
+  [*RF03/02*], [#link(label("uc-6.2"), underline("[UC 6.2]"))],
+  [*RF03/03*], [#link(label("uc-6.3"), underline("[UC 6.3]"))],
+
+  [*RF04*], [#link(label("uc-7"), underline("[UC 7]"))],
+  [*RF04/01*], [#link(label("uc-7.1"), underline("[UC 7.1]"))],
+  [*RF04/02*], [#link(label("uc-7.2"), underline("[UC 7.2]"))],
+  [*RF04/03*], [#link(label("uc-7.3"), underline("[UC 7.3]"))],
+  [*RF04/04*], [#link(label("uc-7.4"), underline("[UC 7.4]"))],
+
+  [*RF05*], [#link(label("uc-7.3"), underline("[UC 7.3]"))],
+  [*RF05/01*], [#link(label("uc-7.3"), underline("[UC 7.3]"))],
+
+  [*RF06*], [#link(label("uc-8"), underline("[UC 8]"))],
+  [*RF06/01*], [#link(label("uc-8"), underline("[UC 8]"))],
+
+  [*RF07*], [#link(label("uc-9"), underline("[UC 9]"))],
+  [*RF07/01*], [#link(label("uc-9.1"), underline("[UC 9.1]"))],
+  [*RF07/02*], [#link(label("uc-9.2"), underline("[UC 9.2]"))],
+  [*RF07/03*], [#link(label("uc-9.3"), underline("[UC 9.3]"))],
+
+  [*RF08*], [#link(label("uc-10"), underline("[UC 10]"))],
+  [*RF08/01*], [#link(label("uc-10.1"), underline("[UC 10.1]"))],
+  [*RF08/02*], [#link(label("uc-10.2"), underline("[UC 10.2]"))],
+  [*RF08/03*], [#link(label("uc-10.3"), underline("[UC 10.3]"))],
+  [*RF08/04*], [#link(label("uc-10.4"), underline("[UC 10.4]"))],
+  [*RF08/05*], [#link(label("uc-10.5"), underline("[UC 10.5]"))],
+
+  [*RF09*], [#link(label("uc-11"), underline("[UC 11]"))],
+  [*RF09/01*], [#link(label("uc-11.1"), underline("[UC 11.1]"))],
+  [*RF09/02*], [#link(label("uc-11.2"), underline("[UC 11.2]"))],
+  [*RF09/03*], [#link(label("uc-11.3"), underline("[UC 11.3]"))],
+
+  [*RF10*], [#link(label("uc-12"), underline("[UC 12]"))],
+  [*RF10/01*], [#link(label("uc-12.1"), underline("[UC 12.1]"))],
+  [*RF10/02*], [#link(label("uc-12.2"), underline("[UC 12.2]"))],
+
+  [*RF11*], [#link(label("uc-4"), underline("[UC 4]")), #link(label("uc-7"), underline("[UC 7]"))],
+  [*RF11/01*], [#link(label("uc-5.5"), underline("[UC 5.5]"))],
+  [*RF11/02*], [#link(label("uc-7.4"), underline("[UC 7.4]"))],
+
+  [*RF12*], [#link(label("uc-13"), underline("[UC 13]"))],
+  [*RF12/01*], [#link(label("uc-13"), underline("[UC 13]"))],
+  [*RF12/02*], [#link(label("uc-13.1"), underline("[UC 13.1]"))],
+  [*RF12/02*], [#link(label("uc-13.3"), underline("[UC 13.3]"))],
+  
+  [*RF13*], [#link(label("uc-14"), underline("[UC 14]"))],
+  [*RF13/01*], [#link(label("uc-14.1"), underline("[UC 14.1]"))],
+  [*RF13/02*], [#link(label("uc-14.2"), underline("[UC 14.2]"))],
+  [*RF13/03*], [#link(label("uc-14.3"), underline("[UC 14.3]"))],
+
+  [*RF14*], [#link(label("uc-15"), underline("[UC 15]"))],
+  [*RF14/01*], [#link(label("uc-15.1"), underline("[UC 15.1]"))],
+  [*RF14/02*], [#link(label("uc-15.2"), underline("[UC 15.2]"))],
+  [*RF14/03*], [#link(label("uc-15.3"), underline("[UC 15.3]"))],
+
+  [*RF15*], [#link(label("uc-17"), underline("[UC 17]"))],
+  [*RF15/01*], [#link(label("uc-17.1"), underline("[UC 17.1]"))],
+  [*RF15/02*], [#link(label("uc-17.2"), underline("[UC 17.2]"))],
+
+  [*RFD01*], [#link(label("uc-19"), underline("[UC 19]"))],
+  [*RFD01/01*], [#link(label("uc-19.1"), underline("[UC 19.1]"))],
+  [*RFD01/02*], [#link(label("uc-19.2"), underline("[UC 19.2]"))],
+  [*RFD01/03*], [#link(label("uc-19.3"), underline("[UC 19.3]"))],
+
+  [*RFD02*], [#link(label("uc-20"), underline("[UC 20]"))],
+  [*RFD02/01*], [#link(label("uc-20.1"), underline("[UC 20.1]"))],
+  [*RFD02/02*], [#link(label("uc-20.2"), underline("[UC 20.2]"))],
+  [*RFD02/03*], [#link(label("uc-20.3"), underline("[UC 20.3]"))],
+  [*RFD02/04*], [#link(label("uc-20.4"), underline("[UC 20.4]"))],
+
+  [*RFD03*], [#link(label("uc-21"), underline("[UC 21]"))],
+  [*RFD03/01*], [#link(label("uc-21"), underline("[UC 21]"))],
+  [*RFD03/02*], [#link(label("uc-21.1"), underline("[UC 21.1]"))],
+  [*RFD03/03*], [#link(label("uc-21.3"), underline("[UC 21.3]"))],
+
+  [*RS01*], [#link(label("uc-1"), underline("[UC 1]")), #link(label("uc-1.1"), underline("[UC 1.1]")), #link(label("uc-1.2"), underline("[UC 1.2]")), #link(label("uc-2"), underline("[UC 2]"))],
+  [*RS01/01*], [#link(label("uc-1"), underline("[UC 1]")), #link(label("uc-1.1"), underline("[UC 1.1]")), #link(label("uc-1.2"), underline("[UC 1.2]")), #link(label("uc-2"), underline("[UC 2]"))],
+  [*RS01/02*], [#link(label("uc-1"), underline("[UC 1]")), #link(label("uc-1.1"), underline("[UC 1.1]")), #link(label("uc-1.2"), underline("[UC 1.2]")), #link(label("uc-2"), underline("[UC 2]"))],
+  [*RS01/03*], [#link(label("uc-3"), underline("[UC 3]"))],
+
+  [*RS03*], [#link(label("uc-18"), underline("[UC 18]"))],
+  [*RS03/01*], [#link(label("uc-18.1"), underline("[UC 18.1]"))],
+  [*RS03/02*], [#link(label("uc-18.2"), underline("[UC 18.2]"))],
+  [*RS03/03*], [#link(label("uc-18.3"), underline("[UC 18.3]"))],
+  [*RS03/04*], [#link(label("uc-18.4"), underline("[UC 18.4]"))],
+)
+
+#align(center)[_Tabella #tabella_counter: Tracciamento dei Casi d'Uso_]
