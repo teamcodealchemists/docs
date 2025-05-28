@@ -16,7 +16,7 @@
 #let status = "In redazione"
 #let destinatario = "M31"
 
-#let versione = "0.5.1"
+#let versione = "0.5.2"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -28,6 +28,12 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [0.5.2],
+  [28/05/2025],
+  [N. Bolzon],
+  [R. Zangla],
+  [Rimozione spaziatura tra titolo e testo del paragrafo.],
+
   [0.5.1],
   [28/05/2025],
   [N. Bolzon \ N. Moretto \ S. Marana \ S. Speranza],
@@ -127,7 +133,6 @@ target: figure.where(kind: image),
 /* SEZIONE 1 - Introduzione */
 = Introduzione
 == Scopo del documento
-#v(0.5cm)
 Il presente documento viene redatto per _l'analisi dei requisiti#super[G]_.
 
 Il presente documento di Analisi dei Requisiti#super[G] ha lo scopo di fornire una panoramica quanto più possibile dettagliata del prodotto#super[G] software da sviluppare. Esso rappresenta un riferimento e una linea guida fondamentale per la progettazione, l'implementazione e il collaudo del sistema. Garantisce che il prodotto#super[G] finale soddisfi pienamente le esigenze e le aspettative del committente#super[G].
@@ -156,8 +161,6 @@ Per agevolare la comprensione, verranno utilizzati i Diagrammi dei Casi d'Uso pe
 Potrà inoltre essere consultato da altri soggetti coinvolti nel processo di sviluppo, come Amministratori#super[G] e Responsabili#super[G] di Progetto, al fine di acquisire una comprensione esauriente delle specifiche del sistema.
 
 == Descrizione del prodotto#super[G]
-#v(0.5cm)
-
 Il progetto ha l'obiettivo di sviluppare un sistema intelligente per la gestione distribuita dell'inventario#super[G] in una rete di magazzini geograficamente separati. In scenari logistici complessi, come quelli che prevedono la cooperazione tra più sedi operative, è fondamentale garantire disponibilità continua delle scorte#super[G], ridurre i tempi di inattività e ottimizzare il flusso di materiali.
 
 Il sistema dovrà permettere di rilevare in tempo reale situazioni critiche, come carenze di prodotto#super[G] in una sede e surplus in un'altra, intervenendo automaticamente o suggerendo azioni correttive di trasferimento#super[G] o riassortimento#super[G]. Sarà inoltre in grado di gestire eventi imprevisti, come l'indisponibilità temporanea di un magazzino, garantendo la continuità operativa attraverso un bilanciamento intelligente delle risorse nei magazzini vicini.
@@ -171,7 +174,6 @@ Il progetto prevede anche *l'integrazione di modelli predittivi* per il riassort
 L'obiettivo finale è realizzare una *piattaforma robusta e flessibile* che migliori la resilienza e l'efficienza dell'intera rete logistica, assicurando precisione, tempestività e scalabilità#super[G] nelle operazioni di gestione dell'inventario#super[G].
 
 == Analisi dello stato dell'arte
-#v(0.5cm)
 Prima di procedere con l'analisi dei requisiti#super[G], è stata effettuata un'analisi dello stato dell'arte, al fine di comprendere le tecnologie e le soluzioni già esistenti nel campo della gestione distribuita, dei microservizi#super[G] e della gestione dei dati.\
 Sono stati analizzati diversi articoli, documenti e libri che trattano questi argomenti, al fine di identificare le migliori pratiche e le soluzioni più adatte per il progetto in questione.
 Sono stati presi in considerazione anche vari progetti esistesti che utilizzano tecnologie simili, al fine di comprendere le sfide e le opportunità che si presentano in questo campo.\
@@ -201,8 +203,6 @@ Dopo un'esaustiva ricerca, sono stati identificati alcuni punti chiave che saran
   La Service Discovery consente ai microservizi#super[G] di trovare e comunicare tra loro in modo dinamico, senza la necessità di configurazioni statiche.
 
 == Glossario#super[G]
-#v(0.5cm)
-
 In questo documento potrebbero essere presenti parole#super[G] e terminologie complesse, che potrebbero non essere chiare a tutti, anche in relazione al contesto in cui vengono usate. Per questo motivo, È stato creato un glossario#super[G], che contiene le definizioni di alcune parole#super[G] e termini utilizzati nel documento.
 
 Le parole#super[G] che possiedono un riferimento al glossario#super[G] vengono evidenziate come segue: *parola#super[G]*.
@@ -1886,7 +1886,6 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 #pagebreak()
 = Requisiti#super[G]
-#v(0.5cm)
 Verranno ora elencati i requisiti#super[G] del sistema, che sono stati suddivisi in quattro categorie principali: Requisiti#super[G] Funzionali, Requisiti#super[G] di Sicurezza, Requisiti#super[G] non Funzionali e Requisiti#super[G] di Vincolo.
 
 == Classificazione dei requisiti#super[G]
