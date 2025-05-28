@@ -80,7 +80,7 @@ Il *Piano di Progetto#super[G]* è un documento che definisce le modalità di ge
 
 Il documento è molto importante per permettere una corretta pianificazione del lavoro e dei vari sprint#super[G], analizzando il tempo previsto ed effettivo per ogni attività, tenendo conto dei rischi e delle risorse disponibili.
 
-== Informazioni sul prodotto
+== Informazioni sul prodotto#super[G]
 #v(1em)
 
 Il progetto riguarda lo sviluppo di un sistema di gestione per magazzini distribuiti, con l'obiettivo di ottimizzare la gestione dell'inventario#super[G] in una rete di magazzini geograficamente separati. Questo sistema deve garantire che i flussi di materiali e prodotti tra i magazzini siano gestiti in tempo reale, evitando rotture di stock e migliorando la distribuzione delle scorte#super[G]. Il sistema dovrà anche ridurre i livelli medi di inventario#super[G], mantenendo però scorte#super[G] di sicurezza per gestire variazioni nella domanda o ritardi nelle consegne.
@@ -95,7 +95,7 @@ In sintesi, il progetto si propone di migliorare l’efficienza operativa della 
 == Glossario#super[G]
 La realizzazione di un software richiede, ancor prima dello sviluppo, una fase di analisi e progettazione. Dato che il lavoro durante questa fase è svolto da più persone e in modo asincrono, è necessario documentare tutte queste attività per tenere traccia di ciò che è stato fatto e per evitare confusione. 
 
-Si potrà dedurre che questi documenti potrebbero contenere parole o frasi che non sono di uso comune, ma che sono state scelte per essere più specifiche e per evitare ambiguità. Per questo motivo è stato creato un glossario#super[G] che contiene le definizioni di tali termini, al seguente #link("https://teamcodealchemists.github.io/glossario")[#underline[indirizzo]]. 
+Si potrà dedurre che questi documenti potrebbero contenere parole#super[G] o frasi che non sono di uso comune, ma che sono state scelte per essere più specifiche e per evitare ambiguità. Per questo motivo è stato creato un glossario#super[G] che contiene le definizioni di tali termini, al seguente #link("https://teamcodealchemists.github.io/glossario")[#underline[indirizzo]]. 
 
 == Riferimenti   //Inserire riferimenti al capitolato#super[G] del progetto e a lezioni/slide del professore se necessario
 - *Capitolato#super[G] d'appalto C6 - Gestione di un magazzino distribuito - _M31_*\
@@ -121,7 +121,7 @@ Per valutare nel migliore modo possibile i rischi sono stati definiti i seguenti
 
 - *Tipo*: Rappresenta l'impatto che il rischio potrebbe avere sul progetto, ed è classificato in Basso, Medio o Alto;
 
-- *Gravità*: Descrive le conseguenze che un rischio ha se si verifica, con l'eventuale possibilità di modifica alla pianificazione o al progetto;
+- *Gravità*: Descrive le conseguenze che un rischio ha se si verifica#super[G], con l'eventuale possibilità di modifica alla pianificazione o al progetto;
 
 - *Probabilità*: Indica, come da nome, la probabilità che il rischio si verifichi durante lo sviluppo del progetto.
 
@@ -151,7 +151,7 @@ Per valutare nel migliore modo possibile i rischi sono stati definiti i seguenti
 ]
 
 #v(1em)
-== Suddivisione dei rischi // Potremmo invertire l'ordine a quello inglese
+== Suddivisione dei rischi // Potremmo invertire l'ordine#super[G] a quello inglese
 #v(1em)
 
 I rischi del progetto sono suddivisi in quattro categorie principali, in base al tipo di problematiche che potrebbero verificarsi:
@@ -164,7 +164,7 @@ I rischi del progetto sono suddivisi in quattro categorie principali, in base al
 
 - Rischi di natura tecnologica.
 
-Ogni rischio è identificato tramite un codice univoco, strutturato come segue:
+Ogni rischio è identificato tramite un codice#super[G] univoco, strutturato come segue:
 
 #align(center, block[*R[Categoria][Indice] - [Nome]*])
 
@@ -191,7 +191,7 @@ Dove:
 
 #tabella_rischi(
   dati: (
-    [*Codice*],
+    [*Codice#super[G]*],
     [RT1],
 
     [*Gravità*],
@@ -220,7 +220,7 @@ Dove:
 
 #tabella_rischi(
   dati: (
-    [*Codice*],
+    [*Codice#super[G]*],
     [RT2],
 
     [*Gravità*],
@@ -249,7 +249,7 @@ Dove:
 
 #tabella_rischi(
   dati: (
-    [*Codice*],
+    [*Codice#super[G]*],
     [RT3],
 
     [*Descrizione*],
@@ -283,7 +283,7 @@ Dove:
 
 #tabella_rischi(
   dati: (
-    [*Codice*],
+    [*Codice#super[G]*],
     [RT4],
 
     [*Gravità*],
@@ -311,7 +311,7 @@ Dove:
 
 #tabella_rischi(
   dati: (
-    [*Codice*],
+    [*Codice#super[G]*],
     [RC1],
 
     [*Gravità*],
@@ -341,7 +341,7 @@ Dove:
 
 #tabella_rischi(
   dati: (
-    [*Codice*],
+    [*Codice#super[G]*],
     [RC2],
 
     [*Gravità*],
@@ -370,7 +370,7 @@ Dove:
 
 #tabella_rischi(
   dati: (
-    [*Codice*],
+    [*Codice#super[G]*],
     [RC3],
 
     [*Gravità*],
@@ -402,7 +402,7 @@ Dove:
 
 #tabella_rischi(
   dati: (
-    [*Codice*],
+    [*Codice#super[G]*],
     [RI1],
 
     [*Gravità*],
@@ -435,7 +435,7 @@ Dove:
 
 #tabella_rischi(
   dati: (
-    [*Codice*],
+    [*Codice#super[G]*],
     [RI2],
 
     [*Gravità*],
@@ -463,7 +463,7 @@ Dove:
 
 #tabella_rischi(
   dati: (
-    [*Codice*],
+    [*Capitolatoodice#super[G]*],
     [RI3],
 
     [*Gravità*],
@@ -495,7 +495,7 @@ Dove:
 
 #tabella_rischi(
   dati: (
-    [*Codice*],
+    [*Codice#super[G]*],
     [RG1],
 
     [*Gravità*],
@@ -525,7 +525,7 @@ Dove:
 
 #tabella_rischi(
   dati: (
-    [*Codice*],
+    [*Codice#super[G]*],
     [RG2],
 
     [*Gravità*],
@@ -586,13 +586,13 @@ Di seguito vengono brevemente descritti i ruoli previsti all'interno del team, e
 - *Amministratore#super[G]*: si occupa della gestione delle infrastrutture, incluso il setup degli strumenti utilizzati per la produzione del software e della documentazione, nonché dell’organizzazione e della produttività del team.
 
 
-- *Analista#super[G]*: è responsabile della definizione dei requisiti#super[G] di progetto e dell’analisi delle funzionalità del software, al fine di determinare i casi d’uso. Il suo contributo è fondamentale nella fase iniziale, per permettere una progettazione ottimale da parte dei progettisti#super[G] e, successivamente, una corretta implementazione da parte dei programmatori#super[G].
+- *Analista#super[G]*: è responsabile#super[G] della definizione dei requisiti#super[G] di progetto e dell’analisi delle funzionalità del software, al fine di determinare i casi d’uso. Il suo contributo è fondamentale nella fase iniziale, per permettere una progettazione ottimale da parte dei progettisti#super[G] e, successivamente, una corretta implementazione da parte dei programmatori#super[G].
 
 
-- *Progettista#super[G]*: definisce l’architettura#super[G] del software, individuando i componenti e le interazioni tra essi sulla base dell’analisi dei requisiti#super[G] fornita dagli analisti#super[G]. Il ruolo è cruciale per una progettazione efficace del prodotto, sia nella fase preliminare del Proof of Concept#super[G] (POC#super[G]), sia nella realizzazione del Minimum Viable Product (MVP).
+- *Progettista#super[G]*: definisce l’architettura#super[G] del software, individuando i componenti e le interazioni tra essi sulla base dell’analisi dei requisiti#super[G] fornita dagli analisti#super[G]. Il ruolo è cruciale per una progettazione efficace del prodotto#super[G], sia nella fase preliminare del Proof of Concept#super[G] (POC#super[G]), sia nella realizzazione del Minimum Viable Product (MVP).
 
 
-- *Programmatore#super[G]*: sviluppa il codice#super[G] del software secondo l’architettura#super[G] definita dai progettisti#super[G]. Oltre a ricoprire il ruolo chiave nella realizzazione del prodotto, ha anche il compito implicito di validare le scelte effettuate da analisti#super[G] e progettisti#super[G].
+- *Programmatore#super[G]*: sviluppa il codice#super[G] del software secondo l’architettura#super[G] definita dai progettisti#super[G]. Oltre a ricoprire il ruolo chiave nella realizzazione del prodotto#super[G], ha anche il compito implicito di validare le scelte effettuate da analisti#super[G] e progettisti#super[G].
 
 
 - *Verificatore#super[G]*: controlla, durante tutte le fasi dello sviluppo, che il software e la documentazione rispettino le specifiche e le norme adottate. Il suo ruolo è essenziale per individuare tempestivamente eventuali errori o incongruenze.
@@ -831,7 +831,7 @@ In particolare, si è deciso di utilizzare il framework *Scrum#super[G]*, che pr
 ovvero periodi di tempo ben definiti da una data di inizio e una data di fine in cui il team 
 si impegna a concentrarsi su un insieme specifico e finito di attività.\
 Il team ha deciso di utilizzare una durata dello sprint#super[G] pari a *2 settimane*, 
-questo aiutera ad ottenere un buon bilanciamento tra pianificazione e esecuzione delle attività. 
+questo aiutera ad ottenere un buon bilanciamento#super[G] tra pianificazione e esecuzione delle attività. 
 Inoltre durante ogni sprint#super[G], verranno effettuate diverse riunioni per discutere
 sia i progressi di ogni membro e le difficoltà riscontrate, per permettere una comunicazione continua tra i membri
 e una rapida risoluzione dei problemi che potrebbero insorgere.\
@@ -922,7 +922,7 @@ I possibili rischi :
       [Stefano Speranza],[],[],[6],[],[],[],
       [Ramona Zangla],[],[],[6],[],[],[],
   ),
-  didascalia: "Sprint 1 - Preventivo ore per ciascun componente"
+  didascalia: "Sprint#super[G] 1 - Preventivo ore per ciascun componente"
 )
 ]
 #v(1em)
@@ -942,7 +942,7 @@ I possibili rischi :
       [Stefano Speranza],[],[],[6],[],[],[],
       [Ramona Zangla],[],[],[6],[],[],[],
   ),
-  didascalia: "Sprint 1 - Consuntivo ore per ciascun componente"
+  didascalia: "Sprint#super[G] 1 - Consuntivo ore per ciascun componente"
 )
 ]
 #v(1em)
@@ -961,7 +961,7 @@ I possibili rischi :
       [Verificatore#super[G]], [15€/h], [10], [150€], [142 (-10)], [2130€ (-150€)],
       [*Totale*], [*-*], [*43*], [*970€*], [*720 (-43)*], [*14430€ (-970€)*],
   ),
-    didascalia: "Sprint 1 - Aggiornamento delle risorse disponibili"
+    didascalia: "Sprint#super[G] 1 - Aggiornamento delle risorse disponibili"
   )
 ]
 ==== Rischi incontrati
@@ -1039,7 +1039,7 @@ I possibili rischi :
       [Stefano Speranza],[],[],[6],[],[],[],
       [Ramona Zangla],[],[],[],[],[],[6],
   ),
-  didascalia: "Sprint 2 - Preventivo ore per ciascun componente"
+  didascalia: "Sprint#super[G] 2 - Preventivo ore per ciascun componente"
 )
 ]
 
@@ -1057,7 +1057,7 @@ I possibili rischi :
       [Stefano Speranza],[],[],[6 (-1)],[],[],[],
       [Ramona Zangla],[],[],[],[],[],[6 (-1)],
   ),
-  didascalia: "Sprint 2 - Preventivo ore per ciascun componente"
+  didascalia: "Sprint#super[G] 2 - Preventivo ore per ciascun componente"
 )
 ]
 
@@ -1074,7 +1074,7 @@ I possibili rischi :
       [Verificatore#super[G]], [15€/h], [9], [135€], [130 (-9)], [1980€ (-135€)],
       [*Totale*], [*-*], [*38*], [*865€*], [*675 (-43)*], [*13460€ (-790€)*],
   ),
-    didascalia: "Sprint 1 - Aggiornamento delle risorse disponibili"
+    didascalia: "Sprint#super[G] 1 - Aggiornamento delle risorse disponibili"
   )
 ]
 #v(1em)
@@ -1144,7 +1144,7 @@ I possibili rischi :
       [Stefano Speranza],[],[],[],[-],[],[],
       [Ramona Zangla],[],[],[],[-],[],[],
   ),
-  didascalia: "Sprint 3 - Preventivo ore per ciascun componente"
+  didascalia: "Sprint#super[G] 3 - Preventivo ore per ciascun componente"
 )
 ]
 #v(1em)
@@ -1164,7 +1164,7 @@ I possibili rischi :
       [Stefano Speranza],[],[],[],[-],[],[],
       [Ramona Zangla],[],[],[],[-],[],[],
   ),
-  didascalia: "Sprint 3 - Consuntivo ore per ciascun componente"
+  didascalia: "Sprint#super[G] 3 - Consuntivo ore per ciascun componente"
 )
 ]
 #v(1em)
@@ -1182,7 +1182,7 @@ I possibili rischi :
       [Verificatore#super[G]], [15€/h], [], [], [], [],
       [*Totale*], [*-*], [**], [**], [**], [**],
   ),
-    didascalia: "Sprint 3 - Aggiornamento delle risorse disponibili"
+    didascalia: "Sprint#super[G] 3 - Aggiornamento delle risorse disponibili"
   )
 ]
 #v(1em)
