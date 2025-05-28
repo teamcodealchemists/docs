@@ -22,7 +22,7 @@
 )
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
-    [1.0.0], [?/05/2025], [-], [], [Approvazione del documento],
+    [1.0.0], [28/05/2025], [-], [R. Zangla], [Approvazione del documento],
     [0.1.0], [24/05/2025], [M. Pretto],[-], [Prima stesura del documento]
 
 )
@@ -46,7 +46,7 @@
 
 // INSERIRE QUI CONTENUTO
   = 1. Informazioni generali
-    In data *16 maggio 2025*, dalle ore *14:30* alle ore *15:30*, è stata svolta, in modalità telematica sulla piattaforma _Discord_, la riunione interna del _Team Code Alchemists_.\
+    In data *23 maggio 2025*, dalle ore *14:30* alle ore *15:30*, è stata svolta, in modalità telematica sulla piattaforma _Discord_, la riunione interna del _Team Code Alchemists_.\
     La riunione si è svolta, alla fine del quarto sprint, per fare il punto della situazione, per discutere le attività da intraprendere e per definire i ruoli e le responsabilità di ciascun membro del team. \
 
     == 1.1 Ordine del Giorno
@@ -60,10 +60,10 @@
   Il verbale iniziale viene redatto da *#p.matteo* e verificato da *#p.ramona*. \
 
   == 2.1 Lavori svolti durante lo sprint RTB#super[G] 4
-  Nell'ambito del quarto sprint il team ha lavorato principalmente su due campi principali: lo studio dell'architettura e sulla stesura dei casi d'uso. Sono state inoltre studiate le tecnologie che verranno poi utilizzate durante lo sviluppo del sistema. \
+  Nell'ambito del quarto sprint, il team ha lavorato principalmente su due campi principali: lo studio dell'architettura e sulla stesura dei casi d'uso. Sono state inoltre studiate le tecnologie che verranno poi utilizzate durante lo sviluppo del sistema. \
 
   === 2.1.1 Lavori in svolgimento dal responsabile#super[G]
-  Il responsabile#super[G] si è di coordinare le attività del team e di monitorare l'andamento dei lavori. Ha inoltre partecipato attivamente alla definizione delle attività da intraprendere e ha fornito supporto ai membri del team nella risoluzione di eventuali problematiche: con i progettisti#super[G] ha continuato l'attività di definizione dell'architettura per il PoC#super[G]. \
+  Il responsabile#super[G] si è occupato di coordinare le attività del team e di monitorare l'andamento dei lavori. Ha inoltre partecipato attivamente alla definizione delle attività da intraprendere e ha fornito supporto ai membri del team nella risoluzione di eventuali problematiche: con i progettisti#super[G] ha continuato l'attività di definizione dell'architettura per il PoC#super[G]. \
   Si è inoltre occupato della comunicazione esterna e interna. \
 
   === 2.1.2 Lavori svolti dall'amministratore#super[G]
@@ -81,18 +81,18 @@
   Come per la stesura dei casi d'uso, anche questa attività è prossima alla conclusione. \
 
   === 2.1.5 Lavori svolti dai verificatori#super[G]
-  Il verificatore#super[G] ha il compito di verificare la correttezza e la completezza dei documenti redatti dal team. Durante il quarto sprint, sta verificando i vari documenti redatti dal team.
-  Ha inoltre continuato a redarre il *Piano di Qualifica*#super[G], documento volto a definire le modalità di qualifica e verifica del prodotto#super[G] software. \
+  Il verificatore#super[G] ha il compito di verificare la correttezza e la completezza dei documenti redatti dal team. Durante il quarto sprint, si è occupato di verificare i vari documenti redatti dal team;
+  ha, inoltre, continuato a redarre il *Piano di Qualifica*#super[G], documento volto a definire le modalità di qualifica e verifica del prodotto#super[G] software. \
 
   == 2.2 Criticità emerse
-  Non vi sono state criticità rilevanti emerse durante la rionine. Sono stati riferiti dai progettisti#super[G] alcuni minimi problemi incontrati durante il loro lavoro. Problemi che sono sempre stati risolti tempestivamente.
+  Non vi sono state criticità rilevanti emerse durante la rionine. Sono stati riferiti dai progettisti#super[G] alcuni problemi minori incontrati durante il loro lavoro, i quali sono sempre stati risolti tempestivamente.
 
 
   == 2.3 Definizione del prossimo sprint
-  Dopo aver ritenuto concluso il quarto sprint, il team ha deciso di iniziare a definire ruoli, tempistiche e obiettivi per il terzo sprint.\
-  Il terzo sprint avrà una durata di due settimane: inizierà il *24 maggio* e terminerà il *08 giugno*.\
+  Dopo aver ritenuto concluso il quarto sprint, il team ha deciso di iniziare a definire ruoli, tempistiche e obiettivi per il quinto sprint.\
+  Il quinto sprint avrà una durata di due settimane: inizierà il *23 maggio* e terminerà il *06 giugno*.\
   Si farà riferimento a questo sprint come _Sprint RTB 5_.\
-  Durante il quinto sprint, il team si concentrerà principalmente *sullo sviluppo del PoC*. Proprio per questo, in questo sprint la figura dei programmatori#super[G] comicia ad essere centrale. \ Inoltre si lavorerà sulla *configurazione delle tecnologie*.
+  Durante il quinto sprint, il team si concentrerà principalmente *sullo sviluppo del PoC*. Proprio per questo, a partire da questo sprint la figura dei programmatori#super[G] comicia ad essere centrale. \ Inoltre si lavorerà sulla *configurazione delle tecnologie*.
 
 
 
@@ -102,12 +102,12 @@
   - *Responsabile#super[G]*: #p.nicolo
   - *Amministratore#super[G]*: #p.stefano
   - *Analista#super[G]*: #p.sebastiano
-  - *Progettisti#super[G]*: #p.nicholas
-  - *Programmatore#super[G]*: #p.matteo, #p.alex, #p.mattia
+  - *Progettista#super[G]*: #p.nicholas
+  - *Programmatori#super[G]*: #p.matteo, #p.alex, #p.mattia
   - *Verificatore#super[G]*: #p.ramona
 
 
-   === 2.3.2 Definizione delle attività da intraprendere
+  === 2.3.2 Definizione delle attività da intraprendere
   Dopo la riunione, il responsabile#super[G] ha redatto un documento interno di indicazione delle attività di progetto, che è stato condiviso con i membri del team.\ 
   Il seguente documento è consultabile #link("https://docs.google.com/document/d/1l_KvZZZbsZZElnh5gWqmTwMPI8bL38Hj61ez_Vqe4EE/edit?tab=t.0#heading=h.10d9twowam3d")[#underline[qui]].
 
