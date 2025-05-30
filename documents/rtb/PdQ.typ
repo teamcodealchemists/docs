@@ -87,7 +87,7 @@ Per trovare il significato del termine, è possibile consultare il glossario#sup
 
 === 1.3.1 Riferimenti normativi  
 
-- *CAPI#super[G]tolato#super[G] d'appalto* \
+- *Capitolato#super[G] d'appalto* \
   *C6 - Sistema di Gestione di un Magazzino Distribuito* \
   #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")]\
 
@@ -163,15 +163,15 @@ Sebbene non sempre sia semplice adottare misurazioni formali, l'obiettivo è man
 
 === 2.2.2 Verifica#super[G]
 
-#let voci_tabella_verifica#super[G] = (
+#let voci_tabella_verifica = (
     [ABC01], [Piano di Piano], [>= 60], [>= 90]
   )
-#let caption_verifica#super[G] = (
+#let caption_verifica = (
   [Metriche di qualità per il processo di verifica#super[G]]
 )
 #show: qualifica_table.with(
-  voci: voci_tabella_verifica#super[G],
-  caption: caption_verifica#super[G]
+  voci: voci_tabella_verifica,
+  caption: caption_verifica
 )
 
 === 2.2.3 Gestione della Qualità
@@ -220,7 +220,7 @@ Per ogni test viene specificato uno stato, che può essere:
 
 == 3.1 Test di unità
 
-I test di unità verifica#super[G]no il comportamento corretto delle singole unità di codice, come funzioni, metodi o classi. Vengono scritti e mantenuti dagli sviluppatori durante la fase di sviluppo e servono a garantire che ogni componente, isolato dal resto, produca il risultato atteso per diversi input. Sono fondamentali per individuare API#super[G]damente errori logici a livello di codice sorgente.
+I test di unità verifica#super[G]no il comportamento corretto delle singole unità di codice, come funzioni, metodi o classi. Vengono scritti e mantenuti dagli sviluppatori durante la fase di sviluppo e servono a garantire che ogni componente, isolato dal resto, produca il risultato atteso per diversi input. Sono fondamentali per individuare rapidamente errori logici a livello di codice sorgente.
 
 #let voci_test_unità = (
     [---], [---], [---], [NI]
