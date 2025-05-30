@@ -72,7 +72,7 @@ Il Piano di Qualifica#super[G] si basa su tre aspetti principali:
 === 1.1.2 Controllo di Qualità
 - Attuare e assicurare la conformità con le regole da seguire e il Way of Working#super[G];
 - L'operato viene monitorato attraverso il Cruscotto di Valutazione;
-- Effettuare il Quality Assurance passo-passo per prevenire e mitigare i rischi e verifica#super[G]re la soddisfazione dei requisiti#super[G].
+- Effettuare il Quality Assurance passo-passo per prevenire e mitigare i rischi e verificare la soddisfazione dei requisiti#super[G].
 
 === 1.1.3 Miglioramento continuo
 La qualità non è definitiva, bensì si evolve e va perfezionata nel corso del tempo:
@@ -80,7 +80,7 @@ La qualità non è definitiva, bensì si evolve e va perfezionata nel corso del 
 - L'obiettivo è incrementare nel tempo l'efficienza e l'efficacia dei processi.
 
 == 1.2 Glossario#super[G]
-Per una corretta comprensione del documento, viene fornito un glossario#super[G] dei termini utilizzati. Ogni termine è indicato da una "#super[G]" in API#super[G]ce alla parola#super[G].
+Per una corretta comprensione del documento, viene fornito un glossario#super[G] dei termini utilizzati. Ogni termine è indicato da una "#super[G]" in apice alla parola#super[G].
 Per trovare il significato del termine, è possibile consultare il glossario#super[G] al seguente indirizzo: 
 #underline[#link("https://teamcodealchemists.github.io/glossario#super[G].html")]\
 == 1.3 Riferimenti
@@ -220,7 +220,7 @@ Per ogni test viene specificato uno stato, che può essere:
 
 == 3.1 Test di unità
 
-I test di unità verifica#super[G]no il comportamento corretto delle singole unità di codice, come funzioni, metodi o classi. Vengono scritti e mantenuti dagli sviluppatori durante la fase di sviluppo e servono a garantire che ogni componente, isolato dal resto, produca il risultato atteso per diversi input. Sono fondamentali per individuare rapidamente errori logici a livello di codice sorgente.
+I test di unità verificano il comportamento corretto delle singole unità di codice, come funzioni, metodi o classi. Vengono scritti e mantenuti dagli sviluppatori durante la fase di sviluppo e servono a garantire che ogni componente, isolato dal resto, produca il risultato atteso per diversi input. Sono fondamentali per individuare rapidamente errori logici a livello di codice sorgente.
 
 #let voci_test_unità = (
     [---], [---], [---], [NI]

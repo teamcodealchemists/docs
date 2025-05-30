@@ -764,11 +764,11 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   + Invia una notifica urgente al supervisore.
 
 #pagebreak()
-=== - UC 7: bilanciamento#super[G] scorte#super[G] tra magazzini
+=== - UC 7: Bilanciamento#super[G] scorte#super[G] tra magazzini
 #label("uc-7")
 #figure(
   image("assets/Casi d'uso-UC7.drawio.png", width: 90%),
-  caption: [UC7 - bilanciamento#super[G] scorte#super[G] tra magazzini]
+  caption: [UC7 - Bilanciamento#super[G] scorte#super[G] tra magazzini]
 )
 
 - *Attori Principali*: Sistema Centralizzato, Supervisore Globale.
@@ -1146,7 +1146,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 #label("uc-12")
 #figure(
   image("assets/Casi d'uso-UC12.drawio.png", width: 90%),
-  caption: [UC12 - Monitoraggio centralizzato delle scorte#super[G]]
+  caption: [UC12 - Monitoraggio#super[G] centralizzato delle scorte#super[G]]
 )
 
 - *Attori Principali*: Sistema Centralizzato, Supervisore Globale, Supervisore Locale.
@@ -1691,7 +1691,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Azioni preventive attivate.
 - *Scenario principale*:
   + Il sistema centralizzato rileva un rischio di esaurimento.
-  + verifica#super[G] le opzioni disponibili: nuovo ordine#super[G], trasferimento#super[G] da altro magazzino, limitazione ordini#super[G].
+  + Verifica#super[G] le opzioni disponibili: nuovo ordine#super[G], trasferimento#super[G] da altro magazzino, limitazione ordini#super[G].
   + Propone un'azione o la attua automaticamente (se configurato).
   + Notifica il supervisore.
 - *Inclusioni*:

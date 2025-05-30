@@ -97,7 +97,7 @@ La realizzazione di un software richiede, ancor prima dello sviluppo, una fase d
 
 Si potrà dedurre che questi documenti potrebbero contenere parole#super[G] o frasi che non sono di uso comune, ma che sono state scelte per essere più specifiche e per evitare ambiguità. Per questo motivo è stato creato un glossario#super[G] che contiene le definizioni di tali termini, al seguente #link("https://teamcodealchemists.github.io/glossario")[#underline[indirizzo]]. 
 
-== Riferimenti   //Inserire riferimenti al capitolato#super[G] del progetto e a lezioni/slide del professore se necessario
+== Riferimenti   // Inserire riferimenti al capitolato#super[G] del progetto e a lezioni/slide del professore se necessario
 - *Capitolato#super[G] d'appalto C6 - Gestione di un magazzino distribuito - _M31_*\
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")
 
@@ -463,7 +463,7 @@ Dove:
 
 #tabella_rischi(
   dati: (
-    [*Capitolatoodice#super[G]*],
+    [*Codice#super[G]*],
     [RI3],
 
     [*Gravità*],
@@ -827,7 +827,7 @@ La redazione di questo paragrafo sarà effettuato in seguito al superamento dell
 
 A seguito del primo incontro di gruppo Il team _Code Alchemists_ ha deciso di impegnarsi ad adottare come strumento di sviluppo
 principale la metodologia *Agile#super[G]* per tutto quello che riguarda la gestione del progetto. 
-In particolare, si è deciso di utilizzare il framework *Scrum#super[G]*, che prevede numerosi *#super[G]#super[G]*, 
+In particolare, si è deciso di utilizzare il framework *Scrum#super[G]*, che prevede numerosi *sprint#super[G]*, 
 ovvero periodi di tempo ben definiti da una data di inizio e una data di fine in cui il team 
 si impegna a concentrarsi su un insieme specifico e finito di attività.\
 Il team ha deciso di utilizzare una durata dello sprint#super[G] pari a *2 settimane*, 
@@ -1005,7 +1005,7 @@ su quanto discusso con l'azienda proponente.
 
 In particolare, le attività previste sono:
 
-- Analisi dello stato dell';
+- Analisi allo stato dell'arte;
 - Continuazione dell'ipotesi architetturale e tecnologica;
   - Approfondimento delle tecnologie proposte.
 - Redazione dei casi d'uso;
@@ -1020,7 +1020,7 @@ In particolare, le attività previste sono:
 ==== Rischi attesi
 #v(1em)
 
-I possibili rischi :
+I possibili rischi:
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
 - RI1: Rischio Individuale derivante dalle altre attività;
 - RG2: Rischio Globale legato a pareri contrastanti.

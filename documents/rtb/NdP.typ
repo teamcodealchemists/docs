@@ -278,7 +278,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       I progettisti#super[G] devono garantire l'assegnazione e il dettaglio dei requisiti#super[G], progettare interfacce e strutture dati, definire test di integrazione e revisionare l'architettura#super[G] in collaborazione con il team e il cliente#super[G], assicurando che il sistema sia ben strutturato e facilmente manutenibile.
       ===== Progettazione di dettaglio
       // Descrizione progett. di dettaglio
-      La progettazione di dettaglio suddivide il sistema in unità architettura#super[G]li funzionali, garantendo una codifica efficiente e verificabile. Essa assicura che i componenti software siano ben definiti e coerenti con la progettazione logica, evitando complessità eccessive. 
+      La progettazione di dettaglio suddivide il sistema in unità architetturali funzionali, garantendo una codifica efficiente e verificabile. Essa assicura che i componenti software siano ben definiti e coerenti con la progettazione logica, evitando complessità eccessive. 
       
       Durante questa fase, vengono creati diagrammi delle classi, tracciate le componenti e definiti gli unit test e integrazione, supportando un'implementazione strutturata e affidabile del prodotto#super[G].
 
@@ -367,7 +367,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         Il ciclo di vita di un documento software è strutturato in diverse fasi, le quali garantiscono un processo chiaro e standardizzato per la sua gestione, ovvero:
         - *Pianificazione*: organizzazione delle informazioni e definizione della struttura del documento, inclusi intestazioni, header e footer.
         - *Redazione*: assegnazione del compito di stesura del documento a un membro del team, utilizzo di strumenti di versionamento (GitHub) per tracciare le modifiche e avvio della stesura dei contenuti.
-        - *Verifica#super[G]#super[G]*: ogni sezione viene revisionata da un membro distinto dal redattore, per garantire accuratezza e qualità. Per la documentazione esterna, viene effettuata una ulteriore validazione#super[G] dagli enti terzi.
+        - *Verifica#super[G]*: ogni sezione viene revisionata da un membro distinto dal redattore, per garantire accuratezza e qualità. Per la documentazione esterna, viene effettuata una ulteriore validazione#super[G] dagli enti terzi.
         - *Approvazione*: il responsabile#super[G] di progetto analizza il documento nella sua interezza, verificando la coerenza e l'adeguatezza dei contenuti prima della pubblicazione.
         - *Pubblicazione*: il documento viene reso disponibile nel repository#super[G] GitHub ufficiale "docs" solo dopo una verifica#super[G] positiva, assicurando la presenza esclusiva di documenti validati e coerenti.
        
