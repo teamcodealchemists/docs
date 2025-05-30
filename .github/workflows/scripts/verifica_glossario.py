@@ -45,12 +45,12 @@ def verifica_file(file_path, glossario):
         pattern_parola = rf'\b{re.escape(parola)}(?![\s.,;:!?]*#super)'
 
         # Regex per la parola senza l'ultima lettera con varianti (il suffisso ora è obbligatorio)
-        parola_senza_ultima = parola[:-1] if len(parola) > 1 else parola
-        pattern_varianti = rf'\b{re.escape(parola_senza_ultima)}(o|a|i|e|ta)\b(?![\s.,;:!?]*#super)'
+        parola_senza_ultima = parola[:-1] if len(parola) > 3 else parola
+        pattern_varianti = rf'\b{re.escape(parola_senza_ultima)}(o|a|i|e|ta)(?![\s.,;:!?]*#super)\b'
 
         for numero_riga, riga in enumerate(contenuto, start=1):
             # Cerca la parola stessa o la parola con varianti nella riga
-            if re.search(pattern_parola, riga, re.IGNORECASE) or re.search(pattern_varianti, riga, re.IGNORECASE):
+            if re.search(pattern_varianti, riga, re.IGNORECASE):
                 print(f"\033[91m  - Errore: La parola '{parola}' non è segnata con #super[G] nella riga {numero_riga}\033[0m")
                 errori += 1
     return errori
