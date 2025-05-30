@@ -235,7 +235,7 @@ I test di unità verifica#super[G]no il comportamento corretto delle singole uni
 
 == 3.2 Test di integrazione
 
-I test di integrazione servono a verifica#super[G]re che più unità di codice funzionino correttamente insieme. L'obiettivo è individuare problemi che emergono quando i vari moduli interagiscono tra loro, ad esempio errori di comunicazione tra componenti o malintesi sui formati di dati scambiati. Questi test sono particolarmente utili quando si integrano sistemi esterni come database, API#super[G] o servizi#super[G] di terze parti.
+I test di integrazione servono a verificare che più unità di codice funzionino correttamente insieme. L'obiettivo è individuare problemi che emergono quando i vari moduli interagiscono tra loro, ad esempio errori di comunicazione tra componenti o malintesi sui formati di dati scambiati. Questi test sono particolarmente utili quando si integrano sistemi esterni come database, API#super[G] o servizi#super[G] di terze parti.
 
 #let voci_test_integrazione = (
     [---], [---], [---], [NI]
@@ -250,7 +250,7 @@ I test di integrazione servono a verifica#super[G]re che più unità di codice f
 
 == 3.3 Test di sistema
 
-I test di sistema valutano il comportamento del software nel suo complesso, simulando l'uso reale da parte dell'utente in un ambiente quanto più possibile simile alla produzione. Questo tipo di test include tutti i componenti integrati e mira a verifica#super[G]re che il sistema nel suo insieme soddisfi i requisiti funzionali e non funzionali. È un passaggio fondamentale prima del collaudo finale.
+I test di sistema valutano il comportamento del software nel suo complesso, simulando l'uso reale da parte dell'utente in un ambiente quanto più possibile simile alla produzione. Questo tipo di test include tutti i componenti integrati e mira a verificare che il sistema nel suo insieme soddisfi i requisiti funzionali e non funzionali. È un passaggio fondamentale prima del collaudo finale.
 
 #let voci_test_sistema = (
     [---], [---], [---], [NI]
@@ -267,7 +267,7 @@ I test di sistema valutano il comportamento del software nel suo complesso, simu
 
 == 3.4 Test di regressione
 
-I test di regressione hanno lo scopo di assicurare che le nuove modifiche al codice, come correzioni di bug o l'introduzione di nuove funzionalità, non abbiano introdotto errori in funzionalità esistenti. Vengono eseguiti regolarmente durante lo sviluppo continuo e sono spesso automatizzati per garantire un controllo rAPI#super[G]do ed efficace ogni volta che il software viene aggiornato.
+I test di regressione hanno lo scopo di assicurare che le nuove modifiche al codice, come correzioni di bug o l'introduzione di nuove funzionalità, non abbiano introdotto errori in funzionalità esistenti. Vengono eseguiti regolarmente durante lo sviluppo continuo e sono spesso automatizzati per garantire un controllo rapido ed efficace ogni volta che il software viene aggiornato.
 
 #let voci_test_regressione = (
   [---], [---], [---], [NI]
@@ -282,7 +282,7 @@ I test di regressione hanno lo scopo di assicurare che le nuove modifiche al cod
 
 == 3.5 Test di accettazione
 
-I test di accettazione vengono eseguiti per verifica#super[G]re che il software soddisfi i requisiti concordati con il cliente#super[G] o l'utente finale. Sono spesso definiti sulla base di scenari realistici o specifiche formali (come le User Story o i Criteri di Accettazione). Questi test rappresentano l'ultima fase di verifica#super[G] prima del rilascio del prodotto e determinano se esso può essere considerato “pronto per l'uso”.
+I test di accettazione vengono eseguiti per verificare che il software soddisfi i requisiti concordati con il cliente#super[G] o l'utente finale. Sono spesso definiti sulla base di scenari realistici o specifiche formali (come le User Story o i Criteri di Accettazione). Questi test rappresentano l'ultima fase di verifica#super[G] prima del rilascio del prodotto e determinano se esso può essere considerato “pronto per l'uso”.
 
 #let voci_test_accettazione = (
   [---], [---], [---], [NI]
