@@ -325,7 +325,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Trigger*: 
   - L’Utente vuole autenticarsi per accedere al Sistema. 
-
+#pagebreak()
 ==== - UC 1.1: Inserimento Username
 #label("uc-1.1")
 
@@ -1970,94 +1970,117 @@ _Esempio:_
   table.header(
     [*Codice*], [*Descrizione*], [*Fonti*]
   ),
-  //UTENTE
-  [*RF*], [*Registrazione del Supervisore Globale*], [decisione\ interna],
-  [*RF*], [Il Supervisore Globale deve registrarsi al primo avvio del sistema.], [decisione\ interna],
 
-  [*RF*], [*Autenticazione dell'utente*], [capitolato#super[G]],
-  [*RF*], [L'utente deve poter accedere al sistema mediante credenziali.], [capitolato#super[G]],
-  [*RF*], [L'utente deve poter effettuare il logout dal sistema.], [capitolato#super[G]],  
-
-  [*RF*], [*Registrazione di nuovi Supervisori Locali*], [decisione\ interna],
-  [*RF*], [Il Supervisore Globale può registrare a sistema nuovi Supervisori Locali.], [decisione\ interna],
-  [*RF*], [Il Supervisore Globale deve assegnare il/i magazzino/i a cui il Supervisore Locale ha accesso in fase di registrazione.], [decisione\ interna],
-
-  [*RF*], [*Gestione manuale delle merci*], [],
-  [*RF*], [I Supervisori possono inserire un nuovo tipo di merce nell'inventario.], [],
-  [*RF*], [I Supervisori possono rimuovere un tipo di merce dall'inventario.], [],
-  [*RF*], [I Supervisori possono modificare la quantità di merce nell'inventario dei magazzini.], [],
-
-  [*RF*], [*Gestione manuale degli ordini*], [],
-  [*RF*], [I Supervisori possono inserire ordini di trasferimento interno tra magazzini.], [],
-  [*RF*], [I Supervisori possono inserire ordini di approvigionamento dall'esterno.], [],
-  [*RF*], [I Supervisori possono inserire ordini di vendita verso l'esterno.], [],
-  [*RF*], [I Supervisori possono annullare ordini.], [],
-
-  [*RF*], [**], [], 
-  [*RF*], [Il Supervisore Globale può visualizzare l'inventario globale.], [],
-  [*RF*], [Il Supervisore Globale può visualizzare l'inventario di ciascun magazzino.], [],
-  [*RF*], [Il Supervisore Globale può visualizzare un report degli ordini globali.], [],
-  [*RF*], [Il Supervisore Globale può visualizzare un report degli ordini di ciascun magazzino.], [],
-
-  [*RF*], [I Supervisori Locali possono visualizzare l'inventario del/dei magazzino/i a loro assegnato/i.], [],
-  [*RF*], [I Supervisori Locali possono visualizzare un report degli ordini del/dei magazzino/i a loro assegnato/i.], [],
-
-  [*RF*], [I Supervisori possono visualizzare lo stato di tutti i magazzini.], [],
-  [*RF*], [Il Supervisore Globale può modificare lo stato di ciascun magazzino.], [],
-  [*RF*], [I Supervisori Locali possono modificare lo stato del/dei magazzino/i a loro assegnato/i.], [],
-
-  [*RF*], [I Supervisori possono visualizzare le notifiche informative prodotte dal sistema.], [],
-  [*RF*], [Il Supervisore Globale può accettare le richieste decisionali prodotte dal sistema.], [],
-  [*RF*], [Il Supervisore Globale può rifiutare le richieste decisionali prodotte dal sistema.], [],
-
-  [*RF*], [I Supervisori devono definire i valori di soglia minima all'inserimento di un nuovo prodotto.], [],
-  [*RF*], [I Supervisori possono definire i valori di soglia massima all'inserimento di un nuovo prodotto.], [],
-  [*RF*], [I Supervisori Globali possono modificare i valori di soglia minima e massima di ciascun prodotto per ciascun magazzino.], [],
-  [*RF*], [I Supervisori Locali possono modificare i valori di soglia minima e massima di ciascun prodotto nel/nei magazzino/i a loro assegnato/i.], [],
-
-  //FUNZIONALI SISTEMA
-  [*RF*], [*Rilevamento di carenza di scorte#super[G] di un magazzino.*], [capitolato#super[G]],
-  [*RF*], [Il magazzino deve identificare quando le scorte#super[G] scendono sotto una certa soglia.], [capitolato#super[G]],
-  [*RF*], [Il magazzino deve identificare quando le scorte#super[G] salgono sopra una certa soglia.], [capitolato#super[G]],
-
-  [*RF*], [*Gestione degli ordini.*], [capitolato#super[G]],
-  [*RF*], [Il magazzino deve verificare la disponibilità delle scorte#super[G] per poter soddisfare un ordine ricevuto.], [capitolato#super[G]],
-  [*RF*], [Il magazzino deve identificare l'impossibilità di soddisfare un ordine.], [capitolato#super[G]],
-  [*RF*], [Un magazzino con scorte insufficienti per gestire un ordine, deve richidere un riassortimento al sistema.], [progettazione],
-  [*RF*], [Il magazzino deve tracciare lo stato degli ordini.], [capitolato#super[G]],
-  [*RF*], [I magazzini possono inviare merce verso un altro magazzino tramite un ordine.],[capitolato#super[G]],
-  [*RF*], [I magazzini possono ricevere approvigionamenti dall'esterno tramite ordine.],[capitolato#super[G]],
-  [*RF*], [I magazzini possono spedire merci verso l'esterno tramite ordine.],[capitolato#super[G]],
-  [*RF*], [Il magazzino di destinazione deve notificare l'arrivo della merce al magazzino di origine.], [capitolato#super[G]],
-  [*RF*], [Un ordine deve trovarsi in uno dei seguenti stati: "in attesa", "in elaborazione", "in transito", "annullato", "consegnato".], [],
-
-  [*RF*], [*Riassortimento delle scorte#super[G]tra magazzini.*], [capitolato#super[G]],
-  [*RF*], [Il sistema deve programmare trasferimenti interni al raggiungimento di una soglia critica di un prodotto in un magazzino al fine di bilanciare le scorte.], [capitolato#super[G]],
-
-  [*RF*], [*Individuazione dello stato dei magazzini.*], [capitolato#super[G]],
-  [*RF*], [Il magazzino deve trovarsi in uno dei seguenti stati: "offline", "online", "non operativo", "operativo".],[],
-  [*RF*], [Il sistema deve identificare eventuali disconnessioni di uno o più magazzini segnandoli come "offline".], [capitolato#super[G]],
-
-  [*RF*], [*Gestione dei disservizi.*], [capitolato#super[G]],
-  [*RF*], [Il sistema può annullare ordini di un magazzino "non operativo".], [],
-  [*RF*], [Il sistema può può assegnare ordini di un magazzino "non operativo" ad altri magazzini.], [],
-  [*RF*], [Un magazzino offline deve annullare gli ordini che non può soddisfare dopo un periodo di tempo predefinito.],[],
-
-  [*RF*], [*Gestione magazzino che cambia stato da offline a online.*], [capitolato#super[G]],
-  [*RF*], [Il sistema deve riconoscere quando un magazzino torna online.], [capitolato#super[G]],
-
-  [*RF*], [*Annullamento di ordini in transito.*], [],
-  [*RF*], [Un ordine in stato "in transito" deve cambiare lo stato in "annullato" dopo una soglia temporale predefinita.],[],
-
-  //Requisiti#super[G] Funzionali desiderabili
+  [*RF01*], [*Rilevamento di carenza di scorte#super[G] di un magazzino.*], [capitolato#super[G]],
+  [*RF01/01*], [Il sistema deve monitorare costantemente le scorte#super[G].], [capitolato#super[G]],
+  [*RF01/02*], [Il sistema deve identificare quando le scorte#super[G] scendono sotto una certa soglia.], [capitolato#super[G]],
   
-  [*RF*], [Il Supervisore Globale può definire il costo massimo per i trasferimenti eseguibili mediante riassortimento automatico.],[],
-  [*RF*], [Il Supervisore Globale può definire la distanza massima tra magazzini per il riassortimento automatico.],[],
+  [*RF02*], [*Trasferimento#super[G] di scorte#super[G] da un magazzino ad un altro.*], [capitolato#super[G]],
+  [*RF02/01*], [Il sistema deve consentire l'invio di richieste di trasferimento#super[G] tra magazzini.],[capitolato#super[G]],
+  [*RF02/02*], [Il sistema deve validare la disponibilità delle scorte#super[G] nel magazzino di origine.], [capitolato#super[G]],
+  [*RF02/03*], [Il sistema deve aggiornare l'inventario#super[G] di entrambi i magazzini coinvolti.], [capitolato#super[G]],
+  [*RF02/04*], [Il sistema deve tracciare il trasferimento#super[G] dei prodotti#super[G].], [capitolato#super[G]],
+  [*RF02/05*], [Il sistema deve aggiornare lo stato del trasferimento#super[G] in tempo reale.], [capitolato#super[G]],
+  
+  [*RF03*], [*Rilevamento delle scorte#super[G] minime necessarie.*], [capitolato#super[G]],
+  [*RF03/01*], [Deve essere possibile poter definire un livello minimo di scorte#super[G] per ciascun prodotto#super[G].], [progettazione],
+  [*RF03/02*], [Il sistema deve calcolare le scorte#super[G] minime necessarie per ciascun prodotto#super[G].], [capitolato#super[G]],
+  [*RF03/03*], [Il sistema deve monitorare le scorte#super[G] attuali rispetto alle scorte#super[G] minime, ottimizzandone la quantità], [capitolato#super[G].],
+  
+  [*RF04*], [*Bilanciamento delle scorte#super[G], il più possibile, in ogni magazzino per ridurre i livelli medi di scorte (riassortimento#super[G]).*], [capitolato#super[G]],
+  [*RF04/01*], [Il sistema deve analizzare la distribuzione delle scorte#super[G] tra i magazzini.], [capitolato#super[G]],
+  [*RF04/02*], [Il sistema deve identificare squilibri nelle scorte#super[G], valutando la distribuzione attuale.], [capitolato#super[G]],
+  [*RF04/03*], [Il sistema deve effettuare trasferimenti#super[G] interni per bilanciare le scorte#super[G] e migliorare l'efficienza.], [capitolato#super[G]],
+  [*RF04/04*], [Il sistema deve automatizzare il processo di riassortimento#super[G].], [capitolato#super[G]],
 
-  [*RF*], [*Suggerimento su azioni di riassortimento#super[G] e trasferimento#super[G] tra magazzini.*], [capitolato#super[G]],
-  [*RF*], [Il sistema invia una notifica decisionale al Supervisore Globale qualora un riassortimento superi i costi o le distanze massime.], [],
+  [*RF05*], [*Suggerimento su azioni di riassortimento#super[G] e trasferimento#super[G] tra magazzini.*], [capitolato#super[G]],
+  [*RF05/01*], [È necessario fornire raccomandazioni al sistema per il riassortimento#super[G] e i trasferimenti#super[G].], [capitolato#super[G]],
+
+  [*RF06*], [*Gestione degli ordini con scorte insufficienti.*], [progettazione],
+  [*RF06/01*], [Il sistema deve gestire le scorte insufficienti in un magazzino che deve evadere un ordine], [progettazione],
+
+  [*RF07*], [*Individuazione di magazzini offline.*], [capitolato#super[G]],
+  [*RF07/01*], [Il sistema deve monitorare la connettività#super[G] di ciascun magazzino.], [capitolato#super[G]],
+  [*RF07/02*], [Il sistema deve segnalare tempestivamente eventuali disconnessioni.], [capitolato#super[G]],
+  [*RF07/03*], [Il sistema deve correttamente segnalare lo stato del magazzino (offline, online, non operativo, operativo).], [progettazione],
+
+  [*RF08*], [*Gestione dei disservizi.*], [capitolato#super[G]],
+  [*RF08/01*], [Il sistema deve determinare i magazzini vicini disponibili.], [capitolato#super[G]],
+  [*RF08/02*], [Deve essere definito un disservizio di tipo fisico. Tale disservizio viene segnalato come "non operativo".], [progettazione],
+  [*RF08/03*], [Deve essere definito un disservizio di rete. Tale disservizio viene segnalato come "offline".], [progettazione],
+  [*RF08/04*], [Gestire il caso in cui un magazzino è offline, e mentre è offline diventa non operativo.], [progettazione],
+  [*RF08/05*], [Il sistema deve trasferire scorte#super[G] ai magazzini vicini per sopperire al disservizio nel caso in cui il magazzino è non operativo.], [progettazione],
+  
+  [*RF09*], [*Gestione magazzino che torna online.*], [capitolato#super[G]],
+  [*RF09/01*], [Il sistema deve riconoscere quando un magazzino torna online.], [capitolato#super[G]],
+  [*RF09/02*], [Il sistema deve sincronizzare i dati di inventario#super[G] con il cloud.], [capitolato#super[G]],
+  [*RF09/03*], [Il sistema deve risolvere eventuali conflitti di dati], [capitolato#super[G].],
+  
+  [*RF10*], [*Visibilità centrale in tempo reale di tutte le scorte#super[G] distribuite (monitoraggio#super[G] livelli inventario#super[G]), di ogni magazzino (anche indipendentemente).*], [capitolato#super[G]],
+  [*RF10/01*], [Il sistema deve fornire una dashboard#super[G] centralizzata per monitorare le scorte#super[G].], [capitolato#super[G]],
+  [*RF10/02*], [Il sistema deve interrogare il database di aggregazione del microservizio#super[G] di inventario#super[G] su cloud per avere una visione centralizzata delle scorte#super[G] di ogni magazzino.], [capitolato#super[G]],
+
+  [*RF11*], [*Mantenimento dei livelli di sicurezza delle scorte#super[G] in ogni magazzino in caso di carenze o ritardi.*], [capitolato#super[G]],
+  [*RF11/01*], [Definire una soglia temporale massima come tempo stimato di arrivo di una richiesta, dopo la quale viene aggiornato lo stato del trasferimento.], [capitolato#super[G]],
+  [*RF11/02*], [In caso di superamento della soglia, il sistema deve attivare delle azioni correttive (es.: invio di nuove richieste).], [capitolato#super[G]],
+  
+  [*RF12*], [*Gestione aggiornamenti simultanei dell'inventario#super[G] da magazzini differenti, anche per i singoli magazzini.*], [capitolato#super[G]],
+  [*RF12/01*], [Il sistema deve gestire le modifiche concorrenti (in simultanea) ai dati di inventario#super[G].], [capitolato#super[G]],
+  [*RF12/02*], [Il sistema deve implementare meccanismi di controllo delle versioni e/o del timestamp.], [capitolato#super[G]],
+  [*RF12/03*], [Il sistema deve risolvere conflitti di aggiornamento], [capitolato#super[G].],
+  
+  [*RF13*], [*Gestione di ordini#super[G] simultanei per uno stesso prodotto#super[G] in singoli magazzini.*], [analisi dello stato dell'arte],
+  [*RF13/01*], [Il sistema deve coordinare gli ordini#super[G] ricevuti contemporaneamente.], [analisi dello stato dell'arte],
+  [*RF13/02*], [Il sistema deve assegnare le scorte#super[G] disponibili secondo dei criteri predefiniti.], [analisi dello stato dell'arte],
+  [*RF13/03*], [Definire dei criteri di priorità per gli ordini#super[G] in caso di conflitto.], [analisi dello stato dell'arte],
+
+  [*RF14*], [*Operazioni di inventario#super[G] indipendenti ma sincronizzate centralmente.*], [capitolato#super[G]],
+  [*RF14/01*], [Il magazzino locale deve operare tramite inserimento, modifica, trasferimento#super[G].], [capitolato#super[G]],
+  [*RF14/02*], [Aggiornare il magazzino in primo luogo localmente], [capitolato#super[G]],
+
+  [*RF15*], [*Autenticazione#super[G] semplice.*], [capitolato#super[G]],
+  [*RF15/01*], [Il sistema prevede l'implementazione dell'autenticazione#super[G] per l'accesso al sistema stesso.], [capitolato#super[G]],
+  [*RF15/02*], [Il sistema deve garantire la protezione dei dati sensibili#super[G] durante il processo di autenticazione#super[G].], [capitolato#super[G]],
+  [*RF15/03*], [Il sistema deve prevedere il logout.], [capitolato#super[G]],
+
+//Requisiti#super[G] Funzionali desiderabili
+  [*RFD01*], [*Interfaccia grafica per la visualizzazione e gestione delle scorte#super[G], con dashboard#super[G] centralizzata per monitorare le scorte#super[G] in tempo reale.*], [capitolato#super[G]],
+  [*RFD01/01*], [Il sistema deve fornire un'interfaccia grafica intuitiva per gli utenti.], [capitolato#super[G]],
+  [*RFD01/02*], [Il sistema deve visualizzare le informazioni sulle scorte#super[G] in tempo reale.], [capitolato#super[G]],
+  [*RFD01/03*], [Il sistema deve consentire agli utenti di gestire le scorte#super[G] e le operazioni di inventario#super[G] tramite l'interfaccia grafica.], [capitolato#super[G]],
+
+  [*RFD02*], [*Integrazione con sistemi di notifica per eventi rilevanti, come il raggiungimento dei livelli minimi di scorte#super[G], l'approvazione dei trasferimenti#super[G] di merci, con alert#super[G] configurabili in base a regole definite e supporto a più canali di comunicazione (e-mail, SMS, dashboard#super[G] interna).*], [capitolato#super[G]],
+  [*RFD02/01*], [È necessario supporto per la generazione di notifiche automatiche.], [capitolato#super[G]],
+  [*RFD02/02*], [È prevista una notifica per il raggiungimento dei livelli minimi di scorte#super[G].], [capitolato#super[G]],
+  [*RFD02/03*], [È prevista una notifica per approvazione e/o rifiuto delle proposte di riassortimento#super[G] predittivo di merci.], [capitolato#super[G]],
+  [*RFD02/04*], [Il sistema deve notificare le parti interessate delle modifiche ai dati di inventario#super[G].], [capitolato#super[G]],
+  [*RFD02/05*], [Il sistema deve notificare eventuali cambi di stato dell'ordine#super[G].], [capitolato#super[G]],
+  [*RFD02/06*], [Il sistema deve notificare l'impossibilità di evasione di un ordine#super[G].], [capitolato#super[G]],
+  [*RFD02/07*], [Il sistema deve notificare la carenza di scorte#super[G]], [capitolato#super[G].],
+  [*RFD02/08*], [Il sistema deve notificare in caso di soglie critiche di utilizzo delle risorse per il funzionamento del sistema.], [capitolato#super[G]],
+  [*RFD02/09*], [Il sistema deve notificare in caso di cambiamento di stato di un magazzino (offline, online, non operativo, operativo).], [progettazione],
+  [*RFD02/10*], [Gli alert#super[G] sono configurabili in base a regole definite dall'utente (o dall'amministratore#super[G]).], [capitolato#super[G]],
+  [*RFD02/11*], [È previsto l'invio di notifiche tramite email e/o SMS], [capitolato#super[G].],
+  [*RFD02/12*], [È prevista la visualizzazione delle notifiche sulla dashboard#super[G] interna del sistema.], [capitolato#super[G]],
+
+  [*RFD03*], [*Gestione della variabilità della domanda e tempi di consegna con modelli predittivi.*], [capitolato#super[G]],
+  [*RFD03/01*], [Il sistema deve prevedere la domanda futura per ciascun prodotto#super[G].], [capitolato#super[G]],
+  [*RFD03/02*], [Il sistema deve pianificare riassortimenti#super[G] in base alle previsioni.], [capitolato#super[G]],
+  [*RFD03/03*], [Il sistema deve attivare meccanismi preventivi per evitare esaurimenti.], [capitolato#super[G]],
+
+  [*RFD04*], [*Riassortimento#super[G] predittivo tramite analisi dei dati storici, con previsione della domanda per ciascun prodotto#super[G] considerando stagionalità e tendenze di consumo, per determinare quando e quanto riassortire le scorte#super[G], riducendo il rischio di esaurimento o sovrastoccaggio.*], [capitolato#super[G]],
+  [*RFD04/01*], [Il sistema deve analizzare dati storici di vendita e di consegna.], [capitolato#super[G]],
+  [*RFD04/02*], [Il sistema deve applicare modelli statistici per prevedere la domanda, identificando pattern stagionali e tendenze di consumo], [capitolato#super[G].],
+  [*RFD04/03*], [Il sistema deve adattare le strategie di approvvigionamento#super[G] in base alle previsioni.], [capitolato#super[G]],
+  [*RFD04/04*], [Il sistema deve ottimizzare i livelli di scorte#super[G] per ridurre il rischio di esaurimento o sovrastoccaggio.], [capitolato#super[G]],
+  [*RFD04/05*], [Il sistema deve avere uno storico dei livelli della merce.], [progettazione],
 
   //Requisiti#super[G] Funzionali opzionali
+  [*RFO01*], [*Implementazione di meccanismi di autorizzazione e autenticazione#super[G], inclusa la gestione di ruoli e permessi differenziati per operatori, supervisori e amministratori*#super[G].], [capitolato#super[G]],
+  [*RFO01/01*], [È prevista la possibilità di autenticazione#super[G] a due fattori (2FA#super[G]).], [capitolato#super[G]],
+  [*RFO01/02*], [Il sistema prevede il controllo completo per gli amministratori#super[G].], [capitolato#super[G]],
+  [*RFO01/03*], [Il sistema prevede l'autorizzazione a convalidare trasferimenti#super[G] o ad approvare modifiche per i supervisori.], [capitolato#super[G]],
+  [*RFO01/04*], [Il sistema prevede l'accesso limitato alle operazioni di base per gli operatori.], [capitolato#super[G]],
 )
 #align(center)[_Tabella #tabella_counter: Requisiti#super[G] funzionali_]
 
@@ -2076,21 +2099,93 @@ _Esempio:_
   table.header(
     [*Codice*], [*Descrizione*], [*Fonti*]
   ),
-//Requisiti di Qualità Obbligatori
+  [*RQ01*], [*Magazzini autonomi come edge nodes, che fanno elaborazioni autonome per ridurre il carico sulla rete.*], [capitolato#super[G]],
+  [*RQ01/01*], [Il sistema deve consentire ai magazzini di operare autonomamente, permettendo operazioni locali sui dati di inventario#super[G].], [capitolato#super[G]],
+  [*RQ01/02*], [Il sistema deve eseguire elaborazioni locali per ridurre il carico sulla rete.], [capitolato#super[G]],
+  [*RQ01/03*], [Il magazzino locale deve sincronizzarsi con il cloud nel momento in cui avviene un'operazione di scrittura.], [capitolato#super[G]],
 
-  [*RQ*], [I dati di inventario e degli ordini devono essere coerenti, consistenti e persistenti in tutto il sistema.], [capitolato#super[G]],
-  [*RQ*], [I dati di inventario devono essere resilienti a modifiche concorrenti.], [],
+  [*RQ02*], [*Cifratura#super[G] end-to-end per tutti i dati scambiati.*], [capitolato#super[G]],
+  [*RQ02/01*], [Il sistema deve garantire la cifratura#super[G] dei dati durante tutta la comunicazione tra client#super[G], microservizi#super[G] e sistema centrale#super[G].], [capitolato#super[G]],
+  [*RQ02/02*], [Il sistema deve utilizzare protocolli#super[G] sicuri per la trasmissione.], [capitolato#super[G]],
+  [*RQ02/03*], [Il sistema deve proteggere i dati sensibili#super[G] sia in transito che in riposo.], [capitolato#super[G]],
+  [*RQ02/04*], [Il sistema deve assicurare che la cifratura#super[G] sia attiva per tutte le API#super[G] e i canali di comunicazione.], [capitolato#super[G]],
 
-  [*RQ*], [Il magazzino deve gestire gli ordini concorrenti per uno stesso prodotto secondo una politica predefinita.], [],
+  [*RQ03*], [*Monitoraggio#super[G] continuo per rilevare tentativi di accesso non autorizzati o attività sospette.*], [capitolato#super[G]],
+  [*RQ03/01*], [Il sistema deve implementare sistemi di monitoraggio#super[G] centralizzato.], [capitolato#super[G]],
+  [*RQ03/02*], [Il sistema deve rilevare e segnalare attività anomale, accessi non autorizzati e tentativi di intrusione#super[G].], [capitolato#super[G]],
+  [*RQ03/03*], [Il sistema deve registrare i log#super[G] degli accessi e delle operazioni rilevanti.], [capitolato#super[G]],
+  [*RQ03/04*], [Il sistema deve inviare allarmi in tempo reale in caso di comportamento sospetto.], [capitolato#super[G]],
 
-//Requisiti di Qualità desiderabili
+  [*RQ04*], [*Test unitari per garantire la correttezza delle funzioni sviluppate, anche dopo modifiche.*], [capitolato#super[G]],
+  [*RQ04/01*], [Il sistema deve verificare#super[G] automaticamente il corretto comportamento delle singole funzioni.], [capitolato#super[G]],
+  [*RQ04/02*], [I test devono essere eseguiti dopo ogni modifica al codice#super[G].], [capitolato#super[G]],
+  [*RQ04/03*], [I test devono essere ripetibili e facilmente estendibili.], [capitolato#super[G]],
 
-  [*RQ*], [Il sistema deve automatizzare il processo di riassortimento#super[G] se rispetta il costo e la distanza massima.], [capitolato#super[G]],
+  [*RQ05*], [*Percentuale minima di copertura del codice#super[G].*], [capitolato#super[G]],
+  [*RQ05/01*], [La percentuale di copertura del codice#super[G], concordata con M31, è da rispettare costantemente durante tutto lo sviluppo.], [capitolato#super[G]],
+  [*RQ05/02*], [Il sistema deve monitorare automaticamente la copertura del codice#super[G] con strumenti dedicati.], [capitolato#super[G]],
 
-  [*RQ*], [II magazzino detiene la fonte affidabile dei dati di inventario e degli ordini.], [capitolato#super[G]],
+  [*RQ06*], [*Esecuzione automatica dei test.*], [capitolato#super[G]],
+  [*RQ06/01*], [I test devono essere eseguiti automaticamente tramite pipeline CI/CD#super[G].], [capitolato#super[G]],
+  [*RQ06/02*], [È prevista una notifica immediata in caso di fallimento dei test.], [capitolato#super[G]],
+  [*RQ06/03*], [Il sistema deve prevedere automatismi in grado di impedire il rilascio in produzione se i test falliscono.], [capitolato#super[G]],
 
-//Requisiti di Qualità opzionali
+  [*RQ07*], [*Test book per documentare.*], [capitolato#super[G]],
+  [*RQ07/01*], [Deve esserci un elenco completo dei casi di test.], [capitolato#super[G]],
+  [*RQ07/02*], [È prevista una descrizione chiara per ogni test, con tutti i passaggi eseguiti.], [capitolato#super[G]],
+  [*RQ07/03*], [Deve essere presente una lista di risultati attesi, comparata ai risultati effettivi.], [capitolato#super[G]],
+  [*RQ07/04*], [Devono essere specificati i criteri di validazione#super[G] dei test.], [capitolato#super[G]],
+  [*RQ07/05*], [Deve essere presente lo storico aggiornato dei tesi superati e falliti.], [capitolato#super[G]],
 
+  [*RQ08*], [*Versionamento tramite Git.*], [capitolato#super[G]],
+  [*RQ08/01*], [È previsto l'utilizzo di branch#super[G] per nuove funzionalità, bugfix#super[G] e refactoring#super[G].], [capitolato#super[G]],
+  [*RQ08/02*], [Devono essere ben definite le strategie di merge#super[G]/rebase#super[G].], [capitolato#super[G]],
+  [*RQ08/03*], [I commit#super[G] devono essere frequenti e descrittivi.], [capitolato#super[G]],
+  [*RQ08/04*], [Le modifiche devono essere tracciabili nel tempo.], [capitolato#super[G]],
+
+  [*RQ09*], [*Sistema scalabile orizzontalmente; Microservizi#super[G] modulari#super[G] e distribuibili in più istanze cloud.*], [capitolato#super[G]],
+  [*RQ09/01*], [Ogni magazzino può aumentare o diminuire risorse in base al carico.], [capitolato#super[G]],
+  [*RQ09/02*], [Il comportamento di un magazzino non deve compromettere gli altri.], [capitolato#super[G]],
+  [*RQ09/03*], [I microservizi#super[G] devono essere modulari#super[G].], [capitolato#super[G]],
+  [*RQ09/04*], [I microservizi#super[G] devono poter essere distribuiti in più istanze in ambiente cloud.], [capitolato#super[G]],
+  [*RQ09/05*], [Deve esserci supporto all'orchestrazione#super[G] tramite strumenti (es. Kubernetes).], [capitolato#super[G]],
+  [*RQ09/06*], [È necessario garantire la scalabilità#super[G] orizzontale del sistema], [capitolato#super[G].],
+
+  [*RQ10*], [*Magazzini gestiti da servizi#super[G] distribuiti.*], [capitolato#super[G]],
+  [*RQ10/01*], [È necessario distribuire le funzionalità del sistema su più servizi#super[G].], [capitolato#super[G]],
+  [*RQ10/02*], [È necessario garantire la resilienza e la scalabilità#super[G] del sistema.], [capitolato#super[G]],
+
+  [*RQ11*], [*Progettazione architetturale ben documentata, presentata con diagrammi a blocchi e derivata da analisi dei requisiti#super[G] e dal contesto distribuito.*], [capitolato#super[G]],
+
+//Requisiti#super[G] di Qualità desiderabili
+
+//Requisiti#super[G] di Qualità opzionali
+  [*RQO01*], [*Implementare l'autenticazione#super[G] tra microservizi#super[G].*], [capitolato#super[G]],
+  [*RQO01/01*], [Il sistema deve garantire che solo i microservizi#super[G] autorizzati possono comunicare tra loro.], [capitolato#super[G]],
+  [*RQO01/02*], [È previsto l'utilizzo di tecnologie di autenticazione#super[G] tra microservizi#super[G].], [capitolato#super[G]],
+  [*RQO01/03*], [È necessario cifrare le comunicazioni tra i microservizi#super[G], anche all'interno della rete#super[G] interna.], [capitolato#super[G]],
+  [*RQO01/04*], [È necessario isolare i microservizi#super[G] in base alle loro funzioni per limitare l'accesso.], [capitolato#super[G]],
+  [*RQO01/05*], [È necessario monitorare e gestire le dipendenze tra microservizi#super[G] per individuare eventuali vulnerabilità#super[G] esterne.], [capitolato#super[G]],
+
+  [*RQO02*], [*Assicurare che l'autenticazione#super[G] sia robusta tramite MFA#super[G] e certificati crittografici.*], [capitolato#super[G]],
+  [*RQO02/01*], [È necessario abilitare MFA#super[G] (autenticazione#super[G] a più fattori) per tutti gli utenti con privilegi.], [capitolato#super[G]],
+  [*RQO02/02*], [È necessario utilizzare certificati digitali#super[G] per autenticare utenti e dispositivi.], [capitolato#super[G]],
+  [*RQO02/03*], [È necessario consentire l'accesso solo da dispositivi e utenti autorizzati e riconosciuti.], [capitolato#super[G]],
+  [*RQO02/04*], [È necessario assicurare l'integrità#super[G] dei dati scambiati tramite firme digitali#super[G] o hashing#super[G].], [capitolato#super[G]],
+
+  [*RQO03*], [*Backup#super[G] regolare dei dati, con il sistema centrale incaricato di gestire l'integrità#super[G] e la conciliazione dei dati, mantenendo copie locali per ogni magazzino e permettendo il ripristino#super[G] completo dei sistemi in caso di necessità.*], [capitolato#super[G]],
+  [*RQO03/01*], [Il sistema centrale esegue verifiche periodiche sui dati distribuiti.], [capitolato#super[G]],
+  [*RQO03/02*], [Il sistema prevede meccanismi di conciliazione per dati incoerenti.], [capitolato#super[G]],
+  [*RQO03/03*], [Ogni nodo#super[G] mantiene una copia locale dei propri dati come backup#super[G].], [capitolato#super[G]],
+  [*RQO03/04*], [I dati locali possono essere utilizzati per operazioni anche in caso di disconnessione dal centrale.], [capitolato#super[G]],
+  [*RQO03/05*], [Il sistema prevede il ripristino#super[G] dei dati da backup#super[G] centralizzati.], [capitolato#super[G]],
+  [*RQO03/06*], [Il sistema prevede il ripristino#super[G] delle copie locali in caso di guasto del nodo#super[G].], [capitolato#super[G]],
+  [*RQO03/07*], [Il sistema prevede una verifica#super[G] dell'integrità#super[G] post-ripristino#super[G].], [capitolato#super[G]],
+
+  [*RQO04*], [*Backup#super[G] regolari, ridondanza#super[G] e piani di ripristino#super[G] in caso di attacchi o malfunzionamenti.*], [capitolato#super[G]],
+  [*RQO04/01*], [Il sistema prevede di eseguire backup#super[G] periodici dei dati e della configurazione del sistema.], [capitolato#super[G]],
+  [*RQO04/02*], [Il sistema prevede la ridondanza#super[G] dei dati (su cloud e in replica locale).], [capitolato#super[G]],
+  [*RQO04/03*], [Il sistema prevede la definizione di un piano di ripristino#super[G] operativo con test regolari di recovery#super[G].], [capitolato#super[G]],
 )
 #align(center)[_Tabella #tabella_counter: Requisiti#super[G] di qualità_]
 
@@ -2111,49 +2206,12 @@ _Esempio:_
 
   ),
 
-//Requisiti Prestazionali obbligatori
   [*RP01*], [*Mantenimento di prestazioni elevate anche con carichi elevati di dati e richieste simultanee.*], [capitolato#super[G]],
-
-//Requisiti Prestazionali desiderabili
-  [*RP01*], [*Mantenimento di prestazioni elevate anche con carichi elevati di dati e richieste simultanee.*], [capitolato#super[G]],
-
-//Requisiti Prestazionali opzionali
-  [*RP01*], [*Mantenimento di prestazioni elevate anche con carichi elevati di dati e richieste simultanee.*], [capitolato#super[G]],
-
+  [*RP01/01*], [Il sistema deve implementare un meccanismo di bilanciamento del carico tra i servizi#super[G] per distribuire in modo efficiente le richieste.], [capitolato#super[G]],
+  [*RP01/02*], [Il sistema deve monitorare l'utilizzo delle risorse in tempo reale.], [capitolato#super[G]],
+  [*RP01/03*], [Il sistema deve gestire le risorse in modo dinamico evitando problemi prestazionali (es. gestione code, scalabilità#super[G] automatica).], [capitolato#super[G]],
 )
 #align(center)[_Tabella #tabella_counter: Requisiti#super[G] prestazionali_]
-
-
-== Requisiti#super[G] di Vincolo
-//incremento tabella_counter
-#let tabella_counter = tabella_counter + 1
-
-#set table(
-  fill:(x,y)=> if y==0 {rgb("#2599ff")} else if x == 0 {luma(235)},
-)
-
-#table(
-  columns: (1fr, 3.5fr, 1.2fr),
-  inset: 10pt,
-  align: center,
-  table.header(
-    [*Codice*], [*Descrizione*], [*Fonti*]
-
-  ),
-
-//Requisiti di Vincolo obbligatori
-  [*RP01*], [*Mantenimento di prestazioni elevate anche con carichi elevati di dati e richieste simultanee.*], [capitolato#super[G]],
-
-//Requisiti di Vincolo desiderabili
-  [*RP01*], [*Mantenimento di prestazioni elevate anche con carichi elevati di dati e richieste simultanee.*], [capitolato#super[G]],
-
-//Requisiti di Vincolo opzionali
-  [*RP01*], [*Mantenimento di prestazioni elevate anche con carichi elevati di dati e richieste simultanee.*], [capitolato#super[G]],
-
-)
-#align(center)[_Tabella #tabella_counter: Requisiti#super[G] di vincolo_]
-
-
 #pagebreak()
 
 == Tracciamento dei casi d'uso
