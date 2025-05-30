@@ -46,7 +46,7 @@ def verifica_file(file_path, glossario):
 
         # Regex per la parola senza l'ultima lettera con varianti (il suffisso ora è obbligatorio)
         parola_senza_ultima = parola[:-1] if len(parola) > 3 else parola
-        pattern_varianti = rf'\b{re.escape(parola_senza_ultima)}(o|a|i|e|ta)(?![\s.,;:!?]*#super)\b'
+        pattern_varianti = rf'\b{re.escape(parola_senza_ultima)}(o|a|i|e|ta)(?![\s.,;:!?*]*#super)\b'
 
         for numero_riga, riga in enumerate(contenuto, start=1):
             # Cerca la parola stessa o la parola con varianti nella riga
