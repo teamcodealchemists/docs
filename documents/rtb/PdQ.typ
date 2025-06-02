@@ -203,7 +203,7 @@ Sebbene non sempre sia semplice adottare misurazioni formali, l'obiettivo è man
 = 3. Metodologie di Testing
 Per garantire la qualità del prodotto#super[G] software, è fondamentale adottare metodologie di testing adeguate.
 
-Ad ogni test è stato attribuito un codice univoco per facilitarne l'identificazione e la tracciabilità. Il codice è strutturato come segue: tipoXX, dove "tipo" rappresenta il tipo di test e "XX" è un numero progressivo che identifica il test specifico. I tipi di test sono i seguenti:
+Ad ogni test è stato attribuito un codice#super[G] univoco per facilitarne l'identificazione e la tracciabilità. Il codice#super[G] è strutturato come segue: tipoXX, dove "tipo" rappresenta il tipo di test e "XX" è un numero progressivo che identifica il test specifico. I tipi di test sono i seguenti:
 - *TdU*: Test di unità
 - *TdI*: Test di integrazione
 - *TdS*: Test di sistema
@@ -220,7 +220,7 @@ Per ogni test viene specificato uno stato, che può essere:
 
 == 3.1 Test di unità
 
-I test di unità verificano il comportamento corretto delle singole unità di codice, come funzioni, metodi o classi. Vengono scritti e mantenuti dagli sviluppatori durante la fase di sviluppo e servono a garantire che ogni componente, isolato dal resto, produca il risultato atteso per diversi input. Sono fondamentali per individuare rapidamente errori logici a livello di codice sorgente.
+I test di unità verificano il comportamento corretto delle singole unità di codice#super[G], come funzioni, metodi o classi. Vengono scritti e mantenuti dagli sviluppatori durante la fase di sviluppo e servono a garantire che ogni componente, isolato dal resto, produca il risultato atteso per diversi input. Sono fondamentali per individuare rapidamente errori logici a livello di #super[G] sorgente.
 
 #let voci_test_unità = (
     [---], [---], [---], [NI]
@@ -235,7 +235,7 @@ I test di unità verificano il comportamento corretto delle singole unità di co
 
 == 3.2 Test di integrazione
 
-I test di integrazione servono a verificare che più unità di codice funzionino correttamente insieme. L'obiettivo è individuare problemi che emergono quando i vari moduli interagiscono tra loro, ad esempio errori di comunicazione tra componenti o malintesi sui formati di dati scambiati. Questi test sono particolarmente utili quando si integrano sistemi esterni come database, API#super[G] o servizi#super[G] di terze parti.
+I test di integrazione servono a verificare che più unità di codice#super[G] funzionino correttamente insieme. L'obiettivo è individuare problemi che emergono quando i vari moduli interagiscono tra loro, ad esempio errori di comunicazione tra componenti o malintesi sui formati di dati scambiati. Questi test sono particolarmente utili quando si integrano sistemi esterni come database, API#super[G] o servizi#super[G] di terze parti.
 
 #let voci_test_integrazione = (
     [---], [---], [---], [NI]
@@ -250,7 +250,7 @@ I test di integrazione servono a verificare che più unità di codice funzionino
 
 == 3.3 Test di sistema
 
-I test di sistema valutano il comportamento del software nel suo complesso, simulando l'uso reale da parte dell'utente in un ambiente quanto più possibile simile alla produzione. Questo tipo di test include tutti i componenti integrati e mira a verificare che il sistema nel suo insieme soddisfi i requisiti funzionali e non funzionali. È un passaggio fondamentale prima del collaudo finale.
+I test di sistema valutano il comportamento del software nel suo complesso, simulando l'uso reale da parte dell'utente in un ambiente quanto più possibile simile alla produzione. Questo tipo di test include tutti i componenti integrati e mira a verificare che il sistema nel suo insieme soddisfi i requisiti#super[G] funzionali e non funzionali. È un passaggio fondamentale prima del collaudo finale.
 
 #let voci_test_sistema = (
     [---], [---], [---], [NI]
@@ -267,7 +267,7 @@ I test di sistema valutano il comportamento del software nel suo complesso, simu
 
 == 3.4 Test di regressione
 
-I test di regressione hanno lo scopo di assicurare che le nuove modifiche al codice, come correzioni di bug o l'introduzione di nuove funzionalità, non abbiano introdotto errori in funzionalità esistenti. Vengono eseguiti regolarmente durante lo sviluppo continuo e sono spesso automatizzati per garantire un controllo rapido ed efficace ogni volta che il software viene aggiornato.
+I test di regressione hanno lo scopo di assicurare che le nuove modifiche al codice#super[G], come correzioni di bug o l'introduzione di nuove funzionalità, non abbiano introdotto errori in funzionalità esistenti. Vengono eseguiti regolarmente durante lo sviluppo continuo e sono spesso automatizzati per garantire un controllo rapido ed efficace ogni volta che il software viene aggiornato.
 
 #let voci_test_regressione = (
   [---], [---], [---], [NI]
@@ -282,7 +282,7 @@ I test di regressione hanno lo scopo di assicurare che le nuove modifiche al cod
 
 == 3.5 Test di accettazione
 
-I test di accettazione vengono eseguiti per verificare che il software soddisfi i requisiti concordati con il cliente#super[G] o l'utente finale. Sono spesso definiti sulla base di scenari realistici o specifiche formali (come le User Story o i Criteri di Accettazione). Questi test rappresentano l'ultima fase di verifica#super[G] prima del rilascio del prodotto e determinano se esso può essere considerato “pronto per l'uso”.
+I test di accettazione vengono eseguiti per verificare che il software soddisfi i requisiti#super[G] concordati con il cliente#super[G] o l'utente finale. Sono spesso definiti sulla base di scenari realistici o specifiche formali (come le User Story o i Criteri di Accettazione). Questi test rappresentano l'ultima fase di verifica#super[G] prima del rilascio del prodotto#super[G] e determinano se esso può essere considerato “pronto per l'uso”.
 
 #let voci_test_accettazione = (
   [---], [---], [---], [NI]
@@ -355,7 +355,7 @@ Il gruppo di lavoro si impegna a monitorare costantemente le metriche e a raccog
   caption: caption_autovalutazione_strumenti
 )
 
-== 5.5 Valutazioni sul prodotto
+== 5.5 Valutazioni sul prodotto#super[G]
 
 #let header_autovalutazione_prodotto = (
   [*Periodo*],[*Riferimento*],[*Problema*],[*Soluzione*]
@@ -364,7 +364,7 @@ Il gruppo di lavoro si impegna a monitorare costantemente le metriche e a raccog
   [---], [---], [---], [---]
   )
 #let caption_autovalutazione_prodotto = (
-  [Valutazioni sul prodotto]
+  [Valutazioni sul prodotto#super[G]]
 )
 #show: automiglioramento_table.with(
   header: header_autovalutazione_prodotto,

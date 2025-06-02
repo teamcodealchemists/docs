@@ -559,7 +559,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
           La convenzione di nomenclatura per questi branch#super[G] è consultabile alla sezione 4.2.4.1.2 ("Nomenclatura dei branch#super[G]").
 
       === GitHub Action
-      // Azioni per controllare glossario e per indice gulpease, di cui si parla anche a 4.1.10
+      // Azioni per controllare glossario#super[G] e per indice gulpease, di cui si parla anche a 4.1.10
       // Attenderei di ultimarle per scrivere questa parte, in modo da essere più precisi
 
         === Procedure di commit#super[G] e merge#super[G]
@@ -694,7 +694,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       ==== Analisi dinamica
       L'Analisi dinamica è una metodologia di verifica#super[G] che prevede l'esecuzione del software per valutarne il comportamento, le performance e la correttezza. 
-      A differenza dell'Analisi statica, che si concentra su aspetti strutturali e sintattici, l'analisi dinamica permette di identificare errori direttamente durante l'esecuzione, rilevando failure e correggendo i fault responsabili di comportamenti inattesi.
+      A differenza dell'Analisi statica, che si concentra su aspetti strutturali e sintattici, l'analisi dinamica permette di identificare errori direttamente durante l'esecuzione, rilevando failure e correggendo i fault reche causano comportamenti inattesi.
       
       Questa attività si basa su test ripetibili e automatizzabili, garantendo che le correzioni applicate vengano verificate con nuove esecuzioni. 
       
@@ -917,7 +917,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
           Quando creiamo un task su Jira, utilizziamo specifici parametri, tra cui la priorità, la descrizione dettagliata, la categoria e il collegamento ad altri task o milestone correlati.
 
           ===== Assegnazione task
-          // A chi viene assegnata una task (spieghiamo come viene scelto magari il Sottoresponsabile#super[G] analista#super[G] che rappresenta l'intero gruppo di analisti)
+          // A chi viene assegnata una task (spieghiamo come viene scelto magari il Sottoresponsabile#super[G] analista#super[G] che rappresenta l'intero gruppo di analisti#super[G])
           L'assegnazione di un task avviene in base al suo ambito di riferimento e alla sua complessità. 
           Inoltre, si applica la convenzione intera per cui, ad esempio, il Sottoresponsabile Analista#super[G], che rappresenta l'intero gruppo di analisti#super[G], è incaricato di fare da portavoce per tutti gli analisti#super[G] se stanno lavorando contemporaneamente a quella determinata task.
 
@@ -1018,7 +1018,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
     - *Gestione della Configurazione*: controlla le modifiche e la consistenza degli elementi del sistema.
 
-    - *Accertamento della qualità*: verifica#super[G] la conformità dei processi e dei prodotti.
+    - *Accertamento della qualità*: verifica#super[G] la conformità dei processi e dei prodotti#super[G].
 
     - *Verifica#super[G] e validazione#super[G]*: assicurano che il software soddisfi i requisiti#super[G] e sia utilizzabile.
 
@@ -1084,7 +1084,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       I principali aspetti valutati per l'Efficienza includono:
 
-      - *Comportamento temporale*: verifica che il software risponda entro tempi adeguati.
+      - *Comportamento temporale*: verifica#super[G] che il software risponda entro tempi adeguati.
 
       - *Utilizzo delle risorse*: ottimizza il consumo di memoria, CPU e altre risorse in rapporto all'uso.
 

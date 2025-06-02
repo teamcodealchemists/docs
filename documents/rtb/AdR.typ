@@ -577,18 +577,18 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - L’inventario#super[G] del magazzino di origine viene decrementato.
   - L’inventario#super[G] del magazzino di destinazione viene incrementato.
 - *Scenario Principale*:
-  + Il sistema centralizzato decrementa le quantità dal magazzino di origine nel momento di accettazione dell'ordine.
-  + L'ordine viene a tutti gli effetti spedito verso il magazzino di destinazione.
-  + Al completamento del trasferimento, incrementa le quantità nel magazzino di destinazione.
+  + Il sistema centralizzato decrementa le quantità dal magazzino di origine nel momento di accettazione dell'ordine#super[G].
+  + L'ordine#super[G] viene a tutti gli effetti spedito verso il magazzino di destinazione.
+  + Al completamento del trasferimento#super[G], incrementa le quantità nel magazzino di destinazione.
   + Registra l’operazione.
 
 ==== - UC 5.4: Tracciamento del trasferimento#super[G] dei prodotti#super[G]
 #label("uc-5.4")
 - *Attore Principale*: Sistema Centralizzato.
 - *Precondizioni*:
-  - Il trasferimento è stato avviato.
+  - Il trasferimento#super[G] è stato avviato.
 - *Postcondizioni*:
-  - Il trasferimento è assegnato ad un ID tracciabile.
+  - Il trasferimento#super[G] è assegnato ad un ID tracciabile.
 - *Scenario Principale*:
   + Il sistema centralizzato assegna un ID univoco al trasferimento#super[G].
   + Registra varie informazioni sul trasferimento#super[G] (orari, quantità, origine, destinazione, ...)
@@ -833,7 +833,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il riassortimento#super[G] può essere avviato automaticamente.
 - *Scenario principale*:
   + Il Sistema centralizzato verifica#super[G] i criteri per l’automazione (es. peso, costo, ...).
-  + Se i criteri sono rispettati, genera l’ordine di riassortimento#super[G].
+  + Se i criteri sono rispettati, genera l’ordine#super[G] di riassortimento#super[G].
   + Aggiorna lo stato operativo.
 
 ==== - UC 7.4: Effettuazione del riassortimento#super[G]
@@ -858,9 +858,9 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Attori Principali*: Magazzino Locale.
 - *Precondizioni*:
-  - Ordine in elaborazione in un magazzino, ma la quantità di scorte#super[G] per soddisfare l'ordine sono insufficienti.
+  - Ordine#super[G] in elaborazione in un magazzino, ma la quantità di scorte#super[G] per soddisfare l'ordine#super[G] sono insufficienti.
 - *Postcondizioni*:
-  - Le scorte#super[G] per soddisfare l'ordine sono inviate al magazzino.
+  - Le scorte#super[G] per soddisfare l'ordine#super[G] sono inviate al magazzino.
 - *Scenario principale*:
   + Il magazzino comunica al sistema centrale la quantità di scorte#super[G] richiesta.
   + Il sistema centralizzato elabora la richiesta, ovvero decide da quali magazzini inviare la merce.
@@ -868,7 +868,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Inclusioni*:
   - #link(label("uc-5"), underline("[UC 5]"))
 - *Trigger*:
-  - Il numero di scorte#super[G] per risolvere un ordine è insufficiente.
+  - Il numero di scorte#super[G] per risolvere un ordine#super[G] è insufficiente.
 
 #pagebreak()
 === - UC 9: Individuazione di magazzini offline
@@ -1331,7 +1331,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Precondizioni*:
   - Sono presenti ordini#super[G] concorrenti e scorte#super[G] limitate.
 - *Postcondizioni*:
-  - Le scorte#super[G] sono assegnate secondo una logica deterministica (es. ordine temporale, località, criticità).
+  - Le scorte#super[G] sono assegnate secondo una logica deterministica (es. ordinamento temporale, località, criticità).
 - *Scenario principale*:
   + Il sistema centralizzato valuta le richieste in base ai criteri impostati (es. priorità geografica, urgenza, data di richiesta).
   + Assegna le scorte#super[G] disponibili agli ordini#super[G] soddisfacibili.
@@ -1343,11 +1343,11 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Precondizioni*:
   - Gli ordini#super[G] sono in conflitto e le scorte#super[G] non bastano.
 - *Postcondizioni*:
-  - L’ordine prioritario viene soddisfatto.
+  - L’ordine#super[G] prioritario viene soddisfatto.
 - *Scenario principale*:
   + Il sistema centralizzato recupera la configurazione dei criteri di priorità.
   + Ordina gli ordini#super[G] per livello di priorità.
-  + Applica le assegnazioni seguendo l’ordine definito.
+  + Applica le assegnazioni seguendo l’ordine#super[G] definito.
   + Per tracciabilità scrive le scelte effettuate nel log#super[G].
 
 ==== - UC 14.4: Segnalazione ordine#super[G] in conflitto non risolvibile
@@ -1406,7 +1406,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 #label("uc-15.2")
 - *Attori Principali*: Supervisore Locale.
 - *Precondizioni*:
-  - Il magazzino riceve una richiesta (calcolo disponibilità, assegnazione ordine, ...)
+  - Il magazzino riceve una richiesta (calcolo disponibilità, assegnazione ordine#super[G], ...)
 - *Postcondizioni*:
   - I dati sono aggiornati in locale.
 - *Scenario principale*:
@@ -1629,12 +1629,12 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - I moduli predittivi sono correttamente configurati.
 - *Postcondizioni*:
   - Sono generate previsioni di domanda.
-  - Sono pianificati riassortimenti preventivi per evitare carenze.
+  - Sono pianificati riassortimenti#super[G] preventivi per evitare carenze.
 - *Scenario principale*:
   + Il sistema centralizzato raccoglie dati storici di vendita e disponibilità attuale delle scorte#super[G].
   + Il sistema centralizzato analizza i dati con un modello predittivo (es. machine learning).
   + Il sistema centralizzato genera una previsione di domanda per ciascun prodotto#super[G].
-  + Il sistema centralizzato pianifica automaticamente i riassortimenti in base alle previsioni.
+  + Il sistema centralizzato pianifica automaticamente i riassortimenti#super[G] in base alle previsioni.
   + Se un prodotto#super[G] rischia di andare in esaurimento, il sistema centralizzato attiva azioni preventive (es. proposta d'ordine#super[G] o avviso al supervisore).
   + Il Supervisore Locale o Globale può visualizzare i dati generati e validare eventuali modifiche.
 - *Scenari alternativi*:
@@ -1665,14 +1665,14 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Trigger*:
   - Esecuzione pianificata o evento esterno (es. cambio stagionale).
 
-==== - UC 19.2: Pianificazione dei riassortimenti
+==== - UC 19.2: Pianificazione dei riassortimenti#super[G]
 #label("uc-19.2")
 - *Attori Principali*: Sistema
 - *Attori Secondari*: Supervisore Locale, Supervisore Globale.
 - *Precondizioni*:
   - Previsioni disponibili.
 - *Postcondizioni*:
-  - Riassortimenti pianificati automaticamente.
+  - Riassortimenti#super[G] pianificati automaticamente.
 - *Scenario principale*:
   + Il sistema centralizzato valuta se le scorte#super[G] previste soddisfano la domanda prevista.
   + Pianifica un riassortimento#super[G] (ordine#super[G] o trasferimento#super[G]).
@@ -1990,7 +1990,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RF05/01*], [È necessario fornire raccomandazioni al sistema per il riassortimento#super[G] e i trasferimenti#super[G].], [capitolato#super[G]],
 
   [*RF06*], [*Gestione degli ordini#super[G] con scorte#super[G] insufficienti*], [progettazione],
-  [*RF06/01*], [Il sistema deve gestire le scorte#super[G] insufficienti in un magazzino che deve evadere un ordine], [progettazione],
+  [*RF06/01*], [Il sistema deve gestire le scorte#super[G] insufficienti in un magazzino che deve evadere un ordine#super[G]], [progettazione],
 
   [*RF07*], [*Individuazione di magazzini offline.*], [capitolato#super[G]],
   [*RF07/01*], [Il sistema deve monitorare la connettività#super[G] di ciascun magazzino.], [capitolato#super[G]],
@@ -2226,7 +2226,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   inset: 10pt,
   align: center,
   table.header(
-    [*Requisito*], [*Casi d'Uso*],
+    [*Requisito#super[G]*], [*Casi d'Uso*],
 
   ),
 
