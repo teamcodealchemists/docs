@@ -92,8 +92,8 @@
   == Scopo del documento
   Il presente documento viene redatto per descrivere il _Way of Working_#super[G] adottato dal Team _Code Alchemists_ per lo svolgimento del progetto didattico di Ingegneria del Software. Esso stabilisce le linee guida, i processi, le metodologie e gli standard inerenti tutte le attività associate all'intero ciclo di vita del software, in modo da garantire coerenza, efficienza, efficacia e qualità.
 
-  == Scopo del prodotto
-  Il prodotto, detto anche software, oggetto del presente progetto, consiste nella realizzazione di un sistema distribuito e scalabile per la gestione ottimale (intesa come minimizzazione dei tempi di risposta e di ottimizzazione della distribuzione delle scorte#super[G]) di una rete di magazzini, singolarmente autonomi, in modo da favorire l'interoperabilità tra di essi e centralizzare le informazioni in maniera efficiente e sicura. // Inserire riferimento al capitolato#super[G]?
+  == Scopo del prodotto#super[G]
+  Il prodotto#super[G], detto anche software, oggetto del presente progetto, consiste nella realizzazione di un sistema distribuito e scalabile per la gestione ottimale (intesa come minimizzazione dei tempi di risposta e di ottimizzazione della distribuzione delle scorte#super[G]) di una rete di magazzini, singolarmente autonomi, in modo da favorire l'interoperabilità tra di essi e centralizzare le informazioni in maniera efficiente e sicura. // Inserire riferimento al capitolato#super[G]?
 
   Il presente documento è redatto secondo lo standard _ISO/IEC 12207:1995_, che identifica tre tipologie di processi: 
   - *Processi primari*;
@@ -111,7 +111,7 @@
   - Il team _Code Alchemists_, nel ruolo di _Fornitore_#super[G]
   
   == Glossario#super[G]
-  Le parole contrassegnate in apice con la lettera #super[G] sono intese con la loro definizione specificata nel documento _Glossario#super[G]_.
+  Le parole#super[G] contrassegnate in apice con la lettera #super[G] sono intese con la loro definizione specificata nel documento _Glossario#super[G]_.
   == Riferimenti
     === Riferimenti normativi
     - *Capitolato#super[G] d'appalto* \
@@ -146,11 +146,11 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 == Fornitura
   === Scopo
   // Descrizione Fornitura
-  Il processo di fornitura è l'insieme di attività che regolano la collaborazione tra fornitore e cliente#super[G] per la creazione e consegna di un prodotto software. 
+  Il processo di fornitura è l'insieme di attività che regolano la collaborazione tra fornitore e cliente#super[G] per la creazione e consegna di un prodotto#super[G] software. 
   
   Attraverso l'analisi dei requisiti#super[G], la pianificazione delle operazioni e la gestione delle risorse, questo processo garantisce il rispetto dei tempi, dei costi e degli standard di qualità. 
   
-  La chiave del successo è un dialogo continuo tra le parti, che permette di risolvere le difficoltà tecniche, adattare le strategie di sviluppo e assicurare che il prodotto finale soddisfi le aspettative del cliente#super[G] (M31). L'obiettivo primario è ottimizzare l'efficienza e garantire la conformità agli accordi stabiliti.
+  La chiave del successo è un dialogo continuo tra le parti, che permette di risolvere le difficoltà tecniche, adattare le strategie di sviluppo e assicurare che il prodotto#super[G] finale soddisfi le aspettative del cliente#super[G] (M31). L'obiettivo primario è ottimizzare l'efficienza e garantire la conformità agli accordi stabiliti.
 
   === Comunicazione con l'azienda proponente
   // Spiegazione di come vengono mantenuti i contatti con l'azienda proponente (+ accenno agli strumenti citati sotto)
@@ -159,7 +159,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
   Le interazioni con il proponente saranno focalizzate su aspetti chiave quali definire i requisiti#super[G], pianificare le consegne, raccogliere di feedback, gestire le problematiche tecniche e la definizione delle priorità.
 
-  L'obiettivo principale è favorire una collaborazione strutturata, assicurando la qualità del prodotto finale e la piena conformità alle aspettative del cliente#super[G].
+  L'obiettivo principale è favorire una collaborazione strutturata, assicurando la qualità del prodotto#super[G] finale e la piena conformità alle aspettative del cliente#super[G].
 
   === Piano di Progetto
   // Descrizione documento PdP
@@ -174,7 +174,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
   // Descrizione documento PdQ
 
 
-  Il Piano di Qualifica#super[G] definisce le strategie per garantire la qualità del prodotto, stabilendo standard di sviluppo, criteri di verifica#super[G] e test per la conformità ai requisiti#super[G]. 
+  Il Piano di Qualifica#super[G] definisce le strategie per garantire la qualità del prodotto#super[G], stabilendo standard di sviluppo, criteri di verifica#super[G] e test per la conformità ai requisiti#super[G]. 
   
   Redatto dall'Amministratore#super[G];, include metodologie di Verifica#super[G] e Validazione#super[G], il monitoraggio#super[G] delle metriche e gli esiti dei test, assicurando il rispetto degli obiettivi qualitativi e il miglioramento continuo del progetto.
 
@@ -194,7 +194,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 == Sviluppo 
   === Scopo
   // Descrizione Sviluppo
-  Il processo di sviluppo software è l'insieme delle attività necessarie per trasformare un'idea in un prodotto funzionante, garantendo la conformità ai requisiti#super[G] e agli standard di qualità. 
+  Il processo di sviluppo software è l'insieme delle attività necessarie per trasformare un'idea in un prodotto#super[G] funzionante, garantendo la conformità ai requisiti#super[G] e agli standard di qualità. 
   
   Si articola in tre fasi principali: _Analisi dei Requisiti#super[G]_, _Progettazione_ e _Codifica_.
   
@@ -203,7 +203,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
   === Analisi dei Requisiti#super[G]
     ==== Scopo
     // Descrizione documento AdR
-    L'Analisi dei Requisiti#super[G]; è la fase preliminare dello sviluppo software, finalizzata a identificare e documentare in modo accurato le esigenze del proponente e degli utenti. Questo processo consente di definire il fine del prodotto, gli attori del sistema e le funzionalità chiave, fornendo ai progettisti#super[G] una visione chiara del problema e ai verificatori#super[G] una base per le attività di test. 
+    L'Analisi dei Requisiti#super[G]; è la fase preliminare dello sviluppo software, finalizzata a identificare e documentare in modo accurato le esigenze del proponente e degli utenti. Questo processo consente di definire il fine del prodotto#super[G], gli attori del sistema e le funzionalità chiave, fornendo ai progettisti#super[G] una visione chiara del problema e ai verificatori#super[G] una base per le attività di test. 
     
 
     L'analisi si concretizza in un documento strutturato che raccoglie i casi d'uso, i requisiti#super[G] funzionali e non funzionali, e le fonti da cui sono stati derivati. Questo documento rappresenta un riferimento essenziale per la progettazione, la pianificazione e la fase di verifica#super[G], garantendo che il sistema soddisfi pienamente le aspettative del cliente#super[G] e gli obiettivi stabiliti. Inoltre, è strettamente collegato al Piano di Qualifica#super[G], che consente di monitorare la conformità ai requisiti#super[G] attraverso test specifici.
@@ -260,7 +260,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
   === Progettazione
     ==== Scopo
-    // Dare soluzioni a requisiti rilevati nell'AdR.
+    // Dare soluzioni a requisiti#super[G] rilevati nell'AdR.
 
     La progettazione software definisce le soluzioni tecniche per soddisfare i requisiti#super[G] individuati, trasformandoli in un'architettura#super[G] strutturata e modulare#super[G]. 
     
@@ -280,13 +280,13 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       // Descrizione progett. di dettaglio
       La progettazione di dettaglio suddivide il sistema in unità architetturali funzionali, garantendo una codifica efficiente e verificabile. Essa assicura che i componenti software siano ben definiti e coerenti con la progettazione logica, evitando complessità eccessive. 
       
-      Durante questa fase, vengono creati diagrammi delle classi, tracciate le componenti e definiti gli unit test e integrazione, supportando un'implementazione strutturata e affidabile del prodotto.
+      Durante questa fase, vengono creati diagrammi delle classi, tracciate le componenti e definiti gli unit test e integrazione, supportando un'implementazione strutturata e affidabile del prodotto#super[G].
 
     ==== Specifica tecnica
     // Importanza di documentare la progettazione nel documento "Specifica tecnica/Specifica architetturale"
     La specifica tecnica è un riferimento essenziale per lo sviluppo software, guidando le scelte architetturali e tecnologiche in modo strutturato. Essa definisce l'architettura#super[G] del sistema, descrivendo componenti e interfacce, e indica le tecnologie adottate, come linguaggi di programmazione e framework. Inoltre, dettaglia la gestione dei dati, le interfacce con sistemi esterni e i design pattern utilizzati, garantendo efficienza e coerenza progettuale. 
   
-    Il documento include anche la pianificazione delle attività, con stime di tempi e risorse, e le procedure di testing, assicurando che il prodotto finale rispetti i requisiti#super[G] tecnici e le aspettative del cliente#super[G].
+    Il documento include anche la pianificazione delle attività, con stime di tempi e risorse, e le procedure di testing, assicurando che il prodotto#super[G] finale rispetti i requisiti#super[G] tecnici e le aspettative del cliente#super[G].
     
     ==== Framework e tecnologie utilizzate
     - *NATS*: Dato che utilizziamo comunicazione asincrona con messaggi, serve un message broker. La scelta naturale ricade su NATS in quanto è più rapido in termini di latenza (dato che non garantisce l’ordine corretto di arrivo dei messaggi) ed è più “semplice”.
@@ -297,7 +297,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     /********** Convenzioni su metodi, import, commenti... ***********/
 
     ==== PoC#super[G]
-    // Descrizione PoC
+    // Descrizione PoC#super[G]
     Il Proof of Concept#super[G] (PoC#super[G]) è una fase fondamentale dello sviluppo, durante la quale progettisti#super[G] e programmatori#super[G] valutano la validità di una soluzione prima della sua implementazione definitiva. Il suo scopo è dimostrare la fattibilità del progetto, assicurando che le tecnologie scelte siano adeguate e compatibili con i requisiti#super[G] tecnici e operativi. Inoltre, offre all'azienda proponente un feedback tempestivo e concreto, minimizzando i rischi e ottimizzando le decisioni. 
   
   === Codifica
@@ -306,11 +306,11 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     La codifica, affidata ai programmatori#super[G], è una fase essenziale dello sviluppo software, finalizzata a tradurre le scelte progettuali in codice#super[G] sorgente funzionante. 
     
 
-    Per garantire uniformità, leggibilità e manutenibilità, vengono seguite precise linee guida sulla formattazione, la nomenclatura e la struttura del codice#super[G]. Queste regole contribuiscono a semplificare la verifica#super[G], il debugging e l'estensione del software, assicurando un prodotto finale robusto e di alta qualità.
+    Per garantire uniformità, leggibilità e manutenibilità, vengono seguite precise linee guida sulla formattazione, la nomenclatura e la struttura del codice#super[G]. Queste regole contribuiscono a semplificare la verifica#super[G], il debugging e l'estensione del software, assicurando un prodotto#super[G] finale robusto e di alta qualità.
     
     ==== Convenzioni di sintassi
     // Nomi da assegnare, in che lingua, che stile di case seguire, indentazione, spaziatura...
-    Le norme di scrittura del codice#super[G] del prodotto software mirano a garantire leggibilità, uniformità e manutenibilità. Di seguito sono definite le principali convenzioni da seguire.
+    Le norme di scrittura del codice#super[G] del prodotto#super[G] software mirano a garantire leggibilità, uniformità e manutenibilità. Di seguito sono definite le principali convenzioni da seguire.
 
     // ***************** SEZIONI DA RIFINIRE CON CIO' CHE SI DECIDE EFFETTIVAMENTE *******/
       ===== Formattazione
@@ -327,12 +327,12 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       ===== Metodi
       I nomi dei metodi devono essere in ...
-      // Camel Case e in inglese, con la prima parola in minuscolo e le successive con l'iniziale maiuscola. 
+      // Camel Case e in inglese, con la prima parola#super[G] in minuscolo e le successive con l'iniziale maiuscola. 
       Si preferisce mantenere i metodi brevi e concisi.
 
       ===== Classi e tipi
       Devono essere nominati usando ...
-      //Pascal Case, dove ogni parola inizia con una lettera maiuscola, rispettando la lingua inglese per garantire chiarezza e standardizzazione.
+      //Pascal Case, dove ogni parola#super[G] inizia con una lettera maiuscola, rispettando la lingua inglese per garantire chiarezza e standardizzazione.
 
       ===== Variabili 
       Il nome delle variabili deve seguire lo stile ...
@@ -360,16 +360,16 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     == Documentazione
       === Scopo
       // Introduzione alla documentazione
-      Il processo di documentazione è essenziale per tracciare le attività di sviluppo, facilitare la manutenzione e garantire coerenza nel ciclo di vita del prodotto. Seguendo regole e strutture uniformi, permette una consultazione rapida delle informazioni e supporta il lavoro asincrono, contribuendo alla storicizzazione delle decisioni prese e al miglioramento continuo del software.
+      Il processo di documentazione è essenziale per tracciare le attività di sviluppo, facilitare la manutenzione e garantire coerenza nel ciclo di vita del prodotto#super[G]. Seguendo regole e strutture uniformi, permette una consultazione rapida delle informazioni e supporta il lavoro asincrono, contribuendo alla storicizzazione delle decisioni prese e al miglioramento continuo del software.
       === Ciclo di vita del documento
       // Fasi che attraverso ogni documento dalla creazione al "rilascio"
-        // (Creazione, stesura, verifica, pubblicazione)
+        // (Creazione, stesura, verifica#super[G], pubblicazione)
         Il ciclo di vita di un documento software è strutturato in diverse fasi, le quali garantiscono un processo chiaro e standardizzato per la sua gestione, ovvero:
         - *Pianificazione*: organizzazione delle informazioni e definizione della struttura del documento, inclusi intestazioni, header e footer.
         - *Redazione*: assegnazione del compito di stesura del documento a un membro del team, utilizzo di strumenti di versionamento (GitHub) per tracciare le modifiche e avvio della stesura dei contenuti.
         - *Verifica#super[G]*: ogni sezione viene revisionata da un membro distinto dal redattore, per garantire accuratezza e qualità. Per la documentazione esterna, viene effettuata una ulteriore validazione#super[G] dagli enti terzi.
         - *Approvazione*: il responsabile#super[G] di progetto analizza il documento nella sua interezza, verificando la coerenza e l'adeguatezza dei contenuti prima della pubblicazione.
-        - *Pubblicazione*: il documento viene reso disponibile nel repository#super[G] GitHub ufficiale "docs" solo dopo una verifica positiva, assicurando la presenza esclusiva di documenti validati e coerenti.
+        - *Pubblicazione*: il documento viene reso disponibile nel repository#super[G] GitHub ufficiale "docs" solo dopo una verifica#super[G] positiva, assicurando la presenza esclusiva di documenti validati e coerenti.
        
         Questa suddivisione garantisce un processo documentale chiaro ed efficace, facilitando la gestione e l'evoluzione dei documenti nel tempo.
 
@@ -450,9 +450,9 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       // Correttezza Ortografica (se la vogliamo mettere, non mi sembra automatizzata tho) -> Per il momento no.
       I documenti sono sottoposti a dei controlli di qualità, le quali sono:
 
-      - *Parole del Glossario#super[G] non segnate*: Indica il numero di parole trovate nella documentazione che sono presenti nel glossario#super[G] ma non contrassegnate con la lettera "G" come apice.
+      - *Parole#super[G] del Glossario#super[G] non segnate*: Indica il numero di parole#super[G] trovate nella documentazione che sono presenti nel glossario#super[G] ma non contrassegnate con la lettera "G" come apice.
       - *Indice Gulpease*: Fornisce un punteggio da 0 a 100 basato sull'indice di leggibilità Gulpease della documentazione.
-      - *Ordinamento del Glossario#super[G]*: Verifica che il glossario#super[G] sia ordinato alfabeticamente.
+      - *Ordinamento del Glossario#super[G]*: Verifica#super[G] che il glossario#super[G] sia ordinato alfabeticamente.
       
       === Manutenzione
       // Fasi di manutenzione di un documento 
@@ -491,7 +491,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       === Scopo
       // Descrizione Gestione della Configurazione
       La Gestione della Configurazione descrive il versionamento dei vari documenti e la struttura della repository#super[G].
-      Lo scopo di questo processo è garantire che ogni modifica sia tracciabile, controllata e approvata prima di essere integrata nel prodotto finale.
+      Lo scopo di questo processo è garantire che ogni modifica sia tracciabile, controllata e approvata prima di essere integrata nel prodotto#super[G] finale.
       
       /* Menzionare? 
       Il ciclo di vita del software che è obiettivo di questo progetto è strutturato nelle seguenti fasi:
@@ -499,7 +499,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
           2. Analisi dei requisiti#super[G]
           3. Progettazione
           4. Implementazione
-          5. Verifica e validazione
+          5. Verifica#super[G] e validazione#super[G]
           6. Rilascio
           */
 
@@ -518,8 +518,8 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       
       === Sistema di Versionamento
       /*********** Quando stabiliremo il nostro sistema, il contenuto sarà del tipo:
-      Ogni versione del documento è identificata da un codice di versione nel formato X.Y.Z dove:
-      - X: il documento è stato approvato dal responsabile;
+      Ogni versione del documento è identificata da un codice#super[G] di versione nel formato X.Y.Z dove:
+      - X: il documento è stato approvato dal responsabile#super[G];
       - Y: la sezione aggiunta o modificata di un documento è stata verificata;
       - Z: è stata corretta velocemente qualche incoerenza o errore minore.
       ************/
@@ -532,18 +532,18 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     
       - *teamcodealchemists.github.io*:  repository#super[G] dove si trova il sito web con tutta la documentazione. All'interno di essa sono state definite delle GitHub Action che permettono di tenere sincronizzato il glossario#super[G] nel sito con quello in formato .pdf della documentazione e di aggiornare automaticamente i link alla documentazione.
 
-      /********* Prossimamente per l'RTB dovremmo anche avere la repo del POC  *******/
+      /********* Prossimamente per l'RTB#super[G] dovremmo anche avere la repo del PoC#super[G]  *******/
 
         ==== Organizzazione Repository#super[G]
           ===== Modello di branching
-          È stato adottato il modello di branching *Git Flow* per la gestione delle repository#super[G]#super("G") di progetto. 
+          È stato adottato il modello di branching *Git Flow* per la gestione delle repository#super[G] di progetto. 
     
           Ciascuna tipologia di ramo risponde a uno scopo specifico all'interno del ciclo di vita del software, consentendo una gestione ordinata e controllata del processo di sviluppo.
 
           Ogni membro è a conoscenza delle _best practice_ per la creazione, l'unione e la cancellazione dei rami, così da promuovere una collaborazione efficace e strutturata all'interno del team.
 
           ===== Nomenclatura dei branch#super[G]
-          È stata raccomandata, ove possibile, l'associazione dei branch#super[G] relativi a nuove funzionalità (ovvero i branch#super[G] _feature_) alle corrispondenti issue tracciate su *Jira*, adottando una convenzione di nomenclatura coerente _(ad esempio: *feature/Sprint-55-nome-feature*)_.
+          È stata raccomandata, ove possibile, l'associazione dei branch#super[G] relativi a nuove funzionalità (ovvero i branch#super[G] _feature_) alle corrispondenti issue tracciate su *Jira*, adottando una convenzione di nomenclatura coerente _(ad esempio: *feature/Sprint#super[G];-55-nome-feature*)_.
 
           ===== Branch#super[G] principali
           La struttura è basata sui rami principali _main_ e _develop_.
@@ -559,7 +559,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
           La convenzione di nomenclatura per questi branch#super[G] è consultabile alla sezione 4.2.4.1.2 ("Nomenclatura dei branch#super[G]").
 
       === GitHub Action
-      // Azioni per controllare glossario e per indice gulpease, di cui si parla anche a 4.1.10
+      // Azioni per controllare glossario#super[G] e per indice gulpease, di cui si parla anche a 4.1.10
       // Attenderei di ultimarle per scrivere questa parte, in modo da essere più precisi
 
         === Procedure di commit#super[G] e merge#super[G]
@@ -569,16 +569,16 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
           ==== Gestione dei conflitti // procedure e responsabilità
 
         === Baseline#super[G] e rilasci
-          ==== Definizione di baseline#super[G] // cosa costituisce una baseline
+          ==== Definizione di baseline#super[G] // cosa costituisce una baseline#super[G]
           ==== Note di rilascio //contenuto e formato
 
 
     == Gestione della qualità
       === Scopo
       // Descrizione Gestione della Qualità
-      La Gestione della Qualità di progetto assicura che i processi e il prodotto rispettino gli obiettivi e i requisiti#super[G] definiti. 
+      La Gestione della Qualità di progetto assicura che i processi e il prodotto#super[G] rispettino gli obiettivi e i requisiti#super[G] definiti. 
       Il team _Code Alchemists_, dunque, lavora per comprendere e gestire le aspettative del committente#super[G], definendo chiaramente i requisiti#super[G] di qualità e documentando tutte le procedure necessarie. 
-      L'obiettivo è completare il progetto nel rispetto delle tempistiche e del budget, garantendo un prodotto finale che sia pienamente in linea le aspettative.
+      L'obiettivo è completare il progetto nel rispetto delle tempistiche e del budget, garantendo un prodotto#super[G] finale che sia pienamente in linea le aspettative.
 
       Per mantenere elevati standard di qualità, adottiamo un approccio di miglioramento continuo, monitorando i progressi e utilizzando verifiche retrospettive per identificare opportunità di ottimizzazione. 
       Questo metodo ci permette di affinare costantemente i nostri processi e garantire risultati sempre più performanti.
@@ -586,33 +586,33 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       === Piano di Qualifica#super[G]
 
       // Descrizione PdQ (che copre gli obiettivi di questo processo)
-      Il Piano di Qualifica#super[G]; è un documento che definisce strategie, obiettivi e attività per garantire la qualità del prodotto e del processo di sviluppo. 
+      Il Piano di Qualifica#super[G]; è un documento che definisce strategie, obiettivi e attività per garantire la qualità del prodotto#super[G] e del processo di sviluppo. 
       Tali parametri vengono stabiliti in accordo ai requisiti#super[G] e alle aspettative del proponente e talvolta a discrezione del team sulla base delle valutazioni fatte nel corso di studi.
-      Il suo scopo principale è assicurare che il prodotto finale rispetti gli standard di qualità definiti e che eventuali problemi vengano gestiti in modo efficace.
+      Il suo scopo principale è assicurare che il prodotto#super[G] finale rispetti gli standard di qualità definiti e che eventuali problemi vengano gestiti in modo efficace.
       Esso include:
       - *Requisiti#super[G] del committente#super[G]*: definizione chiara delle esigenze e delle aspettative.
       - *Metriche di analisi*: identificazione dei parametri per valutare la qualità.
       - *Controllo della qualità*: implementazione di sistemi per monitorare l'intero ciclo di vita del progetto.
-      - *Test e verifiche*: pianificazione e documentazione dei controlli per garantire il corretto funzionamento del prodotto.
+      - *Test e verifiche*: pianificazione e documentazione dei controlli per garantire il corretto funzionamento del prodotto#super[G].
       - *Monitoraggio#super[G] dello stato*: utilizzo di strumenti per visualizzare i progressi e identificare eventuali criticità.
       - *Retrospettive e miglioramenti*: discussione dei risultati, individuazione di azioni correttive e proposte di auto-miglioramento.
 
       === Testing
       // Vari tipi di test 
-      Il Piano di Qualifica#super[G]; include gli obiettivi di qualità del processo e del prodotto, insieme alle metriche necessarie per valutarne l'accettabilità. 
+      Il Piano di Qualifica#super[G]; include gli obiettivi di qualità del processo e del prodotto#super[G], insieme alle metriche necessarie per valutarne l'accettabilità. 
       Per garantire la qualità del software, vengono eseguiti diversi tipi di test, suddivisi nelle seguenti categorie:
 
-      - *Test di unità*: verifica il funzionamento delle singole unità di un programma, controllando funzioni e algoritmi.
+      - *Test di unità*: verifica#super[G] il funzionamento delle singole unità di un programma, controllando funzioni e algoritmi.
 
       - *Test d'integrazione*: analizza il modo in cui le diverse componenti interagiscono tra loro, assicurandosi che funzionino correttamente anche in collaborazione.
 
-      - *Test di regressione*: verifica che le nuove funzionalità siano operative e che quelle già integrate continuino a comportarsi come previsto.
+      - *Test di regressione*: verifica#super[G] che le nuove funzionalità siano operative e che quelle già integrate continuino a comportarsi come previsto.
 
       - *Test di sistema*: valuta il comportamento complessivo del software, verificando la conformità ai requisiti#super[G] definiti.
 
-      - *Test di accettazione*: ultimo step di verifica, attuato dopo aver completato tutti i test precedenti e risolto eventuali problemi, per confermare il corretto funzionamento del prodotto.
+      - *Test di accettazione*: ultimo step di verifica#super[G], attuato dopo aver completato tutti i test precedenti e risolto eventuali problemi, per confermare il corretto funzionamento del prodotto#super[G].
 
-      Alla fine del processo, viene redatto un resoconto contenente i risultati delle verifiche sulla qualità del processo, del prodotto e del software. 
+      Alla fine del processo, viene redatto un resoconto contenente i risultati delle verifiche sulla qualità del processo, del prodotto#super[G] e del software. 
       Grazie alle varie analisi metriche e alla costruzione di grafici, è possibile visualizzare l'evoluzione degli indicatori nel tempo. 
       Questi dati sono consultabili nella sezione Metriche (4.3.4), dove sono descritte le formule e i criteri di valutazione.
 
@@ -626,12 +626,12 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
     == Verifica#super[G]
       === Scopo
-      // Descrizione Verifica
+      // Descrizione Verifica#super[G]
 
-      Il processo di Verifica#super[G] del software ha l'obiettivo di garantire che lo sviluppo sia eseguito correttamente e che il prodotto finale rispetti i requisiti#super[G] del cliente#super[G]. 
+      Il processo di Verifica#super[G] del software ha l'obiettivo di garantire che lo sviluppo sia eseguito correttamente e che il prodotto#super[G] finale rispetti i requisiti#super[G] del cliente#super[G]. 
       Durante questa fase, vengono individuati eventuali difetti nelle prime fasi del ciclo di vita, riducendo così costi e tempi di correzione.
 
-      La verifica#super[G] assicura la conformità del prodotto ai requisiti#super[G] stabiliti nel Piano di Qualifica#super[G], garantendo completezza e correttezza attraverso evidenze misurabili. 
+      La verifica#super[G] assicura la conformità del prodotto#super[G] ai requisiti#super[G] stabiliti nel Piano di Qualifica#super[G], garantendo completezza e correttezza attraverso evidenze misurabili. 
 
       Ogni produzione viene sottoposta a controlli prima di essere pubblicata nel repository#super[G] GitHub, con verificatori#super[G] indipendenti per evitare conflitti di interesse.
 
@@ -660,24 +660,24 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       Le tecniche di lettura sono due: Walkthrough ed Ispezione.
 
         ===== Walkthrough
-        Il Walkthrough è una tecnica di verifica#super[G] che consiste nell'analisi approfondita di un prodotto per individuare errori o incongruenze senza una ricerca mirata su un tipo specifico di difetto. 
+        Il Walkthrough è una tecnica di verifica#super[G] che consiste nell'analisi approfondita di un prodotto#super[G] per individuare errori o incongruenze senza una ricerca mirata su un tipo specifico di difetto. 
         Questo metodo è particolarmente utile quando non si ha certezza sulla posizione dei problemi, permettendo un esame critico dell'intero oggetto in esame.
 
         Si tratta di una procedura collaborativa che si articola in diverse fasi:
 
         - *Pianificazione*: definizione delle modalità, risorse e tempistiche dell'attività.
 
-        - *Lettura*: analisi dettagliata del prodotto per individuare errori e possibili miglioramenti.
+        - *Lettura*: analisi dettagliata del prodotto#super[G] per individuare errori e possibili miglioramenti.
 
-        - *Discussione*: confronto tra verificatore#super[G] e l'autore del prodotto per valutare le problematiche riscontrate e proporre soluzioni.
+        - *Discussione*: confronto tra verificatore#super[G] e l'autore del prodotto#super[G] per valutare le problematiche riscontrate e proporre soluzioni.
 
-        - *Correzione dei difetti*: attuazione delle modifiche concordate per garantire la qualità del prodotto.
+        - *Correzione dei difetti*: attuazione delle modifiche concordate per garantire la qualità del prodotto#super[G].
 
-        Il walkthrough permette di identificare problemi, migliorare la qualità e favorire una comprensione più approfondita del prodotto. 
+        Il walkthrough permette di identificare problemi, migliorare la qualità e favorire una comprensione più approfondita del prodotto#super[G]. 
 
         ===== Ispezione
         L'Ispezione è una tecnica di verifica#super[G] mirata che permette di identificare e rimuovere errori e difetti, basandosi su un'idea preliminare delle possibili problematiche. 
-        A differenza del walkthrough, questo metodo utilizza liste di controllo per eseguire verifiche specifiche, evitando di analizzare l'intero prodotto.
+        A differenza del walkthrough, questo metodo utilizza liste di controllo per eseguire verifiche specifiche, evitando di analizzare l'intero prodotto#super[G].
 
         L'Ispezione si sviluppa attraverso le seguenti fasi:
 
@@ -685,21 +685,21 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
         - *Creazione della lista di controllo*: individuazione degli aspetti critici da verificare, con aggiornamenti progressivi in base alla frequenza di determinati errori.
 
-        - *Lettura mirata*: il verificatore#super[G] esamina il prodotto seguendo la lista di controllo, identificando eventuali incongruenze e suggerendo miglioramenti.
+        - *Lettura mirata*: il verificatore#super[G] esamina il prodotto#super[G] seguendo la lista di controllo, identificando eventuali incongruenze e suggerendo miglioramenti.
 
-        - *Correzione dei difetti*: l'autore implementa le modifiche necessarie per garantire la qualità del prodotto.
+        - *Correzione dei difetti*: l'autore implementa le modifiche necessarie per garantire la qualità del prodotto#super[G].
 
         Grazie alla sua maggiore efficienza rispetto al walkthrough, l'Ispezione consente una verifica#super[G] più rapida e ottimizzata, risultando talvolta automatizzabile. 
-        Sebbene non sia sempre esaustiva, soprattutto nelle fasi iniziali di un progetto, offre un metodo strutturato per individuare errori e perfezionare la qualità complessiva del prodotto.
+        Sebbene non sia sempre esaustiva, soprattutto nelle fasi iniziali di un progetto, offre un metodo strutturato per individuare errori e perfezionare la qualità complessiva del prodotto#super[G].
 
       ==== Analisi dinamica
       L'Analisi dinamica è una metodologia di verifica#super[G] che prevede l'esecuzione del software per valutarne il comportamento, le performance e la correttezza. 
-      A differenza dell'Analisi statica, che si concentra su aspetti strutturali e sintattici, l'analisi dinamica permette di identificare errori direttamente durante l'esecuzione, rilevando failure e correggendo i fault responsabili di comportamenti inattesi.
+      A differenza dell'Analisi statica, che si concentra su aspetti strutturali e sintattici, l'analisi dinamica permette di identificare errori direttamente durante l'esecuzione, rilevando failure e correggendo i fault reche causano comportamenti inattesi.
       
       Questa attività si basa su test ripetibili e automatizzabili, garantendo che le correzioni applicate vengano verificate con nuove esecuzioni. 
       
       Le principali categorie di test utilizzate nell'analisi dinamica includono:
-      - *Test di unità*: verifica il funzionamento di singole componenti.
+      - *Test di unità*: verifica#super[G] il funzionamento di singole componenti.
       - *Test d'integrazione*: analizza le interazioni tra i moduli.
       - *Test di sistema*: valuta la conformità del software ai requisiti#super[G].
       - *Test di regressione*: controlla che le modifiche non introducano nuovi errori.
@@ -749,15 +749,15 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       Per evitare regressioni, ovvero il ripresentarsi di problemi precedentemente risolti, non ci si limita a testare esclusivamente la parte modificata, ma si eseguono tutti i test già implementati, tra cui test di unità, di integrazione e di sistema. 
       Questo approccio garantisce l'integrità#super[G] del software e previene anomalie derivanti da aggiornamenti o nuove funzionalità.
 
-      Grazie ai test di regressione, è possibile mantenere un alto livello di affidabilità del prodotto, assicurando che ogni miglioramento apportato non comprometta le prestazioni e la stabilità dell'intero sistema.
+      Grazie ai test di regressione, è possibile mantenere un alto livello di affidabilità del prodotto#super[G], assicurando che ogni miglioramento apportato non comprometta le prestazioni e la stabilità dell'intero sistema.
 
       === Metriche
-      // Metriche del processo di Verifica
+      // Metriche del processo di Verifica#super[G]
 
     == Validazione#super[G]
       === Scopo
-      // Descrizione Validazione
-      La Validazione#super[G] del software è il processo di valutazione finalizzato a garantire che il prodotto soddisfi i requisiti#super[G] predefiniti e le aspettative degli utenti e del committente#super[G]. 
+      // Descrizione Validazione#super[G]
+      La Validazione#super[G] del software è il processo di valutazione finalizzato a garantire che il prodotto#super[G] soddisfi i requisiti#super[G] predefiniti e le aspettative degli utenti e del committente#super[G]. 
       Un esito positivo della Validazione#super[G] conferma che il software è allineato alle specifiche concordate e pronto per l'utilizzo.
 
       Questo processo consente di:
@@ -765,10 +765,10 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       - *Verificare il rispetto dei requisiti#super[G]* stabiliti nel documento di Analisi dei Requisiti#super[G].
 
-      - *Migliorare la qualità* e *il valore* del prodotto finale.
+      - *Migliorare la qualità* e *il valore* del prodotto#super[G] finale.
 
       La Validazione#super[G] risponde alla domanda _“Ho realizzato il giusto sistema?”_, assicurando che il software sviluppato soddisfi le esigenze del committente#super[G]. 
-      Si svolge alla fine dello sviluppo, rappresentando una fase fondamentale per confermare la correttezza del prodotto e la sua conformità agli obiettivi stabiliti.
+      Si svolge alla fine dello sviluppo, rappresentando una fase fondamentale per confermare la correttezza del prodotto#super[G] e la sua conformità agli obiettivi stabiliti.
 
   = Processi Organizzativi
     == Gestione dei processi
@@ -810,7 +810,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         ==== Escalation path
         Durante l'intera fase di sviluppo, potrebbero capitare di venir assegnati alcuni ruoli a più membri del team per lo Sprint#super[G] corrente (ad esempio, il ruolo di Analista#super[G] viene assegnato a 4 persone durante l'attuale Sprint#super[G] poiché è una figura molto richiesta in quella determinata fase di sviluppo). 
       
-        Al fine di coordinare meglio il flusso di lavoro, si è deciso, ad ogni Sprint#super[G], di scegliere tra questi membri un “sottoresponsabile”, il quale comunicherà periodicamente e frequentemente con i sottoresponsabili delle altre categorie di ruolo e con il responsabile#super[G] di turno per tenerli aggiornati sullo stato di avanzamento delle attività dello Sprint#super[G].
+        Al fine di coordinare meglio il flusso di lavoro, si è deciso, ad ogni Sprint#super[G], di scegliere tra questi membri un “sottoresponsabile#super[G]”, il quale comunicherà periodicamente e frequentemente con i sottoresponsabili delle altre categorie di ruolo e con il responsabile#super[G] di turno per tenerli aggiornati sullo stato di avanzamento delle attività dello Sprint#super[G].
       
         Inoltre, i sottoresponsabili delle categorie di ruolo sono tenuti a mantenere una comunicazione costante con i membri del loro sottogruppo, assicurandosi che ogni task sia eseguita secondo le linee guida stabilite e che eventuali dubbi vengano chiariti prontamente. 
         Questo approccio favorisce una gestione efficiente delle attività e una rapida risoluzione delle problematiche interne.
@@ -821,7 +821,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         All'interno della cartella Drive del team è stato creato il documento *"Orari disponibilità"* su Google Sheets nel quale, settimanalmente, i membri del gruppo aggiornano la loro corrispettiva riga con gli orari di disponibilità nel corso della settimana entrante.
         Tale documento permette di organizzare riunioni e sessioni di lavoro in base alle disponibilità di tutti, evitando sovrapposizioni, e permette l'accesso immediato a quelle informazioni.
         
-        ==== Bilanciamento del carico di lavoro
+        ==== Bilanciamento#super[G] del carico di lavoro
         // Come vengono bilanciati i carichi di lavoro
         Il carico di lavoro assegnato ad ogni membro del team viene deciso in base alla complessità e al livello di priorità di completamento delle determinate task da assegnare.
         Nell'assegnare le task ad ogni Sprint#super[G] si cerca il più possibile di non sfociare nel sovraccarico. In caso di qualsiasi imprevisti o difficoltà, ogni membro potrà comunicare tale disagio al Responsabile#super[G] in carica.
@@ -837,7 +837,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         La review dello Sprint#super[G] è una riunione che si tiene alla fine di ogni Sprint#super[G] secondo quanto descritto al punto 5.2.3. Durante tale riunione, il team discute a grandi linee su ciò a cui si è lavorato e stabilisce il materiale da presentare agli stakeholder, i quali daranno dei feedback su quanto svolto così da identificare eventuali miglioramenti per il prossimo Sprint#super[G].
     
         ==== Retrospettiva dello Sprint#super[G]
-        La retrospettiva dello Sprint#super[G] è una fase in cui il team analizza nel dettaglio il proprio lavoro realizzato durante lo Sprint#super[G]. L'obiettivo di questa fase è di identificare ciò che ha funzionato bene e quel che può essere migliorato, promuovendo un continuo miglioramento della qualità del prodotto in sviluppo.
+        La retrospettiva dello Sprint#super[G] è una fase in cui il team analizza nel dettaglio il proprio lavoro realizzato durante lo Sprint#super[G]. L'obiettivo di questa fase è di identificare ciò che ha funzionato bene e quel che può essere migliorato, promuovendo un continuo miglioramento della qualità del prodotto#super[G] in sviluppo.
 
     == Procedure di comunicazione   
       === Comunicazioni interne 
@@ -873,14 +873,14 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       === Riunioni esterne
       // In che modo si svolgono le riunioni con proponente e committente#super[G], come sono organizzate...
       Le riunioni esterne con il proponente vengono svolte tendenzialmente due volte al mese, previo accordo con l'azienda tramite il canale di comunicazione Gmail.
-      Esse vengono saranno richieste dal gruppo in caso di necessità di opinioni esperte e/o chiarimenti su questioni tecniche e per avere una verifica il corretto progresso del progetto didattico.
+      Esse vengono saranno richieste dal gruppo in caso di necessità di opinioni esperte e/o chiarimenti su questioni tecniche e per avere una verifica#super[G] il corretto progresso del progetto didattico.
 
       Il gruppo si impegna a presenziare in presenza in maniera più assidua possibile agli incontri con il proponente. 
       Nel caso in cui, per qualunque motivazione, non sia possibile partecipare in presenza alla riunione, si fa uso del canale di comunicazione online Microsoft Teams.
       Al termine di ogni riunione viene redatto un verbale esterno al fine di documentare l'incontro, il quale dovrà ricevere l'approvazione dell'azienda stessa.
 
       === Reportistica
-      A seguito di ogni riunione, la stesura del corrispondente verbale viene assegnato, se disponibile, a uno dei verificatori#super[G]. In questo modo, un altro verificatore#super[G] avrà il compito di effettuare una cross-verifica del verbale redatto, assicurando così che tutte le informazioni siano corrette e che eventuali errori siano prontamente individuati e corretti.
+      A seguito di ogni riunione, la stesura del corrispondente verbale viene assegnato, se disponibile, a uno dei verificatori#super[G]. In questo modo, un altro verificatore#super[G] avrà il compito di effettuare una cross-verifica#super[G] del verbale redatto, assicurando così che tutte le informazioni siano corrette e che eventuali errori siano prontamente individuati e corretti.
     
       Nel caso in cui i verificatori#super[G] siano già impegnati in altre attività di priorità più alta, la stesura del verbale viene assegnata a un altro membro del team. Questo approccio flessibile garantisce che la documentazione delle riunioni non subisca ritardi e che ogni riunione sia adeguatamente registrata. Il membro del team incaricato di redigere il verbale è responsabile#super[G] di seguire le linee guida stabilite per la stesura, assicurando che il documento finale sia più chiaro, conciso e completo possibile.
 
@@ -891,7 +891,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     == Gestione dell'infrastruttura
       === Scopo
         // A cosa servono gli elementi dell'infrastruttura organizzativa
-        Il processo di Infrastruttura è responsabile della creazione, gestione e mantenimento dei componenti hardware e software necessari per supportare tutti gli altri processi. 
+        Il processo di Infrastruttura è responsabile#super[G] della creazione, gestione e mantenimento dei componenti hardware e software necessari per supportare tutti gli altri processi. 
         Include strumenti organizzativi che facilitano comunicazione, coordinamento e pianificazione, permettendo al team di operare in modo efficace ed efficiente.
 
         Questo processo documenta l’infrastruttura utilizzata, definendo le modalità di implementazione e manutenzione. 
@@ -917,7 +917,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
           Quando creiamo un task su Jira, utilizziamo specifici parametri, tra cui la priorità, la descrizione dettagliata, la categoria e il collegamento ad altri task o milestone correlati.
 
           ===== Assegnazione task
-          // A chi viene assegnata una task (spieghiamo come viene scelto magari il Sottoresponsabile analista#super[G] che rappresenta l'intero gruppo di analisti)
+          // A chi viene assegnata una task (spieghiamo come viene scelto magari il Sottoresponsabile#super[G] analista#super[G] che rappresenta l'intero gruppo di analisti#super[G])
           L'assegnazione di un task avviene in base al suo ambito di riferimento e alla sua complessità. 
           Inoltre, si applica la convenzione intera per cui, ad esempio, il Sottoresponsabile Analista#super[G], che rappresenta l'intero gruppo di analisti#super[G], è incaricato di fare da portavoce per tutti gli analisti#super[G] se stanno lavorando contemporaneamente a quella determinata task.
 
@@ -977,7 +977,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     == Formazione
       === Scopo
       // Motivi per cui è importante assicurare che tutti i membri siano adeguatamente preparati
-      Il processo di formazione definisce le modalità con cui i membri del gruppo acquisiscono le competenze necessarie per la produzione della documentazione e lo sviluppo del prodotto software.
+      Il processo di formazione definisce le modalità con cui i membri del gruppo acquisiscono le competenze necessarie per la produzione della documentazione e lo sviluppo del prodotto#super[G] software.
       === Metodo di Formazione
       // In che modo viene assicurato l'accesso alle risorse per la formazione dei membri (individualmente o in gruppo)
       Ogni componente ha la libertà di scegliere il metodo di apprendimento più adatto, privilegiando un approccio learning by doing. 
@@ -986,7 +986,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       Per ridurre eventuali discrepanze di conoscenza, se necessario, vengono organizzati dei brevi incontri in cui i membri più esperti condividono le loro competenze con il resto del gruppo. 
       
       === Materiale formativo
-      // Per ogni categoria, tipo architettura a microservizi#super[G], NATS, Docker ... indicare che materiale è messo a disposizione
+      // Per ogni categoria, tipo architettura#super[G] a microservizi#super[G], NATS, Docker ... indicare che materiale è messo a disposizione
       Il materiale formativo viene archiviato all'interno della cartella condivisa su Google Drive, aggiornata periodicamente con il contributo di tutti i membri del team.
 
       /************ DA COMPLETARE CON LINK PER OGNI TECNOLOGIA *****/
@@ -1001,9 +1001,9 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     === Processi primari
     I processi primari riguardano le parti principali coinvolte nello sviluppo, operatività e manutenzione del software: acquirente, fornitore, sviluppatore, operatore e manutentore.
 
-    - *Acquisizione*: comprende le attività necessarie per la richiesta, il controllo e l'accettazione di un prodotto o servizio#super[G] software.
+    - *Acquisizione*: comprende le attività necessarie per la richiesta, il controllo e l'accettazione di un prodotto#super[G] o servizio#super[G] software.
 
-    - *Fornitura*: riguarda la gestione della fornitura del prodotto, dalla pianificazione alla consegna.
+    - *Fornitura*: riguarda la gestione della fornitura del prodotto#super[G], dalla pianificazione alla consegna.
 
     - *Sviluppo*: include tutte le fasi di progettazione e implementazione del software.
 
@@ -1012,13 +1012,13 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     - *Manutenzione*: garantisce aggiornamenti e correzioni per mantenere il software operativo.
 
     === Processi di supporto
-    I processi di supporto affiancano i processi primari, contribuendo alla qualità del prodotto.
+    I processi di supporto affiancano i processi primari, contribuendo alla qualità del prodotto#super[G].
 
     - *Documentazione*: registra le informazioni prodotte in ogni fase del progetto.
 
     - *Gestione della Configurazione*: controlla le modifiche e la consistenza degli elementi del sistema.
 
-    - *Accertamento della qualità*: verifica la conformità dei processi e dei prodotti.
+    - *Accertamento della qualità*: verifica#super[G] la conformità dei processi e dei prodotti#super[G].
 
     - *Verifica#super[G] e validazione#super[G]*: assicurano che il software soddisfi i requisiti#super[G] e sia utilizzabile.
 
@@ -1054,7 +1054,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       Gli aspetti fondamentali della Funzionalità includono:
 
-      - *Adeguatezza*: verifica che il software fornisca le funzioni necessarie per il suo scopo.
+      - *Adeguatezza*: verifica#super[G] che il software fornisca le funzioni necessarie per il suo scopo.
 
       - *Accuratezza*: garantisce che i risultati siano corretti e conformi alle aspettative.
 
@@ -1084,7 +1084,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       I principali aspetti valutati per l'Efficienza includono:
 
-      - *Comportamento temporale*: verifica che il software risponda entro tempi adeguati.
+      - *Comportamento temporale*: verifica#super[G] che il software risponda entro tempi adeguati.
 
       - *Utilizzo delle risorse*: ottimizza il consumo di memoria, CPU e altre risorse in rapporto all'uso.
 
@@ -1132,6 +1132,6 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       - *Coesistenza*: assicura che il software possa operare correttamente insieme ad altri sistemi.
 
-      - *Sostituibilità*: permette di rimpiazzare un prodotto esistente con il nuovo software in modo semplice.
+      - *Sostituibilità*: permette di rimpiazzare un prodotto#super[G] esistente con il nuovo software in modo semplice.
 
       - *Conformità*: garantisce l’aderenza agli standard e alle convenzioni sulla portabilità.

@@ -59,10 +59,10 @@
   Il verbale iniziale viene redatto da *#p.matteo* e verificato da *#p.nicholas*. \
 
   == 2.1 Lavori in svolgimento durante lo sprint RTB#super[G] 4
-  Nell'ambito del quarto sprint il team ha lavorato principalmente su due campi principali: lo studio dell'architettura e sulla stesura dei casi d'uso. \
+  Nell'ambito del quarto sprint il team ha lavorato principalmente su due campi principali: lo studio dell'architettura#super[G] e sulla stesura dei casi d'uso. \
 
   === 2.1.1 Lavori in svolgimento dal responsabile#super[G]
-  Il responsabile#super[G] si sta occupato di coordinare le attività del team e di monitorare l'andamento dei lavori. Ha inoltre partecipato attivamente alla definizione delle attività da intraprendere e ha fornito supporto ai membri del team nella risoluzione di eventuali problematiche: con i progettisti#super[G] ha continuato l'attività di definizione dell'architettura per il PoC#super[G]. \
+  Il responsabile#super[G] si sta occupato di coordinare le attività del team e di monitorare l'andamento dei lavori. Ha inoltre partecipato attivamente alla definizione delle attività da intraprendere e ha fornito supporto ai membri del team nella risoluzione di eventuali problematiche: con i progettisti#super[G] ha continuato l'attività di definizione dell'architettura#super[G] per il PoC#super[G]. \
   Si è inoltre occupato della comunicazione esterna e interna. \
 
   === 2.1.2 Lavori svolti dall'amministratore#super[G]
@@ -70,18 +70,18 @@
   Ha studiato autonomamente i vari ambienti di sviluppo (ad esempio NATS, Docker, ...) cercando di capire il suo funzionamento per trasmettere quando appreso ai membri del Team facilitando poi lo sviluppo del PoC#super[G]. \
 
   === 2.1.3 Lavori svolti dagli analisti#super[G]
-  Gli analisti#super[G], durante il quarto sprint hanno continuato *l'analisi dei casi d'uso*. Tale attività si è resa più dispendiosa del previsto. Si è cercato di adottare delle migliorie in due diversi modalità: migliorando la leggibilità della tabella e rendendo i requisiti#super[G] meno prolissi cercando, inoltre, di evitare ridondanza. \
+  Gli analisti#super[G], durante il quarto sprint hanno continuato *l'analisi dei casi d'uso*. Tale attività si è resa più dispendiosa del previsto. Si è cercato di adottare delle migliorie in due diversi modalità: migliorando la leggibilità della tabella e rendendo i requisiti#super[G] meno prolissi cercando, inoltre, di evitare ridondanza#super[G]. \
   Questa attività non è completata in quanto i casi d'uso sono molti e sono complessi. \
 
   === 2.1.4 Lavori svolti dai progettisti#super[G]
   I progettisti#super[G] hanno lavorato principalmente sulla *progettazione architetturale del PoC*#super[G].\
-  Il loro principale lavoro è stato quello di effettuare le ultime modifiche all'architettura ad alto livello e di finire la stesura del *Processo di Progettazione*. \
+  Il loro principale lavoro è stato quello di effettuare le ultime modifiche all'architettura#super[G] ad alto livello e di finire la stesura del *Processo di Progettazione*. \
 
   Il lavoro non è ancora concluso, ma è a buon punto. Ci si aspetta di poterlo terminare entro la fine di questo sprint. \
 
   === 2.1.5 Lavori svolti dai verificatori#super[G]
   Il verificatore#super[G] ha il compito di verificare la correttezza e la completezza dei documenti redatti dal team. Durante il quarto sprint, sta verificando i vari documenti redatti dal team.
-  Ha inoltre continuato a redarre il *Piano di Qualifica*#super[G], documento volto a definire le modalità di qualifica e verifica del prodotto#super[G] software. \
+  Ha inoltre continuato a redarre il *Piano di Qualifica*#super[G], documento volto a definire le modalità di qualifica e verifica#super[G] del prodotto#super[G] software. \
 
   == 2.2 Criticità emerse
   Gli analisti#super[G], credendo che il lavoro potesse essere svolto in meno tempo, rilevano la criticità dell'essere leggermente in ritardo con il lavoro da loro svolto e richiedono più tempo per poterlo completare.\

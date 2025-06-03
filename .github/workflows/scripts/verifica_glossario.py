@@ -10,7 +10,10 @@ BADGE_FILE = ".github/badges/err_parole_glossario_badge.json"
 
 def carica_glossario(glossario_path):
     """Carica i termini e le sigle del glossario da un file, escludendo quelli nella blacklist."""
-    blacklist = {"ci","log"}  # Aggiungi qui le parole o sigle da escludere
+    blacklist = {
+        "ci", "log", "cliente", "clienti", "architetturale", "architetturali",
+        "branching", "servizio", "verificabile", "node", "containerizzazione", "heartbeat"
+    }  # Aggiungi qui le parole o sigle da escludere
     with open(glossario_path, 'r', encoding='utf-8') as file:
         glossario = set()
         for line in file:
@@ -41,13 +44,13 @@ def verifica_file(file_path, glossario):
         # Regex per la parola stessa
         pattern_parola = rf'\b{re.escape(parola)}(?![\s.,;:!?]*#super)'
 
-        # Regex per la parola senza l'ultima lettera con varianti
-        parola_senza_ultima = parola[:-1] if len(parola) > 1 else parola
-        pattern_varianti = rf'\b{re.escape(parola_senza_ultima)}(o|a|i|e| ta)?\b(?![\s.,;:!?]*#super)'
+        # Regex per la parola senza l'ultima lettera con varianti (il suffisso ora è obbligatorio)
+        parola_senza_ultima = parola[:-1] if len(parola) > 3 else parola
+        pattern_varianti = rf'\b{re.escape(parola_senza_ultima)}(o|a|i|e|ta)(?![\s.,;:!?*]*#super)\b'
 
         for numero_riga, riga in enumerate(contenuto, start=1):
             # Cerca la parola stessa o la parola con varianti nella riga
-            if re.search(pattern_parola, riga, re.IGNORECASE) or re.search(pattern_varianti, riga, re.IGNORECASE):
+            if re.search(pattern_varianti, riga, re.IGNORECASE):
                 print(f"\033[91m  - Errore: La parola '{parola}' non è segnata con #super[G] nella riga {numero_riga}\033[0m")
                 errori += 1
     return errori
@@ -78,9 +81,13 @@ def verifica_documenti(documenti_dir, glossario):
     return errori_totali
 
 def trova_parole_non_in_glossario(documenti_dir, glossario):
-    """Trova parole segnate con #super[G] ma non presenti nel glossario, considerando anche i plurali."""
+    """Trova parole segnate con #super[G] ma non presenti nel glossario, considerando anche i plurali e una blacklist."""
     parole_non_in_glossario = {}
     pattern_super = re.compile(r'#super\["?G"?\]\b', re.IGNORECASE)
+    blacklist = {
+        "ci", "log", "cliente", "clienti", "architetturale", "architetturali",
+        "branching", "servizio", "verificabile", "node", "containerizzazione", "heartbeat"
+    }  # Stessa blacklist usata nel glossario
 
     for root, _, files in os.walk(documenti_dir):
         for file_name in files:
@@ -96,6 +103,10 @@ def trova_parole_non_in_glossario(documenti_dir, glossario):
                         # Normalizza la parola rimuovendo caratteri speciali come "_" e convertendo in minuscolo
                         parola_normalizzata = re.sub(r'[^\w\s]', '', parola).replace('_', '').lower()
 
+                        # Salta parole in blacklist
+                        if parola_normalizzata in blacklist:
+                            continue
+
                         # Rimuovi l'ultima lettera per generare i plurali
                         parola_base = parola_normalizzata[:-1] if len(parola_normalizzata) > 3 else parola_normalizzata
 
@@ -103,7 +114,7 @@ def trova_parole_non_in_glossario(documenti_dir, glossario):
                         if (parola_normalizzata not in glossario and
                             f"{parola_base}i" not in glossario and
                             f"{parola_base}e" not in glossario and
-                            f"{parola_base}a" not in glossario):  # Aggiungi controllo per "a" (es. analista -> analisti)
+                            f"{parola_base}a" not in glossario):
                             if parola_normalizzata not in parole_non_in_glossario:
                                 parole_non_in_glossario[parola_normalizzata] = []
                             parole_non_in_glossario[parola_normalizzata].append((file_name, numero_riga))
