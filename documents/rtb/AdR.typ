@@ -1971,29 +1971,29 @@ _Esempio:_
     [*Codice*], [*Descrizione*], [*Fonti*]
   ),
   //UTENTE
-  [*RF*], [*Registrazione del Supervisore Globale*], [decisione\ interna],
+  [*RF*], [*Registrazione del Supervisore Globale.*], [decisione\ interna],
   [*RF*], [Il Supervisore Globale deve registrarsi al primo avvio del sistema.], [decisione\ interna],
 
-  [*RF*], [*Autenticazione dell'utente*], [capitolato#super[G]],
+  [*RF*], [*Autenticazione dell'utente.*], [capitolato#super[G]],
   [*RF*], [L'utente deve poter accedere al sistema mediante credenziali.], [capitolato#super[G]],
   [*RF*], [L'utente deve poter effettuare il logout dal sistema.], [capitolato#super[G]],  
 
-  [*RF*], [*Registrazione di nuovi Supervisori Locali*], [decisione\ interna],
+  [*RF*], [*Registrazione di nuovi Supervisori Locali.*], [decisione\ interna],
   [*RF*], [Il Supervisore Globale può registrare a sistema nuovi Supervisori Locali.], [decisione\ interna],
   [*RF*], [Il Supervisore Globale deve assegnare il/i magazzino/i a cui il Supervisore Locale ha accesso in fase di registrazione.], [decisione\ interna],
 
-  [*RF*], [*Gestione manuale delle merci*], [],
+  [*RF*], [*Gestione manuale delle merci.*], [],
   [*RF*], [I Supervisori possono inserire un nuovo tipo di merce nell'inventario.], [],
   [*RF*], [I Supervisori possono rimuovere un tipo di merce dall'inventario.], [],
   [*RF*], [I Supervisori possono modificare la quantità di merce nell'inventario dei magazzini.], [],
 
-  [*RF*], [*Gestione manuale degli ordini*], [],
+  [*RF*], [*Gestione manuale degli ordini.*], [],
   [*RF*], [I Supervisori possono inserire ordini di trasferimento interno tra magazzini.], [],
   [*RF*], [I Supervisori possono inserire ordini di approvigionamento dall'esterno.], [],
   [*RF*], [I Supervisori possono inserire ordini di vendita verso l'esterno.], [],
   [*RF*], [I Supervisori possono annullare ordini.], [],
 
-  [*RF*], [**], [], 
+  [*RF*], [*Auditing dei dati dei magazzini.*], [], 
   [*RF*], [Il Supervisore Globale può visualizzare l'inventario globale.], [],
   [*RF*], [Il Supervisore Globale può visualizzare l'inventario di ciascun magazzino.], [],
   [*RF*], [Il Supervisore Globale può visualizzare un report degli ordini globali.], [],
@@ -2006,10 +2006,12 @@ _Esempio:_
   [*RF*], [Il Supervisore Globale può modificare lo stato di ciascun magazzino.], [],
   [*RF*], [I Supervisori Locali possono modificare lo stato del/dei magazzino/i a loro assegnato/i.], [],
 
+  [*RF*], [*Gestione delle richieste.*], [], 
   [*RF*], [I Supervisori possono visualizzare le notifiche informative prodotte dal sistema.], [],
   [*RF*], [Il Supervisore Globale può accettare le richieste decisionali prodotte dal sistema.], [],
   [*RF*], [Il Supervisore Globale può rifiutare le richieste decisionali prodotte dal sistema.], [],
 
+  [*RF*], [*Gestione delle soglie critiche.*], [], 
   [*RF*], [I Supervisori devono definire i valori di soglia minima all'inserimento di un nuovo prodotto.], [],
   [*RF*], [I Supervisori possono definire i valori di soglia massima all'inserimento di un nuovo prodotto.], [],
   [*RF*], [I Supervisori Globali possono modificare i valori di soglia minima e massima di ciascun prodotto per ciascun magazzino.], [],
@@ -2036,6 +2038,7 @@ _Esempio:_
 
   [*RF*], [*Individuazione dello stato dei magazzini.*], [capitolato#super[G]],
   [*RF*], [Il magazzino deve trovarsi in uno dei seguenti stati: "offline", "online", "non operativo", "operativo".],[],
+  [*RF*], [Il sistema deve identificare eventuali cambi di stato dei magazzini.],[],
   [*RF*], [Il sistema deve identificare eventuali disconnessioni di uno o più magazzini segnandoli come "offline".], [capitolato#super[G]],
 
   [*RF*], [*Gestione dei disservizi.*], [capitolato#super[G]],
@@ -2051,15 +2054,78 @@ _Esempio:_
 
   //Requisiti#super[G] Funzionali desiderabili
   
-  [*RF*], [Il Supervisore Globale può definire il costo massimo per i trasferimenti eseguibili mediante riassortimento automatico.],[],
-  [*RF*], [Il Supervisore Globale può definire la distanza massima tra magazzini per il riassortimento automatico.],[],
+  [*RFD*], [Il Supervisore Globale può definire il costo massimo per i trasferimenti eseguibili mediante riassortimento automatico.],[],
+  [*RFD*], [Il Supervisore Globale può definire la distanza massima tra magazzini per il riassortimento automatico.],[],
 
-  [*RF*], [*Suggerimento su azioni di riassortimento#super[G] e trasferimento#super[G] tra magazzini.*], [capitolato#super[G]],
-  [*RF*], [Il sistema invia una notifica decisionale al Supervisore Globale qualora un riassortimento superi i costi o le distanze massime.], [],
+  [*RFD*], [*Suggerimento su azioni di riassortimento#super[G] e trasferimento#super[G] tra magazzini.*], [capitolato#super[G]],
+  [*RFD*], [Il sistema invia una richiesta decisionale al Supervisore Globale qualora un riassortimento superi i costi o le distanze massime.], [],
+
+  [*RFD*], [*Interfaccia grafica.*], [capitolato#super[G]],
+  [*RFD*], [Deve essere possibile effettuare la registrazione del Supervisore Globale mediante Interfaccia Grafica.], [],
+  [*RFD*], [Deve essere possibile effettuare l'autenticazione dell'utente mediante Interfaccia Grafica.], [],
+  [*RFD*], [Deve essere possibile effettuare la registrazione di nuovi Supervisori Locali mediante Interfaccia Grafica.], [],
+  [*RFD*], [Deve essere possibile effettuare la gestione manuale delle merci mediante Interfaccia Grafica.], [],
+  [*RFD*], [Deve essere possibile effettuare la gestione manuale degli ordini mediante Interfaccia Grafica.], [],
+  [*RFD*], [Deve essere possibile effettuare l'auditing dei dati dei magazzini mediante Interfaccia Grafica.], [], 
+  [*RFD*], [Deve essere possibile effettuare la gestione delle richieste mediante Interfaccia Grafica.], [], 
+  [*RFD*], [Deve essere possibile effettuare la gestione delle soglie critiche mediante Interfaccia Grafica.], [],
+
+  [*RFD*], [*Produzione di notifiche.*], [],
+  [*RFD*], [Il Sistema deve notificare i Supervisori al superamento dei livelli minimi e massimi di scorte.], [],
+  [*RFD*], [Il Sistema deve notificare i Supervisori dell'esecuzione del riassortimento automatico.], [],
+  [*RFD*], [Un magazzino deve notificare i Supervisori dei cambi di stato degli ordini.], [],
+  [*RFD*], [Un magazzino deve notificare i Supervisori dell'impossibilità di soddisfare un ordine.], [],
+  [*RFD*], [Un magazzino deve notificare i Supervisori quando le scorte#super[G] scendono sotto una certa soglia.], [capitolato#super[G]],
+  [*RFD*], [Un magazzino deve notificare i Supervisori quando le scorte#super[G] salgono sopra una certa soglia.], [capitolato#super[G]],
+  [*RFD*], [Il sistema deve notificare i Supervisori di eventuali cambi di stato dei magazzini.],[],
+  [*RFD*], [L'invio di notifiche deve poter avvenire tramite email.], [capitolato#super[G].],
+  [*RFD*], [L'invio di notifiche deve poter avvenire tramite SMS.], [capitolato#super[G].],
+
+  [*RFD*], [*Produzione di richieste decisionali.*], [],  
+  [*RFD*], [Il Sistema deve inviare al Supervisore Globale le richieste decisionali prodotte dal riassortimento predittivo.], [],
+
+  [*RFD*], [*Riassortimento predittivo.*], [],
+  [*RFD*], [Il sistema deve avere uno storico dei livelli di merce.], [progettazione],
+  [*RFD*], [Il sistema deve poter analizzare i dati storici degli ordini.], [capitolato#super[G]],
+  [*RFD*], [Il sistema deve poter analizzare i dati storici di inventario dei magazzini.], [capitolato#super[G]],
+  [*RFD*], [Il sistema deve implementare un modello di previsione della domanda dei prodotti.], [capitolato#super[G]],
+  [*RFD*], [Il sistema deve poter pianifiare i riassortimenti sulla base del modello di previsione.], [capitolato#super[G]],
+  [*RFD*], [Il sistema deve inviare una richiesta decisionale al Supervisore Globale di approvigionamento sulla base del modello di previsione.], [capitolato#super[G]],
+  [*RFD*], [Il sistema deve inviare una richiesta decisionale al Supervisore Globale di riassortimento sulla base del modello di previsione.], [capitolato#super[G]],  
 
   //Requisiti#super[G] Funzionali opzionali
+
 )
 #align(center)[_Tabella #tabella_counter: Requisiti#super[G] funzionali_]
+
+== Requisiti#super[G] di Vincolo
+//incremento tabella_counter
+#let tabella_counter = tabella_counter + 1
+
+#set table(
+  fill:(x,y)=> if y==0 {rgb("#2599ff")} else if x == 0 {luma(235)},
+)
+
+#table(
+  columns: (1fr, 3.5fr, 1.2fr),
+  inset: 10pt,
+  align: center,
+  table.header(
+    [*Codice*], [*Descrizione*], [*Fonti*]
+
+  ),
+
+//Requisiti di Vincolo obbligatori
+  [*RV*], [*L'architettura del sistema deve usare microservizi.*], [capitolato#super[G]],
+
+  [*RV*], [*Versionamento del codice tramite Git.*], [capitolato#super[G]],
+
+//Requisiti di Vincolo desiderabili
+
+//Requisiti di Vincolo opzionali
+
+)
+#align(center)[_Tabella #tabella_counter: Requisiti#super[G] di vincolo_]
 
 == Requisiti#super[G] di Qualità
 //incremento tabella_counter
@@ -2078,18 +2144,54 @@ _Esempio:_
   ),
 //Requisiti di Qualità Obbligatori
 
+  [*RQ*], [*Autonomia dei magazzini.*], [capitolato#super[G]],
+  [*RQ*], [I magazzini devono poter operare autonomamente.], [capitolato#super[G]],
+  [*RQ*], [I magazzini devono poter elaborare localmente le richieste.], [capitolato#super[G]],
+  [*RQ*], [Il magazzino deve gestire gli ordini concorrenti per uno stesso prodotto secondo una politica predefinita.], [],
+
+  [*RQ*], [*Robustezza dei magazzini.*], [capitolato#super[G]],
   [*RQ*], [I dati di inventario e degli ordini devono essere coerenti, consistenti e persistenti in tutto il sistema.], [capitolato#super[G]],
   [*RQ*], [I dati di inventario devono essere resilienti a modifiche concorrenti.], [],
 
-  [*RQ*], [Il magazzino deve gestire gli ordini concorrenti per uno stesso prodotto secondo una politica predefinita.], [],
+  [*RQ*], [*Sicurezza del sistema.*], [capitolato#super[G]],
+  [*RQ*], [Deve essere implementata la cifratura#super[G] end-to-end negli scambi dei dati tra magazzini e con il sistema.], [capitolato#super[G]],
+  [*RQ*], [Il sistema deve implementare un log dei tentativi di accesso.], [capitolato#super[G]],
+  [*RQ*], [Il sistema deve identificare tentativi di accesso non autorizzati.], [capitolato#super[G]],
+  [*RQ*], [Il sistema deve notificare il Supervisore Globale di tentativi di accesso non autorizzati.], [capitolato#super[G]],
+
+  [*RQ*], [*Unit test e code coverage.*], [capitolato#super[G]],
+  [*RQ*], [La correttezza delle funzioni sviluppate deve essere garantita dai test unitari.], [capitolato#super[G]],
+  [*RQ*], [La copertura del codice deve essere superiore al ____ .], [capitolato#super[G]], //INSERIRE CODE-COVERAGE DI M31   
+  [*RQ*], [Il test devono poter essere eseguiti in maniera automatizzata.], [capitolato#super[G]],
+  [*RQ*], [Devono essere eseguiti test di non regressione.], [capitolato#super[G]],
+
+  [*RQ*], [*Test book dettagliato.*], [capitolato#super[G]],
+  [*RQ*], [Tutti i test devono essere documentati in un test book.], [capitolato#super[G]],
+  [*RQ*], [Il test book deve includere una descrizione dei casi di test.], [capitolato#super[G]],  
+  [*RQ*], [Il test book deve includere le condizioni iniziali dei test.], [capitolato#super[G]],
+  [*RQ*], [Il test book deve includere i passaggi eseguiti dai test.], [capitolato#super[G]],    
+  [*RQ*], [Il test book deve includere i risultati attesi e ottenuti dai test.], [capitolato#super[G]],
+  [*RQ*], [Il test book deve includere criteri di validazione dei test.], [capitolato#super[G]],
+
+  [*RQ*], [*Il Sistema deve essere scalabile orizzontalmente.*], [capitolato#super[G]],
+
+  [*RQ*], [*La gestione dei magazzini deve essere distribuita.*], [capitolato#super[G]],
+
+
 
 //Requisiti di Qualità desiderabili
 
-  [*RQ*], [Il sistema deve automatizzare il processo di riassortimento#super[G] se rispetta il costo e la distanza massima.], [capitolato#super[G]],
+  [*RQD*], [Il sistema deve automatizzare il processo di riassortimento#super[G] se rispetta il costo e la distanza massima.], [capitolato#super[G]],
 
-  [*RQ*], [II magazzino detiene la fonte affidabile dei dati di inventario e degli ordini.], [capitolato#super[G]],
+  [*RQD*], [II magazzino detiene la fonte affidabile dei dati di inventario e degli ordini.], [capitolato#super[G]],
 
 //Requisiti di Qualità opzionali
+
+  [*RQO*], [Il sistema deve prevedere la possibilità di autenticazione#super[G] a due fattori (2FA#super[G]) per gli utenti.], [capitolato#super[G]],
+
+  [*RQO*], [Le richieste verso i microservizi devono essere autenticate.], [capitolato#super[G]],
+
+  [*RQO*], [Gli scambi di dati tra microservizi devono essere cifrati.], [capitolato#super[G]],
 
 )
 #align(center)[_Tabella #tabella_counter: Requisiti#super[G] di qualità_]
@@ -2122,37 +2224,6 @@ _Esempio:_
 
 )
 #align(center)[_Tabella #tabella_counter: Requisiti#super[G] prestazionali_]
-
-
-== Requisiti#super[G] di Vincolo
-//incremento tabella_counter
-#let tabella_counter = tabella_counter + 1
-
-#set table(
-  fill:(x,y)=> if y==0 {rgb("#2599ff")} else if x == 0 {luma(235)},
-)
-
-#table(
-  columns: (1fr, 3.5fr, 1.2fr),
-  inset: 10pt,
-  align: center,
-  table.header(
-    [*Codice*], [*Descrizione*], [*Fonti*]
-
-  ),
-
-//Requisiti di Vincolo obbligatori
-  [*RP01*], [*Mantenimento di prestazioni elevate anche con carichi elevati di dati e richieste simultanee.*], [capitolato#super[G]],
-
-//Requisiti di Vincolo desiderabili
-  [*RP01*], [*Mantenimento di prestazioni elevate anche con carichi elevati di dati e richieste simultanee.*], [capitolato#super[G]],
-
-//Requisiti di Vincolo opzionali
-  [*RP01*], [*Mantenimento di prestazioni elevate anche con carichi elevati di dati e richieste simultanee.*], [capitolato#super[G]],
-
-)
-#align(center)[_Tabella #tabella_counter: Requisiti#super[G] di vincolo_]
-
 
 #pagebreak()
 
