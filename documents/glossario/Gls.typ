@@ -27,6 +27,12 @@
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
 
+  [0.4.2],
+  [03/06/2025],
+  [R. Zangla],
+  [S. Marana],
+  [Aggiunte definizioni al glossario],
+
   [0.4.1],
   [26/05/2025],
   [N. Bolzon],
@@ -171,6 +177,9 @@ La nomenclatura adottata per indicare che un termine √® presente nel glossario √
 - *Codice*:\
   Insieme di istruzioni scritte in un linguaggio di programmazione, che costituiscono un software.
 
+- *Command Query Responsibility Segregation (CQRS)*: \
+  Pattern architetturale che separa le operazioni di scrittura (comandi) da quelle di lettura (query), utilizzando modelli distinti per gestire ciascun tipo di operazione. Esso permette di creare un evento nel momento in cui si rileva un cambiamento all'interno di un magazzino, cos√¨ da poter aggiornare il database in cloud.
+
 - *Commit*:\
   Operazione con cui si salvano modifiche al codice sorgente in un sistema di controllo versione.
 
@@ -246,6 +255,7 @@ La nomenclatura adottata per indicare che un termine √® presente nel glossario √
 
 - *Monitoraggio*:\
   Processo di osservazione, controllo e valutazione delle prestazioni di un sistema, di un componente o di un servizio informatico. Questo processo permette di monitorare lo stato attuale e le prestazioni di un sistema per individuare eventuali problemi o anomalie. 
+
 
 #pagebreak()
 = N
