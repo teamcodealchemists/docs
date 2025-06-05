@@ -90,17 +90,15 @@
 /* SEZIONE 1 - Introduzione */
 = Introduzione
   == Scopo del documento
-  Il presente documento viene redatto per descrivere il _Way of Working_#super[G] adottato dal Team _Code Alchemists_ per lo svolgimento del progetto didattico di Ingegneria del Software. Esso stabilisce le linee guida, i processi, le metodologie e gli standard inerenti tutte le attività associate all'intero ciclo di vita del software, in modo da garantire coerenza, efficienza, efficacia e qualità.
+  Il presente documento viene redatto per descrivere il _Way of Working_#super[G] adottato dal Team _Code Alchemists_ per lo svolgimento del progetto didattico di Ingegneria del Software. Esso stabilisce le linee guida, i processi, le metodologie e gli standard inerenti ogni attività associata al ciclo di vita del software, così da garantire coerenza, efficienza, efficacia e qualità.
 
   == Scopo del prodotto#super[G]
-  Il prodotto#super[G], detto anche software, oggetto del presente progetto, consiste nella realizzazione di un sistema distribuito e scalabile per la gestione ottimale (intesa come minimizzazione dei tempi di risposta e di ottimizzazione della distribuzione delle scorte#super[G]) di una rete di magazzini, singolarmente autonomi, in modo da favorire l'interoperabilità tra di essi e centralizzare le informazioni in maniera efficiente e sicura. // Inserire riferimento al capitolato#super[G]?
+  Il prodotto#super[G], detto anche software, oggetto del presente progetto, consiste nella realizzazione di un sistema distribuito e scalabile per la gestione ottimale (intesa come minimizzazione dei tempi di risposta e di ottimizzazione della distribuzione delle scorte#super[G]) di una rete di magazzini. Ogni singolo magazzino è autonomo, così da favorire l'interoperabilità tra di essi e centralizzare le informazioni in maniera efficiente e sicura. // Inserire riferimento al capitolato#super[G]?
 
   Il presente documento è redatto secondo lo standard _ISO/IEC 12207:1995_, che identifica tre tipologie di processi: 
   - *Processi primari*;
   - *Processi organizzativi*;
   - *Processi di supporto*.
-  // Magari descrivere sinteticamente di cosa trattano?
-  // Direi di no perché vengono già introdotti brevemente alla pagina successiva  
 
   == Entità coinvolte
   Il presente progetto didattico di Ingegneria del Software coinvolge le seguenti entità:
@@ -155,7 +153,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
   === Comunicazione con l'azienda proponente
   // Spiegazione di come vengono mantenuti i contatti con l'azienda proponente (+ accenno agli strumenti citati sotto)
 
-  Il team _Code Alchemists_ ritiene essenziale mantenere un dialogo continuo con l'azienda _M31_ per garantire un allineamento efficace sulle esigenze del progetto, prevenire incomprensioni e agevolare la risoluzione di eventuali criticità. A tal fine, verranno programmati incontri bisettimanali su Google Meet, integrati da una continua comunicazione asincrona tramite email.
+  Il team _Code Alchemists_ ritiene essenziale mantenere un dialogo continuo con l'azienda _M31_. Tale dialogo, infatti, garantisce un allineamento efficace sulle esigenze del progetto, prevenire incomprensioni e agevolare la risoluzione di eventuali criticità. A tal fine, verranno programmati incontri bisettimanali su Google Meet, integrati da una continua comunicazione asincrona tramite email.
 
   Le interazioni con il proponente saranno focalizzate su aspetti chiave quali definire i requisiti#super[G], pianificare le consegne, raccogliere di feedback, gestire le problematiche tecniche e la definizione delle priorità.
 
@@ -172,8 +170,6 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
   === Piano di Qualifica#super[G]
   // Descrizione documento PdQ
-
-
   Il Piano di Qualifica#super[G] definisce le strategie per garantire la qualità del prodotto#super[G], stabilendo standard di sviluppo, criteri di verifica#super[G] e test per la conformità ai requisiti#super[G]. 
   
   Redatto dall'Amministratore#super[G];, include metodologie di Verifica#super[G] e Validazione#super[G], il monitoraggio#super[G] delle metriche e gli esiti dei test, assicurando il rispetto degli obiettivi qualitativi e il miglioramento continuo del progetto.
@@ -198,7 +194,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
   
   Si articola in tre fasi principali: _Analisi dei Requisiti#super[G]_, _Progettazione_ e _Codifica_.
   
-  Il processo di sviluppo ha il compito di assicurare una pianificazione strutturata e un'ottimizzazione delle risorse. Il software deve rispettare vincoli tecnologici, obiettivi di design e superare test di verifica#super[G] e validazione#super[G], mentre la documentazione facilita la gestione e il mantenimento del progetto nel tempo.
+  Il processo di sviluppo ha il compito di assicurare una pianificazione strutturata e un'ottimizzazione delle risorse. Il software deve rispettare vincoli tecnologici, obiettivi di design e superare test di verifica#super[G] e validazione#super[G]. La documentazione, invece, facilita la gestione e il mantenimento del progetto nel tempo.
 
   === Analisi dei Requisiti#super[G]
     ==== Scopo
@@ -214,7 +210,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
     #align(center, block[*UC [ID-Principale].[ID-Sottocaso]*])
     
-    Tale notazione fa uso dell'acronimo "UC" (che sta per "Use Case", ovvero "Caso d'Uso") e di un identificativo univoco del caso d'uso, composto da:
+    Tale notazione fa uso dell'acronimo "UC" (cioè "Use Case", ovvero "Caso d'Uso") e di un identificativo univoco del caso d'uso, composto da:
     - un ID principale che identifica il caso principale 
     - e, se necessario, da un ID del sottocaso.
 
@@ -261,7 +257,6 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
   === Progettazione
     ==== Scopo
     // Dare soluzioni a requisiti#super[G] rilevati nell'AdR.
-
     La progettazione software definisce le soluzioni tecniche per soddisfare i requisiti#super[G] individuati, trasformandoli in un'architettura#super[G] strutturata e modulare#super[G]. 
     
     Si suddivide in:
@@ -298,7 +293,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
     ==== PoC#super[G]
     // Descrizione PoC#super[G]
-    Il Proof of Concept#super[G] (PoC#super[G]) è una fase fondamentale dello sviluppo, durante la quale progettisti#super[G] e programmatori#super[G] valutano la validità di una soluzione prima della sua implementazione definitiva. Il suo scopo è dimostrare la fattibilità del progetto, assicurando che le tecnologie scelte siano adeguate e compatibili con i requisiti#super[G] tecnici e operativi. Inoltre, offre all'azienda proponente un feedback tempestivo e concreto, minimizzando i rischi e ottimizzando le decisioni. 
+    Il Proof of Concept#super[G] (PoC#super[G]) è una fase fondamentale dello sviluppo in cui progettisti#super[G] e programmatori#super[G] valutano la validità di una soluzione prima della sua implementazione definitiva. Il suo scopo è dimostrare la fattibilità del progetto, assicurando che le tecnologie scelte siano adeguate e compatibili con i requisiti#super[G] tecnici e operativi. Inoltre, offre all'azienda proponente un feedback tempestivo e concreto, minimizzando i rischi e ottimizzando le decisioni. 
   
   === Codifica
     ==== Scopo
@@ -354,7 +349,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     === Tecnologie utilizzate
     // Cos'è VS Code e cosa permette
     Visual Studio Code (o VS Code) è un potente ambiente di sviluppo (IDE) ed è stato adottato come principale strumento di sviluppo software da parte dell'intero team.     
-    Oltre a supportare numerosi linguaggi di programmazione e framework, offre funzionalità avanzate come il completamento automatico intelligente, il debugging integrato, il controllo della versione con Git e un ampio ecosistema di estensioni che permette di personalizzare l'esperienza di sviluppo. 
+    Esso supporta numerosi linguaggi di programmazione e framework. Inoltre, offre funzionalità avanzate come il completamento automatico intelligente, il debugging integrato, il controllo della versione con Git e un ampio ecosistema di estensioni che permette di personalizzare l'esperienza di sviluppo. 
 
   = Processi di supporto
     == Documentazione
@@ -394,7 +389,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       - *YYYY-MM-DD*: si riferisce alla data dell'incontro. 
       - *TIPO*: si riferisce all'acronimo corrispettivo al tipo di verbale (VI o VE).
       - *x* (modificatore): indica eventuali versioni alternative del file. Le 2 opzioni disponibili sono:            
-        - _test_: il documento è in stato di testing tecnico o operativo, da non considerarsi ufficiale. 
+        - _test_: il documento è in stato di testing tecnico o operativo, da non considerarsi ufficiale; 
         - _signed_: i documenti esterni necessitano di una approvazione da parte di un ente terzo. Questo suffisso starà ad indicare che quel documento esterno è stato approvato dall'ente terzo e contiene la corrispondente firma di approvazione.
 
         ==== Acronimi per la documentazione
@@ -429,7 +424,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       === Strumenti per stesura
       // Typst su VSCode
-      Per la stesura dei documenti viene usato il linguaggio Typst, un linguaggio di markup versatile e abbastanza semplice. Durante le fasi di scrittura, è stata adottato l'utilizzo di Visual Studio Code, un IDE che supporta numerose estensioni, tra cui Typst, per la compilazione di sorgenti ".typ". Inoltre, l'estensione "Tinymist Typst" facilita il processo di redazione permettendo di visualizzare l'anteprima del documento in formato ”.pdf” direttamente all'interno di VSCode con la possibilità di poter vedere ogni modifica applicata in tempo reale.
+      Per la stesura dei documenti viene usato il linguaggio Typst, un linguaggio di markup versatile e abbastanza semplice. Durante le fasi di scrittura, è stata adottato l'utilizzo di Visual Studio Code, un IDE che supporta numerose estensioni, tra cui Typst, per la compilazione di sorgenti ".typ". Inoltre, l'estensione "Tinymist Typst" facilita il processo di redazione permettendo di visualizzare l'anteprima del documento in formato ”.pdf” direttamente all'interno di VSCode con modifiche applicate in tempo reale.
 
       === Struttura della documentazione
         // In che modo dividiamo i documenti nella repo docs (in x cartella sono contenuti...)
@@ -460,7 +455,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       - *Identificazione della modifica*: viene controllato il documento e viene individuata una possibile modifica;
       - *Valutazione dell'impatto*: viene valutato l'impatto migliorativo che può avere la modifica rispetto alla versione originale del documento;
       Tale discussione coinvolge tutto il team se necessario;
-      - *Aggiornamento della documentazione*: una volta constatato che l'impatto migliorativo è positivo, viene applicata la modifica e il documento viene aggiornato confermando l'accuratezza delle informazioni e il l'allineamento delle modifiche con quanto già presente nel documento;
+      - *Aggiornamento della documentazione*: una volta constatato che l'impatto migliorativo è positivo, viene applicata la modifica e il documento viene aggiornato confermando l'accuratezza delle informazioni e l'allineamento delle modifiche con quanto già presente;
       - *Push della modifica*: viene creata una pull request nella repository#super[G] su GitHub per la nuova versione del documento da parte di chi ha operato la modifica;
       - *Verifica#super[G] e validazione#super[G]*: a supporto del processo di verifica#super[G], viene fatta partire un'azione automatizzata che esegue diversi script di controllo del testo, le cui metriche si possono trovare alla sezione 4.1.10. Se tale operazione ha esito positivo, se necessario, il documento viene posto ad ulteriore validazione#super[G] con l'ente esterno a cui è destinato il documento. Se sia la verifica#super[G] che la eventuale validazione#super[G] hanno avuto esito positivo, le modifiche vengono pubblicate attraverso l'accettazione della pull request da parte del revisore. Se una delle due operazioni non ha esito positivo, la pull request viene respinta e l'autore delle modifiche è incaricato di apportare le correzioni necessarie e di ripetere i passaggi precedentemente descritti.
 
@@ -746,7 +741,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       I test di regressione sono una metodologia di verifica#super[G] essenziale per garantire che le modifiche apportate al software non introducano nuovi errori o alterino il corretto funzionamento delle funzionalità già integrate. 
       Durante il processo di sviluppo, può accadere che un test evidenzi un problema: in questi casi, è necessario analizzarlo, sviluppare una soluzione, implementarla e verificare che il difetto sia stato risolto eseguendo nuovamente il test.
       
-      Per evitare regressioni, ovvero il ripresentarsi di problemi precedentemente risolti, non ci si limita a testare esclusivamente la parte modificata, ma si eseguono tutti i test già implementati, tra cui test di unità, di integrazione e di sistema. 
+      Per evitare regressioni, ovvero il ripresentarsi di problemi precedentemente risolti, non ci si limita a testare esclusivamente la parte modificata. Infatti, si eseguono tutti i test già implementati, tra cui test di unità, di integrazione e di sistema. 
       Questo approccio garantisce l'integrità#super[G] del software e previene anomalie derivanti da aggiornamenti o nuove funzionalità.
 
       Grazie ai test di regressione, è possibile mantenere un alto livello di affidabilità del prodotto#super[G], assicurando che ogni miglioramento apportato non comprometta le prestazioni e la stabilità dell'intero sistema.
@@ -810,7 +805,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         ==== Escalation path
         Durante l'intera fase di sviluppo, potrebbero capitare di venir assegnati alcuni ruoli a più membri del team per lo Sprint#super[G] corrente (ad esempio, il ruolo di Analista#super[G] viene assegnato a 4 persone durante l'attuale Sprint#super[G] poiché è una figura molto richiesta in quella determinata fase di sviluppo). 
       
-        Al fine di coordinare meglio il flusso di lavoro, si è deciso, ad ogni Sprint#super[G], di scegliere tra questi membri un “sottoresponsabile#super[G]”, il quale comunicherà periodicamente e frequentemente con i sottoresponsabili delle altre categorie di ruolo e con il responsabile#super[G] di turno per tenerli aggiornati sullo stato di avanzamento delle attività dello Sprint#super[G].
+        Al fine di coordinare meglio il flusso di lavoro, si è deciso, ad ogni Sprint#super[G], di scegliere tra questi membri un “sottoresponsabile#super[G]". Tale sottoresponsabile comunicherà periodicamente con i sottoresponsabili delle altre categorie di ruolo e con il responsabile#super[G] di turno per tenerli aggiornati sullo stato di avanzamento delle attività.
       
         Inoltre, i sottoresponsabili delle categorie di ruolo sono tenuti a mantenere una comunicazione costante con i membri del loro sottogruppo, assicurandosi che ogni task sia eseguita secondo le linee guida stabilite e che eventuali dubbi vengano chiariti prontamente. 
         Questo approccio favorisce una gestione efficiente delle attività e una rapida risoluzione delle problematiche interne.
@@ -848,7 +843,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       -	_Telegram_ è stato scelto per la sua semplicità e immediatezza nella comunicazione. Esso consente infatti di inviare messaggi rapidi e di condividere documenti e aggiornamenti in tempo reale. In questo modo, è possibile garantire che tutte le informazioni rilevanti siano facilmente accessibili a tutti i membri del team in qualsiasi momento.
 
-      L'uso combinato di Discord e Telegram risulta dunque più che valido nel coprire tutte le esigenze comunicative nel corso delle varie fasi di sviluppo, assicurando che ogni membro del team possa interagire efficacemente e contribuire al raggiungimento degli obiettivi comuni.
+      L'uso combinato di Discord e Telegram risulta dunque più che valido nel coprire tutte le esigenze comunicative nel corso delle varie fasi di sviluppo. Ricorrere ad entrambe le applicazioni, infatti, assicura che ogni membro del team possa interagire efficacemente e contribuire al raggiungimento degli obiettivi comuni.
 
       === Comunicazioni esterne
       // Con che strumenti comunichiamo con proponente e committente#super[G], con che cadenza, per cosa..
@@ -868,7 +863,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
   
       È in questa occasione che viene annunciata la rotazione dei ruoli per il prossimo Sprint#super[G] e la conseguente assegnazione delle varie task a ogni membro a seconda dello specifico ruolo che ricopre.
   
-      Durante l'intera fase di sviluppo, lì dove necessario, possono essere organizzate brevi riunioni interne tra più sottogruppi al fine di chiarire eventuali dubbi riguardo alle attività svolte nei precedenti Sprint#super[G].
+      Durante l'intera fase di sviluppo, lì dove necessario, possono essere organizzate brevi riunioni interne tra più sottogruppi così da chiarire eventuali dubbi riguardo alle attività svolte nei precedenti Sprint#super[G].
 
       === Riunioni esterne
       // In che modo si svolgono le riunioni con proponente e committente#super[G], come sono organizzate...
@@ -904,7 +899,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         Ci fornisce funzionalità avanzate per la gestione collaborativa del codice#super[G], tra cui pull request, issue tracking, continuous integration e automazione dei flussi di lavoro.
         ==== GitHub Pages
         // Per la presentazione del repository#super[G]
-        GitHub Pages ci permette di pubblicare facilmente una versione web del nostro repository#super[G], utile per la documentazione, la presentazione di progetti o la condivisione di informazioni con il team e i collaboratori esterni.
+        GitHub Pages ci permette di pubblicare facilmente una versione web del nostro repository#super[G]. Avere una repository web, infatti, è molto utile per la documentazione, la presentazione di progetti o la condivisione di informazioni con il team e i collaboratori esterni.
         ==== GitHub Flow
         // Come metodo di branching
         Adottiamo GitHub Flow come metodo di branching per garantire un flusso di sviluppo agile#super[G] e ben strutturato. Utilizziamo il modello basato su feature branches#super[G] e pull request per integrare le modifiche nel ramo principale in modo controllato e sicuro.

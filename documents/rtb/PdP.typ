@@ -76,9 +76,9 @@
 
 = Introduzione
 == Informazioni generali
-Il *Piano di Progetto#super[G]* è un documento che definisce le modalità di gestione del progetto, le risorse necessarie e i rischi attesi.\ Il piano di progetto è un documento vivo, che viene aggiornato durante il ciclo di vita del progetto di *Ingegneria del Software*; le sue attività, infatti, vengono pianificate volta per volta e le risorse richieste vengono allocate in base alle necessità. A ciò segue che una progettazione dettagliata sul lungo termine si rivelerebbe inefficace in quanto sensibile#super[G] ad imprevisti ed esigenze del cliente#super[G] o di sviluppo.
+Il *Piano di Progetto#super[G]* è un documento che definisce le modalità di gestione del progetto, le risorse necessarie e i rischi attesi.\ Il piano di progetto è un documento vivo, che viene aggiornato durante il ciclo di vita del progetto di *Ingegneria del Software*. Le sue attività, infatti, vengono pianificate volta per volta e le risorse richieste vengono allocate in base alle necessità. A ciò segue che una progettazione dettagliata sul lungo termine si rivelerebbe inefficace poichè sensibile#super[G] ad imprevisti ed esigenze del cliente#super[G] o di sviluppo.
 
-Il documento è molto importante per permettere una corretta pianificazione del lavoro e dei vari sprint#super[G], analizzando il tempo previsto ed effettivo per ogni attività, tenendo conto dei rischi e delle risorse disponibili.
+Il documento è importante per permettere una corretta pianificazione del lavoro e dei vari sprint#super[G]. Tale pianificazione analizza il tempo previsto ed effettivo per ogni attività, tenendo conto dei rischi e delle risorse disponibili.
 
 == Informazioni sul prodotto#super[G]
 #v(1em)
@@ -95,7 +95,7 @@ In sintesi, il progetto si propone di migliorare l’efficienza operativa della 
 == Glossario#super[G]
 La realizzazione di un software richiede, ancor prima dello sviluppo, una fase di analisi e progettazione. Dato che il lavoro durante questa fase è svolto da più persone e in modo asincrono, è necessario documentare tutte queste attività per tenere traccia di ciò che è stato fatto e per evitare confusione. 
 
-Si potrà dedurre che questi documenti potrebbero contenere parole#super[G] o frasi che non sono di uso comune, ma che sono state scelte per essere più specifiche e per evitare ambiguità. Per questo motivo è stato creato un glossario#super[G] che contiene le definizioni di tali termini, al seguente #link("https://teamcodealchemists.github.io/glossario")[#underline[indirizzo]]. 
+Si potrà dedurre che questi documenti potrebbero contenere parole#super[G] o frasi che non sono di uso comune, scelte però per essere più specifiche ed evitare ambiguità. Per tale ragione, è stato creato un glossario#super[G] che contiene le definizioni di tali termini, al seguente #link("https://teamcodealchemists.github.io/glossario")[#underline[indirizzo]]. 
 
 == Riferimenti   // Inserire riferimenti al capitolato#super[G] del progetto e a lezioni/slide del professore se necessario
 - *Capitolato#super[G] d'appalto C6 - Gestione di un magazzino distribuito - _M31_*\
@@ -108,8 +108,7 @@ Si potrà dedurre che questi documenti potrebbero contenere parole#super[G] o fr
 == Introduzione
 #v(0.5em)
 In questa sezione del documento vengono analizzati i principali rischi in cui il team potrebbe incorrere durante lo svolgimento
-del progetto. Ad ognuno viene associata una valutazione della probabilità di occorrenza e gravità, oltre che ad una descrizione 
-ed una sezione relativa al rilevamento e alle contromisure. 
+del progetto. Ad ognuno viene associata una valutazione della probabilità di occorrenza e gravità, oltre che ad una descrizione ed una sezione relativa al rilevamento e alle contromisure. 
 
 // Infine ogni rischio viene associato ad un indice numerico consentendo quindi di determinarne la criticità di ciascuno facilmente.
 
@@ -291,8 +290,7 @@ Dove:
 
     [*Contromisure*], 
     [Il team si impegna sin dall'inizio della progettazione architetturale di utilizzare tecnologie stabili
-    e in vasto uso nel mercato, come per gli endpoint delle API#super[G] messe a disposizione, al fine di ridurre
-    al minimo le problematiche.],
+    e in vasto uso nel mercato. Allo stesso modo si procederà per gli endpoint delle API#super[G] messe a disposizione, al fine di ridurre al minimo le problematiche.],
   ),
   didascalia: "Tabella RT4"
 )
@@ -324,7 +322,7 @@ Dove:
     [*Contromisure*], 
     [I membri del team si impegnano a fissare incontri frequenti e di lavorare assieme su canali comunicativi di diversa natura. 
     In più, grazie al sistema di sottoresponsabili adottato, data la dimensione del team, la responsabilizzazione dei membri 
-    ottenuta aiuterà a effettuare check-up frequenti dei restanti membri, garantendo quindi una comunicazione frequente e granulare.],
+    ottenuta aiuterà a effettuare check-up frequenti dei restanti membri. Tale organizzazione garantisce quindi una comunicazione frequente e granulare.],
   ),
   didascalia: "Tabella RC1"
 )
@@ -445,8 +443,7 @@ Dove:
     [Implicitamente dagli altri membri del gruppo.],
 
     [*Contromisure*], 
-    [Gli incontri regolari predisposti dal responsabile#super[G] del team aiuteranno a favorire il dialogo trasparente, la collaborazione e 
-    mantenere attivo l'impegno di ciascun membro. Inoltre la scala della responsabilità
+    [Gli incontri regolari predisposti dal responsabile#super[G] del team aiuteranno a favorire il dialogo trasparente, la collaborazione e mantenere attivo l'impegno di ciascun membro. Inoltre la scala della responsabilità
     più granulare aiuterà ad avere un riscontro continuo più diretto.],
   ),
   didascalia: "Tabella RI2"
@@ -507,8 +504,7 @@ Dove:
 
     [*Contromisure*], 
     [I membri del team si sono impegnati sin dall'inizio nello svolgere un'accurata lettura del capitolato#super[G] di progetto
-    al fine di individuare precisamente le richieste, nonché di avere una comunicazione frequente con l'azienda per 
-    individuare eventuali incomprensioni.],
+    al fine di individuare precisamente le richieste. Inoltre, si sono impegnati nell'avere una comunicazione frequente con l'azienda per chiarire eventuali incomprensioni.],
   ),
   didascalia: "Tabella RG1"
 )
@@ -577,10 +573,10 @@ Di seguito vengono brevemente descritti i ruoli previsti all'interno del team, e
 - *Responsabile#super[G]*: coordina il gruppo di lavoro, assegnando i compiti, monitorando le attività e gestendo l’utilizzo delle risorse. Garantisce l’avanzamento del progetto e il rispetto delle tempistiche e delle risorse disponibili.
 
 
-- *Amministratore#super[G]*: si occupa della gestione delle infrastrutture, incluso il setup degli strumenti utilizzati per la produzione del software e della documentazione, nonché dell’organizzazione e della produttività del team.
+- *Amministratore#super[G]*: si occupa della gestione delle infrastrutture, incluso il setup degli strumenti utilizzati per la produzione del software e della documentazione. Si occupa anche dell’organizzazione e della produttività del team.
 
 
-- *Analista#super[G]*: è responsabile#super[G] della definizione dei requisiti#super[G] di progetto e dell’analisi delle funzionalità del software, al fine di determinare i casi d’uso. Il suo contributo è fondamentale nella fase iniziale, per permettere una progettazione ottimale da parte dei progettisti#super[G] e, successivamente, una corretta implementazione da parte dei programmatori#super[G].
+- *Analista#super[G]*: è responsabile#super[G] della definizione dei requisiti#super[G] di progetto e dell’analisi delle funzionalità del software, al fine di determinare i casi d’uso. Il suo contributo è fondamentale nella fase iniziale, per permettere una progettazione ottimale da parte dei progettisti#super[G]. Tale contributo permetterà in seguito una corretta implementazione da parte dei programmatori#super[G].
 
 
 - *Progettista#super[G]*: definisce l’architettura#super[G] del software, individuando i componenti e le interazioni tra essi sulla base dell’analisi dei requisiti#super[G] fornita dagli analisti#super[G]. Il ruolo è cruciale per una progettazione efficace del prodotto#super[G], sia nella fase preliminare del Proof of Concept#super[G] (POC#super[G]), sia nella realizzazione del Minimum Viable Product (MVP).
@@ -819,12 +815,11 @@ La redazione di questo paragrafo sarà effettuato in seguito al superamento dell
 == Introduzione
 #v(1em)
 
-A seguito del primo incontro di gruppo, il team _Code Alchemists_ ha deciso di impegnarsi ad adottare come strumento di sviluppo
-principale la metodologia *Agile#super[G]* per tutto quello che riguarda la gestione del progetto. 
+A seguito del primo incontro di gruppo, il team _Code Alchemists_ ha deciso di impegnarsi ad adottare come strumento di sviluppo principale la metodologia *Agile#super[G]* per la gestione del progetto. 
 In particolare, si è deciso di utilizzare il framework *Scrum#super[G]*, che prevede numerosi *sprint#super[G]*, 
 ovvero periodi di tempo ben definiti in cui il team si impegna a concentrarsi su un insieme finito di attività specifiche.\
 Il team ha deciso di adottare una durata dello sprint#super[G] pari a *2 settimane*; ciò aiuterà ad ottenere un buon bilanciamento#super[G] tra pianificazione e esecuzione delle attività. 
-Inoltre, durante ogni sprint#super[G] verranno effettuate diverse riunioni per discutere sia i progressi di ogni membro e le difficoltà riscontrate, per permettere una comunicazione continua tra i membri e una rapida risoluzione dei problemi che potrebbero insorgere.\
+Inoltre, durante ogni sprint#super[G] verranno effettuate diverse riunioni per discutere sia i progressi di ogni membro e le difficoltà riscontrate. Queste riunioni permettono una comunicazione continua tra i membri e una rapida risoluzione dei problemi che potrebbero insorgere.\
 #v(1em)
 
 Il team ha deciso di utilizzare un approccio *iterativo#super[G]* e di miglioramento *incrementale#super[G]*, 
@@ -956,13 +951,13 @@ I possibili rischi :
 
 Durante questo primo sprint#super[G] abbiamo avuto principalmente
 difficoltà con una distribuzione dell'impegno non
-completamente equo. L'indisponibilità poi di un membro del team ha 
+completamente equo. L'indisponibilità di un membro del team ha 
 portato gli altri membri a dover ulteriormente assorbire 
 il lavoro in eccesso.
 
 Alcuni rallentamenti inoltre sono stati dovuti ad un primo periodo
-di approccio a JIRA da parte del gruppo non efficiente, dovuto all'inesperienza
-dell'utilizzo dello strumento e in aggiunta di un 
+di approccio a JIRA da parte del gruppo non efficiente. Questi rallentamenti sono stati dunque dovuti all'inesperienza
+dell'utilizzo dello strumento e in aggiunta ad un 
 organizzazione degli incontri più spontanea e meno organizzata.
 
 === Retrospettiva
@@ -981,7 +976,7 @@ Giorni di ritardo: #h(0.15cm)*0*
 ==== Informazioni generali e attività da svolgere
 #v(1em)
 
-Questo secondo sprint#super[G] ha avuto principalmente come obbiettivo la continuazione e il miglioramento di quanto iniziato nel primo sprint#super[G], basandoci inoltre su quanto discusso con l'azienda proponente.
+Questo secondo sprint#super[G] ha avuto principalmente come obbiettivo la continuazione e il miglioramento di quanto iniziato nel primo sprint#super[G], sulla base di quanto discusso con l'azienda proponente.
 
 In particolare, le attività previste sono:
 
@@ -1062,17 +1057,15 @@ I possibili rischi:
 ==== Rischi incontrati
 #v(1em)
 
-Il principale rischio di questo secondo sprint#super[G] è stato il lungo periodo di festività, come quello pasquale, che ha rallentato notevolmente
-il progresso di tutte le attività attese.
+Il principale rischio di questo secondo sprint#super[G] è stato il lungo periodo di festività, come quello pasquale, che ha rallentato notevolmente il progresso di tutte le attività attese.
 
-Inoltre, un iniziale difficoltà nell'identificare con decisione i principali
-punti su cui concentrarsi per avanzare nella produzione di un POC#super[G] hanno portato il team ad effettuare un analisi dello stato dell'arte, posponendo quindi l'avanzamento dell'ipotesi architetturale e quindi della produzione stessa del POC#super[G].
+Inoltre, si è riscontata una difficoltà nell'identificare con decisione i principali punti su cui concentrarsi per avanzare nella produzione di un POC#super[G]. Tale difficoltà ha portato il team ad effettuare un analisi dello stato dell'arte, posponendo quindi l'avanzamento dell'ipotesi architetturale e quindi della produzione stessa del POC#super[G].
 
 
 === Retrospettiva
 #v(1em)
 
-Le difficoltà incontrare hanno portato alla luce come fosse e sia essenziale avere una migliore panoramica dell'ambito di sviluppo del progetto, e di come iniziare a sviluppare parallelamente una prima base di POC#super[G] sia essenziale al fine stesso di capire meglio il contesto e identificare in anticipo eventuali issue.
+Le difficoltà incontrare hanno portato alla luce come fosse e sia essenziale avere una migliore panoramica dell'ambito di sviluppo del progetto. Si è inoltre notato come sviluppare parallelamente una prima base di POC#super[G] sia essenziale al fine stesso di capire meglio il contesto e identificare in anticipo eventuali problemi.
 
 
 === Sprint#super[G] 3
