@@ -174,17 +174,17 @@ Per agevolare la comprensione, verranno utilizzati i Diagrammi dei Casi d'Uso pe
 Potrà inoltre essere consultato da altri soggetti coinvolti nel processo di sviluppo, come Amministratori#super[G] e Responsabili#super[G] di Progetto, al fine di acquisire una comprensione esauriente delle specifiche del sistema.
 
 == Descrizione del prodotto#super[G]
-Il progetto ha l'obiettivo di sviluppare un sistema intelligente per la gestione distribuita dell'inventario#super[G] in una rete di magazzini geograficamente separati. In scenari logistici complessi, come quelli che prevedono la cooperazione tra più sedi operative, è fondamentale garantire disponibilità continua delle scorte#super[G], ridurre i tempi di inattività e ottimizzare il flusso di materiali.
+Il progetto ha l'obiettivo di sviluppare un sistema intelligente per la gestione distribuita dell'inventario#super[G] in una rete#super[G] di magazzini geograficamente separati. In scenari logistici complessi, come quelli che prevedono la cooperazione tra più sedi operative, è fondamentale garantire disponibilità continua delle scorte#super[G], ridurre i tempi di inattività e ottimizzare il flusso di materiali.
 
 Il sistema dovrà permettere di rilevare in tempo reale situazioni critiche, come carenze di prodotto#super[G] in una sede e surplus in un'altra, intervenendo automaticamente o suggerendo azioni correttive di trasferimento#super[G] o riassortimento#super[G]. Sarà inoltre in grado di gestire eventi imprevisti, come l'indisponibilità temporanea di un magazzino, garantendo la continuità operativa attraverso un bilanciamento#super[G] intelligente delle risorse nei magazzini vicini.
 
 Una delle componenti chiave sarà la *visibilità centralizzata e in tempo reale* di tutte le scorte#super[G] distribuite. Il sistema offrirà funzionalità avanzate per il monitoraggio#super[G], la sincronizzazione e l'aggiornamento dell'inventario#super[G], supportando decisioni rapide e affidabili.
 
-Sarà adottata *un'architettura#super[G] scalabile a microservizi#super[G]*, che garantisca alta disponibilità, interoperabilità tra i nodi#super[G] della rete, e gestione efficiente del carico, anche in presenza di numerose richieste simultanee. Ogni nodo#super[G] della rete – cioè ciascun magazzino – potrà operare in modo autonomo, mantenendo però sincronizzazione con un sistema centrale tramite servizi#super[G] cloud.
+Sarà adottata *un'architettura#super[G] scalabile a microservizi#super[G]*, che garantisca alta disponibilità, interoperabilità tra i nodi#super[G] della rete#super[G], e gestione efficiente del carico, anche in presenza di numerose richieste simultanee. Ogni nodo#super[G] della rete#super[G] – cioè ciascun magazzino – potrà operare in modo autonomo, mantenendo però sincronizzazione con un sistema centrale tramite servizi#super[G] cloud.
 
 Il progetto prevede anche *l'integrazione di modelli predittivi* per il riassortimento#super[G], sfruttando dati storici, pattern di consumo e stagionalità per anticipare la domanda e ridurre il rischio di esaurimento scorte#super[G]. M31 supporterà il progetto fornendo un dataset pubblico e una figura tecnica di riferimento per l'analisi dei dati e lo sviluppo dei modelli.
 
-L'obiettivo finale è realizzare una *piattaforma robusta e flessibile* che migliori la resilienza e l'efficienza dell'intera rete logistica, assicurando precisione, tempestività e scalabilità#super[G] nelle operazioni di gestione dell'inventario#super[G].
+L'obiettivo finale è realizzare una *piattaforma robusta e flessibile* che migliori la resilienza e l'efficienza dell'intera rete#super[G] logistica, assicurando precisione, tempestività e scalabilità#super[G] nelle operazioni di gestione dell'inventario#super[G].
 
 == Analisi dello stato dell'arte
 Prima di procedere con l'analisi dei requisiti#super[G], è stata effettuata un'analisi dello stato dell'arte, al fine di comprendere le tecnologie e le soluzioni già esistenti nel campo della gestione distribuita, dei microservizi#super[G] e della gestione dei dati.\
@@ -207,7 +207,7 @@ Dopo un'esaustiva ricerca, sono stati identificati alcuni punti chiave che saran
   I container#super[G] consentono di isolare le dipendenze e le configurazioni di ciascun microservizio#super[G], semplificando il processo di distribuzione e gestione del sistema.\
   Kubernetes è uno strumento popolare per la gestione dei container#super[G] e l'orchestrazione#super[G] dei microservizi#super[G], che consente di automatizzare il deployment, la scalabilità#super[G] e la gestione dei container#super[G] in un cluster.\
 
-- *Resilienza del sistema:* è fondamentale garantire la resilienza del sistema, in modo da affrontare eventuali guasti o problemi di rete.\
+- *Resilienza del sistema:* è fondamentale garantire la resilienza del sistema, in modo da affrontare eventuali guasti o problemi di rete#super[G].\
   Ci sono diverse strategie per garantire la resilienza del sistema, come il pattern Circuit Breaker, il retry pattern, e l'uso di meccanismi di failover e bilanciamento#super[G] del carico.\
 - *Logging:* è importante implementare un sistema di logging centralizzato per monitorare le attività e le prestazioni del sistema.\
   Ci sono diversi strumenti e librerie disponibili per implementare il logging centralizzato, come ELK stack (Elasticsearch, Logstash, Kibana), Grafana Loki, o Prometheus.\
@@ -743,11 +743,11 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Precondizioni*:
   - Il sistema ha rilevato scorte#super[G] inferiori alla soglia minima.
 - *Postcondizioni*:
-  - Il sistema propone un riassortimento#super[G] (da fornitore o trasferimento#super[G] interno).
+  - Il sistema propone un riassortimento#super[G] (da fornitore#super[G] o trasferimento#super[G] interno).
 - *Scenario principale*:
   + Il sistema identifica un prodotto#super[G] sotto soglia.
   + Propone:
-    - Richiesta di rifornimento#super[G] da fornitore esterno.
+    - Richiesta di rifornimento#super[G] da fornitore#super[G] esterno.
     - Trasferimento#super[G] da altro magazzino.
   + Il supervisore approva o modifica il suggerimento.
 
@@ -897,7 +897,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - #link(label("uc-9.2"), underline("[UC 9.2]"))
 - *Trigger*:
   - Pianificazione temporizzata del controllo.
-  - Cambiamento improvviso dello stato di rete.
+  - Cambiamento improvviso dello stato di rete#super[G].
   - Rientro online di un magazzino.
 
 ==== - UC 9.1: Controllo periodico della connettività#super[G]
@@ -905,7 +905,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - I magazzini sono registrati nel sistema.
-  - La rete è parzialmente o totalmente attiva.
+  - La rete#super[G] è parzialmente o totalmente attiva.
 - *Postcondizioni*:
   - Lo stato di connessione viene aggiornato.
 - *Scenario principale*:
@@ -944,7 +944,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   + Il sistema centralizzato rileva o riceve una variazione di stato (manuale o automatica).
   + Classifica il magazzino come:
     - Online: connesso e funzionante.
-    - Offline: disservizio di rete = non connesso.
+    - Offline: disservizio di rete#super[G] = non connesso.
     - Operativo: abilitato a svolgere tutte le funzioni.
     - Non operativo: disservizio fisico (es. da manutenzione o guasti).
   + Mostra lo stato aggiornato nell’interfaccia supervisori.
@@ -970,7 +970,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   + Il sistema centralizzato monitora costantemente i magazzini → #link(label("uc-10.1"), underline("[UC 10.1]"))
   + Un magazzino risulta non raggiungibile o guasto
   + Il sistema centralizzato classifica il disservizio:
-    - Se di rete → #link(label("uc-10.3"), underline("[UC 10.3]"))
+    - Se di rete#super[G] → #link(label("uc-10.3"), underline("[UC 10.3]"))
     - Se fisico → #link(label("uc-10.2"), underline("[UC 10.2]"))
   + Se un magazzino offline diventa non operativo → #link(label("uc-10.4"), underline("[UC 10.4]"))
   + Se il magazzino è non operativo, il sistema centralizzato attiva il trasferimento#super[G] di scorte#super[G] → #link(label("uc-10.5"), underline("[UC 10.5]"))
@@ -1020,7 +1020,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 #label("uc-10.3")
 - *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
-  - Magazzino non risponde ai ping o segnali di rete.
+  - Magazzino non risponde ai ping o segnali di rete#super[G].
 - *Postcondizioni*:
   - Stato aggiornato a offline.
 - *Scenario principale*:
@@ -1098,7 +1098,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Attori Principali*: Sistema Centralizzato.
 - *Precondizioni*:
   - Il magazzino era offline.
-  - Il sistema centralizzato monitora attivamente la rete.
+  - Il sistema centralizzato monitora attivamente la rete#super[G].
 - *Postcondizioni*:
   - Il sistema centralizzato identifica il ritorno online del magazzino.
   - Stato aggiornato a "online".
@@ -1380,7 +1380,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Scenario principale*:
   + Il sistema centralizzato rileva una richiesta di operazione sui dati di inventario#super[G] da parte del magazzino locale.
   + Il sistema centralizzato valuta se l’operazione può essere gestita in locale.
-  + Se sì, esegue l’elaborazione localmente per ridurre il traffico di rete → #link(label("uc-15.1"), underline("[UC 15.1]")) e #link(label("uc-15.2"), underline("[UC 15.2]"))
+  + Se sì, esegue l’elaborazione localmente per ridurre il traffico di rete#super[G] → #link(label("uc-15.1"), underline("[UC 15.1]")) e #link(label("uc-15.2"), underline("[UC 15.2]"))
   + Se l’operazione è di scrittura, il sistema centralizzato attiva la sincronizzazione col cloud → #link(label("uc-15.3"), underline("[UC 15.3]"))
   + Il sistema centralizzato aggiorna lo stato delle scorte#super[G] localmente e nel cloud (se necessario).
   + Il Supervisore Locale o Globale può essere notificato di eventuali discrepanze.
@@ -1500,7 +1500,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Postcondizioni*:
   - I dati sono messi in coda per la sincronizzazione successiva.
 - *Scenario principale*:
-  + Il sistema centralizzato rileva l’assenza di rete.
+  + Il sistema centralizzato rileva l’assenza di #super[G].
   + Memorizza l’operazione in una coda locale.
   + Appena disponibile la connessione, invia i dati al cloud.
 
@@ -1563,7 +1563,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Monitoraggio#super[G] avviato.
 - *Scenario principale*:
   + Il sistema centralizzato attiva i moduli di monitoraggio#super[G] durante l’avvio.
-  + I componenti di rete e autenticazione#super[G] iniziano a comunicare con il modulo centralizzato.
+  + I componenti di rete#super[G] e autenticazione#super[G] iniziano a comunicare con il modulo centralizzato.
   + Il sistema centralizzato conferma l’attivazione.
 - *Trigger*:
   - Avvio del sistema.
@@ -2000,7 +2000,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
   [*RF08*], [*Gestione dei disservizi.*], [capitolato#super[G]],
   [*RF08/01*], [Il sistema deve determinare i magazzini vicini disponibili.], [capitolato#super[G]],
   [*RF08/02*], [Deve essere definito un disservizio di tipo fisico. Tale disservizio viene segnalato come "non operativo".], [progettazione],
-  [*RF08/03*], [Deve essere definito un disservizio di rete. Tale disservizio viene segnalato come "offline".], [progettazione],
+  [*RF08/03*], [Deve essere definito un disservizio di rete#super[G]. Tale disservizio viene segnalato come "offline".], [progettazione],
   [*RF08/04*], [Gestire il caso in cui un magazzino è offline, e mentre è offline diventa non operativo.], [progettazione],
   [*RF08/05*], [Il sistema deve trasferire scorte#super[G] ai magazzini vicini per sopperire al disservizio nel caso in cui il magazzino è non operativo.], [progettazione],
   
@@ -2029,7 +2029,7 @@ Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente
 
   [*RF14*], [*Magazzini autonomi come edge nodes, che fanno elaborazioni autonome per ridurre il carico sulla rete.*], [capitolato#super[G]],
   [*RF14/01*], [Il sistema deve consentire ai magazzini di operare autonomamente, permettendo operazioni locali sui dati di inventario#super[G].], [capitolato#super[G]],
-  [*RF14/02*], [Il sistema deve eseguire elaborazioni locali per ridurre il carico sulla rete.], [capitolato#super[G]],
+  [*RF14/02*], [Il sistema deve eseguire elaborazioni locali per ridurre il carico sulla rete#super[G].], [capitolato#super[G]],
   [*RF14/03*], [Il magazzino locale deve sincronizzarsi con il cloud nel momento in cui avviene un'operazione di scrittura.], [capitolato#super[G]],
 
   [*RF15*], [*Operazioni di inventario#super[G] indipendenti ma sincronizzate centralmente.*], [capitolato#super[G]],

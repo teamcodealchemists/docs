@@ -83,7 +83,7 @@ Il documento è importante per permettere una corretta pianificazione del lavoro
 == Informazioni sul prodotto#super[G]
 #v(1em)
 
-Il progetto riguarda lo sviluppo di un sistema di gestione per magazzini distribuiti, con l'obiettivo di ottimizzare la gestione dell'inventario#super[G] in una rete di magazzini geograficamente separati. Questo sistema deve garantire che i flussi di materiali e prodotti#super[G] tra i magazzini siano gestiti in tempo reale, evitando rotture di stock e migliorando la distribuzione delle scorte#super[G]. Il sistema dovrà anche ridurre i livelli medi di inventario#super[G], mantenendo però scorte#super[G] di sicurezza per gestire variazioni nella domanda o ritardi nelle consegne.
+Il progetto riguarda lo sviluppo di un sistema di gestione per magazzini distribuiti, con l'obiettivo di ottimizzare la gestione dell'inventario#super[G] in una rete#super[G] di magazzini geograficamente separati. Questo sistema deve garantire che i flussi di materiali e prodotti#super[G] tra i magazzini siano gestiti in tempo reale, evitando rotture di stock e migliorando la distribuzione delle scorte#super[G]. Il sistema dovrà anche ridurre i livelli medi di inventario#super[G], mantenendo però scorte#super[G] di sicurezza per gestire variazioni nella domanda o ritardi nelle consegne.
 
 La soluzione proposta si baserà su un'architettura#super[G] a microservizi#super[G], che permetterà a ogni magazzino di gestire autonomamente il proprio inventario#super[G]; le informazioni, invece, verranno sincronizzate in tempo reale con un sistema centrale. Il sistema dovrà essere in grado di monitorare i livelli di inventario#super[G], gestire conflitti derivanti da aggiornamenti simultanei, implementare riassortimenti#super[G] predittivi basati su machine learning e garantire una visibilità centralizzata in tempo reale delle operazioni. Inoltre, saranno utilizzate tecnologie moderne e scalabili come Node.js, Typescript, Go, Nats e Docker, per garantire prestazioni elevate e l'interoperabilità tra i magazzini.
 
@@ -321,7 +321,7 @@ Dove:
 
     [*Contromisure*], 
     [I membri del team si impegnano a fissare incontri frequenti e di lavorare assieme su canali comunicativi di diversa natura. 
-    In più, grazie al sistema di sottoresponsabili adottato, data la dimensione del team, la responsabilizzazione dei membri 
+    In più, grazie al sistema di sottoresponsabili#super[G] adottato, data la dimensione del team, la responsabilizzazione dei membri 
     ottenuta aiuterà a effettuare check-up frequenti dei restanti membri. Tale organizzazione garantisce quindi una comunicazione frequente e granulare.],
   ),
   didascalia: "Tabella RC1"
@@ -350,7 +350,7 @@ Dove:
 
     [*Contromisure*], 
     [Il responsabile#super[G] del team si occuperà di monitorare costantemente i membri del gruppo al fine di comprendere
-    eventuali incomprensioni e risolverle al più presto. In particolare, la struttura a sottoresponsabili e sottogruppi
+    eventuali incomprensioni e risolverle al più presto. In particolare, la struttura a sottoresponsabili#super[G] e sottogruppi
     aiuterà a individuare più facilmente i membri in questione.],
   ),
   didascalia: "Tabella RC2"

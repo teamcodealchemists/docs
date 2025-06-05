@@ -106,7 +106,7 @@
     - _Cliente_#super[G];
     - _Mentore_#super[G];
   - Il docente, #p.tullio, nel ruolo di _Committente_#super[G]
-  - Il team _Code Alchemists_, nel ruolo di _Fornitore_#super[G]
+  - Il team _Code Alchemists_, nel ruolo di _Fornitore#super[G]_
   
   == Glossario#super[G]
   Le parole#super[G] contrassegnate in apice con la lettera #super[G] sono intese con la loro definizione specificata nel documento _Glossario#super[G]_.
@@ -144,7 +144,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 == Fornitura
   === Scopo
   // Descrizione Fornitura
-  Il processo di fornitura è l'insieme di attività che regolano la collaborazione tra fornitore e cliente#super[G] per la creazione e consegna di un prodotto#super[G] software. 
+  Il processo di fornitura è l'insieme di attività che regolano la collaborazione tra fornitore#super[G] e cliente#super[G] per la creazione e consegna di un prodotto#super[G] software. 
   
   Attraverso l'analisi dei requisiti#super[G], la pianificazione delle operazioni e la gestione delle risorse, questo processo garantisce il rispetto dei tempi, dei costi e degli standard di qualità. 
   
@@ -166,7 +166,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
   Redatto dal Responsabile#super[G]; con il supporto degli Amministratori#super[G], include l'analisi dei rischi, la metodologia di sviluppo basata su Scrum#super[G], la roadmap delle attività e la gestione dei costi. Inoltre, il piano prevede monitoraggio#super[G] continuo attraverso un confronto costante tra il preventivo e il consuntivo volto ad analizzare la fase attuale e migliorare le fasi future. 
   
-  Questo piano facilita la comunicazione tra fornitore e proponente, assicurando trasparenza e coordinazione efficace durante l'intero processo.
+  Questo piano facilita la comunicazione tra fornitore#super[G] e proponente, assicurando trasparenza e coordinazione efficace durante l'intero processo.
 
   === Piano di Qualifica#super[G]
   // Descrizione documento PdQ
@@ -805,11 +805,11 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         ==== Escalation path
         Durante l'intera fase di sviluppo, potrebbero capitare di venir assegnati alcuni ruoli a più membri del team per lo Sprint#super[G] corrente (ad esempio, il ruolo di Analista#super[G] viene assegnato a 4 persone durante l'attuale Sprint#super[G] poiché è una figura molto richiesta in quella determinata fase di sviluppo). 
       
-        Al fine di coordinare meglio il flusso di lavoro, si è deciso, ad ogni Sprint#super[G], di scegliere tra questi membri un “sottoresponsabile#super[G]". Tale sottoresponsabile comunicherà periodicamente con i sottoresponsabili delle altre categorie di ruolo e con il responsabile#super[G] di turno per tenerli aggiornati sullo stato di avanzamento delle attività.
+        Al fine di coordinare meglio il flusso di lavoro, si è deciso, ad ogni Sprint#super[G], di scegliere tra questi membri un “sottoresponsabile#super[G]". Tale sottoresponsabile#super[G] comunicherà periodicamente con i sottoresponsabili delle altre categorie di ruolo e con il responsabile#super[G] di turno per tenerli aggiornati sullo stato di avanzamento delle attività.
       
         Inoltre, i sottoresponsabili delle categorie di ruolo sono tenuti a mantenere una comunicazione costante con i membri del loro sottogruppo, assicurandosi che ogni task sia eseguita secondo le linee guida stabilite e che eventuali dubbi vengano chiariti prontamente. 
         Questo approccio favorisce una gestione efficiente delle attività e una rapida risoluzione delle problematiche interne.
-        La figura del sottoresponsabile, infatti, viene in aiuto al responsabile#super[G] facendo in modo che non debba rimanere in comunicazione con tutto il gruppo, ma solamente con i sottoresponsabili del loro determinato ruolo.
+        La figura del sottoresponsabile#super[G], infatti, viene in aiuto al responsabile#super[G] facendo in modo che non debba rimanere in comunicazione con tutto il gruppo, ma solamente con i sottoresponsabili del loro determinato ruolo.
 
         ==== Orari di disponibilità
         // Documento su Google Sheets
@@ -914,7 +914,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
           ===== Assegnazione task
           // A chi viene assegnata una task (spieghiamo come viene scelto magari il Sottoresponsabile#super[G] analista#super[G] che rappresenta l'intero gruppo di analisti#super[G])
           L'assegnazione di un task avviene in base al suo ambito di riferimento e alla sua complessità. 
-          Inoltre, si applica la convenzione intera per cui, ad esempio, il Sottoresponsabile Analista#super[G], che rappresenta l'intero gruppo di analisti#super[G], è incaricato di fare da portavoce per tutti gli analisti#super[G] se stanno lavorando contemporaneamente a quella determinata task.
+          Inoltre, si applica la convenzione intera per cui, ad esempio, il Sottoresponsabile#super[G] Analista#super[G], che rappresenta l'intero gruppo di analisti#super[G], è incaricato di fare da portavoce per tutti gli analisti#super[G] se stanno lavorando contemporaneamente a quella determinata task.
 
         /*
           ===== Automazione task-branch#super[G]
@@ -994,7 +994,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
   Ogni processo è articolato in attività e task specifici per garantire una gestione strutturata del progetto.
 
     === Processi primari
-    I processi primari riguardano le parti principali coinvolte nello sviluppo, operatività e manutenzione del software: acquirente, fornitore, sviluppatore, operatore e manutentore.
+    I processi primari riguardano le parti principali coinvolte nello sviluppo, operatività e manutenzione del software: acquirente, fornitore#super[G], sviluppatore, operatore e manutentore.
 
     - *Acquisizione*: comprende le attività necessarie per la richiesta, il controllo e l'accettazione di un prodotto#super[G] o servizio#super[G] software.
 
