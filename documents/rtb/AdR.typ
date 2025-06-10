@@ -16,7 +16,7 @@
 #let status = "In redazione"
 #let destinatario = "M31"
 
-#let versione = "0.6.1"
+#let versione = "0.7.1"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -28,6 +28,12 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [0.7.1],
+  [10/06/2025],
+  [N. Bolzon \ S. Speranza],
+  [-],
+  [Modifiche ai casi d'uso.],
+
   [0.7.0],
   [09/06/2025],
   [N. Bolzon \ N. Moretto \ S. Marana \ S. Speranza],
@@ -295,7 +301,7 @@ In questa sezione del documento vengono esposti gli attori utilizzati nel sistem
   ),
     [*Utente*], [Utente che vuole accedere per usufruire del Sistema.],
     [*Supervisore\ Globale*], [Gestisce l’intero sistema di magazzini con visualizzazione globale.],
-    [*Supervisore\ Locale*], [Gestisce uno o più magazzini a lui affidati dal Supervisore Globale.],
+    [*Supervisore\ Locale*], [Gestisce solo uno o più magazzini a lui affidati dal Supervisore Globale.],
     [*Sistema\ Centralizzato*],[Rappresenta le funzioni automatiche del server centrale, come controlli, aggiornamenti, notifiche e calcoli. Agisce senza intervento umano, in risposta a eventi o comandi degli utenti _(tra cui Supervisore Locale e Supervisore Globale)_.],
 )
 
@@ -304,90 +310,107 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 #pagebreak()
 == Lista dei Casi d'uso
-=== - UC 1: Autenticazione#super[G]
+
+=== - UC 1: Primo accesso al sistema
 #label("uc-1")
-#figure(
-  image("assets/Casi d'uso-UC1.drawio.png", width: 90%),
-  caption: [UC1 - Autenticazione]
-)
+/*#figure(
+  image("assets/____", width: 90%),
+  caption: [UC1 - Primo accesso al sistema]
+)*/
 - *Attore Principale*: Utente
 - *Precondizione*:
-  - Il Sistema è attivo, in modalità online o offline. 
-  - L’Utente non è autenticato nel Sistema.
+  - Non esiste un Utente registrato presso il Sistema.
 - *Postcondizione*:
-  - L’Utente ha eseguito l’accesso al Sistema.    Autenticandosi si ottiene i permessi di Supervisione Globale o Supervisore Locale sulla base del ruolo associato alle credenziali.
+  - L’Utente possiede un account presso il Sistema, contraddistinto da Username e Password.
+  - L'Utente assume il ruolo di Supervisore Globale del Sistema.
+  - L'Utente è autenticato presso il Sistema.
 - *Scenario principale*:
-  + L'Utente inserisce lo Username → #link(label("uc-1.1"), underline("[UC 1.1]"))
-  + L’Utente inserisce la Password → #link(label("uc-1.2"), underline("[UC 1.2]"))
-- *Scenario alternativo*:
-  - L’Utente inserisce lo Username o la Password errati → #link(label("uc-2"), underline("[UC 2]"))
-- *Inclusioni*:
-  - #link(label("uc-1.1"), underline("[UC 1.1]"))
-  - #link(label("uc-1.2"), underline("[UC 1.2]"))
-  - #link(label("uc-18.3"), underline("[UC 18.3]"))
-- *Estensioni*:
-  - #link(label("uc-2"), underline("[UC 2]"))
-  - #link(label("uc-18.2"), underline("[UC 18.2]"))
-
-- *Trigger*: 
-  - L’Utente vuole autenticarsi per accedere al Sistema. 
-
-==== - UC 1.1: Inserimento Username
-#label("uc-1.1")
-
-- *Attore Principale*: Utente
-- *Precondizione*:
-  - Il Sistema è attivo, in modalità online o offline.
-  - L’Utente non è autenticato nel Sistema.
-  - L’Utente vuole autenticarsi per accedere al sistema.
-  - Il Sistema non riconosce lo Username inserito dall’Utente.
-- *Postcondizione*:
-  - Il Sistema riceve lo Username con il quale l’Utente vuole autenticarsi per accedere al Sistema.
-
-- *Scenario principale*:
-  + L’Utente inserisce il proprio Username.
+  + L'Utente avvia il Sistema.
+  + L'Utente visualizza una schermata per la registrazione.
+  + L'Utente inserisce lo Username.
   + L’Utente inserisce la Password.
+  + L’Utente inserisce nuovamente la Password.
+/*
+- *Inclusioni*:
+- *Estensioni*:
+*/
 - *Trigger*: 
-  - L’Utente vuole autenticarsi per accedere al Sistema.
-==== - UC 1.2: Inserimento Password
-#label("uc-1.2")
-- *Attore Principale*: Utente
-- *Precondizione*:
-  - Il Sistema è attivo, in modalità online o offline.
-  - L’Utente non è autenticato nel Sistema.
-  - L’Utente vuole autenticarsi per accedere al sistema.
-  - Il Sistema non riconosce lo Username inserito dall’Utente.
-- *Postcondizione*:
-  - Il Sistema riceve la Password con la quale l’Utente vuole autenticarsi per accedere al Sistema.
-- *Scenario principale*:
-  + L’Utente inserisce la propria Password.
-- *Trigger*: 
-  - L’Utente vuole autenticarsi per accedere al Sistema.
+  - L'Utente vuole registrarsi come primo e unico Supervisore Globale del Sistema.
 
-#pagebreak() 
-=== - UC 2: Autenticazione#super[G] non riuscita
+
+=== - UC 2: Autenticazione#super[G]
 #label("uc-2")
-#figure(
-  image("assets/Casi d'uso-UC2.drawio.png", width: 90%),
-  caption: [UC2 - Autenticazione non riuscita]
-)
+/*#figure(
+  image("assets/Casi d'uso-UC1.drawio.png", width: 90%),
+  caption: [UC2 - Autenticazione]
+)*/
 - *Attore Principale*: Utente
 - *Precondizione*:
-  - Il Sistema è attivo, in modalità online o offline.
-  - L’Attore Principale non è autenticato nel Sistema.
-  - L’Attore Principale ha inserito, in fase di autenticazione#super[G], uno Username o una Password errata.
+  - Il Sistema è attivo, in modalità online o offline. // Question: Le precondizioni che non riguardano l'Utente hanno senso di essere specificate?
+  - L’Utente non è autenticato nel Sistema.
 - *Postcondizione*:
-  - Il Sistema annulla l’autenticazione#super[G].
-  - Il Sistema mostra a schermo circa l’errore di autenticazione#super[G].
+  - L’Utente ha eseguito l’accesso al Sistema.
+  - L'Utente assume il ruolo di Supervisore Globale o Supervisore Locale a seconda del ruolo associato all'account.
 - *Scenario principale*:
-  + L’Utente inserisce lo Username. 
+  + L'Utente avvia il Sistema.
+  + L'Utente inserisce lo Username.
   + L’Utente inserisce la Password.
-- *Scenario alternativo*:
-  - Il Sistema ha ricevuto Username e Password, ma le credenziali sono risultate errate.
-- *Inclusioni*:
-  - #link(label("uc-18.3"), underline("[UC 18.3]"))
+
+//- *Inclusioni*:
 - *Estensioni*:
-  - #link(label("uc-18.4"), underline("[UC 18.4]"))
+  - #link(label("uc-3"), underline("[UC 3]"))
+- *Trigger*:
+  - L’Utente vuole autenticarsi presso il Sistema.
+
+
+=== - UC 3: Autenticazione#super[G] fallita
+#label("uc-3")
+/*#figure(
+  image("assets/Casi d'uso-UC2.drawio.png", width: 90%),
+  caption: [UC2 - Autenticazione fallita]
+)*/
+- *Attore Principale*: Utente
+- *Precondizione*:
+  - Il Sistema è attivo, in modalità online o offline. // Question: Le precondizioni che non riguardano l'Utente hanno senso di essere specificate?
+  - L'Utente non è autenticato nel Sistema.
+- *Postcondizione*:
+  - L'Utente è ancora non autenticato nel Sistema.
+  - Viene fornita all'Utente la possibilità di autenticarsi nuovamente.
+- *Scenario principale*
+  + L'Utente riceve un messaggio di errore.
+//- *Inclusioni*:
+//- *Estensioni*:
+- *Trigger*:
+  - L'Utente inserisce uno Username o una Password errati.
+
+
+=== - UC 4: Logout
+#label("uc-")
+/*#figure(
+  image("assets/Casi d'uso-UC1.drawio.png", width: 90%),
+  caption: [UC2 - Autenticazione]
+)*/
+- *Attore Principale*: Utente
+- *Precondizione*:
+  - Il Sistema è attivo, in modalità online o offline. // Question: Le precondizioni che non riguardano l'Utente hanno senso di essere specificate?
+  - L’Utente è autenticato presso il Sistema.
+- *Postcondizione*:
+  - L’Utente ha effettuato il logout dal Sistema.
+- *Scenario principale*:
+  + L'Utente viene disconnesso dal Sistema.
+  + L'Utente visualizza la schermata per l'autenticazione.
+
+  /*
+- *Inclusioni*:
+- *Estensioni*:
+*/
+- *Trigger*:
+  - L'Utente preme sul pulsante di logout.
+
+
+/*
+#pagebreak() 
+
 
 #pagebreak()
 === - UC 3: Logout
@@ -1901,7 +1924,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - #link(label("uc-5"), underline("[UC 5]"))
   - #link(label("uc-7"), underline("[UC 7]"))
   - #link(label("uc-8"), underline("[UC 8]"))
-
+*/
 #pagebreak()
 = Requisiti#super[G]
 Verranno ora elencati i requisiti#super[G] del sistema, che sono stati suddivisi in quattro categorie principali: Requisiti#super[G] Funzionali, Requisiti#super[G] di Qualità, Requisiti#super[G] di Vincolo, Requisiti#super[G] Prestazionali.
