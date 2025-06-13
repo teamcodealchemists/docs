@@ -1364,10 +1364,28 @@ _Esempio:_
     caption: [Requisiti di Qualità],
   )
 
+#pagebreak()
 == Tracciamento dei casi d'uso
+
+#set table(
+  fill:(_,y)=>if y==0 {rgb("#2599ff")}
+)
 
 #show figure: set block(breakable: true)
 #set table.cell(breakable: true)
+
+#figure(
+  table(
+  columns: (1fr, 1fr),
+  inset: 10pt,
+  align: center,
+  table.header(
+    [*Requisito*], [*Casi d'Uso*],
+  ),
+    [],[],
+  ),
+  caption: [Tracciamento dei casi d'uso],
+)
 
 #set table(
   fill:(_,y)=> if y==0 {rgb("#2599ff")} else if y == 5 {luma(235)},
@@ -1387,5 +1405,5 @@ _Esempio:_
     [*Vincolo*],        [2],  [-],  [-],
     [*Totale*],         [**], [**], [**],
     ),
-  caption: [Tracciamento dei casi d'uso],
+  caption: [Riepilogo dei casi d'uso],
 )
