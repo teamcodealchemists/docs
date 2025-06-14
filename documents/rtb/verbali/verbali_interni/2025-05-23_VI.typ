@@ -4,8 +4,8 @@
 #let titolo = "Verbale interno del "
 #let data = "23/05/2025"
 #let titolo = titolo + data
-#let status = "Revisione"
-#let versione = "0.1.0"
+#let status = "Approvato"
+#let versione = "1.0.0"
 #let presenze = (
   /* formato: <p.nome,> oppure <"nome",> */
   p.nicolo,
@@ -51,9 +51,9 @@
 
     == 1.1 Ordine del Giorno
   + Discussione sui lavori svolti durante lo sprint#super[G] RTB#super[G] 4
-    + Analisi di criticità emerse
-    + Definizione del prossimo sprint#super[G] e delle attività da intraprendere
-    + Definizione dei ruoli e delle responsabilità di ciascun membro del team
+  + Analisi di criticità emerse
+  + Definizione del prossimo sprint#super[G] e delle attività da intraprendere
+  + Definizione dei ruoli e delle responsabilità di ciascun membro del team
     
   #pagebreak()
   = 2. Dettagli della riunione
@@ -124,10 +124,10 @@
   #pagebreak()
   = 4. Tabella delle decisioni e azioni
     #let voci_tabella = (
-   [D26], [Decisione di terminare l'architettura#super[G] e iniziare la programmazione del sistema],
-    [D27], [Assegnazione dei ruoli e delle responsabilità ai membri del team],
-    [D28], [Decisione delle attività da intraprendere per il prossimo sprint#super[G]],
-    [DOC23], [Stesura del Verbale Interno del 23-05-2025],
+    [D27], [Decisione di terminare l'architettura#super[G] e iniziare la programmazione del sistema],
+    [D28], [Assegnazione dei ruoli e delle responsabilità ai membri del team],
+    [D29], [Decisione delle attività da intraprendere per il prossimo sprint#super[G]],
+    [DOC22], [Stesura del Verbale Interno del 23-05-2025],
   )
 
   #show: decision_table.with(
