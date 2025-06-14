@@ -112,6 +112,7 @@
     [D32], [Decisione di terminare la stesura del documento Analisi dei Requisiti per approvazione dell'azienda],
     [D33], [Decisione di terminare la progettazione dettagliata necessaria per il PoC così da veloccizzare la candidatura per l'RTB],
     [A19], [Proseguimento con la stesura degli altri documenti di progetto],
+    [DOC25], [Stesura del Verbale Interno del 05-06-2025],
   )
 
   #show: decision_table.with(

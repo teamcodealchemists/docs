@@ -127,7 +127,7 @@
     [D27], [Decisione di terminare l'architettura#super[G] e iniziare la programmazione del sistema],
     [D28], [Assegnazione dei ruoli e delle responsabilità ai membri del team],
     [D29], [Decisione delle attività da intraprendere per il prossimo sprint#super[G]],
-    [DOC22], [Stesura del Verbale Interno del 23-05-2025],
+    [DOC23], [Stesura del Verbale Interno del 23-05-2025],
   )
 
   #show: decision_table.with(

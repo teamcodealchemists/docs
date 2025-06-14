@@ -96,7 +96,7 @@ Continuerà, inoltre, lo sviluppo del PoC _(Proof of Concept)_.
     #let voci_tabella = (
     [A17], [Applicazione delle modifiche al documento di Analisi dei Requisiti, come indicato dal prof. Cardin],
     [A18], [Invio email ad _M31_ per ottenere consigli in merito alle difficoltà avute nella configurazione iniziale del PoC],
-    [DOC23], [Stesura del Verbale Interno del 30-05-2025],
+    [DOC24], [Stesura del Verbale Interno del 30-05-2025],
   )
 
   #show: decision_table.with(
