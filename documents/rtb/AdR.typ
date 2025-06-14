@@ -16,7 +16,7 @@
 #let status = "In redazione"
 #let destinatario = "M31"
 
-#let versione = "0.7.2"
+#let versione = "0.8.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -28,17 +28,23 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [0.8.0],
+  [13/06/2025],
+  [N. Bolzon],
+  [-],
+  [Terminata la riscrittura dei casi d'uso con aggiornamento delle tabelle di tracciamento e inserimento delle immagini realtive ad ogni caso d'uso.],
+
   [0.7.2],
   [12/06/2025],
   [N. Bolzon \ N. Moretto \ S. Speranza],
   [-],
-  [Ulteriori modifiche ai casi d'uso.],
+  [Riscrittura di altri casi d'uso, fino al UC28.],
 
   [0.7.1],
-  [10/06/2025],
+  [10/06/2025], 
   [N. Bolzon \ S. Speranza],
   [-],
-  [Modifiche ai casi d'uso.],
+  [Riscrittura dei casi d'uso, fino al UC15.],
 
   [0.7.0],
   [09/06/2025],
@@ -543,6 +549,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 )
 
 === - UC 9: Aggiunta nuova tipologia di merce
+#label("uc-9")
 - *Attore Principale*: Supervisore
 
 - *Precondizione*:
@@ -567,6 +574,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore Globale preme il pulsante Aggiungi Nuova Tipologia Merce.
 
 === - UC 10: Rimozione tipologia di merce
+#label("uc-10")
 - *Attore Principale*: Supervisore
 
 - *Precondizione*:
@@ -1137,7 +1145,7 @@ _Esempio:_
 
     [*RF05*], [*Gestione manuale delle merci.*], [capitolato#super[G]],
     [*RF05/01*], [I Supervisori possono inserire un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
-    [*RF05/02*], [I Supervisori possono definire la quantità all'intersimento di un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
+    [*RF05/02*], [I Supervisori possono definire la quantità all'inserimento di un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
     [*RF05/03*], [Il Supervisore Globale può rimuovere un tipo di merce dall'inventario.], [capitolato#super[G]],
     [*RF05/04*], [I Supervisori possono modificare la quantità di merce nell'inventario dei magazzini.], [capitolato#super[G]],
     [*RF05/05*], [Il Supervisore Globale può modificare il prezzo unitario di un prodotto.], [capitolato#super[G]],
@@ -1382,7 +1390,49 @@ _Esempio:_
   table.header(
     [*Requisito*], [*Casi d'Uso*],
   ),
-    [],[],
+    [RF01/01],[#link(label("uc-1"), underline("[UC 1]"))],
+
+    [RF02/01],[#link(label("uc-2"), underline("[UC 2]")), #link(label("uc-3"), underline("[UC 3]"))],
+    [RF02/02],[#link(label("uc-4"), underline("[UC 4]"))],
+
+    [RF03/01],[#link(label("uc-5"), underline("[UC 5]"))],
+    [RF03/02],[#link(label("uc-5"), underline("[UC 5]"))],
+
+    [RF04/01],[#link(label("uc-6"), underline("[UC 6]"))],
+    [RF04/02],[#link(label("uc-7"), underline("[UC 7]"))],
+    [RF04/03],[#link(label("uc-8"), underline("[UC 8]"))], 
+
+    [RF05/01],[#link(label("uc-9"), underline("[UC 9]"))],
+    [RF05/02],[#link(label("uc-9"), underline("[UC 9]"))],
+    [RF05/03],[#link(label("uc-10"), underline("[UC 10]"))], 
+    [RF05/04],[#link(label("uc-11"), underline("[UC 11]"))],
+    /* DA VERIFICARE */
+    [RF05/05],[],
+
+    [RF06],[#link(label("uc-12"), underline("[UC 12]"))],
+    [RF06/01],[#link(label("uc-13"), underline("[UC 13]"))],
+    [RF06/02],[#link(label("uc-14"), underline("[UC 14]"))],
+    [RF06/03],[#link(label("uc-15"), underline("[UC 15]"))], 
+    [RF06/04],[#link(label("uc-16"), underline("[UC 16]"))],
+
+    [RF07/01],[#link(label("uc-17"), underline("[UC 17]"))],
+    [RF07/02],[#link(label("uc-18"), underline("[UC 18]")), #link(label("uc-19"), underline("[UC 19]"))],
+    [RF07/03],[#link(label("uc-20"), underline("[UC 20]"))], 
+    [RF07/04],[#link(label("uc-21"), underline("[UC 21]")), #link(label("uc-22"), underline("[UC 22]"))],
+    [RF07/05],[#link(label("uc-19"), underline("[UC 19]"))],
+    [RF07/06],[#link(label("uc-22"), underline("[UC 22]"))],
+
+    [RF08],[#link(label("uc-23"), underline("[UC 23]"))],
+
+    [RF09/01],[#link(label("uc-24"), underline("[UC 24]"))],
+    [RF09/02],[#link(label("uc-25"), underline("[UC 25]")), #link(label("uc-26"), underline("[UC 26]"))],
+    [RF09/03],[#link(label("uc-25"), underline("[UC 25]")), #link(label("uc-27"), underline("[UC 27]"))],
+
+    [RF10],[#link(label("uc-28"), underline("[UC 28]"))],
+    [RF10/01],[#link(label("uc-28"), underline("[UC 28]"))],
+    [RF10/02],[#link(label("uc-28"), underline("[UC 28]"))],
+    [RF10/03],[#link(label("uc-28"), underline("[UC 28]"))], 
+    [RF10/04],[#link(label("uc-28"), underline("[UC 28]"))],
   ),
   caption: [Tracciamento dei casi d'uso],
 )
@@ -1399,11 +1449,11 @@ _Esempio:_
   table.header(
     [*Tipologia*], [*Obbligatori*], [*Desiderabili*], [*Opzionali*],
   ),
-    [*Funzionali*],     [-],  [-],  [-],
-    [*Qualità*],        [-],  [-],  [-],
-    [*Prestazionali*],  [-],  [-],  [-],
-    [*Vincolo*],        [2],  [-],  [-],
-    [*Totale*],         [**], [**], [**],
-    ),
+    [*Funzionali*],     [68],  [33],  [5],
+    [*Qualità*],        [26],  [2],   [10],
+    [*Prestazionali*],  [0],   [0],   [0],
+    [*Vincolo*],        [2],   [0],   [0],
+    [*Totale*],         [*96*],  [*35*], [*15*]
+  ),
   caption: [Riepilogo dei casi d'uso],
 )
