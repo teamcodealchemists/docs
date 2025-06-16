@@ -16,7 +16,7 @@
 #let status = "In redazione"
 #let destinatario = "M31"
 
-#let versione = "0.5.2"
+#let versione = "0.8.1"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -28,6 +28,48 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [0.8.1],
+  [16/06/2025],
+  [N. Bolzon \ N. Moretto \ S. Speranza],
+  [-],
+  [Modifiche minori ai casi d'uso e requisiti.],
+
+  [0.8.0],
+  [13/06/2025],
+  [N. Bolzon],
+  [-],
+  [Terminata la riscrittura dei casi d'uso con aggiornamento delle tabelle di tracciamento e inserimento delle immagini realtive ad ogni caso d'uso.],
+
+  [0.7.2],
+  [12/06/2025],
+  [N. Bolzon \ N. Moretto \ S. Speranza],
+  [-],
+  [Riscrittura di altri casi d'uso, fino al UC28.],
+
+  [0.7.1],
+  [10/06/2025], 
+  [N. Bolzon \ S. Speranza],
+  [-],
+  [Riscrittura dei casi d'uso, fino al UC15.],
+
+  [0.7.0],
+  [09/06/2025],
+  [N. Bolzon \ N. Moretto \ S. Marana \ S. Speranza],
+  [-],
+  [Riscrittura dei requisiti.],
+
+  [0.6.1],
+  [29/05/2025],
+  [N. Bolzon],
+  [R. Zangla],
+  [Riordinamento di alcuni requisiti in differenti tabelle.],
+
+  [0.6.0],
+  [29/05/2025],
+  [N. Bolzon],
+  [R. Zangla],
+  [Modifica classificazione dei requisiti e aggiornamento tabelle.],
+
   [0.5.2],
   [28/05/2025],
   [N. Bolzon],
@@ -121,12 +163,9 @@
     voce("Distribuzione", distribuzione)
 )
 
-//Definire contatore tabella_counter per le tabelle
-#let tabella_counter = 0
-
 // CONFIGURAZIONE PAGINE
 #show: conf.with(
-  title: [#titolo#super[G]],
+  title: [#titolo],
   contenuto: (contenuto)
 )
 #show: registro.with(
@@ -140,6 +179,13 @@
 #outline(
 title: [Lista delle Immagini],
 target: figure.where(kind: image),
+)
+#pagebreak()
+
+/* INDICE DELLE TABELLE*/
+#outline(
+  title: [Lista delle Tabelle],
+  target: figure.where(kind: table),
 )
 
 #pagebreak()
@@ -163,18 +209,18 @@ Per agevolare la comprensione, verranno utilizzati i Diagrammi dei Casi d'Uso pe
 - *Opzionali:* relativamente utili oppure contrattabili per un'eventuale implementazione futura.
 
 
-- Il documento è stato redatto dagli Analisti#super[G] del team di progetto ed è rivolto a tutti gli interessati ed in particolare: 
+Questo documento è destinato a:
 
-- Il Committente#super[G], che potrà verificare che i requisiti#super[G] siano stati correttamente interpretati e documentati secondo le proprie specifiche;
+- Il Committente#super[G], per verificare la corretta interpretazione dei requisiti.;
 
-- Il Team di Progettisti#super[G] e Programmatori#super[G], che utilizzerà il documento come guida per la realizzazione del sistema;
+- Il Team di Progettisti#super[G] e Programmatori#super[G], come guida per la realizzazione del sistema;
 
-- Il Team di Verificatori#super[G], che lo adotterà come base per la definizione dei casi di test e la verifica#super[G] del corretto funzionamento del prodotto#super[G].
+- Il Team di Verificatori#super[G], per definire i test e verificare il corretto funzionamento del prodotto;
 
 Potrà inoltre essere consultato da altri soggetti coinvolti nel processo di sviluppo, come Amministratori#super[G] e Responsabili#super[G] di Progetto, al fine di acquisire una comprensione esauriente delle specifiche del sistema.
 
-== Descrizione del prodotto#super[G]
-Il progetto ha l'obiettivo di sviluppare un sistema intelligente per la gestione distribuita dell'inventario#super[G] in una rete#super[G] di magazzini geograficamente separati. In scenari logistici complessi, come quelli che prevedono la cooperazione tra più sedi operative, è fondamentale garantire disponibilità continua delle scorte#super[G], ridurre i tempi di inattività e ottimizzare il flusso di materiali.
+== Descrizione del prodotto
+Il progetto ha l'obiettivo di sviluppare un sistema intelligente per la gestione distribuita dell'inventario#super[G] in una rete di magazzini geograficamente separati. In scenari logistici complessi, come quelli che prevedono la cooperazione tra più sedi operative, è fondamentale garantire disponibilità continua delle scorte#super[G], ridurre i tempi di inattività e ottimizzare il flusso di materiali.
 
 Il sistema dovrà permettere di rilevare in tempo reale situazioni critiche, come carenze di prodotto#super[G] in una sede e surplus in un'altra, intervenendo automaticamente o suggerendo azioni correttive di trasferimento#super[G] o riassortimento#super[G]. Sarà inoltre in grado di gestire eventi imprevisti, come l'indisponibilità temporanea di un magazzino, garantendo la continuità operativa attraverso un bilanciamento#super[G] intelligente delle risorse nei magazzini vicini.
 
@@ -215,7 +261,7 @@ Dopo un'esaustiva ricerca, sono stati identificati alcuni punti chiave che saran
   L'API#super[G] Gateway funge da punto di accesso centrale per le richieste degli utenti e può gestire l'autenticazione#super[G], la registrazione, il bilanciamento#super[G] del carico e altre funzionalità.\
   La Service Discovery consente ai microservizi#super[G] di trovare e comunicare tra loro in modo dinamico, senza la necessità di configurazioni statiche.
 
-== Glossario#super[G]
+== Glossario
 In questo documento potrebbero essere presenti parole#super[G] e terminologie complesse, che potrebbero non essere chiare a tutti, anche in relazione al contesto in cui vengono usate. Per questo motivo, È stato creato un glossario#super[G], che contiene le definizioni di alcune parole#super[G] e termini utilizzati nel documento.
 
 Le parole#super[G] che possiedono un riferimento al glossario#super[G] vengono evidenziate come segue: *parola#super[G]*.
@@ -231,16 +277,16 @@ https://docs.aws.amazon.com/it_it/prescriptive-guidance/latest/modernization-dat
 https://www.multiplayer.app/distributed-systems-architecture/
 */
 
-=== Riferimenti Normativi
+=== Riferimenti normativi
 /*Da cambiare al cambio di versione*/
 - *Norme di Progetto:* \ #link("https://teamcodealchemists.github.io/docs/rtb/NdP_0.5.0.pdf")[https://teamcodealchemists.github.io/docs/rtb/NdP_0.5.0.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
 
 - *Capitolato#super[G] d'appalto C6 _Sistema di Gestione di un Magazzino Distribuito_*: #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf]\ *Ultimo Accesso:* 27 Maggio 2025
 
-=== Riferimenti Informativi
+=== Riferimenti informativi
 - *Diagrammi dei Casi d'Uso:* \ #link("https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")[https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
-- *Analisi dei Requisiti#super[G]:* \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
-- *Glossario#super[G]:* \ #link("https://teamcodealchemists.github.io/glossario.html")[https://teamcodealchemists.github.io/glossario.html] \ *Ultimo Accesso:* 27 Maggio 2025
+- *Analisi dei Requisiti:* \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
+- *Glossario:* \ #link("https://teamcodealchemists.github.io/glossario.html")[https://teamcodealchemists.github.io/glossario.html] \ *Ultimo Accesso:* 16 Giugno 2025
 - *Standard IEEE:* \ #link("https://ieeexplore.ieee.org/document/720574")[https://ieeexplore.ieee.org/document/720574] \ *Ultimo Accesso:* 27 Maggio 2025
 
 #pagebreak()
@@ -250,12 +296,16 @@ In questa sezione del documento vengono presentati i casi d’uso individuati du
 
 Ogni caso d’uso è costituito da un diagramma UML e da una descrizione testuale dettagliata, utile a chiarire le funzionalità attese dal sistema. La descrizione riporta, inoltre, le informazioni previste nella tabella sottostante, fatta eccezione per i campi che, in base alla natura del caso d’uso, risultano non applicabili _(ad esempio, se non sono previste situazioni di errore, non saranno presenti scenari alternativi)_.
 
+#show figure: set block(breakable: true)
+#set table.cell(breakable: true)
+
 #set table(
   fill: (x, y) => if y == 0 {gray} else if x == 0 {luma(235)},
   align: (x, _) => if x == 0 {center} else {left},
 )
 
-#table(
+#figure(
+  table(
   columns: (1.3fr, 4fr),
   inset: 10pt,
   table.header(
@@ -267,10 +317,12 @@ Ogni caso d’uso è costituito da un diagramma UML e da una descrizione testual
     [*Precondizioni*],[Lista di condizioni che sono *necessarie* affinché l’attore possa compiere l’azione indicata dal caso d’uso.],
     [*Postcondizioni*],[Lista di condizioni che si verificano successivamente alla modifica dello stato del sistema, a seguito dell’azione eseguita con successo dall’attore secondo quanto previsto dal caso d’uso.],
     [*Scenario\ Principale*],[È la sequenza di iterazioni ideale tra l’attore e il sistema, in cui tutto procede come previsto e l’obiettivo del caso d’uso viene raggiunto con successo.],
-    [*Scenario\ Secondario*],[Sono variazioni dello scenario principale che si verificano quando una delle operazioni previste non va a buon fine.],
+    [*Scenario\ Alternativo*],[Sono variazioni dello scenario principale che si verificano quando una delle operazioni previste non va a buon fine.],
     [*Inclusioni*],[Indicano che un caso d’uso utilizza un altro caso d’uso. Servono a spezzare comportamenti comuni tra più casi d’uso, inserendoli in uno separato che viene “incluso” quando serve.],
     [*Estensioni*],[Indicano che un caso d’uso può estendere il comportamento di un altro in situazioni particolari. Il caso d’uso base funziona da solo, ma può essere arricchito opzionalmente da quello estensore, se si verifica#super[G] una certa condizione.],
     [*Trigger*],[È l’evento iniziale che fa partire il caso d’uso. Può essere un’azione dell’utente, un evento di sistema o un cambiamento di stato che attiva il comportamento descritto nel caso d’uso.],
+  ),
+  caption: [Componenti del caso d’uso e loro descrizione],
 )
 
 === Codifica dei casi d'uso
@@ -282,16 +334,20 @@ I casi d'uso sono codificati utilizzando la seguente notazione:
 
 == Attori
 In questa sezione del documento vengono esposti gli attori utilizzati nel sistema:
-#table(
+
+#figure(
+  table(
   columns: (1.3fr, 4fr),
   inset: 10pt,
   table.header(
     [*Attore*], [*Descrizione*]
   ),
-    [*Utente*], [Utente che vuole accedere per usufruire del Sistema.],
+    [*Utente*], [Utente non autenticato che vuole accedere al Sistema.],
+    [*Supervisore*], [Generalizzazione degli attori Supervisori Locali e Supervisore Globale.],
     [*Supervisore\ Globale*], [Gestisce l’intero sistema di magazzini con visualizzazione globale.],
-    [*Supervisore\ Locale*], [Gestisce uno o più magazzini a lui affidati dal Supervisore Globale.],
-    [*Sistema\ Centralizzato*],[Rappresenta le funzioni automatiche del server centrale, come controlli, aggiornamenti, notifiche e calcoli. Agisce senza intervento umano, in risposta a eventi o comandi degli utenti _(tra cui Supervisore Locale e Supervisore Globale)_.],
+    [*Supervisore\ Locale*], [Gestisce solo uno o più magazzini a lui affidati dal Supervisore Globale.],
+  ),
+  caption: [Descrizione degli attori coinvolti nel sistema],
 )
 
 
@@ -299,2035 +355,1161 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 #pagebreak()
 == Lista dei Casi d'uso
-=== - UC 1: Autenticazione#super[G]
+
+=== - UC 1: Primo accesso al sistema
 #label("uc-1")
+
 #figure(
-  image("assets/Casi d'uso-UC1.drawio.png", width: 90%),
-  caption: [UC1 - Autenticazione#super[G]]
+  image("assets/UC1.png", width: 50%),
+  caption: [UC1 - Primo accesso al sistema]
 )
-- *Attore Principale*: Utente
-- *Precondizione*:
-  - Il Sistema è attivo, in modalità online o offline. 
-  - L’Utente non è autenticato nel Sistema.
-- *Postcondizione*:
-  - L’Utente ha eseguito l’accesso al Sistema.    Autenticandosi si ottiene i permessi di Supervisione Globale o Supervisore Locale sulla base del ruolo associato alle credenziali.
-- *Scenario principale*:
-  + L'Utente inserisce lo Username → #link(label("uc-1.1"), underline("[UC 1.1]"))
-  + L’Utente inserisce la Password → #link(label("uc-1.2"), underline("[UC 1.2]"))
-- *Scenario alternativo*:
-  - L’Utente inserisce lo Username o la Password errati → #link(label("uc-2"), underline("[UC 2]"))
-- *Inclusioni*:
-  - #link(label("uc-1.1"), underline("[UC 1.1]"))
-  - #link(label("uc-1.2"), underline("[UC 1.2]"))
-  - #link(label("uc-18.3"), underline("[UC 18.3]"))
-- *Estensioni*:
-  - #link(label("uc-2"), underline("[UC 2]"))
-  - #link(label("uc-18.2"), underline("[UC 18.2]"))
-
-- *Trigger*: 
-  - L’Utente vuole autenticarsi per accedere al Sistema. 
-#pagebreak()
-==== - UC 1.1: Inserimento Username
-#label("uc-1.1")
 
 - *Attore Principale*: Utente
+
 - *Precondizione*:
-  - Il Sistema è attivo, in modalità online o offline.
-  - L’Utente non è autenticato nel Sistema.
-  - L’Utente vuole autenticarsi per accedere al sistema.
-  - Il Sistema non riconosce lo Username inserito dall’Utente.
+  - Non esiste un Utente registrato presso il Sistema.
+
 - *Postcondizione*:
-  - Il Sistema riceve lo Username con il quale l’Utente vuole autenticarsi per accedere al Sistema.
+  - L’Utente possiede un account presso il Sistema, contraddistinto da email e password e contentente anche nome, cognome e numero di cellulare.
+  - L'Utente assume il ruolo di Supervisore Globale del Sistema.
+  - L'Utente è autenticato presso il Sistema.
 
 - *Scenario principale*:
-  + L’Utente inserisce il proprio Username.
+  + L'Utente avvia il Sistema.
+  + L'Utente visualizza una schermata per la registrazione.
+  + L'Utente inserisce nome e cognome.
+  + L'Utente inserisce l'indirizzo email.
+  + L'Utente inserisce il numero di cellulare.
   + L’Utente inserisce la Password.
-- *Trigger*: 
-  - L’Utente vuole autenticarsi per accedere al Sistema.
-==== - UC 1.2: Inserimento Password
-#label("uc-1.2")
-- *Attore Principale*: Utente
-- *Precondizione*:
-  - Il Sistema è attivo, in modalità online o offline.
-  - L’Utente non è autenticato nel Sistema.
-  - L’Utente vuole autenticarsi per accedere al sistema.
-  - Il Sistema non riconosce lo Username inserito dall’Utente.
-- *Postcondizione*:
-  - Il Sistema riceve la Password con la quale l’Utente vuole autenticarsi per accedere al Sistema.
-- *Scenario principale*:
-  + L’Utente inserisce la propria Password.
-- *Trigger*: 
-  - L’Utente vuole autenticarsi per accedere al Sistema.
+  + L’Utente inserisce nuovamente la Password per confermarla.
 
-#pagebreak() 
-=== - UC 2: Autenticazione#super[G] non riuscita
+- *Trigger*: 
+  - L'Utente vuole registrarsi come primo e unico Supervisore Globale del Sistema.
+
+#pagebreak()
+=== - UC 2: Autenticazione
 #label("uc-2")
+
 #figure(
-  image("assets/Casi d'uso-UC2.drawio.png", width: 90%),
-  caption: [UC2 - Autenticazione#super[G] non riuscita]
+  image("assets/UC2.png", width: 70%),
+  caption: [UC2 - Autenticazione]
 )
+
 - *Attore Principale*: Utente
+
 - *Precondizione*:
-  - Il Sistema è attivo, in modalità online o offline.
-  - L’Attore Principale non è autenticato nel Sistema.
-  - L’Attore Principale ha inserito, in fase di autenticazione#super[G], uno Username o una Password errata.
+  - L’Utente non è autenticato nel Sistema.
+
 - *Postcondizione*:
-  - Il Sistema annulla l’autenticazione#super[G].
-  - Il Sistema mostra a schermo circa l’errore di autenticazione#super[G].
+  - L’Utente ha eseguito l’accesso al Sistema.
+  - L'Utente assume il ruolo di Supervisore Globale o Supervisore Locale a seconda del ruolo associato all'account.
+
 - *Scenario principale*:
-  + L’Utente inserisce lo Username. 
+  + L'Utente avvia il Sistema.
+  + L'Utente inserisce l'Email.
   + L’Utente inserisce la Password.
-- *Scenario alternativo*:
-  - Il Sistema ha ricevuto Username e Password, ma le credenziali sono risultate errate.
-- *Inclusioni*:
-  - #link(label("uc-18.3"), underline("[UC 18.3]"))
+  + Se le credenziali sono errate → #link(label("uc-3"), underline("[UC 3]"))
+
 - *Estensioni*:
-  - #link(label("uc-18.4"), underline("[UC 18.4]"))
-
-#pagebreak()
-=== - UC 3: Logout
-#label("uc-3")
-#figure(
-  image("assets/Casi d'uso-UC3.drawio.png", width: 90%),
-  caption: [UC3 - Logout]
-)
-
-- *Attore Principale*: Utente
-- *Precondizioni*: 
-  - Il Sistema è attivo.
-  - L’Attore Principale è autenticato nel Sistema.
-- *Postcondizioni*: 
-  - L’Utente viene disconnesso.
-  - Le funzionalità riservate non sono più accessibili fino a nuova autenticazione#super[G] (login).
--  *Scenario principale*:
-  + L’Utente clicca su “Logout” o seleziona l’opzione di disconnessione.
-  + Il Sistema termina la sessione dell’Utente.
-  + Il Sistema mostra la schermata iniziale o di login.
-- *Inclusioni*:
-  - #link(label("uc-18.3"), underline("[UC 18.3]"))
-- *Estensioni*: 
-  - #link(label("uc-1"), underline("[UC 1]")) (per rientrare)
-- *Trigger*: 
-  - Utente vuole uscire dal sistema.
-
-#pagebreak()
-=== - UC 4: Rilevamento carenza scorte#super[G]
-#label("uc-4")
-#figure(
-  image("assets/Casi d'uso-UC4.drawio.png", width: 90%),
-  caption: [UC4 - Rilevamento carenza scorte#super[G]]
-)
-- *Attore Principale*: Supervisore Locale, Supervisore Globale, Sistema Centralizzato.
-- *Precondizioni*: 
-  - Il Sistema è attivo, in modalità online o offline.
-  - Le Soglie minime per i prodotti#super[G] sono definite nel Sistema.
-- *Postcondizioni*: 
-  - I Supervisori sono notificati della carenza di scorte#super[G]. L’evento è tracciato.
-- *Scenario principale*:
-  + Il Sistema Centralizzato monitora le scorte#super[G] periodicamente.
-  + Il Sistema Centralizzato verifica#super[G] se qualche scorta#super[G] è inferiore alla soglia minima.
-  + Il Sistema Centralizzato, se rileva una carenza, genera un evento.
-  + Il Sistema Centralizzato genera una notifica email inviata ai Supervisori contenente:
-    - Nome del prodotto#super[G].
-    - Quantità residua.
-    - Magazzino interessato.
-    - Data e ora del rilevamento.
-  + La notifica viene mostrata in tempo reale anche nella dashboard#super[G] del supervisore
-  + I supervisori accedono al sistema per visualizzare le carenze.
-- *Scenario alternativo*:
-  - La soglia minima non è definita → il Sistema Centralizzato salta il controllo per quel prodotto#super[G] e genera un avviso di configurazione mancante.
-- *Inclusioni*:
-  - #link(label("uc-4.1"), underline("[UC 4.1]"))
-  - #link(label("uc-4.2"), underline("[UC 4.2]"))
-- *Estensioni*:
-  - #link(label("uc-4.3"), underline("[UC 4.3]"))
-
-==== - UC 4.1: Monitoraggio#super[G] continuo delle scorte#super[G]
-#label("uc-4.1")
-- *Attore Principale*: Sistema Centralizzato.
-- *Precondizioni*: 
-  - Il Sistema è attivo, in modalità online o offline.
-  - Il Database delle giacenze è disponibile.
-- *Postcondizioni*: 
-  - Il rilevamento aggiornato delle risorse è stato effettuato.
-- *Scenario principale*:
-  + Il Sistema Centralizzato interroga il database su cloud o riceve input aggiornati.
-  + Il Sistema Centralizzato passa i dati aggiornati al modulo di identificazione carenza. → #link(label("uc-4.2"), underline("[UC 4.2]"))
-- *Scenario alternativo*:
-  - Il database è temporaneamente non accessibile → il Sistema Centralizzato tenta nuovamente dopo un intervallo definito. → #link(label("uc-4.1"), underline("[UC 4.1]"))
-- *Estensioni*:
-  - #link(label("uc-4.1.1"), underline("[UC 4.1.1]"))
-- *Trigger*:
-  - Evento schedulato a modifica delle giacenze.
-
-===== - UC 4.1.1: Errore nel caricamento dei dati scorte#super[G]
-#label("uc-4.1.1")
-- *Attore Principale*: Sistema Centralizzato.
-- *Scenario principale*:
-  + Il sistema centralizzato riceve un errore
-  + Se fallisce, notifica il fallimento.
-  + Il sistema centralizzato attende che il database ritorni operativo a generare eventi
-- *Inclusioni*: 
-  - #link(label("uc-4.1"), underline("[UC 4.1]"))
-- *Trigger*: 
-  - Fallimento nel recupero dei dati.
-
-==== - UC 4.2: Identificazione carenza scorte#super[G]
-#label("uc-4.2")
-- *Attore Principale*: Sistema Centralizzato.
-- *Precondizioni*: 
-  - Il Sistema è attivo, in modalità online o offline.
-  - Sono disponibili dati aggiornati sulle giacenze e soglie minime.
-- *Postcondizioni*: 
-  - Per ogni prodotto#super[G] sotto soglia, viene inviata una notifica email ai supervisori.
-- *Scenario principale*:
-  + Il Sistema Centralizzato confronta la quantità disponibile con la soglia minima.
-  + Se la quantità è sotto soglia, registra un evento di carenza.
-  + Notifica i Supervisori.
-- *Scenario alternativo*:
-  - Il database è temporaneamente non accessibile → il Sistema Centralizzato rimane in attesa che il Database ritorni disponibile.
-- *Trigger*: 
-  - Invocazione da #link(label("uc-4.1"), underline("[UC 4.1]"))
-
-==== - UC 4.3: Accesso ai dettagli della carenza non riuscito
-#label("uc-4.3")
-- *Attore Principale*: Supervisore Locale, Supervisore Globale.
-- *Scenario principale*:
-  - Il Supervisore tenta di visualizzare l’evento.
-  - Il Sistema Centralizzato non riesce a caricare i dati.
-  - Il Sistema Centralizzato notifica il fallimento.
-- *Inclusioni*: 
-  - #link(label("uc-4.1"), underline("[UC 4.1]"))
-- *Trigger*: 
-  - Tentativo di accesso ai dettagli.
-
-#pagebreak()
-=== - UC 5: Trasferimento#super[G] di scorte#super[G]
-#label("uc-5")
-#figure(
-  image("assets/Casi d'uso-UC5.drawio.png", width: 90%),
-  caption: [UC5 - Trasferimento#super[G] di scorte#super[G]]
-)
-- *Attore Principale*: Supervisore Locale, Supervisore Globale, Sistema Centralizzato.
-- *Precondizioni*:
-  - Il Sistema è attivo, in modalità online o offline.
-  - L’Utente è autenticato con i permessi necessari (Supervisore Locale o Globale).
-  - Il magazzino di origine è registrato e attivo nel sistema. Nel caso di un trasferimento#super[G] interno, anche il magazzino di destinazione è registrato.
-- *Postcondizioni*:
-  - L’inventario#super[G] globale viene aggiornato in entrambi i magazzini.
-  - La richiesta viene registrata e tracciata nel Sistema.
-- *Scenario Principale*:
-  + Il Supervisore o il sistema centralizzato richiedono un trasferimento#super[G] tra magazzini → #link(label("uc-5.1"), underline("[UC 5.1]"))
-  + Il sistema centralizzato verifica#super[G] la disponibilità delle scorte#super[G] nel magazzino di origine → #link(label("uc-5.2"), underline("[UC 5.2]"))
-  + Nel caso di un trasferimento#super[G] interno, se la verifica#super[G] è positiva, il sistema centralizzato aggiorna l’inventario#super[G] di origine e destinazione → #link(label("uc-5.3"), underline("[UC 5.3]")). Altrimenti, nel caso di un trasferimento#super[G] verso l'esterno, se la verifica#super[G] è positiva, il sistema centralizzato aggiorna solo l'inventario#super[G] di origine.
-  + Il sistema centralizzato genera un ID di tracciamento del trasferimento#super[G] → #link(label("uc-5.4"), underline("[UC 5.4]"))
-  + Lo stato del trasferimento#super[G] viene aggiornato in tempo reale fino al completamento → #link(label("uc-5.5"), underline("[UC 5.5]"))
-- *Scenario Alternativo*:
-  - Le scorte#super[G] richieste non sono disponibili → #link(label("uc-8"), underline("[UC 8]"))
-  - Il tracciamento in tempo reale fallisce → il sistema centralizzato registra aggiornamenti asincroni.
-- *Inclusioni*:
-  - #link(label("uc-5.1"), underline("[UC 5.1]"))
-  - #link(label("uc-5.2"), underline("[UC 5.2]"))
-  - #link(label("uc-5.3"), underline("[UC 5.3]"))
-  - #link(label("uc-5.4"), underline("[UC 5.4]"))
-  - #link(label("uc-5.5"), underline("[UC 5.5]"))
-- *Estensioni*:
-  - #link(label("uc-5.6"), underline("[UC 5.6]"))
-  - #link(label("uc-5.7"), underline("[UC 5.7]"))
-  - #link(label("uc-5.8"), underline("[UC 5.8]"))
-  - #link(label("uc-8"), underline("[UC 8]"))
-- *Trigger*:
-  - Il Supervisore avvia una richiesta di trasferimento#super[G].
-
-==== - UC 5.1: Invio richiesta di trasferimento#super[G]
-#label("uc-5.1")
-- *Attore Principale*: Supervisore Locale, Supervisore Globale, Sistema Centralizzato.
-- *Precondizioni*:
-  - Supervisore è autenticato.
-  - I magazzini selezionati esistono nel sistema.
-- *Postcondizioni*:
-  - Una richiesta formale di trasferimento#super[G] è inviata al sistema centralizzato.
-- *Scenario Principale*:
-  + Il supervisore seleziona magazzino di origine e destinazione.
-  + Inserisce i prodotti#super[G] e le quantità da trasferire.
-  + Invia la richiesta.
-  + Il sistema centralizzato la registra e passa alla fase di validazione#super[G].
-
-==== - UC 5.2: Validazione#super[G] disponibilità scorte#super[G]
-#label("uc-5.2")
-- *Attore Principale*: Sistema Centralizzato.
-- *Precondizioni*:
-  - È stata inviata una richiesta di trasferimento#super[G].
-- *Postcondizioni*:
-  - Le quantità richieste sono validate o rifiutate.
-- *Scenario Principale*:
-  + Il sistema centralizzato recupera i dati dell’inventario#super[G] del magazzino di origine.
-  + Confronta la quantità richiesta con quella disponibile.
-  + Se la disponibilità è sufficiente, prosegue con il trasferimento#super[G].
-- *Scenari Alternativi*:
-  - Scorte#super[G] non sufficienti → il Sistema centralizzato annulla la richiesta e notifica l’errore.
-  - Il Supervisore può modificare la quantità o annullare l’operazione.
-
-==== - UC 5.3: Aggiornamento inventario#super[G] di entrambi i magazzini
-#label("uc-5.3")
-- *Attore Principale*: Sistema Centralizzato.
-- *Precondizioni*:
-  - La disponibilità delle scorte#super[G] è stata validata.
-- *Postcondizioni*:
-  - L’inventario#super[G] del magazzino di origine viene decrementato.
-  - L’inventario#super[G] del magazzino di destinazione viene incrementato.
-- *Scenario Principale*:
-  + Il sistema centralizzato decrementa le quantità dal magazzino di origine nel momento di accettazione dell'ordine#super[G].
-  + L'ordine#super[G] viene a tutti gli effetti spedito verso il magazzino di destinazione.
-  + Al completamento del trasferimento#super[G], incrementa le quantità nel magazzino di destinazione.
-  + Registra l’operazione.
-
-==== - UC 5.4: Tracciamento del trasferimento#super[G] dei prodotti#super[G]
-#label("uc-5.4")
-- *Attore Principale*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Il trasferimento#super[G] è stato avviato.
-- *Postcondizioni*:
-  - Il trasferimento#super[G] è assegnato ad un ID tracciabile.
-- *Scenario Principale*:
-  + Il sistema centralizzato assegna un ID univoco al trasferimento#super[G].
-  + Registra varie informazioni sul trasferimento#super[G] (orari, quantità, origine, destinazione, ...)
-  + Rende i dati consultabili ai supervisori.
-- *Estensioni*:
-  - #link(label("uc-5.8"), underline("[UC 5.8]"))
-
-==== - UC 5.5: Aggiornamento stato del trasferimento#super[G]
-#label("uc-5.5")
-- *Attore Principale*: Supervisore Locale.
-- *Precondizioni*:
-  - Il trasferimento#super[G] è in corso.
-- *Postcondizioni*:
-  - Lo stato viene aggiornato fino a “Completato” o “Fallito”.
-- *Scenario Principale*:
-  + Il supervisore locale può aggiornare lo stato mano a mano che il processo avanza (es. preparazione, transito, consegnato…).
-  + Eventuali anomalie vengono registrate e notificate.
-  + Al completamento, lo stato può essere impostato su “Completato” dal supervisore locale.
-- *Estensioni*:
-  - #link(label("uc-5.7"), underline("[UC 5.7]"))
-
-==== - UC 5.6: Annullamento richiesta di trasferimento#super[G]
-#label("uc-5.6")
-- *Attore Principale*: Supervisore Globale, Supervisore Locale.
-- *Precondizioni*:
-  - Esiste una richiesta di trasferimento#super[G] non ancora completata (in corso).
-- *Postcondizioni*:
-  - Il trasferimento#super[G] viene annullato e lo stato aggiornato a “Annullato”.
-  - Non viene eseguita alcuna modifica agli inventari#super[G] (se non già applicata).
-- *Scenario Principale*:
-  + Il supervisore seleziona un trasferimento#super[G] in stato "In attesa".
-  + Il supervisore "Annulla".
-  + Il sistema centrale conferma l’intenzione.
-  + Il sistema centrale aggiorna lo stato a “Annullato”.
-  + Eventuali risorse prenotate (es. veicoli, operatori) vengono liberate.
-/* Non si può annullare un trasferimento#super[G] che è in stato "in transito"*/
-
-==== - UC 5.7: Notifica automatica esito trasferimento#super[G]
-#label("uc-5.7")
-- *Attore Principale*: Sistema Centralizzato, Supervisore Globale, Supervisore Locale.
-- *Precondizioni*:
-  - Il trasferimento#super[G] ha cambiato stato (es. da “In transito” a “Consegnato”).
-- *Postcondizioni*:
-  - L’utente supervisore riceve una notifica con lo stato aggiornato.
-- *Scenario Principale*:
-  + Il sistema centralizzato monitora il cambiamento dello stato
-  + Quando il trasferimento#super[G] passa a “Consegnato” o “Fallito”, il sistema centralizzato invia una notifica.
-  + Il supervisore riceve una notifica.
-- *Trigger*:
-  - Il sistema centralizzato rileva una modifica di stato rilevante.
-
-==== - UC 5.8: Registrazione storico trasferimenti#super[G]
-#label("uc-5.8")
-- *Attore Principale*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Il trasferimento#super[G] è stato registrato e ha un ID.
-- *Postcondizioni*:
-  - I dati vengono salvati in archivio storico che può essere consultato.
-- *Scenario Principale*:
-  + Al termine del trasferimento#super[G], il sistema centralizzato raccoglie tutti i dati associati.
-  + Salva il record in un archivio storico.
-  + Il record è consultabile da reportistica o cruscotti.
-- *Trigger*:
-  - Completamento del trasferimento#super[G].
-
-#pagebreak()
-=== - UC 6: Gestione scorte#super[G] minime necessarie
-#label("uc-6")
-#figure(
-  image("assets/Casi d'uso-UC6.drawio.png", width: 90%),
-  caption: [UC6 - Gestione scorte#super[G] minime necessarie]
-)
-- *Attori Principali*: Sistema Centralizzato, Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Il Sistema è attivo e in esecuzione periodica o su richiesta.
-  - L’utente ha accesso al sistema come supervisore.
-  - L’inventario#super[G] dei prodotti#super[G] è già stato inizializzato.
-- *Postcondizioni*:
-  - Le scorte#super[G] minime sono definite, calcolate e viene attivato un monitoraggio#super[G] costante.
-- *Scenario principale*:
-  + Il supervisore accede al sistema.
-  + Definisce manualmente i livelli minimi per ciascun prodotto#super[G] → #link(label("uc-6.1"), underline("[UC 6.1]"))
-  + Il sistema centralizzato calcola dinamicamente i livelli minimi suggeriti → #link(label("uc-6.2"), underline("[UC 6.2]"))
-  + Il sistema centralizzato monitora in tempo reale le scorte#super[G] rispetto al minimo → #link(label("uc-6.3"), underline("[UC 6.3]"))
-  + Se necessario, vengono suggerite o attivate azioni correttive → #link(label("uc-6.4"), underline("[UC 6.4]")), #link(label("uc-6.5"), underline("[UC 6.5]"))
-- *Scenario alternativo*:
-  - Il Sistema centralizzato notifica l’anomalia al Supervisore Globale.
-- *Inclusioni*:
-  - #link(label("uc-6.1"), underline("[UC 6.1]"))
-  - #link(label("uc-6.2"), underline("[UC 6.2]"))
-  - #link(label("uc-6.3"), underline("[UC 6.3]"))
-  - #link(label("uc-7"), underline("[UC 7]"))
-- *Estensioni*:
-  - #link(label("uc-6.4"), underline("[UC 6.4]"))
-  - #link(label("uc-6.5"), underline("[UC 6.5]"))
-- *Trigger*:
-  - Ciclo schedulato automatico.
-  - Richiesta esplicita da parte del Supervisore.
-  - Modifica delle soglie.
-  - Cambiamenti nell’inventario#super[G] (arrivi, trasferimenti#super[G], ordini#super[G], …).
-
-==== - UC 6.1: Definizione manuale del livello minimo di scorte#super[G]
-#label("uc-6.1")
-- *Attori Principali*: Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Il prodotto#super[G] è registrato nel sistema.
-  - L’utente ha i permessi per la modifica.
-- *Postcondizioni*:
-  - Il livello minimo viene salvato nel sistema.
-- *Scenario principale*:
-  + Il supervisore seleziona un prodotto#super[G].
-  + Inserisce la soglia minima desiderata.
-  + Il sistema centralizzato salva il valore nel database.
-- *Scenari alternativi*:
-  - Il supervisore inserisce una soglia non valida.
-  - Il sistema centralizzato mostra un errore a schermo.
-
-==== - UC 6.2: Calcolo automatico del livello minimo di scorte#super[G]
-#label("uc-6.2")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Sono disponibili dati storici di consumo per il prodotto#super[G].
-- *Postcondizioni*:
-  - Viene calcolata una soglia minima suggerita (basata su media o modelli previsionali).
-- *Scenario principale*:
-  + Il sistema centralizzato analizza i dati di vendita e consumo.
-  + Applica una formula (es. media giornaliera…).
-  + Salva il livello suggerito.
-  + Notifica al supervisore dell'applicazione di una nuova soglia minima.
-- *Scenari alternativi*:
-  - Mancanza di dati.
-  - Viene proposta una soglia di default.
-
-==== - UC 6.3: Monitoraggio#super[G] scorte#super[G] minime
-#label("uc-6.3")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - I livelli minimi sono definiti o calcolati.
-  - L’inventario#super[G] è aggiornato.
-- *Postcondizioni*:
-  - Il sistema centralizzato rileva eventuali scorte#super[G] sotto la soglia e può generare estensioni.
-- *Scenario principale*:
-  + Il sistema centralizzato confronta costantemente scorte#super[G] attuali e soglie minime.
-  + Quando rileva un prodotto#super[G] sotto soglia → #link(label("uc-6.4"), underline("[UC 6.4]")), #link(label("uc-6.5"), underline("[UC 6.5]"))
-- *Estensioni*:
-  - #link(label("uc-6.4"), underline("[UC 6.4]"))
-  - #link(label("uc-6.5"), underline("[UC 6.5]"))
-
-==== - UC 6.4: Suggerimento azioni di riassortimento#super[G]
-#label("uc-6.4")
-- *Attori Principali*: Sistema Centralizzato, Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Il sistema ha rilevato scorte#super[G] inferiori alla soglia minima.
-- *Postcondizioni*:
-  - Il sistema propone un riassortimento#super[G] (da fornitore#super[G] o trasferimento#super[G] interno).
-- *Scenario principale*:
-  + Il sistema identifica un prodotto#super[G] sotto soglia.
-  + Propone:
-    - Richiesta di rifornimento#super[G] da fornitore#super[G] esterno.
-    - Trasferimento#super[G] da altro magazzino.
-  + Il supervisore approva o modifica il suggerimento.
-
-==== - UC 6.5: Notifica superamento soglia critica
-#label("uc-6.5")
-- *Attori Principali*: Sistema Centralizzato, Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Le scorte#super[G] di un prodotto#super[G] sono scese sotto un livello critico predefinito (ancora più basso della soglia minima).
-- *Postcondizioni*:
-  - L’utente riceve una notifica urgente.
-- *Scenario principale*:
-  //livello critico = livelli soglia minima/massima)
-  + Il sistema rileva che il livello critico è stato superato.
-  + Invia una notifica urgente al supervisore.
-
-#pagebreak()
-=== - UC 7: Bilanciamento#super[G] scorte#super[G] tra magazzini
-#label("uc-7")
-#figure(
-  image("assets/Casi d'uso-UC7.drawio.png", width: 90%),
-  caption: [UC7 - Bilanciamento#super[G] scorte#super[G] tra magazzini]
-)
-
-- *Attori Principali*: Sistema Centralizzato, Supervisore Globale.
-- *Precondizioni*:
-  - Il Sistema centralizzato dispone di dati aggiornati sui livelli di sicurezza delle scorte#super[G].
-  - Sono definiti i criteri di bilanciamento#super[G].
-- *Postcondizioni*:
-  - Il sistema centralizzato ha valutato la distribuzione delle scorte#super[G].
-  - Sono state proposte o avviati i trasferimenti#super[G] o altre azioni correttive.
-- *Scenario principale*:
-  + Il Sistema centralizzato analizza la distribuzione delle scorte#super[G] → #link(label("uc-7.1"), underline("[UC 7.1]"))
-  + Identifica eventuali squilibri → #link(label("uc-7.2"), underline("[UC 7.2]"))
-  + Valuta se effettuare il riassortimento#super[G] in modo automatica → #link(label("uc-7.3"), underline("[UC 7.3]"))
-  + Effettua il riassortimento#super[G] → #link(label("uc-7.4"), underline("[UC 7.4]"))
-  + Verifica#super[G] che i livelli minimi di sicurezza siano rispettati → #link(label("uc-4"), underline("[UC 4]"))
-- *Scenari alternativi*:
-  - Le proposte di trasferimento#super[G] violano i livelli minimi → scartate.
-  - Il Supervisore richiede intervento manuale → sistema centralizzato non automatizza.
-- *Inclusioni*:
-  - #link(label("uc-7.1"), underline("[UC 7.1]"))
-  - #link(label("uc-7.2"), underline("[UC 7.2]"))
-  - #link(label("uc-7.3"), underline("[UC 7.3]"))
-  - #link(label("uc-7.4"), underline("[UC 7.4]"))
-  - #link(label("uc-4"), underline("[UC 4]"))
-  - #link(label("uc-5"), underline("[UC 5]"))
-- *Trigger*:
-  - Attivazione programmata.
-  - Supervisore Globale fa richiesta esplicita.
-
-==== - UC 7.1: Analisi distribuzione delle scorte#super[G]
-#label("uc-7.1")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - I dati di inventario#super[G] sono disponibili e aggiornati.
-- *Postcondizioni*:
-  - Il sistema centralizzato ha ottenuto una lista della distribuzione per prodotto#super[G].
-- *Scenario principale*:
-  + Il Sistema centralizzato raccoglie dati da tutti i magazzini.
-  + Analizza le quantità e il fabbisogno previsto.
-  + Elabora un report con la situazione attuale.
-- *Trigger*:
-  - Inizio processo di bilanciamento#super[G]
-
-==== - UC 7.2: Identificazione squilibri tra magazzini
-#label("uc-7.2")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - è disponibile il risultato dell’analisi → #link(label("uc-7.1"), underline("[UC 7.1]"))
-- *Postcondizioni*:
-  - Viene individuata una lista di squilibri significativi.
-- *Scenario principale*:
-  + Il Sistema centralizzato confronta i livelli di stock tra magazzini.
-  + Applica regole predefinite per identificare squilibri.
-  + Memorizza gli esiti per successive valutazioni.
-
-==== - UC 7.3: Valutazione effettuazione del riassortimento#super[G] in modo automatico
-#label("uc-7.3")
-- *Attori Principali*: Sistema Centralizzato, Supervisore Globale.
-- *Precondizioni*:
-  - Il sistema centralizzato ha identificato squilibri di prodotto#super[G] in almeno un magazzino.
-- *Postcondizioni*:
-  - Il riassortimento#super[G] può essere avviato automaticamente.
-- *Scenario principale*:
-  + Il Sistema centralizzato verifica#super[G] i criteri per l’automazione (es. peso, costo, ...).
-  + Se i criteri sono rispettati, genera l’ordine#super[G] di riassortimento#super[G].
-  + Aggiorna lo stato operativo.
-
-==== - UC 7.4: Effettuazione del riassortimento#super[G]
-#label("uc-7.4")
-- *Attori Principali*: Sistema Centralizzato, Supervisore Locale.
-- *Precondizioni*:
-  - I criteri sono rispettati, quindi si può effettuare il riassortimento#super[G].
-- *Postcondizioni*:
-  - Il sistema centralizzato ha inserito nel sistema degli ordini#super[G] di trasferimento#super[G] interno.
-- *Scenario principale*:
-  + I criteri sono rispettati, quindi si può effettuare il riassortimento#super[G].
-  + Invia la notifica ai Supervisori.
-  + Vengono inseriti nel sistema centralizzato gli ordini#super[G] di trasferimento#super[G].
-
-#pagebreak()
-=== - UC 8: Gestione ordini#super[G] con scorte#super[G] insufficienti
-#label("uc-8")
-#figure(
-  image("assets/Casi d'uso-UC8.drawio.png", width: 60%),
-  caption: [UC8 - Gestione ordini#super[G] con scorte#super[G] insufficienti]
-)
-
-- *Attori Principali*: Magazzino Locale.
-- *Precondizioni*:
-  - Ordine#super[G] in elaborazione in un magazzino, ma la quantità di scorte#super[G] per soddisfare l'ordine#super[G] sono insufficienti.
-- *Postcondizioni*:
-  - Le scorte#super[G] per soddisfare l'ordine#super[G] sono inviate al magazzino.
-- *Scenario principale*:
-  + Il magazzino comunica al sistema centrale la quantità di scorte#super[G] richiesta.
-  + Il sistema centralizzato elabora la richiesta, ovvero decide da quali magazzini inviare la merce.
-  + Vengono richiesti trasferimento#super[G] di merce da magazzini selezionati dal sistema a magazzino richiedente per carenza merce. → #link(label("uc-5"), underline("[UC 5]"))
-- *Inclusioni*:
-  - #link(label("uc-5"), underline("[UC 5]"))
-- *Trigger*:
-  - Il numero di scorte#super[G] per risolvere un ordine#super[G] è insufficiente.
-
-#pagebreak()
-=== - UC 9: Individuazione di magazzini offline
-#label("uc-9")
-#figure(
-  image("assets/Casi d'uso-UC9.drawio.png", width: 90%),
-  caption: [UC9 - Individuazione di magazzini offline]
-)
-- *Attori Principali*: Sistema Centralizzato, Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Il sistema è operativo e tutti i magazzini sono registrati.
-  - Le connessioni sono attive o monitorabili.
-- *Postcondizioni*:
-  - Lo stato di connettività#super[G] di ciascun magazzino è aggiornato.
-  - Eventuali disconnessioni sono rilevate e notificate.
-- *Scenario principale*:
-  + Il sistema centralizzato esegue periodicamente controlli di connettività#super[G]. → #link(label("uc-9.1"), underline("[UC 9.1]"))
-  + In caso di disconnessione, il sistema centralizzato genera una segnalazione. → #link(label("uc-9.2"), underline("[UC 9.2]"))
-  + Lo stato di un magazzino viene aggiornato come offline, online, non operativo, operativo. → #link(label("uc-9.3"), underline("[UC 9.3]"))
-  + Se un magazzino va offline, si attiva un timer oltre il quale gli ordini#super[G] di elaborazione del magazzino vengono annullati ed elaborati dal sistema centralizzato.
-  + Se un magazzino torna online, prima dello scadere del timer, lo stato viene aggiornato e le operazioni riprendono normalmente.
-- *Inclusioni*:
-  - #link(label("uc-9.1"), underline("[UC 9.1]"))
-  - #link(label("uc-9.3"), underline("[UC 9.3]"))
-- *Estensioni*:
-  - #link(label("uc-9.2"), underline("[UC 9.2]"))
-- *Trigger*:
-  - Pianificazione temporizzata del controllo.
-  - Cambiamento improvviso dello stato di rete#super[G].
-  - Rientro online di un magazzino.
-
-==== - UC 9.1: Controllo periodico della connettività#super[G]
-#label("uc-9.1")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - I magazzini sono registrati nel sistema.
-  - La rete#super[G] è parzialmente o totalmente attiva.
-- *Postcondizioni*:
-  - Lo stato di connessione viene aggiornato.
-- *Scenario principale*:
-  + Il sistema centralizzato effettua un ping o heartbeat a ogni magazzino.
-  + Attende la risposta per un periodo massimo definito.
-  + Se la risposta non arriva → attiva #link(label("uc-9.2"), underline("[UC 9.2]"))
-  + Se la risposta è positiva → stato “online”.
-- *Estensioni*:
-  - #link(label("uc-9.2"), underline("[UC 9.2]"))
-  - #link(label("uc-11"), underline("[UC 11]"))
-
-==== - UC 9.2: Generazione notifica di disconnessione
-#label("uc-9.2")
-- *Attori Principali*: Sistema centralizzato, Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Un magazzino non ha risposto alla verifica#super[G] di connettività#super[G].
-- *Postcondizioni*:
-  - Il sistema centralizzato invia una notifica dell’anomalia al Supervisore.
-  - Lo stato del magazzino è aggiornato a “offline”.
-- *Scenario principale*:
-  + Il sistema centralizzato rileva che il magazzino non risponde.
-  + Crea una notifica di disconnessione.
-  + Invia la notifica email ai supervisori globali e al supervisore locale responsabile#super[G] del magazzino
-  + Aggiorna lo stato del magazzino in “offline”.
-
-==== - UC 9.3: Aggiornamento stato del magazzino
-#label("uc-9.3")
-- *Attori Principali*: Sistema centralizzato.
-- *Attori Secondari*: Supervisore Globale, Supervisore Locale.
-
-- *Precondizioni*:
-  - Il sistema centralizzato ha eseguito un controllo o ha ricevuto un evento dallo stato operativo del nodo#super[G].
-- *Postcondizioni*:
-  - Lo stato del magazzino viene aggiornato e reso visibile ai supervisori.
-- *Scenario principale*:
-  + Il sistema centralizzato rileva o riceve una variazione di stato (manuale o automatica).
-  + Classifica il magazzino come:
-    - Online: connesso e funzionante.
-    - Offline: disservizio di rete#super[G] = non connesso.
-    - Operativo: abilitato a svolgere tutte le funzioni.
-    - Non operativo: disservizio fisico (es. da manutenzione o guasti).
-  + Mostra lo stato aggiornato nell’interfaccia supervisori.
-
-#pagebreak()
-=== - UC 10: Gestione dei disservizi
-#label("uc-10")
-#figure(
-  image("assets/Casi d'uso-UC10.drawio.png", width: 90%),
-  caption: [UC10 - Gestione dei disservizi]
-)
-
-- *Attori Principali*: Sistema Centralizzato, Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Il sistema è attivo.
-  - I magazzini sono registrati.
-  - È abilitato il monitoraggio#super[G] continuo.
-- *Postcondizioni*:
-  - Il disservizio viene classificato (offline o non operativo).
-  - Lo stato del magazzino viene aggiornato.
-  - Se necessario, viene attivato un trasferimento#super[G] di scorte#super[G] a magazzini vicini.
-- *Scenario principale*:
-  + Il sistema centralizzato monitora costantemente i magazzini → #link(label("uc-10.1"), underline("[UC 10.1]"))
-  + Un magazzino risulta non raggiungibile o guasto
-  + Il sistema centralizzato classifica il disservizio:
-    - Se di rete#super[G] → #link(label("uc-10.3"), underline("[UC 10.3]"))
-    - Se fisico → #link(label("uc-10.2"), underline("[UC 10.2]"))
-  + Se un magazzino offline diventa non operativo → #link(label("uc-10.4"), underline("[UC 10.4]"))
-  + Se il magazzino è non operativo, il sistema centralizzato attiva il trasferimento#super[G] di scorte#super[G] → #link(label("uc-10.5"), underline("[UC 10.5]"))
-  + Supervisori sono informati via notifica email.
-- *Inclusioni*:
-  - #link(label("uc-10.1"), underline("[UC 10.1]"))
-- *Estensioni*:
-  - #link(label("uc-10.2"), underline("[UC 10.2]"))
-  - #link(label("uc-10.3"), underline("[UC 10.3]"))
-  - #link(label("uc-10.4"), underline("[UC 10.4]"))
-  - #link(label("uc-10.5"), underline("[UC 10.5]"))
-  - #link(label("uc-15"), underline("[UC 15]"))
-- *Trigger*:
-  - Eventi di guasto, disconnessione, o cambio di stato.
-
-==== - UC 10.1: Monitoraggio#super[G] stato operativo
-#label("uc-10.1")
-- *Attori Principali*: Sistema Centralizzato, Supervisore Globale, Supervisore Locale.
-- *Precondizioni*:
-  - Il sistema è attivo.
-  - I magazzini inviano segnali periodici.
-- *Postcondizioni*:
-  - Stato aggiornato come operativo/non operativo/offline.
-- *Scenario principale*:
-  + Il sistema centralizzato verifica#super[G] connettività#super[G] e integrità#super[G] dei nodi#super[G].
-  + Se fallisce uno dei due controlli → attiva estensione #link(label("uc-10.2"), underline("[UC 10.2]")) o #link(label("uc-10.3"), underline("[UC 10.3]"))
-- *Scenario alternativo*:
-  - I Supervisori Locali o Globali modificano manualmente lo stato del magazzino per disservizio.
-- *Estensioni*:
-  - #link(label("uc-10.2"), underline("[UC 10.2]"))
-  - #link(label("uc-10.3"), underline("[UC 10.3]"))
-
-==== - UC 10.2: Rilevamento disservizio fisico
-#label("uc-10.2")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Ricevuti segnali di guasto hardware o software critico.
-- *Postcondizioni*:
-  - Stato magazzino impostato a non operativo.
-  - Supervisori informati.
-- *Scenario principale*:
-  + Il sistema centralizzato riceve un errore hardware o di servizio locale.
-  + Aggiorna lo stato del magazzino in non operativo.
-  + Notifica il disservizio.
-
-==== - UC 10.3: Rilevamento disservizio di rete
-#label("uc-10.3")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Magazzino non risponde ai ping o segnali di rete#super[G].
-- *Postcondizioni*:
-  - Stato aggiornato a offline.
-- *Scenario principale*:
-  + Il sistema centralizzato rileva assenza di connessione.
-  + Il sistema centralizzato notifica i supervisori.
-  + Imposta lo stato a offline.
-  + Avvia monitoraggio#super[G] continuato (con timer).
-
-==== - UC 10.4: Transizione da offline a non operativo
-#label("uc-10.4")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Un magazzino è già offline.
-  - Si rileva successivamente un errore hardware.
-- *Postcondizioni*:
-  - Stato aggiornato a non operativo.
-- *Scenario principale*:
-  + Magazzino è offline → #link(label("uc-10.3"), underline("[UC 10.3]"))
-  + Viene rilevato un guasto hardware in parallelo.
-  + Il sistema centralizzato aggiorna lo stato a non operativo.
-  + Attiva trasferimento#super[G] scorte#super[G] → #link(label("uc-10.5"), underline("[UC 10.5]"))
-- *Inclusioni*:
-  - #link(label("uc-10.3"), underline("[UC 10.3]"))
-- *Estensioni*:
-  - #link(label("uc-10.5"), underline("[UC 10.5]"))
-
-==== - UC 10.5: Sopperimento ordini#super[G]
-#label("uc-10.5")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Un magazzino è non operativo.
-  - Altri magazzini hanno disponibilità di scorte#super[G].
-- *Postcondizioni*:
-  - Le scorte#super[G] sono riposizionate presso i magazzini vicini.
-- *Scenario principale*:
-  + Il sistema centralizzato valuta le scorte#super[G] nei magazzini circostanti.
-  + Determina quantità e priorità dei prodotti#super[G] da trasferire.
-  + Attiva un flusso di trasferimento#super[G] automatizzato → #link(label("uc-5"), underline("[UC 5]"))
-- *Estensioni*:
-  - #link(label("uc-5"), underline("[UC 5]"))
-
-#pagebreak()
-=== - UC 11: Gestione magazzino online
-#label("uc-11")
-#figure(
-  image("assets/Casi d'uso-UC11.drawio.png", width: 90%),
-  caption: [UC11 - Gestione magazzino che torna online]
-)
-
-- *Attori Principali*: Sistema Centralizzato, Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Il magazzino è stato precedentemente segnalato come offline.
-  - Il sistema centralizzato è attivo e in ascolto di segnali di ritorno online.
-- *Postcondizioni*:
-  - Il magazzino è marcato come online e operativo.
-  - I dati locali sono sincronizzati con il sistema centralizzato centrale.
-  - Eventuali conflitti di dati sono gestiti.
-- *Scenario principale*:
-  + Il sistema centralizzato rileva che il magazzino è tornato online → #link(label("uc-11.1"), underline("[UC 11.1]"))
-  + Avvia la sincronizzazione dei dati → #link(label("uc-11.2"), underline("[UC 11.2]"))
-  + Verifica#super[G] eventuali conflitti tra dati locali e cloud → #link(label("uc-11.3"), underline("[UC 11.3]"))
-  + Aggiorna lo stato del magazzino a "operativo".
-  + Notifica ai supervisori.
-- *Inclusioni*:
-  - #link(label("uc-11.1"), underline("[UC 11.1]"))
-  - #link(label("uc-11.2"), underline("[UC 11.2]"))
-- *Estensioni*:
-  - #link(label("uc-11.3"), underline("[UC 11.3]"))
-  - #link(label("uc-9.2"), underline("[UC 9.2]"))
-- *Trigger*:
-  - Il sistema riceve un segnale dal magazzino.
-
-==== - UC 11.1: Rilevamento ritorno online
-#label("uc-11.1")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Il magazzino era offline.
-  - Il sistema centralizzato monitora attivamente la rete#super[G].
-- *Postcondizioni*:
-  - Il sistema centralizzato identifica il ritorno online del magazzino.
-  - Stato aggiornato a "online".
-- *Scenario principale*:
-  + Il sistema centralizzato riceve un segnale.
-  + Valida che la comunicazione è stabile.
-  + Aggiorna lo stato del magazzino.
-
-==== - UC 11.2: Sincronizzazione dati inventario#super[G]
-#label("uc-11.2")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Il magazzino è online.
-  - Sono disponibili dati locali modificati.
-- *Postcondizioni*:
-  - I dati di inventario#super[G] sono sincronizzati tra magazzino e cloud.
-  - Conflitti (se presenti) sono rilevati → gestiti in #link(label("uc-11.3"), underline("[UC 11.3]"))
-- *Scenario principale*:
-  + Il sistema centralizzato accede ai dati locali di inventario#super[G].
-  + Confronta con il cloud.
-  + Sincronizza i dati coerenti.
-  + Se ci sono conflitti → invoca #link(label("uc-11.3"), underline("[UC 11.3]"))
-- *Estensioni*:
-  - #link(label("uc-11.3"), underline("[UC 11.3]"))
-
-==== - UC 11.3: Risoluzione conflitti di dati
-#label("uc-11.3")
-- *Attori Principali*: Sistema Centralizzato, eventualmente Supervisore Locale.
-- *Precondizioni*:
-  - Sono stati rilevati conflitti nei dati durante la sincronizzazione.
-- *Postcondizioni*:
-  - I dati sono risolti secondo politiche predefinite o approvazione supervisore.
-  - Il magazzino ha inventario#super[G] aggiornato e coerente.
-- *Scenario principale*:
-  + Il sistema centralizzato analizza la natura dei conflitti (es. scorte#super[G]diverse, timestamp).
-  + Applica una strategia:
-    - priorità temporale.
-    - priorità cloud.
-    - intervento supervisore.
-  + Aggiorna l’inventario#super[G] finale.
-- *Scenario alternativo*:
-  - Il sistema centralizzato non riesce a risolvere automaticamente, quindi avviene una convalida manuale dati da parte del supervisore.
-
-=== - UC 12: Monitoraggio#super[G] centralizzato delle scorte#super[G]
-#label("uc-12")
-#figure(
-  image("assets/Casi d'uso-UC12.drawio.png", width: 90%),
-  caption: [UC12 - Monitoraggio#super[G] centralizzato delle scorte#super[G]]
-)
-
-- *Attori Principali*: Sistema Centralizzato, Supervisore Globale, Supervisore Locale.
-- *Precondizioni*:
-  - Il sistema è online.
-  - I microservizi#super[G] di inventario#super[G] dei magazzini sono sincronizzati con il cloud.
-- *Postcondizioni*:
-  - Il supervisore visualizza in tempo reale le scorte#super[G] di tutti i magazzini.
-- *Scenario principale*:
-  + Il Supervisore accede al sistema.
-  + Il Sistema centralizzato interroga il microservizio#super[G] cloud per i dati aggregati delle scorte#super[G].
-  + Il Sistema centralizzato mostra la dashboard#super[G] con i livelli di inventario#super[G] per ciascun magazzino.
-  + Il Supervisore analizza la situazione e può intervenire con azioni gestionali (es. riassortimento#super[G], trasferimento#super[G]).
-- *Scenario alternativo*:
-  - Il sistema centralizzato segnala l’indisponibilità temporanea dei dati per un magazzino offline → #link(label("uc-9"), underline("[UC 9]"))
-- *Inclusioni*:
-  - #link(label("uc-12.1"), underline("[UC 12.1]"))
-  - #link(label("uc-12.2"), underline("[UC 12.2]"))
-  - #link(label("uc-4"), underline("[UC 4]"))
-- *Estensioni*:
-  - #link(label("uc-9.1"), underline("[UC 9.1]"))
-  - #link(label("uc-9.3"), underline("[UC 9.3]"))
-  - #link(label("uc-11"), underline("[UC 11]"))
-- *Trigger*:
-  - Il supervisore accede alla dashboard#super[G] di monitoraggio#super[G] centralizzato.
-
-==== - UC 12.1: Visualizzazione dashboard#super[G] scorte#super[G] distribuite
-#label("uc-12.1")
-- *Attori Principali*: Supervisore Globale, Supervisore Locale.
-- *Precondizioni*:
-  - L’utente è autenticato con ruolo autorizzato.
-- *Postcondizioni*:
-  - La dashboard#super[G] è aggiornata e visibile.
-- *Scenario principale*:
-  + L’utente accede alla sezione “Monitoraggio#super[G] Scorte#super[G]”.
-  + Il sistema presenta una dashboard#super[G] con livelli per ogni magazzino.
-  + L’utente può filtrare, ordinare e consultare i dati.
-
-==== - UC 12.2: Interrogazione microservizio#super[G] cloud inventario#super[G]
-#label("uc-12.2")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - I microservizi#super[G] locali sono sincronizzati con il microservizio#super[G] cloud.
-- *Postcondizioni*:
-  - I dati aggiornati delle scorte#super[G] sono ottenuti.
-- *Scenario principale*:
-  + Il sistema centralizzato invia una richiesta al database del microservizio#super[G] cloud.
-  + Riceve i dati aggiornati delle scorte#super[G] per tutti i magazzini.
-  + Aggiorna la dashboard#super[G] centralizzata.
-
-#pagebreak()
-=== - UC 13: Gestione aggiornamenti simultanei dell’inventario#super[G]
-#label("uc-13")
-#figure(
-  image("assets/Casi d'uso-UC13.drawio.png", width: 90%),
-  caption: [UC13 - Gestione aggiornamenti simultanei dell'inventario#super[G]]
-)
-- *Attori Principali*: Sistema Centralizzato.
-- *Attori Secondari:*: Supervisore Globale, Supervisore Locale.
-- *Precondizioni*:
-  - Due o più magazzini tentano di aggiornare simultaneamente lo stesso dato di inventario#super[G].
-- *Postcondizioni*:
-  - Gli aggiornamenti vengono gestiti correttamente, senza perdita o corruzione di dati.
-- *Scenario principale*:
-  + Due o più magazzini inviano aggiornamenti concorrenti.
-  + Il sistema centralizzato riceve le richieste e ne verifica#super[G] la concorrenza.
-  + Applica un meccanismo di controllo versioni/timestamp → #link(label("uc-13.1"), underline("[UC 13.1]"))
-  + Identifica conflitti, se presenti → #link(label("uc-13.2"), underline("[UC 13.2]"))
-  + Risolve i conflitti secondo una politica definita → #link(label("uc-13.3"), underline("[UC 13.3]"))
-  + Aggiorna correttamente il dato finale e notifica i magazzini coinvolti.
-- *Scenari alternativi*:
-  - Gli aggiornamenti non sono concorrenti:
-    - il sistema centralizzato li elabora normalmente.
-  - Il conflitto non può essere risolto automaticamente:
-    - Viene generata una segnalazione al Supervisore Locale → #link(label("uc-13.4"))[UC 15.4]
-- *Inclusioni*:
-  - #link(label("uc-13.1"), underline("[UC 13.1]"))
-  - #link(label("uc-13.2"), underline("[UC 13.2]"))
-  - #link(label("uc-13.3"), underline("[UC 13.3]"))
-- *Estensioni*:
-  - #link(label("uc-13.4"), underline("[UC 13.4]"))
-  - #link(label("uc-11.3"), underline("[UC 11.3]"))
-- *Trigger*:
-  - Invio simultaneo di aggiornamenti da più magazzini sullo stesso prodotto#super[G] o voce di inventario#super[G].
-
-==== - UC 13.1: Applicazione controllo versioni o timestamp
-#label("uc-13.1")
-*Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - È in corso un aggiornamento dell’inventario#super[G].
-- *Postcondizioni*:
-  - Le modifiche sono tracciate con una versione/timestamp.
-- *Scenario principale*:
-  + Ogni richiesta di aggiornamento include un identificatore temporale o di versione.
-  + Il sistema centralizzato confronta la versione con lo stato attuale dell’inventario#super[G].
-  + Salva l’aggiornamento o lo mette in attesa se non coerente.
-- *Inclusioni*:
-  - #link(label("uc-14.1"), underline("[UC 14.1]")) → accodamento e gestione simultaneità.
-
-==== - UC 13.2: Identificazione di conflitti di aggiornamento
-#label("uc-13.2")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Sono presenti richieste concorrenti per lo stesso dato.
-- *Postcondizioni*:
-  - Il conflitto è riconosciuto e pronto per essere gestito.
-- *Scenario principale*:
-  + Il sistema centralizzato rileva che due aggiornamenti sono incompatibili o simultanei.
-  + Marca il conflitto e prepara un’azione correttiva.
-
-==== - UC 13.3: Risoluzione dei conflitti di aggiornamento
-#label("uc-13.3")
-- *Attori Principali*: Sistema Centralizzato.
-- *Attori Secondari*: Supervisore Globale, Supervisore Locale.
-- *Precondizioni*:
-  - È stato rilevato un conflitto.
-- *Postcondizioni*:
-  - Il conflitto è stato risolto e l’inventario#super[G] è stato aggiornato.
-- *Scenario principale*:
-  + Il sistema centralizzato applica una politica di risoluzione (es. “vince” ultima modifica).
-  + Notifica gli attori coinvolti se necessario.
-
-==== - UC 13.4: Segnalazione conflitto irrisolto
-#label("uc-13.4")
-- *Attori Principali*: Sistema Centralizzato, Supervisore Locale.
-- *Precondizioni*:
-  - Il conflitto non può essere risolto automaticamente.
-- *Postcondizioni*:
-  - Il Supervisore riceve una notifica con i dettagli del conflitto.
-- *Scenario principale*:
-  + Il sistema centralizzato rileva che il conflitto richiede l’intervento di un supervisore.
-  + Invia una notifica al Supervisore Locale con i dettagli dei tentativi di aggiornamento.
-  + Il Supervisore decide come procedere (manualmente o tramite strumenti di amministrazione).
-
-#pagebreak() 
-=== - UC 14: Gestione ordini#super[G] simultanei per uno stesso prodotto#super[G]
-#label("uc-14")
-#figure(
-  image("assets/Casi d'uso-UC14.drawio.png", width: 90%),
-  caption: [UC14 - Gestione ordini#super[G] simultanei per uno stesso prodotto#super[G]]
-)
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Più richieste di ordine#super[G] per lo stesso prodotto#super[G] arrivano in contemporanea da uno o più magazzini.
-- *Postcondizioni*:
-  - Gli ordini#super[G] sono processati in modo coordinato e coerente, secondo criteri di assegnazione e priorità.
-- *Scenario principale*:
-  + Il sistema centralizzato riceve più ordini#super[G] contemporanei per lo stesso prodotto#super[G].
-  + Il sistema centralizzato attiva la gestione della coda per gli ordini#super[G] simultanei → #link(label("uc-14.1"), underline("[UC 14.1]"))
-  + Il sistema centralizzato assegna le scorte#super[G] disponibili secondo criteri predefiniti → #link(label("uc-14.2"), underline("[UC 14.2]"))
-  + In caso di conflitto (scorte#super[G] insufficienti), applica una politica di priorità → #link(label("uc-14.3"), underline("[UC 14.3]"))
-  + Aggiorna l’inventario#super[G] e notifica i magazzini interessati.
-- *Scenari alternativi*:
-  - Le scorte#super[G] sono sufficienti per tutti gli ordini#super[G]:
-    - procedere con elaborazione diretta.
-  - Nessun criterio di priorità consente la decisione:
-    - Estensione di → #link(label("uc-14.4"), underline("[UC 14.4]"))
-- *Inclusioni*:
-  - #link(label("uc-14.1"), underline("[UC 14.1]"))
-  - #link(label("uc-14.2"), underline("[UC 14.2]"))
-  - #link(label("uc-14.3"), underline("[UC 14.3]"))
-- *Estensioni*:
-  - #link(label("uc-14.4"), underline("[UC 14.4]"))
-  - #link(label("uc-7"), underline("[UC 7]")) → nel caso in cui esito della gestione ordini#super[G] riduca le scorte#super[G] sotto la soglia critica.
-- *Trigger*:
-  - Invio simultaneo di più ordini#super[G] per lo stesso prodotto#super[G].
-
-==== - UC 14.1: Gestione coda per ordini#super[G] simultanei
-#label("uc-14.1")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Il sistema centralizzato riceve più ordini#super[G] per lo stesso prodotto#super[G] in un breve intervallo di tempo.
-- *Postcondizioni*:
-  - Gli ordini#super[G] sono messi in coda.
-- *Scenario principale*:
-  + Il sistema centralizzato identifica gli ordini#super[G] concorrenti.
-  + Gli ordini#super[G] vengono valutati e messi in coda con una politica FCFS _(First Come, First Served)_.
-
-==== - UC 14.2: Assegnazione delle scorte#super[G] secondo criteri predefiniti
-#label("uc-14.2")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Sono presenti ordini#super[G] concorrenti e scorte#super[G] limitate.
-- *Postcondizioni*:
-  - Le scorte#super[G] sono assegnate secondo una logica deterministica (es. ordinamento temporale, località, criticità).
-- *Scenario principale*:
-  + Il sistema centralizzato valuta le richieste in base ai criteri impostati (es. priorità geografica, urgenza, data di richiesta).
-  + Assegna le scorte#super[G] disponibili agli ordini#super[G] soddisfacibili.
-  + Rilascia una risposta di conferma, conferma parziale o rifiuto.
-
-==== - UC 14.3: Applicazione di criteri di priorità
-#label("uc-14.3")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Gli ordini#super[G] sono in conflitto e le scorte#super[G] non bastano.
-- *Postcondizioni*:
-  - L’ordine#super[G] prioritario viene soddisfatto.
-- *Scenario principale*:
-  + Il sistema centralizzato recupera la configurazione dei criteri di priorità.
-  + Ordina gli ordini#super[G] per livello di priorità.
-  + Applica le assegnazioni seguendo l’ordine#super[G] definito.
-  + Per tracciabilità scrive le scelte effettuate nel log#super[G].
-
-==== - UC 14.4: Segnalazione ordine#super[G] in conflitto non risolvibile
-#label("uc-14.4")
-- *Attori Principali*: Sistema Centralizzato, Supervisore Locale
-- *Precondizioni*:
-  - Il sistema centralizzato non riesce a decidere l’assegnazione tra ordini#super[G] concorrenti.
-- *Postcondizioni*:
-  - Un Supervisore prende una decisione manuale.
-- *Scenario principale*:
-  + Il sistema centralizzato rileva che i criteri non portano a una decisione univoca.
-  + Genera una notifica per il Supervisore Locale.
-  + Il Supervisore visualizza i dettagli dei conflitti e decide quale ordine#super[G] soddisfare.
-  + Il sistema centralizzato applica la scelta e aggiorna i dati.
-
-#pagebreak()
-=== - UC 15: Gestione autonoma delle operazioni di magazzino come edge nodes
-#label("uc-15")
-#figure(
-  image("assets/Casi d'uso-UC15.drawio.png", width: 90%),
-  caption: [UC15 - Gestione autonoma delle operazioni di magazzino come edge nodes]
-)
-
-- *Attori Principali*: Sistema Centralizzato.
-- *Attori Secondari*: Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Il magazzino è operativo, connesso localmente, anche se non connesso al cloud.
-- *Postcondizioni*:
-  - Le operazioni sono gestite in locale, con sincronizzazione in cloud quando necessario.
-- *Scenario principale*:
-  + Il sistema centralizzato rileva una richiesta di operazione sui dati di inventario#super[G] da parte del magazzino locale.
-  + Il sistema centralizzato valuta se l’operazione può essere gestita in locale.
-  + Se sì, esegue l’elaborazione localmente per ridurre il traffico di rete#super[G] → #link(label("uc-15.1"), underline("[UC 15.1]")) e #link(label("uc-15.2"), underline("[UC 15.2]"))
-  + Se l’operazione è di scrittura, il sistema centralizzato attiva la sincronizzazione col cloud → #link(label("uc-15.3"), underline("[UC 15.3]"))
-  + Il sistema centralizzato aggiorna lo stato delle scorte#super[G] localmente e nel cloud (se necessario).
-  + Il Supervisore Locale o Globale può essere notificato di eventuali discrepanze.
-- *Inclusioni*:
-  - #link(label("uc-15.1"), underline("[UC 15.1]"))
-  - #link(label("uc-15.2"), underline("[UC 15.2]"))
-  - #link(label("uc-15.3"), underline("[UC 15.3]"))
-- *Trigger*:
-  - Richiesta locale di elaborazione o modifica ai dati di inventario#super[G].
-
-==== - UC 15.1: Abilitazione operazioni locali su inventario#super[G]
-#label("uc-15.1")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Il magazzino ha una copia locale dell’inventario#super[G].
-- *Postcondizioni*:
-  - Le operazioni possono essere effettuate localmente.
-- *Scenario principale*:
-  + Il sistema centralizzato verifica#super[G] lo stato di aggiornamento locale dei dati.
-  + Abilita lettura e scrittura sull’inventario#super[G] locale, se i dati sono coerenti (per elaborazione degli ordini#super[G]).
-
-==== - UC 15.2: Esecuzione elaborazioni locali
-#label("uc-15.2")
-- *Attori Principali*: Supervisore Locale.
-- *Precondizioni*:
-  - Il magazzino riceve una richiesta (calcolo disponibilità, assegnazione ordine#super[G], ...)
-- *Postcondizioni*:
-  - I dati sono aggiornati in locale.
-- *Scenario principale*:
-  + Il supervisore locale esegue l’elaborazione localmente senza coinvolgere il cloud.
-  + Restituisce l’esito all’attore interessato (o ad un altro microservizio#super[G]).
-
-==== - UC 15.3: Sincronizzare con il cloud in seguito a operazione di scrittura
-#label("uc-15.3")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - È stata effettuata una modifica locale ai dati (scrittura).
-- *Postcondizioni*:
-  - Il dato è sincronizzato con il cloud.
-- *Scenario principale*:
-  + Il sistema centralizzato intercetta la scrittura effettuata localmente.
-  + Invia l’aggiornamento al cloud.
-  + Risolve eventuali conflitti tramite logica di controllo versioni o timestamp → #link(label("uc-13.2"), underline("[UC 13.2]")), #link(label("uc-13.3"), underline("[UC 13.3]"))
-
-- *Inclusioni*:
-  - #link(label("uc-13.2"), underline("[UC 13.2]"))
-  - #link(label("uc-13.3"), underline("[UC 13.3]"))
-
-#pagebreak()
-=== - UC 16: Sincronizzazione posticipata
-#label("uc-16")
-#figure(
-  image("assets/Casi d'uso-UC16.drawio.png", width: 60%),
-  caption: [UC16 - Sincronizzazione posticipata]
-)
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Il cloud è irraggiungibile al momento della scrittura locale.
-- *Postcondizioni*:
-  - I dati saranno sincronizzati alla prima occasione utile.
-- *Scenario principale*:
-  + Il sistema centralizzato salva localmente le modifiche in una coda di sincronizzazione.
-  + Alla riconnessione, invia le modifiche e gestisce eventuali conflitti.
-
-#pagebreak()
-=== - UC 17: Gestione indipendente e sincronizzata dell'inventario#super[G]
-#label("uc-17")
-#figure(
-  image("assets/Casi d'uso-UC17.drawio.png", width: 90%),
-  caption: [UC17 - Gestione indipendente e sincronizzata dell'inventario#super[G]]
-)
-- *Attori Principali*: Supervisore Locale, Sistema Centralizzato.
-- *Attori Secondari*: Supervisore Globale.
-- *Precondizioni*:
-  - Il magazzino locale è operativo e connesso al sistema centrale o abilitato a operare in locale.
-- *Postcondizioni*:
-  - Le operazioni di inventario#super[G] vengono eseguite localmente e sincronizzate con il sistema centralizzato.
-- *Scenario principale*:
-  + Il Supervisore Locale esegue un’operazione sull’inventario#super[G]: inserimento, modifica o trasferimento#super[G] → #link(label("uc-17.1"), underline("[UC 17.1]"))
-  + Il sistema locale aggiorna l’inventario#super[G] internamente.
-  + Il sistema centralizzato riceve un evento dell'operazione di aggiornamento.
-  + Avviene la sincronizzazione automatica con il cloud → #link(label("uc-11.2"), underline("[UC 11.2]"))
-  + In caso di conflitto con dati centrali, il sistema centralizzato avvia una procedura di risoluzione → #link(label("uc-11.3"), underline("[UC 11.3]"))
-- *Scenari alternativi*:
-  - Connessione al cloud è temporaneamente assente:
-    - I dati sono messi in coda e sincronizzati appena disponibile → #link(label("uc-17.2"), underline("[UC 17.2]"))
-  - Il conflitto non è risolvibile automaticamente:
-    - Richiede intervento del Supervisore Globale → #link(label("uc-17.3"), underline("[UC 17.3]"))
-- *Inclusioni*:
-  - #link(label("uc-17.1"), underline("[UC 17.1]"))
-  - #link(label("uc-11.2"), underline("[UC 11.2]"))
-- *Estensioni*:
-  - #link(label("uc-17.2"), underline("[UC 17.3]"))
-  - #link(label("uc-17.3"), underline("[UC 17.4]"))
-  - #link(label("uc-11.3"), underline("[UC 11.3]"))
-- *Trigger*:
-  - Inizio di un’operazione locale su inventario#super[G] (inserimento, modifica o trasferimento#super[G]).
-
-==== - UC 17.1: Esecuzione operazione locale (inserimento, modifica, trasferimento#super[G])
-#label("uc-17.1")
-- *Attori Principali*: Supervisore Locale.
-- *Precondizioni*:
-  - Il magazzino locale è disponibile e configurato per operazioni autonome.
-- *Postcondizioni*:
-  - Un'operazione di inventario#super[G] è completata localmente.
-- *Scenario principale*:
-  + Il Supervisore Locale seleziona il tipo di operazione (es. inserimento nuovo stock, modifica quantità, trasferimento#super[G] ad altro magazzino).
-  + Inserisce i dati necessari.
-  + Conferma l’operazione.
-  + Viene registrato il cambiamento nel magazzino locale.
-
-==== - UC 17.2: Sincronizzazione differita (mancanza di rete)
-#label("uc-17.2")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - L’operazione locale è stata effettuata, ma il cloud non è raggiungibile.
-- *Postcondizioni*:
-  - I dati sono messi in coda per la sincronizzazione successiva.
-- *Scenario principale*:
-  + Il sistema centralizzato rileva l’assenza di #super[G].
-  + Memorizza l’operazione in una coda locale.
-  + Appena disponibile la connessione, invia i dati al cloud.
-
-==== - UC 17.3: Risoluzione manuale conflitti di sincronizzazione
-#label("uc-17.3")
-- *Attori Principali*: Sistema Centralizzato, Supervisore Globale.
-- *Precondizioni*:
-  - La sincronizzazione ha generato un conflitto non risolvibile automaticamente.
-- *Postcondizioni*:
-  - Il conflitto è risolto manualmente e i dati sono aggiornati.
-- *Scenario principale*:
-  + Il sistema centralizzato invia una notifica email di un conflitto di aggiornamento.
-  + Il Supervisore Globale accede alla dashboard#super[G] di risoluzione.
-  + Analizza i dati locali e centrali.
-  + Decide quale versione mantenere e conferma la scelta.
-  + Il sistema centralizzato aggiorna i dati in base alla decisione.
-
-#pagebreak()
-=== - UC 18: Monitoraggio#super[G] continuo delle attività di sistema
-#label("uc-18")
-#figure(
-  image("assets/Casi d'uso-UC18.drawio.png", width: 90%),
-  caption: [UC18 - Monitoraggio#super[G] continuo delle attività di sistema]
-)
-- *Attori Principali*: Sistema Centralizzato.
-- *Attori Secondari*: Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Il sistema è operativo.
-  - I servizi#super[G] di monitoraggio#super[G] sono attivi.
-- *Postcondizioni*:
-  - Le attività sospette sono state rilevate, tracciate e notificate.
-  - I log#super[G] delle operazioni sono aggiornati.
-- *Scenario principale*:
-  + Il sistema centralizzato attiva i moduli di monitoraggio#super[G] centralizzato → #link(label("uc-18.1"), underline("[UC 18.1]"))
-  + Il sistema centralizzato registra tutti gli accessi (inclusi login/logout) e le operazioni rilevanti → #link(label("uc-18.3"), underline("[UC 18.3]"))
-  + Il sistema centralizzato analizza in tempo reale il comportamento degli utenti e dei componenti distribuiti.
-  + Se viene rilevata un'attività sospetta o anomala:
-    - Il sistema centralizzato genera una notifica per i supervisori.
-    - L’attività viene registrata nei log#super[G].
-    - I Supervisori possono visualizzare e analizzare i log#super[G] attraverso l'interfaccia.
-- *Scenari alternativi*:
-  - Il sistema centralizzato rileva numerosi tentativi di accesso falliti → #link(label("uc-18.4"), underline("[UC 18.4]"))
-  - Il sistema centralizzato registra accessi da IP non noti o da località insolite → #link(label("uc-18.2"), underline("[UC 18.2]"))
-  - Il Supervisore analizza i log#super[G] in seguito a una notifica → può avviare un’azione correttiva
-- *Inclusioni*:
-  - #link(label("uc-18.1"), underline("[UC 18.1]"))
-  - #link(label("uc-18.2"), underline("[UC 18.2]"))
-  - #link(label("uc-18.3"), underline("[UC 18.3]"))
-  - #link(label("uc-18.4"), underline("[UC 18.4]"))
-- *Trigger*:
-  - Attività da parte di utenti o sistemi (es. login, operazioni sui dati).
-  - Tentativi di accesso anomalo.
-
-==== - UC 18.1: Attivazione monitoraggio#super[G] centralizzato
-#label("uc-18.1")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Sistema in esecuzione.
-- *Postcondizioni*:
-  - Monitoraggio#super[G] avviato.
-- *Scenario principale*:
-  + Il sistema centralizzato attiva i moduli di monitoraggio#super[G] durante l’avvio.
-  + I componenti di rete#super[G] e autenticazione#super[G] iniziano a comunicare con il modulo centralizzato.
-  + Il sistema centralizzato conferma l’attivazione.
-- *Trigger*:
-  - Avvio del sistema.
-
-==== - UC 18.2: Rilevamento attività sospette
-#label("uc-18.2")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Monitoraggio#super[G] attivo.
-- *Postcondizioni*:
-  - Attività sospetta rilevata e registrata.
-- *Scenario principale*:
-  + Il sistema centralizzato valuta il comportamento degli utenti (frequenza accessi, IP, orari).
-  + Identifica pattern anomali.
-  + Registra l’evento e genera un allarme.
-- *Estensioni*:
-  - In caso di accessi anomali → #link(label("uc-1"), underline("[UC 1]"))
-  - In caso di tentativi ripetuti falliti → #link(label("uc-2"), underline("[UC 2]"))
-
-==== - UC 18.3: Registrazione accessi e operazioni
-#label("uc-18.3")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Monitoraggio#super[G] attivo.
-- *Postcondizioni*:
-  - Log#super[G] aggiornato.
-- *Scenario principale*:
-  + Il sistema centralizzato registra ogni login → #link(label("uc-1"), underline("[UC 1]"))
-  + Registra ogni tentativo fallito → #link(label("uc-2"), underline("[UC 2]"))
-  + Registra ogni logout → #link(label("uc-3"), underline("[UC 3]"))
-  + Ogni operazione rilevante viene associata a timestamp, ID utente e contesto.
-- *Inclusioni*:
-  - #link(label("uc-1"), underline("[UC 1]"))
-  - #link(label("uc-2"), underline("[UC 2]"))
   - #link(label("uc-3"), underline("[UC 3]"))
 
-==== - UC 18.4: Invio allarmi in tempo reale
-#label("uc-18.4")
-- *Attori Principali*: Sistema Centralizzato.
-- *Attori Secondari*: Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Attività anomala rilevata.
-- *Postcondizioni*:
-  - Supervisore notificato.
-- *Scenario principale*:
-  + Il sistema centralizzato rileva un comportamento sospetto.
-  + Invio di notifica al supervisore interessato.
-  + L’evento viene registrato nel log#super[G].
-- *Estensioni*:
-  - In caso di eventi critici → #link(label("uc-18.2"), underline("[UC 18.2]"))
+- *Trigger*:
+  - L’Utente vuole autenticarsi presso il Sistema.
 
 #pagebreak()
-=== - UC 19: Gestione predittiva della domanda e del riassortimento#super[G]
-#label("uc-19")
+=== - UC 3: Autenticazione fallita
+#label("uc-3")
+
 #figure(
-  image("assets/Casi d'uso-UC19.drawio.png", width: 90%),
-  caption: [UC19 - Gestione predittiva della domanda e del riassortimento#super[G]]
+  image("assets/UC3.png", width: 50%),
+  caption: [UC3 - Autenticazione fallita]
 )
-- *Attori Principali*: Sistema Centralizzato.
-- *Attori Secondari*: Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Il sistema è attivo e ha accesso a dati storici sulle vendite e alle scorte#super[G] correnti.
-  - I moduli predittivi sono correttamente configurati.
-- *Postcondizioni*:
-  - Sono generate previsioni di domanda.
-  - Sono pianificati riassortimenti#super[G] preventivi per evitare carenze.
-- *Scenario principale*:
-  + Il sistema centralizzato raccoglie dati storici di vendita e disponibilità attuale delle scorte#super[G].
-  + Il sistema centralizzato analizza i dati con un modello predittivo (es. machine learning).
-  + Il sistema centralizzato genera una previsione di domanda per ciascun prodotto#super[G].
-  + Il sistema centralizzato pianifica automaticamente i riassortimenti#super[G] in base alle previsioni.
-  + Se un prodotto#super[G] rischia di andare in esaurimento, il sistema centralizzato attiva azioni preventive (es. proposta d'ordine#super[G] o avviso al supervisore).
-  + Il Supervisore Locale o Globale può visualizzare i dati generati e validare eventuali modifiche.
-- *Scenari alternativi*:
-  - I dati storici sono incompleti:
-    - Il sistema centralizzato utilizza euristiche di fallback → #link(label("uc-19.1"), underline("[UC 19.1]"))
-  - Il Supervisore modifica manualmente le proposte del sistema centralizzato → #link(label("uc-19.2"), underline("[UC 19.2]"))
-  - Il riassortimento#super[G] automatico non può essere pianificato per problemi logistici:
-    - Viene generato un avviso → #link(label("uc-19.3"), underline("[UC 19.3]"))
-- *Inclusioni*:
-  - #link(label("uc-19.1"), underline("[UC 19.1]"))
-  - #link(label("uc-19.2"), underline("[UC 19.2]"))
-  - #link(label("uc-19.3"), underline("[UC 19.3]"))
-- *Trigger*:
-  - Esecuzione periodica automatica (es. ogni notte o settimanalmente).
-  - Modifica importante dello storico o dei pattern di acquisto.
 
-==== - UC 19.1: Generazione previsioni di domanda
-#label("uc-19.1")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Accesso ai dati storici e alle informazioni correnti sulle scorte#super[G].
-- *Postcondizioni*:
-  - Previsioni generate per ciascun prodotto#super[G].
-- *Scenario principale*:
-  + Il sistema centralizzato raccoglie ed elabora i dati storici e attuali.
-  + Il modello predittivo produce una stima della domanda futura.
-  + Le previsioni vengono salvate nel sistema centralizzato.
-- *Trigger*:
-  - Esecuzione pianificata o evento esterno (es. cambio stagionale).
+- *Attore Principale*: Utente
 
-==== - UC 19.2: Pianificazione dei riassortimenti#super[G]
-#label("uc-19.2")
-- *Attori Principali*: Sistema
-- *Attori Secondari*: Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Previsioni disponibili.
-- *Postcondizioni*:
-  - Riassortimenti#super[G] pianificati automaticamente.
+- *Precondizione*:
+  - L'Utente non è autenticato nel Sistema.
+- *Postcondizione*:
+  - L'Utente è ancora non autenticato nel Sistema.
+  - Viene fornita all'Utente la possibilità di autenticarsi nuovamente.
+- *Scenario principale*
+  + L'Utente riceve un messaggio di errore.
+
+#pagebreak()
+=== - UC 4: Logout
+#label("uc-4")
+
+#figure(
+  image("assets/UC4.png", width: 60%),
+  caption: [UC4 - Logout]
+)
+
+- *Attore Principale*: Supervisore
+
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+
+- *Postcondizione*:
+  - Il Supervisore ha effettuato il logout dal Sistema.
+
 - *Scenario principale*:
-  + Il sistema centralizzato valuta se le scorte#super[G] previste soddisfano la domanda prevista.
-  + Pianifica un riassortimento#super[G] (ordine#super[G] o trasferimento#super[G]).
-  + Notifica il Supervisore per conferma o revisione.
+  + Il Supervisore viene disconnesso dal Sistema.
+  + Il Supervisore non più autenticato visualizza la schermata di autenticazione.
+
+- *Trigger*:
+  - Il Supervisore preme sul pulsante di Logout.
+
+#pagebreak()
+=== - UC 5: Registrazione di un nuovo Supervisore Locale
+#label("uc-5")
+
+#figure(
+  image("assets/UC5.png", width: 50%),
+  caption: [UC5 - Registrazione di un nuovo Supervisore Locale]
+)
+
+- *Attore Principale*: Supervisore Globale
+
+- *Precondizione*:
+  - Il Supervisore Globale è autenticato presso il Sistema.
+  - Il Supervisore Globale si trova nella pagina di gestione utenti.
+
+- *Postcondizione*:
+  - Un nuovo Supervisore Locale è stato registrato presso il sistema.
+  - Il Supervisore Globale si trova nella pagina di gestione utenti.
+
+- *Scenario principale*:
+  + Il Supervisore Globale inserisce email del nuovo Supervisore Locale.
+  + Il Supervisore Globale inserisce una password temporanea per il nuovo Supervisore Locale.
+  + Il Supervisore Globale inserisce nome e cognome per il nuovo Supervisore Locale.
+  + Il Supervisore Globale inserisce numero di cellulare per il nuovo Supervisore Locale.
+  + Il Supervisore Globale assegna i magazzini di pertinenza del Supervisore Locale.
+  + Il Supervisore Globale conferma i dati inseriti.
+  + Il Supervisore Globale torna alla pagina di gestione utenti.
+
+- *Trigger*:
+  - Il Supervisore Globale preme il pulsante Aggiungi Supervisore Locale.
+
+#pagebreak()
+
+#figure(
+  image("assets/UC6-7-8.png", width: 50%),
+  caption: [UC6, UC7, UC8 - Aggiunta, Rimozione e Modifica di un nuovo magazzino]
+)
+
+=== - UC 6: Aggiunta di un nuovo magazzino
+#label("uc-6")
+- *Attore Principale*: Supervisore Globale
+
+- *Precondizione*:
+  - Il Supervisore Globale è autenticato presso il Sistema.
+  - Il Supervisore Globale si trova nella pagina di gestione magazzini.
+
+- *Postcondizione*:
+  - Un nuovo magazzino è stato aggiunto al sistema.
+  - Il Supervisore Globale si trova nella pagina di gestione magazzini.
+
+- *Scenario principale*:
+  + Il Supervisore Globale inserisce l'indirizzo del nuovo magazzino.
+  + Il Supervisore Globale può selezionare il Supervisore Locale da associare al magazzino.
+  + Il Supervisore Globale conferma i dati inseriti.
+  + Il Supervisore Globale torna alla pagina di gestione magazzini.
+
+- *Trigger*:
+  - Il Supervisore Globale preme il pulsante Aggiungi Magazzino.
+
+
+=== - UC 7: Rimozione di un magazzino
+#label("uc-7")
+- *Attore Principale*: Supervisore Globale
+
+- *Precondizione*:
+  - Il Supervisore Globale è autenticato presso il Sistema.
+  - Il Supervisore Globale si trova nella pagina di gestione magazzini.
+
+- *Postcondizione*:
+  - Un magazzino è stato selezionato per la rimozione dal sistema.
+  - Il Supervisore Globale si trova nella pagina di gestione magazzini.
+
+- *Scenario principale*:
+  + Il Supervisore Globale seleziona il magazzino da rimuovere.
+  + Il Supervisore Globale conferma la selezione.
+
+- *Trigger*:
+  - Il Supervisore Globale preme il pulsante Rimuovi Magazzino
+
+
+=== - UC 8: Modifica di un magazzino
+#label("uc-8")
+- *Attore Principale*: Supervisore Globale
+
+- *Precondizione*:
+  - Il Supervisore Globale è autenticato presso il Sistema.
+  - Il Supervisore Globale si trova nella pagina di gestione magazzini.
+
+- *Postcondizione*:
+  - I dati di un magazzino sono stati aggiornati.
+  - Il Supervisore Globale si trova nella pagina di gestione magazzini.
+
+- *Scenario principale*:
+  + Il Supervisore Globale seleziona il magazzino da modificare.
+  + Il Supervisore Globale modifica l'indirizzo del magazzino e/o il Supervisore Locale associato.
+  + Il Supervisore Globale conferma i dati inseriti.
+  + Il Supervisore Globale torna alla pagina di gestione magazzini.
+
+- *Trigger*:
+  - Il Supervisore Globale preme il pulsante Modifica Magazzino.
+
+#pagebreak()
+
+#figure(
+  image("assets/UC9-10.png", width: 60%),
+  caption: [UC9, UC10 - Aggiunta e Rimozione tipologia di merce]
+)
+
+=== - UC 9: Aggiunta nuova tipologia di merce
+#label("uc-9")
+- *Attore Principale*: Supervisore
+
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina inventario.
+
+- *Postcondizione*:
+  - Una nuova tipologia di merce è stata registrata a sistema.
+  - Il Supervisore si trova nella pagina inventario.
+
+- *Scenario principale*:
+  + Il Supervisore inserisce il codice EAN (barcode) del prodotto da registrare.
+  + Il Supervisore inserisce il nome del prodotto da registrare.
+  + Il Supervisore inserisce il prezzo unitario del prodotto da registrare.
+  + Il Supervisore può inserire le quantità di prodotto.
+  + Il Supervisore può inserire i valori delle soglie minime.
+  + Il Supervisore può inserire i valori delle soglie massime.
+  + Il Supervisore conferma i dati inseriti.
+  + Il Supervisore torna alla pagina di inventario.
+
+- *Trigger*:
+  - Il Supervisore Globale preme il pulsante Aggiungi Nuova Tipologia Merce.
+
+=== - UC 10: Rimozione tipologia di merce
+#label("uc-10")
+- *Attore Principale*: Supervisore
+
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina inventario.
+
+- *Postcondizione*:
+  - Una tipologia di merce è stata rimossa dal sistema.
+  - Il Supervisore si trova nella pagina inventario.
+
+- *Scenario principale*:
+  + Il Supervisore seleziona la tipologia di merce da rimuovere.
+  + Il Supervisore verifica che la tipologia di merce selezionata abbia globalmente quantità nulla.
+  + Il Supervisore conferma l'eliminazione.
+
 - *Scenario alternativo*:
-  - Il Supervisore modifica le quantità → aggiornamento dei dati.
-- *Inclusioni*:
-  - #link(label("uc-19.1"), underline("[UC 19.1]"))
+  + La quantità della tipologia di merce selezionata non è globalmente nulla.
+  + Il Supervisore visualizza un messaggio di errore.
 
-==== - UC 19.3: Attivazione di meccanismi preventivi
-#label("uc-19.3")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Domanda prevista > scorte#super[G] disponibili.
-- *Postcondizioni*:
-  - Azioni preventive attivate.
-- *Scenario principale*:
-  + Il sistema centralizzato rileva un rischio di esaurimento.
-  + Verifica#super[G] le opzioni disponibili: nuovo ordine#super[G], trasferimento#super[G] da altro magazzino, limitazione ordini#super[G].
-  + Propone un'azione o la attua automaticamente (se configurato).
-  + Notifica il supervisore.
-- *Inclusioni*:
-  - #link(label("uc-19.1"), underline("[UC 19.1]"))
-- *Estensioni*:
-  - Possibili casi: #link(label("uc-5"), underline("[UC 5]")), #link(label("uc-7"), underline("[UC 7]"))
+- *Trigger*:
+  - Il Supervisore Globale preme il pulsante Aggiungi Nuova Tipologia Merce.
 
 #pagebreak()
-=== - UC 20: riassortimento#super[G] predittivo tramite analisi storica e previsione della domanda
+=== - UC 11: Modifica dati di quantità di un prodotto in un singolo magazzino
+#label("uc-11")
+
+#figure(
+  image("assets/UC11.png", width: 60%),
+  caption: [UC11 - Modifica dati di quantità di un prodotto in un singolo magazzino]
+)
+
+- *Attore Principale*: Supervisore 
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina inventario di un magazzino.
+  - Il Supervisore ha selezionato il prodotto di cui modificare le quantità.
+
+- *Postcondizione*:
+  - I dati di quantità di un prodotto in un singolo magazzino sono stati modificati.
+  - Il Supervisore si trova nella pagina inventario di un magazzino.
+
+- *Scenario principale*:
+  + Il Supervisore modifica le quantità di prodotto e/o le soglie minime e/o massime.
+  + Il Supervisore conferma i dati inseriti.
+  + Il Supervisore torna alla pagina di inventario del magazzino.
+
+- *Scenario alternativo*:
+  2. Il Supervisore Globale annulla l’aggiornamento dei dati.
+  + Il sistema mantiene i dati precedenti e scarta le modifiche.
+
+- *Trigger*:
+  - Il Supervisore preme il pulsante Modifica Prodotto.
+
+#pagebreak()
+=== - UC 12: Inserimento prodotto in un ordine
+#label("uc-12")
+
+#figure(
+  image("assets/UC12.png", width: 60%),
+  caption: [UC12 - Inserimento prodotto in un ordine]
+)
+
+- *Attore Principale*: Supervisore 
+
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina inserimento ordine.
+
+- *Postcondizione*:
+  - I dati di un prodotto sono inseriti nell'ordine.
+  - Il Supervisore si trova nella pagina inserimento ordine.
+
+- *Scenario principale*:
+  + Il Supervisore inserisce il codice EAN (barcode) del prodotto.
+  + Il Supervisore inserisce la quantità del prodotto.
+  + Il Supervisore inserisce il prezzo unitario del prodotto.
+
+- *Trigger*:
+  - Il Supervisore preme il pulsante Inserisci Prodotto.
+
+#pagebreak()
+
+#figure(
+  image("assets/UC13-14-15.png", width: 80%),
+  caption: [UC13, UC14, UC15 - Inserimento ordini]
+)
+
+=== - UC 13: Inserimento ordine di trasferimento interno
+#label("uc-13")
+
+- *Attore Principale*: Supervisore 
+
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina inserimento ordine.
+
+- *Postcondizione*:
+  - L'ordine è stato inserito.
+  - Il Supervisore si trova nella pagina ordini.
+
+- *Scenario principale*:
+  + Il Supervisore seleziona il magazzino di partenza.
+  + Il Supervisore seleziona il magazzino di destinazione.
+  + Il Supervisore inserisce uno o più prodotti nell'ordine → #link(label("uc-12"), underline("[UC 12]")).
+  + Il Supervisore conferma i dati dell'ordine.
+
+- *Inclusioni*:
+  - #link(label("uc-12"), underline("[UC 12]"))
+  
+- *Trigger*:
+  - Il Supervisore seleziona *Trasferimento Interno* come tipologia ordine.
+
+
+=== - UC 14: Inserimento ordine di approvvigionamento
+#label("uc-14")
+
+- *Attore Principale*: Supervisore
+
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina inserimento ordine.
+
+- *Postcondizione*:
+  - L'ordine è stato inserito.
+  - Il Supervisore si trova nella pagina ordini.
+
+- *Scenario principale*:
+  + Il Supervisore inserisce l'indirizzo del fornitore.
+  + Il Supervisore seleziona il magazzino di destinazione.
+  + Il Supervisore inserisce uno o più prodotti nell'ordine → #link(label("uc-12"), underline("[UC 12]")).
+  + Il Supervisore conferma i dati dell'ordine.
+
+- *Inclusioni*:
+  - #link(label("uc-12"), underline("[UC 12]"))
+  
+- *Trigger*:
+  - Il Supervisore seleziona *Approvvigionamento* come tipologia ordine.
+
+
+=== - UC 15: Inserimento ordine di vendita
+#label("uc-15")
+
+- *Attore Principale*: Supervisore
+
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina inserimento ordine.
+
+- *Postcondizione*:
+  - L'ordine è stato inserito.
+  - Il Supervisore si trova nella pagina ordini.
+
+- *Scenario principale*:
+  + Il Supervisore seleziona il magazzino di partenza.
+  + Il Supervisore inserisce l'indirizzo del destinatario.
+  + Il Supervisore inserisce uno o più prodotti nell'ordine → #link(label("uc-12"), underline("[UC 12]")).
+  + Il Supervisore conferma i dati dell'ordine.
+
+- *Inclusioni*:
+  - #link(label("uc-12"), underline("[UC 12]"))
+  
+- *Trigger*:
+  - Il Supervisore seleziona *Vendita* come tipologia ordine.
+
+#pagebreak()
+=== - UC 16: Annullamento ordine
+#label("uc-16")
+
+#figure(
+  image("assets/UC16.png", width: 60%),
+  caption: [UC16 - Annullamento ordine]
+)
+
+- *Attore Principale*: Supervisore
+
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina ordini.
+  - Il Supervisore ha selezionato un ordine in stato "in attesa" o "in eleborazione" da annullare.
+
+- *Postcondizione*:
+  - L'ordine è stato annullato.
+  - Il Supervisore si trova nella pagina ordini.
+
+- *Scenario principale*:
+  + Il Supervisore annulla l'ordine.
+  + Il Supervisore conferma l'annullamento dell'ordine.
+  
+- *Trigger*:
+  - Il Supervisore preme il pulsante *Annulla Ordine*.
+
+#pagebreak()
+=== - UC 17: Visualizzazione inventario globale
+#label("uc-17")
+
+#figure(
+  image("assets/UC17.png", width: 70%),
+  caption: [UC17 - Visualizzazione inventario globale]
+)
+
+- *Attore Principale*: Supervisore Globale
+- *Precondizione*:
+  - Il Supervisore Globale è autenticato presso il Sistema.
+  - Il Supervisore Globale si trova nella pagina di inventario.
+- *Postcondizione*:
+  - Il Supervisore Globale ha visualizzato l'inventario complessivo di tutti i magazzini.
+- *Scenario principale*:
+  + Il Supervisore Globale visualizza l'inventario complessivo dei magazzini.
+  + Selezione di un magazzino → #link(label("uc-19"), underline("[UC 19]"))  
+- *Estensioni*:
+  - #link(label("uc-19"), underline("[UC 19]"))  
+- *Trigger*:
+  - Il Supervisore Globale entra nella pagina di *inventario*.
+
+#pagebreak()
+=== - UC 18: Selezione singolo magazzino per visualizzazione del suo inventario
+#label("uc-18")
+
+#figure(
+  image("assets/UC18.png", width: 70%),
+  caption: [UC18 - Selezione singolo magazzino per visualizzazione del suo inventario]
+)
+
+- *Attore Principale*: Supervisore Locale
+- *Precondizione*:
+  - Il Supervisore Locale è autenticato presso il Sistema.
+  - Il Supervisore Locale si trova nella pagina di inventario.
+- *Postcondizione*:
+  - Il Supervisore ha visualizzato l'inventario di un singolo magazzino selezionato
+- *Scenario principale*:
+  + Il Supervisore Locale seleziona un magazzino.
+  + Il Supervisore Locale visualizza l’inventario del magazzino -> #link(label("uc-19"), underline("[UC 19]"))  
+- *Inclusioni*:
+  - #link(label("uc-19"), underline("[UC 19]"))  
+- *Trigger*:
+  - Il Supervisore Locale entra nella pagina di *inventario*.
+
+#pagebreak()
+=== - UC 19: Visualizzazione inventario singolo magazzino
+#label("uc-19")
+
+#figure(
+  image("assets/UC19.png", width: 60%),
+  caption: [UC19 - Visualizzazione inventario singolo magazzino]
+)
+
+- *Attore Principale*: Supervisore
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina di inventario.
+  - Il Supervisore ha selezionato un magazzino.
+- *Postcondizione*:
+  - Il Supervisore ha visualizzato l'inventario di un singolo magazzino selezionato.
+- *Scenario principale*:
+  + Il Supervisore visualizza l'inventario di un singolo magazzino.
+
+#pagebreak()
+=== - UC 20: Visualizzazione report ordini
 #label("uc-20")
+
 #figure(
-  image("assets/Casi d'uso-UC20.drawio.png", width: 90%),
-  caption: [UC20 - riassortimento#super[G] predittivo tramite analisi storica e previsione della domanda]
+  image("assets/UC20.png", width: 60%),
+  caption: [UC20 - Visualizzazione report ordini]
 )
-- *Attori Principali*: Sistema Centralizzato.
-- *Attori Secondari*: Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Il sistema ha accesso ai dati storici di vendita e consegna.
-  - I modelli statistici predittivi sono disponibili e attivi.
-  - Le strategie di approvvigionamento#super[G] sono configurabili.
-- *Postcondizioni*:
-  - Il sistema centralizzato ha calcolato le previsioni di domanda.
-  - Sono state adattate le strategie di approvvigionamento#super[G].
-  - Sono stati generati piani di riassortimento#super[G] ottimizzati.
-- *Scenario principale*:
-  + Il sistema centralizzato raccoglie e analizza i dati storici di vendita e consegna.
-  + Applica modelli statistici per identificare pattern stagionali e tendenze di consumo.
-  + Prevede la domanda futura per ciascun prodotto#super[G].
-  + Adatta le strategie di approvvigionamento#super[G] in base ai risultati.
-  + Calcola i livelli ottimali di scorte#super[G] da mantenere.
-  + Genera raccomandazioni o azioni automatiche di riassortimento#super[G].
-  + Il Supervisore può visualizzare, approvare o modificare le raccomandazioni.
-- *Scenari alternativi*:
-  - I dati storici sono incompleti:
-    - Il sistema centralizzato utilizza valori medi o interpolazioni → #link(label("uc-20.1"), underline("[UC 20.1]"))
-  - I modelli predittivi rilevano anomalie nei pattern:
-    - L’output viene validato manualmente → #link(label("uc-20.2"), underline("[UC 20.2]"))
-  - Il supervisore impone strategie fisse:
-    - Il sistema centralizzato sospende l’adattamento automatico → #link(label("uc-20.3"), underline("[UC 20.3]"))
-  - Il magazzino è già pieno o sottodimensionato:
-    - Il sistema centralizzato propone misure correttive → #link(label("uc-20.4"), underline("[UC 20.4]"))
-- *Inclusioni*:
-  - #link(label("uc-20.1"), underline("[UC 20.1]"))
-  - #link(label("uc-20.2"), underline("[UC 20.2]"))
-  - #link(label("uc-20.3"), underline("[UC 20.3]"))
-  - #link(label("uc-20.4"), underline("[UC 20.4]"))
-- *Trigger*:
-  - Pianificazione periodica automatica (es. settimanale/mensile).
-  - Attivazione manuale da parte del Supervisore.
-  - Modifica nei dati o parametri (es. cambi stagionali, cambi tendenziali).
 
-==== - UC 20.1: Analisi dati storici di vendita e consegna
-#label("uc-20.1")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Disponibilità dei dati storici.
-- *Postcondizioni*:
-  - Dati strutturati pronti per la previsione.
-- *Scenario principale*:
-  + Il sistema centralizzato raccoglie i dati da magazzini locali e cloud.
-  + Elimina outlier e dati incompleti.
-  + Aggrega i dati per prodotto#super[G], zona, periodo.
-  + Prepara i dataset per l’elaborazione statistica.
-- *Trigger*:
-  - Esecuzione periodica o richiesta manuale.
+- *Attore Principale*: Supervisore Globale
 
-==== - UC 20.2: Analisi trend scorte#super[G]
-#label("uc-20.2")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Dataset analizzato disponibile.
-- *Postcondizioni*:
-  - Previsioni generate per ogni prodotto#super[G].
-- *Scenario principale*:
-  + Il sistema centralizzato applica modelli (es. regressione, reti neurali).
-  + Identifica stagionalità e trend nei dati.
-  + Elabora le previsioni a breve e medio termine.
-  + Salva le previsioni nel sistema centralizzato.
-- *Inclusioni*:
-  - #link(label("uc-20.1"), underline("[UC 20.1]"))
+- *Precondizione*:
+  - Il Supervisore Globale è autenticato presso il Sistema.
+  - Il Supervisore Globale si trova nella pagina ordini.
 
-==== - UC 20.3: Adattamento delle strategie di approvvigionamento#super[G]
-#label("uc-20.3")
-- *Attori Principali*: Sistema Centralizzato.
-- *Attori Secondari*: Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Previsioni disponibili.
-- *Postcondizioni*:
-  - Strategia di riassortimento#super[G] aggiornata.
-- *Scenario principale*:
-  + Il sistema centralizzato confronta la previsione con la politica attuale di approvvigionamento#super[G].
-  + Valuta lead time, frequenza ordini#super[G] e soglie minime.
-  + Suggerisce modifiche o automatizza gli aggiustamenti.
-  + Il supervisore può confermare, rifiutare o modificare la proposta.
-- *Inclusioni*:
-  - #link(label("uc-20.2"), underline("[UC 20.2]"))
+- *Postcondizione*:
+  - Il Supervisore Globale ha visualizzato l'elenco complessivo degli ordini di tutti i magazzini.
 
-==== - UC 20.4: Ottimizzazione dei livelli di scorte#super[G]
-#label("uc-20.4")
-- *Attori Principali*: Sistema Centralizzato.
-- *Precondizioni*:
-  - Strategia aggiornata e previsione disponibile.
-- *Postcondizioni*:
-  - Livelli ottimali calcolati e azioni di riassortimento#super[G] pianificate.
 - *Scenario principale*:
-  + Il sistema centralizzato determina le soglie ottimali per ciascun prodotto#super[G].
-  + Calcola quanto e quando riassortire.
-  + Genera automaticamente richieste o suggerimenti.
-  + Il supervisore può intervenire o confermare.
-- *Inclusioni*:
-  - #link(label("uc-20.3"), underline("[UC 20.3]"))
+  + Il Supervisore Globale visualizza l'elenco complessivo degli ordini di tutti i magazzini.
+  + Selezione di un magazzino → #link(label("uc-22"), underline("[UC 22]"))
 
-#pagebreak()
-=== - UC 21: Visualizzazione e Gestione scorte#super[G] tramite interfaccia grafica
-#label("uc-21")
-#figure(
-  image("assets/Casi d'uso-UC21.drawio.png", width: 90%),
-  caption: [UC21 - Visualizzazione e gestione scorte#super[G] tramite interfaccia grafica],
-)
-- *Attori Principali*: Sistema Centralizzato.
-- *Attori Secondari*: Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - L’utente è autenticato.
-  - L’interfaccia utente è accessibile e funzionante.
-- *Postcondizioni*:
-  - L’utente ha visualizzato e/o modificato le informazioni di inventario#super[G].
-  - Eventuali modifiche sono state salvate e propagate al sistema centralizzato.
-  - I dati visualizzati riflettono lo stato aggiornato delle scorte#super[G] in tempo reale.
-- *Scenario principale*:
-  + Il Supervisore Locale o Globale accede all’interfaccia grafica.
-  + Il sistema centralizzato carica e visualizza in tempo reale le scorte#super[G] disponibili.
-  + L'utente esplora il contenuto della dashboard#super[G] e i dati per magazzino/prodotto#super[G].
-  + L’utente seleziona un'azione (es. modifica scorte#super[G], trasferimento#super[G], riordino).
-  + Il sistema centralizzato aggiorna l'inventario#super[G] e sincronizza le modifiche con il cloud.
-  + L'utente riceve conferma dell'operazione.
-  + L’utente visualizza le notifiche badge.
-- *Scenari alternativi*:
-  - La visualizzazione delle scorte#super[G] fallisce:
-    - Viene mostrato un messaggio di errore e suggerito il ripristino#super[G] → #link(label("uc-21.2"), underline("[UC 21.2]"))
-  - L’utente non ha i privilegi per alcune operazioni:
-    - Alcune funzionalità risultano disabilitate.
-  - L’utente annulla un’operazione:
-    - Nessuna modifica viene salvata → #link(label("uc-21.3"), underline("[UC 21.3]"))
-- *Inclusioni*:
-  - #link(label("uc-1"), underline("[UC 1]"))
-  - #link(label("uc-5"), underline("[UC 5]"))
-  - #link(label("uc-7"), underline("[UC 7]"))
-  - #link(label("uc-8"), underline("[UC 8]"))
-  - #link(label("uc-11"), underline("[UC 11]"))
 - *Estensioni*:
-  - #link(label("uc-21.1"), underline("[UC 21.1]"))
-  - #link(label("uc-21.2"), underline("[UC 21.2]"))
-  - #link(label("uc-21.3"), underline("[UC 21.3]"))
+  - #link(label("uc-22"), underline("[UC 22]"))
+
 - *Trigger*:
-  - Accesso alla dashboard#super[G] da parte di un supervisore.
-  - Necessità di aggiornare o monitorare lo stato delle scorte#super[G].
-
-==== - UC 21.1: Visualizzazione scorte#super[G] in tempo reale
-#label("uc-21.1")
-- *Attori Principali*: Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Supervisore autenticato.
-  - Connessione attiva al sistema.
-- *Postcondizioni*:
-  - Le scorte#super[G] sono visualizzate in tempo reale.
-- *Scenario principale*:
-  - Il supervisore accede alla dashboard#super[G].
-  - Il sistema centralizzato recupera i dati di inventario#super[G] aggiornati.
-  - Le scorte#super[G] vengono presentate in una vista tabellare/grafica.
-  - Il sistema centralizzato aggiorna i dati ogni X secondi o su richiesta.
-- *Inclusioni*:
-  - #link(label("uc-11"), underline("[UC 11]")) (visualizzazione stato magazzino).
-
-==== - UC 21.2: Errore nella visualizzazione dati
-#label("uc-21.2")
-- *Attori Principali*: Sistema Centralizzato.
-- *Attori Secondari*: Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Connessione instabile o servizi#super[G] non disponibili.
-- *Postcondizioni*:
-  - Viene notificato il fallimento della visualizzazione.
-- *Scenario principale*:
-  - Il supervisore accede alla dashboard#super[G].
-  - Il sistema centralizzato tenta di caricare i dati.
-  - Si verifica#super[G] un errore (es. timeout, servizio#super[G] cloud non raggiungibile).
-  - Il sistema centralizzato mostra un messaggio con opzioni di riprova o offline mode.
-
-==== - UC 21.3: Gestione inventario#super[G] tramite GUI
-#label("uc-21.3")
-- *Attori Principali*: Supervisore Locale, Supervisore Globale.
-- *Precondizioni*:
-  - Supervisore autenticato e dati caricati.
-- *Postcondizioni*:
-  - Operazione di inventario#super[G] completata.
-- *Scenario principale*:
-  - Il supervisore seleziona un’operazione (aggiunta, modifica, trasferimento#super[G]).
-  - Il sistema centralizzato mostra un modulo dedicato all’azione scelta.
-  - L’utente compila e conferma il modulo.
-  - Il sistema centralizzato salva l’azione e aggiorna lo stato delle scorte#super[G].
-  - Il cloud viene sincronizzato con l’operazione effettuata.
-- *Inclusioni*:
-  - #link(label("uc-5"), underline("[UC 5]"))
-  - #link(label("uc-7"), underline("[UC 7]"))
-  - #link(label("uc-8"), underline("[UC 8]"))
+  - Il Supervisore Globale entra nella pagina *ordini*.
 
 #pagebreak()
-= Requisiti#super[G]
-Verranno ora elencati i requisiti#super[G] del sistema, che sono stati suddivisi in quattro categorie principali: Requisiti#super[G] Funzionali, Requisiti#super[G] di Sicurezza, Requisiti#super[G] non Funzionali e Requisiti#super[G] di Vincolo.
+=== - UC 21: Selezione magazzino per visualizzazione del suo report ordini
+#label("uc-21")
 
-== Classificazione dei requisiti#super[G]
-- *Requisiti#super[G] Funzionali:* sono i requisiti#super[G] che definiscono le funzionalità e i comportamenti del sistema. Questi requisiti#super[G] specificano cosa il sistema deve fare e come deve interagire con gli utenti e altri sistemi. I requisiti#super[G] funzionali sono essenziali per garantire che il sistema soddisfi le esigenze degli utenti e raggiunga gli obiettivi prefissati.
+#figure(
+  image("assets/UC21.png", width: 60%),
+  caption: [UC21 - Selezione magazzino per visualizzazione del suo report ordini]
+)
 
-- *Requisiti#super[G] di Sicurezza:* sono i requisiti#super[G] che definiscono le misure di sicurezza e protezione dei dati all'interno del sistema. Questi requisiti#super[G] sono fondamentali per garantire la riservatezza, l'integrità#super[G] e la disponibilità delle informazioni trattate dal sistema.
+- *Attore Principale*: Supervisore Locale
 
-- *Requisiti#super[G] non Funzionali:* sono i requisiti#super[G] che definiscono le caratteristiche qualitative del sistema, come prestazioni, usabilità, affidabilità e manutenibilità. Questi requisiti#super[G] non riguardano direttamente le funzionalità del sistema, ma sono comunque cruciali per garantire un'esperienza utente soddisfacente e un funzionamento efficiente del sistema.
+- *Precondizione*:
+  - Il Supervisore Locale è autenticato presso il Sistema.
+  - Il Supervisore Locale si trova nella pagina ordini.
 
-== Fonti dei requisiti#super[G]
-Le fonti dei requisiti#super[G] sono i documenti e le informazioni da cui sono stati estratti i requisiti#super[G] stessi, come il capitolato#super[G] d'appalto e le riunioni con il committente#super[G].\
-Inoltre, alcuni requisiti#super[G] sono stati derivati dall'analisi allo stato dell'arte e dall'analisi dei casi d'uso.
+- *Postcondizione*:
+  - Il Supervisore Locale ha visualizzato il report degli ordini di un magazzino.
 
-Tutti i requisiti#super[G] presenteranno la fonte di provenienza.
+- *Scenario principale*:
+  + Il Supervisore Locale seleziona un magazzino
+  + Il Supervisore visualizza il report degli ordini di un magazzino → #link(label("uc-22"), underline("[UC 22]"))  
 
-== Codifica dei requisiti#super[G]
+- *Inclusioni*:
+  - #link(label("uc-22"), underline("[UC 22]"))
 
-I requisiti#super[G] sono stati codificati in modo da facilitarne la lettura e la comprensione. La codifica è composta da un prefisso che indica il tipo di requisito#super[G], seguito da un numero progressivo.\
+- *Trigger*:
+  - Il Supervisore Locale entra nella pagina *ordini*.
 
-I requisiti#super[G] funzionali sono preceduti dal prefisso "RF", i requisiti#super[G] di sicurezza dal prefisso "RS", i requisiti#super[G] non funzionali dal prefisso "RnF" e i requisiti#super[G] di vincolo dal prefisso "RV", dove:
+#pagebreak()
+=== - UC 22: Visualizzazione report ordini singolo magazzino
+#label("uc-22")
+
+#figure(
+  image("assets/UC22.png", width: 60%),
+  caption: [UC22 - Visualizzazione report ordini singolo magazzino]
+)
+
+- *Attore Principale*: Supervisore
+
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina ordini.
+  - Il Supervisore ha selezionato un magazzino.
+
+- *Postcondizione*:
+  - Il Supervisore ha visualizzato il report degli ordini di un singolo magazzino.
+
+- *Scenario principale*:
+  + Il Supervisore visualizza il report degli ordini di un singolo magazzino.
+
+#pagebreak()
+=== - UC 23: Visualizzazione stato magazzini
+#label("uc-23")
+
+#figure(
+  image("assets/UC23.png", width: 60%),
+  caption: [UC23 - Visualizzazione stato magazzini]
+)
+
+- *Attore Principale*: Supervisore
+
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina realtiva allo stato dei magazzini.
+
+- *Postcondizione*:
+  - Il Supervisore ha visualizzato lo stato di tutti i magazzini.
+
+- *Scenario principale*:
+  + Il Supervisore visualizza lo stato di tutti i magazzini.
+
+- *Trigger*:
+  - Il Supervisore Locale entra nella pagina relativa allo stato dei magazzini.
+
+#pagebreak()
+=== - UC 24: Visualizzazione notifiche informative
+#label("uc-24")
+
+#figure(
+  image("assets/UC24.png", width: 60%),
+  caption: [UC24 - Visualizzazione notifiche informative]
+)
+
+- *Attore Principale*: Supervisore
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina notifiche.
+- *Postcondizione*:
+  - Il Supervisore ha visualizzato le notifiche informative prodotte dal sistema.
+  - Il Supervisore si trova nella pagina notifiche.
+- *Scenario principale*:
+  + Il Supervisore visualizza le notifiche informative del sistema.
+
+- *Trigger*:
+  - Il Supervisore entra nella pagina *notifiche*.
+
+#pagebreak()
+=== - UC 25: Visualizzazione notifiche decisionali
+#label("uc-25")
+
+#figure(
+  image("assets/UC25.png", width: 70%),
+  caption: [UC25 - Visualizzazione notifiche decisionali]
+)
+
+- *Attore Principale*: Supervisore Globale
+
+- *Precondizione*:
+  - Il Supervisore Globale è autenticato presso il Sistema.
+  - Il Supervisore Globale si trova nella pagina notifiche.
+- *Postcondizione*:
+  - Il Supervisore Globale ha visualizzato le notifiche decisionali prodotte dal sistema.
+  - Il Supervisore Globale si trova nella pagina notifiche.
+- *Scenario principale*:
+  + Il Supervisore Globale visualizza le notifiche decisionali del sistema.
+    2. a) Se il Supervisore Globale accetta la notifica decisionale → #link(label("uc-26"), underline("[UC 26]"))
+    2. b) Se il Supervisore Globale rifiuta la notifica decisionale → #link(label("uc-27"), underline("[UC 27]"))
+  3. Il Sistema elabora la risposta del Supervisore Globale alla notifica.
+
+- *Scenario alternativo*:
+  2. Il Supervisore Globale non accettà nè rifiuta le notifiche entro un tempo prestabilito:
+  + Il Sistema rifiuta automaticamente la notifica decisionale.
+
+- *Estensioni*:
+  - #link(label("uc-26"), underline("[UC 26]"))
+  - #link(label("uc-27"), underline("[UC 27]"))  
+- *Trigger*:
+  - Il Supervisore Globale entra nella pagina *notifiche*.
+
+
+=== - UC 26: Accettazione notifiche decisionali
+#label("uc-26")
+- *Attore Principale*: Supervisore Globale
+
+- *Precondizione*:
+  - Il Supervisore Globale è autenticato presso il Sistema.
+  - Il Supervisore Globale si trova nella pagina notifiche.
+  - Il Supervisore Globale ha accettato una notifica decisionale prodotta dal sistema.
+
+- *Postcondizione*:
+  - Il Sistema ha registrato l'accettazione della notifica decisionale da parte del Supervisore Globale.
+
+- *Scenario principale*:
+  + Il Sistema registra l'accettazione della notifica decisionale da parte del Supervisore Globale.
+
+
+=== - UC 27: Rifiuto notifiche decisionali
+#label("uc-27")
+- *Attore Principale*: Supervisore Globale
+
+- *Precondizione*:
+  - Il Supervisore Globale è autenticato presso il Sistema.
+  - Il Supervisore Globale si trova nella pagina notifiche.
+  - Il Supervisore Globale ha accettato una notifica decisionale prodotta dal sistema.
+
+- *Postcondizione*:
+  - Il Sistema ha registrato l'accettazione della notifica decisionale da parte del Supervisore Globale.
+
+- *Scenario principale*:
+  + Il Sistema registra l'accettazione della notifica decisionale da parte del Supervisore Globale.
+
+
+#pagebreak()
+=== - UC 28: Aggiornamento parametri di sistema
+#label("uc-28")
+
+#figure(
+  image("assets/UC28.png", width: 50%),
+  caption: [UC28 - Aggiornamento parametri di sistema]
+)
+
+- *Attore Principale*: Supervisore Globale
+- *Precondizione*:
+  - Il Supervisore Globale è autenticato presso il Sistema.
+  - Il Supervisore Globale si trova nella pagina Impostazioni.
+- *Postcondizione*:
+  - I parametri di sistema sono stati aggiornati.
+- *Scenario principale*:
+  + Il Supervisore Globale visualizza i parametri di sistema.
+  + Il Supervisore Globale aggiorna uno o più parametri tra i seguenti:
+    - Costo massimo per i trasferimenti interni automatici.
+    - Distanza massima per i trasferimenti interni automatici.
+    - Tempo dopo cui gli ordini#super[G] di un magazzino offline vengono automaticamente annullati.
+    - Tempo dopo cui un ordine#super[G] "in transito" cambia automaticamente stato in "annullato".
+  + Il Supervisore Globale conferma l’aggiornamento dei parametri.
+  + I parametri vengono aggiornati all’interno del sistema.
+- *Scenario alternativo*:
+  3. Il Supervisore Globale annulla l’aggiornamento dei parametri.
+  + Il sistema mantiene i parametri precedenti e scarta le modifiche.
+- *Trigger*:
+  - Il Supervisore Locale entra nella pagina di *Impostazioni*.
+
+#pagebreak()
+=== - UC 29: Modifica globale del prezzo unitario di un prodotto
+#label("uc-29")
+
+#figure(
+  image("assets/UC29.png", width: 50%),
+  caption: [UC29 - Modifica globale del prezzo unitario di un prodotto]
+)
+
+- *Attore Principale*: Supervisore Globale
+- *Precondizione*:
+  - Il Supervisore Globale è autenticato presso il Sistema.
+  - Il Supervisore Globale si trova nella pagina inventario di un magazzino.
+  - Il Supervisore Globale ha selezionato il prodotto di cui modificare il prezzo.
+
+- *Postcondizione*:
+  - Il prezzo unitario di un prodotto è stato globalmente modificato.
+  - Il Supervisore Globale si trova nella pagina inventario di un magazzino.
+
+- *Scenario principale*:
+  + Il Supervisore Globale modifica il prezzo unitario di un prodotto.
+  + Il Supervisore Globale conferma il dato inserito.
+  + Il Supervisore Globale torna alla pagina di inventario del magazzino.
+
+- *Scenario alternativo*:
+  2. Il Supervisore Globale annulla l’aggiornamento del dato.
+  + Il sistema mantiene il dato precedente e scarta le modifiche.
+
+- *Trigger*:
+  - Il Supervisore Globale preme il pulsante Modifica Prodotto.
+
+
+
+#pagebreak()
+= Requisiti
+Verranno ora elencati i requisiti#super[G] del sistema, che sono stati suddivisi in quattro categorie principali: Requisiti#super[G] Funzionali, Requisiti#super[G] di Qualità, Requisiti#super[G] di Vincolo, Requisiti#super[G] Prestazionali.
+
+== Classificazione dei requisiti
+- *Requisiti Funzionali:* descrivono le funzionalità specifiche che il sistema deve offrire. Definiscono i comportamenti attesi in risposta a determinati input o situazioni, specificando cosa il sistema deve fare per soddisfare i bisogni degli utenti e degli stakeholder.
+
+- *Requisiti di Qualità:* detti anche non funzionali, definiscono le caratteristiche generali del sistema che ne influenzano l’efficacia, l’efficienza e l’affidabilità. Rientrano in questa categoria aspetti come la sicurezza, l’usabilità, la manutenibilità, la scalabilità e l’affidabilità complessiva del sistema.
+
+- *Requisiti di Vincolo:* specificano le limitazioni imposte da fattori esterni o immutabili, che il sistema o il processo di sviluppo devono rispettare. Tali vincoli possono derivare da normative, tecnologie obbligatorie, standard industriali, vincoli temporali o economici.
+
+- *Requisiti di Prestazionali:* definiscono le aspettative in termini di prestazioni del sistema, come tempi di risposta, capacità di carico, throughput e uso delle risorse. Questi requisiti sono fondamentali per garantire un’esperienza utente adeguata anche sotto carico elevato.
+
+== Fonti dei requisiti
+Le fonti dei requisiti#super[G] rappresentano i documenti e le informazioni da cui sono stati estratti i requisiti#super[G] stessi. Tra le principali fonti si annoverano il capitolato#super[G] d'appalto, le riunioni con il committente#super[G], l’analisi dello stato dell’arte e l’analisi dei casi d’uso.
+
+Ogni requisito riportato sarà accompagnato dall’indicazione esplicita della propria fonte di provenienza, al fine di garantirne la tracciabilità e la verificabilità.
+
+== Struttura della codifica dei requisiti
+I requisiti#super[G] sono stati codificati al fine di facilitarne la lettura, la gestione e la tracciabilità.
+Ogni codice è composto da un prefisso che indica la tipologia del requisito#super[G], seguito da un numero progressivo univoco.
+
+I requisiti#super[G] funzionali sono preceduti dal prefisso "RF", i Requisiti#super[G] di Qualità dal prefisso "RQ", i Requistiti#super[G] di Vincolo dal prefisso "RV" e i Requisiti#super[G] Prestazionali dal prefisso "RP", dove:
 - *R* sta per "#strong[R]equisito";
 - *F* sta per "#strong[F]unzionale";
-- *S* sta per "#strong[S]icurezza";
-- *nF* sta per "#strong[n]on #strong[F]unzionale".
+- *Q* sta per "#strong[Q]ualità";
+- *V* sta per "#strong[V]incolo";
+- *P* sta per "#strong[P]restazionale";
 
-//Aggiungere il fatto di avere vincoli desiderabili: riassortimento#super[G] predittivo, GUI (fonte: riunione con M31)
-Alcuni requisiti#super[G] funzionali sono stati definiti come *"desiderabili"*, in quanto non strettamente necessari ma in grado di apportare un valore aggiunto riconoscibile.\
+Per facilitare la lettura, la tracciabilità e la classificazione dei requisiti, è stato adottato un sistema di codifica sturtturato. La codifica prevede un prefisso che identifica la tipologia e l'importanza del requisito, seguito da un numero progressivo. In caso di scomposizione, si aggiunge una notazione per indicare i requisiti derivati.
 
-Per indicare che un requisito#super[G] è desiderabile, è stato deciso di aggiungere la lettera *"D"* (Desiderabile) al prefisso del requisito#super[G], per indicare che il requisito#super[G] è desiderabile.\ *RFD*, ad esempio, sta per "Requisito#super[G] Funzionale Desiderabile".\
+=== Tipologia e Importanza
+I requisiti#super[G] sono stati distinti anche in base alla loro importanza o natura, secondo le seguenti convenzioni:
+- *Standard*: requisiti strettamente necessari al corretto funzionamento del sistema.
+  - _Esempio:_ RF01 → Requisito Funzionale 01.
+- *Desiderabili (D)*: requisiti non obbligatori, ma in grado di apportare un valore aggiunto al sistema.
+  - _Esempio:_ RFD04 → Requisito Funzionale Desiderabile 02.
+- *Opzionali (O)*: requisiti implementabili solo in presenza di tempo o risorse sufficienti.
+  - _Esempio:_ RFO03 → Requisito Funzionale Opzionale 02.
 
-Essendoci presenti anche dei requisiti#super[G] *opzionali*, è stato deciso di aggiungere la lettera *"O"* (Opzionale) al prefisso del requisito#super[G], per indicare che il requisito#super[G] è opzionale.\ *RFO*, ad esempio, sta per "Requisito#super[G] Funzionale Opzionale".\
+=== Scomposizione dei Requisiti Generali
+Poichè molti requistiti derivati dal capitolato risultano generici, è stato necessario *scomporli* in requisiti più specifici, che chiariscano chi deve fare cosa e in quale modalità.
+Per indicare questa relazione di derivazione, si utilizza la notazione *"/nr"*, dove _nr_ rappresenta un numero progressivo riferito al requisito secondario.
 
-Inoltre, i requisiti#super[G] forniti dal capitolato#super[G] sono molto generali e non specificano in modo dettagliato le funzionalità richieste.
-Per questo motivo, è stato deciso di scomporre i requisiti#super[G] in requisiti#super[G] più specifici, cioè chi deve fare cosa, e in che modo.\
-Per indicare che un requisito#super[G] è secondario, è stato deciso di aggiungere la dicitura *"/nr"* al codice#super[G] del requisito#super[G] principale, dove *nr* è il numero progressivo del requisito#super[G] secondario.\
+_Esempio:_
+  - RF04 → Requisito principale.
+  - RF04/01, RF04/02 → Requisiti secondari specifici derivati dal requisito RF04.
 
-Quindi, la struttura del codice#super[G] di un requisito#super[G] è la seguente:
+=== Sintesi della struttura del codice
+\
+#align(center)[
+  *[Prefisso][Indicatore opzionale][Numero progressivo][/nr]*
+]\
+- *Prefisso:* RF (Funzionale), RQ (Qualità), RV (Vincolo), RP (Prestazionale).
+- *Indicatore opzionale:* D (Desiderabile), O (Opzionale).
+- *Numero progressivo:* numero univoco del requisito all'interno della categoria.
+- *\/nr:* numero del requisito secondario, se presente.
 
-- RF01: Requisito#super[G] Funzionale principale 01;
-- RF01/01: Requisito#super[G] Funzionale secondario 01/01;
-- RS01: Requisito#super[G] di Sicurezza principale 01;
-- RS01/01: Requisito#super[G] di Sicurezza secondario 01/01;
-- RnF01: Requisito#super[G] non Funzionale principale 01;
-- RnF01/01: Requisito#super[G] non Funzionale secondario 01/01.
-
-//Scomporre i requisiti#super[G] in requisiti#super[G] più specifici, cioè chi deve fare cosa, e in che modo.\
-
-== Requisiti#super[G] Funzionali
-//incremento tabella_counter
-#let tabella_counter = tabella_counter + 1
-
-#set table(
-  fill:(_,y)=>if y==0 {rgb("#2599ff")}
-)
-
-#table(
-  columns: (0.8fr, 3fr, 1fr),
-  inset: 10pt,
-  align: center,
-  table.header(
-    [*Codice#super[G]*], [*Descrizione*], [*Fonti*]
-  ),
-
-  [*RF01*], [*Rilevamento di carenza di scorte#super[G] di un magazzino.*], [capitolato#super[G]],
-  [*RF01/01*], [Il sistema deve monitorare costantemente le scorte#super[G].], [capitolato#super[G]],
-  [*RF01/02*], [Il sistema deve identificare quando le scorte#super[G] scendono sotto una certa soglia.], [capitolato#super[G]],
-  
-  [*RF02*], [*Trasferimento#super[G] di scorte#super[G] da un magazzino ad un altro.*], [capitolato#super[G]],
-  [*RF02/01*], [Il sistema deve consentire l'invio di richieste di trasferimento#super[G] tra magazzini.],[capitolato#super[G]],
-  [*RF02/02*], [Il sistema deve validare la disponibilità delle scorte#super[G] nel magazzino di origine.], [capitolato#super[G]],
-  [*RF02/03*], [Il sistema deve aggiornare l'inventario#super[G] di entrambi i magazzini coinvolti.], [capitolato#super[G]],
-  [*RF02/04*], [Il sistema deve tracciare il trasferimento#super[G] dei prodotti#super[G].], [capitolato#super[G]],
-  [*RF02/05*], [Il sistema deve aggiornare lo stato del trasferimento#super[G] in tempo reale.], [capitolato#super[G]],
-
-  
-  [*RF03*], [*Rilevamento delle scorte#super[G] minime necessarie.*], [capitolato#super[G]],
-  [*RF03/01*], [Deve essere possibile poter definire un livello minimo di scorte#super[G] per ciascun prodotto#super[G].], [progettazione],
-  [*RF03/02*], [Il sistema deve calcolare le scorte#super[G] minime necessarie per ciascun prodotto#super[G].], [capitolato#super[G]],
-  [*RF03/03*], [Il sistema deve monitorare le scorte#super[G] attuali rispetto alle scorte#super[G] minime, ottimizzandone la quantità], [capitolato#super[G].],
-
-  
-  [*RF04*], [*bilanciamento#super[G] delle scorte#super[G], il più possibile, in ogni magazzino per ridurre i livelli medi di scorte#super[G] (riassortimento#super[G]).*], [capitolato#super[G]],
-  [*RF04/01*], [Il sistema deve analizzare la distribuzione delle scorte#super[G] tra i magazzini.], [capitolato#super[G]],
-  [*RF04/02*], [Il sistema deve identificare squilibri nelle scorte#super[G], valutando la distribuzione attuale.], [capitolato#super[G]],
-  [*RF04/03*], [Il sistema deve effettuare trasferimenti#super[G] interni per bilanciare le scorte#super[G] e migliorare l'efficienza.], [capitolato#super[G]],
-  [*RF04/04*], [Il sistema deve automatizzare il processo di riassortimento#super[G].], [capitolato#super[G]],
-
-  [*RF05*], [*Suggerimento su azioni di riassortimento#super[G] e trasferimento#super[G] tra magazzini.*], [capitolato#super[G]],
-  [*RF05/01*], [È necessario fornire raccomandazioni al sistema per il riassortimento#super[G] e i trasferimenti#super[G].], [capitolato#super[G]],
-
-  [*RF06*], [*Gestione degli ordini#super[G] con scorte#super[G] insufficienti*], [progettazione],
-  [*RF06/01*], [Il sistema deve gestire le scorte#super[G] insufficienti in un magazzino che deve evadere un ordine#super[G]], [progettazione],
-
-  [*RF07*], [*Individuazione di magazzini offline.*], [capitolato#super[G]],
-  [*RF07/01*], [Il sistema deve monitorare la connettività#super[G] di ciascun magazzino.], [capitolato#super[G]],
-  [*RF07/02*], [Il sistema deve segnalare tempestivamente eventuali disconnessioni.], [capitolato#super[G]],
-  [*RF07/03*], [Il sistema deve correttamente segnalare lo stato del magazzino (offline, online, non operativo, operativo).], [progettazione],
-
-  [*RF08*], [*Gestione dei disservizi.*], [capitolato#super[G]],
-  [*RF08/01*], [Il sistema deve determinare i magazzini vicini disponibili.], [capitolato#super[G]],
-  [*RF08/02*], [Deve essere definito un disservizio di tipo fisico. Tale disservizio viene segnalato come "non operativo".], [progettazione],
-  [*RF08/03*], [Deve essere definito un disservizio di rete#super[G]. Tale disservizio viene segnalato come "offline".], [progettazione],
-  [*RF08/04*], [Gestire il caso in cui un magazzino è offline, e mentre è offline diventa non operativo.], [progettazione],
-  [*RF08/05*], [Il sistema deve trasferire scorte#super[G] ai magazzini vicini per sopperire al disservizio nel caso in cui il magazzino è non operativo.], [progettazione],
-  
-  [*RF09*], [*Gestione magazzino che torna online.*], [capitolato#super[G]],
-  [*RF09/01*], [Il sistema deve riconoscere quando un magazzino torna online.], [capitolato#super[G]],
-  [*RF09/02*], [Il sistema deve sincronizzare i dati di inventario#super[G] con il cloud.], [capitolato#super[G]],
-  [*RF09/03*], [Il sistema deve risolvere eventuali conflitti di dati], [capitolato#super[G].],
-  
-  [*RF10*], [*Visibilità centrale in tempo reale di tutte le scorte#super[G] distribuite (monitoraggio#super[G] livelli inventario#super[G]), di ogni magazzino (anche indipendentemente).*], [capitolato#super[G]],
-  [*RF10/01*], [Il sistema deve fornire una dashboard#super[G] centralizzata per monitorare le scorte#super[G].], [capitolato#super[G]],
-  [*RF10/02*], [Il sistema deve interrogare il database di aggregazione del microservizio#super[G] di inventario#super[G] su cloud per avere una visione centralizzata delle scorte#super[G] di ogni magazzino.], [capitolato#super[G]],
-
-  [*RF11*], [*Mantenimento dei livelli di sicurezza delle scorte#super[G] in ogni magazzino in caso di carenze o ritardi.*], [capitolato#super[G]],
-  [*RF11/01*], [Definire una soglia temporale massima come tempo stimato di arrivo di una richiesta, dopo la quale viene aggiornato lo stato del trasferimento#super[G].], [capitolato#super[G]],
-  [*RF11/02*], [In caso di superamento della soglia, il sistema deve attivare delle azioni correttive (es.: invio di nuove richieste).], [capitolato#super[G]],
-  
-  [*RF12*], [*Gestione aggiornamenti simultanei dell'inventario#super[G] da magazzini differenti, anche per i singoli magazzini.*], [capitolato#super[G]],
-  [*RF12/01*], [Il sistema deve gestire le modifiche concorrenti (in simultanea) ai dati di inventario#super[G].], [capitolato#super[G]],
-  [*RF12/02*], [Il sistema deve implementare meccanismi di controllo delle versioni e/o del timestamp.], [capitolato#super[G]],
-  [*RF12/03*], [Il sistema deve risolvere conflitti di aggiornamento], [capitolato#super[G].],
-  
-  [*RF13*], [*Gestione di ordini#super[G] simultanei per uno stesso prodotto#super[G] in singoli magazzini.*], [analisi dello stato dell'arte],
-  [*RF13/01*], [Il sistema deve coordinare gli ordini#super[G] ricevuti contemporaneamente.], [analisi dello stato dell'arte],
-  [*RF13/02*], [Il sistema deve assegnare le scorte#super[G] disponibili secondo dei criteri predefiniti.], [analisi dello stato dell'arte],
-  [*RF13/03*], [Definire dei criteri di priorità per gli ordini#super[G] in caso di conflitto.], [analisi dello stato dell'arte],
-
-  [*RF14*], [*Magazzini autonomi come edge nodes, che fanno elaborazioni autonome per ridurre il carico sulla rete.*], [capitolato#super[G]],
-  [*RF14/01*], [Il sistema deve consentire ai magazzini di operare autonomamente, permettendo operazioni locali sui dati di inventario#super[G].], [capitolato#super[G]],
-  [*RF14/02*], [Il sistema deve eseguire elaborazioni locali per ridurre il carico sulla rete#super[G].], [capitolato#super[G]],
-  [*RF14/03*], [Il magazzino locale deve sincronizzarsi con il cloud nel momento in cui avviene un'operazione di scrittura.], [capitolato#super[G]],
-
-  [*RF15*], [*Operazioni di inventario#super[G] indipendenti ma sincronizzate centralmente.*], [capitolato#super[G]],
-  [*RF15/01*], [Il magazzino locale deve operare tramite inserimento, modifica, trasferimento#super[G].], [capitolato#super[G]],
-  [*RF15/02*], [Aggiornare il magazzino in primo luogo localmente], [capitolato#super[G]],
-
-  [*RFD01*], [*Gestione della variabilità della domanda e tempi di consegna con modelli predittivi.*], [capitolato#super[G]],
-  [*RFD01/01*], [Il sistema deve prevedere la domanda futura per ciascun prodotto#super[G].], [capitolato#super[G]],
-  [*RFD01/02*], [Il sistema deve pianificare riassortimenti#super[G] in base alle previsioni.], [capitolato#super[G]],
-  [*RFD01/03*], [Il sistema deve attivare meccanismi preventivi per evitare esaurimenti.], [capitolato#super[G]],
-
-  [*RFD02*], [*Riassortimento#super[G] predittivo tramite analisi dei dati storici, con previsione della domanda per ciascun prodotto#super[G] considerando stagionalità e tendenze di consumo, per determinare quando e quanto riassortire le scorte#super[G], riducendo il rischio di esaurimento o sovrastoccaggio.*], [capitolato#super[G]],
-  [*RFD02/01*], [Il sistema deve analizzare dati storici di vendita e di consegna.], [capitolato#super[G]],
-  [*RFD02/02*], [Il sistema deve applicare modelli statistici per prevedere la domanda, identificando pattern stagionali e tendenze di consumo], [capitolato#super[G].],
-  [*RFD02/03*], [Il sistema deve adattare le strategie di approvvigionamento#super[G] in base alle previsioni.], [capitolato#super[G]],
-  [*RFD02/04*], [Il sistema deve ottimizzare i livelli di scorte#super[G] per ridurre il rischio di esaurimento o sovrastoccaggio.], [capitolato#super[G]],
-  [*RFD02/05*], [Il sistema deve avere uno storico dei livelli della merce.], [progettazione],
-
-  //DA VERIFICARE INSIEME
-  [*RFD03*], [*Interfaccia grafica per la visualizzazione e gestione delle scorte#super[G], con dashboard#super[G] centralizzata per monitorare le scorte#super[G] in tempo reale.*], [capitolato#super[G]],
-  [*RFD03/01*], [Il sistema deve fornire un'interfaccia grafica intuitiva per gli utenti.], [capitolato#super[G]],
-  [*RFD03/02*], [Il sistema deve visualizzare le informazioni sulle scorte#super[G] in tempo reale.], [capitolato#super[G]],
-  [*RFD03/03*], [Il sistema deve consentire agli utenti di gestire le scorte#super[G] e le operazioni di inventario#super[G] tramite l'interfaccia grafica.], [capitolato#super[G]],
-
-  //Requisiti#super[G] Funzionali opzionali
-  //commentare se decidiamo di toglierli
-  [*RFO01*], [*Integrazione con sistemi di notifica per eventi rilevanti, come il raggiungimento dei livelli minimi di scorte#super[G], l'approvazione dei trasferimenti#super[G] di merci, con alert#super[G] configurabili in base a regole definite e supporto a più canali di comunicazione (e-mail, SMS, dashboard#super[G] interna).*], [capitolato#super[G]],
-  [*RFO01/01*], [È necessario supporto per la generazione di notifiche automatiche.], [capitolato#super[G]],
-  [*RFO01/02*], [È prevista una notifica per il raggiungimento dei livelli minimi di scorte#super[G].], [capitolato#super[G]],
-  [*RFO01/03*], [È prevista una notifica per approvazione e/o rifiuto delle proposte di riassortimento#super[G] predittivo di merci.], [capitolato#super[G]],
-  [*RFO01/04*], [Il sistema deve notificare le parti interessate delle modifiche ai dati di inventario#super[G].], [capitolato#super[G]],
-  [*RFO01/05*], [Il sistema deve notificare eventuali cambi di stato dell'ordine#super[G].], [capitolato#super[G]],
-  [*RFO01/06*], [Il sistema deve notificare l'impossibilità di evasione di un ordine#super[G].], [capitolato#super[G]],
-  [*RFO01/07*], [Il sistema deve notificare la carenza di scorte#super[G]], [capitolato#super[G].],
-  [*RFO01/08*], [Il sistema deve notificare in caso di soglie critiche di utilizzo delle risorse per il funzionamento del sistema.], [capitolato#super[G]],
-  [*RFO01/09*], [Il sistema deve notificare in caso di cambiamento di stato di un magazzino (offline, online, non operativo, operativo).], [progettazione],
-  [*RFO01/10*], [Gli alert#super[G] sono configurabili in base a regole definite dall'utente (o dall'amministratore#super[G]).], [capitolato#super[G]],
-  [*RFO01/11*], [È previsto l'invio di notifiche tramite email e/o SMS], [capitolato#super[G].],
-  [*RFO01/12*], [È prevista la visualizzazione delle notifiche sulla dashboard#super[G] interna del sistema.], [capitolato#super[G]],
-  
-  [*RFO02*], [*Implementazione di meccanismi di autorizzazione e autenticazione#super[G], inclusa la gestione di ruoli e permessi differenziati per operatori, supervisori e amministratori*#super[G].], [capitolato#super[G]],
-  [*RFO02/01*], [È prevista la possibilità di autenticazione#super[G] a due fattori (2FA#super[G]).], [capitolato#super[G]],
-  [*RFO02/02*], [Il sistema prevede il controllo completo per gli amministratori#super[G].], [capitolato#super[G]],
-  [*RFO02/03*], [Il sistema prevede l'autorizzazione a convalidare trasferimenti#super[G] o ad approvare modifiche per i supervisori.], [capitolato#super[G]],
-  [*RFO02/04*], [Il sistema prevede l'accesso limitato alle operazioni di base per gli operatori.], [capitolato#super[G]],
-  
-  [*RFO03*], [*Backup#super[G] regolare dei dati, con il sistema centrale incaricato di gestire l'integrità#super[G] e la conciliazione dei dati, mantenendo copie locali per ogni magazzino e permettendo il ripristino#super[G] completo dei sistemi in caso di necessità.*], [capitolato#super[G]],
-  [*RFO03/01*], [Il sistema centrale esegue verifiche periodiche sui dati distribuiti.], [capitolato#super[G]],
-  [*RFO03/02*], [Il sistema prevede meccanismi di conciliazione per dati incoerenti.], [capitolato#super[G]],
-  [*RFO03/03*], [Ogni nodo#super[G] mantiene una copia locale dei propri dati come backup#super[G].], [capitolato#super[G]],
-  [*RFO03/04*], [I dati locali possono essere utilizzati per operazioni anche in caso di disconnessione dal centrale.], [capitolato#super[G]],
-  [*RFO03/05*], [Il sistema prevede il ripristino#super[G] dei dati da backup#super[G] centralizzati.], [capitolato#super[G]],
-  [*RFO03/06*], [Il sistema prevede il ripristino#super[G] delle copie locali in caso di guasto del nodo#super[G].], [capitolato#super[G]],
-
-  [*RFO03/07*], [Il sistema prevede una verifica#super[G] dell'integrità#super[G] post-ripristino#super[G].], [capitolato#super[G]],
-)
-#align(center)[_Tabella #tabella_counter: Requisiti#super[G] funzionali_]
-
-== Requisiti#super[G] di Sicurezza
-//incremento tabella_counter
-#let tabella_counter = tabella_counter + 1
-
-#set table(
-  fill:(_,y)=>if y==0 {rgb("#2599ff")}
-)
-
-#table(
-  columns: (auto, auto, auto),
-  inset: 10pt,
-  align: center,
-  table.header(
-    [*Codice#super[G]*], [*Descrizione*], [*Fonti*]
-  ),
-
-  [*RS01*], [*Autenticazione#super[G] semplice*], [capitolato#super[G]],
-  [*RS01/01*], [Il sistema prevede l'implementazione dell'autenticazione#super[G] per l'accesso al sistema stesso.], [capitolato#super[G]],
-  [*RS01/02*], [Il sistema deve garantire la protezione dei dati sensibili#super[G] durante il processo di autenticazione#super[G].], [capitolato#super[G]],
-  [*RS01/03*], [Il sistema deve prevedere il logout.], [capitolato#super[G]],
-
-  [*RS02*], [*Cifratura#super[G] end-to-end per tutti i dati scambiati.*], [capitolato#super[G]],
-  [*RS02/01*], [Il sistema deve garantire la cifratura#super[G] dei dati durante tutta la comunicazione tra client#super[G], microservizi#super[G] e sistema centrale#super[G].], [capitolato#super[G]],
-  [*RS02/02*], [Il sistema deve utilizzare protocolli#super[G] sicuri per la trasmissione.], [capitolato#super[G]],
-  [*RS02/03*], [Il sistema deve proteggere i dati sensibili#super[G] sia in transito che in riposo.], [capitolato#super[G]],
-  [*RS02/04*], [Il sistema deve assicurare che la cifratura#super[G] sia attiva per tutte le API#super[G] e i canali di comunicazione.], [capitolato#super[G]],
-
-  [*RS03*], [*Monitoraggio#super[G] continuo per rilevare tentativi di accesso non autorizzati o attività sospette*], [capitolato#super[G]],
-  [*RS03/01*], [Il sistema deve implementare sistemi di monitoraggio#super[G] centralizzato.], [capitolato#super[G]],
-  [*RS03/02*], [Il sistema deve rilevare e segnalare attività anomale, accessi non autorizzati e tentativi di intrusione#super[G].], [capitolato#super[G]],
-  [*RS03/03*], [Il sistema deve registrare i log#super[G] degli accessi e delle operazioni rilevanti.], [capitolato#super[G]],
-  [*RS03/04*], [Il sistema deve inviare allarmi in tempo reale in caso di comportamento sospetto.], [capitolato#super[G]],
-
-//Requisiti#super[G] di Sicurezza opzionali
-  [*RSO01*], [*Implementare l'autenticazione#super[G] tra microservizi#super[G].*], [capitolato#super[G]],
-  [*RSO01/01*], [Il sistema deve garantire che solo i microservizi#super[G] autorizzati possono comunicare tra loro.], [capitolato#super[G]],
-  [*RSO01/02*], [È previsto l'utilizzo di tecnologie di autenticazione#super[G] tra microservizi#super[G].], [capitolato#super[G]],
-  [*RSO01/03*], [È necessario cifrare le comunicazioni tra i microservizi#super[G], anche all'interno della rete#super[G] interna.], [capitolato#super[G]],
-  [*RSO01/04*], [È necessario isolare i microservizi#super[G] in base alle loro funzioni per limitare l'accesso.], [capitolato#super[G]],
-  [*RSO01/05*], [È necessario monitorare e gestire le dipendenze tra microservizi#super[G] per individuare eventuali vulnerabilità#super[G] esterne.], [capitolato#super[G]],
-
-  [*RSO02*], [*Backup#super[G] regolari, ridondanza#super[G] e piani di ripristino#super[G] in caso di attacchi o malfunzionamenti.*], [capitolato#super[G]],
-  [*RSO02/01*], [Il sistema prevede di eseguire backup#super[G] periodici dei dati e della configurazione del sistema.], [capitolato#super[G]],
-  [*RSO02/02*], [Il sistema prevede la ridondanza#super[G] dei dati (su cloud e in replica locale).], [capitolato#super[G]],
-  [*RSO02/03*], [Il sistema prevede la definizione di un piano di ripristino#super[G] operativo con test regolari di recovery#super[G].], [capitolato#super[G]],
-  
-  [*RSO03*], [*Assicurare che l'autenticazione#super[G] sia robusta tramite MFA#super[G] e certificati crittografici.*], [capitolato#super[G]],
-  [*RSO03/01*], [È necessario abilitare MFA#super[G] (autenticazione#super[G] a più fattori) per tutti gli utenti con privilegi.], [capitolato#super[G]],
-  [*RSO03/02*], [È necessario utilizzare certificati digitali#super[G] per autenticare utenti e dispositivi.], [capitolato#super[G]],
-  [*RSO03/03*], [È necessario consentire l'accesso solo da dispositivi e utenti autorizzati e riconosciuti.], [capitolato#super[G]],
-  [*RSO03/04*], [È necessario assicurare l'integrità#super[G] dei dati scambiati tramite firme digitali#super[G] o hashing#super[G].], [capitolato#super[G]],
-  
-)
-#align(center)[_Tabella #tabella_counter: Requisiti#super[G] di sicurezza_]
-
-== Requisiti#super[G] NON Funzionali
-//incremento tabella_counter
-#let tabella_counter = tabella_counter + 1
-
-#set table(
-  fill:(_,y)=>if y==0 {rgb("#2599ff")}
-)
-
-#table(
-  columns: (auto, auto, auto),
-  inset: 10pt,
-  align: center,
-  table.header(
-    [*Codice#super[G]*], [*Descrizione*], [*Fonti*]
-
-  ),
-
-  [*RnF01*], [*Test unitari per garantire la correttezza delle funzioni sviluppate, anche dopo modifiche.*], [capitolato#super[G]],
-  [*RnF01/01*], [Il sistema deve verificare#super[G] automaticamente il corretto comportamento delle singole funzioni.], [capitolato#super[G]],
-  [*RnF01/02*], [I test devono essere eseguiti dopo ogni modifica al codice#super[G].], [capitolato#super[G]],
-  [*RnF01/03*], [I test devono essere ripetibili e facilmente estendibili.], [capitolato#super[G]],
-
-  [*RnF02*], [*Percentuale minima di copertura del codice#super[G].*], [capitolato#super[G]],
-  [*RnF02/01*], [La percentuale di copertura del codice#super[G], concordata con M31, è da rispettare costantemente durante tutto lo sviluppo.], [capitolato#super[G]],
-  [*RnF02/02*], [Il sistema deve monitorare automaticamente la copertura del codice#super[G] con strumenti dedicati.], [capitolato#super[G]],
-
-
-  [*RnF03*], [*Esecuzione automatica dei test*], [capitolato#super[G]],
-  [*RnF03/01*], [I test devono essere eseguiti automaticamente tramite pipeline CI/CD#super[G].], [capitolato#super[G]],
-  [*RnF03/02*], [È prevista una notifica immediata in caso di fallimento dei test.], [capitolato#super[G]],
-  [*RnF03/03*], [Il sistema deve prevedere automatismi in grado di impedire il rilascio in produzione se i test falliscono.], [capitolato#super[G]],
-
-  [*RnF04*], [*Test book per documentare.*], [capitolato#super[G]],
-  [*RnF04/01*], [Deve esserci un elenco completo dei casi di test.], [capitolato#super[G]],
-  [*RnF04/02*], [È prevista una descrizione chiara per ogni test, con tutti i passaggi eseguiti.], [capitolato#super[G]],
-  [*RnF04/03*], [Deve essere presente una lista di risultati attesi, comparata ai risultati effettivi.], [capitolato#super[G]],
-  [*RnF04/04*], [Devono essere specificati i criteri di validazione#super[G] dei test.], [capitolato#super[G]],
-
-  [*RnF04/05*], [Deve essere presente lo storico aggiornato dei tesi superati e falliti.], [capitolato#super[G]],
-
-  [*RnF05*], [*Sistema scalabile orizzontalmente; Microservizi#super[G] modulari#super[G] e distribuibili in più istanze cloud.*], [capitolato#super[G]],
-  [*RnF05/01*], [Ogni magazzino può aumentare o diminuire risorse in base al carico.], [capitolato#super[G]],
-  [*RnF05/02*], [Il comportamento di un magazzino non deve compromettere gli altri.], [capitolato#super[G]],
-  [*RnF05/03*], [I microservizi#super[G] devono essere modulari#super[G].], [capitolato#super[G]],
-  [*RnF05/04*], [I microservizi#super[G] devono poter essere distribuiti in più istanze in ambiente cloud.], [capitolato#super[G]],
-  [*RnF05/05*], [Deve esserci supporto all'orchestrazione#super[G] tramite strumenti (es. Kubernetes).], [capitolato#super[G]],
-  [*RnF05/06*], [È necessario garantire la scalabilità#super[G] orizzontale del sistema], [capitolato#super[G].],
-
-  [*RnF06*], [*Versionamento tramite Git.*], [capitolato#super[G]],
-  [*RnF06/01*], [È previsto l'utilizzo di branch#super[G] per nuove funzionalità, bugfix#super[G] e refactoring#super[G].], [capitolato#super[G]],
-  [*RnF06/02*], [Devono essere ben definite le strategie di merge#super[G]/rebase#super[G].], [capitolato#super[G]],
-  [*RnF06/03*], [I commit#super[G] devono essere frequenti e descrittivi.], [capitolato#super[G]],
-  [*RnF06/04*], [Le modifiche devono essere tracciabili nel tempo.], [capitolato#super[G]],
-
-  [*RnF07*], [*Mantenimento di prestazioni elevate anche con carichi elevati di dati e richieste simultanee.*], [capitolato#super[G]],
-  [*RnF07/01*], [ Il sistema deve implementare un meccanismo di bilanciamento#super[G] del carico tra i servizi#super[G] per distribuire in modo efficiente le richieste.], [capitolato#super[G]],
-  [*RnF07/02*], [Il sistema deve monitorare l'utilizzo delle risorse in tempo reale.], [capitolato#super[G]],
-  [*RnF07/03*], [Il sistema deve gestire le risorse in modo dinamico evitando problemi prestazionali (es. gestione code, scalabilità#super[G] automatica).], [capitolato#super[G]],
-
-  [*RnF08*], [*Magazzini gestiti da servizi#super[G] distribuiti.*], [capitolato#super[G]],
-  [*RnF08/01*], [È necessario distribuire le funzionalità del sistema su più servizi#super[G].], [capitolato#super[G]],
-  [*RnF08/02*], [È necessario garantire la resilienza e la scalabilità#super[G] del sistema.], [capitolato#super[G]],
-
-  [*RnF09*], [*Progettazione architetturale ben documentata, presentata con diagrammi a blocchi e derivata da analisi dei requisiti#super[G] e dal contesto distribuito.*], [capitolato#super[G]],
-
-)
-#align(center)[_Tabella #tabella_counter: Requisiti#super[G] non funzionali_]
 #pagebreak()
 
+// ===== REQUISITI FUNZIONALI =====
+
+== Requisiti Funzionali
+#show figure: set block(breakable: true)
+#set table.cell(breakable: true)
+
+#set table(
+  fill:(x,y)=> if y==0 {rgb("#2599ff")} else if x == 0 {luma(235)},
+)
+
+#figure(
+  table(
+    columns: (1fr, 3.5fr, 1.2fr),
+    inset: 10pt,
+    align: center,
+    table.header(
+    [*Codice*], [*Descrizione*], [*Fonti*]),
+
+    [*RF01*], [*Registrazione del Supervisore Globale.*], [decisione\ interna],
+    [*RF01/01*], [Il Supervisore Globale deve registrarsi al primo avvio del sistema.], [decisione\ interna],
+
+    [*RF02*], [*Autenticazione dell'utente.*], [capitolato#super[G]],
+    [*RF02/01*], [L'utente deve poter accedere al sistema mediante credenziali.], [capitolato#super[G]],
+    [*RF02/02*], [L'utente deve poter effettuare il logout dal sistema.], [capitolato#super[G]],  
+
+    [*RF03*], [*Registrazione di nuovi Supervisori Locali.*], [decisione\ interna],
+    [*RF03/01*], [Il Supervisore Globale può registrare a sistema nuovi Supervisori Locali.], [decisione\ interna],
+    [*RF03/02*], [Il Supervisore Globale deve assegnare il/i magazzino/i a cui il Supervisore Locale ha accesso in fase di registrazione.], [decisione\ interna],
+
+    [*RF04*], [*Gestione manuale dei magazzini.*], [capitolato#super[G]],
+    [*RF04/01*], [Il Supervisore Globale deve poter aggiungere un nuovo magazzino a sistema.], [capitolato#super[G]],
+    [*RF04/02*], [Il Supervisore Globale deve poter rimuovere un magazzino dal sistema.], [capitolato#super[G]],
+    [*RF04/03*], [Il Supervisore Globale deve poter modificare informazioni di un magazzino.], [capitolato#super[G]],
+    [*RF04/04*], [Ciascun magazzino deve essere identificato univocamente.], [capitolato#super[G]],
+
+    [*RF05*], [*Gestione manuale delle merci.*], [capitolato#super[G]],
+    [*RF05/01*], [I Supervisori possono inserire un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
+    [*RF05/02*], [I Supervisori possono definire il prezzo unitario all'inserimento di un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
+    [*RF05/03*], [I Supervisori possono definire la quantità all'inserimento di un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
+    [*RF05/04*], [Il Supervisore Globale può rimuovere un tipo di merce dall'inventario.], [capitolato#super[G]],
+    [*RF05/05*], [I Supervisori possono modificare la quantità di merce nell'inventario dei magazzini.], [capitolato#super[G]],
+    [*RF05/06*], [Il Supervisore Globale può modificare il prezzo unitario di un prodotto.], [capitolato#super[G]],
+
+    [*RF06*], [*Gestione manuale degli ordini.*], [capitolato#super[G]],
+    [*RF06/01*], [I Supervisori possono inserire ordini di trasferimento interno tra magazzini.], [capitolato#super[G]],
+    [*RF06/02*], [I Supervisori possono inserire ordini di approvvigionamento dall'esterno.], [capitolato#super[G]],
+    [*RF06/03*], [I Supervisori possono inserire ordini di vendita verso l'esterno.], [capitolato#super[G]],
+    [*RF06/04*], [I Supervisori possono annullare ordini "in attesa" e "in elaborazione".], [decisione\ interna],
+
+    [*RF07*], [*Auditing dei dati dei magazzini.*], [], 
+    [*RF07/01*], [Il Supervisore Globale può visualizzare l'inventario globale.], [capitolato#super[G]],
+    [*RF07/02*], [Il Supervisore Globale può visualizzare l'inventario di ciascun magazzino.], [capitolato#super[G]],
+    [*RF07/03*], [Il Supervisore Globale può visualizzare un report degli ordini globali.], [capitolato#super[G]],
+    [*RF07/04*], [Il Supervisore Globale può visualizzare un report degli ordini di ciascun magazzino.], [capitolato#super[G]],
+    [*RF07/05*], [I Supervisori Locali possono visualizzare l'inventario del/dei magazzino/i a loro assegnato/i.], [capitolato#super[G]],
+    [*RF07/06*], [I Supervisori Locali possono visualizzare un report degli ordini del/dei magazzino/i a loro assegnato/i.], [capitolato#super[G]],
+
+    [*RF08*], [I Supervisori possono visualizzare lo stato di tutti i magazzini.], [capitolato#super[G]],
+
+    [*RF09*], [*Gestione delle richieste.*], [capitolato#super[G]], 
+    [*RF09/01*], [I Supervisori possono visualizzare le notifiche informative prodotte dal sistema.], [capitolato#super[G]],
+    [*RF09/02*], [Il Supervisore Globale può accettare le richieste decisionali prodotte dal sistema.], [capitolato#super[G]],
+    [*RF09/03*], [Il Supervisore Globale può rifiutare le richieste decisionali prodotte dal sistema.], [capitolato#super[G]],
+
+    [*RF10*], [*Gestione delle soglie critiche.*], [capitolato#super[G]], 
+    [*RF10/01*], [I Supervisori possono definire i valori di soglia minima all'inserimento di nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
+    [*RF10/02*], [I Supervisori possono definire i valori di soglia massima all'inserimento di nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
+    [*RF10/03*], [Il Supervisore Globale può modificare i valori di soglia minima e massima di ciascun tipo di merce per ciascun magazzino.], [capitolato#super[G]],
+    [*RF10/04*], [I Supervisori Locali possono modificare i valori di soglia minima e massima di ciascun tipo di merce nel/nei magazzino/i a loro assegnato/i.], [capitolato#super[G]],
+
+    [*RF11*], [*Rilevamento di carenza di scorte#super[G] di un magazzino.*], [capitolato#super[G]],
+    [*RF11/01*], [Ciascun magazzino deve identificare quando le scorte#super[G] scendono sotto una certa soglia.], [capitolato#super[G]],
+    [*RF11/02*], [Ciascun magazzino deve identificare quando le scorte#super[G] salgono sopra una certa soglia.], [capitolato#super[G]],
+
+    [*RF12*], [*Gestione degli ordini.*], [capitolato#super[G]],
+    [*RF12/01*], [Ciascun magazzino deve verificare la disponibilità delle scorte#super[G] per poter soddisfare un ordine ricevuto.], [capitolato#super[G]],
+    [*RF12/02*], [Ciascun magazzino deve identificare l'impossibilità di soddisfare un ordine.], [capitolato#super[G]],
+    [*RF12/03*], [Un magazzino con scorte insufficienti per gestire un ordine, deve richidere un riassortimento al sistema.], [decisione\ interna],
+    [*RF12/04*], [Ciascun magazzino deve tracciare lo stato degli ordini.], [capitolato#super[G]],
+    [*RF12/05*], [I magazzini possono inviare merce verso un altro magazzino tramite un ordine.],[capitolato#super[G]],
+    [*RF12/06*], [I magazzini possono ricevere approvvigionamenti dall'esterno tramite ordine.],[capitolato#super[G]],
+    [*RF12/07*], [I magazzini possono spedire merci verso l'esterno tramite ordine.],[capitolato#super[G]],
+    [*RF12/08*], [Il magazzino di destinazione deve notificare l'arrivo della merce al magazzino di origine.], [decisione\ interna],
+    [*RF12/09*], [Un ordine deve trovarsi in uno dei seguenti stati: "in attesa", "in elaborazione", "in transito", "annullato", "consegnato".], [decisione\ interna],
+
+    [*RF13*], [*Riassortimento delle scorte#super[G] tra magazzini.*], [capitolato#super[G]],
+    [*RF13/01*], [Il sistema deve programmare trasferimenti interni al raggiungimento di una soglia critica di un prodotto in un magazzino al fine di bilanciare le scorte.], [capitolato#super[G]],
+
+    [*RF14*], [*Individuazione dello stato dei magazzini.*], [capitolato#super[G]],
+    [*RF14/01*], [Ciascun magazzino può trovarsi in uno dei seguenti stati: "online", "offline".],[capitolato#super[G]],
+    [*RF14/02*], [Il sistema deve identificare eventuali cambi di stato dei magazzini.],[capitolato#super[G]],
+    [*RF14/03*], [Il sistema deve identificare eventuali disconnessioni di uno o più magazzini segnandoli come "offline".], [capitolato#super[G]],
+
+    [*RF15*], [*Gestione dei disservizi.*], [capitolato#super[G]],
+    [*RF15/01*], [Un magazzino offline deve annullare gli ordini che non può soddisfare dopo un periodo di tempo predefinito.],[decisione\ interna],
+    [*RF15/02*], [Il Supervisore Globale può definire il periodo di tempo dopo cui l'ordine di un magazzino offline viene automaticamente anullato.],[decisione\ interna],
+
+    [*RF16*], [*Gestione magazzino che cambia stato da offline a online.*], [capitolato#super[G]],
+    [*RF16/01*], [Il sistema deve riconoscere quando un magazzino torna online.], [capitolato#super[G]],
+
+    [*RF17*], [*Annullamento di ordini in transito.*], [concordata\ col proponente],
+    [*RF17/01*], [Un ordine in stato "in transito" deve cambiare lo stato in "annullato" dopo una soglia temporale predefinita.],[concordata\ col proponente],
+    [*RF17/02*], [Il Supervisore Globale può definire la soglia temporale dopo cui un ordine "in transito" cambia automaticamente stato in "annullato".],[decisione\ interna],
+
+    //Requisiti Funzionali desiderabili
+    [*RFD01*], [Il Supervisore Globale può definire il costo massimo per i trasferimenti eseguibili mediante riassortimento automatico.],[concordata\ col proponente],
+    [*RFD02*], [Il Supervisore Globale può definire la distanza massima tra magazzini per il riassortimento automatico.],[concordata\ col proponente],
+
+    [*RFD03*], [*Suggerimento su azioni di riassortimento#super[G] e trasferimento#super[G] tra magazzini.*], [capitolato#super[G]],
+    [*RFD03/01*], [Il sistema invia una richiesta decisionale al Supervisore Globale qualora un riassortimento superi i costi o le distanze massime.], [concordata\ col proponente],
+
+    [*RFD04*], [*Interfaccia grafica.*], [capitolato#super[G]],
+    [*RFD04/01*], [Deve essere possibile effettuare la registrazione del Supervisore Globale mediante Interfaccia Grafica.], [capitolato#super[G]],
+    [*RFD04/02*], [Deve essere possibile effettuare l'autenticazione dell'utente mediante Interfaccia Grafica.], [capitolato#super[G]],
+    [*RFD04/03*], [Deve essere possibile effettuare la registrazione di nuovi Supervisori Locali mediante Interfaccia Grafica.], [capitolato#super[G]],
+    [*RFD04/04*], [Deve essere possibile effettuare la gestione manuale delle merci mediante Interfaccia Grafica.], [capitolato#super[G]],
+    [*RFD04/05*], [Deve essere possibile effettuare la gestione manuale degli ordini mediante Interfaccia Grafica.], [capitolato#super[G]],
+    [*RFD04/06*], [Deve essere possibile effettuare l'auditing dei dati dei magazzini mediante Interfaccia Grafica.], [capitolato#super[G]], 
+    [*RFD04/07*], [Deve essere possibile effettuare la gestione delle richieste mediante Interfaccia Grafica.], [capitolato#super[G]], 
+    [*RFD04/08*], [Deve essere possibile effettuare la gestione delle soglie critiche mediante Interfaccia Grafica.], [capitolato#super[G]],
+
+    [*RFD05*], [*Produzione di notifiche.*], [capitolato#super[G]],
+    [*RFD05/01*], [Il Sistema deve notificare i Supervisori al superamento dei livelli minimi e massimi di scorte.], [capitolato#super[G]],
+    [*RFD05/02*], [Il Sistema deve notificare i Supervisori dell'esecuzione del riassortimento automatico.], [capitolato#super[G]],
+    [*RFD05/03*], [Ciascun magazzino deve notificare i Supervisori dei cambi di stato degli ordini.], [capitolato#super[G]],
+    [*RFD05/04*], [Ciascun magazzino deve notificare i Supervisori dell'impossibilità di soddisfare un ordine.], [capitolato#super[G]],
+    [*RFD05/05*], [Ciascun magazzino deve notificare i Supervisori quando le scorte#super[G] scendono sotto una certa soglia.], [capitolato#super[G]],
+    [*RFD05/06*], [Ciascun magazzino deve notificare i Supervisori quando le scorte#super[G] salgono sopra una certa soglia.], [capitolato#super[G]],
+    [*RFD05/07*], [Il sistema deve notificare il Supervisore Globale di eventuali cambi di stato dei magazzini.],[capitolato#super[G]],
+    [*RFD05/08*], [L'invio di notifiche deve poter avvenire tramite email.], [capitolato#super[G]],
+    [*RFD05/09*], [L'invio di notifiche deve poter avvenire tramite SMS.], [capitolato#super[G]],
+
+    [*RFD06*], [*Produzione di richieste decisionali.*], [capitolato#super[G]],  
+    [*RFD06/01*], [Il Sistema deve inviare al Supervisore Globale le richieste decisionali prodotte dal riassortimento predittivo.], [capitolato#super[G]],
+
+    [*RFD07*], [*Riassortimento predittivo.*], [capitolato#super[G]],
+    [*RFD07/01*], [Il sistema deve avere uno storico dei livelli di merce.], [decisione\ interna],
+    [*RFD07/02*], [Il sistema deve poter analizzare i dati storici degli ordini.], [capitolato#super[G]],
+    [*RFD07/03*], [Il sistema deve poter analizzare i dati storici di inventario dei magazzini.], [capitolato#super[G]],
+    [*RFD07/04*], [Il sistema deve implementare un modello di previsione della domanda dei prodotti.], [capitolato#super[G]],
+    [*RFD07/05*], [Il sistema deve poter pianifiare i riassortimenti sulla base del modello di previsione.], [capitolato#super[G]],
+    [*RFD07/06*], [Il sistema deve inviare una richiesta decisionale al Supervisore Globale di approvvigionamento sulla base del modello di previsione.], [capitolato#super[G]],
+    [*RFD07/07*], [Il sistema deve inviare una richiesta decisionale al Supervisore Globale di riassortimento sulla base del modello di previsione.], [capitolato#super[G]],  
+
+    //Requisiti Funzionali opzionali
+    [*RFO01*], [I supervisori devono poter eseguire un ripristino manuale dei dati da un backup.], [capitolato#super[G]],
+
+    [*RFO02*], [*Gestione dei magazzini non operativi.*],[decisione\ interna],
+    [*RFO02/01*], [Ciascun magazzino può trovarsi nello stato "non operativo".],[decisione\ interna],
+    [*RFO02/02*], [Il sistema può annullare ordini di un magazzino "non operativo".], [decisione\ interna],
+    [*RFO02/03*], [Il sistema può assegnare ordini di un magazzino "non operativo" ad altri magazzini.], [decisione\ interna],
+
+  ),
+  caption: [Requisiti Funzionali],
+)
+
+
+// ===== REQUISITI DI VINCOLO ==== 
+
+== Requisiti di Vincolo
+
+#show figure: set block(breakable: true)
+#set table.cell(breakable: true)
+
+#set table(
+  fill:(x,y)=> if y==0 {rgb("#2599ff")} else if x == 0 {luma(235)},
+)
+
+#figure(
+  table(
+    columns: (1fr, 3.5fr, 1.2fr),
+    inset: 10pt,
+    align: center,
+    table.header(
+    [*Codice*], [*Descrizione*], [*Fonti*]),
+
+    //Requisiti di Vincolo obbligatori
+    [*RV01*], [L'architettura del sistema deve usare microservizi.], [capitolato#super[G]],
+    [*RV02*], [Versionamento del codice tramite Git.], [capitolato#super[G]],
+
+    //Requisiti di Vincolo desiderabili
+    //Requisiti di Vincolo opzionali
+  ),
+  caption: [Requisiti di Vincolo],
+)
+
+#pagebreak()
+// ===== REQUISITI DI QUALITA' ==== 
+
+== Requisiti di Qualità
+
+#show figure: set block(breakable: true)
+#set table.cell(breakable: true)
+
+#set table(
+  fill:(x,y)=> if y==0 {rgb("#2599ff")} else if x == 0 {luma(235)},
+)
+
+#figure(
+  table(
+    columns: (1fr, 3.5fr, 1.2fr),
+    inset: 10pt,
+    align: center,
+    table.header(
+    [*Codice*], [*Descrizione*], [*Fonti*]),
+
+    //Requisiti di Qualità Obbligatori
+
+    [*RQ01*], [*Autonomia dei magazzini.*], [capitolato#super[G]],
+    [*RQ01/01*], [I magazzini devono poter operare autonomamente.], [capitolato#super[G]],
+    [*RQ01/02*], [I magazzini devono poter elaborare localmente le richieste.], [capitolato#super[G]],
+    [*RQ01/03*], [Ciascun magazzino deve gestire gli ordini concorrenti per uno stesso prodotto secondo una politica predefinita.], [capitolato#super[G]],
+
+    [*RQ02*], [*Robustezza dei magazzini.*], [capitolato#super[G]],
+    [*RQ02/01*], [I dati di inventario e degli ordini devono essere coerenti, consistenti e persistenti in tutto il sistema.], [capitolato#super[G]],
+    [*RQ02/02*], [I dati di inventario devono essere resilienti a modifiche concorrenti.], [capitolato#super[G]],
+
+    [*RQ03*], [*Sicurezza del sistema.*], [capitolato#super[G]],
+    [*RQ03/01*], [Deve essere implementata la cifratura#super[G] end-to-end negli scambi dei dati tra magazzini e con il sistema.], [capitolato#super[G]],
+    [*RQ03/02*], [Il sistema deve implementare un log dei tentativi di accesso.], [capitolato#super[G]],
+    [*RQ03/03*], [Il sistema deve identificare tentativi di accesso non autorizzati.], [capitolato#super[G]],
+    [*RQ03/04*], [Il sistema deve notificare il Supervisore Globale di tentativi di accesso non autorizzati.], [capitolato#super[G]],
+
+    [*RQ04*], [*Unit test e code coverage.*], [capitolato#super[G]],
+    [*RQ04/01*], [La correttezza delle funzioni sviluppate deve essere garantita dai test unitari.], [capitolato#super[G]],
+    [*RQ04/02*], [La copertura del codice deve essere superiore al ____ .], [capitolato#super[G]], //INSERIRE CODE-COVERAGE DI M31   
+    [*RQ04/03*], [Il test devono poter essere eseguiti in maniera automatizzata.], [capitolato#super[G]],
+    [*RQ04/04*], [Devono essere eseguiti test di non regressione.], [capitolato#super[G]],
+
+    [*RQ05*], [*Test book dettagliato.*], [capitolato#super[G]],
+    [*RQ05/01*], [Tutti i test devono essere documentati in un test book.], [capitolato#super[G]],
+    [*RQ05/02*], [Il test book deve includere una descrizione dei casi di test.], [capitolato#super[G]],  
+    [*RQ05/03*], [Il test book deve includere le condizioni iniziali dei test.], [capitolato#super[G]],
+    [*RQ05/04*], [Il test book deve includere i passaggi eseguiti dai test.], [capitolato#super[G]],    
+    [*RQ05/05*], [Il test book deve includere i risultati attesi e ottenuti dai test.], [capitolato#super[G]],
+    [*RQ05/06*], [Il test book deve includere criteri di validazione dei test.], [capitolato#super[G]],
+
+    [*RQ06*], [Il Sistema deve essere scalabile orizzontalmente.], [capitolato#super[G]],
+
+    [*RQ07*], [La gestione dei magazzini deve essere distribuita.], [capitolato#super[G]],
+
+
+    //Requisiti di Qualità desiderabili
+
+    [*RQD01*], [Il sistema deve automatizzare il processo di riassortimento#super[G] se rispetta il costo e la distanza massima.], [capitolato#super[G]],
+
+    [*RQD02*], [II magazzino detiene la fonte affidabile dei dati di inventario e degli ordini.], [capitolato#super[G]],
+
+    //Requisiti di Qualità opzionali
+
+    [*RQO01*], [*Sicurezza del sistema.*], [capitolato#super[G]],
+    [*RQO01/01*], [Il sistema deve prevedere la possibilità di autenticazione#super[G] a due fattori (2FA#super[G]) o più (MFA#super[G]) per gli utenti.], [capitolato#super[G]],
+    [*RQO01/02*], [Il sistema deve verificare l'integrità dei dati tramite firme digitali o hashing.], [capitolato#super[G]],
+    [*RQO01/03*], [Le richieste verso i microservizi devono essere autenticate.], [capitolato#super[G]],
+    [*RQO01/04*], [Gli scambi di dati tra microservizi devono essere cifrati.], [capitolato#super[G]],
+
+    [*RQO02*], [*Backup e ripristino dei dati.*], [capitolato#super[G]],
+    [*RQO02/01*], [I dati dei magazzini devono essere sottoposti a backup.], [capitolato#super[G]],
+    [*RQO02/02*], [I dati aggregati su cloud devono essere sottoposti a backup.], [capitolato#super[G]],
+    [*RQO02/03*], [I magazzini devono mantenere una copia locale dei propri dati.], [capitolato#super[G]],
+    [*RQO02/04*], [Il sistema deve mantenere l'integrità e la consistenza dei dati tra i magazzini.], [capitolato#super[G]],
+    ),
+    caption: [Requisiti di Qualità],
+  )
+
+#pagebreak()
 == Tracciamento dei casi d'uso
-
-
-#let tabella_counter = tabella_counter + 1
 
 #set table(
   fill:(_,y)=>if y==0 {rgb("#2599ff")}
 )
 
-#table(
+#show figure: set block(breakable: true)
+#set table.cell(breakable: true)
+
+#figure(
+  table(
   columns: (1fr, 1fr),
   inset: 10pt,
   align: center,
   table.header(
-    [*Requisito#super[G]*], [*Casi d'Uso*],
-
+    [*Requisito*], [*Casi d'Uso*],
   ),
+    [RF01/01],[#link(label("uc-1"), underline("[UC 1]"))],
 
-  [*RF01*], [#link(label("uc-4"), underline("[UC 4]"))],
-  [*RF01/01*], [#link(label("uc-4.1"), underline("[UC 4.1]"))],
-  [*RF01/02*], [#link(label("uc-4.2"), underline("[UC 4.2]"))],
+    [RF02/01],[#link(label("uc-2"), underline("[UC 2]")), #link(label("uc-3"), underline("[UC 3]"))],
+    [RF02/02],[#link(label("uc-4"), underline("[UC 4]"))],
 
-  [*RF02*], [#link(label("uc-5"), underline("[UC 5]"))],
-  [*RF02/01*], [#link(label("uc-5.1"), underline("[UC 5.1]"))],
-  [*RF02/02*], [#link(label("uc-5.2"), underline("[UC 5.2]"))],
-  [*RF02/03*], [#link(label("uc-5.3"), underline("[UC 5.3]"))],
-  [*RF02/04*], [#link(label("uc-5.4"), underline("[UC 5.4]"))],
-  [*RF02/05*], [#link(label("uc-5.5"), underline("[UC 5.5]"))],
+    [RF03/01],[#link(label("uc-5"), underline("[UC 5]"))],
+    [RF03/02],[#link(label("uc-5"), underline("[UC 5]"))],
 
-  [*RF03*], [#link(label("uc-6"), underline("[UC 6]"))],
-  [*RF03/01*], [#link(label("uc-6.1"), underline("[UC 6.1]"))],
-  [*RF03/02*], [#link(label("uc-6.2"), underline("[UC 6.2]"))],
-  [*RF03/03*], [#link(label("uc-6.3"), underline("[UC 6.3]"))],
+    [RF04/01],[#link(label("uc-6"), underline("[UC 6]"))],
+    [RF04/02],[#link(label("uc-7"), underline("[UC 7]"))],
+    [RF04/03],[#link(label("uc-8"), underline("[UC 8]"))], 
 
-  [*RF04*], [#link(label("uc-7"), underline("[UC 7]"))],
-  [*RF04/01*], [#link(label("uc-7.1"), underline("[UC 7.1]"))],
-  [*RF04/02*], [#link(label("uc-7.2"), underline("[UC 7.2]"))],
-  [*RF04/03*], [#link(label("uc-7.3"), underline("[UC 7.3]"))],
-  [*RF04/04*], [#link(label("uc-7.4"), underline("[UC 7.4]"))],
+    [RF05/01],[#link(label("uc-9"), underline("[UC 9]"))],
+    [RF05/02],[#link(label("uc-9"), underline("[UC 9]"))],
+    [RF05/03],[#link(label("uc-9"), underline("[UC 9]"))],
+    [RF05/04],[#link(label("uc-10"), underline("[UC 10]"))], 
+    [RF05/05],[#link(label("uc-11"), underline("[UC 11]"))],
+    [RF05/06],[#link(label("uc-29"), underline("[UC 29]"))],
 
-  [*RF05*], [#link(label("uc-7.3"), underline("[UC 7.3]"))],
-  [*RF05/01*], [#link(label("uc-7.3"), underline("[UC 7.3]"))],
+    [RF06],[#link(label("uc-12"), underline("[UC 12]"))],
+    [RF06/01],[#link(label("uc-13"), underline("[UC 13]"))],
+    [RF06/02],[#link(label("uc-14"), underline("[UC 14]"))],
+    [RF06/03],[#link(label("uc-15"), underline("[UC 15]"))], 
+    [RF06/04],[#link(label("uc-16"), underline("[UC 16]"))],
 
-  [*RF06*], [#link(label("uc-8"), underline("[UC 8]"))],
-  [*RF06/01*], [#link(label("uc-8"), underline("[UC 8]"))],
+    [RF07/01],[#link(label("uc-17"), underline("[UC 17]"))],
+    [RF07/02],[#link(label("uc-18"), underline("[UC 18]")), #link(label("uc-19"), underline("[UC 19]"))],
+    [RF07/03],[#link(label("uc-20"), underline("[UC 20]"))], 
+    [RF07/04],[#link(label("uc-21"), underline("[UC 21]")), #link(label("uc-22"), underline("[UC 22]"))],
+    [RF07/05],[#link(label("uc-19"), underline("[UC 19]"))],
+    [RF07/06],[#link(label("uc-22"), underline("[UC 22]"))],
 
-  [*RF07*], [#link(label("uc-9"), underline("[UC 9]"))],
-  [*RF07/01*], [#link(label("uc-9.1"), underline("[UC 9.1]"))],
-  [*RF07/02*], [#link(label("uc-9.2"), underline("[UC 9.2]"))],
-  [*RF07/03*], [#link(label("uc-9.3"), underline("[UC 9.3]"))],
+    [RF08],[#link(label("uc-23"), underline("[UC 23]"))],
 
-  [*RF08*], [#link(label("uc-10"), underline("[UC 10]"))],
-  [*RF08/01*], [#link(label("uc-10.1"), underline("[UC 10.1]"))],
-  [*RF08/02*], [#link(label("uc-10.2"), underline("[UC 10.2]"))],
-  [*RF08/03*], [#link(label("uc-10.3"), underline("[UC 10.3]"))],
-  [*RF08/04*], [#link(label("uc-10.4"), underline("[UC 10.4]"))],
-  [*RF08/05*], [#link(label("uc-10.5"), underline("[UC 10.5]"))],
+    [RF09/01],[#link(label("uc-24"), underline("[UC 24]"))],
+    [RF09/02],[#link(label("uc-25"), underline("[UC 25]")), #link(label("uc-26"), underline("[UC 26]"))],
+    [RF09/03],[#link(label("uc-25"), underline("[UC 25]")), #link(label("uc-27"), underline("[UC 27]"))],
 
-  [*RF09*], [#link(label("uc-11"), underline("[UC 11]"))],
-  [*RF09/01*], [#link(label("uc-11.1"), underline("[UC 11.1]"))],
-  [*RF09/02*], [#link(label("uc-11.2"), underline("[UC 11.2]"))],
-  [*RF09/03*], [#link(label("uc-11.3"), underline("[UC 11.3]"))],
-
-  [*RF10*], [#link(label("uc-12"), underline("[UC 12]"))],
-  [*RF10/01*], [#link(label("uc-12.1"), underline("[UC 12.1]"))],
-  [*RF10/02*], [#link(label("uc-12.2"), underline("[UC 12.2]"))],
-
-  [*RF11*], [#link(label("uc-4"), underline("[UC 4]")), #link(label("uc-7"), underline("[UC 7]"))],
-  [*RF11/01*], [#link(label("uc-5.5"), underline("[UC 5.5]"))],
-  [*RF11/02*], [#link(label("uc-7.4"), underline("[UC 7.4]"))],
-
-  [*RF12*], [#link(label("uc-13"), underline("[UC 13]"))],
-  [*RF12/01*], [#link(label("uc-13"), underline("[UC 13]"))],
-  [*RF12/02*], [#link(label("uc-13.1"), underline("[UC 13.1]"))],
-  [*RF12/02*], [#link(label("uc-13.3"), underline("[UC 13.3]"))],
-  
-  [*RF13*], [#link(label("uc-14"), underline("[UC 14]"))],
-  [*RF13/01*], [#link(label("uc-14.1"), underline("[UC 14.1]"))],
-  [*RF13/02*], [#link(label("uc-14.2"), underline("[UC 14.2]"))],
-  [*RF13/03*], [#link(label("uc-14.3"), underline("[UC 14.3]"))],
-
-  [*RF14*], [#link(label("uc-15"), underline("[UC 15]"))],
-  [*RF14/01*], [#link(label("uc-15.1"), underline("[UC 15.1]"))],
-  [*RF14/02*], [#link(label("uc-15.2"), underline("[UC 15.2]"))],
-  [*RF14/03*], [#link(label("uc-15.3"), underline("[UC 15.3]"))],
-
-  [*RF15*], [#link(label("uc-17"), underline("[UC 17]"))],
-  [*RF15/01*], [#link(label("uc-17.1"), underline("[UC 17.1]"))],
-  [*RF15/02*], [#link(label("uc-17.2"), underline("[UC 17.2]"))],
-
-  [*RFD01*], [#link(label("uc-19"), underline("[UC 19]"))],
-  [*RFD01/01*], [#link(label("uc-19.1"), underline("[UC 19.1]"))],
-  [*RFD01/02*], [#link(label("uc-19.2"), underline("[UC 19.2]"))],
-  [*RFD01/03*], [#link(label("uc-19.3"), underline("[UC 19.3]"))],
-
-  [*RFD02*], [#link(label("uc-20"), underline("[UC 20]"))],
-  [*RFD02/01*], [#link(label("uc-20.1"), underline("[UC 20.1]"))],
-  [*RFD02/02*], [#link(label("uc-20.2"), underline("[UC 20.2]"))],
-  [*RFD02/03*], [#link(label("uc-20.3"), underline("[UC 20.3]"))],
-  [*RFD02/04*], [#link(label("uc-20.4"), underline("[UC 20.4]"))],
-
-  [*RFD03*], [#link(label("uc-21"), underline("[UC 21]"))],
-  [*RFD03/01*], [#link(label("uc-21"), underline("[UC 21]"))],
-  [*RFD03/02*], [#link(label("uc-21.1"), underline("[UC 21.1]"))],
-  [*RFD03/03*], [#link(label("uc-21.3"), underline("[UC 21.3]"))],
-
-  [*RS01*], [#link(label("uc-1"), underline("[UC 1]")), #link(label("uc-1.1"), underline("[UC 1.1]")), #link(label("uc-1.2"), underline("[UC 1.2]")), #link(label("uc-2"), underline("[UC 2]"))],
-  [*RS01/01*], [#link(label("uc-1"), underline("[UC 1]")), #link(label("uc-1.1"), underline("[UC 1.1]")), #link(label("uc-1.2"), underline("[UC 1.2]")), #link(label("uc-2"), underline("[UC 2]"))],
-  [*RS01/02*], [#link(label("uc-1"), underline("[UC 1]")), #link(label("uc-1.1"), underline("[UC 1.1]")), #link(label("uc-1.2"), underline("[UC 1.2]")), #link(label("uc-2"), underline("[UC 2]"))],
-  [*RS01/03*], [#link(label("uc-3"), underline("[UC 3]"))],
-
-  [*RS03*], [#link(label("uc-18"), underline("[UC 18]"))],
-  [*RS03/01*], [#link(label("uc-18.1"), underline("[UC 18.1]"))],
-  [*RS03/02*], [#link(label("uc-18.2"), underline("[UC 18.2]"))],
-  [*RS03/03*], [#link(label("uc-18.3"), underline("[UC 18.3]"))],
-  [*RS03/04*], [#link(label("uc-18.4"), underline("[UC 18.4]"))],
+    [RF10],[#link(label("uc-28"), underline("[UC 28]"))],
+    [RF10/01],[#link(label("uc-28"), underline("[UC 28]"))],
+    [RF10/02],[#link(label("uc-28"), underline("[UC 28]"))],
+    [RF10/03],[#link(label("uc-28"), underline("[UC 28]"))], 
+    [RF10/04],[#link(label("uc-28"), underline("[UC 28]"))],
+  ),
+  caption: [Tracciamento dei casi d'uso],
 )
 
-#align(center)[_Tabella #tabella_counter: Tracciamento dei Casi d'Uso_]
+#set table(
+  fill:(_,y)=> if y==0 {rgb("#2599ff")} else if y == 5 {luma(235)},
+)
+
+#figure(
+  table(
+  columns: (1fr, 0.5fr, 0.5fr, 0.5fr),
+  inset: 10pt,
+  align: center,
+  table.header(
+    [*Tipologia*], [*Obbligatori*], [*Desiderabili*], [*Opzionali*],
+  ),
+    [*Funzionali*],     [69],    [33],    [5],
+    [*Qualità*],        [26],    [2],     [10],
+    [*Prestazionali*],  [0],     [0],     [0],
+    [*Vincolo*],        [2],     [0],     [0],
+    [*Totale*],         [*97*],  [*35*],  [*15*]
+  ),
+  caption: [Riepilogo dei casi d'uso],
+)
