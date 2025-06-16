@@ -60,7 +60,7 @@
 = 1. Introduzione
 == 1.1 Scopo del documento
 
-Il presente documento ha lo scopo di definire le modalità di qualifica e verifica#super[G] del prodotto#super[G] software. Esso rappresenta un indice di valutazione del prodotto#super[G] software, delle sue componenti e degli strumenti utilizzati, al fine di garantire la qualità del prodotto#super[G] finale e un continuo miglioramento del processo di sviluppo.
+Il presente documento ha lo scopo di definire le modalità di qualifica e verifica#super[G] del prodotto#super[G] software. Esso rappresenta un indice di valutazione del prodotto#super[G] software, delle sue componenti e degli strumenti utilizzati. Tale indice garantisce la qualità del prodotto#super[G] finale e un continuo miglioramento del processo di sviluppo.
 
 Il Piano di Qualifica#super[G] si basa su tre aspetti principali:
 
@@ -109,7 +109,7 @@ Per trovare il significato del termine, è possibile consultare il glossario#sup
 
 = 2. Metriche di Qualità
 
-Per garantire un'analisi oggettiva e sistematica della qualità del prodotto#super[G] software, si fa riferimento allo standard ISO/IEC 14598:1999, il quale propone un metodo per associare metriche quantitative a specifiche sotto-caratteristiche di qualità individuate nello standard ISO 9126.
+Per garantire un'analisi oggettiva e sistematica della qualità del prodotto#super[G] software, si fa riferimento allo standard ISO/IEC 14598:1999. Lo standard adottato propone un metodo per associare metriche quantitative a specifiche sotto-caratteristiche di qualità individuate nello standard ISO 9126.
 
 In particolare, le metriche sono utilizzate per:
 

@@ -27,6 +27,12 @@
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
 
+  [0.4.2],
+  [03/06/2025],
+  [R. Zangla],
+  [S. Marana],
+  [Aggiunte definizioni al glossario],
+
   [0.4.1],
   [26/05/2025],
   [N. Bolzon],
@@ -171,6 +177,9 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 - *Codice*:\
   Insieme di istruzioni scritte in un linguaggio di programmazione, che costituiscono un software.
 
+- *Command Query Responsibility Segregation (CQRS)*: \
+  Pattern architetturale che separa le operazioni di scrittura (comandi) da quelle di lettura (query), utilizzando modelli distinti per gestire ciascun tipo di operazione. Esso permette di creare un evento nel momento in cui si rileva un cambiamento all'interno di un magazzino, così da poter aggiornare il database in cloud.
+
 - *Commit*:\
   Operazione con cui si salvano modifiche al codice sorgente in un sistema di controllo versione.
 
@@ -190,8 +199,12 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 
 #pagebreak()
 = F
+
 - *Firma Digitale*:\
   È un metodo sicuro e legale per firmare documenti digitali, garantendo l'autenticità, l'integrità e il non ripudio del firmatario.
+
+- *Fornitore*:\
+  Soggetto (azienda, professionista o organizzazione) che fornisce beni, servizi o risorse necessarie per la realizzazione del progetto. Durante lo sviluppo del prodotto, il fornitore dovrà garantire al Proponente e al Committente la qualità, i tempi e i costi concordati.
 
 #pagebreak()
 = G
@@ -241,11 +254,18 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 - *Microservizi*:\
   Architettura software composta da piccoli servizi indipendenti che comunicano tra loro.
 
+- *Microservizio*:\
+  Un microservizio è un componente software autonomo e specializzato, progettato per svolgere una singola funzione all'interno di un'applicazione più complessa.
+
 - *Modulari*:\
   Caratteristica di un sistema progettato come insieme di componenti indipendenti e riutilizzabili.
 
+- *Modularità*:\
+  Principio di progettazione che consiste nel suddividere un sistema complesso in moduli (componenti autonomi e ben definiti), che possono essere sviluppati, testati e mantenuti indipendentemente.
+
 - *Monitoraggio*:\
   Processo di osservazione, controllo e valutazione delle prestazioni di un sistema, di un componente o di un servizio informatico. Questo processo permette di monitorare lo stato attuale e le prestazioni di un sistema per individuare eventuali problemi o anomalie. 
+
 
 #pagebreak()
 = N
@@ -306,6 +326,9 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 - *Responsabile*: \
   Garantisce il completamento efficiente del progetto, rispettando obiettivi, tempistiche e aspettative del committente, coordinando ruoli e risorse. Data la rilevanza economica della posizione, il team ne ottimizza l'impiego per massimizzare l'efficienza e contenere i costi. Il ruolo richiede competenze nella gestione, risoluzione di criticità, coordinamento della comunicazione e pianificazione. Spetta inoltre al Responsabile approvare il rilascio di prodotti parziali o finali, software o documenti.
 
+- *Rete:*\
+  Sistema interconnesso di nodi che comunicano e condividono risorse secondo regole definite (protocolli).
+
 - *Riassortimento*:\
   Processo di trasferimento interno tra magazzini finalizzato a garantire la disponibilità delle scorte nei magazzini, nel rispetto dei livelli minimi. Può essere avviato manualmente o attivato automaticamente.
 
@@ -334,6 +357,11 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 
 - *Servizi*:\
   Componenti funzionali del sistema, responsabili ciascuno di una specifica attività.
+
+- *Sottoresponsabile*:\
+  Membro con la responsabilità maggiore tra i membri del team col suo stesso ruolo. 
+  Rappresenta la figura di riferimento per il proprio ruolo:  infatti, è tenuto a mantenere una comunicazione costante con i membri del proprio sottogruppo, assicurandosi che ogni task sia eseguita secondo le linee guida stabilite e che eventuali dubbi vengano chiariti prontamente.  
+  Fa inoltre da loro portavoce nella comunicazione con il Responsabile, così da ottimizzare i tempi di comunicazione all'interno del team.
 
 - *Sprint*:\
   Periodo di tempo specifico (timebox) in cui un team di sviluppo lavora in modo coordinato, seguendo una metodologia agile come Scrum, per completare una determinata quantità di lavoro. 
