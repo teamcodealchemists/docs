@@ -74,6 +74,13 @@
 
 #set heading(numbering: "1.1.")
 
+/* INDICE DELLE TABELLE*/
+#outline(
+  title: [Lista delle Tabelle],
+  target: figure.where(kind: table),
+)
+
+#pagebreak()
 = Introduzione
 == Informazioni generali
 Il *Piano di Progetto#super[G]* è un documento che definisce le modalità di gestione del progetto, le risorse necessarie e i rischi attesi.\ Il piano di progetto è un documento vivo, che viene aggiornato durante il ciclo di vita del progetto di *Ingegneria del Software*, in quanto le attività vengono pianificate volta per volta e le risorse vengono allocate in base alle necessità. Una progettazione dettagliata sul lungo termine, infatti, si rivelerebbe inefficace in quanto sensibile#super[G] ad imprevisti ed esigenze del cliente#super[G] o di sviluppo.
@@ -81,7 +88,7 @@ Il *Piano di Progetto#super[G]* è un documento che definisce le modalità di ge
 Il documento è molto importante per permettere una corretta pianificazione del lavoro e dei vari sprint#super[G], analizzando il tempo previsto ed effettivo per ogni attività, tenendo conto dei rischi e delle risorse disponibili.
 
 == Informazioni sul prodotto
-#v(1em)
+
 
 Il progetto riguarda lo sviluppo di un sistema di gestione per magazzini distribuiti, con l'obiettivo di ottimizzare la gestione dell'inventario#super[G] in una rete di magazzini geograficamente separati. Questo sistema deve garantire che i flussi di materiali e prodotti tra i magazzini siano gestiti in tempo reale, evitando rotture di stock e migliorando la distribuzione delle scorte#super[G]. Il sistema dovrà anche ridurre i livelli medi di inventario#super[G], mantenendo però scorte#super[G] di sicurezza per gestire variazioni nella domanda o ritardi nelle consegne.
 
@@ -125,7 +132,7 @@ Per valutare nel migliore modo possibile i rischi sono stati definiti i seguenti
 
 - *Probabilità*: Indica, come da nome, la probabilità che il rischio si verifichi durante lo sviluppo del progetto.
 
-#v(1em)
+
 #align(center)[
   #tabella_indici_gravita(
     dati: (
@@ -150,9 +157,9 @@ Per valutare nel migliore modo possibile i rischi sono stati definiti i seguenti
   )
 ]
 
-#v(1em)
+
 == Suddivisione dei rischi // Potremmo invertire l'ordine a quello inglese
-#v(1em)
+
 
 I rischi del progetto sono suddivisi in quattro categorie principali, in base al tipo di problematiche che potrebbero verificarsi:
 
@@ -187,7 +194,7 @@ Dove:
 == Rischi tecnologici //tecnologie utilizzate ed eventuali errori
 
 === RT1 - Inesperienza nell'uso delle tecnologie
-#v(1em)
+
 
 #tabella_rischi(
   dati: (
@@ -213,10 +220,10 @@ Dove:
   ),
   didascalia: "Tabella RT1"
 )
-#v(1em)
+
 
 === RT2 - Uso errato delle tecnologie
-#v(1em)
+
 
 #tabella_rischi(
   dati: (
@@ -242,10 +249,10 @@ Dove:
   ),
   didascalia: "Tabella RT2"
 )
-#v(1em)
+
 
 === RT3 - Errori di codifica o programmazione
-#v(1em)
+
 
 #tabella_rischi(
   dati: (
@@ -276,10 +283,10 @@ Dove:
   ),
   didascalia: "Tabella RT3"
 )
-#v(1em)
+
 
 === RT4 - Rischio di supporto e versione delle tecnologie
-#v(1em)
+
 
 #tabella_rischi(
   dati: (
@@ -304,10 +311,10 @@ Dove:
 )
 
 == Rischi comunicativi
-#v(1em)
+
 
 === RC1 - Tempi di risposta lunghi
-#v(1em)
+
 
 #tabella_rischi(
   dati: (
@@ -334,10 +341,10 @@ Dove:
   ),
   didascalia: "Tabella RC1"
 )
-#v(1em)
+
 
 === RC2 - Incomprensione degli obbiettivi del team
-#v(1em)
+
 
 #tabella_rischi(
   dati: (
@@ -363,10 +370,10 @@ Dove:
   ),
   didascalia: "Tabella RC2"
 )
-#v(1em)
+
 
 === RC3 - Mancanza di comunicazione con l'azienda 
-#v(1em)
+
 
 #tabella_rischi(
   dati: (
@@ -391,14 +398,14 @@ Dove:
   ),
   didascalia: "Tabella RC3"
 )
-#v(1em)
+
 
 
 == Rischio individuale //altri impegni e attività individuale
-#v(1em)
+
 
 === RI1 - Impegni personali, universitari e indisponibilità
-#v(1em)
+
 
 #tabella_rischi(
   dati: (
@@ -428,10 +435,10 @@ Dove:
   ),
   didascalia: "Tabella RI1"
 )
-#v(1em)
+
 
 === RI2 - Scarsa collaborazione
-#v(1em)
+
 
 #tabella_rischi(
   dati: (
@@ -457,7 +464,7 @@ Dove:
   ),
   didascalia: "Tabella RI2"
 )
-#v(1em)
+
 
 === RI3 - Difficoltà di "comprensione" o lavoro
 
@@ -484,14 +491,14 @@ Dove:
   ),
   didascalia: "Tabella RI3"
 )
-#v(1em)
+
 
 
 == Rischio globale //valutare altri rischi
-#v(1em)
+
 
 === RG1 - Incomprensione degli obbiettivi del capitolato#super[G] 
-#v(1em)
+
 
 #tabella_rischi(
   dati: (
@@ -518,10 +525,10 @@ Dove:
   ),
   didascalia: "Tabella RG1"
 )
-#v(1em)
+
 
 === RG2 - Pareri contrastanti
-#v(1em)
+
 
 #tabella_rischi(
   dati: (
@@ -547,11 +554,11 @@ Dove:
   ),
   didascalia: "Tabella RG2"
 )
-#v(1em)
+
 
 
 == Tabella Riassuntiva
-#v(1em)
+
 
 #tabella_riassuntiva_rischi(
   dati: (
@@ -576,7 +583,7 @@ Dove:
 = Pianificazione nel lungo termine
 
 == Struttura del team
-#v(1em)
+
 
 Di seguito vengono brevemente descritti i ruoli previsti all'interno del team, equamente distribuiti e ruotati tra i membri con cadenza bisettimanale. Ogni ruolo prevede specifiche mansioni e obiettivi:
 
@@ -596,11 +603,11 @@ Di seguito vengono brevemente descritti i ruoli previsti all'interno del team, e
 
 
 - *Verificatore#super[G]*: controlla, durante tutte le fasi dello sviluppo, che il software e la documentazione rispettino le specifiche e le norme adottate. Il suo ruolo è essenziale per individuare tempestivamente eventuali errori o incongruenze.
-#v(1em)
+
 
 #pagebreak()
 == Budget e risorse
-#v(1em)
+
 
 Il gruppo prevede di terminare il progetto
 entro il giorno 29/08/2025 con un budget di spesa fissato a Euro 14.430 come indicato nella *Dichiarazione degli impegni*.
@@ -630,7 +637,7 @@ Di seguito sono indicati i costi previsti durante la candidatura :
   ]
 
 /*
-  #v(1em)
+  
   Si riporta un grafico a torta raffigurante la ripartizione percentuale delle ore per ruolo sul totale delle ore disponibili:
 
   #align(center)[
@@ -641,60 +648,9 @@ Di seguito sono indicati i costi previsti durante la candidatura :
   ]
 */
 
-=== Distribuzione ore per membri
 
-I componenti del Team CodeAlchemists si impegnano in particolare a dedicare un totale di 90 ore ciascuno di lavoro ripartite come segue:
+== Attività previste per la Requirements and Technology Baseline (RTB)
 
-
- #align(center)[
-    #{
-    show table.cell: cl => if cl.x == 0 and cl.y != 0 {
-      align(left, cl)
-    } else if cl.x == 0 {
-      align(bottom + left, cl)
-    } else if cl.y == 0 {
-      rotate(-45deg, reflow: false, align(left, cl))
-    } else {
-      align(bottom + center, cl)
-    }
-    figure(
-      table(
-        columns: (3fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
-        inset: 1.1em,
-        stroke: (x, y) => if y >= 1 {
-          1pt + black
-        } else {
-          none
-        },
-        table.header(
-          [],
-          [*Responsabile#super[G]*],
-          [*Amministratore#super[G]*],
-          [*Analista#super[G]*],
-          [*Progettista#super[G]*],
-          [*Programmatore#super[G]*],
-          [*Verificatore#super[G]*],
-          [*Totale*],
-        ),
-  
-      [Nicolò Bolzon],[8],[8],[9],[19],[26],[20],[*90*],
-      [Mattia Dalla Pozza],[8],[8],[9],[20],[29],[16],[*90*],
-      [Sebastiano Marana],[8],[7],[10],[19],[28],[18],[*90*],
-      [Nicholas Moretto],[9],[7],[10],[19],[28],[18],[*90*],
-      [Matteo Pretto],[9],[8],[10],[19],[26],[18],[*90*],
-      [Alex Shu],[8],[8],[9],[19],[26],[20],[*90*],
-      [Stefano Speranza],[9],[7],[10],[20],[27],[17],[*90*],
-      [Ramona Zangla],[8],[8],[9],[20],[29],[16],[*90*],
-      [*Totale*],[*67*],[*61*],[*76*],[*156*],[*218*],[*142*],[*720*]
-      ),
-      caption: [Ore di ogni componente per ciascun ruolo],
-    )
-  }
-]
-
-
-== Attività previste per la Requirements and Technology Baseline#super[G] (RTB#super[G])
-#v(1em)
 
 Durante l'RTB#super[G] sono previste due attività principali:
 
@@ -710,7 +666,7 @@ Analisi dei Requisiti#super[G]; Casi d'uso; Architettura#super[G] preliminare.
 Di seguito vengono indicate le più nel dettaglio le principali 
 attività previste durante la fase RTB#super[G] del progetto: 
 
-#v(1em)
+
 1. *Redazione Analisi dei Requisiti#super[G]* (in stesura)
 
   - Stesura della struttura;
@@ -721,7 +677,7 @@ attività previste durante la fase RTB#super[G] del progetto:
 
   - Creazione dei casi d'uso.
 
-#v(1em)
+
 2. *Redazione Piano di progetto* (in stesura)
 
   - Stesura della struttura;
@@ -742,7 +698,7 @@ attività previste durante la fase RTB#super[G] del progetto:
 
   - Redazione continua degli sprint#super[G].
 
-#v(1em)
+
 3. *Redazione piano di Qualifica#super[G]* (in stesura)
 
   - Stesura della struttura;
@@ -757,28 +713,19 @@ attività previste durante la fase RTB#super[G] del progetto:
 
   - Definizione di test sulla base dell'analisi dei requisiti#super[G]. 
 
-#v(1em)
 4. *Redazione Norme di progetto* (in stesura)
 
   - Stesura della struttura;
     - Test delle tecnologie scelte.
-
   - Processi Primari;
-
   - Processi di Supporto;
-
   - Processi Organizzativi;
-
   - Metriche utilizzate.
 
-#v(1em)
 5. *Redazione del Glossario#super[G]* (in stesura)
-
   - Stesura della struttura;
-
   - Aggiunta automatizzata dei termini.
 
-#v(1em)
 6. *Sviluppo POC#super[G] (Proof of concept#super[G])* (in stesura)
 
   - Definizione di una possibile architettura#super[G];
@@ -791,39 +738,14 @@ attività previste durante la fase RTB#super[G] del progetto:
 
     - Sistema centralizzato.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-== Attività previste per la Product Baseline#super[G] (PB)
-#v(1em)
+== Attività previste per la Product Baseline (PB)
 
 La redazione di questo paragrafo sarà effettuato in seguito al superamento della
 *Requirements and Technology Baseline#super[G] (RTB#super[G])*.
 
 #pagebreak()
 = Pianificazione nel breve termine
-#v(1em)
 == Introduzione
-#v(1em)
 
 A seguito del primo incontro di gruppo Il team _Code Alchemists_ ha deciso di impegnarsi ad adottare come strumento di sviluppo
 principale la metodologia *Agile#super[G]* per tutto quello che riguarda la gestione del progetto. 
@@ -835,7 +757,6 @@ questo aiutera ad ottenere un buon bilanciamento tra pianificazione e esecuzione
 Inoltre durante ogni sprint#super[G], verranno effettuate diverse riunioni per discutere
 sia i progressi di ogni membro e le difficoltà riscontrate, per permettere una comunicazione continua tra i membri
 e una rapida risoluzione dei problemi che potrebbero insorgere.\
-#v(1em)
 
 Il team ha deciso di utilizzare un approccio *iterativo#super[G]* e di miglioramento *incrementale#super[G]*, 
 per permettere di adattare il lavoro in base alle esigenze del cliente#super[G], feedback ricevuti e necessità. 
@@ -843,7 +764,6 @@ Inoltre, si è deciso di utilizzare un *gestore di attività*, in particolare JI
 *tracciare il lavoro svolto e le scadenze*.
 Questo garantirà innanzitutto una buona gestione del progetto ma anche una migliore pianificazione, 
 riducendo al minimo i potenziali rischi e massimizzando le possibilità di successo.
-#v(1em)
 
 Inoltre alcune particolari caratteristiche che il team ha deciso di adottare dopo un primo periodo di prova includono:
 
@@ -852,7 +772,7 @@ Inoltre alcune particolari caratteristiche che il team ha deciso di adottare dop
    viene redatta e diventa presenta almeno il giorno prima dell'inizio del nuovo sprint#super[G];
 - Un cambio di ruoli per sprint#super[G] basato sul ruolo della persona e dalle competenze ottenute nello sprint#super[G] appena terminato.
    Questo permette in particolare, oltre a ruotare i ruoli tra i membri, di svolgere una transizione molto più fluida e funzionale tra sprint#super[G].
-#v(1em)
+
 
 Infine il team si impegna a *concordare riunioni periodiche* con l'azienda proponente del progetto _M31_ 
 per discutere progressi ed eventuali modifiche in corso d'opera. 
@@ -870,18 +790,15 @@ Di seguito vengono riportate le caratteristiche previste per ogni sprint#super[G
 - Retrospettiva.
 
 #pagebreak()
-== Requirements and Technology Baseline#super[G] (RTB#super[G])
-#v(1em)
-=== Sprint#super[G] 1    //mantenere le seguenti distanze
-#v(1em)
+== Requirements and Technology Baseline (RTB)
+
+=== Sprint 1    //mantenere le seguenti distanze
 Inizio: #h(1.99cm)*28-03-2025*\
 Fine Prevista: #h(0.65cm)*11-04-2025*\
 Fine Reale: #h(1.12cm)*11-04-2025*\
 Giorni di ritardo: #h(0.15cm)*0*
 
 ==== Informazioni generali e attività da svolgere
-#v(1em)
-
 Questo sprint#super[G] ha come obbiettivo quello di risolvere le osservazioni 
 ricevute dopo la presentazione della candidatura. 
 Successivamente, avverrà la redazione dei primi documenti 
@@ -899,9 +816,7 @@ In particolare, le attività previste sono:
 - Effettuare un incontro con _M31_;
 
 
-==== Rischi attesi 
-#v(1em)
-
+==== Rischi attesi
 I possibili rischi :
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
 - RI1: Rischio Individuale derivante dalle altre attività;
@@ -909,7 +824,6 @@ I possibili rischi :
 - RG2: Rischio Globale legato a pareri contrastanti.
 
 ==== Preventivo
-#v(1em)
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
@@ -925,11 +839,9 @@ I possibili rischi :
   didascalia: "Sprint 1 - Preventivo ore per ciascun componente"
 )
 ]
-#v(1em)
+
 
 ==== Consuntivo
-
-#v(1em)
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
@@ -945,11 +857,9 @@ I possibili rischi :
   didascalia: "Sprint 1 - Consuntivo ore per ciascun componente"
 )
 ]
-#v(1em)
+
 
 ==== Aggiornamento delle risorse rimanenti  
-
-#v(1em)
 #align(center)[
   #tabella_aggiornamento_risorse(
     dati: (
@@ -965,7 +875,7 @@ I possibili rischi :
   )
 ]
 ==== Rischi incontrati
-#v(1em)
+
 
 Durante questo primo sprint#super[G] abbiamo avuto principalmente
 difficoltà con una distribuzione dell'impegno non
@@ -979,7 +889,7 @@ dell'utilizzo dello strumento e in aggiunta di un
 organizzazione degli incontri più spontanea e meno organizzata.
 
 === Retrospettiva
-#v(1em)
+
 
 Durante lo sprint#super[G] ci siamo dedicati principalmente ad una prima impostazione del
 progetto, tramite automazioni e organizzazione github, alla progettazione di una
@@ -989,15 +899,16 @@ Non siamo riusciti tuttavia a rendere l'ipotesi architetturale definitiva, in qu
 effettuata precedentemente da una ricerca dello stato dell'arte approfondita e quindi
 da una scarsità di informazioni.
 
-=== Sprint#super[G] 2
-#v(1em)
+#pagebreak()
+=== Sprint 2
+
 Inizio: #h(1.99cm)*11-04-2025*\
 Fine Prevista: #h(0.65cm)*24-04-2025*\
 Fine Reale: #h(1.12cm)*24-04-2025*\
 Giorni di ritardo: #h(0.15cm)*0*
 
 ==== Informazioni generali e attività da svolgere
-#v(1em)
+
 
 Questo secondo sprint#super[G] ha avuto principalmente come obbiettivo la continuazione
 e il miglioramento di quanto iniziato nel primo sprint#super[G] basandoci inoltre
@@ -1018,7 +929,7 @@ In particolare, le attività previste sono:
 
 
 ==== Rischi attesi
-#v(1em)
+
 
 I possibili rischi :
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
@@ -1026,7 +937,7 @@ I possibili rischi :
 - RG2: Rischio Globale legato a pareri contrastanti.
 
 ==== Preventivo 
-#v(1em)
+
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
@@ -1044,7 +955,7 @@ I possibili rischi :
 ]
 
 ==== Consuntivo
-#v(1em)
+
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
@@ -1062,7 +973,7 @@ I possibili rischi :
 ]
 
 ==== Aggiornamento delle risorse rimanenti 
-#v(1em)
+
 #align(center)[
   #tabella_aggiornamento_risorse(
     dati: (
@@ -1077,10 +988,10 @@ I possibili rischi :
     didascalia: "Sprint 1 - Aggiornamento delle risorse disponibili"
   )
 ]
-#v(1em)
+
 
 ==== Rischi incontrati
-#v(1em)
+
 
 Il principale rischio di questo secondo sprint#super[G] è stato il lungo periodo 
 di festività, come quello pasquale, che ha rallentato notevolmente
@@ -1093,7 +1004,7 @@ dell'ipotesi architetturale e quindi della produzione stessa del POC#super[G].
 
 
 === Retrospettiva
-#v(1em)
+
 
 Le difficoltà incontrare hanno portato alla luce come fosse e sia essenziale avere una
 migliore panoramica dell'ambito di sviluppo del progetto, e di come iniziare a sviluppare
@@ -1101,15 +1012,15 @@ parallelamente una prima base di POC#super[G] sia essenziale al fine stesso di c
 il contesto e identificare in anticipo eventuali issue.
 
 
-=== Sprint#super[G] 3
-#v(1em)
+#pagebreak()
+=== Sprint 3
 Inizio: #h(1.99cm)*25-04-2025*\
 Fine Prevista: #h(0.65cm)*09-05-2025*\
 Fine Reale: #h(1.12cm)*Da inserire*\
 Giorni di ritardo: #h(0.15cm)*0*
 
 ==== Informazioni generali e attività da svolgere
-#v(1em)
+
 
 In particolare, le attività previste sono:
 
@@ -1123,7 +1034,7 @@ In particolare, le attività previste sono:
 
 
 ==== Rischi attesi
-#v(1em)
+
 
 I possibili rischi :
 - RI1: Rischio Individuale derivante dalle altre attività.
@@ -1131,7 +1042,7 @@ I possibili rischi :
 
 
 ==== Preventivo
-#v(1em)
+
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
@@ -1147,11 +1058,11 @@ I possibili rischi :
   didascalia: "Sprint 3 - Preventivo ore per ciascun componente"
 )
 ]
-#v(1em)
+
 
 ==== Consuntivo
 
-#v(1em)
+
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
@@ -1167,10 +1078,10 @@ I possibili rischi :
   didascalia: "Sprint 3 - Consuntivo ore per ciascun componente"
 )
 ]
-#v(1em)
+
 
 ==== Aggiornamento delle risorse rimanenti  
-#v(1em)
+
 #align(center)[
   #tabella_aggiornamento_risorse(
     dati: (
@@ -1185,10 +1096,10 @@ I possibili rischi :
     didascalia: "Sprint 3 - Aggiornamento delle risorse disponibili"
   )
 ]
-#v(1em)
+
 
 ==== Rischi incontrati
-#v(1em)
+
 
 === Retrospettiva
-#v(1em)
+
