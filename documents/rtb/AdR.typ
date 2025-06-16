@@ -16,7 +16,7 @@
 #let status = "In redazione"
 #let destinatario = "M31"
 
-#let versione = "0.8.0"
+#let versione = "0.8.1"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -28,6 +28,12 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [0.8.1],
+  [16/06/2025],
+  [N. Bolzon \ N. Moretto \ S. Speranza],
+  [-],
+  [Modifiche minori ai casi d'uso e requisiti.],
+
   [0.8.0],
   [13/06/2025],
   [N. Bolzon],
@@ -200,7 +206,7 @@ Questo documento è destinato a:
 
 Potrà inoltre essere consultato da altri soggetti coinvolti nel processo di sviluppo, come Amministratori#super[G] e Responsabili#super[G] di Progetto, al fine di acquisire una comprensione esauriente delle specifiche del sistema.
 
-== Descrizione del prodotto#super[G]
+== Descrizione del prodotto
 Il progetto ha l'obiettivo di sviluppare un sistema intelligente per la gestione distribuita dell'inventario#super[G] in una rete di magazzini geograficamente separati. In scenari logistici complessi, come quelli che prevedono la cooperazione tra più sedi operative, è fondamentale garantire disponibilità continua delle scorte#super[G], ridurre i tempi di inattività e ottimizzare il flusso di materiali.
 
 Il sistema dovrà permettere di rilevare in tempo reale situazioni critiche, come carenze di prodotto#super[G] in una sede e surplus in un'altra, intervenendo automaticamente o suggerendo azioni correttive di trasferimento#super[G] o riassortimento#super[G]. Sarà inoltre in grado di gestire eventi imprevisti, come l'indisponibilità temporanea di un magazzino, garantendo la continuità operativa attraverso un bilanciamento intelligente delle risorse nei magazzini vicini.
@@ -267,7 +273,7 @@ https://www.multiplayer.app/distributed-systems-architecture/
 === Riferimenti informativi
 - *Diagrammi dei Casi d'Uso:* \ #link("https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")[https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
 - *Analisi dei Requisiti:* \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
-- *Glossario:* \ #link("https://teamcodealchemists.github.io/glossario.html")[https://teamcodealchemists.github.io/glossario.html] \ *Ultimo Accesso:* 27 Maggio 2025
+- *Glossario:* \ #link("https://teamcodealchemists.github.io/glossario.html")[https://teamcodealchemists.github.io/glossario.html] \ *Ultimo Accesso:* 16 Giugno 2025
 - *Standard IEEE:* \ #link("https://ieeexplore.ieee.org/document/720574")[https://ieeexplore.ieee.org/document/720574] \ *Ultimo Accesso:* 27 Maggio 2025
 
 #pagebreak()
@@ -360,8 +366,8 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   + L'Utente visualizza una schermata per la registrazione.
   + L'Utente inserisce nome e cognome.
   + L'Utente inserisce l'indirizzo email.
-  + L’Utente inserisce la Password.
   + L'Utente inserisce il numero di cellulare.
+  + L’Utente inserisce la Password.
   + L’Utente inserisce nuovamente la Password per confermarla.
 
 - *Trigger*: 
@@ -620,6 +626,10 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   + Il Supervisore modifica le quantità di prodotto e/o le soglie minime e/o massime.
   + Il Supervisore conferma i dati inseriti.
   + Il Supervisore torna alla pagina di inventario del magazzino.
+
+- *Scenario alternativo*:
+  2. Il Supervisore Globale annulla l’aggiornamento dei dati.
+  + Il sistema mantiene i dati precedenti e scarta le modifiche.
 
 - *Trigger*:
   - Il Supervisore preme il pulsante Modifica Prodotto.
@@ -1036,9 +1046,9 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   + Il Supervisore Globale visualizza i parametri di sistema.
   + Il Supervisore Globale aggiorna uno o più parametri tra i seguenti:
     - Costo massimo per i trasferimenti interni automatici.
-    - Distanza massima per i trasferimenti interni automatici
-    - Tempo dopo cui gli ordini di un magazzino offline vengono automaticamente annullati.
-    - Tempo dopo cui un ordine "in transito" cambia automaticamente stato in "annullato".
+    - Distanza massima per i trasferimenti interni automatici.
+    - Tempo dopo cui gli ordini#super[G] di un magazzino offline vengono automaticamente annullati.
+    - Tempo dopo cui un ordine#super[G] "in transito" cambia automaticamente stato in "annullato".
   + Il Supervisore Globale conferma l’aggiornamento dei parametri.
   + I parametri vengono aggiornati all’interno del sistema.
 - *Scenario alternativo*:
@@ -1046,6 +1056,38 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   + Il sistema mantiene i parametri precedenti e scarta le modifiche.
 - *Trigger*:
   - Il Supervisore Locale entra nella pagina di *Impostazioni*.
+
+#pagebreak()
+=== - UC 29: Modifica globale del prezzo unitario di un prodotto
+#label("uc-29")
+
+#figure(
+  image("assets/UC29.png", width: 50%),
+  caption: [UC29 - Modifica globale del prezzo unitario di un prodotto]
+)
+
+- *Attore Principale*: Supervisore Globale
+- *Precondizione*:
+  - Il Supervisore Globale è autenticato presso il Sistema.
+  - Il Supervisore Globale si trova nella pagina inventario di un magazzino.
+  - Il Supervisore Globale ha selezionato il prodotto di cui modificare il prezzo.
+
+- *Postcondizione*:
+  - Il prezzo unitario di un prodotto è stato globalmente modificato.
+  - Il Supervisore Globale si trova nella pagina inventario di un magazzino.
+
+- *Scenario principale*:
+  + Il Supervisore Globale modifica il prezzo unitario di un prodotto.
+  + Il Supervisore Globale conferma il dato inserito.
+  + Il Supervisore Globale torna alla pagina di inventario del magazzino.
+
+- *Scenario alternativo*:
+  2. Il Supervisore Globale annulla l’aggiornamento del dato.
+  + Il sistema mantiene il dato precedente e scarta le modifiche.
+
+- *Trigger*:
+  - Il Supervisore Globale preme il pulsante Modifica Prodotto.
+
 
 
 #pagebreak()
@@ -1145,10 +1187,11 @@ _Esempio:_
 
     [*RF05*], [*Gestione manuale delle merci.*], [capitolato#super[G]],
     [*RF05/01*], [I Supervisori possono inserire un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
-    [*RF05/02*], [I Supervisori possono definire la quantità all'inserimento di un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
-    [*RF05/03*], [Il Supervisore Globale può rimuovere un tipo di merce dall'inventario.], [capitolato#super[G]],
-    [*RF05/04*], [I Supervisori possono modificare la quantità di merce nell'inventario dei magazzini.], [capitolato#super[G]],
-    [*RF05/05*], [Il Supervisore Globale può modificare il prezzo unitario di un prodotto.], [capitolato#super[G]],
+    [*RF05/02*], [I Supervisori possono definire il prezzo unitario all'inserimento di un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
+    [*RF05/03*], [I Supervisori possono definire la quantità all'inserimento di un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
+    [*RF05/04*], [Il Supervisore Globale può rimuovere un tipo di merce dall'inventario.], [capitolato#super[G]],
+    [*RF05/05*], [I Supervisori possono modificare la quantità di merce nell'inventario dei magazzini.], [capitolato#super[G]],
+    [*RF05/06*], [Il Supervisore Globale può modificare il prezzo unitario di un prodotto.], [capitolato#super[G]],
 
     [*RF06*], [*Gestione manuale degli ordini.*], [capitolato#super[G]],
     [*RF06/01*], [I Supervisori possono inserire ordini di trasferimento interno tra magazzini.], [capitolato#super[G]],
@@ -1404,10 +1447,10 @@ _Esempio:_
 
     [RF05/01],[#link(label("uc-9"), underline("[UC 9]"))],
     [RF05/02],[#link(label("uc-9"), underline("[UC 9]"))],
-    [RF05/03],[#link(label("uc-10"), underline("[UC 10]"))], 
-    [RF05/04],[#link(label("uc-11"), underline("[UC 11]"))],
-    /* DA VERIFICARE */
-    [RF05/05],[],
+    [RF05/03],[#link(label("uc-9"), underline("[UC 9]"))],
+    [RF05/04],[#link(label("uc-10"), underline("[UC 10]"))], 
+    [RF05/05],[#link(label("uc-11"), underline("[UC 11]"))],
+    [RF05/06],[#link(label("uc-29"), underline("[UC 29]"))],
 
     [RF06],[#link(label("uc-12"), underline("[UC 12]"))],
     [RF06/01],[#link(label("uc-13"), underline("[UC 13]"))],
@@ -1449,11 +1492,11 @@ _Esempio:_
   table.header(
     [*Tipologia*], [*Obbligatori*], [*Desiderabili*], [*Opzionali*],
   ),
-    [*Funzionali*],     [68],  [33],  [5],
-    [*Qualità*],        [26],  [2],   [10],
-    [*Prestazionali*],  [0],   [0],   [0],
-    [*Vincolo*],        [2],   [0],   [0],
-    [*Totale*],         [*96*],  [*35*], [*15*]
+    [*Funzionali*],     [69],    [33],    [5],
+    [*Qualità*],        [26],    [2],     [10],
+    [*Prestazionali*],  [0],     [0],     [0],
+    [*Vincolo*],        [2],     [0],     [0],
+    [*Totale*],         [*97*],  [*35*],  [*15*]
   ),
   caption: [Riepilogo dei casi d'uso],
 )
