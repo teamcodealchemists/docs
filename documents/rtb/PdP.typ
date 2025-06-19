@@ -1167,7 +1167,7 @@ Gli analisti infatti ritengono che oltre ad aver consegnato in modo frettoloso c
 Durante il terzo sprint, il team si è concetrato  principalmente su attività di progettazione e sviluppo architetturale relative al POC.
 
 Durante la prima settimana i progettisti, hanno progettato un'ipotesi di architettura del PoC#super[G] sulla base dell'analisi dello stato dell'arte svolto in precedenza.
-Tale architettura è stata poi presentata a _M31_ durante la riunione del *05/05/2025*. \
+Tale architettura è stata poi presentata a _M31_ durante la riunione del *05/05/2025*, dove sono stati chiarti dubbi e domande emerse durante l'analisi dei requisiti ed è stata migliorata l'organizazzione della comunicazione.\
 
 Durante la seconda settimana dello sprint, i progettisti hanno modellato l'ipotesi di architettura del PoC#super[G] sulla base dei feedback ricevuti da _M31_, trovando una soluzione che potrebbe essere definitiva. \
 
@@ -1178,3 +1178,116 @@ In parallelo tuttavia è continuata la redazione dei documenti come inizialmente
 Per quanto riguarda infine il rischio riscontrato il team ha deciso di cercare un riscontro diretto con questo membro e se non dovessero esserci miglioramenti risulterà necessario prendere provvedimenti. \
 
 Viste le conclusioni dei vari lavori, e l'imminente inizio del PoC#super[G], si è deciso di introdurre un nuovo ruolo nel team: il *programmatore#super[G]*.\
+
+
+=== Sprint#super[G] 4
+#v(1em)
+Inizio: #h(1.99cm)*09-05-2025*\
+Fine Prevista: #h(0.65cm)*23-05-2025*\
+Fine Reale: #h(1.12cm)*Da inserire*\
+Giorni di ritardo: #h(0.15cm)*0*
+
+==== Informazioni generali e attività da svolgere
+#v(1em)
+
+In particolare, le attività previste sono:
+
+- Termine architettura#super[G]
+- Stesura casi d'uso
+- Studio delle tecnologie
+- Continuazione stesura documenti;
+  - Piano di progetto;
+  - Piano di qualifica#super[G];
+  - Glossario#super[G];
+  - Analisi dei requisiti#super[G];
+  - Norme di progetto.
+
+
+==== Rischi attesi
+#v(1em)
+
+I possibili rischi :
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
+- RI1: Rischio Individuale derivante dalle altre attività;
+- RG2: Rischio Globale legato a pareri contrastanti.
+
+
+
+==== Preventivo
+#v(1em)
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],[],[],[],[],[-],[],
+    [Mattia Dalla Pozza],[],[],[],[-],[],[],
+    [Sebastiano Marana],[],[],[],[-],[],[],
+    [Nicholas Moretto],[-],[],[],[],[],[-],
+    [Matteo Pretto],[],[-],[],[],[],[],
+    [Alex Shu],[],[],[-],[],[],[],
+    [Stefano Speranza],[],[],[],[-],[],[],
+    [Ramona Zangla],[-],[],[],[-],[],[],
+  ),
+  didascalia: "Sprint#super[G] 3 - Preventivo ore per ciascun componente"
+)
+]
+#v(1em)
+
+==== Consuntivo
+
+#v(1em)
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],[],[],[],[],[-],[],
+    [Mattia Dalla Pozza],[],[],[],[-],[],[],
+    [Sebastiano Marana],[],[],[],[-],[],[],
+    [Nicholas Moretto],[-],[],[],[],[],[-],
+    [Matteo Pretto],[],[-],[],[],[],[],
+    [Alex Shu],[],[],[-],[],[],[],
+    [Stefano Speranza],[],[],[],[-],[],[],
+    [Ramona Zangla],[-],[],[],[-],[],[],
+  ),
+  didascalia: "Sprint#super[G] 3 - Consuntivo ore per ciascun componente"
+)
+]
+#v(1em)
+
+==== Aggiornamento delle risorse rimanenti  
+#v(1em)
+#align(center)[
+  #tabella_aggiornamento_risorse(
+    dati: (
+      [Responsabile#super[G]], [30€/h], [], [], [], [],
+      [Amministratore#super[G]], [20€/h], [], [], [], [],
+      [Analista#super[G]], [25€/h], [], [], [], [],
+      [Progettista#super[G]], [25€/h], [], [], [], [],
+      [Programmatore#super[G]], [15€/h], [], [], [], [],
+      [Verificatore#super[G]], [15€/h], [], [], [], [],
+      [*Totale*], [*-*], [**], [**], [**], [**],
+  ),
+    didascalia: "Sprint#super[G] 3 - Aggiornamento delle risorse disponibili"
+  )
+]
+#v(1em)
+
+==== Rischi incontrati
+#v(1em)
+
+Il principale rischio di questo quarto sprint#super[G] è stato la maggiore difficoltà nella produzione dell'*l'analisi dei casi d'uso*.
+
+=== Retrospettiva
+#v(1em)
+
+  Come stabilito i progettisti#super[G] hanno continuato l'attività di definizione dell'architettura#super[G] per il PoC#super[G]. \
+
+  In particolare l'amministratore#super[G] ha studiato autonomamente i vari ambienti di sviluppo (come NATS, Docker, ...) cercando di comprendere il funzionamento e documentarlo per trasmettere quando appreso ai membri del Team tramite documenti facilitando poi quindi l'inizio dello sviluppo del PoC#super[G]. 
+
+  Gli analisti#super[G] hanno continuato *l'analisi dei casi d'uso* la quale si è resa più dispendiosa del previsto. Si è cercato di adottare delle migliorie in due diverse modalità: migliorando la leggibilità della tabella e rendendo i requisiti#super[G] meno prolissi cercando inoltre di evitare ridondanza#super[G]. \
+  L'attività è stata quasi completata, rendendo quindi ora necessarie solo minime modifiche. \
+
+  I progettisti#super[G] hanno lavorato principalmente sulla *progettazione architetturale del PoC*#super[G].\
+  Sono state effettuate le ultime modifiche all'architettura#super[G] ad alto livello ed è terminata la stesura del *Processo di Progettazione*. \
+  Come per la stesura dei casi d'uso, anche questa attività è prossima alla conclusione. \
+
+  Infine in parallelo come definito sono stati portati avanti i documenti. 
+
