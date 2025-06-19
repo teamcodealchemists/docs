@@ -1080,7 +1080,7 @@ Giorni di ritardo: #h(0.15cm)*0*
 
 In particolare, le attività previste sono:
 
-- Termine architettura#super[G] POC#super[G];
+- Termine architettura#super[G] e progettazione POC#super[G];
 - Continuazione stesura documenti;
   - Piano di progetto;
   - Piano di qualifica#super[G];
@@ -1093,7 +1093,9 @@ In particolare, le attività previste sono:
 #v(1em)
 
 I possibili rischi :
-- RI1: Rischio Individuale derivante dalle altre attività.
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
+- RI1: Rischio Individuale derivante dalle altre attività;
+- RG2: Rischio Globale legato a pareri contrastanti.
 
 
 
@@ -1103,13 +1105,13 @@ I possibili rischi :
 #tabella_preventivo_consuntivo(
   dati: (
     [Nicolò Bolzon],[],[],[-],[],[],[],
-      [Mattia Dalla Pozza],[],[-],[],[],[],[],
-      [Sebastiano Marana],[],[],[],[],[],[-],
-      [Nicholas Moretto],[-],[],[],[],[],[],
-      [Matteo Pretto],[],[],[-],[],[],[],
-      [Alex Shu],[],[],[-],[],[],[],
-      [Stefano Speranza],[],[],[],[-],[],[],
-      [Ramona Zangla],[],[],[],[-],[],[],
+    [Mattia Dalla Pozza],[],[-],[],[],[],[],
+    [Sebastiano Marana],[],[],[],[],[],[-],
+    [Nicholas Moretto],[-],[],[],[],[],[],
+    [Matteo Pretto],[],[],[-],[],[],[],
+    [Alex Shu],[],[],[-],[],[],[],
+    [Stefano Speranza],[],[],[],[-],[],[],
+    [Ramona Zangla],[],[],[],[-],[],[],
   ),
   didascalia: "Sprint#super[G] 3 - Preventivo ore per ciascun componente"
 )
@@ -1156,6 +1158,23 @@ I possibili rischi :
 
 ==== Rischi incontrati
 #v(1em)
+Durante lo sprint gli analisti hanno riscontrato un problema con un membro del sottoteam, il quale non si è distinto per il suo lavoro svolto. \
+
+Gli analisti infatti ritengono che oltre ad aver consegnato in modo frettoloso casi d'uso non completamente analizzati, ha partecipato poco attivamente alle attività di analisi e ha fornito un contributo insignificante al lavoro del team. 
 
 === Retrospettiva
 #v(1em)
+Durante il terzo sprint, il team si è concetrato  principalmente su attività di progettazione e sviluppo architetturale relative al POC.
+
+Durante la prima settimana i progettisti, hanno progettato un'ipotesi di architettura del PoC#super[G] sulla base dell'analisi dello stato dell'arte svolto in precedenza.
+Tale architettura è stata poi presentata a _M31_ durante la riunione del *05/05/2025*. \
+
+Durante la seconda settimana dello sprint, i progettisti hanno modellato l'ipotesi di architettura del PoC#super[G] sulla base dei feedback ricevuti da _M31_, trovando una soluzione che potrebbe essere definitiva. \
+
+Il lavoro non è ancora concluso, in quanto ci sono ancora alcuni aspetti da definire e da chiarire, i progettisti quindi hanno dichiarato di voler concludere l'attività di progettazione dell'architettura durante lo sprint successivo. \
+
+In parallelo tuttavia è continuata la redazione dei documenti come inizialmente previsto.
+
+Per quanto riguarda infine il rischio riscontrato il team ha deciso di cercare un riscontro diretto con questo membro e se non dovessero esserci miglioramenti risulterà necessario prendere provvedimenti. \
+
+Viste le conclusioni dei vari lavori, e l'imminente inizio del PoC#super[G], si è deciso di introdurre un nuovo ruolo nel team: il *programmatore#super[G]*.\
