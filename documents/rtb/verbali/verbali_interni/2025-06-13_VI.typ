@@ -65,19 +65,19 @@
 
 === 2.1.1 Lavoro svolto dall'analista e dal progettista
   Ora il documento “Analisi dei Requisiti” è pronto per l'approvazione da parte del proponente.
-  L'analista, con l'aiuto del progettista, ha completato i requisiti e i casi d'uso sulla base delle linee guida ricevute dall'ultimo incontro con Cardin. È stato rimosso il sistema come attore dei casi d'uso, in quanto i casi d'uso riflettono le azione compiute da parte dell'utente. \  
+  L'analista, con l'aiuto del progettista, ha completato i requisiti e i casi d'uso sulla base delle linee guida ricevute dall'ultimo incontro con il Professore Cardin. È stato rimosso il sistema come attore dei casi d'uso, in quanto i casi d'uso riflettono le azione compiute da parte dell'utente. \  
   Durante questo lavoro, il progettista ha sollevato alcune scelte di progettazione fatte precedentemente e, sulla base dei nuovi requisiti e casi d'uso, ha apportato alcune modifiche per semplificare e/o chiarire degli aspetti della progettazione per renderla conforme con i requisiti e i casi d'uso.\
   Nei prossimi giorni il progettista renderà effettive queste modifiche e le fornirà ai programmatori per l'implementazione.
 
 === 2.1.2 Lavoro svolto dai programmatori
-  I programmatori durante questa settimana hanno riscontrato molti problemi: non conoscendo le tecnologie hanno dovuto documentarsi, come già previsto in precedenza. Nonostante questo, però, resta il fatto che sono tecnologie e modalità di lavoro che nessuno di noi ha mai affrontato in precedenza. Quindi, anche dopo una preparazione teorica, la prima implementazione risulta comunque lenta, auspicando però un'accelerazione nel momento in cui si comincia a padroneggiare quella determinata tecnologia.
+  I programmatori durante questa settimana hanno riscontrato diversi problemi: non conoscendo le tecnologie hanno dovuto documentarsi esaustivamente, come già previsto in precedenza. Nonostante questo, tuttavia, va considerato che sono tecnologie e modalità di lavoro che nessuno all'interno del team ha mai affrontato in precedenza. Dunque, anche dopo una preparazione teorica, la prima implementazione è risultata comunque lenta, auspicando però un'accelerazione nel momento in cui le tecnologie verrano conosciute e padroneggiate meglio.
 
-  Fino ad ora i programmatori hanno cercato di capire come strutturare la repository, ed è stato fatto il setup di tutta l'infrastruttura.\
+  Fino ad ora i programmatori hanno cercato di capire come strutturare la repository, ed è stato inoltre fatto il setup di tutta l'infrastruttura.\
   È stata fatta una divisione del lavoro tra i programmatori, che ha portato alle seguenti realizzazioni:
-  - è stato iniziato il documento per i test;
-  - è stato studiato MongoDB, e sono stati creati i primi database;
-  - è stato iniziata la logica di business del servizio di inventario;
-  - è stato implementato Docker e funziona completamente.
+  - Iniziato il documento per i test;
+  - Studiato MongoDB, e creati i primi database;
+  - Iniziata la logica di business del servizio di inventario;
+  - Implementato Docker, il quale funziona completamente.
 
   I programmatori sono consapevoli di questo rallentamento dovuto allo studio e all'implementazione di queste nuove tecnologie, e alla sessione d'esami appena iniziata.\ Per questo è stato richiesto un contributo anche da parte degli altri membri che non sono programmatori. 
   Per quanto possibile, avere un contributo anche dagli altri membri permette di velocizzare i tempi di implementazione, e quindi anche di consegna del PoC.
@@ -87,7 +87,7 @@
   Si procederà principalmente con lo sviluppo del PoC, e, se serve, con la scrittura della documentazione.
 
 == 2.3 Contatti con l'azienda e il professore
-  È stato deciso di contattare il Prof. Cardin per informarlo dell'aggiornamento dell'AdR e per richiedere un incontro per discutere su quanto modificato.
+  È stato deciso di contattare il Professore Cardin per informarlo dell'aggiornamento dell'AdR e per richiedere un incontro per discutere su quanto modificato.
 
   Infine è stato deciso di contattare anche M31 per chiedere un'approvazione dei soli requisiti e per aggiornarli sullo stato del PoC.
   
