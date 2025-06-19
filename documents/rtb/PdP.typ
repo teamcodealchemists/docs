@@ -1113,7 +1113,7 @@ I possibili rischi :
     [Stefano Speranza],[],[],[],[-],[],[],
     [Ramona Zangla],[],[],[],[-],[],[],
   ),
-  didascalia: "Sprint#super[G] 3 - Preventivo ore per ciascun componente"
+  didascalia: "Sprint 3 - Preventivo ore per ciascun componente"
 )
 ]
 #v(1em)
@@ -1133,7 +1133,7 @@ I possibili rischi :
       [Stefano Speranza],[],[],[],[-],[],[],
       [Ramona Zangla],[],[],[],[-],[],[],
   ),
-  didascalia: "Sprint#super[G] 3 - Consuntivo ore per ciascun componente"
+  didascalia: "Sprint 3 - Consuntivo ore per ciascun componente"
 )
 ]
 #v(1em)
@@ -1151,7 +1151,7 @@ I possibili rischi :
       [Verificatore#super[G]], [15€/h], [], [], [], [],
       [*Totale*], [*-*], [**], [**], [**], [**],
   ),
-    didascalia: "Sprint#super[G] 3 - Aggiornamento delle risorse disponibili"
+    didascalia: "Sprint 3 - Aggiornamento delle risorse disponibili"
   )
 ]
 #v(1em)
@@ -1227,7 +1227,7 @@ I possibili rischi :
     [Stefano Speranza],[],[],[],[-],[],[],
     [Ramona Zangla],[-],[],[],[-],[],[],
   ),
-  didascalia: "Sprint#super[G] 3 - Preventivo ore per ciascun componente"
+  didascalia: "Sprint 4 - Preventivo ore per ciascun componente"
 )
 ]
 #v(1em)
@@ -1247,7 +1247,7 @@ I possibili rischi :
     [Stefano Speranza],[],[],[],[-],[],[],
     [Ramona Zangla],[-],[],[],[-],[],[],
   ),
-  didascalia: "Sprint#super[G] 3 - Consuntivo ore per ciascun componente"
+  didascalia: "Sprint 4 - Consuntivo ore per ciascun componente"
 )
 ]
 #v(1em)
@@ -1265,7 +1265,7 @@ I possibili rischi :
       [Verificatore#super[G]], [15€/h], [], [], [], [],
       [*Totale*], [*-*], [**], [**], [**], [**],
   ),
-    didascalia: "Sprint#super[G] 3 - Aggiornamento delle risorse disponibili"
+    didascalia: "Sprint 4 - Aggiornamento delle risorse disponibili"
   )
 ]
 #v(1em)
@@ -1291,3 +1291,129 @@ Il principale rischio di questo quarto sprint#super[G] è stato la maggiore diff
 
   Infine in parallelo come definito sono stati portati avanti i documenti. 
 
+  === Sprint#super[G] 5
+#v(1em)
+Inizio: #h(1.99cm)*23-05-2025*\
+Fine Prevista: #h(0.65cm)*06-06-2025*\
+Fine Reale: #h(1.12cm)*Da inserire*\
+Giorni di ritardo: #h(0.15cm)*0*
+
+==== Informazioni generali e attività da svolgere
+#v(1em)
+
+In particolare, le attività previste sono:
+
+- Miglioramento Analisti dei Requisiti
+- Studio delle tecnologie
+- Sviluppo di POC
+- Continuazione stesura documenti;
+  - Piano di progetto;
+  - Piano di qualifica#super[G];
+  - Glossario#super[G];
+  - Analisi dei requisiti#super[G];
+  - Norme di progetto.
+
+
+==== Rischi attesi
+#v(1em)
+
+I possibili rischi :
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata
+- RT2: Rischio Tecnologico legato all'uso errato
+- RT3: Rischio Tecnologico legato ad errori di codifica/programmazione
+- RI1: Rischio Individuale derivante dalle altre attività
+- RG2: Rischio Globale legato a pareri contrastanti
+
+
+
+==== Preventivo
+#v(1em)
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],[-],[],[],[],[],[],
+    [Mattia Dalla Pozza],[],[],[],[],[-],[],
+    [Sebastiano Marana],[],[],[-],[],[],[],
+    [Nicholas Moretto],[],[],[],[-],[],[],
+    [Matteo Pretto],[],[],[],[],[-],[],
+    [Alex Shu],[],[],[],[],[-],[],
+    [Stefano Speranza],[],[-],[],[],[],[],
+    [Ramona Zangla],[],[],[],[],[],[-],
+  ),
+  didascalia: "Sprint 5 - Preventivo ore per ciascun componente"
+)
+]
+#v(1em)
+
+==== Consuntivo
+
+#v(1em)
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],[-],[],[],[],[],[],
+    [Mattia Dalla Pozza],[],[],[],[],[-],[],
+    [Sebastiano Marana],[],[],[-],[],[],[],
+    [Nicholas Moretto],[],[],[],[-],[],[],
+    [Matteo Pretto],[],[],[],[],[-],[],
+    [Alex Shu],[],[],[],[],[-],[],
+    [Stefano Speranza],[],[-],[],[],[],[],
+    [Ramona Zangla],[],[],[],[],[],[-],
+  ),
+  didascalia: "Sprint 5 - Consuntivo ore per ciascun componente"
+)
+]
+#v(1em)
+
+==== Aggiornamento delle risorse rimanenti  
+#v(1em)
+#align(center)[
+  #tabella_aggiornamento_risorse(
+    dati: (
+      [Responsabile#super[G]], [30€/h], [], [], [], [],
+      [Amministratore#super[G]], [20€/h], [], [], [], [],
+      [Analista#super[G]], [25€/h], [], [], [], [],
+      [Progettista#super[G]], [25€/h], [], [], [], [],
+      [Programmatore#super[G]], [15€/h], [], [], [], [],
+      [Verificatore#super[G]], [15€/h], [], [], [], [],
+      [*Totale*], [*-*], [**], [**], [**], [**],
+  ),
+    didascalia: "Sprint 5 - Aggiornamento delle risorse disponibili"
+  )
+]
+#v(1em)
+
+==== Rischi incontrati
+#v(1em)
+
+ Il principale problema di questo sprint riguarda i programmatori, in particolare del tipo RT1, RT2, RT3.
+
+ Durante le due settimane hanno riscontrato diversi problemi: non conoscendo le tecnologie hanno dovuto documentarsi più approfonditamente di quanto stimato. 
+ Nonostante questo, tuttavia, essendo tecnologie e modalità di lavoro che nessuno all'interno del team ha mai affrontato in precedenza,anche dopo una preparazione teorica la prima implementazione è risultata comunque lenta, auspicando però un'accelerazione nel momento in cui le tecnologie verrano conosciute e padroneggiate meglio.
+
+
+=== Retrospettiva
+#v(1em)
+
+Il documento “Analisi dei Requisiti” è pronto per l'approvazione da parte del proponente.
+
+L'analista, con l'aiuto del progettista, ha completato i requisiti e i casi d'uso sulla base delle linee guida ricevute dall'ultimo incontro con il Professore Cardin.
+  
+È stato rimosso il sistema come attore dei casi d'uso, in quanto i casi d'uso riflettono le azione compiute da parte dell'utente. \
+
+Durante questo lavoro, il progettista ha sollevato alcune scelte di progettazione fatte precedentemente e, sulla base dei nuovi requisiti e casi d'uso, ha apportato alcune modifiche per semplificare e/o chiarire degli aspetti della progettazione per renderla conforme con i requisiti e i casi d'uso.\
+Verrano quindi rese effettive queste modifiche e fornite ai programmatori per l'implementazione.
+
+I programmatori quindi hanno cercato di capire come strutturare la repository, ed è stato inoltre fatto il setup di tutta l'infrastruttura.\
+  È stata fatta una divisione del lavoro tra i programmatori, che ha portato alle seguenti realizzazioni:
+  - Iniziato il documento per i test;
+  - Studiato MongoDB, e creati i primi database;
+  - Iniziata la logica di business del servizio di inventario;
+  - Implementato Docker, il quale funziona completamente.
+
+Per ovviare ai rallentamenti dovuti allo studio e all'implementazione di queste nuove tecnologie, e alla sessione d'esami appena iniziata è stato richiesto per lo sprint successivo un contributo anche da parte degli altri membri che non sono programmatori per quanto possibile, velocizzando quindi i tempi di implementazione e di consegna del PoC.
+
+È stato deciso di contattare il Professore Cardin per informarlo dell'aggiornamento dell'Analisi dei requisiti e per richiedere un incontro in cui discutre le modifiche.
+
+Infine è stato deciso di contattare anche M31 per chiedere un'approvazione dei soli requisiti e per aggiornare il committente sullo stato del PoC.
+  
