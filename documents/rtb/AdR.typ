@@ -26,6 +26,7 @@
   p.cardin,
 )
 
+
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
   [0.8.1],
@@ -775,9 +776,8 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 #pagebreak()
 === - UC 17: Visualizzazione inventario globale
 #label("uc-17")
-
 #figure(
-  image("assets/UC17.png", width: 70%),
+  image("assets/UC17.png", width: 50%),
   caption: [UC17 - Visualizzazione inventario globale]
 )
 
@@ -789,42 +789,16 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore Globale ha visualizzato l'inventario complessivo di tutti i magazzini.
 - *Scenario principale*:
   + Il Supervisore Globale visualizza l'inventario complessivo dei magazzini.
-  + Selezione di un magazzino → #link(label("uc-19"), underline("[UC 19]"))  
-- *Estensioni*:
-  - #link(label("uc-19"), underline("[UC 19]"))  
 - *Trigger*:
   - Il Supervisore Globale entra nella pagina di *inventario*.
 
 #pagebreak()
-=== - UC 18: Selezione singolo magazzino per visualizzazione del suo inventario
+=== - UC 18: Visualizzazione inventario singolo magazzino
 #label("uc-18")
 
 #figure(
-  image("assets/UC18.png", width: 70%),
-  caption: [UC18 - Selezione singolo magazzino per visualizzazione del suo inventario]
-)
-
-- *Attore Principale*: Supervisore Locale
-- *Precondizione*:
-  - Il Supervisore Locale è autenticato presso il Sistema.
-  - Il Supervisore Locale si trova nella pagina di inventario.
-- *Postcondizione*:
-  - Il Supervisore ha visualizzato l'inventario di un singolo magazzino selezionato
-- *Scenario principale*:
-  + Il Supervisore Locale seleziona un magazzino.
-  + Il Supervisore Locale visualizza l’inventario del magazzino -> #link(label("uc-19"), underline("[UC 19]"))  
-- *Inclusioni*:
-  - #link(label("uc-19"), underline("[UC 19]"))  
-- *Trigger*:
-  - Il Supervisore Locale entra nella pagina di *inventario*.
-
-#pagebreak()
-=== - UC 19: Visualizzazione inventario singolo magazzino
-#label("uc-19")
-
-#figure(
-  image("assets/UC19.png", width: 60%),
-  caption: [UC19 - Visualizzazione inventario singolo magazzino]
+  image("assets/UC18.png", width: 60%),
+  caption: [UC18 - Visualizzazione inventario singolo magazzino]
 )
 
 - *Attore Principale*: Supervisore
@@ -838,11 +812,35 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   + Il Supervisore visualizza l'inventario di un singolo magazzino.
 
 #pagebreak()
+=== - UC 19: Selezione singolo magazzino per visualizzazione del suo inventario
+#label("uc-19")
+
+#figure(
+  image("assets/UC19.png", width: 70%),
+  caption: [UC19 - Selezione singolo magazzino per visualizzazione del suo inventario]
+)
+
+- *Attore Principale*: Supervisore Locale
+- *Precondizione*:
+  - Il Supervisore Locale è autenticato presso il Sistema.
+  - Il Supervisore Locale si trova nella pagina di inventario.
+- *Postcondizione*:
+  - Il Supervisore ha visualizzato l'inventario di un singolo magazzino selezionato
+- *Scenario principale*:
+  + Il Supervisore Locale seleziona un magazzino.
+  + Il Supervisore Locale visualizza l’inventario del magazzino → #link(label("uc-18"), underline("[UC 18]"))  
+- *Inclusioni*:
+  - #link(label("uc-18"), underline("[UC 18]"))  
+- *Trigger*:
+  - Il Supervisore Locale entra nella pagina di *inventario*.
+
+
+#pagebreak()
 === - UC 20: Visualizzazione report ordini
 #label("uc-20")
 
 #figure(
-  image("assets/UC20.png", width: 60%),
+  image("assets/UC20.png", width: 55%),
   caption: [UC20 - Visualizzazione report ordini]
 )
 
@@ -857,49 +855,17 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Scenario principale*:
   + Il Supervisore Globale visualizza l'elenco complessivo degli ordini di tutti i magazzini.
-  + Selezione di un magazzino → #link(label("uc-22"), underline("[UC 22]"))
-
-- *Estensioni*:
-  - #link(label("uc-22"), underline("[UC 22]"))
 
 - *Trigger*:
   - Il Supervisore Globale entra nella pagina *ordini*.
 
 #pagebreak()
-=== - UC 21: Selezione magazzino per visualizzazione del suo report ordini
+=== - UC 21: Visualizzazione report ordini singolo magazzino
 #label("uc-21")
 
 #figure(
   image("assets/UC21.png", width: 60%),
-  caption: [UC21 - Selezione magazzino per visualizzazione del suo report ordini]
-)
-
-- *Attore Principale*: Supervisore Locale
-
-- *Precondizione*:
-  - Il Supervisore Locale è autenticato presso il Sistema.
-  - Il Supervisore Locale si trova nella pagina ordini.
-
-- *Postcondizione*:
-  - Il Supervisore Locale ha visualizzato il report degli ordini di un magazzino.
-
-- *Scenario principale*:
-  + Il Supervisore Locale seleziona un magazzino
-  + Il Supervisore visualizza il report degli ordini di un magazzino → #link(label("uc-22"), underline("[UC 22]"))  
-
-- *Inclusioni*:
-  - #link(label("uc-22"), underline("[UC 22]"))
-
-- *Trigger*:
-  - Il Supervisore Locale entra nella pagina *ordini*.
-
-#pagebreak()
-=== - UC 22: Visualizzazione report ordini singolo magazzino
-#label("uc-22")
-
-#figure(
-  image("assets/UC22.png", width: 60%),
-  caption: [UC22 - Visualizzazione report ordini singolo magazzino]
+  caption: [UC21 - Visualizzazione report ordini singolo magazzino]
 )
 
 - *Attore Principale*: Supervisore
@@ -914,6 +880,35 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Scenario principale*:
   + Il Supervisore visualizza il report degli ordini di un singolo magazzino.
+
+
+#pagebreak()
+=== - UC 22: Selezione magazzino per visualizzazione del suo report ordini
+#label("uc-22")
+
+#figure(
+  image("assets/UC22.png", width: 70%),
+  caption: [UC22 - Selezione magazzino per visualizzazione del suo report ordini]
+)
+
+- *Attore Principale*: Supervisore Locale
+
+- *Precondizione*:
+  - Il Supervisore Locale è autenticato presso il Sistema.
+  - Il Supervisore Locale si trova nella pagina ordini.
+
+- *Postcondizione*:
+  - Il Supervisore Locale ha visualizzato il report degli ordini di un magazzino.
+
+- *Scenario principale*:
+  + Il Supervisore Locale seleziona un magazzino
+  + Il Supervisore visualizza il report degli ordini di un magazzino → #link(label("uc-21"), underline("[UC 21]"))  
+
+- *Inclusioni*:
+  - #link(label("uc-21"), underline("[UC 21]"))
+
+- *Trigger*:
+  - Il Supervisore Locale entra nella pagina *ordini*.
 
 #pagebreak()
 === - UC 23: Visualizzazione stato magazzini
@@ -962,78 +957,47 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore entra nella pagina *notifiche*.
 
 #pagebreak()
-=== - UC 25: Visualizzazione notifiche decisionali
+=== - UC 25: Gestione notifiche decisionali
 #label("uc-25")
 
 #figure(
-  image("assets/UC25.png", width: 70%),
-  caption: [UC25 - Visualizzazione notifiche decisionali]
+  image("assets/UC25.png", width: 50%),
+  caption: [UC25 - Gestione delle notifiche decisionali]
 )
 
 - *Attore Principale*: Supervisore Globale
 
 - *Precondizione*:
   - Il Supervisore Globale è autenticato presso il Sistema.
-  - Il Supervisore Globale si trova nella pagina notifiche.
+  - Esiste almeno una notifica decisionale per il Supervisore.
 - *Postcondizione*:
-  - Il Supervisore Globale ha visualizzato le notifiche decisionali prodotte dal sistema.
-  - Il Supervisore Globale si trova nella pagina notifiche.
+  - La notifica è stata processata e il suo stato è "accettata" o "rifiutata".
 - *Scenario principale*:
-  + Il Supervisore Globale visualizza le notifiche decisionali del sistema.
-    2. a) Se il Supervisore Globale accetta la notifica decisionale → #link(label("uc-26"), underline("[UC 26]"))
-    2. b) Se il Supervisore Globale rifiuta la notifica decisionale → #link(label("uc-27"), underline("[UC 27]"))
-  3. Il Sistema elabora la risposta del Supervisore Globale alla notifica.
+  + Il Supervisore Globale accede alla funziona di gestione notifiche.
+  + Il Sistema presenta la prima notifica in attesa e avvia un timer per la decisione (se non già attivo).
+  + Il Supervisore Globale analizza la notifica e seleziona l'opzione "Accetta".
+  + Il Sistema aggiorna lo stato della notifica a "Accettata", registra data/ora e utente, e conclude il processo per quella notifica.
 
 - *Scenario alternativo*:
-  2. Il Supervisore Globale non accettà nè rifiuta le notifiche entro un tempo prestabilito:
-  + Il Sistema rifiuta automaticamente la notifica decisionale.
+  3. a) Il Supervisore Globale analizza la notifica e seleziona l'opzione "Rifiuta".
+  4. a) Il Sistema aggiorna lo stato della notifica a "Rifiutata", registra data/ora e utente, e conclude il processo per quella notifica.
 
-- *Estensioni*:
-  - #link(label("uc-26"), underline("[UC 26]"))
-  - #link(label("uc-27"), underline("[UC 27]"))  
+  2. b) Il Sistema presenta la notifica al Supervisore (o il Supervisore non agisce su una notifica già presentata).
+  3. b) Il Supervisore Globale non seleziona "Accetta" nè "Rifiuta" entro il tempo prestabilito dal timer.
+  4. b) Il Sistema rileva la scadenza del timer.
+  5. b) Il Sistema aggiorna automaticamente lo stato della notifica a "Rifiutata per scadenza" e termina il caso d'uso per quella notifica.
+
 - *Trigger*:
-  - Il Supervisore Globale entra nella pagina *notifiche*.
-
-
-=== - UC 26: Accettazione notifiche decisionali
-#label("uc-26")
-- *Attore Principale*: Supervisore Globale
-
-- *Precondizione*:
-  - Il Supervisore Globale è autenticato presso il Sistema.
-  - Il Supervisore Globale si trova nella pagina notifiche.
-  - Il Supervisore Globale ha accettato una notifica decisionale prodotta dal sistema.
-
-- *Postcondizione*:
-  - Il Sistema ha registrato l'accettazione della notifica decisionale da parte del Supervisore Globale.
-
-- *Scenario principale*:
-  + Il Sistema registra l'accettazione della notifica decisionale da parte del Supervisore Globale.
-
-
-=== - UC 27: Rifiuto notifiche decisionali
-#label("uc-27")
-- *Attore Principale*: Supervisore Globale
-
-- *Precondizione*:
-  - Il Supervisore Globale è autenticato presso il Sistema.
-  - Il Supervisore Globale si trova nella pagina notifiche.
-  - Il Supervisore Globale ha accettato una notifica decisionale prodotta dal sistema.
-
-- *Postcondizione*:
-  - Il Sistema ha registrato l'accettazione della notifica decisionale da parte del Supervisore Globale.
-
-- *Scenario principale*:
-  + Il Sistema registra l'accettazione della notifica decisionale da parte del Supervisore Globale.
+  - Il Supervisore Globale sceglie di visualizzare le sue notifiche decisionali.
 
 
 #pagebreak()
-=== - UC 28: Aggiornamento parametri di sistema
-#label("uc-28")
+=== - UC 26: Aggiornamento parametri di sistema
+#label("uc-26")
 
 #figure(
-  image("assets/UC28.png", width: 50%),
-  caption: [UC28 - Aggiornamento parametri di sistema]
+  image("assets/UC26.png", width: 50%),
+  caption: [UC26 - Aggiornamento parametri di sistema]
 )
 
 - *Attore Principale*: Supervisore Globale
@@ -1058,12 +1022,12 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore Locale entra nella pagina di *Impostazioni*.
 
 #pagebreak()
-=== - UC 29: Modifica globale del prezzo unitario di un prodotto
-#label("uc-29")
+=== - UC 27: Modifica globale del prezzo unitario di un prodotto
+#label("uc-27")
 
 #figure(
-  image("assets/UC29.png", width: 50%),
-  caption: [UC29 - Modifica globale del prezzo unitario di un prodotto]
+  image("assets/UC27.png", width: 50%),
+  caption: [UC27 - Modifica globale del prezzo unitario di un prodotto]
 )
 
 - *Attore Principale*: Supervisore Globale
@@ -1306,6 +1270,7 @@ _Esempio:_
   caption: [Requisiti Funzionali],
 )
 
+#pagebreak()
 
 // ===== REQUISITI DI VINCOLO ==== 
 
@@ -1450,7 +1415,7 @@ _Esempio:_
     [RF05/03],[#link(label("uc-9"), underline("[UC 9]"))],
     [RF05/04],[#link(label("uc-10"), underline("[UC 10]"))], 
     [RF05/05],[#link(label("uc-11"), underline("[UC 11]"))],
-    [RF05/06],[#link(label("uc-29"), underline("[UC 29]"))],
+    [RF05/06],[#link(label("uc-27"), underline("[UC 27]"))],
 
     [RF06],[#link(label("uc-12"), underline("[UC 12]"))],
     [RF06/01],[#link(label("uc-13"), underline("[UC 13]"))],
@@ -1459,23 +1424,23 @@ _Esempio:_
     [RF06/04],[#link(label("uc-16"), underline("[UC 16]"))],
 
     [RF07/01],[#link(label("uc-17"), underline("[UC 17]"))],
-    [RF07/02],[#link(label("uc-18"), underline("[UC 18]")), #link(label("uc-19"), underline("[UC 19]"))],
+    [RF07/02],[#link(label("uc-19"), underline("[UC 19]")), #link(label("uc-18"), underline("[UC 18]"))],
     [RF07/03],[#link(label("uc-20"), underline("[UC 20]"))], 
-    [RF07/04],[#link(label("uc-21"), underline("[UC 21]")), #link(label("uc-22"), underline("[UC 22]"))],
-    [RF07/05],[#link(label("uc-19"), underline("[UC 19]"))],
-    [RF07/06],[#link(label("uc-22"), underline("[UC 22]"))],
+    [RF07/04],[#link(label("uc-22"), underline("[UC 22]")), #link(label("uc-21"), underline("[UC 21]"))],
+    [RF07/05],[#link(label("uc-18"), underline("[UC 18]"))],
+    [RF07/06],[#link(label("uc-21"), underline("[UC 21]"))],
 
     [RF08],[#link(label("uc-23"), underline("[UC 23]"))],
 
     [RF09/01],[#link(label("uc-24"), underline("[UC 24]"))],
-    [RF09/02],[#link(label("uc-25"), underline("[UC 25]")), #link(label("uc-26"), underline("[UC 26]"))],
-    [RF09/03],[#link(label("uc-25"), underline("[UC 25]")), #link(label("uc-27"), underline("[UC 27]"))],
+    [RF09/02],[#link(label("uc-25"), underline("[UC 25]"))],
+    [RF09/03],[#link(label("uc-25"), underline("[UC 25]"))],
 
-    [RF10],[#link(label("uc-28"), underline("[UC 28]"))],
-    [RF10/01],[#link(label("uc-28"), underline("[UC 28]"))],
-    [RF10/02],[#link(label("uc-28"), underline("[UC 28]"))],
-    [RF10/03],[#link(label("uc-28"), underline("[UC 28]"))], 
-    [RF10/04],[#link(label("uc-28"), underline("[UC 28]"))],
+    [RF10],[#link(label("uc-26"), underline("[UC 26]"))],
+    [RF10/01],[#link(label("uc-26"), underline("[UC 26]"))],
+    [RF10/02],[#link(label("uc-26"), underline("[UC 26]"))],
+    [RF10/03],[#link(label("uc-26"), underline("[UC 26]"))], 
+    [RF10/04],[#link(label("uc-26"), underline("[UC 26]"))],
   ),
   caption: [Tracciamento dei casi d'uso],
 )
