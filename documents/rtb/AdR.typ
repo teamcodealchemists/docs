@@ -344,13 +344,13 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 #pagebreak()
 == Lista dei Casi d'uso
 
-=== - UC 1: Primo accesso al sistema
-#label("uc-1")
-
 #figure(
   image("assets/UC1.png", width: 50%),
   caption: [UC1 - Primo accesso al sistema]
 )
+
+=== - UC 1: Primo accesso al sistema
+#label("uc-1")
 
 - *Attore Principale*: Utente
 
@@ -367,12 +367,71 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   + L'Utente visualizza una schermata per la registrazione.
   + L'Utente inserisce nome e cognome.
   + L'Utente inserisce l'indirizzo email.
+  + Se l'indirizzo email è sintatticamente errato → #link(label("uc-1.1"), underline("[UC 1.1]"))
   + L'Utente inserisce il numero di cellulare.
+  + Se il numero di celluare è sintatticamente errato → #link(label("uc-1.2"), underline("[UC 1.2]"))
   + L’Utente inserisce la Password.
   + L’Utente inserisce nuovamente la Password per confermarla.
+  + Se la Password inserita è sintatticamente errata → #link(label("uc-1.3"), underline("[UC 1.3]"))
+  + Se la Password e la Password di conferma non corrispondono → #link(label("uc-1.4"), underline("[UC 1.4]"))
+
+- *Estensioni*:
+  - #link(label("uc-1.1"), underline("[UC 1.1]"))
+  - #link(label("uc-1.2"), underline("[UC 1.2]"))
+  - #link(label("uc-1.3"), underline("[UC 1.3]"))
+  - #link(label("uc-1.4"), underline("[UC 1.4]"))
 
 - *Trigger*: 
   - L'Utente vuole registrarsi come primo e unico Supervisore Globale del Sistema.
+
+#pagebreak()
+==== - UC 1.1: Inserimento sintatticamente errato del parametro email
+#label("uc-1.1")
+- *Attore Principale*: Utente
+- *Precondizione*:
+  - L'Utente non è registrato nel Sistema.
+  - L'Utente ha inserito un indirizzo email sintatticamente errato _(senza \@, dominio non valido, caratteri strani inseriti)_.
+- *Postcondizione*:
+  - L'Utente non è ancora registrato nel Sistema.
+  - Viene fornita all'Utente la possibilità di inserire nuovamente l'indirizzo email.
+- *Scenario principale*
+  + L'Utente riceve un messaggio di errore.
+
+==== - UC 1.2: Inserimento sintatticamente errato del numero di cellulare
+#label("uc-1.2")
+- *Attore Principale*: Utente
+- *Precondizione*:
+  - L'Utente non è registrato nel Sistema.
+  - L'Utente ha inserito un numero di cellulare sintatticamente errato _(lettere o caratteri speciali, lunghezza numero cifre diversa da 10)_.
+- *Postcondizione*:
+  - L'Utente non è ancora registrato nel Sistema.
+  - Viene fornita all'Utente la possibilità di inserire nuovamente il numero di cellulare.
+- *Scenario principale*
+  + L'Utente riceve un messaggio di errore.
+
+==== - UC 1.3: Inserimento sintatticamente errato della Password
+#label("uc-1.3")
+- *Attore Principale*: Utente
+- *Precondizione*:
+  - L'Utente non è registrato nel Sistema.
+  - L'Utente ha inserito una Password sintatticamente errata _(non sono rispettate le regole di inserimento)_.
+- *Postcondizione*:
+  - L'Utente non è ancora registrato nel Sistema.
+  - Viene fornita all'Utente la possibilità di inserire nuovamente la Password.
+- *Scenario principale*
+  + L'Utente riceve un messaggio di errore.
+
+==== - UC 1.4: Password non corrispondenti
+#label("uc-1.4")
+- *Attore Principale*: Utente
+- *Precondizione*:
+  - L'Utente non è registrato nel Sistema.
+- *Postcondizione*:
+  - L'Utente non è ancora registrato nel Sistema.
+  - Viene fornita all'Utente la possibilità di verificare che Password e Password di conferma corrispondano.
+- *Scenario principale*
+  + L'Utente riceve un messaggio di errore.
+
 
 #pagebreak()
 === - UC 2: Autenticazione
@@ -403,6 +462,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Trigger*:
   - L’Utente vuole autenticarsi presso il Sistema.
+
 
 #pagebreak()
 === - UC 3: Autenticazione fallita
@@ -448,13 +508,14 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore preme sul pulsante di Logout.
 
 #pagebreak()
-=== - UC 5: Registrazione di un nuovo Supervisore Locale
-#label("uc-5")
 
 #figure(
   image("assets/UC5.png", width: 50%),
   caption: [UC5 - Registrazione di un nuovo Supervisore Locale]
 )
+
+=== - UC 5: Registrazione di un nuovo Supervisore Locale
+#label("uc-5")
 
 - *Attore Principale*: Supervisore Globale
 
@@ -468,9 +529,12 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Scenario principale*:
   + Il Supervisore Globale inserisce email del nuovo Supervisore Locale.
-  + Il Supervisore Globale inserisce una password temporanea per il nuovo Supervisore Locale.
+  + Se l'indirizzo email è sintatticamente errato → #link(label("uc-5.1"), underline("[UC 5.1]"))
+  + Il Supervisore Globale inserisce una password per il nuovo Supervisore Locale.
+  + Se la Password inserita è sintatticamente errata → #link(label("uc-5.2"), underline("[UC 5.2]"))
   + Il Supervisore Globale inserisce nome e cognome per il nuovo Supervisore Locale.
   + Il Supervisore Globale inserisce numero di cellulare per il nuovo Supervisore Locale.
+  + Se il numero di cellulare inserito è sintatticamente errato → #link(label("uc-5.3"), underline("[UC 5.3]"))
   + Il Supervisore Globale assegna i magazzini di pertinenza del Supervisore Locale.
   + Il Supervisore Globale conferma i dati inseriti.
   + Il Supervisore Globale torna alla pagina di gestione utenti.
@@ -478,8 +542,52 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Trigger*:
   - Il Supervisore Globale preme il pulsante Aggiungi Supervisore Locale.
 
-#pagebreak()
+- *Estensioni*:
+  - #link(label("uc-5.1"), underline("[UC 5.1]"))
+  - #link(label("uc-5.2"), underline("[UC 5.2]"))
+  - #link(label("uc-5.3"), underline("[UC 5.3]"))
 
+#pagebreak()
+==== - UC 5.1: Errore email registrazione nuovo Supervisore Locale
+#label("uc-5.1")
+- *Attore Principale*: Supervisore Globale
+- *Precondizione*:
+  - Il Supervisore Globale è autenticato presso il Sistema.
+  - Il Supervisore Globale si trova nella pagina di registrazione di un nuovo Supervisore Locale.
+  - Il Supervisore Globale ha inserto un indirizzo email sintatticamente errato _(senza \@, dominio non valido, caratteri strani inseriti)_.
+- *Postcondizione*:
+  - Il Supervisore Globale si trova nella pagina di registrazione di un nuovo Supervisore Locale.
+  - Il Supervisore Globale non ha ancora registrato nel Sistema un nuovo Supervisore Locale.
+- *Scenario principale*
+  + Il Supervisore Globale riceve un messaggio di errore.
+
+==== - UC 5.2: Errore password registrazione nuovo Supervisore Locale
+#label("uc-5.2")
+- *Attore Principale*: Supervisore Globale
+- *Precondizione*:
+  - Il Supervisore Globale è autenticato presso il Sistema.
+  - Il Supervisore Globale si trova nella pagina di registrazione di un nuovo Supervisore Locale.
+  - Il Supervisore Globale ha inserto una Password sintatticamente errata _(non sono rispettate le regole di inserimento)_.
+- *Postcondizione*:
+  - Il Supervisore Globale si trova nella pagina di registrazione di un nuovo Supervisore Locale.
+  - Il Supervisore Globale non ha ancora registrato nel Sistema un nuovo Supervisore Locale.
+- *Scenario principale*
+  + Il Supervisore Globale riceve un messaggio di errore.
+
+==== - UC 5.3: Errore numero cellulare registrazione nuovo Supervisore Locale
+#label("uc-5.3")
+- *Attore Principale*: Supervisore Globale
+- *Precondizione*:
+  - Il Supervisore Globale è autenticato presso il Sistema.
+  - Il Supervisore Globale si trova nella pagina di registrazione di un nuovo Supervisore Locale.
+  - Il Supervisore Globale ha inserto un numero di cellulare sintatticamente errato _(lettere o caratteri speciali, lunghezza numero cifre diversa da 10)_.
+- *Postcondizione*:
+  - Il Supervisore Globale si trova nella pagina di registrazione di un nuovo Supervisore Locale.
+  - Il Supervisore Globale non ha ancora registrato nel Sistema un nuovo Supervisore Locale.
+- *Scenario principale*
+  + Il Supervisore Globale riceve un messaggio di errore.
+
+#pagebreak()
 #figure(
   image("assets/UC6-7-8.png", width: 50%),
   caption: [UC6, UC7, UC8 - Aggiunta, Rimozione e Modifica di un nuovo magazzino]
@@ -561,24 +669,87 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
-  - Il Supervisore si trova nella pagina inventario.
+  - Il Supervisore si trova nella pagina inventario di un magazzino.
 
 - *Postcondizione*:
   - Una nuova tipologia di merce è stata registrata a sistema.
-  - Il Supervisore si trova nella pagina inventario.
+  - Il Supervisore si trova nella pagina inventario di un magazzino.
 
 - *Scenario principale*:
   + Il Supervisore inserisce il codice EAN (barcode) del prodotto da registrare.
+  + Se il codice EAN (barcode) è sintatticamente errato → #link(label("uc-9.1"), underline("[UC 9.1]"))
   + Il Supervisore inserisce il nome del prodotto da registrare.
   + Il Supervisore inserisce il prezzo unitario del prodotto da registrare.
-  + Il Supervisore può inserire le quantità di prodotto.
-  + Il Supervisore può inserire i valori delle soglie minime.
-  + Il Supervisore può inserire i valori delle soglie massime.
+  + Se il prezzo unitario del prodotto è sintatticamente errato → #link(label("uc-9.2"), underline("[UC 9.2]"))
+  + Il Supervisore può inserire la quantità di prodotto.
+  + Se la quantità di prodotto è sintatticamente errata → #link(label("uc-9.3"), underline("[UC 9.3]"))
+  + Il Supervisore può inserire il valore di soglia minima.
+  + Se il valore di soglia è sintatticamente errato → #link(label("uc-9.4"), underline("[UC 9.4]"))
+  + Il Supervisore può inserire il valore di soglia massima.
+  + Se il valore di soglia è sintatticamente errato → #link(label("uc-9.4"), underline("[UC 9.4]"))
   + Il Supervisore conferma i dati inseriti.
-  + Il Supervisore torna alla pagina di inventario.
+  + Il Supervisore torna alla pagina di inventario del magazzino selezionato.
 
 - *Trigger*:
-  - Il Supervisore Globale preme il pulsante Aggiungi Nuova Tipologia Merce.
+  - Il Supervisore preme il pulsante Aggiungi Nuova Tipologia Merce per il magazzino selezionato.
+
+- *Estensioni*:
+  - #link(label("uc-9.1"), underline("[UC 9.1]"))
+  - #link(label("uc-9.2"), underline("[UC 9.2]"))
+  - #link(label("uc-9.3"), underline("[UC 9.3]"))
+  - #link(label("uc-9.4"), underline("[UC 9.4]"))
+
+==== - UC 9.1: Errore sintattico codice EAN
+#label("uc-9.1")
+- *Attore Principale*: Supervisore
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina di aggiunta nuova tipologia merce per il magazzino selezionato.
+  - Il Supervisore ha inserto un codice EAN (barcode) errato (lettere, caratteri speciali e numero cifre numeriche diverso da 13).
+- *Postcondizione*:
+  - Il Supervisore si trova nella pagina di aggiunta nuova tipologia merce per il magazzino selezionato.
+  - Il Supervisore non ha ancora aggiunto una nuova tipologia di merce all'inventario del magazzino selezionato.
+- *Scenario principale*
+  + Il Supervisore Globale riceve un messaggio di errore.
+
+==== - UC 9.2: Errore sintattico prezzo unitario
+#label("uc-9.2")
+- *Attore Principale*: Supervisore
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina di aggiunta nuova tipologia merce per il magazzino selezionato.
+  - Il Supervisore ha inserto un prezzo unitario non conforme (più di 2 cifre decimali, valore con lettere e caratteri speciali).
+- *Postcondizione*:
+  - Il Supervisore si trova nella pagina di aggiunta nuova tipologia merce per il magazzino selezionato.
+  - Il Supervisore non ha ancora aggiunto una nuova tipologia di merce all'inventario del magazzino selezionato.
+- *Scenario principale*
+  + Il Supervisore Globale riceve un messaggio di errore.
+
+==== - UC 9.3: Errore sintattico quantità prodotto
+#label("uc-9.3")
+- *Attore Principale*: Supervisore
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina di aggiunta nuova tipologia merce per il magazzino selezionato.
+  - Il Supervisore ha inserto un valore di quantità del prodotto non conforme (numero non intero e/o minore di 0).
+- *Postcondizione*:
+  - Il Supervisore si trova nella pagina di aggiunta nuova tipologia merce per il magazzino selezionato.
+  - Il Supervisore non ha ancora aggiunto una nuova tipologia di merce all'inventario del magazzino selezionato.
+- *Scenario principale*
+  + Il Supervisore Globale riceve un messaggio di errore.
+
+==== - UC 9.4: Errore sintattico valore di soglia
+#label("uc-9.4")
+- *Attore Principale*: Supervisore
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina di aggiunta nuova tipologia merce per il magazzino selezionato.
+  - Il Supervisore ha inserto un valore di soglia massima e/o minima non conforme (numero non intero e/o minore di 0).
+- *Postcondizione*:
+  - Il Supervisore si trova nella pagina di aggiunta nuova tipologia merce per il magazzino selezionato.
+  - Il Supervisore non ha ancora aggiunto una nuova tipologia di merce all'inventario del magazzino selezionato.
+- *Scenario principale*
+  + Il Supervisore Globale riceve un messaggio di errore.
 
 === - UC 10: Rimozione tipologia di merce
 #label("uc-10")
@@ -605,14 +776,14 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore Globale preme il pulsante Aggiungi Nuova Tipologia Merce.
 
 #pagebreak()
-=== - UC 11: Modifica dati di quantità di un prodotto in un singolo magazzino
-#label("uc-11")
 
 #figure(
   image("assets/UC11.png", width: 60%),
   caption: [UC11 - Modifica dati di quantità di un prodotto in un singolo magazzino]
 )
 
+=== - UC 11: Modifica dati di quantità di un prodotto in un singolo magazzino
+#label("uc-11")
 - *Attore Principale*: Supervisore 
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
@@ -625,6 +796,8 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Scenario principale*:
   + Il Supervisore modifica le quantità di prodotto e/o le soglie minime e/o massime.
+  +
+  +
   + Il Supervisore conferma i dati inseriti.
   + Il Supervisore torna alla pagina di inventario del magazzino.
 
@@ -634,6 +807,34 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Trigger*:
   - Il Supervisore preme il pulsante Modifica Prodotto.
+
+#pagebreak()
+==== - UC 11.1: Errore sintattico modifica quantità prodotto
+#label("uc-11.1")
+- *Attore Principale*: Supervisore
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina di modifica tipologia merce per il magazzino selezionato.
+  - Il Supervisore ha inserto un valore di quantità del prodotto non conforme (numero non intero e/o minore di 0).
+- *Postcondizione*:
+  - Il Supervisore si trova nella pagina di modifica tipologia merce per il magazzino selezionato.
+  - Il Supervisore non ha modificato la tipologia di merce nell'inventario del magazzino selezionato.
+- *Scenario principale*
+  + Il Supervisore Globale riceve un messaggio di errore.
+
+==== - UC 11.2: Errore sintattico modifica valore di soglia
+#label("uc-11.2")
+- *Attore Principale*: Supervisore
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina di modifica tipologia merce per il magazzino selezionato.
+  - Il Supervisore ha inserto un valore di soglia massima e/o minima non conforme (numero non intero e/o minore di 0).
+- *Postcondizione*:
+  - Il Supervisore si trova nella pagina di modifica tipologia merce per il magazzino selezionato.
+  - Il Supervisore non ha modificato la tipologia di merce nell'inventario del magazzino selezionato.
+- *Scenario principale*
+  + Il Supervisore Globale riceve un messaggio di errore.
+
 
 #pagebreak()
 === - UC 12: Inserimento prodotto in un ordine
