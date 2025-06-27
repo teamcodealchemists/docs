@@ -345,7 +345,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 == Lista dei Casi d'uso
 
 #figure(
-  image("assets/UC1.png", width: 50%),
+  image("assets/UC1.png", width: 90%),
   caption: [UC1 - Primo accesso al sistema]
 )
 
@@ -510,7 +510,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 #pagebreak()
 
 #figure(
-  image("assets/UC5.png", width: 50%),
+  image("assets/UC5.png", width: 90%),
   caption: [UC5 - Registrazione di un nuovo Supervisore Locale]
 )
 
@@ -659,7 +659,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 #pagebreak()
 
 #figure(
-  image("assets/UC9-10.png", width: 60%),
+  image("assets/UC9-10.png", width: 90%),
   caption: [UC9, UC10 - Aggiunta e Rimozione tipologia di merce]
 )
 
@@ -778,7 +778,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 #pagebreak()
 
 #figure(
-  image("assets/UC11.png", width: 60%),
+  image("assets/UC11.png", width: 90%),
   caption: [UC11 - Modifica dati di quantità di un prodotto in un singolo magazzino]
 )
 
@@ -796,8 +796,8 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Scenario principale*:
   + Il Supervisore modifica le quantità di prodotto e/o le soglie minime e/o massime.
-  +
-  +
+  + Se la quantità di prodotto è sintatticamente errata → #link(label("uc-11.1"), underline("[UC 11.1]")).
+  + Se il valore di soglia minima e/o massima è sintatticamente errato → #link(label("uc-11.2"), underline("[UC 11.2]")).
   + Il Supervisore conferma i dati inseriti.
   + Il Supervisore torna alla pagina di inventario del magazzino.
 
@@ -841,7 +841,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 #label("uc-12")
 
 #figure(
-  image("assets/UC12.png", width: 60%),
+  image("assets/UC12.png", width: 80%),
   caption: [UC12 - Inserimento prodotto in un ordine]
 )
 
@@ -849,25 +849,43 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
-  - Il Supervisore si trova nella pagina inserimento ordine.
+  - Il Supervisore si trova nella pagina inserimento ordine di un magazzino.
 
 - *Postcondizione*:
   - I dati di un prodotto sono inseriti nell'ordine.
-  - Il Supervisore si trova nella pagina inserimento ordine.
+  - Il Supervisore si trova nella pagina inserimento ordine di un magazzino.
 
 - *Scenario principale*:
   + Il Supervisore inserisce il codice EAN (barcode) del prodotto.
   + Il Supervisore inserisce la quantità del prodotto.
+  + Se la quantità del prodotto è sintatticamente errata → #link(label("uc-12.1"), underline("[UC 12.1]")).
   + Il Supervisore inserisce il prezzo unitario del prodotto.
+
+- *Estensioni*:
+  - #link(label("uc-12.1"), underline("[UC 12.1]"))
 
 - *Trigger*:
   - Il Supervisore preme il pulsante Inserisci Prodotto.
 
 #pagebreak()
+==== - UC 12.1: Errore sintattico quantità prodotto in un ordine
+#label("uc-12.1")
+- *Attore Principale*: Supervisore
+- *Precondizione*:
+  - Il Supervisore è autenticato presso il Sistema.
+  - Il Supervisore si trova nella pagina di inserimento prodotto in un ordine.
+  - Il Supervisore ha inserto un valore di quantità del prodotto non conforme (numero non intero e/o minore di 0).
+- *Postcondizione*:
+  - Il Supervisore si trova nella pagina di inserimento prodotto in un ordine.
+  - Il Supervisore non ha ancora inserito il prodotto nell'ordine.
+- *Scenario principale*
+  + Il Supervisore riceve un messaggio di errore.
+
+#pagebreak()
 
 #figure(
-  image("assets/UC13-14-15.png", width: 80%),
-  caption: [UC13, UC14, UC15 - Inserimento ordini]
+  image("assets/UC13-14.png", width: 80%),
+  caption: [UC13, UC14 - Inserimento ordini]
 )
 
 === - UC 13: Inserimento ordine di trasferimento interno
@@ -877,7 +895,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
-  - Il Supervisore si trova nella pagina inserimento ordine.
+  - Il Supervisore si trova nella pagina inserimento ordine di un magazzino.
 
 - *Postcondizione*:
   - L'ordine è stato inserito.
@@ -885,7 +903,6 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Scenario principale*:
   + Il Supervisore seleziona il magazzino di partenza.
-  + Il Supervisore seleziona il magazzino di destinazione.
   + Il Supervisore inserisce uno o più prodotti nell'ordine → #link(label("uc-12"), underline("[UC 12]")).
   + Il Supervisore conferma i dati dell'ordine.
 
@@ -896,47 +913,21 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore seleziona *Trasferimento Interno* come tipologia ordine.
 
 
-=== - UC 14: Inserimento ordine di approvvigionamento
+
+=== - UC 14: Inserimento ordine di vendita
 #label("uc-14")
 
 - *Attore Principale*: Supervisore
 
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
-  - Il Supervisore si trova nella pagina inserimento ordine.
+  - Il Supervisore si trova nella pagina inserimento ordine di un magazzino.
 
 - *Postcondizione*:
   - L'ordine è stato inserito.
   - Il Supervisore si trova nella pagina ordini.
 
 - *Scenario principale*:
-  + Il Supervisore inserisce l'indirizzo del fornitore.
-  + Il Supervisore seleziona il magazzino di destinazione.
-  + Il Supervisore inserisce uno o più prodotti nell'ordine → #link(label("uc-12"), underline("[UC 12]")).
-  + Il Supervisore conferma i dati dell'ordine.
-
-- *Inclusioni*:
-  - #link(label("uc-12"), underline("[UC 12]"))
-  
-- *Trigger*:
-  - Il Supervisore seleziona *Approvvigionamento* come tipologia ordine.
-
-
-=== - UC 15: Inserimento ordine di vendita
-#label("uc-15")
-
-- *Attore Principale*: Supervisore
-
-- *Precondizione*:
-  - Il Supervisore è autenticato presso il Sistema.
-  - Il Supervisore si trova nella pagina inserimento ordine.
-
-- *Postcondizione*:
-  - L'ordine è stato inserito.
-  - Il Supervisore si trova nella pagina ordini.
-
-- *Scenario principale*:
-  + Il Supervisore seleziona il magazzino di partenza.
   + Il Supervisore inserisce l'indirizzo del destinatario.
   + Il Supervisore inserisce uno o più prodotti nell'ordine → #link(label("uc-12"), underline("[UC 12]")).
   + Il Supervisore conferma i dati dell'ordine.
@@ -949,18 +940,18 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 #pagebreak()
 === - UC 16: Annullamento ordine
-#label("uc-16")
+#label("uc-15")
 
 #figure(
-  image("assets/UC16.png", width: 60%),
-  caption: [UC16 - Annullamento ordine]
+  image("assets/UC15.png", width: 60%),
+  caption: [UC15 - Annullamento ordine]
 )
 
 - *Attore Principale*: Supervisore
 
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
-  - Il Supervisore si trova nella pagina ordini.
+  - Il Supervisore si trova nella pagina ordini del magazzino di interesse.
   - Il Supervisore ha selezionato un ordine in stato "in attesa" o "in eleborazione" da annullare.
 
 - *Postcondizione*:
@@ -975,17 +966,17 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore preme il pulsante *Annulla Ordine*.
 
 #pagebreak()
-=== - UC 17: Visualizzazione inventario globale
-#label("uc-17")
+=== - UC 16: Visualizzazione inventario globale
+#label("uc-16")
 #figure(
-  image("assets/UC17.png", width: 50%),
-  caption: [UC17 - Visualizzazione inventario globale]
+  image("assets/UC16.png", width: 50%),
+  caption: [UC16 - Visualizzazione inventario globale]
 )
 
 - *Attore Principale*: Supervisore Globale
 - *Precondizione*:
   - Il Supervisore Globale è autenticato presso il Sistema.
-  - Il Supervisore Globale si trova nella pagina di inventario.
+  - Il Supervisore Globale si trova nella pagina principale (è una pagina di riepilogo).
 - *Postcondizione*:
   - Il Supervisore Globale ha visualizzato l'inventario complessivo di tutti i magazzini.
 - *Scenario principale*:
@@ -994,62 +985,61 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore Globale entra nella pagina di *inventario*.
 
 #pagebreak()
-=== - UC 18: Visualizzazione inventario singolo magazzino
-#label("uc-18")
+=== - UC 17: Visualizzazione inventario singolo magazzino
+#label("uc-17")
 
 #figure(
-  image("assets/UC18.png", width: 60%),
-  caption: [UC18 - Visualizzazione inventario singolo magazzino]
+  image("assets/UC17.png", width: 60%),
+  caption: [UC17 - Visualizzazione inventario singolo magazzino]
 )
 
 - *Attore Principale*: Supervisore
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
-  - Il Supervisore si trova nella pagina di inventario.
-  - Il Supervisore ha selezionato un magazzino.
+  - Il Supervisore si trova nella pagina di inventario del magazzino di interesse.
 - *Postcondizione*:
   - Il Supervisore ha visualizzato l'inventario di un singolo magazzino selezionato.
 - *Scenario principale*:
   + Il Supervisore visualizza l'inventario di un singolo magazzino.
 
 #pagebreak()
-=== - UC 19: Selezione singolo magazzino per visualizzazione del suo inventario
-#label("uc-19")
+=== - UC 18: Selezione singolo magazzino per visualizzazione del suo inventario
+#label("uc-18")
 
 #figure(
-  image("assets/UC19.png", width: 70%),
-  caption: [UC19 - Selezione singolo magazzino per visualizzazione del suo inventario]
+  image("assets/UC18.png", width: 70%),
+  caption: [UC18 - Selezione singolo magazzino per visualizzazione del suo inventario]
 )
 
 - *Attore Principale*: Supervisore Locale
 - *Precondizione*:
   - Il Supervisore Locale è autenticato presso il Sistema.
-  - Il Supervisore Locale si trova nella pagina di inventario.
+  - Il Supervisore Locale si trova nella pagina di principale (è una pagina di riepilogo).
 - *Postcondizione*:
   - Il Supervisore ha visualizzato l'inventario di un singolo magazzino selezionato
 - *Scenario principale*:
   + Il Supervisore Locale seleziona un magazzino.
-  + Il Supervisore Locale visualizza l’inventario del magazzino → #link(label("uc-18"), underline("[UC 18]"))  
+  + Il Supervisore Locale visualizza l’inventario del magazzino → #link(label("uc-17"), underline("[UC 17]"))  
 - *Inclusioni*:
-  - #link(label("uc-18"), underline("[UC 18]"))  
+  - #link(label("uc-17"), underline("[UC 17]"))  
 - *Trigger*:
   - Il Supervisore Locale entra nella pagina di *inventario*.
 
 
 #pagebreak()
-=== - UC 20: Visualizzazione report ordini
-#label("uc-20")
+=== - UC 19: Visualizzazione report ordini
+#label("uc-19")
 
 #figure(
-  image("assets/UC20.png", width: 55%),
-  caption: [UC20 - Visualizzazione report ordini]
+  image("assets/UC19.png", width: 55%),
+  caption: [UC19 - Visualizzazione report ordini]
 )
 
 - *Attore Principale*: Supervisore Globale
 
 - *Precondizione*:
   - Il Supervisore Globale è autenticato presso il Sistema.
-  - Il Supervisore Globale si trova nella pagina ordini.
+  - Il Supervisore Globale si trova nella pagina principale (è una pagina di riepilogo).
 
 - *Postcondizione*:
   - Il Supervisore Globale ha visualizzato l'elenco complessivo degli ordini di tutti i magazzini.
@@ -1061,20 +1051,19 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore Globale entra nella pagina *ordini*.
 
 #pagebreak()
-=== - UC 21: Visualizzazione report ordini singolo magazzino
-#label("uc-21")
+=== - UC 20: Visualizzazione report ordini singolo magazzino
+#label("uc-20")
 
 #figure(
-  image("assets/UC21.png", width: 60%),
-  caption: [UC21 - Visualizzazione report ordini singolo magazzino]
+  image("assets/UC20.png", width: 60%),
+  caption: [UC20 - Visualizzazione report ordini singolo magazzino]
 )
 
 - *Attore Principale*: Supervisore
 
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
-  - Il Supervisore si trova nella pagina ordini.
-  - Il Supervisore ha selezionato un magazzino.
+  - Il Supervisore si trova nella pagina ordini del magazzino di interesse.
 
 - *Postcondizione*:
   - Il Supervisore ha visualizzato il report degli ordini di un singolo magazzino.
@@ -1084,47 +1073,47 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 
 #pagebreak()
-=== - UC 22: Selezione magazzino per visualizzazione del suo report ordini
-#label("uc-22")
+=== - UC 21: Selezione magazzino per visualizzazione del suo report ordini
+#label("uc-21")
 
 #figure(
-  image("assets/UC22.png", width: 70%),
-  caption: [UC22 - Selezione magazzino per visualizzazione del suo report ordini]
+  image("assets/UC21.png", width: 70%),
+  caption: [UC21 - Selezione magazzino per visualizzazione del suo report ordini]
 )
 
 - *Attore Principale*: Supervisore Locale
 
 - *Precondizione*:
   - Il Supervisore Locale è autenticato presso il Sistema.
-  - Il Supervisore Locale si trova nella pagina ordini.
+  - Il Supervisore Locale si trova nella pagina principale (è una pagina di riepilogo).
 
 - *Postcondizione*:
   - Il Supervisore Locale ha visualizzato il report degli ordini di un magazzino.
 
 - *Scenario principale*:
   + Il Supervisore Locale seleziona un magazzino
-  + Il Supervisore visualizza il report degli ordini di un magazzino → #link(label("uc-21"), underline("[UC 21]"))  
+  + Il Supervisore visualizza il report degli ordini di un magazzino → #link(label("uc-20"), underline("[UC 20]"))  
 
 - *Inclusioni*:
-  - #link(label("uc-21"), underline("[UC 21]"))
+  - #link(label("uc-20"), underline("[UC 20]"))
 
 - *Trigger*:
   - Il Supervisore Locale entra nella pagina *ordini*.
 
 #pagebreak()
-=== - UC 23: Visualizzazione stato magazzini
-#label("uc-23")
+=== - UC 22: Visualizzazione stato magazzini
+#label("uc-22")
 
 #figure(
-  image("assets/UC23.png", width: 60%),
-  caption: [UC23 - Visualizzazione stato magazzini]
+  image("assets/UC22.png", width: 60%),
+  caption: [UC22 - Visualizzazione stato magazzini]
 )
 
 - *Attore Principale*: Supervisore
 
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
-  - Il Supervisore si trova nella pagina realtiva allo stato dei magazzini.
+  - Il Supervisore si trova nella pagina principale (è una pagina di riepilogo).
 
 - *Postcondizione*:
   - Il Supervisore ha visualizzato lo stato di tutti i magazzini.
@@ -1136,12 +1125,12 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore Locale entra nella pagina relativa allo stato dei magazzini.
 
 #pagebreak()
-=== - UC 24: Visualizzazione notifiche informative
-#label("uc-24")
+=== - UC 23: Visualizzazione notifiche informative
+#label("uc-23")
 
 #figure(
-  image("assets/UC24.png", width: 60%),
-  caption: [UC24 - Visualizzazione notifiche informative]
+  image("assets/UC23.png", width: 60%),
+  caption: [UC23 - Visualizzazione notifiche informative]
 )
 
 - *Attore Principale*: Supervisore
@@ -1158,12 +1147,12 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore entra nella pagina *notifiche*.
 
 #pagebreak()
-=== - UC 25: Gestione notifiche decisionali
-#label("uc-25")
+=== - UC 24: Gestione notifiche decisionali
+#label("uc-24")
 
 #figure(
-  image("assets/UC25.png", width: 50%),
-  caption: [UC25 - Gestione delle notifiche decisionali]
+  image("assets/UC24.png", width: 50%),
+  caption: [UC24 - Gestione delle notifiche decisionali]
 )
 
 - *Attore Principale*: Supervisore Globale
@@ -1193,12 +1182,12 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 
 #pagebreak()
-=== - UC 26: Aggiornamento parametri di sistema
-#label("uc-26")
+=== - UC 25: Aggiornamento parametri di sistema
+#label("uc-25")
 
 #figure(
-  image("assets/UC26.png", width: 50%),
-  caption: [UC26 - Aggiornamento parametri di sistema]
+  image("assets/UC25.png", width: 50%),
+  caption: [UC25 - Aggiornamento parametri di sistema]
 )
 
 - *Attore Principale*: Supervisore Globale
@@ -1223,12 +1212,12 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore Locale entra nella pagina di *Impostazioni*.
 
 #pagebreak()
-=== - UC 27: Modifica globale del prezzo unitario di un prodotto
-#label("uc-27")
+=== - UC 26: Modifica globale del prezzo unitario di un prodotto
+#label("uc-26")
 
 #figure(
-  image("assets/UC27.png", width: 50%),
-  caption: [UC27 - Modifica globale del prezzo unitario di un prodotto]
+  image("assets/UC26.png", width: 50%),
+  caption: [UC26 - Modifica globale del prezzo unitario di un prodotto]
 )
 
 - *Attore Principale*: Supervisore Globale
@@ -1541,7 +1530,7 @@ _Esempio:_
 
     [*RQ04*], [*Unit test e code coverage.*], [capitolato#super[G]],
     [*RQ04/01*], [La correttezza delle funzioni sviluppate deve essere garantita dai test unitari.], [capitolato#super[G]],
-    [*RQ04/02*], [La copertura del codice deve essere superiore al ____ .], [capitolato#super[G]], //INSERIRE CODE-COVERAGE DI M31   
+    [*RQ04/02*], [La copertura del codice deve essere superiore al 80% .], [capitolato#super[G]], //INSERIRE CODE-COVERAGE DI M31   
     [*RQ04/03*], [Il test devono poter essere eseguiti in maniera automatizzata.], [capitolato#super[G]],
     [*RQ04/04*], [Devono essere eseguiti test di non regressione.], [capitolato#super[G]],
 
@@ -1616,32 +1605,31 @@ _Esempio:_
     [RF05/03],[#link(label("uc-9"), underline("[UC 9]"))],
     [RF05/04],[#link(label("uc-10"), underline("[UC 10]"))], 
     [RF05/05],[#link(label("uc-11"), underline("[UC 11]"))],
-    [RF05/06],[#link(label("uc-27"), underline("[UC 27]"))],
+    [RF05/06],[#link(label("uc-26"), underline("[UC 26]"))],
 
     [RF06],[#link(label("uc-12"), underline("[UC 12]"))],
     [RF06/01],[#link(label("uc-13"), underline("[UC 13]"))],
     [RF06/02],[#link(label("uc-14"), underline("[UC 14]"))],
-    [RF06/03],[#link(label("uc-15"), underline("[UC 15]"))], 
-    [RF06/04],[#link(label("uc-16"), underline("[UC 16]"))],
+    [RF06/04],[#link(label("uc-15"), underline("[UC 15]"))],
 
-    [RF07/01],[#link(label("uc-17"), underline("[UC 17]"))],
-    [RF07/02],[#link(label("uc-19"), underline("[UC 19]")), #link(label("uc-18"), underline("[UC 18]"))],
-    [RF07/03],[#link(label("uc-20"), underline("[UC 20]"))], 
-    [RF07/04],[#link(label("uc-22"), underline("[UC 22]")), #link(label("uc-21"), underline("[UC 21]"))],
-    [RF07/05],[#link(label("uc-18"), underline("[UC 18]"))],
-    [RF07/06],[#link(label("uc-21"), underline("[UC 21]"))],
+    [RF07/01],[#link(label("uc-16"), underline("[UC 16]"))],
+    [RF07/02],[#link(label("uc-18"), underline("[UC 18]")), #link(label("uc-17"), underline("[UC 17]"))],
+    [RF07/03],[#link(label("uc-19"), underline("[UC 19]"))], 
+    [RF07/04],[#link(label("uc-21"), underline("[UC 21]")), #link(label("uc-20"), underline("[UC 20]"))],
+    [RF07/05],[#link(label("uc-17"), underline("[UC 17]"))],
+    [RF07/06],[#link(label("uc-20"), underline("[UC 20]"))],
 
-    [RF08],[#link(label("uc-23"), underline("[UC 23]"))],
+    [RF08],[#link(label("uc-22"), underline("[UC 22]"))],
 
-    [RF09/01],[#link(label("uc-24"), underline("[UC 24]"))],
-    [RF09/02],[#link(label("uc-25"), underline("[UC 25]"))],
-    [RF09/03],[#link(label("uc-25"), underline("[UC 25]"))],
+    [RF09/01],[#link(label("uc-23"), underline("[UC 23]"))],
+    [RF09/02],[#link(label("uc-24"), underline("[UC 24]"))],
+    [RF09/03],[#link(label("uc-24"), underline("[UC 24]"))],
 
-    [RF10],[#link(label("uc-26"), underline("[UC 26]"))],
-    [RF10/01],[#link(label("uc-26"), underline("[UC 26]"))],
-    [RF10/02],[#link(label("uc-26"), underline("[UC 26]"))],
-    [RF10/03],[#link(label("uc-26"), underline("[UC 26]"))], 
-    [RF10/04],[#link(label("uc-26"), underline("[UC 26]"))],
+    [RF10],[#link(label("uc-25"), underline("[UC 25]"))],
+    [RF10/01],[#link(label("uc-25"), underline("[UC 25]"))],
+    [RF10/02],[#link(label("uc-25"), underline("[UC 25]"))],
+    [RF10/03],[#link(label("uc-25"), underline("[UC 25]"))], 
+    [RF10/04],[#link(label("uc-25"), underline("[UC 25]"))],
   ),
   caption: [Tracciamento dei casi d'uso],
 )
