@@ -15,7 +15,7 @@
 #let titolo = "Norme di progetto"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "0.5.0"
+#let versione = "0.6.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -26,6 +26,12 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [0.6.0],
+  [08/07/2025],
+  [R. Zangla],
+  [A. Shu],
+  [Aggiunte informazioni alle sezioni da 3.2.4.2.1 a 3.2.4.2.12 e 4.2.4.],
+
   [0.5.0],
   [23/05/2025],
   [R. Zangla],
@@ -127,11 +133,11 @@
       //Ultimo Accesso: \
 
     - *Piano di Qualifica#super[G]* \
-      #underline[#link("")] \
+      #underline[#link("https://teamcodealchemists.github.io/docs/rtb/PdQ.pdf")] \
       //Ultimo Accesso: \
 
     - *Piano di Progetto* \
-      #underline[#link("")] \
+      #underline[#link("https://teamcodealchemists.github.io/docs/rtb/PdP.pdf")] \
       //Ultimo Accesso: \
 
 = Struttura dei processi
@@ -206,7 +212,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
     ==== Casi d'uso
     // Descrizione e nomenclatura use case
-    I casi d’uso sono codificati utilizzando la seguente notazione:
+    I casi d'uso sono codificati utilizzando la seguente notazione:
 
     #align(center, block[*UC [ID-Principale].[ID-Sottocaso]*])
     
@@ -284,7 +290,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     Il documento include anche la pianificazione delle attività, con stime di tempi e risorse, e le procedure di testing, assicurando che il prodotto#super[G] finale rispetti i requisiti#super[G] tecnici e le aspettative del cliente#super[G].
     
     ==== Framework e tecnologie utilizzate
-    - *NATS*: Dato che utilizziamo comunicazione asincrona con messaggi, serve un message broker. La scelta naturale ricade su NATS in quanto è più rapido in termini di latenza (dato che non garantisce l’ordine corretto di arrivo dei messaggi) ed è più “semplice”.
+    - *NATS*: Dato che utilizziamo comunicazione asincrona con messaggi, serve un message broker. La scelta naturale ricade su NATS in quanto è più rapido in termini di latenza (dato che non garantisce l'ordine corretto di arrivo dei messaggi) ed è più “semplice”.
     - *Go*:  come linguaggio di programmazione dei microservizi#super[G]. Ogni servizio#super[G] potrebbe avere il proprio stack tecnologico, ma Go è la scelta naturale in quanto il server NATS è programmato in Go, e quindi fornisce maggior supporto, minore latenza, prestazioni migliori ecc.
     - *Docker e Kurbenetes*: per il deploy, dato che sono le tecnologie più adatte al nostro caso. 
 
@@ -300,51 +306,69 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     // Descrizione Codifica
     La codifica, affidata ai programmatori#super[G], è una fase essenziale dello sviluppo software, finalizzata a tradurre le scelte progettuali in codice#super[G] sorgente funzionante. 
     
-
-    Per garantire uniformità, leggibilità e manutenibilità, vengono seguite precise linee guida sulla formattazione, la nomenclatura e la struttura del codice#super[G]. Queste regole contribuiscono a semplificare la verifica#super[G], il debugging e l'estensione del software, assicurando un prodotto#super[G] finale robusto e di alta qualità.
+    Per garantire uniformità, leggibilità e manutenibilità, vengono seguite precise linee guida sulla formattazione, la nomenclatura e la struttura del codice#super[G]. 
+    Queste regole contribuiscono a semplificare la verifica#super[G], il debugging e l'estensione del software, assicurando un prodotto#super[G] finale robusto e di alta qualità.
     
     ==== Convenzioni di sintassi
     // Nomi da assegnare, in che lingua, che stile di case seguire, indentazione, spaziatura...
-    Le norme di scrittura del codice#super[G] del prodotto#super[G] software mirano a garantire leggibilità, uniformità e manutenibilità. Di seguito sono definite le principali convenzioni da seguire.
+    Le norme di scrittura del codice#super[G] del prodotto#super[G] software mirano a garantire leggibilità, uniformità e manutenibilità. Di seguito sono definite le principali 
+    convenzioni da seguire.
 
     // ***************** SEZIONI DA RIFINIRE CON CIO' CHE SI DECIDE EFFETTIVAMENTE *******/
+      ===== Lingua
+      La lingua utilizzata per scrivere i commenti al codice e i nomi dei metodi, di variabili, classi e tipi è l'inglese, in modo da garantire una maggiore comprensibilità e 
+      uniformità all'interno del team e per facilitare la collaborazione con altri sviluppatori. 
+
       ===== Formattazione
-      Ogni riga di codice#super[G] non deve superare gli ...... caratteri per mantenere la leggibilità e facilitare la revisione.
+      Ogni riga di codice#super[G] non deve superare gli 80 caratteri così da mantenere la leggibilità e da rendere più rapida ed efficace la revisione.
+
+      ===== Indentazione
+      I blocchi di codice#super[G] innestati devono essere indentati con un livello di tabulazione.
+
+      ===== Spaziatura
+      Per garantire un codice più chiaro e leggibile possibile, è buona norma inserire degli spazi intorno agli operatori (ad es., scrivere "x = y + z" e non "x=y+z").
+
+      ===== Importazioni
+      Tutte le importazioni (import) devono essere dichiarate all'inizio dello script, prima di qualsiasi altro codice.
+      Si raccomanda di importa solo ciò che serve, evitando di usare gli import con asterisco, dove non necessari, e in generale importazioni inutili o ridondanti.
 
       ===== Commenti
-      Ogni costrutto deve essere preceduto da un commento esplicativo in italiano, indentato di una tabulazione. Sono obbligatori nei punti meno intuitivi e devono essere aggiornati ogni volta che viene modificato un metodo.
-
-      ====== Indentazione
-      I blocchi di codice#super[G] innestati devono essere indentati con una tabulazione
+      Ogni costrutto significativo deve essere preceduto da un commento esplicativo, indentato di un livello di tabulazione rispetto al codice che descrive. 
+      
+      I commenti sono obbligatori nei punti con logica meno intuitiva e devono essere aggiornati ogni volta che viene modificato un metodo.
+      Per descrivere un metodo, il commento a esso legato deve spiegare lo scopo della funzione stessa e i suoi argomenti.
+      
+      Inoltre, nelle sezioni di codice da sviluppare e/o da completare, è buona norma scrivere all'inizio del commento "TODO" o "FIXME" per indicare che il codice necessita 
+      di ulteriori aggiunte, modifiche o correzioni.
 
       ===== Parentesi graffe
-      La parentesi graffa aperta deve trovarsi nella stessa riga della dichiarazione del costrutto, separata da uno spazio, mentre la chiusa va posta con la corretta indentazione subito dopo l'ultima istruzione del costrutto.
+      La parentesi graffa aperta deve trovarsi nella stessa riga della dichiarazione del costrutto, separata da uno spazio; invece, la parentesi graffa chiusa va messa subito 
+      dopo l'ultima istruzione del costrutto e nella sua stessa riga.
 
       ===== Metodi
-      I nomi dei metodi devono essere in ...
-      // Camel Case e in inglese, con la prima parola#super[G] in minuscolo e le successive con l'iniziale maiuscola. 
-      Si preferisce mantenere i metodi brevi e concisi.
+      I nomi dei metodi devono essere scritti utilizzando il Camel Case, convenzione per cui la prima parola#super[G] ha iniziale minuscola e le successive iniziali sono maiuscole. 
+      Cercare di evitare di scrivere funzioni troppo lunghe e complesse, bensì preferire scrivere metodi brevi e concisi.
+
+      ===== Istruzioni
+      Evitare la scrittura di più istruzioni su una singola linea; in generale, infatti, ogni istruzione deve essere scritta su una riga separata, in modo da migliorare la leggibilità 
+      e la comprensione del codice#super[G].
 
       ===== Classi e tipi
-      Devono essere nominati usando ...
-      //Pascal Case, dove ogni parola#super[G] inizia con una lettera maiuscola, rispettando la lingua inglese per garantire chiarezza e standardizzazione.
+      Le classi e i tipi devono essere nominati usando il Pascal Case, convenzione per cui ogni parola#super[G] inizia con una lettera maiuscola.
+      
+      ===== Variabili e costanti
+      Il nome delle variabili e delle costanti deve seguire lo stile devono essere scritti utilizzando il Camel Case.
+      Ogni variabile deve essere dichiarata all'inizio della funzione o dello script in modo tale da migliorare la leggibilità, così come per le costanti.
 
-      ===== Variabili 
-      Il nome delle variabili deve seguire lo stile ...
-      //Camel Case, scritto in inglese, 
-      e dichiarato all'inizio della funzione o dello script per migliorare la leggibilità.
-
-      ==== Costanti 
-      I nomi delle costanti devono essere scritti in 
-      // Macro Case, ovvero completamente in maiuscolo e separati da underscore
-      , per distinguerle chiaramente da altre entità.
+      ===== Univocità e chiarezza dei nomi assegnati
+      Ogni costrutto deve avere un nome chiaro, univoco e consistente, così da garantire la comprensione immediata della variabile o della funzione.
+      Il nome scelto deve essere nè troppo generico, nè troppo lungo e dettagliato, bensì deve essere conciso e descrittivo in modo da riflettere il suo scopo principale e la sua funzionalità.
+      Tale nomenclatura favorisce la rapida comprensione del codice, riducendo il più possibile il bisogno di commenti esplicativi aggiuntivi.
 
       ===== File
-      Il nome dei file deve essere formattato in //Camel Case, 
-      senza spazi, per mantenere coerenza nel progetto.
-
-      ===== Univocità dei nomi
-      Ogni costrutto deve avere un nome chiaro e univoco, così da garantire la comprensione immediata della variabile o della funzione.
+      /******************* TODO: DA DECIDERE *************/
+      /*Il nome dei file deve essere formattato in //Camel Case, 
+      senza spazi, per mantenere coerenza nel progetto. */
 
     === Tecnologie utilizzate
     // Cos'è VS Code e cosa permette
@@ -358,7 +382,6 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       Il processo di documentazione è essenziale per tracciare le attività di sviluppo, facilitare la manutenzione e garantire coerenza nel ciclo di vita del prodotto#super[G]. Seguendo regole e strutture uniformi, permette una consultazione rapida delle informazioni e supporta il lavoro asincrono, contribuendo alla storicizzazione delle decisioni prese e al miglioramento continuo del software.
       === Ciclo di vita del documento
       // Fasi che attraverso ogni documento dalla creazione al "rilascio"
-        // (Creazione, stesura, verifica#super[G], pubblicazione)
         Il ciclo di vita di un documento software è strutturato in diverse fasi, le quali garantiscono un processo chiaro e standardizzato per la sua gestione, ovvero:
         - *Pianificazione*: organizzazione delle informazioni e definizione della struttura del documento, inclusi intestazioni, header e footer.
         - *Redazione*: assegnazione del compito di stesura del documento a un membro del team, utilizzo di strumenti di versionamento (GitHub) per tracciare le modifiche e avvio della stesura dei contenuti.
@@ -370,8 +393,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       === Template Typst
       // Scelta di utilizzare template
-      Per facilitare la redazione dei documenti, sia interni che esterni, abbiamo creato dei template su Typst che conferiscono la struttura generale al documento.
-      /*********** SCRIVERE ALTRO? **********/
+      Per facilitare la redazione dei documenti, sia interni che esterni, abbiamo creato dei template su Typst che ci aiutano a conferire la struttura generale al documento.
 
       === Documenti prodotti
       // Distinzione documenti formali (interni o esterni) e informali
@@ -428,21 +450,19 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       === Struttura della documentazione
         // In che modo dividiamo i documenti nella repo docs (in x cartella sono contenuti...)
-          La nostra repository#super[G] _docs_  contiene al suo interno la cartella "documents", la quale contiene tutti i documenti redatti, ed è a sua volta è suddivisa in varie sottocartelle, tra cui:
+          La nostra repository#super[G] _docs_ contiene al suo interno la cartella "documents", la quale contiene tutti i documenti redatti, ed è a sua volta è suddivisa in varie sottocartelle, tra cui:
           - *"candidatura/"*: raccoglie tutti i documenti redatti in fase di candidatura;
-
           - *"glossario#super[G]/"*: contiene il file .typ del glossario#super[G];
           - *"presentazioni/"*: raccoglie tutti i file in formato .pdf dei vari Diari di Bordo redatti;
           - *"rtb#super[G]/"*: contiene al suo interno in formato .typ i vari documenti informali e formali (interni ed esterni), come ad esempio l'AdR oppure i vari verbali;
           - *"src/"*: contiene al suo interno i template che vengono importati in altri file .typ.
-        /************* Immagino più avanti ci sarà la cartella pb ************/
+        /************* TODO: Immagino più avanti ci sarà la cartella pb ************/
 
         ==== Elementi grafici
         // In che cartella sono tenute le immagini...
         Le immagini e vari elementi grafici che compaiono all'interno dei documenti, come ad esempio il nostro logo, vengono raccolte all'interno delle cartelle denominate "assets".
       === Metriche
-      // Indice Gulpease
-      // Correttezza Ortografica (se la vogliamo mettere, non mi sembra automatizzata tho) -> Per il momento no.
+      // Quelle gestite tramite le Actions
       I documenti sono sottoposti a dei controlli di qualità, le quali sono:
 
       - *Parole#super[G] del Glossario#super[G] non segnate*: Indica il numero di parole#super[G] trovate nella documentazione che sono presenti nel glossario#super[G] ma non contrassegnate con la lettera "G" come apice.
@@ -487,16 +507,6 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       // Descrizione Gestione della Configurazione
       La Gestione della Configurazione descrive il versionamento dei vari documenti e la struttura della repository#super[G].
       Lo scopo di questo processo è garantire che ogni modifica sia tracciabile, controllata e approvata prima di essere integrata nel prodotto#super[G] finale.
-      
-      /* Menzionare? 
-      Il ciclo di vita del software che è obiettivo di questo progetto è strutturato nelle seguenti fasi:
-          1. Inizializzazione e pianificazione
-          2. Analisi dei requisiti#super[G]
-          3. Progettazione
-          4. Implementazione
-          5. Verifica#super[G] e validazione#super[G]
-          6. Rilascio
-          */
 
       === Versionamento
       Il sistema di versionamento dei documenti seguirà la seguente semantica:
@@ -505,29 +515,27 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       dove:
 
-      -- *MAJOR*: il valore viene incrementato *solamente* alla pubblicazione finale, dopo approvazione interna e, per i verbali esterni, dopo anche l'approvazione esterna;
+      -- *MAJOR*: il valore viene incrementato *solamente* alla pubblicazione finale, dopo approvazione interna e, per i verbali esterni, 
+      dopo anche l'approvazione esterna;
 
       -- *MINOR*: il valore viene incrementato *solamente* quando viene completato il processo di modifica e di verifica#super[G];
 
-      -- *PATCH*: il valore viene incrementato *solamente* per modifiche di entità minore, quali correzioni ortografiche, di sintassi, ...
+      -- *PATCH*: il valore viene incrementato *solamente* per modifiche di entità minore, quali correzioni ortografiche, di sintassi...
       
-      === Sistema di Versionamento
-      /*********** Quando stabiliremo il nostro sistema, il contenuto sarà del tipo:
-      Ogni versione del documento è identificata da un codice#super[G] di versione nel formato X.Y.Z dove:
-      - X: il documento è stato approvato dal responsabile#super[G];
-      - Y: la sezione aggiunta o modificata di un documento è stata verificata;
-      - Z: è stata corretta velocemente qualche incoerenza o errore minore.
-      ************/
-
       === Struttura repository#super[G]
       /******** Aggiungere il link alla nostra repo? ********/
-      La repository#super[G] GitHub configurata ad Organizzazione è strutturato in diverse repository#super[G] in base alla finalità d'uso delle stesse. All'interno di esse è possibile trovare varie directories descritte dai file README.md presenti, tra cui:
+      La repository#super[G] GitHub configurata ad Organizzazione è strutturato in diverse repository#super[G] in base alla finalità d'uso delle stesse. 
+      All'interno di esse è possibile trovare varie directories descritte dai file README.md presenti, tra cui:
     
-      - *docs*: repository#super[G] contenente tutti i file .typ con la documentazione. In essa sono presenti delle Github Action che permettono il supporto alla verifica#super[G] e l'auto compilazione dei file per essere caricati su Github Pages come .pdf;
+      - *docs*: repository#super[G] contenente tutti i file .typ con la documentazione. In essa sono presenti delle Github Action che permettono il supporto alla verifica#super[G] 
+      e l'auto compilazione dei file per essere caricati su Github Pages come .pdf;
     
-      - *teamcodealchemists.github.io*:  repository#super[G] dove si trova il sito web con tutta la documentazione. All'interno di essa sono state definite delle GitHub Action che permettono di tenere sincronizzato il glossario#super[G] nel sito con quello in formato .pdf della documentazione e di aggiornare automaticamente i link alla documentazione.
+      - *teamcodealchemists.github.io*:  repository#super[G] dove si trova il sito web con tutta la documentazione. All'interno di essa sono state definite delle GitHub Action che 
+      permettono di tenere sincronizzato il glossario#super[G] nel sito con quello in formato .pdf della documentazione e di aggiornare automaticamente i link alla documentazione.
 
-      /********* Prossimamente per l'RTB#super[G] dovremmo anche avere la repo del PoC#super[G]  *******/
+      - *poc*: repository#super[G] contenente il PoC#super[G] del progetto, che include le tecnologie e le architetture#super[G] scelte. Essa è stata creata per testare le tecnologie e 
+      le architetture#super[G], così da poterle validare prima della loro implementazione definitiva nel progetto.
+
 
         ==== Organizzazione Repository#super[G]
           ===== Modello di branching
@@ -579,7 +587,6 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       Questo metodo ci permette di affinare costantemente i nostri processi e garantire risultati sempre più performanti.
 
       === Piano di Qualifica#super[G]
-
       // Descrizione PdQ (che copre gli obiettivi di questo processo)
       Il Piano di Qualifica#super[G]; è un documento che definisce strategie, obiettivi e attività per garantire la qualità del prodotto#super[G] e del processo di sviluppo. 
       Tali parametri vengono stabiliti in accordo ai requisiti#super[G] e alle aspettative del proponente e talvolta a discrezione del team sulla base delle valutazioni fatte nel corso di studi.
@@ -839,7 +846,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       /**** Migliorabile: Con che strumenti comunichiamo tra di noi, in che momenti etc... ***/
       Durante l'intero ciclo di sviluppo del progetto, la comunicazione tra i membri del team è facilitata attraverso i canali ufficiali Discord e Telegram, scelti per la loro efficienza e versatilità.
 
-      -	_Discord_ è stato selezionato per la sua praticità d'uso e per la possibilità di creare canali dedicati per ogni ruolo specifico, quali analista#super[G], programmatore#super[G] e verificatore#super[G]. Questa suddivisione assicura che ogni ruolo possa discutere direttamente delle proprie attività e delle difficoltà incontrate, facilitando il coordinamento e l'implementazione delle soluzioni.
+      -	_Discord_ è stato selezionato per la sua praticità d'uso e per la possibilità di creare canali dedicati per ogni ruolo specifico, quali, ad esempio, analista#super[G], programmatore#super[G] e progettista#super[G]. Questa suddivisione assicura che ogni ruolo possa discutere direttamente delle proprie attività e delle difficoltà incontrate, facilitando il coordinamento e l'implementazione delle soluzioni.
 
       -	_Telegram_ è stato scelto per la sua semplicità e immediatezza nella comunicazione. Esso consente infatti di inviare messaggi rapidi e di condividere documenti e aggiornamenti in tempo reale. In questo modo, è possibile garantire che tutte le informazioni rilevanti siano facilmente accessibili a tutti i membri del team in qualsiasi momento.
 
@@ -850,7 +857,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       Durante l'intero ciclo di sviluppo del progetto, la comunicazione esterna (tra i membri del gruppo e il committente#super[G]/il proponente) è a carico del Responsabile#super[G] di turno.
       Essa avviene attraverso diversi canali di comunicazione, tra cui:
       - *Zoom*: per comunicare in modalità sincrona con il committente#super[G];
-      - *Gmail*: per comunicare in modalità asincrona con il committente#super[G] e il proponente. Per comunicare con gli enti terzi, infatti, viene utilizzata l’indirizzo mail ufficiale del gruppo;
+      - *Gmail*: per comunicare in modalità asincrona con il committente#super[G] e il proponente. Per comunicare con gli enti terzi, infatti, viene utilizzata l'indirizzo mail ufficiale del gruppo;
       - *Microsoft Teams*: per comunicare in modalità sincrona con il proponente.
 
       === Riunioni interne
@@ -916,7 +923,8 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
           L'assegnazione di un task avviene in base al suo ambito di riferimento e alla sua complessità. 
           Inoltre, si applica la convenzione intera per cui, ad esempio, il Sottoresponsabile#super[G] Analista#super[G], che rappresenta l'intero gruppo di analisti#super[G], è incaricato di fare da portavoce per tutti gli analisti#super[G] se stanno lavorando contemporaneamente a quella determinata task.
 
-        /*
+        /* Per ora no, non sappiamo se in futuro sì
+
           ===== Automazione task-branch#super[G]
           // Automazione Git-Jira
           Implementiamo un sistema di automazione tra Git e Jira per facilitare la creazione e il collegamento tra i task e i branch#super[G] di sviluppo, garantendo una gestione più efficiente e tracciabile dello stato di avanzamento del progetto.
@@ -982,10 +990,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       
       === Materiale formativo
       // Per ogni categoria, tipo architettura#super[G] a microservizi#super[G], NATS, Docker ... indicare che materiale è messo a disposizione
-      Il materiale formativo viene archiviato all'interno della cartella condivisa su Google Drive, aggiornata periodicamente con il contributo di tutti i membri del team.
-
-      /************ DA COMPLETARE CON LINK PER OGNI TECNOLOGIA *****/
-    
+      Il materiale formativo viene archiviato all'interno della cartella condivisa su Google Drive, aggiornata periodicamente con il contributo di tutti i membri del team.    
 
  = Standard di qualità
   == ISO/IEC 12207:1995
@@ -1129,4 +1134,4 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       - *Sostituibilità*: permette di rimpiazzare un prodotto#super[G] esistente con il nuovo software in modo semplice.
 
-      - *Conformità*: garantisce l’aderenza agli standard e alle convenzioni sulla portabilità.
+      - *Conformità*: garantisce l'aderenza agli standard e alle convenzioni sulla portabilità.
