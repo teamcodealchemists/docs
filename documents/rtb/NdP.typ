@@ -330,7 +330,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       ===== Importazioni
       Tutte le importazioni (import) devono essere dichiarate all'inizio dello script, prima di qualsiasi altro codice.
-      Si raccomanda di importa solo ciò che serve, evitando di usare gli import con asterisco, dove non necessari, e in generale importazioni inutili o ridondanti.
+      Si raccomanda di importare solo ciò che serve, evitando di usare gli import con asterisco, dove non necessari, e in generale importazioni inutili o ridondanti.
 
       ===== Commenti
       Ogni costrutto significativo deve essere preceduto da un commento esplicativo, indentato di un livello di tabulazione rispetto al codice che descrive. 
