@@ -27,6 +27,9 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+
+  //TODO: aggiungere le voci del registro per gli sprint
+
   [0.3.0],
   [23/05/2025],
   [M. Dalla Pozza],
@@ -70,8 +73,6 @@
 )
 #show: indice
 
-//TODO: Integrare indice delle tabelle dal PdQ, senti @sebamarana
-
 #set heading(numbering: "1.1.")
 
 /* INDICE DELLE TABELLE*/
@@ -92,9 +93,9 @@ Il documento è molto importante per permettere una corretta pianificazione del 
 
 Il progetto riguarda lo sviluppo di un sistema di gestione per magazzini distribuiti, con l'obiettivo di ottimizzare la gestione dell'inventario#super[G] in una rete di magazzini geograficamente separati. Questo sistema deve garantire che i flussi di materiali e prodotti tra i magazzini siano gestiti in tempo reale, evitando rotture di stock e migliorando la distribuzione delle scorte#super[G]. Il sistema dovrà anche ridurre i livelli medi di inventario#super[G], mantenendo però scorte#super[G] di sicurezza per gestire variazioni nella domanda o ritardi nelle consegne.
 
-La soluzione proposta si baserà su un'architettura#super[G] a microservizi#super[G], che permetterà a ogni magazzino di gestire autonomamente il proprio inventario#super[G], mentre le informazioni verranno sincronizzate in tempo reale con un sistema centrale. Il sistema dovrà essere in grado di monitorare i livelli di inventario#super[G], gestire conflitti derivanti da aggiornamenti simultanei, implementare riassortimenti#super[G] predittivi basati su machine learning e garantire una visibilità centralizzata in tempo reale delle operazioni. Inoltre, saranno utilizzate tecnologie moderne e scalabili come Node.js, Typescript, Go, Nats e Docker, per garantire prestazioni elevate e l'interoperabilità tra i magazzini.
+La soluzione proposta si baserà su un'architettura#super[G] a microservizi#super[G], che permetterà a ogni magazzino di gestire autonomamente il proprio inventario#super[G], mentre le informazioni verranno sincronizzate in tempo reale con un sistema centrale. Il sistema dovrà essere in grado di monitorare i livelli di inventario#super[G], gestire conflitti derivanti da aggiornamenti simultanei, implementare riassortimenti#super[G] predittivi basati su machine learning e garantire una visibilità centralizzata in tempo reale delle operazioni. Inoltre, saranno utilizzate tecnologie moderne e scalabili come Node.js, Typescript, Nats e Docker, per garantire prestazioni elevate e l'interoperabilità tra i magazzini.
 
-In sintesi, il progetto si propone di migliorare l’efficienza operativa della gestione logistica, riducendo i rischi legati alla gestione delle scorte#super[G] e ottimizzando i flussi tra i magazzini.
+In sintesi, il progetto si propone di migliorare l'efficienza operativa della gestione logistica, riducendo i rischi legati alla gestione delle scorte#super[G] e ottimizzando i flussi tra i magazzini.
 
 
 
@@ -275,7 +276,7 @@ Dove:
     [*Contromisure*], 
     [In caso di codice#super[G] non funzionante il
     programmatore#super[G] cercherà di risolvere il problema approfondendo
-    la tecnologia in uso e l'argomento al fine di trovare una soluzione indipendentemente. 
+    la tecnologia in uso e l'argomento al fine di trovare una soluzione in modo indipendente. 
     In caso di insuccesso un sistema di ticket condiviso con gli altri programmatori#super[G]
     potrebbe aiutare a condividere informazioni per ottenere una soluzione alternativa. 
     Se il problema dovesse diventare centrale i programmatori#super[G] si impegneranno 
@@ -486,7 +487,7 @@ Dove:
     [Comunicazione al resto del team.],
 
     [*Contromisure*], 
-    [I membri del team si impegnano a comunicare in modo trasparente e onesto difficoltà nello svolgere
+    [I membri del team si impegnano a comunicare in modo trasparente e onesto le difficoltà nello svolgere
     il lavoro assegnato, mentre i restanti si impegnano ad aiutare chi si trova in tale situazione.],
   ),
   didascalia: "Tabella RI3"
@@ -749,7 +750,7 @@ La redazione di questo paragrafo sarà effettuato in seguito al superamento dell
 
 A seguito del primo incontro di gruppo Il team _Code Alchemists_ ha deciso di impegnarsi ad adottare come strumento di sviluppo
 principale la metodologia *Agile#super[G]* per tutto quello che riguarda la gestione del progetto. 
-In particolare, si è deciso di utilizzare il framework *Scrum#super[G]*, che prevede numerosi *#super[G]#super[G]*, 
+In particolare, si è deciso di utilizzare il framework *Scrum#super[G]*, che prevede numerosi *sprint#super[G]*, 
 ovvero periodi di tempo ben definiti da una data di inizio e una data di fine in cui il team 
 si impegna a concentrarsi su un insieme specifico e finito di attività.\
 Il team ha deciso di utilizzare una durata dello sprint#super[G] pari a *2 settimane*, 
@@ -769,15 +770,15 @@ Inoltre alcune particolari caratteristiche che il team ha deciso di adottare dop
 
 - L'uso di sottoresponsabili informali per responsabilizzare maggiormente più membri e ottenere una comunicazione più efficace e diretta;
 - La redazione di una "Lettera di sprint#super[G]" da parte del responsabile#super[G] entrante per definire meglio gli obbiettivi attuali, la quale
-   viene redatta e diventa presenta almeno il giorno prima dell'inizio del nuovo sprint#super[G];
+   viene redatta e presentata almeno il giorno prima dell'inizio del nuovo sprint#super[G];
 - Un cambio di ruoli per sprint#super[G] basato sul ruolo della persona e dalle competenze ottenute nello sprint#super[G] appena terminato.
    Questo permette in particolare, oltre a ruotare i ruoli tra i membri, di svolgere una transizione molto più fluida e funzionale tra sprint#super[G].
 
 
 Infine il team si impegna a *concordare riunioni periodiche* con l'azienda proponente del progetto _M31_ 
 per discutere progressi ed eventuali modifiche in corso d'opera. 
-Le riunioni garantiranno che il lavoro svolto sia in coerente con le aspettative 
-del cliente#super[G] e per ottenere feedback su quanto realizzato.
+Le riunioni garantiranno che il lavoro svolto rimanga coerente con le aspettative 
+del cliente#super[G] ottenendo feedback su quanto realizzato.
 
 Di seguito vengono riportate le caratteristiche previste per ogni sprint#super[G] successivamente descritte:
 - Informazioni generali;
@@ -916,7 +917,7 @@ su quanto discusso con l'azienda proponente.
 
 In particolare, le attività previste sono:
 
-- Analisi dello stato dell';
+- Analisi dello stato dell'Arte;
 - Continuazione dell'ipotesi architetturale e tecnologica;
   - Approfondimento delle tecnologie proposte.
 - Redazione dei casi d'uso;
@@ -979,13 +980,13 @@ I possibili rischi :
     dati: (
       [Responsabile#super[G]], [30€/h], [5], [150€], [62 (-5)], [1860€ (-150€)],
       [Amministratore#super[G]], [20€/h], [4], [80€], [61 (-4)], [1220€ (-80€)],
-      [Analista#super[G]], [25€/h], [17], [500€], [51 (-17)], [1275€ (-425€)],
+      [Analista#super[G]], [25€/h], [17], [425€], [51 (-17)], [1275€ (-425€)],
       [Progettista#super[G]], [25€/h], [-], [-], [156], [3900€],
       [Programmatore#super[G]], [15€/h], [-], [-], [215], [3225€],
       [Verificatore#super[G]], [15€/h], [9], [135€], [130 (-9)], [1980€ (-135€)],
-      [*Totale*], [*-*], [*38*], [*865€*], [*675 (-43)*], [*13460€ (-790€)*],
+      [*Totale*], [*-*], [*38*], [*865€*], [*675 (-35)*], [*13460€ (-790€)*],
   ),
-    didascalia: "Sprint 1 - Aggiornamento delle risorse disponibili"
+    didascalia: "Sprint 2 - Aggiornamento delle risorse disponibili"
   )
 ]
 
@@ -997,9 +998,9 @@ Il principale rischio di questo secondo sprint#super[G] è stato il lungo period
 di festività, come quello pasquale, che ha rallentato notevolmente
 il progresso di tutte le attività attese.
 
-Inoltre, un iniziale difficoltà nell'identificare con decisione i principali
+Inoltre, un'iniziale difficoltà nell'identificare con decisione i principali
 punti su cui concentrarsi per avanzare nella produzione di un POC#super[G] hanno portato
-il team ad effettuare un analisi dello stato dell'arte, posponendo quindi l'avanzamento
+il team ad effettuare un'analisi dello stato dell'arte, posponendo quindi l'avanzamento
 dell'ipotesi architetturale e quindi della produzione stessa del POC#super[G].
 
 
@@ -1016,7 +1017,7 @@ il contesto e identificare in anticipo eventuali issue.
 === Sprint 3
 Inizio: #h(1.99cm)*25-04-2025*\
 Fine Prevista: #h(0.65cm)*09-05-2025*\
-Fine Reale: #h(1.12cm)*Da inserire*\
+Fine Reale: #h(1.12cm)*09-05-2025*\
 Giorni di ritardo: #h(0.15cm)*0*
 
 ==== Informazioni generali e attività da svolgere
@@ -1038,22 +1039,21 @@ In particolare, le attività previste sono:
 
 I possibili rischi :
 - RI1: Rischio Individuale derivante dalle altre attività.
-
-
+- RG2: Rischio Globale legato a pareri contrastanti.
 
 ==== Preventivo
 
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
-    [Nicolò Bolzon],[],[],[-],[],[],[],
-      [Mattia Dalla Pozza],[],[-],[],[],[],[],
-      [Sebastiano Marana],[],[],[],[],[],[-],
-      [Nicholas Moretto],[-],[],[],[],[],[],
-      [Matteo Pretto],[],[],[-],[],[],[],
-      [Alex Shu],[],[],[-],[],[],[],
-      [Stefano Speranza],[],[],[],[-],[],[],
-      [Ramona Zangla],[],[],[],[-],[],[],
+    [Nicolò Bolzon],[],[],[6],[],[],[],
+      [Mattia Dalla Pozza],[],[4],[],[],[],[],
+      [Sebastiano Marana],[],[],[],[],[],[6],
+      [Nicholas Moretto],[5],[],[],[],[],[],
+      [Matteo Pretto],[],[],[6],[],[],[],
+      [Alex Shu],[],[],[5],[],[],[],
+      [Stefano Speranza],[],[],[],[8],[],[],
+      [Ramona Zangla],[],[],[],[8],[],[],
   ),
   didascalia: "Sprint 3 - Preventivo ore per ciascun componente"
 )
@@ -1066,14 +1066,14 @@ I possibili rischi :
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
-      [Nicolò Bolzon],[],[],[-],[],[],[],
-      [Mattia Dalla Pozza],[],[-],[],[],[],[],
-      [Sebastiano Marana],[],[],[],[],[],[-],
-      [Nicholas Moretto],[-],[],[],[],[],[],
-      [Matteo Pretto],[],[],[-],[],[],[],
-      [Alex Shu],[],[],[-],[],[],[],
-      [Stefano Speranza],[],[],[],[-],[],[],
-      [Ramona Zangla],[],[],[],[-],[],[],
+      [Nicolò Bolzon],[],[],[6],[],[],[],
+      [Mattia Dalla Pozza],[],[4],[],[],[],[],
+      [Sebastiano Marana],[],[],[],[],[],[6(+3)],
+      [Nicholas Moretto],[5],[],[],[],[],[],
+      [Matteo Pretto],[],[],[6(-2)],[],[],[],
+      [Alex Shu],[],[],[5],[],[],[],
+      [Stefano Speranza],[],[],[],[8],[],[],
+      [Ramona Zangla],[],[],[],[8],[],[],
   ),
   didascalia: "Sprint 3 - Consuntivo ore per ciascun componente"
 )
@@ -1085,13 +1085,13 @@ I possibili rischi :
 #align(center)[
   #tabella_aggiornamento_risorse(
     dati: (
-      [Responsabile#super[G]], [30€/h], [], [], [], [],
-      [Amministratore#super[G]], [20€/h], [], [], [], [],
-      [Analista#super[G]], [25€/h], [], [], [], [],
-      [Progettista#super[G]], [25€/h], [], [], [], [],
-      [Programmatore#super[G]], [15€/h], [], [], [], [],
-      [Verificatore#super[G]], [15€/h], [], [], [], [],
-      [*Totale*], [*-*], [**], [**], [**], [**],
+      [Responsabile#super[G]], [30€/h], [5], [150€], [57(-5)], [1710€ (-150€)],
+      [Amministratore#super[G]], [20€/h], [4], [80€], [57(-4)], [1140€ (-80€)],
+      [Analista#super[G]], [25€/h], [15], [375€], [34(-15)], [850€ (-375€)],
+      [Progettista#super[G]], [25€/h], [16], [400€], [156(-16)], [3900€ (-400€)],
+      [Programmatore#super[G]], [15€/h], [-], [-], [215], [3225€],
+      [Verificatore#super[G]], [15€/h], [9], [135€], [121(-9)], [1845€ (-135€)],
+      [*Totale*], [*-*], [*49*], [*1140€*], [*640 (-49)*], [*12670€ (-865€)*],
   ),
     didascalia: "Sprint 3 - Aggiornamento delle risorse disponibili"
   )
@@ -1103,3 +1103,322 @@ I possibili rischi :
 
 === Retrospettiva
 
+//-----------
+
+#pagebreak()
+=== Sprint 4
+Inizio: #h(1.99cm)*09-05-2025*\
+Fine Prevista: #h(0.65cm)*23-05-2025*\
+Fine Reale: #h(1.12cm)*23-05-2025*\
+Giorni di ritardo: #h(0.15cm)*0*
+
+==== Informazioni generali e attività da svolgere
+
+
+
+==== Rischi attesi
+
+I possibili rischi :
+
+
+==== Preventivo
+
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],[],[],[],[],[8],[],
+      [Mattia Dalla Pozza],[],[],[],[7],[],[],
+      [Sebastiano Marana],[],[],[],[7],[],[],
+      [Nicholas Moretto],[],[],[],[],[],[9],
+      [Matteo Pretto],[],[4],[],[],[],[],
+      [Alex Shu],[],[],[6],[],[],[],
+      [Stefano Speranza],[],[],[],[7],[],[],
+      [Ramona Zangla],[5],[],[],[],[],[],
+  ),
+  didascalia: "Sprint 4 - Preventivo ore per ciascun componente"
+)
+]
+
+
+==== Consuntivo
+
+
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+      [Nicolò Bolzon],[],[],[],[],[8(-2)],[],
+      [Mattia Dalla Pozza],[],[],[],[7(+1)],[],[],
+      [Sebastiano Marana],[],[],[],[7(+1)],[],[],
+      [Nicholas Moretto],[],[],[],[],[],[9(+1)],
+      [Matteo Pretto],[],[4],[],[],[],[],
+      [Alex Shu],[],[],[6],[],[],[],
+      [Stefano Speranza],[],[],[],[7(+1)],[],[],
+      [Ramona Zangla],[5],[],[],[],[],[],
+  ),
+  didascalia: "Sprint 4 - Consuntivo ore per ciascun componente"
+)
+]
+
+
+==== Aggiornamento delle risorse rimanenti  
+
+#align(center)[
+  #tabella_aggiornamento_risorse(
+    dati: (
+      [Responsabile#super[G]],    [30€/h],   [5],   [150€],   [52(-5)],   [1560€ (-150€)],
+      [Amministratore#super[G]],  [20€/h],   [4],   [80€],    [53(-4)],   [1060€ (-80€)],
+      [Analista#super[G]],        [25€/h],   [6],   [150€],   [19(-6)],    [475€ (-150€)],
+      [Progettista#super[G]],     [25€/h],   [24],  [600€],   [140(-24)], [3500€ (-600€)],
+      [Programmatore#super[G]],   [15€/h],   [6],   [90€],      [215(-6)],      [3225€ (-90€)],
+      [Verificatore#super[G]],    [15€/h],   [10],   [150€],   [112(-10)],  [1710€ (-150€)],
+      [*Totale*],                 [*-*],     [*55*],[*1220€*],[*591 (-55)*],[*11805€ (-1220€)*],
+    ),
+    didascalia: "Sprint 4 - Aggiornamento delle risorse disponibili"
+  )
+]
+
+
+==== Rischi incontrati
+
+
+=== Retrospettiva
+
+//-----------
+
+#pagebreak()
+=== Sprint 5
+Inizio: #h(1.99cm)*23-05-2025*\
+Fine Prevista: #h(0.65cm)*06-06-2025*\
+Fine Reale: #h(1.12cm)*06-06-2025*\
+Giorni di ritardo: #h(0.15cm)*0*
+
+==== Informazioni generali e attività da svolgere
+
+
+
+==== Rischi attesi
+
+I possibili rischi :
+
+
+==== Preventivo
+
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],[5],[],[],[],[],[],
+      [Mattia Dalla Pozza],[],[],[],[],[7],[],
+      [Sebastiano Marana],[],[],[6],[],[],[],
+      [Nicholas Moretto],[],[],[],[8],[],[],
+      [Matteo Pretto],[],[],[],[],[7],[],
+      [Alex Shu],[],[],[],[],[7],[],
+      [Stefano Speranza],[],[4],[],[],[],[],
+      [Ramona Zangla],[],[],[],[],[],[9],
+  ),
+  didascalia: "Sprint 5 - Preventivo ore per ciascun componente"
+)
+]
+
+
+==== Consuntivo
+
+
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+      [Nicolò Bolzon],[5],[],[],[],[],[],
+      [Mattia Dalla Pozza],[],[],[],[],[7(-2)],[],
+      [Sebastiano Marana],[],[],[6],[],[],[],
+      [Nicholas Moretto],[],[],[],[8],[],[],
+      [Matteo Pretto],[],[],[],[],[7(-2)],[],
+      [Alex Shu],[],[],[],[],[7(-2)],[],
+      [Stefano Speranza],[],[4],[],[],[],[],
+      [Ramona Zangla],[],[],[],[],[],[9(+1)],
+  ),
+  didascalia: "Sprint 5 - Consuntivo ore per ciascun componente"
+)
+]
+
+
+==== Aggiornamento delle risorse rimanenti  
+
+#align(center)[
+  #tabella_aggiornamento_risorse(
+    dati: (
+      [Responsabile#super[G]],    [30€/h],   [5],   [150€],   [47(-5)],   [1410€ (-150€)],
+      [Amministratore#super[G]],  [20€/h],   [4],   [80€],    [49(-4)],   [980€ (-80€)],
+      [Analista#super[G]],        [25€/h],   [6],   [150€],   [13(-6)],    [325€ (-150€)],
+      [Progettista#super[G]],     [25€/h],   [8],  [200€],   [116(-8)], [2900€ (-200€)],
+      [Programmatore#super[G]],   [15€/h],   [15],   [225€],  [209(-15)],      [3130€ (-225€)],
+      [Verificatore#super[G]],    [15€/h],   [10],   [150€],   [102(-10)],  [1560€ (-150€)],
+      [*Totale*],                 [*-*],     [*48*],[*955€*],[*536 (-48)*],[*10585€ (-955€)*],
+    ),
+    didascalia: "Sprint 5 - Aggiornamento delle risorse disponibili"
+  )
+]
+
+
+==== Rischi incontrati
+
+
+=== Retrospettiva
+
+//-----------
+
+#pagebreak()
+=== Sprint 6
+Inizio: #h(1.99cm)*06-06-2025*\
+Fine Prevista: #h(0.65cm)*20-06-2025*\
+Fine Reale: #h(1.12cm)*20-06-2025*\
+Giorni di ritardo: #h(0.15cm)*0*
+
+==== Informazioni generali e attività da svolgere
+
+
+
+==== Rischi attesi
+
+I possibili rischi :
+
+
+==== Preventivo
+
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],[],[],[],[],[8],[],
+      [Mattia Dalla Pozza],[],[],[],[],[],[9],
+      [Sebastiano Marana],[],[],[7],[],[],[],
+      [Nicholas Moretto],[],[],[],[10],[],[],
+      [Matteo Pretto],[],[],[],[],[8],[],
+      [Alex Shu],[],[],[],[],[8],[],
+      [Stefano Speranza],[5],[],[],[],[],[],
+      [Ramona Zangla],[],[4],[],[],[],[],
+  ),
+  didascalia: "Sprint 6 - Preventivo ore per ciascun componente"
+)
+]
+
+
+==== Consuntivo
+
+
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+      [Nicolò Bolzon],[],[],[],[],[8(-2)],[],
+      [Mattia Dalla Pozza],[],[],[],[],[],[9],
+      [Sebastiano Marana],[],[],[7],[],[],[],
+      [Nicholas Moretto],[],[],[],[10(-3)],[],[],
+      [Matteo Pretto],[],[],[],[],[8(-2)],[],
+      [Alex Shu],[],[],[],[],[8(-2)],[],
+      [Stefano Speranza],[5],[],[],[],[],[],
+      [Ramona Zangla],[],[4],[],[],[],[],
+  ),
+  didascalia: "Sprint 6 - Consuntivo ore per ciascun componente"
+)
+]
+
+
+==== Aggiornamento delle risorse rimanenti  
+
+#align(center)[
+  #tabella_aggiornamento_risorse(
+    dati: (
+      [Responsabile#super[G]],    [30€/h],   [5],   [150€],   [42(-5)],   [1260€ (-150€)],
+      [Amministratore#super[G]],  [20€/h],   [4],   [80€],    [45(-4)],   [900€ (-80€)],
+      [Analista#super[G]],        [25€/h],   [7],   [175€],   [7(-7)],    [175€ (-175€)],
+      [Progettista#super[G]],     [25€/h],   [7],  [175€],   [108(-7)], [2700€ (-175€)],
+      [Programmatore#super[G]],   [15€/h],   [18],   [270€],  [194(-18)],      [2905€ (-270€)],
+      [Verificatore#super[G]],    [15€/h],   [9],   [135€],   [92(-9)],  [1410€ (-135€)],
+      [*Totale*],                 [*-*],     [*50*],[*985€*],[*488 (-50)*],[*9630€ (-985€)*],
+    ),
+    didascalia: "Sprint 6 - Aggiornamento delle risorse disponibili"
+  )
+]
+
+
+==== Rischi incontrati
+
+
+=== Retrospettiva
+
+//-----------
+
+#pagebreak()
+=== Sprint 7
+Inizio: #h(1.99cm)*20-06-2025*\
+Fine Prevista: #h(0.65cm)*04-07-2025*\
+Fine Reale: #h(1.12cm)*04-07-2025*\
+Giorni di ritardo: #h(0.15cm)*0*
+
+==== Informazioni generali e attività da svolgere
+
+
+
+==== Rischi attesi
+
+I possibili rischi :
+
+
+==== Preventivo
+
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],[],[4],[],[],[],[],
+      [Mattia Dalla Pozza],[],[],[],[],[8],[],
+      [Sebastiano Marana],[],[],[],[],[8],[],
+      [Nicholas Moretto],[],[],[],[],[8],[],
+      [Matteo Pretto],[],[],[],[],[],[10],
+      [Alex Shu],[5],[],[],[],[],[],
+      [Stefano Speranza],[],[],[],[],[8],[],
+      [Ramona Zangla],[],[],[],[],[8],[],
+  ),
+  didascalia: "Sprint 7 - Preventivo ore per ciascun componente"
+)
+]
+
+
+==== Consuntivo
+
+
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],        [], [4], [], [], [], [],
+    [Mattia Dalla Pozza],   [], [], [], [], [8], [],
+    [Sebastiano Marana],    [], [], [], [], [8], [],
+    [Nicholas Moretto],     [], [], [], [], [8], [],
+    [Matteo Pretto],        [], [], [], [], [], [10],
+    [Alex Shu],             [5], [], [], [], [], [],
+    [Stefano Speranza],     [], [], [], [], [8], [],
+    [Ramona Zangla],        [], [], [], [], [8], [],
+  ),
+  didascalia: "Sprint 7 - Consuntivo ore per ciascun componente"
+)
+]
+
+
+==== Aggiornamento delle risorse rimanenti  
+
+#align(center)[
+  #tabella_aggiornamento_risorse(
+    dati: (
+      [Responsabile#super[G]],    [30€/h],   [5],   [150€],   [37(-5)],   [1110€ (-150€)],
+      [Amministratore#super[G]],  [20€/h],   [4],   [80€],    [41(-4)],   [820€ (-80€)],
+      [Analista#super[G]],        [25€/h],   [-],   [-],   [0],    [0€],
+      [Progettista#super[G]],     [25€/h],   [-],  [-],   [101], [2525€],
+      [Programmatore#super[G]],   [15€/h],   [40],   [600€],  [176(-40)], [2635€ (-600€)],
+      [Verificatore#super[G]],    [15€/h],   [10],   [150€],   [83(-10)],  [1275€ (-150€)],
+      [*Totale*],                 [*-*],     [*59*],[*980€*],[*438 (-59)*],[*8645€ (-980€)*],
+    ),
+    didascalia: "Sprint 7 - Aggiornamento delle risorse disponibili"
+  )
+]
+
+
+==== Rischi incontrati
+
+
+=== Retrospettiva
