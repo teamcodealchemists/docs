@@ -16,7 +16,7 @@
 #let titolo = "Piano di Qualifica"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "0.1.0"
+#let versione = "0.2.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -27,10 +27,16 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [0.3.0],
+  [10/07/2025],
+  [],
+  [],
+  [],
+
   [0.2.0],
   [27/05/2025],
   [S. Marana],
-  [],
+  [R. Zangla],
   [Aggiunta delle tabelle di continuo miglioramento e delle metriche di qualità per il processo di sviluppo],
 
   [0.1.0],
@@ -67,7 +73,7 @@
 = 1. Introduzione
 == 1.1 Scopo del documento
 
-Il presente documento ha lo scopo di definire le modalità di qualifica e verifica del prodotto#super[G] software. Esso rappresenta un indice di valutazione del prodotto#super[G] software, delle sue componenti e degli strumenti utilizzati. L'obiettivo è quello di garantire la qualità del prodotto#super[G] finale e un continuo miglioramento del processo di sviluppo.
+Il presente documento ha lo scopo di definire le modalità di qualifica e verifica del prodotto#super[G] software. Esso rappresenta un indice di valutazione del prodotto#super[G] software, delle sue componenti e degli strumenti utilizzati. L'obiettivo è quello di garantire la qualità del prodotto#super[G] finale.
 
 Il Piano di Qualifica#super[G] si basa su tre aspetti principali:
 
@@ -80,11 +86,6 @@ Il Piano di Qualifica#super[G] si basa su tre aspetti principali:
 - Attuare e assicurare la conformità con le regole da seguire e il Way of Working#super[G] ;
 - L'operato viene monitorato attraverso il Cruscotto di Valutazione;
 - Effettuare il Quality Assurance passo-passo per prevenire e mitigare i rischi e verificare la soddisfazione dei requisiti#super[G].
-
-=== 1.1.3 Miglioramento continuo
-La qualità non è definitiva, bensì si evolve e va perfezionata nel corso del tempo:
-- Gli errori rappresentano opportunità di apprendimento, sperimentazione e miglioramento progressivo;
-- L'obiettivo è incrementare nel tempo l'efficienza e l'efficacia dei processi.
 
 == 1.2 Glossario
 Per una corretta comprensione del documento, viene fornito un glossario dei termini utilizzati. Ogni termine è indicato da una "#super[G]" in apice alla parola#super[G].
@@ -114,28 +115,28 @@ Per trovare il significato del termine, è possibile consultare il glossario al 
 - *Glossario#super[G]* \
   #underline[#link("https://teamcodealchemists.github.io/glossario.html")]
 
-= 2. Metriche di Qualità
+#pagebreak()
 
-Per garantire un'analisi oggettiva e sistematica della qualità del prodotto#super[G] software, si fa riferimento allo standard ISO/IEC 14598:1999. Esso propone un metodo per associare metriche quantitative a specifiche sotto-caratteristiche di qualità individuate nello standard ISO 9126.
+= 2. Qualità di Processo
 
-In particolare, le metriche sono utilizzate per:
+La qualità di processo rappresenta l’insieme delle attività, delle metodologie e delle metriche adottate per garantire che lo sviluppo del prodotto#super[G] software avvenga secondo standard definiti e controllabili. L’obiettivo è assicurare che ogni fase del ciclo di vita del progetto sia pianificata, monitorata e migliorata in modo continuo.
 
-- Valutare attributi interni (come la struttura del codice#super[G]) e attributi esterni (come l'usabilità e l'affidabilità percepita dall'utente);
+Le metriche di qualità di processo permettono di:
 
-- Supportare il monitoraggio dell'evoluzione del prodotto#super[G] durante le fasi di sviluppo e validazione;
+- Valutare l’efficacia e l’efficienza delle attività svolte nei diversi processi (primari, di supporto e organizzativi);
+- Monitorare il rispetto degli standard e delle procedure stabilite nel Piano della Qualità;
+- Fornire indicatori oggettivi utili per individuare aree di miglioramento e prevenire eventuali criticità.
 
-- Fornire indicatori oggettivi del raggiungimento degli standard prefissati nel Piano della Qualità.
-
-Sebbene non sempre sia semplice adottare misurazioni formali, l'obiettivo è mantenere un approccio il più possibile oggettivo e ripetibile, riducendo soggettività nelle valutazioni.
+L’adozione di un approccio sistematico e quantitativo consente di ridurre la soggettività nelle valutazioni e di supportare decisioni basate su dati concreti.
 
 == 2.1 Processi Primari
 
 I processi primari sono quelli che riguardano direttamente la realizzazione del prodotto#super[G] software. Essi comprendono le attività di fornitura e sviluppo.
 
-È stato deciso di utilizzare la seguente nomenclatura per per identificare in modo univoco le metriche di qualità:
+È stato deciso di utilizzare la seguente nomenclatura per identificare in modo univoco le metriche di qualità:
 - *PPF*: Processi Primari di Fornitura;
 - *PPS*: Processi Primari di Sviluppo.
-Per ogni categoria, i codici#super[G] definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
+Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
 
 === 2.1.1 Fornitura
 
@@ -180,7 +181,7 @@ Per ogni categoria, i codici#super[G] definiti precedentemente sono seguiti da u
 === 2.2.1 Documentazione
 
 #let voci_tabella_documentazione = (
-    [PSD01], [Indice di Gulpease], [>= 60%], [100%],
+    [PSD01], [Indice di Gulpease], [>= 50%], [100%],
     [PSD02], [Parole#super[G] del glossario contrassegnate con #super[G]], [>= 60%], [100%],
     [PSD03], [Glossario ordinato], [ordinato], [ordinato],
   )
@@ -195,7 +196,7 @@ Per ogni categoria, i codici#super[G] definiti precedentemente sono seguiti da u
 === 2.2.2 Verifica
 
 #let voci_tabella_verifica = (
-    [PSV01], [Code Coverage], [da definire], [100%],
+    [PSV01], [Code Coverage], [>= 70%], [>= 80%],
     [PSV02], [Grado di successo dei test], [100%], [100%],
   )
 #let caption_verifica = (
@@ -238,9 +239,66 @@ Per ogni categoria, i codici#super[G] definiti precedentemente sono seguiti da u
   caption: caption_processi
 )
 
-// TODO: Per il PB inserire le qualità di prodotto#super[G] 
+= 3 Qualità di Prodotto
+La qualità di prodotto si riferisce alle caratteristiche e alle proprietà che rendono il software conforme alle aspettative degli stakeholder e agli standard prefissati. Essa viene valutata attraverso metriche oggettive che misurano aspetti come affidabilità, manutenibilità, efficienza e usabilità.
 
-= 3. Metodologie di Testing
+Punti chiave della qualità di prodotto:
+- *Funzionalità*: capacità del software di fornire le funzioni richieste dagli utenti e di soddisfare i requisiti specificati nel documento di Analisi dei Requisiti#super[G].
+- *Affidabilità*: capacità del software di funzionare senza errori in condizioni specificate per un periodo di tempo definito.
+- *Manutenibilità*: facilità con cui il software può essere modificato per correggere difetti, migliorare prestazioni o adattarsi a nuovi requisiti.
+- *Efficienza*: utilizzo ottimale delle risorse di sistema, come memoria e tempo di esecuzione.
+- *Usabilità*: grado di facilità e soddisfazione con cui gli utenti possono utilizzare il prodotto.
+- *Portabilità*: capacità del software di essere trasferito da un ambiente a un altro senza modifiche significative.
+
+I tipi di processi di qualità di prodotto sono identificati dalla seguente nomenclatura:
+- *QPF*: Qualità di Prodotto Funzionale;
+- *QPA*: Qualità di Prodotto Affidabile;
+- *QPM*: Qualità di Prodotto Manutenibile;
+- *QPE*: Qualità di Prodotto Efficiente;
+- *QPU*: Qualità di Prodotto Usabile;
+- *QPP*: Qualità di Prodotto Portabile.
+Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
+
+== 3.1 Funzionalità
+
+#let voci_tabella_prodotto_funzionale = (
+    [QPF01], [Requisiti obbligatori soddisfatti], [100%], [100%],
+    [QPF02], [Requisiti desiderabili soddisfatti], [>= 0%], [100%],
+    [QPF03], [Requisiti opzionali soddisfatti], [>= 0%], [100%],
+  )
+#let caption_prodotto_funzionale = (
+  [Metriche per la funzionalità del prodotto#super[G] software]
+)
+#show: qualifica_table.with(
+  voci: voci_tabella_prodotto_funzionale,
+  caption: caption_prodotto_funzionale
+)
+
+== 3.2 Affidabilità
+
+#let voci_tabella_prodotto_affidabile = (
+    [---], [---], [---], [---],
+    [---], [---], [---], [---],
+    [---], [---], [---], [---],
+  )
+#let caption_prodotto_affidabile = (
+  [Metriche per l'affidabilità del prodotto#super[G] software]
+)
+#show: qualifica_table.with(
+  voci: voci_tabella_prodotto_affidabile,
+  caption: caption_prodotto_affidabile
+)
+
+== 3.3 Manutenibilità
+
+== 3.4 Efficienza
+
+== 3.5 Usabilità
+
+== 3.6 Portabilità
+
+
+= 4. Metodologie di Testing
 Per garantire la qualità del prodotto#super[G] software, è fondamentale adottare metodologie di testing adeguate.
 
 Ad ogni test è stato attribuito un codice#super[G] univoco per facilitarne l'identificazione e la tracciabilità. Il codice#super[G] è strutturato come segue: tipoXX, dove "tipo" rappresenta il tipo di test e "XX" è un numero progressivo che identifica il test specifico. I tipi di test sono i seguenti:
@@ -258,7 +316,7 @@ Per ogni test viene specificato uno stato, che può essere:
 
 #pagebreak()
 
-== 3.1 Test di unità
+== 4.1 Test di unità
 
 I test di unità verificano il comportamento corretto delle singole unità di codice#super[G], come funzioni, metodi o classi. Vengono scritti e mantenuti dagli sviluppatori durante la fase di sviluppo e servono a garantire che ogni componente, isolato dal resto, produca il risultato atteso per diversi input. Sono fondamentali per individuare rapidamente errori logici a livello di codice#super[G] sorgente.
 
@@ -273,7 +331,7 @@ I test di unità verificano il comportamento corretto delle singole unità di co
   caption: caption_test_unità
 )
 
-== 3.2 Test di integrazione
+== 4.2 Test di integrazione
 
 I test di integrazione servono a verificare che più unità di codice#super[G] funzionino correttamente insieme. L'obiettivo è individuare problemi che emergono quando i vari moduli interagiscono tra loro, ad esempio errori di comunicazione tra componenti o malintesi sui formati di dati scambiati. Questi test sono particolarmente utili quando si integrano sistemi esterni come database, API o servizi#super[G] di terze parti.
 
@@ -288,7 +346,7 @@ I test di integrazione servono a verificare che più unità di codice#super[G] f
   caption: caption_test_integrazione
 )
 
-== 3.3 Test di sistema
+== 4.3 Test di sistema
 
 I test di sistema valutano il comportamento del software nel suo complesso, simulando l'uso reale da parte dell'utente in un ambiente quanto più possibile simile alla produzione. Questo tipo di test include tutti i componenti integrati e mira a verificare che il sistema nel suo insieme soddisfi i requisiti#super[G] funzionali e non funzionali. È un passaggio fondamentale prima del collaudo finale.
 
@@ -305,7 +363,7 @@ I test di sistema valutano il comportamento del software nel suo complesso, simu
 
 #pagebreak()
 
-== 3.4 Test di regressione
+== 4.4 Test di regressione
 
 I test di regressione hanno lo scopo di assicurare che le nuove modifiche al codice#super[G], come correzioni di bug o l'introduzione di nuove funzionalità, non abbiano introdotto errori in funzionalità esistenti. Vengono eseguiti regolarmente durante lo sviluppo continuo e sono spesso automatizzati per garantire un controllo rapido ed efficace ogni volta che il software viene aggiornato.
 
@@ -320,7 +378,7 @@ I test di regressione hanno lo scopo di assicurare che le nuove modifiche al cod
   caption: caption_test_regressione
 )
 
-== 3.5 Test di accettazione
+== 4.5 Test di accettazione
 
 I test di accettazione vengono eseguiti per verificare che il software soddisfi i requisiti#super[G] concordati con il cliente#super[G] o l'utente finale. Sono spesso definiti sulla base di scenari realistici o specifiche formali (come le User Story o i Criteri di Accettazione). Questi test rappresentano l'ultima fase di verifica prima del rilascio del prodotto#super[G] e determinano se esso può essere considerato “pronto per l'uso”.
 
@@ -335,10 +393,10 @@ I test di accettazione vengono eseguiti per verificare che il software soddisfi 
   caption: caption_test_accettazione
 )
 
-= 4. Cruscotto di Valutazione
+= 5. Cruscotto di Valutazione
 // Inserire qui i vari punti di valutazione delle metriche in base alle metriche di qualità che verranno riportate nella sezione 2, per il momento si può lasciare vuoto
 //4.1 Valutazione dei costi (costo attuale e costo pianificato per ogni sprint)
-== 4.1 Valutazione dei costi
+== 5.1 Valutazione dei costi
 
 #let valori_grafico_costi_atteso = (
   (1,970), (2,1020), 
@@ -366,92 +424,3 @@ I test di accettazione vengono eseguiti per verificare che il software soddisfi 
 // 
 // sopra ogni grafico scrivere una breve descrizione del grafico che si sta per visualizzare
 // 
-
-= 5. Considerazioni di Miglioramento Continuo
-== 5.1 Introduzione
-Il miglioramento continuo è un processo fondamentale per garantire la qualità del prodotto#super[G] software e il successo del progetto. Attraverso l'analisi delle metriche di qualità, delle valutazioni e dei feedback ricevuti (Interni ed Esterni), è possibile identificare aree di miglioramento e implementare azioni correttive.
-Il gruppo di lavoro si impegna a monitorare costantemente le metriche e a raccogliere feedback per garantire un miglioramento continuo del processo di sviluppo e del prodotto#super[G] finale.
-
-//I periodi possono essere indicati come sprint, generalmente (per esempio inizio progetto) o con delle date specifiche
-
-== 5.2 Valutazioni sull'organizzazione
-
-Raccoglie eventuali criticità emerse nella gestione del progetto, nella comunicazione interna o nella distribuzione delle attività, indicando le soluzioni adottate per migliorare l'efficienza organizzativa.
-
-#let header_autovalutazione_organizzazione = (
-  [*Periodo*],[*Problema*],[*Soluzione*]
-)
-#let voci_autovalutazione_organizzazione = (
-  [Primo Sprint], [Alcune task su Jira risultavano non assegnate.], [Il team si impegna a mantenere le task assegnate a un membro del team, in modo da garantire che ogni task abbia un responsabile e che le attività siano distribuite equamente. Vedi *A14* del *verbale interno del 2025-04-11*.],
-  [Primo e Secondo Sprint], [Scrittura di un verbale esterno in modo non adeguato.], [In riferimento alla *A16* del *verbale interno del 2025-04-15* sono state introdotte politiche di comunicazione scritta volte a garantire chiarezza, coerenza e professionalità, in particolare nei contesti di comunicazione esterna.],
-
-)
-#let caption_autovalutazione_organizzazione = (
-  [Valutazioni sull'organizzazione]
-)
-#show: automiglioramento_table.with(
-  header: header_autovalutazione_organizzazione,
-  voci: voci_autovalutazione_organizzazione,
-  caption: caption_autovalutazione_organizzazione
-)
-
-#pagebreak()
-== 5.3 Valutazioni sui ruoli
-
-Analizza eventuali problematiche legate all'assegnazione dei ruoli o alla copertura delle responsabilità, proponendo modifiche per garantire una gestione più equilibrata e funzionale del team.
-
-#let header_autovalutazione_ruoli = (
-  [*Periodo*],[*Ruolo*],[*Problema*],[*Soluzione*]
-)
-#let voci_autovalutazione_ruoli = (
-  [Primo Sprint],[Verificatore], [I verificatori#super[G] non is accorgevano di documenti/task da verificare su Jira.], [In riferimento alla *D15* del *verbale interno del 2025-04-11* è stato deciso di menzionare il ruolo di verificatori all'assegnazione della task per generare una notifica.],
-  [Primo Sprint], [Tutti], [Incertezza nell'assunzione dei nuovi ruoli per mancanza di indicazioni chiare su compiti e responsabilità.], [In riferimento al *verbale interno del 2025-04-11* è stato deciso che per garantire continuità al lavoro svolto che almeno un membro del team di lavoro dovrà mantenere il ruolo per lo sprint successivo.],
-  )
-#let caption_autovalutazione_ruoli = (
-  [Valutazioni sui ruoli]
-)
-#show: automiglioramento_table.with(
-  header: header_autovalutazione_ruoli,
-  voci: voci_autovalutazione_ruoli,
-  caption: caption_autovalutazione_ruoli
-)
-#pagebreak()
-== 5.4 Valutazioni sugli strumenti
-
-Valuta l'efficacia degli strumenti software e tecnici utilizzati durante il progetto, evidenziando limiti o difficoltà e suggerendo soluzioni o alternative più adeguate.
-
-#let header_autovalutazione_strumenti = (
-  [*Periodo*],[*Strumento*],[*Problema*],[*Soluzione*]
-)
-#let voci_autovalutazione_strumenti = (
-  [Primo Sprint], [Jira], [Tracciabilità del tempo impiegato per portare a compimento le task.], [È stata sottolineata l'importanza, per ogni membro del Team, di registrare il tempo dedicato all'esecuzione delle proprie task in un apposito campo. Tale accorgimento faciliterà la rendicontazione finale delle ore suddivise per membro e per ruolo, al termine di ciascuno sprint. Vedi *A15* del *verbale interno del 2025-04-11*.],
-  [Primo e Secondo Sprint],[Github],[Politica di commit e sviluppo su branch non chiara.],[In merito alla *D18* del *verbale interno del 2025-04-15* si ha adottato la nomenclatura e l'uso del modello di branching git-flow.],
-  )
-#let caption_autovalutazione_strumenti = (
-  [Valutazioni sugli strumenti]
-)
-#show: automiglioramento_table.with(
-  header: header_autovalutazione_strumenti,
-  voci: voci_autovalutazione_strumenti,
-  caption: caption_autovalutazione_strumenti
-)
-#pagebreak()
-
-== 5.5 Valutazioni sul prodotto#super[G]
-
-Riporta le osservazioni sul prodotto finale, inclusi eventuali difetti, mancanze o miglioramenti suggeriti, con l'obiettivo di incrementarne la qualità e soddisfare meglio le aspettative degli stakeholder.
-
-#let header_autovalutazione_prodotto = (
-  [*Periodo*],[*Riferimento*],[*Problema*],[*Soluzione*]
-)
-#let voci_autovalutazione_prodotto = (
-  [---], [---], [---], [---]
-  )
-#let caption_autovalutazione_prodotto = (
-  [Valutazioni sul prodotto#super[G]]
-)
-#show: automiglioramento_table.with(
-  header: header_autovalutazione_prodotto,
-  voci: voci_autovalutazione_prodotto,
-  caption: caption_autovalutazione_prodotto
-)
