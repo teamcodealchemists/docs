@@ -23,8 +23,8 @@
 )
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
-    [1.0.0], [22/06/2025], [-], [?], [Approvazione del documento],
-    [0.1.0], [21/06/2025], [M.Pretto],[?], [Prima stesura del documento]
+    [1.0.0], [22/06/2025], [-], [M. Dalla Pozza], [Approvazione del documento],
+    [0.1.0], [21/06/2025], [M. Pretto], [M. Dalla Pozza], [Prima stesura del documento]
 
 )
 #let contenuto = (
@@ -93,7 +93,6 @@
 
 === 2.3.2 Definizione delle attività da intraprendere
   Al termine della riunione, il nuovo responsabile#super[G], #p.alex, ha redatto un documento interno contenente l’elenco delle attività di progetto, successivamente condiviso con tutti i membri del team.
-
   
   #pagebreak()
 = 3. Esiti della riunione
@@ -101,17 +100,15 @@
 
   Eventuali risultati emersi o criticità riscontrate saranno affrontati e formalizzati nei prossimi incontri. Il responsabile resta a disposizione per supportare il team in caso di eventuali difficoltà.
 
-
-// DA SISTEMARE
   #pagebreak()
 = 4. Tabella delle decisioni e azioni
     #let voci_tabella = (
-    [?], [Decisione di aumentare il numero di programmatori per velocizzare lo sviluppo del PoC],
-    [?], [Assegnazione dei ruoli per il prossimo sprint],
-    [?], [Decisione di terminare la stesura del documento Analisi dei Requisiti per approvazione dell'azienda],
-    [?], [Decisione di effettuare un colloquio con il *#p.cardin*],
-    [?], [Proseguimento con la stesura degli altri documenti di progetto],
-    [?], [Stesura del Verbale Interno del 20-06-2025],
+    [D37], [Decisione di aumentare il numero di programmatori per velocizzare lo sviluppo del PoC],
+    [A20], [Assegnazione dei ruoli per il prossimo sprint],
+    [A21], [Ultimare la stesura del documento Analisi dei Requisiti per approvazione dell'azienda],
+    [D38], [Decisione di effettuare un colloquio con il *#p.cardin*],
+    [A22], [Proseguimento con la stesura degli altri documenti di progetto],
+    [DOC27], [Stesura del Verbale Interno del 20-06-2025],
   )
 
   #show: decision_table.with(

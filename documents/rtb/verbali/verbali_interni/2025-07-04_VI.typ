@@ -93,17 +93,14 @@
 
   Eventuali risultati emersi o criticità riscontrate saranno affrontati e formalizzati nei prossimi incontri. Il responsabile resta a disposizione per supportare il team in caso di eventuali difficoltà.
 
-// DA SISTEMARE AGGIORNATO UNA VOLTA TERMINATO IL PRECEDENTE VERBALE
   #pagebreak()
   = 4. Tabella delle decisioni e azioni
     #let voci_tabella = (
-    /*
-    [D34], [Terminare il POC nella prima metà dell'ottavo sprint],
-    [D35], [Effettuare un incontro con M31 dopo la conclusione del POC],
-    [D36], [Finire la stesura dei documenti],
-    [D37], [Richiesta di candidatura del RTB],
-    [DOC26], [Stesura del verbale interno in data 04/07/2025]
-    */
+    [A23], [Terminare il POC nella prima metà dell'ottavo sprint],
+    [D39], [Effettuare un incontro con M31 dopo la conclusione del POC],
+    [A24], [Ultimare la stesura dei documenti],
+    [A25], [Invio richiesta di candidatura RTB],
+    [DOC28], [Stesura del verbale interno in data 04/07/2025]
   )
 
   #show: decision_table.with(
