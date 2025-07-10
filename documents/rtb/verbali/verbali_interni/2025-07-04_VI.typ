@@ -21,6 +21,7 @@
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
     [1.0.0], [07/06/2025], [-], [N. Bolzon], [Revisione e approvazione del documento],
+    [0.1.1], [06/07/2025], [N. Bolzon], [N. Bolzon], [Piccola miglioria con correzione sintattica],
     [0.1.0], [06/07/2025], [A. Shu], [N. Bolzon], [Prima stesura del documento]
 
 )
@@ -58,7 +59,7 @@
   = 2. Dettagli della riunione
   Il verbale iniziale viene redatto da *#p.alex* e verificato da *#p.nicolo*. La riunione è stata moderata dal responsabile uscente, *#p.alex*. \
 
-  == 2.1 Lavori in svolgimento durante lo sprint RTB 7
+  == 2.1 Lavori svolti durante lo sprint RTB 7
   Nel settimo sprint#super[G], il team si è concentrato principalmente sul miglioramento del documento di Analisi dei Requisiti e soprattutto sullo sviluppo del PoC _(Proof of Concept)_. \
 
   === 2.1.1 Miglioramento analisi dei requisiti
