@@ -62,13 +62,19 @@
   Nel settimo sprint#super[G], il team si è concentrato principalmente sul miglioramento del documento di Analisi dei Requisiti e soprattutto sullo sviluppo del PoC _(Proof of Concept)_. \
 
   === 2.1.1 Miglioramento analisi dei requisiti
+  A seguito di un incontro di confronto con il prof. Cardin, sono emerse alcune imprecisioni nei casi d’uso e nel documento di Analisi dei Requisiti. Dopo aver analizzato e compreso gli errori riscontrati, sono state apportate le opportune correzioni e migliorie. Sebbene le modifiche abbiano richiesto un impegno considerevole in termini di tempo, esse hanno contribuito a garantire una maggiore coerenza, chiarezza e conformità alle normative nella stesura del documento. La revisione e l’aggiornamento del documento si sono conclusi negli ultimi giorni.
 
   === 2.1.2 Sviluppo del PoC
+  Lo sviluppo del Proof of Concept (PoC) risulta completato. Sono stati conclusi i microservizi relativi a ordine, inventario e inventario cloud, nonché il collegamento tra i microservizi tramite API, che è stato correttamente configurato.
+  I programmatori hanno portato a termine le seguenti attività: creazione del microservizio di ordine, configurazione del database per il servizio ordine e sviluppo del microservizio di inventario aggregato. Restano invece ancora in corso il setup dell’API Gateway e la configurazione di NATS JetStream, attività per le quali si prevede il completamento entro la prima metà dell’ottavo sprint.
+  Al fine di garantire maggiore chiarezza e manutenibilità del codice, il team ha inoltre eseguito attività di pulizia del codice.
 
   == 2.2 Analisi delle criticità e valutazione avanzamento del lavoro
-
+  Durante la riunione, il team ha fornito un aggiornamento sulla situazione attuale, sottolineando la criticità rappresentata dal rallentamento delle attività dovuto alla sessione estiva degli esami. Tale circostanza, attesa e coerente con quanto previsto nel Piano di Progetto, ha avuto un impatto meno significativo nell’ultimo sprint, grazie al fatto che molti membri del team hanno concluso i propri esami e risultano ora maggiormente disponibili. Il rallentamento è stato avvertito in particolare nello sviluppo del Proof of Concept (PoC).
 
   == 2.3 Definizione del prossimo sprint
+  Dopo aver considerato concluso il settimo sprint, il team ha provveduto all’assegnazione dei ruoli e delle responsabilità ai membri, come riportato nella sezione seguente del presente documento.
+  L’ottavo sprint, anch’esso della durata di due settimane, avrà inizio il *7 luglio* e si concluderà il *18 luglio*. A questo sprint#super[G] si farà riferimento come Sprint#super[G] RTB#super[G] 8. Il prossimo sprint sarà focalizzato principalmente sulla presentazione del Proof of Concept (PoC)#super[G] all’azienda e sulla sottomissione della candidatura per la verifica RTB#super[G].
 
   === 2.3.1 Assegnazione di ruoli e responsabilità ai membri del team
   Durante la riunione, il team ha discusso e assegnato i ruoli e le responsabilità di ciascun membro, conformemente a quanto stabilito nelle Norme di Progetto. In linea con tali indicazioni, la rotazione dei ruoli è avvenuta come segue:
@@ -103,23 +109,4 @@
   #show: decision_table.with(
   voci: voci_tabella
   )
-  
-  dividendosi le task soprattutto tra i programmatori. Le attività sono state: Setup API Gateway, Setup Nats Jetstream, Creazione microservizio inventario aggregato, Creazione Microservizio di ordine e Setup Database Ordine. \
-
-  === 2.1.1 Lavori in svolgimento dal responsabile#super[G]
-  Il responsabile#super[G] si sta occupato di coordinare le attività del team e di monitorare l'andamento dei lavori. Ha inoltre partecipato attivamente la creazione del microservizio Ordine.
-
-  === 2.1.2 Lavori svolti dall'amministratore#super[G]
-  L'amministratore#super[G] ha il compito di gestire le varie attività del team e di coordinare le attività di sviluppo. \
-  Inoltre si è occupato a risolvere i problemi presenti nei casi d'uso e nei requisiti dell’Analisi dei Requisiti#super[G]
-
-  === 2.1.3 Lavori svolti dal programmatore#super[G]
-  I programmatori#super[G] hanno completato Creazione Microservizio di ordine, Setup Database Ordine e Creazione microservizio inventario aggregato, mentre per i compiti Setup API Gateway e Setup Nats Jetstream sono ancora in corso, e si provede di completarlo nella prima metà dell'ottavo sprint.
-
-  == 2.2 Criticità emerse
-  Alcuni colleghi sono state influenzate dalla sessione di esami estiva, perciò erano impossibilitati nello sviluppo del POC.\
-
-
-  == 2.3 Organizzazione future deadline
-  Si è discusso di fissare la deadline per la conclusione del POC nel prossimo sprint. Nella prima metà dello sprint si prevede di concludere gli ultimi compiti del POC e fissare una data con l'azienda *M31*; nella seconda metà, invece, si procederà con il completamento della stesura di tutti i documenti, infine, con la richiesta di un incontro per la candidatura al RTB #super[G].
   
