@@ -25,9 +25,9 @@
 )
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
-  [2.0.0], [?], [_M31_], [-], [Approvazione del documento da parte di _M31_],
-  [1.0.0], [?], [-], [?], [Approvazione interna del documento],
-  [0.1.0], [11/07/2025], [M.Pretto],[?], [Redazione iniziale del documento]
+  [2.0.0], [16/07/2025], [_M31_], [-], [Approvazione del documento da parte di _M31_],
+  [1.0.0], [14/07/2025], [-], [R. Zangla], [Approvazione interna del documento],
+  [0.1.0], [11/07/2025], [M. Pretto],[N. Bolzon], [Redazione iniziale del documento]
 
 )
 #let contenuto = (
@@ -70,13 +70,13 @@
 
 #pagebreak()
 = 2. Dettagli della riunione
-La riunione si è tenuta in modalità mista. Cinque membri del team hanno partecipato direttamente dalla sala riunioni dell'azienda. Un altro membro, a causa di una problematica medica, si è invece collegato tramite la piattaforma _Microsoft Teams_. Molto importante e apprezzato è stato il fatto di potervi partecipare in presenza, in modo tale da poter avere un confronto diretto e più immediato con i responsabili del progetto dell'azienda _M31_.
+La riunione si è tenuta in modalità mista. Cinque membri del team hanno partecipato direttamente dalla sala riunioni dell'azienda. Un altro membro, a causa di una problematica medica, si è invece collegato tramite la piattaforma _Microsoft Teams_. È stato molto importante e apprezzato il poter partecipare in presenza, in modo tale da poter avere un confronto diretto e più immediato con i responsabili del progetto dell'azienda _M31_.
 
 == 2.1 Presentazione del PoC#super[G] _(Proof of Concept#super[G])_ e discussione
-La riunione inizia esponendo ai responabili dell'azienda _M31_ le problematiche riscontrate durante lo sviluppo del PoC. E' stato infatti spiegato loro come lo studio delle nuove tecnologie, il tempo speso per l'Analisi dei Requisiti e la sessione d'esami siano stati fattori che hanno rallentato lo sviluppo negli ultimi due sprint.\
-Si è successivamente iniziato a parlare del loro effettivamente svolto che può essere sintetetizzato con la creazione dei microservizi e il conseguente collegamento fra di essi.\
-Dopo questa breve introduzione, il Team _Code Alchemists_, per voce del responsabile dei programmatori#super[G] *#p.nicholas*, ha presentato il _Proof of Concept#super[G] (PoC#super[G])_, mostrandono l'effettivo funzionamento mediante l'esecuzione. \
-Durante tale esposizione è stato mostrato ai responsabili aziendali prima l'esecuzione del microservizio _Inventario_ e dopodiche quella del microservizio _Ordini_. Sono state illustrate le diverse fasi del programma soffermandosi in particolare su alcune (ad esempio la modifica di un prodotto, piuttosto che l'aggiunta di un nuovo ordine). Si è inoltre spesso mostrato il codice relativo a ciò che veniva realmente eseguito. Contestualmente alcune domande e dubbi sono stati posti dall'azienda, i quali hanno subito trovato risposta dai membri del team.
+La riunione inizia esponendo ai responabili dell'azienda _M31_ le problematiche riscontrate durante lo sviluppo del PoC. E' stato infatti spiegato loro come lo studio delle nuove tecnologie e dell'architettura scelta, il tempo speso per l'Analisi dei Requisiti e la sessione d'esami siano stati fattori che hanno rallentato lo sviluppo negli ultimi due sprint.\
+Si è successivamente iniziato a parlare di quanto effettivamente svolto, ovvero la creazione dei microservizi e il conseguente collegamento fra di essi.\
+Dopo questa breve introduzione, il Team _Code Alchemists_, per voce del responsabile dei programmatori#super[G] *#p.nicholas*, ha presentato il _Proof of Concept#super[G] (PoC#super[G])_, mostrandone l'effettivo funzionamento mediante l'invio di diversi comandi Postman alla API. \
+Durante tale esposizione è stato mostrato ai responsabili aziendali prima l'esecuzione del microservizio _Inventario_ e dopodiche quella del microservizio _Ordini_. Sono state illustrate le diverse fasi del programma soffermandosi in particolare su alcune (ad esempio, mostrare a schermo il contenuto di un determinato inventario, effettuare modifiche a un prodotto, piuttosto che aggiungere un nuovo ordine). A seguito di modifiche apportate a dei magazzini locali, è stato sempre evidenziato come tali cambiamenti si riflettessero subito dopo anche nell'aggregato cloud, dando prova, dunque, del corretto funzionamento della sincronizzazione tra i dati locali e i dati in cloud. Inoltre, si è spesso mostrato il codice relativo a ciò che veniva realmente eseguito. E' stato inoltre fatto presente di come sia stata implementata una logica di transizione tra gli stati degli ordini, così che vengano consentiti solamente cambiamenti di stato progressivi e ragionevoli. Contestualmente, alcune domande e dubbi sono stati posti dall'azienda, i quali hanno subito trovato risposta dai membri del team.
 Oltre a ciò, molti sono stati i consigli ricevuti.\
 
 
@@ -87,8 +87,8 @@ Al termine della presentazione del _Proof of Concept#super[G] (PoC#super[G])_ i 
 
 #pagebreak()
 = 3. Esiti della riunione
-Il _Team Code Alchemists_ proseguirà, nel prossimo periodo, con l'ultimazione dei documenti necessari alla candidatura _RTB_ e preseterà in seguito la candidatura stessa. \
-Dopodichè procedera con lo sviluppo della fase _PB_
+Il _Team Code Alchemists_ proseguirà, nel prossimo periodo, con l'ultimazione dei documenti necessari alla candidatura _RTB_ e presenterà in seguito la candidatura stessa. \
+Dopodichè procedera con lo sviluppo della fase _PB_.
 L'azienda, come consuetudine, si è detta pronta a supportarci anche nella seconda fase (quindi quella del _PB_) di questo progetto, tramite email e incontri in sede.
 
 Il _Team Code Alchemists_ desidera infine ringraziare l'azienda _M31_ per la consueta professionalità e disponibilità dimostrate nel supportarci durante lo sviluppo del progetto.
