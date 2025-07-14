@@ -29,9 +29,9 @@
   /* formato:  [text],  OPPURE  "text",  */
   [0.3.0],
   [10/07/2025],
-  [],
-  [],
-  [],
+  [-],
+  [-],
+  [-],
 
   [0.2.0],
   [27/05/2025],
@@ -239,6 +239,7 @@ Per ogni categoria, i codici#super[G] definiti precedentemente sono seguiti da u
   caption: caption_processi
 )
 
+#pagebreak()
 = 3 Qualità di Prodotto
 La qualità di prodotto si riferisce alle caratteristiche e alle proprietà che rendono il software conforme alle aspettative degli stakeholder e agli standard prefissati. Essa viene valutata attraverso metriche oggettive che misurano aspetti come affidabilità, manutenibilità, efficienza e usabilità.
 
@@ -276,10 +277,16 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
 
 == 3.2 Affidabilità
 
+/*
+  Branch coverage: percentuale di rami del codice coperti dai test.
+  Statement coverage: percentuale di istruzioni eseguite almeno una volta dai test.
+  Failure density: numero di guasti rilevati per funzione punto (FP) o per KLOC.
+*/
+
 #let voci_tabella_prodotto_affidabile = (
-    [---], [---], [---], [---],
-    [---], [---], [---], [---],
-    [---], [---], [---], [---],
+    [QPA01], [Branch coverage], [>= 70%], [>= 80%],
+    [QPA02], [Statement coverage], [>= 70%], [>= 80%],
+    [QPA03], [Failure density], [<= 0.5], [<= 0.1],
   )
 #let caption_prodotto_affidabile = (
   [Metriche per l'affidabilità del prodotto#super[G] software]
@@ -290,14 +297,83 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
 )
 
 == 3.3 Manutenibilità
+/*
+  Cyclomatic complexity: misura la complessità del codice#super[G] in base al numero di percorsi indipendenti.
+  Code smell: indicatori di potenziali problemi nel codice#super[G] che potrebbero influenzare la manutenibilità.
+  Coefficient of coupling: misura il grado di dipendenza tra moduli o classi.
+*/
+
+#let voci_tabella_prodotto_manutenibile = (
+    [QPM01], [Complessità ciclomatica], [<= 20], [<= 10],
+    [QPM02], [Code smell rilevati], [<= 10], [<= 5],
+    [QPM03], [Coefficient of coupling], [<= 0.5], [<= 0.3],
+)
+#let caption_prodotto_manutenibile = (
+  [Metriche per la manutenibilità del prodotto#super[G] software]
+)
+#show: qualifica_table.with(
+  voci: voci_tabella_prodotto_manutenibile,
+  caption: caption_prodotto_manutenibile
+)
 
 == 3.4 Efficienza
 
+/*
+  Tempo di risposta medio: tempo medio necessario per completare un'operazione.
+  Utilizzo della memoria: percentuale di memoria utilizzata rispetto a quella disponibile.
+  Throughput: numero di operazioni completate in un dato intervallo di tempo.
+*/
+#let voci_tabella_prodotto_efficiente = (
+    [QPE01], [Tempo di risposta medio], [<= 200 ms], [<= 100 ms],
+    [QPE02], [Utilizzo della memoria], [<= 80%], [<= 60%],
+    [QPE03], [Throughput], [>= 100 operazioni/s], [>= 200 operazioni/s],
+  )
+#let caption_prodotto_efficiente = (
+  [Metriche per l'efficienza del prodotto#super[G] software]
+)
+#show: qualifica_table.with(
+  voci: voci_tabella_prodotto_efficiente,
+  caption: caption_prodotto_efficiente
+)
+
 == 3.5 Usabilità
+
+/*
+  Time on task: tempo medio necessario per completare un'operazione.
+  Error rate: percentuale di errori commessi dagli utenti durante l'uso del software.
+*/
+
+#let voci_tabella_prodotto_usabile = (
+    [QPU01], [Time on task], [<= 30 s], [<= 20 s],
+    [QPU02], [Error rate], [<= 5%], [<= 2%],
+  )
+#let caption_prodotto_usabile = (
+  [Metriche per l'usabilità del prodotto#super[G] software]
+)
+#show: qualifica_table.with(
+  voci: voci_tabella_prodotto_usabile,
+  caption: caption_prodotto_usabile
+)
 
 == 3.6 Portabilità
 
+/*
+  Portability index: misura la facilità con cui il software può essere trasferito tra ambienti diversi.
+  Cross-platform compatibility: verifica della compatibilità su diverse piattaforme (es. Windows, Linux, macOS).
+*/
+#let voci_tabella_prodotto_portabile = (
+    [QPP01], [Portability index], [>= 70%], [>= 80%],
+    [QPP02], [Cross-platform compatibility], [100%], [100%],
+  )
+#let caption_prodotto_portabile = (
+  [Metriche per la portabilità del prodotto#super[G] software]
+)
+#show: qualifica_table.with(
+  voci: voci_tabella_prodotto_portabile,
+  caption: caption_prodotto_portabile
+)
 
+#pagebreak()
 = 4. Metodologie di Testing
 Per garantire la qualità del prodotto#super[G] software, è fondamentale adottare metodologie di testing adeguate.
 
@@ -314,7 +390,6 @@ Per ogni test viene specificato uno stato, che può essere:
 - *TS*: Test Superato;
 - *TF*: Test Fallito.
 
-#pagebreak()
 
 == 4.1 Test di unità
 
@@ -361,7 +436,6 @@ I test di sistema valutano il comportamento del software nel suo complesso, simu
   caption: caption_test_sistema
 )
 
-#pagebreak()
 
 == 4.4 Test di regressione
 
@@ -393,16 +467,17 @@ I test di accettazione vengono eseguiti per verificare che il software soddisfi 
   caption: caption_test_accettazione
 )
 
+#pagebreak()
 = 5. Cruscotto di Valutazione
 // Inserire qui i vari punti di valutazione delle metriche in base alle metriche di qualità che verranno riportate nella sezione 2, per il momento si può lasciare vuoto
-//4.1 Valutazione dei costi (costo attuale e costo pianificato per ogni sprint)
 == 5.1 Valutazione dei costi
+Il cruscotto di valutazione dei costi permette di monitorare l'andamento dei costi rispetto a quelli pianificati, evidenziando eventuali scostamenti e permettendo una gestione più efficace del budget. Le metriche principali includono il valore atteso, il costo attuale, il valore effettivo, l'indice di prestazione dei costi e il preventivo al completamento.
 
 #let valori_grafico_costi_atteso = (
-  (1,970), (2,1020), 
+  (1,970), (2,1020), (3,870), (4,1160), (5,1090), (6,1190), (7,980)
 )
 #let valori_grafico_costi_reale = (
-  (1,970), (2,790), 
+  (1,970), (2,790), (3,865), (4,1220), (5,955), (6,985), (7,980)
 )
 #show : graph_line.with(
   data_atteso: valori_grafico_costi_atteso,
@@ -416,11 +491,25 @@ I test di accettazione vengono eseguiti per verificare che il software soddisfi 
   y-tick-step: 100
 )
 
-//4.2 Grafico valore atteso ed effettivo
-//4.3 Indice di prestazione dei tempi (tempo attuale e tempo pianificato per ogni sprint) [grafico a barre eventualmente]
-//4.4 Grafico indice di stabilità dei requisiti#super[G] 
-//4.5 Grafico indice di Gulpease (generale) [grafico a barre eventualmente]
-//4.6 Grafico di efficienza in termini di tempo
+Possiamo osservare che il costo atteso e il costo reale sono molto vicini, con un leggero scostamento nei primi sprint. Questo indica una buona gestione dei costi fino a questo punto del progetto.\
+Gli scostamenti sono minimi e non superano il 10% rispetto al costo atteso, il che è un buon segno di stabilità finanziaria del progetto.
+
+== 5.2 Grafico valore atteso ed effettivo
+== 5.3 Indice di prestazione dei tempi (tempo attuale e tempo pianificato per ogni sprint) [grafico a barre eventualmente]
+== 5.4 Grafico indice di stabilità dei requisiti#super[G] 
+== 5.5 Grafico indice di Gulpease (generale) [grafico a barre eventualmente]
+#let valori_grafico_gulpease = (
+  (1, 40), (2, 38), (3, 50), (4, 55), (5, 58), (6, 58), (7, 58)
+)
+#show : graph_bar.with(
+  data: valori_grafico_gulpease,
+  label_x: "Sprint",
+  label_y: "Indice di Gulpease",
+  y-max: 100,
+  y-min: 0,
+  y-tick-step: 10
+)
+== 5.6 Grafico di efficienza in termini di tempo
 // 
 // sopra ogni grafico scrivere una breve descrizione del grafico che si sta per visualizzare
 // 
