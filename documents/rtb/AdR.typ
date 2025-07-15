@@ -13,10 +13,10 @@
 */
 
 #let titolo = "Analisi dei requisiti"
-#let status = "Approvato"
+#let status = "In Redazione"
 #let destinatario = "M31"
 
-#let versione = "1.0.0"
+#let versione = "0.8.2"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -29,7 +29,7 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
-  [1.0.0], [09/07/2025], [-], [N. Bolzon], [Approvazione del documento],
+  /*[1.0.0], [09/07/2025], [-], [N. Bolzon], [Approvazione del documento],*/
 
   [0.8.2],
   [21/06/2025],
