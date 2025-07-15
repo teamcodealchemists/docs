@@ -1,3 +1,4 @@
+
 #import "@preview/fireside:1.0.0": *
 #metadata[Lettera di presentazione] <titolo>
 
@@ -84,7 +85,8 @@ All'interno è possibile trovare, nella sezione RTB, i documenti sviluppati fino
 
 #colbreak()
 #v(0.5cm)
-  Il costo del progetto, come già stimato prima della candidatura, resta invariato ed è pari a *14.430€*.\
+Il costo del progetto, come già stimato prima della candidatura, rimane invariato e ammonta a *14.430€*.
+La data di consegna del progetto è invece stata rivalutata e fissata come termine ultimo al *12 settembre 2025*.\
   
   Di seguito vengono riportati i componenti del team.
   #v(2em)
@@ -109,8 +111,6 @@ All'interno è possibile trovare, nella sezione RTB, i documenti sviluppati fino
 \
 #v(0.5cm)
  #text(font: "New Computer Modern", size: 11pt)[
-In attesa di un gentile riscontro, si porgono distinti saluti, \
+In attesa di un gentile riscontro si porgono distinti saluti, \
 il Team _Code Alchemists_
 ]
-
-
