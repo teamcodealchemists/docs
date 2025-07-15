@@ -35,7 +35,7 @@
   [21/06/2025],
   [N. Bolzon],
   [M. Pretto],
-  [Aggiunta super[G] mancanti per collegamento al glossario e correzione di alcuni errori minori di battitura],
+  [Aggiunta super[G] mancanti per collegamento al glossario#super[G] e correzione di alcuni errori minori di battitura],
 
   [0.8.1],
   [16/06/2025],
@@ -686,17 +686,17 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore si trova nella pagina inventario di un magazzino.
 
 - *Scenario principale*:
-  + Il Supervisore inserisce il codice EAN (barcode) del prodotto da registrare.
+  + Il Supervisore inserisce il codice EAN (barcode) del prodotto#super[G] da registrare.
   + Se il codice EAN (barcode) è sintatticamente errato → #link(label("uc-9.1"), underline("[UC 9.1]"))
-  + Il Supervisore inserisce il nome del prodotto da registrare.
-  + Il Supervisore inserisce il prezzo unitario del prodotto da registrare.
-  + Se il prezzo unitario del prodotto è sintatticamente errato → #link(label("uc-9.2"), underline("[UC 9.2]"))
-  + Il Supervisore può inserire la quantità di prodotto.
-  + Se la quantità di prodotto è sintatticamente errata → #link(label("uc-9.3"), underline("[UC 9.3]"))
+  + Il Supervisore inserisce il nome del prodotto#super[G] da registrare.
+  + Il Supervisore inserisce il prezzo unitario del prodotto#super[G] da registrare.
+  + Se il prezzo unitario del prodotto#super[G] è sintatticamente errato → #link(label("uc-9.2"), underline("[UC 9.2]"))
+  + Il Supervisore può inserire la quantità di prodotto#super[G].
+  + Se la quantità di prodotto#super[G] è sintatticamente errata → #link(label("uc-9.3"), underline("[UC 9.3]"))
   + Il Supervisore può inserire il valore di soglia minima.
-  + Se il valore di soglia è sintatticamente errato → #link(label("uc-9.4"), underline("[UC 9.4]"))
+  + Se il valore di soglia minima è sintatticamente errato → #link(label("uc-9.4"), underline("[UC 9.4]"))
   + Il Supervisore può inserire il valore di soglia massima.
-  + Se il valore di soglia è sintatticamente errato → #link(label("uc-9.4"), underline("[UC 9.4]"))
+  + Se il valore di soglia massima è sintatticamente errato → #link(label("uc-9.4"), underline("[UC 9.4]"))
   + Il Supervisore conferma i dati inseriti.
   + Il Supervisore torna alla pagina di inventario del magazzino selezionato.
 
@@ -741,7 +741,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
   - Il Supervisore si trova nella pagina di aggiunta nuova tipologia merce per il magazzino selezionato.
-  - Il Supervisore ha inserto un valore di quantità del prodotto non conforme (numero non intero e/o minore di 0).
+  - Il Supervisore ha inserto un valore di quantità del prodotto#super[G] non conforme (numero non intero e/o minore di 0).
 - *Postcondizione*:
   - Il Supervisore si trova nella pagina di aggiunta nuova tipologia merce per il magazzino selezionato.
   - Il Supervisore non ha ancora aggiunto una nuova tipologia di merce all'inventario del magazzino selezionato.
@@ -799,15 +799,15 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
   - Il Supervisore si trova nella pagina inventario di un magazzino.
-  - Il Supervisore ha selezionato il prodotto di cui modificare le quantità.
+  - Il Supervisore ha selezionato il prodotto#super[G] di cui modificare le quantità.
 
 - *Postcondizione*:
-  - I dati di quantità di un prodotto in un singolo magazzino sono stati modificati.
+  - I dati di quantità di un prodotto#super[G] in un singolo magazzino sono stati modificati.
   - Il Supervisore si trova nella pagina inventario di un magazzino.
 
 - *Scenario principale*:
-  + Il Supervisore modifica le quantità di prodotto e/o le soglie minime e/o massime.
-  + Se la quantità di prodotto è sintatticamente errata → #link(label("uc-11.1"), underline("[UC 11.1]")).
+  + Il Supervisore modifica le quantità di prodotto#super[G] e/o le soglie minime e/o massime.
+  + Se la quantità di prodotto#super[G] è sintatticamente errata → #link(label("uc-11.1"), underline("[UC 11.1]")).
   + Se il valore di soglia minima e/o massima è sintatticamente errato → #link(label("uc-11.2"), underline("[UC 11.2]")).
   + Il Supervisore conferma i dati inseriti.
   + Il Supervisore torna alla pagina di inventario del magazzino.
@@ -826,7 +826,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
   - Il Supervisore si trova nella pagina di modifica tipologia merce per il magazzino selezionato.
-  - Il Supervisore ha inserto un valore di quantità del prodotto non conforme (numero non intero e/o minore di 0).
+  - Il Supervisore ha inserto un valore di quantità del prodotto#super[G] non conforme (numero non intero e/o minore di 0).
 - *Postcondizione*:
   - Il Supervisore si trova nella pagina di modifica tipologia merce per il magazzino selezionato.
   - Il Supervisore non ha modificato la tipologia di merce nell'inventario del magazzino selezionato.
@@ -863,14 +863,14 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore si trova nella pagina inserimento ordine di un magazzino.
 
 - *Postcondizione*:
-  - I dati di un prodotto sono inseriti nell'ordine.
+  - I dati di un prodotto#super[G] sono inseriti nell'ordine.
   - Il Supervisore si trova nella pagina inserimento ordine di un magazzino.
 
 - *Scenario principale*:
-  + Il Supervisore inserisce il codice EAN (barcode) del prodotto.
-  + Il Supervisore inserisce la quantità del prodotto.
-  + Se la quantità del prodotto è sintatticamente errata → #link(label("uc-12.1"), underline("[UC 12.1]")).
-  + Il Supervisore inserisce il prezzo unitario del prodotto.
+  + Il Supervisore inserisce il codice EAN (barcode) del prodotto#super[G].
+  + Il Supervisore inserisce la quantità del prodotto#super[G].
+  + Se la quantità del prodotto#super[G] è sintatticamente errata → #link(label("uc-12.1"), underline("[UC 12.1]")).
+  + Il Supervisore inserisce il prezzo unitario del prodotto#super[G].
 
 - *Estensioni*:
   - #link(label("uc-12.1"), underline("[UC 12.1]"))
@@ -884,11 +884,11 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Attore Principale*: Supervisore
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
-  - Il Supervisore si trova nella pagina di inserimento prodotto in un ordine.
-  - Il Supervisore ha inserto un valore di quantità del prodotto non conforme (numero non intero e/o minore di 0).
+  - Il Supervisore si trova nella pagina di inserimento prodotto#super[G] in un ordine.
+  - Il Supervisore ha inserto un valore di quantità del prodotto#super[G] non conforme (numero non intero e/o minore di 0).
 - *Postcondizione*:
-  - Il Supervisore si trova nella pagina di inserimento prodotto in un ordine.
-  - Il Supervisore non ha ancora inserito il prodotto nell'ordine.
+  - Il Supervisore si trova nella pagina di inserimento prodotto#super[G] in un ordine.
+  - Il Supervisore non ha ancora inserito il prodotto#super[G] nell'ordine.
 - *Scenario principale*
   + Il Supervisore riceve un messaggio di errore.
 
@@ -1258,14 +1258,14 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Precondizione*:
   - Il Supervisore Globale è autenticato presso il Sistema.
   - Il Supervisore Globale si trova nella pagina inventario di un magazzino.
-  - Il Supervisore Globale ha selezionato il prodotto di cui modificare il prezzo.
+  - Il Supervisore Globale ha selezionato il prodotto#super[G] di cui modificare il prezzo.
 
 - *Postcondizione*:
-  - Il prezzo unitario di un prodotto è stato globalmente modificato.
+  - Il prezzo unitario di un prodotto#super[G] è stato globalmente modificato.
   - Il Supervisore Globale si trova nella pagina inventario di un magazzino.
 
 - *Scenario principale*:
-  + Il Supervisore Globale modifica il prezzo unitario di un prodotto.
+  + Il Supervisore Globale modifica il prezzo unitario di un prodotto#super[G].
   + Il Supervisore Globale conferma il dato inserito.
   + Il Supervisore Globale torna alla pagina di inventario del magazzino.
 
@@ -1382,21 +1382,21 @@ _Esempio:_
     [*RF04/04*], [Ciascun magazzino deve essere identificato univocamente.], [capitolato#super[G]],
 
     [*RF05*], [*Gestione manuale delle merci.*], [capitolato#super[G]],
-    [*RF05/01*], [I Supervisori possono inserire un nuovo tipo di merce nell'inventario di un magazzino, ciascuna con codice EAN e nome prodotto.], [capitolato#super[G]],
+    [*RF05/01*], [I Supervisori possono inserire un nuovo tipo di merce nell'inventario di un magazzino, ciascuna con codice EAN e nome prodotto#super[G].], [capitolato#super[G]],
     [*RF05/02*], [I Supervisori visualizzano un messaggio di errore se il codice EAN non rispetta la sintassi prevista.], [capitolato#super[G]],
     [*RF05/03*], [I Supervisori possono definire il prezzo unitario all'inserimento di un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
-    [*RF05/04*], [I Supervisori visualizzano un messaggio di errore se il prezzo unitario del prodotto è sintatticamente errato.], [capitolato#super[G]],
+    [*RF05/04*], [I Supervisori visualizzano un messaggio di errore se il prezzo unitario del prodotto#super[G] è sintatticamente errato.], [capitolato#super[G]],
     [*RF05/05*], [I Supervisori possono definire la quantità all'inserimento di un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
-    [*RF05/06*], [I Supervisori visualizzano un messaggio di errore se la quantità del prodotto è sintatticamente errata.], [capitolato#super[G]],
+    [*RF05/06*], [I Supervisori visualizzano un messaggio di errore se la quantità del prodotto#super[G] è sintatticamente errata.], [capitolato#super[G]],
     [*RF05/07*], [Il Supervisore Globale può rimuovere un tipo di merce dall'inventario.], [capitolato#super[G]],
     [*RF05/08*], [I Supervisori possono modificare la quantità di merce nell'inventario dei magazzini.], [capitolato#super[G]],
-    [*RF05/09*], [I Supervisori visualizzano un messaggio di errore se la quantità di merce modificata del prodotto è sintatticamente errata.], [capitolato#super[G]], 
-    [*RF05/10*], [Il Supervisore Globale può modificare il prezzo unitario di un prodotto.], [capitolato#super[G]],
+    [*RF05/09*], [I Supervisori visualizzano un messaggio di errore se la quantità di merce modificata del prodotto#super[G] è sintatticamente errata.], [capitolato#super[G]], 
+    [*RF05/10*], [Il Supervisore Globale può modificare il prezzo unitario di un prodotto#super[G].], [capitolato#super[G]],
 
     [*RF06*], [*Gestione manuale degli ordini.*], [capitolato#super[G]],
     [*RF06/01*], [I Supervisori possono inserire ordini di trasferimento interno tra magazzini selezionando il magazzino di partenza e inserendo uno o più prodotti nell'ordine.], [capitolato#super[G]],
-    [*RF06/02*], [I Supervisori possono inserire ordini di vendita verso l'esterno inserendo l'indirizzo del destinatario e inserendo uno o più prodotto nell'ordine.], [capitolato#super[G]],
-    [*RF06/03*], [I Supervisori visualizzano un messaggio di errore se la quantità di prodotto in un ordine non rispetta la sintassi prevista.], [capitolato#super[G]],
+    [*RF06/02*], [I Supervisori possono inserire ordini di vendita verso l'esterno inserendo l'indirizzo del destinatario e inserendo uno o più prodotto#super[G] nell'ordine.], [capitolato#super[G]],
+    [*RF06/03*], [I Supervisori visualizzano un messaggio di errore se la quantità di prodotto#super[G] in un ordine non rispetta la sintassi prevista.], [capitolato#super[G]],
     [*RF06/04*], [I Supervisori possono annullare ordini "in attesa" e "in elaborazione".], [decisione\ interna],
 
     [*RF07*], [*Auditing dei dati dei magazzini.*], [], 
@@ -1430,7 +1430,7 @@ _Esempio:_
     [*RF12*], [*Gestione degli ordini.*], [capitolato#super[G]],
     [*RF12/01*], [Ciascun magazzino deve verificare la disponibilità delle scorte#super[G] per poter soddisfare un ordine ricevuto.], [capitolato#super[G]],
     [*RF12/02*], [Ciascun magazzino deve identificare l'impossibilità di soddisfare un ordine.], [capitolato#super[G]],
-    [*RF12/03*], [Un magazzino con scorte insufficienti per gestire un ordine, deve richidere un riassortimento al sistema.], [decisione\ interna],
+    [*RF12/03*], [Un magazzino con scorte#super[G] insufficienti per gestire un ordine, deve richidere un riassortimento al sistema.], [decisione\ interna],
     [*RF12/04*], [Ciascun magazzino deve tracciare lo stato degli ordini.], [capitolato#super[G]],
     [*RF12/05*], [I magazzini possono inviare merce verso un altro magazzino tramite un ordine.],[capitolato#super[G]],
     [*RF12/06*], [I magazzini possono ricevere approvvigionamenti dall'esterno tramite ordine.],[capitolato#super[G]],
@@ -1439,7 +1439,7 @@ _Esempio:_
     [*RF12/09*], [Un ordine deve trovarsi in uno dei seguenti stati: "in attesa", "in elaborazione", "in transito", "annullato", "consegnato".], [decisione\ interna],
 
     [*RF13*], [*Riassortimento delle scorte#super[G] tra magazzini.*], [capitolato#super[G]],
-    [*RF13/01*], [Il sistema deve programmare trasferimenti interni al raggiungimento di una soglia critica di un prodotto in un magazzino al fine di bilanciare le scorte.], [capitolato#super[G]],
+    [*RF13/01*], [Il sistema deve programmare trasferimenti interni al raggiungimento di una soglia critica di un prodotto#super[G] in un magazzino al fine di bilanciare le scorte#super[G].], [capitolato#super[G]],
 
     [*RF14*], [*Individuazione dello stato dei magazzini.*], [capitolato#super[G]],
     [*RF14/01*], [Ciascun magazzino può trovarsi in uno dei seguenti stati: "online", "offline".],[capitolato#super[G]],
@@ -1475,7 +1475,7 @@ _Esempio:_
     [*RFD04/08*], [Deve essere possibile effettuare la gestione delle soglie critiche mediante Interfaccia Grafica.], [capitolato#super[G]],
 
     [*RFD05*], [*Produzione di notifiche.*], [capitolato#super[G]],
-    [*RFD05/01*], [Il Sistema deve notificare i Supervisori al superamento dei livelli minimi e massimi di scorte.], [capitolato#super[G]],
+    [*RFD05/01*], [Il Sistema deve notificare i Supervisori al superamento dei livelli minimi e massimi di scorte#super[G].], [capitolato#super[G]],
     [*RFD05/02*], [Il Sistema deve notificare i Supervisori dell'esecuzione del riassortimento automatico.], [capitolato#super[G]],
     [*RFD05/03*], [Ciascun magazzino deve notificare i Supervisori dei cambi di stato degli ordini.], [capitolato#super[G]],
     [*RFD05/04*], [Ciascun magazzino deve notificare i Supervisori dell'impossibilità di soddisfare un ordine.], [capitolato#super[G]],
@@ -1498,7 +1498,7 @@ _Esempio:_
     [*RFD07/07*], [Il sistema deve inviare una richiesta decisionale al Supervisore Globale di riassortimento sulla base del modello di previsione.], [capitolato#super[G]],  
 
     //Requisiti Funzionali opzionali
-    [*RFO01*], [I supervisori devono poter eseguire un ripristino manuale dei dati da un backup.], [capitolato#super[G]],
+    [*RFO01*], [I supervisori devono poter eseguire un ripristino manuale dei dati da un backup#super[G].], [capitolato#super[G]],
 
     [*RFO02*], [*Gestione dei magazzini non operativi.*],[decisione\ interna],
     [*RFO02/01*], [Ciascun magazzino può trovarsi nello stato "non operativo".],[decisione\ interna],
@@ -1610,9 +1610,9 @@ _Esempio:_
     [*RQO01/03*], [Le richieste verso i microservizi devono essere autenticate.], [capitolato#super[G]],
     [*RQO01/04*], [Gli scambi di dati tra microservizi devono essere cifrati.], [capitolato#super[G]],
 
-    [*RQO02*], [*Backup e ripristino dei dati.*], [capitolato#super[G]],
-    [*RQO02/01*], [I dati dei magazzini devono essere sottoposti a backup.], [capitolato#super[G]],
-    [*RQO02/02*], [I dati aggregati su cloud devono essere sottoposti a backup.], [capitolato#super[G]],
+    [*RQO02*], [*Backup#super[G] e ripristino dei dati.*], [capitolato#super[G]],
+    [*RQO02/01*], [I dati dei magazzini devono essere sottoposti a backup#super[G].], [capitolato#super[G]],
+    [*RQO02/02*], [I dati aggregati su cloud devono essere sottoposti a backup#super[G].], [capitolato#super[G]],
     [*RQO02/03*], [I magazzini devono mantenere una copia locale dei propri dati.], [capitolato#super[G]],
     [*RQO02/04*], [Il sistema deve mantenere l'integrità e la consistenza dei dati tra i magazzini.], [capitolato#super[G]],
     ),
