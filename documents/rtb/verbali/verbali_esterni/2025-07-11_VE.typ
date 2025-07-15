@@ -4,8 +4,8 @@
 #let titolo = "Verbale esterno del "
 #let data = "11/07/2025"
 #let titolo = titolo + data
-#let status = "In Revisione"
-#let versione = "0.1.0"
+#let status = "Approvato"
+#let versione = "2.0.0"
 #let destinatario = "M31"
 #let presenze = (
   /* formato: <p.nome,> oppure <"nome",> */
