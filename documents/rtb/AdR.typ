@@ -13,10 +13,10 @@
 */
 
 #let titolo = "Analisi dei requisiti"
-#let status = "In redazione"
+#let status = "Approvato"
 #let destinatario = "M31"
 
-#let versione = "0.8.1"
+#let versione = "1.0.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -29,34 +29,42 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [1.0.0], [09/07/2025], [-], [N. Bolzon], [Approvazione del documento],
+
+  [0.8.2],
+  [21/06/2025],
+  [N. Bolzon],
+  [M. Pretto],
+  [Aggiunta super[G] mancanti per collegamento al glossario e correzione di alcuni errori minori di battitura],
+
   [0.8.1],
   [16/06/2025],
   [N. Bolzon \ N. Moretto \ S. Speranza],
-  [-],
+  [M. Dalla Pozza],
   [Modifiche minori ai casi d'uso e requisiti.],
 
   [0.8.0],
   [13/06/2025],
   [N. Bolzon],
-  [-],
+  [M. Dalla Pozza],
   [Terminata la riscrittura dei casi d'uso con aggiornamento delle tabelle di tracciamento e inserimento delle immagini realtive ad ogni caso d'uso.],
 
   [0.7.2],
   [12/06/2025],
   [N. Bolzon \ N. Moretto \ S. Speranza],
-  [-],
+  [M. Dalla Pozza],
   [Riscrittura di altri casi d'uso, fino al UC28.],
 
   [0.7.1],
   [10/06/2025], 
   [N. Bolzon \ S. Speranza],
-  [-],
+  [M. Dalla Pozza],
   [Riscrittura dei casi d'uso, fino al UC15.],
 
   [0.7.0],
   [09/06/2025],
   [N. Bolzon \ N. Moretto \ S. Marana \ S. Speranza],
-  [-],
+  [M. Dalla Pozza],
   [Riscrittura dei requisiti.],
 
   [0.6.1],
@@ -477,9 +485,11 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Precondizione*:
   - L'Utente non è autenticato nel Sistema.
+
 - *Postcondizione*:
   - L'Utente è ancora non autenticato nel Sistema.
   - Viene fornita all'Utente la possibilità di autenticarsi nuovamente.
+
 - *Scenario principale*
   + L'Utente riceve un messaggio di errore.
 
@@ -712,7 +722,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Scenario principale*
   + Il Supervisore Globale riceve un messaggio di errore.
 
-==== - UC 9.2: Errore sintattico prezzo unitario
+==== - UC 9.2: Errore sintattico prezzo unitario prodotto
 #label("uc-9.2")
 - *Attore Principale*: Supervisore
 - *Precondizione*:
@@ -738,7 +748,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Scenario principale*
   + Il Supervisore Globale riceve un messaggio di errore.
 
-==== - UC 9.4: Errore sintattico valore di soglia
+==== - UC 9.4: Errore sintattico valore di soglia prodotto
 #label("uc-9.4")
 - *Attore Principale*: Supervisore
 - *Precondizione*:
@@ -785,6 +795,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 11: Modifica dati di quantità di un prodotto in un singolo magazzino
 #label("uc-11")
 - *Attore Principale*: Supervisore 
+
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
   - Il Supervisore si trova nella pagina inventario di un magazzino.
@@ -939,7 +950,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore seleziona *Vendita* come tipologia ordine.
 
 #pagebreak()
-=== - UC 16: Annullamento ordine
+=== - UC 15: Annullamento ordine
 #label("uc-15")
 
 #figure(
@@ -969,18 +980,22 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 === - UC 16: Visualizzazione inventario globale
 #label("uc-16")
 #figure(
-  image("assets/UC16.png", width: 50%),
+  image("assets/UC16.png", width: 60%),
   caption: [UC16 - Visualizzazione inventario globale]
 )
 
 - *Attore Principale*: Supervisore Globale
+
 - *Precondizione*:
   - Il Supervisore Globale è autenticato presso il Sistema.
-  - Il Supervisore Globale si trova nella pagina principale (è una pagina di riepilogo).
+  - Il Supervisore Globale si trova nella pagina principale _(è una pagina di riepilogo)_.
+
 - *Postcondizione*:
   - Il Supervisore Globale ha visualizzato l'inventario complessivo di tutti i magazzini.
+
 - *Scenario principale*:
   + Il Supervisore Globale visualizza l'inventario complessivo dei magazzini.
+
 - *Trigger*:
   - Il Supervisore Globale entra nella pagina di *inventario*.
 
@@ -994,11 +1009,14 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 )
 
 - *Attore Principale*: Supervisore
+
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
   - Il Supervisore si trova nella pagina di inventario del magazzino di interesse.
+
 - *Postcondizione*:
   - Il Supervisore ha visualizzato l'inventario di un singolo magazzino selezionato.
+
 - *Scenario principale*:
   + Il Supervisore visualizza l'inventario di un singolo magazzino.
 
@@ -1012,16 +1030,21 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 )
 
 - *Attore Principale*: Supervisore Locale
+
 - *Precondizione*:
   - Il Supervisore Locale è autenticato presso il Sistema.
-  - Il Supervisore Locale si trova nella pagina di principale (è una pagina di riepilogo).
+  - Il Supervisore Locale si trova nella pagina di principale _(è una pagina di riepilogo)_.
+
 - *Postcondizione*:
   - Il Supervisore ha visualizzato l'inventario di un singolo magazzino selezionato
+
 - *Scenario principale*:
   + Il Supervisore Locale seleziona un magazzino.
   + Il Supervisore Locale visualizza l’inventario del magazzino → #link(label("uc-17"), underline("[UC 17]"))  
+
 - *Inclusioni*:
   - #link(label("uc-17"), underline("[UC 17]"))  
+
 - *Trigger*:
   - Il Supervisore Locale entra nella pagina di *inventario*.
 
@@ -1031,7 +1054,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 #label("uc-19")
 
 #figure(
-  image("assets/UC19.png", width: 55%),
+  image("assets/UC19.png", width: 60%),
   caption: [UC19 - Visualizzazione report ordini]
 )
 
@@ -1039,7 +1062,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Precondizione*:
   - Il Supervisore Globale è autenticato presso il Sistema.
-  - Il Supervisore Globale si trova nella pagina principale (è una pagina di riepilogo).
+  - Il Supervisore Globale si trova nella pagina principale _(è una pagina di riepilogo)_.
 
 - *Postcondizione*:
   - Il Supervisore Globale ha visualizzato l'elenco complessivo degli ordini di tutti i magazzini.
@@ -1134,12 +1157,15 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 )
 
 - *Attore Principale*: Supervisore
+
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
   - Il Supervisore si trova nella pagina notifiche.
+
 - *Postcondizione*:
   - Il Supervisore ha visualizzato le notifiche informative prodotte dal sistema.
   - Il Supervisore si trova nella pagina notifiche.
+
 - *Scenario principale*:
   + Il Supervisore visualizza le notifiche informative del sistema.
 
@@ -1160,8 +1186,10 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Precondizione*:
   - Il Supervisore Globale è autenticato presso il Sistema.
   - Esiste almeno una notifica decisionale per il Supervisore.
+
 - *Postcondizione*:
   - La notifica è stata processata e il suo stato è "accettata" o "rifiutata".
+
 - *Scenario principale*:
   + Il Supervisore Globale accede alla funziona di gestione notifiche.
   + Il Sistema presenta la prima notifica in attesa e avvia un timer per la decisione (se non già attivo).
@@ -1191,11 +1219,14 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 )
 
 - *Attore Principale*: Supervisore Globale
+
 - *Precondizione*:
   - Il Supervisore Globale è autenticato presso il Sistema.
   - Il Supervisore Globale si trova nella pagina Impostazioni.
+
 - *Postcondizione*:
   - I parametri di sistema sono stati aggiornati.
+
 - *Scenario principale*:
   + Il Supervisore Globale visualizza i parametri di sistema.
   + Il Supervisore Globale aggiorna uno o più parametri tra i seguenti:
@@ -1205,9 +1236,11 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
     - Tempo dopo cui un ordine#super[G] "in transito" cambia automaticamente stato in "annullato".
   + Il Supervisore Globale conferma l’aggiornamento dei parametri.
   + I parametri vengono aggiornati all’interno del sistema.
+
 - *Scenario alternativo*:
   3. Il Supervisore Globale annulla l’aggiornamento dei parametri.
   + Il sistema mantiene i parametri precedenti e scarta le modifiche.
+
 - *Trigger*:
   - Il Supervisore Locale entra nella pagina di *Impostazioni*.
 
@@ -1221,6 +1254,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 )
 
 - *Attore Principale*: Supervisore Globale
+
 - *Precondizione*:
   - Il Supervisore Globale è autenticato presso il Sistema.
   - Il Supervisore Globale si trova nella pagina inventario di un magazzino.
@@ -1323,34 +1357,46 @@ _Esempio:_
     [*Codice*], [*Descrizione*], [*Fonti*]),
 
     [*RF01*], [*Registrazione del Supervisore Globale.*], [decisione\ interna],
-    [*RF01/01*], [Il Supervisore Globale deve registrarsi al primo avvio del sistema.], [decisione\ interna],
+    [*RF01/01*], [Il Supervisore Globale deve registrarsi al primo avvio del sistema inserendo indirizzo email, numero di cellulare e una password.], [decisione\ interna],
+    [*RF01/02*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se l'email inserita è sintatticamente errata.], [decisione\ interna],
+    [*RF01/03*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se il numero di cellulare inserito è sintatticamente errato.], [decisione\ interna],
+    [*RF01/04*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se la password inserita non rispetta la sintassi.], [decisione\ interna],
+    [*RF01/05*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se la password e la conferma password non corrispondono.], [decisione\ interna],
 
     [*RF02*], [*Autenticazione dell'utente.*], [capitolato#super[G]],
-    [*RF02/01*], [L'utente deve poter accedere al sistema mediante credenziali.], [capitolato#super[G]],
-    [*RF02/02*], [L'utente deve poter effettuare il logout dal sistema.], [capitolato#super[G]],  
+    [*RF02/01*], [L'utente deve poter accedere al sistema mediante credenziali (email e password).], [capitolato#super[G]],
+    [*RF02/02*], [L'utente deve poter effettuare il logout dal sistema.], [capitolato#super[G]],
+    [*RF02/03*], [L'utente visualizza un messaggio di errore in caso di autenticazione fallita.], [capitolato#super[G]],   
 
     [*RF03*], [*Registrazione di nuovi Supervisori Locali.*], [decisione\ interna],
-    [*RF03/01*], [Il Supervisore Globale può registrare a sistema nuovi Supervisori Locali.], [decisione\ interna],
+    [*RF03/01*], [Il Supervisore Globale può registrare a sistema nuovi Supervisori Locali ciascuno con email, numero di cellulare e una password.], [decisione\ interna],
     [*RF03/02*], [Il Supervisore Globale deve assegnare il/i magazzino/i a cui il Supervisore Locale ha accesso in fase di registrazione.], [decisione\ interna],
+    [*RF03/03*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se l'email inserita è sintatticamente errata.], [decisione\ interna],
+    [*RF03/04*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se la password inserita non rispetta la sintassi.], [decisione\ interna],
+    [*RF03/05*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se il numero di cellulare inserito è sintatticamente errato.], [decisione\ interna],
 
     [*RF04*], [*Gestione manuale dei magazzini.*], [capitolato#super[G]],
-    [*RF04/01*], [Il Supervisore Globale deve poter aggiungere un nuovo magazzino a sistema.], [capitolato#super[G]],
+    [*RF04/01*], [Il Supervisore Globale deve poter aggiungere un nuovo magazzino a sistema inserendo il suo indirizzo fisico.], [capitolato#super[G]],
     [*RF04/02*], [Il Supervisore Globale deve poter rimuovere un magazzino dal sistema.], [capitolato#super[G]],
-    [*RF04/03*], [Il Supervisore Globale deve poter modificare informazioni di un magazzino.], [capitolato#super[G]],
+    [*RF04/03*], [Il Supervisore Globale deve poter modificare le informazioni di un magazzino, quali indirizzo del magazzino e/o Supervisore Locale associato.], [capitolato#super[G]],
     [*RF04/04*], [Ciascun magazzino deve essere identificato univocamente.], [capitolato#super[G]],
 
     [*RF05*], [*Gestione manuale delle merci.*], [capitolato#super[G]],
-    [*RF05/01*], [I Supervisori possono inserire un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
-    [*RF05/02*], [I Supervisori possono definire il prezzo unitario all'inserimento di un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
-    [*RF05/03*], [I Supervisori possono definire la quantità all'inserimento di un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
-    [*RF05/04*], [Il Supervisore Globale può rimuovere un tipo di merce dall'inventario.], [capitolato#super[G]],
-    [*RF05/05*], [I Supervisori possono modificare la quantità di merce nell'inventario dei magazzini.], [capitolato#super[G]],
-    [*RF05/06*], [Il Supervisore Globale può modificare il prezzo unitario di un prodotto.], [capitolato#super[G]],
+    [*RF05/01*], [I Supervisori possono inserire un nuovo tipo di merce nell'inventario di un magazzino, ciascuna con codice EAN e nome prodotto.], [capitolato#super[G]],
+    [*RF05/02*], [I Supervisori visualizzano un messaggio di errore se il codice EAN non rispetta la sintassi prevista.], [capitolato#super[G]],
+    [*RF05/03*], [I Supervisori possono definire il prezzo unitario all'inserimento di un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
+    [*RF05/04*], [I Supervisori visualizzano un messaggio di errore se il prezzo unitario del prodotto è sintatticamente errato.], [capitolato#super[G]],
+    [*RF05/05*], [I Supervisori possono definire la quantità all'inserimento di un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
+    [*RF05/06*], [I Supervisori visualizzano un messaggio di errore se la quantità del prodotto è sintatticamente errata.], [capitolato#super[G]],
+    [*RF05/07*], [Il Supervisore Globale può rimuovere un tipo di merce dall'inventario.], [capitolato#super[G]],
+    [*RF05/08*], [I Supervisori possono modificare la quantità di merce nell'inventario dei magazzini.], [capitolato#super[G]],
+    [*RF05/09*], [I Supervisori visualizzano un messaggio di errore se la quantità di merce modificata del prodotto è sintatticamente errata.], [capitolato#super[G]], 
+    [*RF05/10*], [Il Supervisore Globale può modificare il prezzo unitario di un prodotto.], [capitolato#super[G]],
 
     [*RF06*], [*Gestione manuale degli ordini.*], [capitolato#super[G]],
-    [*RF06/01*], [I Supervisori possono inserire ordini di trasferimento interno tra magazzini.], [capitolato#super[G]],
-    [*RF06/02*], [I Supervisori possono inserire ordini di approvvigionamento dall'esterno.], [capitolato#super[G]],
-    [*RF06/03*], [I Supervisori possono inserire ordini di vendita verso l'esterno.], [capitolato#super[G]],
+    [*RF06/01*], [I Supervisori possono inserire ordini di trasferimento interno tra magazzini selezionando il magazzino di partenza e inserendo uno o più prodotti nell'ordine.], [capitolato#super[G]],
+    [*RF06/02*], [I Supervisori possono inserire ordini di vendita verso l'esterno inserendo l'indirizzo del destinatario e inserendo uno o più prodotto nell'ordine.], [capitolato#super[G]],
+    [*RF06/03*], [I Supervisori visualizzano un messaggio di errore se la quantità di prodotto in un ordine non rispetta la sintassi prevista.], [capitolato#super[G]],
     [*RF06/04*], [I Supervisori possono annullare ordini "in attesa" e "in elaborazione".], [decisione\ interna],
 
     [*RF07*], [*Auditing dei dati dei magazzini.*], [], 
@@ -1371,8 +1417,11 @@ _Esempio:_
     [*RF10*], [*Gestione delle soglie critiche.*], [capitolato#super[G]], 
     [*RF10/01*], [I Supervisori possono definire i valori di soglia minima all'inserimento di nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
     [*RF10/02*], [I Supervisori possono definire i valori di soglia massima all'inserimento di nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
-    [*RF10/03*], [Il Supervisore Globale può modificare i valori di soglia minima e massima di ciascun tipo di merce per ciascun magazzino.], [capitolato#super[G]],
-    [*RF10/04*], [I Supervisori Locali possono modificare i valori di soglia minima e massima di ciascun tipo di merce nel/nei magazzino/i a loro assegnato/i.], [capitolato#super[G]],
+    [*RF10/03*], [I Supervisori visualizzano un messaggio di errore se i valori di soglia minima e/o massima inseriti sono sintatticamente errati.], [capitolato#super[G]],
+    [*RF10/04*], [Il Supervisore Globale può modificare i valori di soglia minima e massima di ciascun tipo di merce per ciascun magazzino.], [capitolato#super[G]],
+    [*RF10/05*], [Il Supervisore Globale visualizza un messaggio di errore se i valori di soglia minima e/o massima modificati sono sintatticamente errati.], [capitolato#super[G]],
+    [*RF10/06*], [I Supervisori Locali possono modificare i valori di soglia minima e massima di ciascun tipo di merce nel/nei magazzino/i a loro assegnato/i.], [capitolato#super[G]],
+    [*RF10/07*], [I Supervisori Locali visualizzano un messaggio di errore se i valori di soglia minima e/o massima modificati sono sintatticamente errati.], [capitolato#super[G]],
 
     [*RF11*], [*Rilevamento di carenza di scorte#super[G] di un magazzino.*], [capitolato#super[G]],
     [*RF11/01*], [Ciascun magazzino deve identificare quando le scorte#super[G] scendono sotto una certa soglia.], [capitolato#super[G]],
@@ -1530,7 +1579,7 @@ _Esempio:_
 
     [*RQ04*], [*Unit test e code coverage.*], [capitolato#super[G]],
     [*RQ04/01*], [La correttezza delle funzioni sviluppate deve essere garantita dai test unitari.], [capitolato#super[G]],
-    [*RQ04/02*], [La copertura del codice deve essere superiore al 80% .], [capitolato#super[G]], //INSERIRE CODE-COVERAGE DI M31   
+    [*RQ04/02*], [La copertura del codice deve essere superiore al 70% (minimo) e 80% (auspicabile).], [concordata\ col proponente],  
     [*RQ04/03*], [Il test devono poter essere eseguiti in maniera automatizzata.], [capitolato#super[G]],
     [*RQ04/04*], [Devono essere eseguiti test di non regressione.], [capitolato#super[G]],
 
@@ -1589,47 +1638,65 @@ _Esempio:_
     [*Requisito*], [*Casi d'Uso*],
   ),
     [RF01/01],[#link(label("uc-1"), underline("[UC 1]"))],
+    [RF01/02],[#link(label("uc-1.1"), underline("[UC 1.1]"))],
+    [RF01/03],[#link(label("uc-1.2"), underline("[UC 1.2]"))],
+    [RF01/04],[#link(label("uc-1.3"), underline("[UC 1.3]"))],
+    [RF01/05],[#link(label("uc-1.4"), underline("[UC 1.4]"))],
 
-    [RF02/01],[#link(label("uc-2"), underline("[UC 2]")), #link(label("uc-3"), underline("[UC 3]"))],
+    [RF02/01],[#link(label("uc-2"), underline("[UC 2]"))],
     [RF02/02],[#link(label("uc-4"), underline("[UC 4]"))],
+    [RF02/03],[#link(label("uc-3"), underline("[UC 3]"))],
 
     [RF03/01],[#link(label("uc-5"), underline("[UC 5]"))],
     [RF03/02],[#link(label("uc-5"), underline("[UC 5]"))],
+    [RF03/03],[#link(label("uc-5.1"), underline("[UC 5.1]"))],
+    [RF03/04],[#link(label("uc-5.2"), underline("[UC 5.2]"))],
+    [RF03/05],[#link(label("uc-5.3"), underline("[UC 5.3]"))],
 
     [RF04/01],[#link(label("uc-6"), underline("[UC 6]"))],
     [RF04/02],[#link(label("uc-7"), underline("[UC 7]"))],
-    [RF04/03],[#link(label("uc-8"), underline("[UC 8]"))], 
+    [RF04/03],[#link(label("uc-8"), underline("[UC 8]"))],
 
     [RF05/01],[#link(label("uc-9"), underline("[UC 9]"))],
-    [RF05/02],[#link(label("uc-9"), underline("[UC 9]"))],
+    [RF05/02],[#link(label("uc-9.1"), underline("[UC 9.1]"))],
     [RF05/03],[#link(label("uc-9"), underline("[UC 9]"))],
-    [RF05/04],[#link(label("uc-10"), underline("[UC 10]"))], 
-    [RF05/05],[#link(label("uc-11"), underline("[UC 11]"))],
-    [RF05/06],[#link(label("uc-26"), underline("[UC 26]"))],
+    [RF05/04],[#link(label("uc-9.2"), underline("[UC 9.2]"))], 
+    [RF05/05],[#link(label("uc-9"), underline("[UC 9]"))],
+    [RF05/06],[#link(label("uc-9.3"), underline("[UC 9.3]"))],
+    [RF05/07],[#link(label("uc-10"), underline("[UC 10]"))],
+    [RF05/08],[#link(label("uc-11"), underline("[UC 11]"))],
+    [RF05/09],[#link(label("uc-11.1"), underline("[UC 11.1]"))],
+    [RF05/10],[#link(label("uc-26"), underline("[UC 26]"))],
 
-    [RF06],[#link(label("uc-12"), underline("[UC 12]"))],
     [RF06/01],[#link(label("uc-13"), underline("[UC 13]"))],
     [RF06/02],[#link(label("uc-14"), underline("[UC 14]"))],
+    [RF06/03],[#link(label("uc-12.1"), underline("[UC 12.1]"))],
     [RF06/04],[#link(label("uc-15"), underline("[UC 15]"))],
 
     [RF07/01],[#link(label("uc-16"), underline("[UC 16]"))],
-    [RF07/02],[#link(label("uc-18"), underline("[UC 18]")), #link(label("uc-17"), underline("[UC 17]"))],
+    [RF07/02],[#link(label("uc-17"), underline("[UC 17]")), #link(label("uc-18"), underline("[UC 18]"))],
     [RF07/03],[#link(label("uc-19"), underline("[UC 19]"))], 
-    [RF07/04],[#link(label("uc-21"), underline("[UC 21]")), #link(label("uc-20"), underline("[UC 20]"))],
-    [RF07/05],[#link(label("uc-17"), underline("[UC 17]"))],
-    [RF07/06],[#link(label("uc-20"), underline("[UC 20]"))],
+    [RF07/04],[#link(label("uc-20"), underline("[UC 20]")), #link(label("uc-21"), underline("[UC 21]"))],
+    [RF07/05],[#link(label("uc-17"), underline("[UC 17]")), #link(label("uc-18"), underline("[UC 18]"))],
+    [RF07/06],[#link(label("uc-20"), underline("[UC 20]")), #link(label("uc-21"), underline("[UC 21]"))],
 
     [RF08],[#link(label("uc-22"), underline("[UC 22]"))],
 
     [RF09/01],[#link(label("uc-23"), underline("[UC 23]"))],
     [RF09/02],[#link(label("uc-24"), underline("[UC 24]"))],
-    [RF09/03],[#link(label("uc-24"), underline("[UC 24]"))],
+    [RF09/03],[#link(label("uc-23"), underline("[UC 23]"))],
 
-    [RF10],[#link(label("uc-25"), underline("[UC 25]"))],
-    [RF10/01],[#link(label("uc-25"), underline("[UC 25]"))],
-    [RF10/02],[#link(label("uc-25"), underline("[UC 25]"))],
-    [RF10/03],[#link(label("uc-25"), underline("[UC 25]"))], 
-    [RF10/04],[#link(label("uc-25"), underline("[UC 25]"))],
+    [RF10/01],[#link(label("uc-9"), underline("[UC 9]"))],
+    [RF10/02],[#link(label("uc-9"), underline("[UC 9]"))],
+    [RF10/03],[#link(label("uc-9.4"), underline("[UC 9.4]"))], 
+    [RF10/04],[#link(label("uc-11"), underline("[UC 11]"))],
+    [RF10/05],[#link(label("uc-11.2"), underline("[UC 11.2]"))],
+    [RF10/06],[#link(label("uc-11"), underline("[UC 11]"))], 
+    [RF10/07],[#link(label("uc-11.2"), underline("[UC 11.2]"))],
+  
+    [RF15/02],[#link(label("uc-25"), underline("[UC 25]"))],
+
+    [RF17/02],[#link(label("uc-25"), underline("[UC 25]"))],
   ),
   caption: [Tracciamento dei casi d'uso],
 )
