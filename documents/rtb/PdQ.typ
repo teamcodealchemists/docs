@@ -16,7 +16,7 @@
 #let titolo = "Piano di Qualifica"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "0.2.0"
+#let versione = "0.4.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -27,11 +27,18 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+
+  [0.4.0],
+  [14/07/2025],
+  [N. Moretto],
+  [N. Bolzon],
+  [Aggiunta sezione 5 e relativi grafici],
+
   [0.3.0],
   [10/07/2025],
-  [-],
-  [-],
-  [-],
+  [S. Marana \ N. Moretto],
+  [N. Bolzon],
+  [Aggiunta sezione 3 e relative metriche di qualità per il prodotto#super[G] software],
 
   [0.2.0],
   [27/05/2025],
@@ -495,9 +502,66 @@ Possiamo osservare che il costo atteso e il costo reale sono molto vicini, con u
 Gli scostamenti sono minimi e non superano il 10% rispetto al costo atteso, il che è un buon segno di stabilità finanziaria del progetto.
 
 == 5.2 Grafico valore atteso ed effettivo
-== 5.3 Indice di prestazione dei tempi (tempo attuale e tempo pianificato per ogni sprint) [grafico a barre eventualmente]
-== 5.4 Grafico indice di stabilità dei requisiti#super[G] 
-== 5.5 Grafico indice di Gulpease (generale) [grafico a barre eventualmente]
+
+Il grafico del valore atteso ed effettivo mostra l'andamento del valore pianificato rispetto al valore effettivo ottenuto fino ad oggi.
+Partendo dal budget iniziale di 14.430€, il valore atteso ed effettivo diminuisce progressivamente, in base ai costi sostenuti per ogni sprint. Il valore atteso rappresenta il budget pianificato per ogni sprint, mentre il valore effettivo rappresenta i costi reali sostenuti fino a quel momento.
+
+#let valori_grafico_valore_atteso = (
+  (0, 14430), (1, 13460), (2, 12440), (3, 11570), (4, 10410), (5, 9320), (6, 8130), (7, 7150)
+)
+#let valori_grafico_valore_effettivo = (
+  (0, 14430), (1, 13460), (2, 12670), (3, 11805), (4, 10585), (5, 9630), (6, 8645), (7, 7665)
+)
+#show : graph_line.with(
+  data_atteso: valori_grafico_valore_atteso,
+  data_reale: valori_grafico_valore_effettivo,
+  label_atteso: "Valore atteso",
+  label_reale: "Valore effettivo",
+  label_x: "Sprint",
+  label_y: "Valore (€)",
+  y-max: 15000,
+  y-min: 0,
+  y-tick-step: 1000
+)
+
+Dal grafico si evince che il valore atteso diminuisce progressivamente, mentre il valore effettivo mostra una leggera fluttuazione. Questo indica che, sebbene i costi siano stati sostenuti in modo pianificato, ci sono state alcune variazioni nei costi reali rispetto a quelli previsti. Tuttavia, il valore effettivo rimane sempre al di sotto del valore atteso, il che è un segno positivo per la gestione del budget.\
+Abbiamo sempre preventivato in modo conservativo per evitare di sforare il budget iniziale, e questo approccio si è dimostrato efficace fino ad ora.\
+Infatti, mantenendo questa tendenza riguardo il valore effettivo, possiamo notare che il progetto dovrebbe rimanere entro i limiti del budget iniziale di 14.430€.
+
+
+== 5.3 Indice di prestazione dei tempi (tempo attuale e tempo pianificato per ogni sprint)
+
+Il grafico dell'indice di prestazione dei tempi mostra l'andamento del tempo pianificato rispetto al tempo effettivo impiegato per completare ogni sprint.\
+L'indice di prestazione dei tempi (SPI) è calcolato come il rapporto tra il valore pianificato e il valore effettivo. Se l'SPI è maggiore di 1, significa che il progetto sta procedendo più velocemente del previsto; se è inferiore a 1, significa che il progetto sta procedendo più lentamente del previsto.
+
+#let valori_grafico_spi = (
+  (1, 1.0), (2, 0.95), (3, 0.9), (4, 0.85), (5, 0.8), (6, 0.75), (7, 0.8)
+)
+#show : graph_bar.with(
+  data: valori_grafico_spi,
+  label_x: "Sprint",
+  label_y: "Indice di prestazione dei tempi (SPI)",
+  y-max: 1.2,
+  y-min: 0.5,
+  y-tick-step: 0.1
+  //potremmo inserire una linea orizzontale a 1 per indicare il valore di riferimento
+) 
+
+L'indice di prestazione dei tempi mostra una tendenza al ribasso, indicando che il progetto sta procedendo più lentamente del previsto. Tuttavia, l'SPI è ancora superiore a 0.5, il che significa che il progetto sta comunque rispettando i tempi pianificati in modo accettabile.\
+Come si può notare dal grafico, abbiamo subito dei rallentamenti negli sprint centrali, dovuti allo studio delle tecnologie non conosciute e alla complessità dell'Analisi dei Requisiti#super[G] e della Progettazione#super[G]. \
+Tuttavia, nell'ultimo sprint, che riguarda la fase di sviluppo del PoC, abbiamo recuperato parte del tempo perso, portando l'indice di prestazione dei tempi a 0.8. Il team prevede di mantenere questo ritmo di recupero anche nei prossimi sprint, cercando di migliorare ulteriormente l'efficienza.
+
+
+== 5.4 Grafico indice di stabilità dei requisiti
+
+Il grafico dell'indice di stabilità dei requisiti mostra l'andamento della stabilità dei requisiti nel tempo. L'indice di stabilità dei requisiti è calcolato come il rapporto tra il numero di requisiti stabili e il numero totale di requisiti. Un indice più alto indica una maggiore stabilità dei requisiti, mentre un indice più basso indica una minore stabilità.
+//TODO: inserire i dati reali
+
+
+== 5.5 Grafico indice di Gulpease
+
+Il grafico dell'indice di Gulpease mostra l'andamento della leggibilità del documento nel tempo. Un indice più alto indica una maggiore leggibilità, mentre un indice più basso indica una minore leggibilità. L'obiettivo è mantenere l'indice sopra il valore minimo di 50 per garantire che il documento sia facilmente comprensibile.
+
 #let valori_grafico_gulpease = (
   (1, 40), (2, 38), (3, 50), (4, 55), (5, 58), (6, 58), (7, 58)
 )
@@ -509,7 +573,5 @@ Gli scostamenti sono minimi e non superano il 10% rispetto al costo atteso, il c
   y-min: 0,
   y-tick-step: 10
 )
-== 5.6 Grafico di efficienza in termini di tempo
-// 
-// sopra ogni grafico scrivere una breve descrizione del grafico che si sta per visualizzare
-// 
+
+Inizialmente l'indice di Gulpease era sotto il valore minimo di 50, indicando una bassa leggibilità del documento. Tuttavia, grazie agli sforzi per migliorare la qualità della documentazione, l'indice è aumentato e si è stabilizzato sopra il valore minimo, raggiungendo un picco di 58 negli ultimi sprint. Questo suggerisce che le modifiche apportate hanno avuto un impatto positivo sulla leggibilità del documento.

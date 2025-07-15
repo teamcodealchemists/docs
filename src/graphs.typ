@@ -47,7 +47,8 @@
   y-max: (),
   y-min: (),
   y-tick-step: (),
-  doc
+  doc,
+  show-line: false
 ) = {
   set align(center)
 
@@ -61,7 +62,6 @@
       y-grid: true,
       x-label: (label_x),
       y-label: (label_y),
-      fill: red,
       {
         plot.add-bar((..data), bar-width: 0.6)
       }
