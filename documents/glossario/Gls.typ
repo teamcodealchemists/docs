@@ -15,7 +15,7 @@
 #let titolo = "Glossario"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "0.4.0"
+#let versione = "0.5.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -26,6 +26,11 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [0.5.0],
+  [16/07/2025],
+  [M. Pretto],
+  [N. Bolzon],
+  [Modifica di alcune definizioni del glossario e riordino dei vocaboli],
 
   [0.4.0],
   [22/05/2025],
@@ -141,8 +146,8 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 - *Capitolato*: \
   Documento formale che descrive in modo dettagliato le esigenze, i requisiti e i vincoli di un progetto software, forniti dal committente. Costituisce la base per l'analisi dei requisiti e guida lo sviluppo del sistema. Viene utilizzato anche come base per la negoziazione e per la gestione delle modifiche durante l'esecuzione del progetto.
 
-- *Certificati Digitali*:\
-  Documenti elettronici che attestano l'identità di un'entità online, garantendo comunicazioni sicure.
+- *Certificato Digitale*:\
+  Documento elettronico che attesta l'identità di un'entità online, garantendo comunicazioni sicure.
 
 - *Chief Technology Officer (CTO)*:\
   Dirigente di primo livello responsabile delle scelte tecnologiche di un'azienda. Valuta, seleziona e propone le soluzioni tecniche più adatte per supportare lo sviluppo di prodotti o servizi, garantendo l'allineamento tra innovazione tecnologica e obiettivi strategici dell'organizzazione. Fa parte del consiglio direttivo e collabora con le altre funzioni aziendali per guidare l'evoluzione tecnologica.
@@ -158,9 +163,6 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 
 - *Cliente*: \
   Persona, azienda o ente che commissiona, finanzia e utilizzerà direttamente o indirettamente il prodotto software. Il cliente può coincidere o meno con il committente, e ha interesse nel risultato finale del progetto. È coinvolto nei processi decisionali, nella validazione del prodotto e nella sua eventuale accettazione e manutenzione post-rilascio.
-
-- *Codice*:\
-  Insieme di istruzioni scritte in un linguaggio di programmazione, che costituiscono un software.
 
 - *Commit*:\
   Operazione con cui si salvano modifiche al codice sorgente in un sistema di controllo versione.
@@ -232,7 +234,7 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 - *Microservizi*:\
   Architettura software composta da piccoli servizi indipendenti che comunicano tra loro.
 
-- *Modulari*:\
+- *Modulare*:\
   Caratteristica di un sistema progettato come insieme di componenti indipendenti e riutilizzabili.
 
 - *Monitoraggio*:\
@@ -248,7 +250,7 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 - *Orchestrazione*:\
   Coordinamento automatico di più servizi o componenti di un sistema complesso.
 
-- *Ordini*:\
+- *Ordine*:\
   Richieste formali per trasferimenti o rifornimenti di prodotti.
 
 #pagebreak()
@@ -291,8 +293,8 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 - *Requirements and Technology Baseline (RTB)*: \
   Nel contesto dello sviluppo software, la baseline di progetto è un riferimento stabile che definisce i requisiti del sistema e le tecnologie impiegate per la loro realizzazione. Comprende la specifica dei requisiti funzionali e non funzionali, l'elenco delle tecnologie, delle librerie e delle piattaforme adottate, nonché le strategie di sviluppo e testing. Questa baseline è essenziale per il controllo dell'avanzamento del progetto e per la verifica della conformità del prodotto rispetto ai requisiti concordati con il cliente.
 
-- *Requisiti*:\
-  Specifiche condizioni o capacità che un sistema deve soddisfare per rispondere ai bisogni di business o utente.
+- *Requisito*:\
+  Specifica condizione o capacità che un sistema deve soddisfare per rispondere ai bisogni di business o utente.
 
 - *Responsabile*: \
   Garantisce il completamento efficiente del progetto, rispettando obiettivi, tempistiche e aspettative del committente, coordinando ruoli e risorse. Data la rilevanza economica della posizione, il team ne ottimizza l'impiego per massimizzare l'efficienza e contenere i costi. Il ruolo richiede competenze nella gestione, risoluzione di criticità, coordinamento della comunicazione e pianificazione. Spetta inoltre al Responsabile approvare il rilascio di prodotti parziali o finali, software o documenti.
@@ -317,11 +319,11 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 - *Scrum*:\
   È un framework agile che definisce un modo di lavorare per gestire progetti di sviluppo software in modo iterativo e incrementale. Si tratta di un approccio strutturato che aiuta i team a collaborare in modo efficace e a fornire risultati di alta qualità. 
 
-- *Sensibili*:\
-  Dati che richiedono protezione speciale contro accessi non autorizzati o divulgazioni.
+- *Sensibile*:\
+  Dato che richiede protezione speciale contro accessi non autorizzati o divulgazioni.
 
-- *Servizi*:\
-  Componenti funzionali del sistema, responsabili ciascuno di una specifica attività.
+- *Servizio*:\
+  Componente funzionale del sistema, responsabile ciascuno di una specifica attività.
 
 - *Sprint*:\
   Periodo di tempo specifico (timebox) in cui un team di sviluppo lavora in modo coordinato, seguendo una metodologia agile come Scrum, per completare una determinata quantità di lavoro. 
