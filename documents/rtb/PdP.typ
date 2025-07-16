@@ -780,6 +780,7 @@ questo aiutera ad ottenere un buon bilanciamento tra pianificazione e esecuzione
 Inoltre durante ogni sprint#super[G], verranno effettuate diverse riunioni per discutere
 sia i progressi di ogni membro e le difficoltà riscontrate, per permettere una comunicazione continua tra i membri
 e una rapida risoluzione dei problemi che potrebbero insorgere.\
+#v(1em)
 
 Il team ha deciso di utilizzare un approccio *iterativo#super[G]* e di miglioramento *incrementale#super[G]*, 
 per permettere di adattare il lavoro in base alle esigenze del cliente#super[G], feedback ricevuti e necessità. 
@@ -787,6 +788,7 @@ Inoltre, si è deciso di utilizzare un *gestore di attività*, in particolare JI
 *tracciare il lavoro svolto e le scadenze*.
 Questo garantirà innanzitutto una buona gestione del progetto ma anche una migliore pianificazione, 
 riducendo al minimo i potenziali rischi e massimizzando le possibilità di successo.
+#v(1em)
 
 Inoltre alcune particolari caratteristiche che il team ha deciso di adottare dopo un primo periodo di prova includono:
 
@@ -795,7 +797,7 @@ Inoltre alcune particolari caratteristiche che il team ha deciso di adottare dop
    viene redatta e presentata almeno il giorno prima dell'inizio del nuovo sprint#super[G];
 - Un cambio di ruoli per sprint#super[G] basato sul ruolo della persona e dalle competenze ottenute nello sprint#super[G] appena terminato.
    Questo permette in particolare, oltre a ruotare i ruoli tra i membri, di svolgere una transizione molto più fluida e funzionale tra sprint#super[G].
-
+#v(1em)
 
 Infine il team si impegna a *concordare riunioni periodiche* con l'azienda proponente del progetto _M31_ 
 per discutere progressi ed eventuali modifiche in corso d'opera. 
@@ -814,14 +816,18 @@ Di seguito vengono riportate le caratteristiche previste per ogni sprint#super[G
 
 #pagebreak()
 == Requirements and Technology Baseline (RTB)
+#v(1em)
 
 === Sprint 1    //mantenere le seguenti distanze
+#v(1em)
 Inizio: #h(1.99cm)*28-03-2025*\
 Fine Prevista: #h(0.65cm)*11-04-2025*\
 Fine Reale: #h(1.12cm)*11-04-2025*\
 Giorni di ritardo: #h(0.15cm)*0*
 
 ==== Informazioni generali e attività da svolgere
+#v(1em)
+
 Questo sprint#super[G] ha come obbiettivo quello di risolvere le osservazioni 
 ricevute dopo la presentazione della candidatura. 
 Successivamente, avverrà la redazione dei primi documenti 
@@ -840,6 +846,8 @@ In particolare, le attività previste sono:
 
 
 ==== Rischi attesi
+#v(1em)
+
 I possibili rischi :
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
 - RI1: Rischio Individuale derivante dalle altre attività;
@@ -898,7 +906,7 @@ I possibili rischi :
   )
 ]
 ==== Rischi incontrati
-
+#v(1em)
 
 Durante questo primo sprint#super[G] abbiamo avuto principalmente
 difficoltà con una distribuzione dell'impegno non
@@ -912,7 +920,7 @@ dell'utilizzo dello strumento e in aggiunta di un
 organizzazione degli incontri più spontanea e meno organizzata.
 
 ==== Retrospettiva
-
+#v(1em)
 
 Durante lo sprint#super[G] ci siamo dedicati principalmente ad una prima impostazione del
 progetto, tramite automazioni e organizzazione github, alla progettazione di una
@@ -931,7 +939,7 @@ Fine Reale: #h(1.12cm)*24-04-2025*\
 Giorni di ritardo: #h(0.15cm)*0*
 
 ==== Informazioni generali e attività da svolgere
-
+#v(1em)
 
 Questo secondo sprint#super[G] ha avuto principalmente come obbiettivo la continuazione
 e il miglioramento di quanto iniziato nel primo sprint#super[G] basandoci inoltre
@@ -952,7 +960,7 @@ In particolare, le attività previste sono:
 
 
 ==== Rischi attesi
-
+#v(1em)
 
 I possibili rischi :
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
@@ -1057,10 +1065,11 @@ In particolare, le attività previste sono:
 
 
 ==== Rischi attesi
-
+#v(1em)
 
 I possibili rischi :
 - RI1: Rischio Individuale derivante dalle altre attività.
+- RI1: Rischio Individuale derivante dalle altre attività;
 - RG2: Rischio Globale legato a pareri contrastanti.
 
 ==== Preventivo
@@ -1121,12 +1130,29 @@ I possibili rischi :
 
 
 ==== Rischi incontrati
+#v(1em)
 
-Durante questo sprint#super[G] si è verificato un problema riconducibile al rischio RI2 (Scarsa collaborazione). Un membro del team non ha partecipato attivamente alle attività di analisi, causando una ridistribuzione del carico di lavoro tra gli altri componenti e rallentando la stesura dei documenti previsti. Il team ha affrontato la situazione tramite comunicazione diretta e incontri aggiuntivi per supportare il recupero delle attività non svolte.
+Durante lo sprint gli analisti hanno riscontrato un problema con un membro del sottoteam, il quale non si è distinto per il suo lavoro svolto. \
+
+Gli analisti infatti ritengono che oltre ad aver consegnato in modo frettoloso casi d'uso non completamente analizzati, ha partecipato poco attivamente alle attività di analisi e ha fornito un contributo insignificante al lavoro del team. 
 
 ==== Retrospettiva
+#v(1em)
 
-Durante questo sprint#super[G], gli analisti hanno riscontrato che il tempo inizialmente previsto non era sufficiente per completare tutte le attività richieste. Per questo motivo, hanno deciso di dedicare più tempo al lavoro di gruppo, collaborando più strettamente per portare a termine la stesura dei documenti e l'analisi dei requisiti#super[G]. 
+Durante il terzo sprint, il team si è concetrato  principalmente su attività di progettazione e sviluppo architetturale relative al POC.
+
+Durante la prima settimana i progettisti, hanno progettato un'ipotesi di architettura del PoC#super[G] sulla base dell'analisi dello stato dell'arte svolto in precedenza.
+Tale architettura è stata poi presentata a _M31_ durante la riunione del *05/05/2025*, dove sono stati chiarti dubbi e domande emerse durante l'analisi dei requisiti ed è stata migliorata l'organizazzione della comunicazione.\
+
+Durante la seconda settimana dello sprint, i progettisti hanno modellato l'ipotesi di architettura del PoC#super[G] sulla base dei feedback ricevuti da _M31_, trovando una soluzione che potrebbe essere definitiva. \
+
+Il lavoro non è ancora concluso, in quanto ci sono ancora alcuni aspetti da definire e da chiarire, i progettisti quindi hanno dichiarato di voler concludere l'attività di progettazione dell'architettura durante lo sprint successivo. \
+
+In parallelo tuttavia è continuata la redazione dei documenti come inizialmente previsto.
+
+Per quanto riguarda infine il rischio riscontrato il team ha deciso di cercare un riscontro diretto con questo membro e se non dovessero esserci miglioramenti risulterà necessario prendere provvedimenti. \
+
+Viste le conclusioni dei vari lavori, e l'imminente inizio del PoC#super[G], si è deciso di introdurre un nuovo ruolo nel team: il *programmatore#super[G]*.\Durante questo sprint#super[G], gli analisti hanno riscontrato che il tempo inizialmente previsto non era sufficiente per completare tutte le attività richieste. Per questo motivo, hanno deciso di dedicare più tempo al lavoro di gruppo, collaborando più strettamente per portare a termine la stesura dei documenti e l'analisi dei requisiti#super[G]. 
 
 Inoltre, vista la complessità emersa nella fase di progettazione, il team ha ritenuto opportuno confermare uno dei progettisti anche per lo sprint#super[G] successivo, così da garantire continuità e approfondire ulteriormente le scelte architetturali già avviate.
 
@@ -1140,6 +1166,7 @@ Fine Reale: #h(1.12cm)*23-05-2025*\
 Giorni di ritardo: #h(0.15cm)*0*
 
 ==== Informazioni generali e attività da svolgere
+#v(1em)
 
 Le attività previste sono:
 
@@ -1154,12 +1181,14 @@ Le attività previste sono:
   - Norme di progetto;
 
 ==== Rischi attesi
+#v(1em)
 
 I possibili rischi:
-- RT1: Rischio Tecnologico derivato da inesperienza nell'uso delle tecnologie nel progetto;
-- RT2: Rischio Tecnologico derivato dall'utilizzo errato o non ottimale delle tecnologie;
-- RI3: Rischio Individuale legato alla difficoltà di comprensione;
-- RG2: Rischio Globale legato a pareri contrastanti;
+
+- RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
+- RT2: Rischio Tecnologico derivato dall'utilizzo errato delle tecnologie;
+- RI1: Rischio Individuale derivante dalle altre attività;
+- RG2: Rischio Globale legato a pareri contrastanti.
 
 
 ==== Preventivo
@@ -1223,11 +1252,20 @@ I possibili rischi:
 Durante questo sprint#super[G] non sono emersi rischi critici, ma si sono riscontrati alcuni problemi minori di progettazione dovuti a difficoltà tecnologiche e a pareri contrastanti tra i membri del team sulle scelte architetturali. Queste situazioni sono state gestite tramite confronto diretto e approfondimenti tecnici condivisi.
 
 ==== Retrospettiva
-Durante questo sprint#super[G] il team ha compiuto significativi progressi sia nella definizione dell'architettura#super[G] del POC#super[G] sia nell'analisi dei requisiti#super[G]. A seguito dell'incontro con l'azienda proponente, è stata presentata una nuova e migliorata ipotesi architetturale che, dopo un confronto costruttivo, è stata approvata. Questo ha permesso di chiarire alcuni aspetti tecnici e di allineare le aspettative tra team e azienda.
+#v(1em)
 
-Parallelamente, l'analisi dei requisiti#super[G] ha raggiunto uno stato avanzato, avvicinandosi al completamento. Il lavoro di gruppo e la collaborazione tra i membri hanno favorito una maggiore condivisione delle informazioni e una migliore comprensione delle esigenze progettuali.
+  Come stabilito i progettisti#super[G] hanno continuato l'attività di definizione dell'architettura#super[G] per il PoC#super[G]. \
 
-Nel complesso, lo sprint#super[G] si è concluso positivamente, con una maggiore coesione del team e una visione più chiara degli obiettivi da raggiungere nei prossimi sprint#super[G].
+  In particolare l'amministratore#super[G] ha studiato autonomamente i vari ambienti di sviluppo (come NATS, Docker, ...) cercando di comprendere il funzionamento e documentarlo per trasmettere quando appreso ai membri del Team tramite documenti facilitando poi quindi l'inizio dello sviluppo del PoC#super[G]. 
+
+  Gli analisti#super[G] hanno continuato *l'analisi dei casi d'uso* la quale si è resa più dispendiosa del previsto. Si è cercato di adottare delle migliorie in due diverse modalità: migliorando la leggibilità della tabella e rendendo i requisiti#super[G] meno prolissi cercando inoltre di evitare ridondanza#super[G]. \
+  L'attività è stata quasi completata, rendendo quindi ora necessarie solo minime modifiche. \
+
+  I progettisti#super[G] hanno lavorato principalmente sulla *progettazione architetturale del PoC*#super[G].\
+  Sono state effettuate le ultime modifiche all'architettura#super[G] ad alto livello ed è terminata la stesura del *Processo di Progettazione*. \
+  Come per la stesura dei casi d'uso, anche questa attività è prossima alla conclusione. \
+
+  Infine in parallelo come definito sono stati portati avanti i documenti. 
 
 //-----------
 
@@ -1243,14 +1281,17 @@ Giorni di ritardo: #h(0.15cm)*0*
 - Ultimare l'analisi dei requisiti#super[G];
 - Ultimare l'architettura#super[G] ad alto livello;
 - Collaborazione tra progettisti#super[G] e programmatori#super[G] per aggiornarsi sulle tecnologie e sull'architettura#super[G];
-- Attuare una prima configurazione delle tecnologie;
+- Attuare un primo studio e configurazione delle tecnologie;
+- Sviluppo di POC;
 
 ==== Rischi attesi
+#v(1em)
 
 I possibili rischi :
 - RT1: Rischio Tecnologico derivato da inesperienza nell'uso delle tecnologie nel progetto;
 - RT2: Rischio Tecnologico derivato dall'utilizzo errato o non ottimale delle tecnologie;
-- RI3: Rischio Individuale legato alla difficoltà di comprensione;
+- RT3: Rischio Tecnologico legato ad errori di codifica/programmazione;
+- RI1: Rischio Individuale derivante dalle altre attività;
 - RG2: Rischio Globale legato a pareri contrastanti;
 
 ==== Preventivo
@@ -1311,13 +1352,38 @@ I possibili rischi :
 
 
 ==== Rischi incontrati
+#v(1em)
 
-Durante questo sprint#super[G] si è verificato un rallentamento di alcune attività a causa dell'arrivo della sessione estiva e di alcune festività durante le due settimane di sprint. Questi fattori hanno limitato la disponibilità di alcuni membri del team, portando a una distribuzione meno uniforme del carico di lavoro e a un avanzamento più lento.
+ Il principale problema di questo sprint riguarda i programmatori, in particolare del tipo RT1, RT2, RT3.
+
+ Durante le due settimane hanno riscontrato diversi problemi: non conoscendo le tecnologie hanno dovuto documentarsi più approfonditamente di quanto stimato. 
+ Nonostante questo, tuttavia, essendo tecnologie e modalità di lavoro che nessuno all'interno del team ha mai affrontato in precedenza,anche dopo una preparazione teorica la prima implementazione è risultata comunque lenta, auspicando però un'accelerazione nel momento in cui le tecnologie verrano conosciute e padroneggiate meglio.Durante questo sprint#super[G] si è verificato un rallentamento di alcune attività a causa dell'arrivo della sessione estiva e di alcune festività durante le due settimane di sprint. Questi fattori hanno limitato la disponibilità di alcuni membri del team, portando a una distribuzione meno uniforme del carico di lavoro e a un avanzamento più lento.
 
 
 ==== Retrospettiva
+#v(1em)
 
-Durante questo sprint#super[G] il team ha avuto modo di confrontarsi con il #p.cardin, ricevendo preziosi suggerimenti per migliorare l'analisi dei requisiti#super[G]. In seguito a questo incontro, sono stati rivisti e resi più granulari i requisiti, migliorando la chiarezza e la tracciabilità del documento.
+Il documento “Analisi dei Requisiti” è pronto per l'approvazione da parte del proponente.
+
+L'analista, con l'aiuto del progettista, ha completato i requisiti e i casi d'uso sulla base delle linee guida ricevute dall'ultimo incontro con il Professore Cardin.
+  
+È stato rimosso il sistema come attore dei casi d'uso, in quanto i casi d'uso riflettono le azione compiute da parte dell'utente. \
+
+Durante questo lavoro, il progettista ha sollevato alcune scelte di progettazione fatte precedentemente e, sulla base dei nuovi requisiti e casi d'uso, ha apportato alcune modifiche per semplificare e/o chiarire degli aspetti della progettazione per renderla conforme con i requisiti e i casi d'uso.\
+Verrano quindi rese effettive queste modifiche e fornite ai programmatori per l'implementazione.
+
+I programmatori quindi hanno cercato di capire come strutturare la repository, ed è stato inoltre fatto il setup di tutta l'infrastruttura.\
+  È stata fatta una divisione del lavoro tra i programmatori, che ha portato alle seguenti realizzazioni:
+  - Iniziato il documento per i test;
+  - Studiato MongoDB, e creati i primi database;
+  - Iniziata la logica di business del servizio di inventario;
+  - Implementato Docker, il quale funziona completamente.
+
+Per ovviare ai rallentamenti dovuti allo studio e all'implementazione di queste nuove tecnologie, e alla sessione d'esami appena iniziata è stato richiesto per lo sprint successivo un contributo anche da parte degli altri membri che non sono programmatori per quanto possibile, velocizzando quindi i tempi di implementazione e di consegna del PoC.
+
+È stato deciso di contattare il Professore Cardin per informarlo dell'aggiornamento dell'Analisi dei requisiti e per richiedere un incontro in cui discutre le modifiche.
+
+Infine è stato deciso di contattare anche M31 per chiedere un'approvazione dei soli requisiti e per aggiornare il committente sullo stato del PoC.Durante questo sprint#super[G] il team ha avuto modo di confrontarsi con il #p.cardin, ricevendo preziosi suggerimenti per migliorare l'analisi dei requisiti#super[G]. In seguito a questo incontro, sono stati rivisti e resi più granulari i requisiti, migliorando la chiarezza e la tracciabilità del documento.
 
 Parallelamente, è proseguita la progettazione, con particolare attenzione alla definizione della logica di business di alcuni microservizi#super[G] chiave. Gran parte del tempo è stato dedicato allo studio e allo sviluppo del Proof of Concept (PoC)#super[G], approfondendo le tecnologie coinvolte e la loro integrazione, la definizione dell'infrastruttura di deployment e l'avvio dello sviluppo dei microservizi#super[G] necessari per la presentazione del PoC#super[G].
 
@@ -1342,7 +1408,9 @@ Giorni di ritardo: #h(0.15cm)*0*
 I possibili rischi :
 - RT1: Rischio Tecnologico derivato da inesperienza nell'uso delle tecnologie nel progetto;
 - RT2: Rischio Tecnologico derivato dall'utilizzo errato o non ottimale delle tecnologie;
+- RT3: Rischio Tecnologico legato ad errori di codifica/programmazione
 - RI1: Rischio Individuale legato a impegni personali, universitari e indisponibilità;
+
 
 ==== Preventivo
 
