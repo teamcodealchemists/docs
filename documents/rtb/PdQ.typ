@@ -473,7 +473,6 @@ I test di accettazione vengono eseguiti per verificare che il software soddisfi 
   voci: voci_test_accettazione,
   caption: caption_test_accettazione
 )
-
 #pagebreak()
 = 5. Cruscotto di Valutazione
 // Inserire qui i vari punti di valutazione delle metriche in base alle metriche di qualità che verranno riportate nella sezione 2, per il momento si può lasciare vuoto
@@ -556,8 +555,21 @@ Tuttavia, nell'ultimo sprint, che riguarda la fase di sviluppo del PoC, abbiamo 
 == 5.4 Grafico indice di stabilità dei requisiti
 
 Il grafico dell'indice di stabilità dei requisiti mostra l'andamento della stabilità dei requisiti nel tempo. L'indice di stabilità dei requisiti è calcolato come il rapporto tra il numero di requisiti stabili e il numero totale di requisiti. Un indice più alto indica una maggiore stabilità dei requisiti, mentre un indice più basso indica una minore stabilità.
-//TODO: inserire i dati reali
 
+#let valori_grafico_stabilita_requisiti = (
+  (1, 0.43), (2, 0.64), (3, 0.86), (4, 0.81), (5, 0.55), (6, 0.68), (7, 0.82)
+)
+#show : graph_bar.with(
+  data: valori_grafico_stabilita_requisiti,
+  label_x: "Sprint",
+  label_y: "Indice di stabilità dei requisiti (%)",
+  y-max: 1,
+  y-min: 0,
+  y-tick-step: 0.01,
+  y-dash: 0.7
+)
+
+L'indice di stabilità dei requisiti mostra una tendenza al ribasso nel quinto sprint, a causa delle modifiche apportate ai requisiti dopo il primo incontro con il #p.cardin. Tuttavia, negli sprint successivi, l'indice è aumentato nuovamente, raggiungendo un picco dell'82% nell'ultimo sprint. Questo suggerisce che le modifiche apportate grazie ai consigli del #p.cardin hanno avuto un impatto positivo sulla stabilità dei requisiti e che il team sta lavorando per mantenere questa stabilità anche nei prossimi sprint.
 
 == 5.5 Grafico indice di Gulpease
 
