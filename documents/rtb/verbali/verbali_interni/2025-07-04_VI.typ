@@ -4,8 +4,8 @@
 #let titolo = "Verbale interno del "
 #let data = "04/07/2025"
 #let titolo = titolo + data
-#let status = "Approvato"
-#let versione = "1.0.0"
+#let status = "Non approvato"
+#let versione = "0.1.0"
 #let presenze = (
   /* formato: <p.nome,> oppure <"nome",> */
   p.nicolo,
