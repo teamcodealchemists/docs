@@ -13,10 +13,10 @@
 */
 
 #let titolo = "Analisi dei requisiti"
-#let status = "In Redazione"
+#let status = "Approvato"
 #let destinatario = "M31"
 
-#let versione = "0.8.2"
+#let versione = "1.0.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -29,7 +29,7 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
-  /*[1.0.0], [09/07/2025], [-], [N. Bolzon], [Approvazione del documento],*/
+  [1.0.0], [09/07/2025], [-], [N. Bolzon], [Approvazione del documento],
 
   [0.8.2],
   [21/06/2025],
@@ -131,13 +131,13 @@
   [13/05/2025],
   [N. Bolzon],
   [N. Moretto],
-  [Modifica dei requisiti#super[G] sulla base delle osservazioni dei progettisti#super[G].],
+  [Modifica dei requisiti sulla base delle osservazioni dei progettisti.],
 
   [0.1.0],
   [17/04/2025],
   [N. Moretto],
   [S. Marana],
-  [Aggiunta descrizione glossario#super[G], descrizione requisiti#super[G] e aggiunta di tutti i requisiti#super[G].],
+  [Aggiunta descrizione glossario, descrizione requisiti e aggiunta di tutti i requisiti.],
 
   [0.0.2],
   [12/04/2025],
@@ -207,7 +207,7 @@ Per agevolare la comprensione, verranno utilizzati i Diagrammi dei Casi d'Uso pe
 
 Questo documento è destinato a:
 
-- Il Committente#super[G], per verificare la corretta interpretazione dei requisiti.;
+- Il Committente#super[G], per verificare la corretta interpretazione dei requisiti#super[G].;
 
 - Il Team di Progettisti#super[G] e Programmatori#super[G], come guida per la realizzazione del sistema;
 
@@ -277,18 +277,18 @@ https://www.multiplayer.app/distributed-systems-architecture/
 /*Da cambiare al cambio di versione*/
 - *Norme di Progetto:* \ #link("https://teamcodealchemists.github.io/docs/rtb/NdP_0.5.0.pdf")[https://teamcodealchemists.github.io/docs/rtb/NdP_0.5.0.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
 
-- *Capitolato d'appalto C6 _Sistema di Gestione di un Magazzino Distribuito_*: #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf]\ *Ultimo Accesso:* 27 Maggio 2025
+- *Capitolato#super[G] d'appalto C6 _Sistema di Gestione di un Magazzino Distribuito_*: #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf]\ *Ultimo Accesso:* 27 Maggio 2025
 
 === Riferimenti informativi
 - *Diagrammi dei Casi d'Uso:* \ #link("https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")[https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
-- *Analisi dei Requisiti:* \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
+- *Analisi dei Requisiti#super[G]:* \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
 - *Glossario:* \ #link("https://teamcodealchemists.github.io/glossario.html")[https://teamcodealchemists.github.io/glossario.html] \ *Ultimo Accesso:* 16 Giugno 2025
 - *Standard IEEE:* \ #link("https://ieeexplore.ieee.org/document/720574")[https://ieeexplore.ieee.org/document/720574] \ *Ultimo Accesso:* 27 Maggio 2025
 
 #pagebreak()
 = Casi d'uso
 == Introduzione
-In questa sezione del documento vengono presentati i casi d’uso individuati durante l’attività di analisi, condotta a partire dal capitolato d’appalto e dagli incontri con il proponente.
+In questa sezione del documento vengono presentati i casi d’uso individuati durante l’attività di analisi, condotta a partire dal capitolato#super[G] d’appalto e dagli incontri con il proponente.
 
 Ogni caso d’uso è costituito da un diagramma UML e da una descrizione testuale dettagliata, utile a chiarire le funzionalità attese dal sistema. La descrizione riporta, inoltre, le informazioni previste nella tabella sottostante, fatta eccezione per i campi che, in base alla natura del caso d’uso, risultano non applicabili _(ad esempio, se non sono previste situazioni di errore, non saranno presenti scenari alternativi)_.
 
@@ -679,11 +679,11 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
-  - Il Supervisore si trova nella pagina inventario di un magazzino.
+  - Il Supervisore si trova nella pagina inventario#super[G] di un magazzino.
 
 - *Postcondizione*:
   - Una nuova tipologia di merce è stata registrata a sistema.
-  - Il Supervisore si trova nella pagina inventario di un magazzino.
+  - Il Supervisore si trova nella pagina inventario#super[G] di un magazzino.
 
 - *Scenario principale*:
   + Il Supervisore inserisce il codice EAN (barcode) del prodotto#super[G] da registrare.
@@ -698,7 +698,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   + Il Supervisore può inserire il valore di soglia massima.
   + Se il valore di soglia massima è sintatticamente errato → #link(label("uc-9.4"), underline("[UC 9.4]"))
   + Il Supervisore conferma i dati inseriti.
-  + Il Supervisore torna alla pagina di inventario del magazzino selezionato.
+  + Il Supervisore torna alla pagina di inventario#super[G] del magazzino selezionato.
 
 - *Trigger*:
   - Il Supervisore preme il pulsante Aggiungi Nuova Tipologia Merce per il magazzino selezionato.
@@ -718,7 +718,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore ha inserto un codice EAN (barcode) errato (lettere, caratteri speciali e numero cifre numeriche diverso da 13).
 - *Postcondizione*:
   - Il Supervisore si trova nella pagina di aggiunta nuova tipologia merce per il magazzino selezionato.
-  - Il Supervisore non ha ancora aggiunto una nuova tipologia di merce all'inventario del magazzino selezionato.
+  - Il Supervisore non ha ancora aggiunto una nuova tipologia di merce all'inventario#super[G] del magazzino selezionato.
 - *Scenario principale*
   + Il Supervisore Globale riceve un messaggio di errore.
 
@@ -731,7 +731,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore ha inserto un prezzo unitario non conforme (più di 2 cifre decimali, valore con lettere e caratteri speciali).
 - *Postcondizione*:
   - Il Supervisore si trova nella pagina di aggiunta nuova tipologia merce per il magazzino selezionato.
-  - Il Supervisore non ha ancora aggiunto una nuova tipologia di merce all'inventario del magazzino selezionato.
+  - Il Supervisore non ha ancora aggiunto una nuova tipologia di merce all'inventario#super[G] del magazzino selezionato.
 - *Scenario principale*
   + Il Supervisore Globale riceve un messaggio di errore.
 
@@ -744,7 +744,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore ha inserto un valore di quantità del prodotto#super[G] non conforme (numero non intero e/o minore di 0).
 - *Postcondizione*:
   - Il Supervisore si trova nella pagina di aggiunta nuova tipologia merce per il magazzino selezionato.
-  - Il Supervisore non ha ancora aggiunto una nuova tipologia di merce all'inventario del magazzino selezionato.
+  - Il Supervisore non ha ancora aggiunto una nuova tipologia di merce all'inventario#super[G] del magazzino selezionato.
 - *Scenario principale*
   + Il Supervisore Globale riceve un messaggio di errore.
 
@@ -757,7 +757,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore ha inserto un valore di soglia massima e/o minima non conforme (numero non intero e/o minore di 0).
 - *Postcondizione*:
   - Il Supervisore si trova nella pagina di aggiunta nuova tipologia merce per il magazzino selezionato.
-  - Il Supervisore non ha ancora aggiunto una nuova tipologia di merce all'inventario del magazzino selezionato.
+  - Il Supervisore non ha ancora aggiunto una nuova tipologia di merce all'inventario#super[G] del magazzino selezionato.
 - *Scenario principale*
   + Il Supervisore Globale riceve un messaggio di errore.
 
@@ -767,11 +767,11 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
-  - Il Supervisore si trova nella pagina inventario.
+  - Il Supervisore si trova nella pagina inventario#super[G].
 
 - *Postcondizione*:
   - Una tipologia di merce è stata rimossa dal sistema.
-  - Il Supervisore si trova nella pagina inventario.
+  - Il Supervisore si trova nella pagina inventario#super[G].
 
 - *Scenario principale*:
   + Il Supervisore seleziona la tipologia di merce da rimuovere.
@@ -798,19 +798,19 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
-  - Il Supervisore si trova nella pagina inventario di un magazzino.
+  - Il Supervisore si trova nella pagina inventario#super[G] di un magazzino.
   - Il Supervisore ha selezionato il prodotto#super[G] di cui modificare le quantità.
 
 - *Postcondizione*:
   - I dati di quantità di un prodotto#super[G] in un singolo magazzino sono stati modificati.
-  - Il Supervisore si trova nella pagina inventario di un magazzino.
+  - Il Supervisore si trova nella pagina inventario#super[G] di un magazzino.
 
 - *Scenario principale*:
   + Il Supervisore modifica le quantità di prodotto#super[G] e/o le soglie minime e/o massime.
   + Se la quantità di prodotto#super[G] è sintatticamente errata → #link(label("uc-11.1"), underline("[UC 11.1]")).
   + Se il valore di soglia minima e/o massima è sintatticamente errato → #link(label("uc-11.2"), underline("[UC 11.2]")).
   + Il Supervisore conferma i dati inseriti.
-  + Il Supervisore torna alla pagina di inventario del magazzino.
+  + Il Supervisore torna alla pagina di inventario#super[G] del magazzino.
 
 - *Scenario alternativo*:
   2. Il Supervisore Globale annulla l’aggiornamento dei dati.
@@ -829,7 +829,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore ha inserto un valore di quantità del prodotto#super[G] non conforme (numero non intero e/o minore di 0).
 - *Postcondizione*:
   - Il Supervisore si trova nella pagina di modifica tipologia merce per il magazzino selezionato.
-  - Il Supervisore non ha modificato la tipologia di merce nell'inventario del magazzino selezionato.
+  - Il Supervisore non ha modificato la tipologia di merce nell'inventario#super[G] del magazzino selezionato.
 - *Scenario principale*
   + Il Supervisore Globale riceve un messaggio di errore.
 
@@ -842,7 +842,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore ha inserto un valore di soglia massima e/o minima non conforme (numero non intero e/o minore di 0).
 - *Postcondizione*:
   - Il Supervisore si trova nella pagina di modifica tipologia merce per il magazzino selezionato.
-  - Il Supervisore non ha modificato la tipologia di merce nell'inventario del magazzino selezionato.
+  - Il Supervisore non ha modificato la tipologia di merce nell'inventario#super[G] del magazzino selezionato.
 - *Scenario principale*
   + Il Supervisore Globale riceve un messaggio di errore.
 
@@ -863,7 +863,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore si trova nella pagina inserimento ordine di un magazzino.
 
 - *Postcondizione*:
-  - I dati di un prodotto#super[G] sono inseriti nell'ordine.
+  - I dati di un prodotto#super[G] sono inseriti nell'ordine#super[G].
   - Il Supervisore si trova nella pagina inserimento ordine di un magazzino.
 
 - *Scenario principale*:
@@ -884,11 +884,11 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Attore Principale*: Supervisore
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
-  - Il Supervisore si trova nella pagina di inserimento prodotto#super[G] in un ordine.
+  - Il Supervisore si trova nella pagina di inserimento prodotto#super[G] in un ordine#super[G].
   - Il Supervisore ha inserto un valore di quantità del prodotto#super[G] non conforme (numero non intero e/o minore di 0).
 - *Postcondizione*:
-  - Il Supervisore si trova nella pagina di inserimento prodotto#super[G] in un ordine.
-  - Il Supervisore non ha ancora inserito il prodotto#super[G] nell'ordine.
+  - Il Supervisore si trova nella pagina di inserimento prodotto#super[G] in un ordine#super[G].
+  - Il Supervisore non ha ancora inserito il prodotto#super[G] nell'ordine#super[G].
 - *Scenario principale*
   + Il Supervisore riceve un messaggio di errore.
 
@@ -909,19 +909,19 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore si trova nella pagina inserimento ordine di un magazzino.
 
 - *Postcondizione*:
-  - L'ordine è stato inserito.
+  - L'ordine#super[G] è stato inserito.
   - Il Supervisore si trova nella pagina ordini.
 
 - *Scenario principale*:
   + Il Supervisore seleziona il magazzino di partenza.
-  + Il Supervisore inserisce uno o più prodotti nell'ordine → #link(label("uc-12"), underline("[UC 12]")).
-  + Il Supervisore conferma i dati dell'ordine.
+  + Il Supervisore inserisce uno o più prodotti#super[G] nell'ordine#super[G] → #link(label("uc-12"), underline("[UC 12]")).
+  + Il Supervisore conferma i dati dell'ordine#super[G].
 
 - *Inclusioni*:
   - #link(label("uc-12"), underline("[UC 12]"))
   
 - *Trigger*:
-  - Il Supervisore seleziona *Trasferimento Interno* come tipologia ordine.
+  - Il Supervisore seleziona *Trasferimento Interno* come tipologia ordine#super[G].
 
 
 
@@ -935,19 +935,19 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore si trova nella pagina inserimento ordine di un magazzino.
 
 - *Postcondizione*:
-  - L'ordine è stato inserito.
+  - L'ordine#super[G] è stato inserito.
   - Il Supervisore si trova nella pagina ordini.
 
 - *Scenario principale*:
   + Il Supervisore inserisce l'indirizzo del destinatario.
-  + Il Supervisore inserisce uno o più prodotti nell'ordine → #link(label("uc-12"), underline("[UC 12]")).
-  + Il Supervisore conferma i dati dell'ordine.
+  + Il Supervisore inserisce uno o più prodotti#super[G] nell'ordine#super[G] → #link(label("uc-12"), underline("[UC 12]")).
+  + Il Supervisore conferma i dati dell'ordine#super[G].
 
 - *Inclusioni*:
   - #link(label("uc-12"), underline("[UC 12]"))
   
 - *Trigger*:
-  - Il Supervisore seleziona *Vendita* come tipologia ordine.
+  - Il Supervisore seleziona *Vendita* come tipologia ordine#super[G].
 
 #pagebreak()
 === - UC 15: Annullamento ordine
@@ -963,15 +963,15 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
   - Il Supervisore si trova nella pagina ordini del magazzino di interesse.
-  - Il Supervisore ha selezionato un ordine in stato "in attesa" o "in eleborazione" da annullare.
+  - Il Supervisore ha selezionato un ordine#super[G] in stato "in attesa" o "in eleborazione" da annullare.
 
 - *Postcondizione*:
-  - L'ordine è stato annullato.
+  - L'ordine#super[G] è stato annullato.
   - Il Supervisore si trova nella pagina ordini.
 
 - *Scenario principale*:
-  + Il Supervisore annulla l'ordine.
-  + Il Supervisore conferma l'annullamento dell'ordine.
+  + Il Supervisore annulla l'ordine#super[G].
+  + Il Supervisore conferma l'annullamento dell'ordine#super[G].
   
 - *Trigger*:
   - Il Supervisore preme il pulsante *Annulla Ordine*.
@@ -991,13 +991,13 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore Globale si trova nella pagina principale _(è una pagina di riepilogo)_.
 
 - *Postcondizione*:
-  - Il Supervisore Globale ha visualizzato l'inventario complessivo di tutti i magazzini.
+  - Il Supervisore Globale ha visualizzato l'inventario#super[G] complessivo di tutti i magazzini.
 
 - *Scenario principale*:
-  + Il Supervisore Globale visualizza l'inventario complessivo dei magazzini.
+  + Il Supervisore Globale visualizza l'inventario#super[G] complessivo dei magazzini.
 
 - *Trigger*:
-  - Il Supervisore Globale entra nella pagina di *inventario*.
+  - Il Supervisore Globale entra nella pagina di inventario.
 
 #pagebreak()
 === - UC 17: Visualizzazione inventario singolo magazzino
@@ -1012,13 +1012,13 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
-  - Il Supervisore si trova nella pagina di inventario del magazzino di interesse.
+  - Il Supervisore si trova nella pagina di inventario#super[G] del magazzino di interesse.
 
 - *Postcondizione*:
-  - Il Supervisore ha visualizzato l'inventario di un singolo magazzino selezionato.
+  - Il Supervisore ha visualizzato l'inventario#super[G] di un singolo magazzino selezionato.
 
 - *Scenario principale*:
-  + Il Supervisore visualizza l'inventario di un singolo magazzino.
+  + Il Supervisore visualizza l'inventario#super[G] di un singolo magazzino.
 
 #pagebreak()
 === - UC 18: Selezione singolo magazzino per visualizzazione del suo inventario
@@ -1036,17 +1036,17 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore Locale si trova nella pagina di principale _(è una pagina di riepilogo)_.
 
 - *Postcondizione*:
-  - Il Supervisore ha visualizzato l'inventario di un singolo magazzino selezionato
+  - Il Supervisore ha visualizzato l'inventario#super[G] di un singolo magazzino selezionato
 
 - *Scenario principale*:
   + Il Supervisore Locale seleziona un magazzino.
-  + Il Supervisore Locale visualizza l’inventario del magazzino → #link(label("uc-17"), underline("[UC 17]"))  
+  + Il Supervisore Locale visualizza l’inventario#super[G] del magazzino → #link(label("uc-17"), underline("[UC 17]"))  
 
 - *Inclusioni*:
   - #link(label("uc-17"), underline("[UC 17]"))  
 
 - *Trigger*:
-  - Il Supervisore Locale entra nella pagina di *inventario*.
+  - Il Supervisore Locale entra nella pagina di Inventario.
 
 
 #pagebreak()
@@ -1065,13 +1065,13 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore Globale si trova nella pagina principale _(è una pagina di riepilogo)_.
 
 - *Postcondizione*:
-  - Il Supervisore Globale ha visualizzato l'elenco complessivo degli ordini di tutti i magazzini.
+  - Il Supervisore Globale ha visualizzato l'elenco complessivo degli ordini#super[G] di tutti i magazzini.
 
 - *Scenario principale*:
-  + Il Supervisore Globale visualizza l'elenco complessivo degli ordini di tutti i magazzini.
+  + Il Supervisore Globale visualizza l'elenco complessivo degli ordini#super[G] di tutti i magazzini.
 
 - *Trigger*:
-  - Il Supervisore Globale entra nella pagina *ordini*.
+  - Il Supervisore Globale entra nella pagina Ordini.
 
 #pagebreak()
 === - UC 20: Visualizzazione report ordini singolo magazzino
@@ -1089,10 +1089,10 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - Il Supervisore si trova nella pagina ordini del magazzino di interesse.
 
 - *Postcondizione*:
-  - Il Supervisore ha visualizzato il report degli ordini di un singolo magazzino.
+  - Il Supervisore ha visualizzato il report degli ordini#super[G] di un singolo magazzino.
 
 - *Scenario principale*:
-  + Il Supervisore visualizza il report degli ordini di un singolo magazzino.
+  + Il Supervisore visualizza il report degli ordini#super[G] di un singolo magazzino.
 
 
 #pagebreak()
@@ -1108,20 +1108,20 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Precondizione*:
   - Il Supervisore Locale è autenticato presso il Sistema.
-  - Il Supervisore Locale si trova nella pagina principale (è una pagina di riepilogo).
+  - Il Supervisore Locale si trova nella pagina principale _(è una pagina di riepilogo)_.
 
 - *Postcondizione*:
-  - Il Supervisore Locale ha visualizzato il report degli ordini di un magazzino.
+  - Il Supervisore Locale ha visualizzato il report degli ordini#super[G] di un magazzino.
 
 - *Scenario principale*:
   + Il Supervisore Locale seleziona un magazzino
-  + Il Supervisore visualizza il report degli ordini di un magazzino → #link(label("uc-20"), underline("[UC 20]"))  
+  + Il Supervisore visualizza il report degli ordini#super[G] di un magazzino → #link(label("uc-20"), underline("[UC 20]"))  
 
 - *Inclusioni*:
   - #link(label("uc-20"), underline("[UC 20]"))
 
 - *Trigger*:
-  - Il Supervisore Locale entra nella pagina *ordini*.
+  - Il Supervisore Locale entra nella pagina Ordini.
 
 #pagebreak()
 === - UC 22: Visualizzazione stato magazzini
@@ -1136,7 +1136,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Precondizione*:
   - Il Supervisore è autenticato presso il Sistema.
-  - Il Supervisore si trova nella pagina principale (è una pagina di riepilogo).
+  - Il Supervisore si trova nella pagina principale _(è una pagina di riepilogo)_.
 
 - *Postcondizione*:
   - Il Supervisore ha visualizzato lo stato di tutti i magazzini.
@@ -1170,7 +1170,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   + Il Supervisore visualizza le notifiche informative del sistema.
 
 - *Trigger*:
-  - Il Supervisore entra nella pagina *notifiche*.
+  - Il Supervisore entra nella pagina Notifiche.
 
 #pagebreak()
 === - UC 24: Gestione notifiche decisionali
@@ -1242,7 +1242,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   + Il sistema mantiene i parametri precedenti e scarta le modifiche.
 
 - *Trigger*:
-  - Il Supervisore Locale entra nella pagina di *Impostazioni*.
+  - Il Supervisore Locale entra nella pagina di Impostazioni.
 
 #pagebreak()
 === - UC 26: Modifica globale del prezzo unitario di un prodotto
@@ -1257,17 +1257,17 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Precondizione*:
   - Il Supervisore Globale è autenticato presso il Sistema.
-  - Il Supervisore Globale si trova nella pagina inventario di un magazzino.
+  - Il Supervisore Globale si trova nella pagina inventario#super[G] di un magazzino.
   - Il Supervisore Globale ha selezionato il prodotto#super[G] di cui modificare il prezzo.
 
 - *Postcondizione*:
   - Il prezzo unitario di un prodotto#super[G] è stato globalmente modificato.
-  - Il Supervisore Globale si trova nella pagina inventario di un magazzino.
+  - Il Supervisore Globale si trova nella pagina inventario#super[G] di un magazzino.
 
 - *Scenario principale*:
   + Il Supervisore Globale modifica il prezzo unitario di un prodotto#super[G].
   + Il Supervisore Globale conferma il dato inserito.
-  + Il Supervisore Globale torna alla pagina di inventario del magazzino.
+  + Il Supervisore Globale torna alla pagina di inventario#super[G] del magazzino.
 
 - *Scenario alternativo*:
   2. Il Supervisore Globale annulla l’aggiornamento del dato.
@@ -1283,18 +1283,18 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 Verranno ora elencati i requisiti#super[G] del sistema, che sono stati suddivisi in quattro categorie principali: Requisiti#super[G] Funzionali, Requisiti#super[G] di Qualità, Requisiti#super[G] di Vincolo, Requisiti#super[G] Prestazionali.
 
 == Classificazione dei requisiti
-- *Requisiti Funzionali:* descrivono le funzionalità specifiche che il sistema deve offrire. Definiscono i comportamenti attesi in risposta a determinati input o situazioni, specificando cosa il sistema deve fare per soddisfare i bisogni degli utenti e degli stakeholder.
+- *Requisiti#super[G] Funzionali:* descrivono le funzionalità specifiche che il sistema deve offrire. Definiscono i comportamenti attesi in risposta a determinati input o situazioni, specificando cosa il sistema deve fare per soddisfare i bisogni degli utenti e degli stakeholder.
 
-- *Requisiti di Qualità:* detti anche non funzionali, definiscono le caratteristiche generali del sistema che ne influenzano l’efficacia, l’efficienza e l’affidabilità. Rientrano in questa categoria aspetti come la sicurezza, l’usabilità, la manutenibilità, la scalabilità e l’affidabilità complessiva del sistema.
+- *Requisiti#super[G] di Qualità:* detti anche non funzionali, definiscono le caratteristiche generali del sistema che ne influenzano l’efficacia, l’efficienza e l’affidabilità. Rientrano in questa categoria aspetti come la sicurezza, l’usabilità, la manutenibilità, la scalabilità e l’affidabilità complessiva del sistema.
 
-- *Requisiti di Vincolo:* specificano le limitazioni imposte da fattori esterni o immutabili, che il sistema o il processo di sviluppo devono rispettare. Tali vincoli possono derivare da normative, tecnologie obbligatorie, standard industriali, vincoli temporali o economici.
+- *Requisiti#super[G] di Vincolo:* specificano le limitazioni imposte da fattori esterni o immutabili, che il sistema o il processo di sviluppo devono rispettare. Tali vincoli possono derivare da normative, tecnologie obbligatorie, standard industriali, vincoli temporali o economici.
 
-- *Requisiti di Prestazionali:* definiscono le aspettative in termini di prestazioni del sistema, come tempi di risposta, capacità di carico, throughput e uso delle risorse. Questi requisiti sono fondamentali per garantire un’esperienza utente adeguata anche sotto carico elevato.
+- *Requisiti#super[G] di Prestazionali:* definiscono le aspettative in termini di prestazioni del sistema, come tempi di risposta, capacità di carico, throughput e uso delle risorse. Questi requisiti#super[G] sono fondamentali per garantire un’esperienza utente adeguata anche sotto carico elevato.
 
 == Fonti dei requisiti
 Le fonti dei requisiti#super[G] rappresentano i documenti e le informazioni da cui sono stati estratti i requisiti#super[G] stessi. Tra le principali fonti si annoverano il capitolato#super[G] d'appalto, le riunioni con il committente#super[G], l’analisi dello stato dell’arte e l’analisi dei casi d’uso.
 
-Ogni requisito riportato sarà accompagnato dall’indicazione esplicita della propria fonte di provenienza, al fine di garantirne la tracciabilità e la verificabilità.
+Ogni requisito#super[G] riportato sarà accompagnato dall’indicazione esplicita della propria fonte di provenienza, al fine di garantirne la tracciabilità e la verificabilità.
 
 == Struttura della codifica dei requisiti
 I requisiti#super[G] sono stati codificati al fine di facilitarne la lettura, la gestione e la tracciabilità.
@@ -1307,24 +1307,24 @@ I requisiti#super[G] funzionali sono preceduti dal prefisso "RF", i Requisiti#su
 - *V* sta per "#strong[V]incolo";
 - *P* sta per "#strong[P]restazionale";
 
-Per facilitare la lettura, la tracciabilità e la classificazione dei requisiti, è stato adottato un sistema di codifica sturtturato. La codifica prevede un prefisso che identifica la tipologia e l'importanza del requisito, seguito da un numero progressivo. In caso di scomposizione, si aggiunge una notazione per indicare i requisiti derivati.
+Per facilitare la lettura, la tracciabilità e la classificazione dei requisiti#super[G], è stato adottato un sistema di codifica sturtturato. La codifica prevede un prefisso che identifica la tipologia e l'importanza del requisito, seguito da un numero progressivo. In caso di scomposizione, si aggiunge una notazione per indicare i requisiti derivati.
 
 === Tipologia e Importanza
 I requisiti#super[G] sono stati distinti anche in base alla loro importanza o natura, secondo le seguenti convenzioni:
-- *Standard*: requisiti strettamente necessari al corretto funzionamento del sistema.
+- *Standard*: requisiti#super[G] strettamente necessari al corretto funzionamento del sistema.
   - _Esempio:_ RF01 → Requisito Funzionale 01.
-- *Desiderabili (D)*: requisiti non obbligatori, ma in grado di apportare un valore aggiunto al sistema.
+- *Desiderabili (D)*: requisiti#super[G] non obbligatori, ma in grado di apportare un valore aggiunto al sistema.
   - _Esempio:_ RFD04 → Requisito Funzionale Desiderabile 02.
-- *Opzionali (O)*: requisiti implementabili solo in presenza di tempo o risorse sufficienti.
+- *Opzionali (O)*: requisiti#super[G] implementabili solo in presenza di tempo o risorse sufficienti.
   - _Esempio:_ RFO03 → Requisito Funzionale Opzionale 02.
 
 === Scomposizione dei Requisiti Generali
-Poichè molti requistiti derivati dal capitolato risultano generici, è stato necessario *scomporli* in requisiti più specifici, che chiariscano chi deve fare cosa e in quale modalità.
-Per indicare questa relazione di derivazione, si utilizza la notazione *"/nr"*, dove _nr_ rappresenta un numero progressivo riferito al requisito secondario.
+Poichè molti requistiti derivati dal capitolato#super[G] risultano generici, è stato necessario *scomporli* in requisiti#super[G] più specifici, che chiariscano chi deve fare cosa e in quale modalità.
+Per indicare questa relazione di derivazione, si utilizza la notazione *"/nr"*, dove _nr_ rappresenta un numero progressivo riferito al requisito#super[G] secondario.
 
 _Esempio:_
   - RF04 → Requisito principale.
-  - RF04/01, RF04/02 → Requisiti secondari specifici derivati dal requisito RF04.
+  - RF04/01, RF04/02 → Requisiti#super[G] secondari specifici derivati dal requisito RF04.
 
 === Sintesi della struttura del codice
 \
@@ -1333,8 +1333,8 @@ _Esempio:_
 ]\
 - *Prefisso:* RF (Funzionale), RQ (Qualità), RV (Vincolo), RP (Prestazionale).
 - *Indicatore opzionale:* D (Desiderabile), O (Opzionale).
-- *Numero progressivo:* numero univoco del requisito all'interno della categoria.
-- *\/nr:* numero del requisito secondario, se presente.
+- *Numero progressivo:* numero univoco del requisito#super[G] all'interno della categoria.
+- *\/nr:* numero del requisito#super[G] secondario, se presente.
 
 #pagebreak()
 
@@ -1382,30 +1382,30 @@ _Esempio:_
     [*RF04/04*], [Ciascun magazzino deve essere identificato univocamente.], [capitolato#super[G]],
 
     [*RF05*], [*Gestione manuale delle merci.*], [capitolato#super[G]],
-    [*RF05/01*], [I Supervisori possono inserire un nuovo tipo di merce nell'inventario di un magazzino, ciascuna con codice EAN e nome prodotto#super[G].], [capitolato#super[G]],
+    [*RF05/01*], [I Supervisori possono inserire un nuovo tipo di merce nell'inventario#super[G] di un magazzino, ciascuna con codice EAN e nome prodotto#super[G].], [capitolato#super[G]],
     [*RF05/02*], [I Supervisori visualizzano un messaggio di errore se il codice EAN non rispetta la sintassi prevista.], [capitolato#super[G]],
-    [*RF05/03*], [I Supervisori possono definire il prezzo unitario all'inserimento di un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
+    [*RF05/03*], [I Supervisori possono definire il prezzo unitario all'inserimento di un nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [capitolato#super[G]],
     [*RF05/04*], [I Supervisori visualizzano un messaggio di errore se il prezzo unitario del prodotto#super[G] è sintatticamente errato.], [capitolato#super[G]],
-    [*RF05/05*], [I Supervisori possono definire la quantità all'inserimento di un nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
+    [*RF05/05*], [I Supervisori possono definire la quantità all'inserimento di un nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [capitolato#super[G]],
     [*RF05/06*], [I Supervisori visualizzano un messaggio di errore se la quantità del prodotto#super[G] è sintatticamente errata.], [capitolato#super[G]],
-    [*RF05/07*], [Il Supervisore Globale può rimuovere un tipo di merce dall'inventario.], [capitolato#super[G]],
-    [*RF05/08*], [I Supervisori possono modificare la quantità di merce nell'inventario dei magazzini.], [capitolato#super[G]],
+    [*RF05/07*], [Il Supervisore Globale può rimuovere un tipo di merce dall'inventario#super[G].], [capitolato#super[G]],
+    [*RF05/08*], [I Supervisori possono modificare la quantità di merce nell'inventario#super[G] dei magazzini.], [capitolato#super[G]],
     [*RF05/09*], [I Supervisori visualizzano un messaggio di errore se la quantità di merce modificata del prodotto#super[G] è sintatticamente errata.], [capitolato#super[G]], 
     [*RF05/10*], [Il Supervisore Globale può modificare il prezzo unitario di un prodotto#super[G].], [capitolato#super[G]],
 
-    [*RF06*], [*Gestione manuale degli ordini.*], [capitolato#super[G]],
-    [*RF06/01*], [I Supervisori possono inserire ordini di trasferimento interno tra magazzini selezionando il magazzino di partenza e inserendo uno o più prodotti nell'ordine.], [capitolato#super[G]],
-    [*RF06/02*], [I Supervisori possono inserire ordini di vendita verso l'esterno inserendo l'indirizzo del destinatario e inserendo uno o più prodotto#super[G] nell'ordine.], [capitolato#super[G]],
-    [*RF06/03*], [I Supervisori visualizzano un messaggio di errore se la quantità di prodotto#super[G] in un ordine non rispetta la sintassi prevista.], [capitolato#super[G]],
-    [*RF06/04*], [I Supervisori possono annullare ordini "in attesa" e "in elaborazione".], [decisione\ interna],
+    [*RF06*], [*Gestione manuale degli ordini#super[G].*], [capitolato#super[G]],
+    [*RF06/01*], [I Supervisori possono inserire ordini#super[G] di trasferimento#super[G] interno tra magazzini selezionando il magazzino di partenza e inserendo uno o più prodotti#super[G] nell'ordine#super[G].], [capitolato#super[G]],
+    [*RF06/02*], [I Supervisori possono inserire ordini#super[G] di vendita verso l'esterno inserendo l'indirizzo del destinatario e inserendo uno o più prodotto#super[G] nell'ordine#super[G].], [capitolato#super[G]],
+    [*RF06/03*], [I Supervisori visualizzano un messaggio di errore se la quantità di prodotto#super[G] in un ordine#super[G] non rispetta la sintassi prevista.], [capitolato#super[G]],
+    [*RF06/04*], [I Supervisori possono annullare ordini#super[G] "in attesa" e "in elaborazione".], [decisione\ interna],
 
     [*RF07*], [*Auditing dei dati dei magazzini.*], [], 
-    [*RF07/01*], [Il Supervisore Globale può visualizzare l'inventario globale.], [capitolato#super[G]],
-    [*RF07/02*], [Il Supervisore Globale può visualizzare l'inventario di ciascun magazzino.], [capitolato#super[G]],
-    [*RF07/03*], [Il Supervisore Globale può visualizzare un report degli ordini globali.], [capitolato#super[G]],
-    [*RF07/04*], [Il Supervisore Globale può visualizzare un report degli ordini di ciascun magazzino.], [capitolato#super[G]],
-    [*RF07/05*], [I Supervisori Locali possono visualizzare l'inventario del/dei magazzino/i a loro assegnato/i.], [capitolato#super[G]],
-    [*RF07/06*], [I Supervisori Locali possono visualizzare un report degli ordini del/dei magazzino/i a loro assegnato/i.], [capitolato#super[G]],
+    [*RF07/01*], [Il Supervisore Globale può visualizzare l'inventario#super[G] globale.], [capitolato#super[G]],
+    [*RF07/02*], [Il Supervisore Globale può visualizzare l'inventario#super[G] di ciascun magazzino.], [capitolato#super[G]],
+    [*RF07/03*], [Il Supervisore Globale può visualizzare un report degli ordini#super[G] globali.], [capitolato#super[G]],
+    [*RF07/04*], [Il Supervisore Globale può visualizzare un report degli ordini#super[G] di ciascun magazzino.], [capitolato#super[G]],
+    [*RF07/05*], [I Supervisori Locali possono visualizzare l'inventario#super[G] del/dei magazzino/i a loro assegnato/i.], [capitolato#super[G]],
+    [*RF07/06*], [I Supervisori Locali possono visualizzare un report degli ordini#super[G] del/dei magazzino/i a loro assegnato/i.], [capitolato#super[G]],
 
     [*RF08*], [I Supervisori possono visualizzare lo stato di tutti i magazzini.], [capitolato#super[G]],
 
@@ -1415,8 +1415,8 @@ _Esempio:_
     [*RF09/03*], [Il Supervisore Globale può rifiutare le richieste decisionali prodotte dal sistema.], [capitolato#super[G]],
 
     [*RF10*], [*Gestione delle soglie critiche.*], [capitolato#super[G]], 
-    [*RF10/01*], [I Supervisori possono definire i valori di soglia minima all'inserimento di nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
-    [*RF10/02*], [I Supervisori possono definire i valori di soglia massima all'inserimento di nuovo tipo di merce nell'inventario di un magazzino.], [capitolato#super[G]],
+    [*RF10/01*], [I Supervisori possono definire i valori di soglia minima all'inserimento di nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [capitolato#super[G]],
+    [*RF10/02*], [I Supervisori possono definire i valori di soglia massima all'inserimento di nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [capitolato#super[G]],
     [*RF10/03*], [I Supervisori visualizzano un messaggio di errore se i valori di soglia minima e/o massima inseriti sono sintatticamente errati.], [capitolato#super[G]],
     [*RF10/04*], [Il Supervisore Globale può modificare i valori di soglia minima e massima di ciascun tipo di merce per ciascun magazzino.], [capitolato#super[G]],
     [*RF10/05*], [Il Supervisore Globale visualizza un messaggio di errore se i valori di soglia minima e/o massima modificati sono sintatticamente errati.], [capitolato#super[G]],
@@ -1427,18 +1427,18 @@ _Esempio:_
     [*RF11/01*], [Ciascun magazzino deve identificare quando le scorte#super[G] scendono sotto una certa soglia.], [capitolato#super[G]],
     [*RF11/02*], [Ciascun magazzino deve identificare quando le scorte#super[G] salgono sopra una certa soglia.], [capitolato#super[G]],
 
-    [*RF12*], [*Gestione degli ordini.*], [capitolato#super[G]],
-    [*RF12/01*], [Ciascun magazzino deve verificare la disponibilità delle scorte#super[G] per poter soddisfare un ordine ricevuto.], [capitolato#super[G]],
-    [*RF12/02*], [Ciascun magazzino deve identificare l'impossibilità di soddisfare un ordine.], [capitolato#super[G]],
-    [*RF12/03*], [Un magazzino con scorte#super[G] insufficienti per gestire un ordine, deve richidere un riassortimento al sistema.], [decisione\ interna],
-    [*RF12/04*], [Ciascun magazzino deve tracciare lo stato degli ordini.], [capitolato#super[G]],
-    [*RF12/05*], [I magazzini possono inviare merce verso un altro magazzino tramite un ordine.],[capitolato#super[G]],
-    [*RF12/06*], [I magazzini possono ricevere approvvigionamenti dall'esterno tramite ordine.],[capitolato#super[G]],
-    [*RF12/07*], [I magazzini possono spedire merci verso l'esterno tramite ordine.],[capitolato#super[G]],
+    [*RF12*], [*Gestione degli ordini#super[G].*], [capitolato#super[G]],
+    [*RF12/01*], [Ciascun magazzino deve verificare la disponibilità delle scorte#super[G] per poter soddisfare un ordine#super[G] ricevuto.], [capitolato#super[G]],
+    [*RF12/02*], [Ciascun magazzino deve identificare l'impossibilità di soddisfare un ordine#super[G].], [capitolato#super[G]],
+    [*RF12/03*], [Un magazzino con scorte#super[G] insufficienti per gestire un ordine#super[G], deve richidere un riassortimento#super[G] al sistema.], [decisione\ interna],
+    [*RF12/04*], [Ciascun magazzino deve tracciare lo stato degli ordini#super[G].], [capitolato#super[G]],
+    [*RF12/05*], [I magazzini possono inviare merce verso un altro magazzino tramite un ordine#super[G].],[capitolato#super[G]],
+    [*RF12/06*], [I magazzini possono ricevere approvvigionamenti#super[G] dall'esterno tramite ordine#super[G].],[capitolato#super[G]],
+    [*RF12/07*], [I magazzini possono spedire merci verso l'esterno tramite ordine#super[G].],[capitolato#super[G]],
     [*RF12/08*], [Il magazzino di destinazione deve notificare l'arrivo della merce al magazzino di origine.], [decisione\ interna],
-    [*RF12/09*], [Un ordine deve trovarsi in uno dei seguenti stati: "in attesa", "in elaborazione", "in transito", "annullato", "consegnato".], [decisione\ interna],
+    [*RF12/09*], [Un ordine#super[G] deve trovarsi in uno dei seguenti stati: "in attesa", "in elaborazione", "in transito", "annullato", "consegnato".], [decisione\ interna],
 
-    [*RF13*], [*Riassortimento delle scorte#super[G] tra magazzini.*], [capitolato#super[G]],
+    [*RF13*], [*Riassortimento#super[G] delle scorte#super[G] tra magazzini.*], [capitolato#super[G]],
     [*RF13/01*], [Il sistema deve programmare trasferimenti interni al raggiungimento di una soglia critica di un prodotto#super[G] in un magazzino al fine di bilanciare le scorte#super[G].], [capitolato#super[G]],
 
     [*RF14*], [*Individuazione dello stato dei magazzini.*], [capitolato#super[G]],
@@ -1447,38 +1447,38 @@ _Esempio:_
     [*RF14/03*], [Il sistema deve identificare eventuali disconnessioni di uno o più magazzini segnandoli come "offline".], [capitolato#super[G]],
 
     [*RF15*], [*Gestione dei disservizi.*], [capitolato#super[G]],
-    [*RF15/01*], [Un magazzino offline deve annullare gli ordini che non può soddisfare dopo un periodo di tempo predefinito.],[decisione\ interna],
-    [*RF15/02*], [Il Supervisore Globale può definire il periodo di tempo dopo cui l'ordine di un magazzino offline viene automaticamente anullato.],[decisione\ interna],
+    [*RF15/01*], [Un magazzino offline deve annullare gli ordini#super[G] che non può soddisfare dopo un periodo di tempo predefinito.],[decisione\ interna],
+    [*RF15/02*], [Il Supervisore Globale può definire il periodo di tempo dopo cui l'ordine#super[G] di un magazzino offline viene automaticamente anullato.],[decisione\ interna],
 
     [*RF16*], [*Gestione magazzino che cambia stato da offline a online.*], [capitolato#super[G]],
     [*RF16/01*], [Il sistema deve riconoscere quando un magazzino torna online.], [capitolato#super[G]],
 
-    [*RF17*], [*Annullamento di ordini in transito.*], [concordata\ col proponente],
-    [*RF17/01*], [Un ordine in stato "in transito" deve cambiare lo stato in "annullato" dopo una soglia temporale predefinita.],[concordata\ col proponente],
-    [*RF17/02*], [Il Supervisore Globale può definire la soglia temporale dopo cui un ordine "in transito" cambia automaticamente stato in "annullato".],[decisione\ interna],
+    [*RF17*], [*Annullamento di ordini#super[G] in transito.*], [concordata\ col proponente],
+    [*RF17/01*], [Un ordine#super[G] in stato "in transito" deve cambiare lo stato in "annullato" dopo una soglia temporale predefinita.],[concordata\ col proponente],
+    [*RF17/02*], [Il Supervisore Globale può definire la soglia temporale dopo cui un ordine#super[G] "in transito" cambia automaticamente stato in "annullato".],[decisione\ interna],
 
     //Requisiti Funzionali desiderabili
-    [*RFD01*], [Il Supervisore Globale può definire il costo massimo per i trasferimenti eseguibili mediante riassortimento automatico.],[concordata\ col proponente],
-    [*RFD02*], [Il Supervisore Globale può definire la distanza massima tra magazzini per il riassortimento automatico.],[concordata\ col proponente],
+    [*RFD01*], [Il Supervisore Globale può definire il costo massimo per i trasferimenti eseguibili mediante riassortimento#super[G] automatico.],[concordata\ col proponente],
+    [*RFD02*], [Il Supervisore Globale può definire la distanza massima tra magazzini per il riassortimento#super[G] automatico.],[concordata\ col proponente],
 
     [*RFD03*], [*Suggerimento su azioni di riassortimento#super[G] e trasferimento#super[G] tra magazzini.*], [capitolato#super[G]],
-    [*RFD03/01*], [Il sistema invia una richiesta decisionale al Supervisore Globale qualora un riassortimento superi i costi o le distanze massime.], [concordata\ col proponente],
+    [*RFD03/01*], [Il sistema invia una richiesta decisionale al Supervisore Globale qualora un riassortimento#super[G] superi i costi o le distanze massime.], [concordata\ col proponente],
 
     [*RFD04*], [*Interfaccia grafica.*], [capitolato#super[G]],
     [*RFD04/01*], [Deve essere possibile effettuare la registrazione del Supervisore Globale mediante Interfaccia Grafica.], [capitolato#super[G]],
     [*RFD04/02*], [Deve essere possibile effettuare l'autenticazione dell'utente mediante Interfaccia Grafica.], [capitolato#super[G]],
     [*RFD04/03*], [Deve essere possibile effettuare la registrazione di nuovi Supervisori Locali mediante Interfaccia Grafica.], [capitolato#super[G]],
     [*RFD04/04*], [Deve essere possibile effettuare la gestione manuale delle merci mediante Interfaccia Grafica.], [capitolato#super[G]],
-    [*RFD04/05*], [Deve essere possibile effettuare la gestione manuale degli ordini mediante Interfaccia Grafica.], [capitolato#super[G]],
+    [*RFD04/05*], [Deve essere possibile effettuare la gestione manuale degli ordini#super[G] mediante Interfaccia Grafica.], [capitolato#super[G]],
     [*RFD04/06*], [Deve essere possibile effettuare l'auditing dei dati dei magazzini mediante Interfaccia Grafica.], [capitolato#super[G]], 
     [*RFD04/07*], [Deve essere possibile effettuare la gestione delle richieste mediante Interfaccia Grafica.], [capitolato#super[G]], 
     [*RFD04/08*], [Deve essere possibile effettuare la gestione delle soglie critiche mediante Interfaccia Grafica.], [capitolato#super[G]],
 
     [*RFD05*], [*Produzione di notifiche.*], [capitolato#super[G]],
     [*RFD05/01*], [Il Sistema deve notificare i Supervisori al superamento dei livelli minimi e massimi di scorte#super[G].], [capitolato#super[G]],
-    [*RFD05/02*], [Il Sistema deve notificare i Supervisori dell'esecuzione del riassortimento automatico.], [capitolato#super[G]],
-    [*RFD05/03*], [Ciascun magazzino deve notificare i Supervisori dei cambi di stato degli ordini.], [capitolato#super[G]],
-    [*RFD05/04*], [Ciascun magazzino deve notificare i Supervisori dell'impossibilità di soddisfare un ordine.], [capitolato#super[G]],
+    [*RFD05/02*], [Il Sistema deve notificare i Supervisori dell'esecuzione del riassortimento#super[G] automatico.], [capitolato#super[G]],
+    [*RFD05/03*], [Ciascun magazzino deve notificare i Supervisori dei cambi di stato degli ordini#super[G].], [capitolato#super[G]],
+    [*RFD05/04*], [Ciascun magazzino deve notificare i Supervisori dell'impossibilità di soddisfare un ordine#super[G].], [capitolato#super[G]],
     [*RFD05/05*], [Ciascun magazzino deve notificare i Supervisori quando le scorte#super[G] scendono sotto una certa soglia.], [capitolato#super[G]],
     [*RFD05/06*], [Ciascun magazzino deve notificare i Supervisori quando le scorte#super[G] salgono sopra una certa soglia.], [capitolato#super[G]],
     [*RFD05/07*], [Il sistema deve notificare il Supervisore Globale di eventuali cambi di stato dei magazzini.],[capitolato#super[G]],
@@ -1486,24 +1486,24 @@ _Esempio:_
     [*RFD05/09*], [L'invio di notifiche deve poter avvenire tramite SMS.], [capitolato#super[G]],
 
     [*RFD06*], [*Produzione di richieste decisionali.*], [capitolato#super[G]],  
-    [*RFD06/01*], [Il Sistema deve inviare al Supervisore Globale le richieste decisionali prodotte dal riassortimento predittivo.], [capitolato#super[G]],
+    [*RFD06/01*], [Il Sistema deve inviare al Supervisore Globale le richieste decisionali prodotte dal riassortimento#super[G] predittivo.], [capitolato#super[G]],
 
     [*RFD07*], [*Riassortimento predittivo.*], [capitolato#super[G]],
     [*RFD07/01*], [Il sistema deve avere uno storico dei livelli di merce.], [decisione\ interna],
-    [*RFD07/02*], [Il sistema deve poter analizzare i dati storici degli ordini.], [capitolato#super[G]],
-    [*RFD07/03*], [Il sistema deve poter analizzare i dati storici di inventario dei magazzini.], [capitolato#super[G]],
-    [*RFD07/04*], [Il sistema deve implementare un modello di previsione della domanda dei prodotti.], [capitolato#super[G]],
-    [*RFD07/05*], [Il sistema deve poter pianifiare i riassortimenti sulla base del modello di previsione.], [capitolato#super[G]],
-    [*RFD07/06*], [Il sistema deve inviare una richiesta decisionale al Supervisore Globale di approvvigionamento sulla base del modello di previsione.], [capitolato#super[G]],
-    [*RFD07/07*], [Il sistema deve inviare una richiesta decisionale al Supervisore Globale di riassortimento sulla base del modello di previsione.], [capitolato#super[G]],  
+    [*RFD07/02*], [Il sistema deve poter analizzare i dati storici degli ordini#super[G].], [capitolato#super[G]],
+    [*RFD07/03*], [Il sistema deve poter analizzare i dati storici di inventario#super[G] dei magazzini.], [capitolato#super[G]],
+    [*RFD07/04*], [Il sistema deve implementare un modello di previsione della domanda dei prodotti#super[G].], [capitolato#super[G]],
+    [*RFD07/05*], [Il sistema deve poter pianifiare i riassortimenti#super[G] sulla base del modello di previsione.], [capitolato#super[G]],
+    [*RFD07/06*], [Il sistema deve inviare una richiesta decisionale al Supervisore Globale di approvvigionamento#super[G] sulla base del modello di previsione.], [capitolato#super[G]],
+    [*RFD07/07*], [Il sistema deve inviare una richiesta decisionale al Supervisore Globale di riassortimento#super[G] sulla base del modello di previsione.], [capitolato#super[G]],  
 
     //Requisiti Funzionali opzionali
-    [*RFO01*], [I supervisori devono poter eseguire un ripristino manuale dei dati da un backup#super[G].], [capitolato#super[G]],
+    [*RFO01*], [I supervisori devono poter eseguire un ripristino#super[G] manuale dei dati da un backup#super[G].], [capitolato#super[G]],
 
     [*RFO02*], [*Gestione dei magazzini non operativi.*],[decisione\ interna],
     [*RFO02/01*], [Ciascun magazzino può trovarsi nello stato "non operativo".],[decisione\ interna],
-    [*RFO02/02*], [Il sistema può annullare ordini di un magazzino "non operativo".], [decisione\ interna],
-    [*RFO02/03*], [Il sistema può assegnare ordini di un magazzino "non operativo" ad altri magazzini.], [decisione\ interna],
+    [*RFO02/02*], [Il sistema può annullare ordini#super[G] di un magazzino "non operativo".], [decisione\ interna],
+    [*RFO02/03*], [Il sistema può assegnare ordini#super[G] di un magazzino "non operativo" ad altri magazzini.], [decisione\ interna],
 
   ),
   caption: [Requisiti Funzionali],
@@ -1565,11 +1565,11 @@ _Esempio:_
     [*RQ01*], [*Autonomia dei magazzini.*], [capitolato#super[G]],
     [*RQ01/01*], [I magazzini devono poter operare autonomamente.], [capitolato#super[G]],
     [*RQ01/02*], [I magazzini devono poter elaborare localmente le richieste.], [capitolato#super[G]],
-    [*RQ01/03*], [Ciascun magazzino deve gestire gli ordini concorrenti per uno stesso prodotto secondo una politica predefinita.], [capitolato#super[G]],
+    [*RQ01/03*], [Ciascun magazzino deve gestire gli ordini#super[G] concorrenti per uno stesso prodotto secondo una politica predefinita.], [capitolato#super[G]],
 
     [*RQ02*], [*Robustezza dei magazzini.*], [capitolato#super[G]],
-    [*RQ02/01*], [I dati di inventario e degli ordini devono essere coerenti, consistenti e persistenti in tutto il sistema.], [capitolato#super[G]],
-    [*RQ02/02*], [I dati di inventario devono essere resilienti a modifiche concorrenti.], [capitolato#super[G]],
+    [*RQ02/01*], [I dati di inventario#super[G] e degli ordini#super[G] devono essere coerenti, consistenti e persistenti in tutto il sistema.], [capitolato#super[G]],
+    [*RQ02/02*], [I dati di inventario#super[G] devono essere resilienti a modifiche concorrenti.], [capitolato#super[G]],
 
     [*RQ03*], [*Sicurezza del sistema.*], [capitolato#super[G]],
     [*RQ03/01*], [Deve essere implementata la cifratura#super[G] end-to-end negli scambi dei dati tra magazzini e con il sistema.], [capitolato#super[G]],
@@ -1589,7 +1589,7 @@ _Esempio:_
     [*RQ05/03*], [Il test book deve includere le condizioni iniziali dei test.], [capitolato#super[G]],
     [*RQ05/04*], [Il test book deve includere i passaggi eseguiti dai test.], [capitolato#super[G]],    
     [*RQ05/05*], [Il test book deve includere i risultati attesi e ottenuti dai test.], [capitolato#super[G]],
-    [*RQ05/06*], [Il test book deve includere criteri di validazione dei test.], [capitolato#super[G]],
+    [*RQ05/06*], [Il test book deve includere criteri di validazione#super[G] dei test.], [capitolato#super[G]],
 
     [*RQ06*], [Il Sistema deve essere scalabile orizzontalmente.], [capitolato#super[G]],
 
@@ -1600,7 +1600,7 @@ _Esempio:_
 
     [*RQD01*], [Il sistema deve automatizzare il processo di riassortimento#super[G] se rispetta il costo e la distanza massima.], [capitolato#super[G]],
 
-    [*RQD02*], [II magazzino detiene la fonte affidabile dei dati di inventario e degli ordini.], [capitolato#super[G]],
+    [*RQD02*], [II magazzino detiene la fonte affidabile dei dati di inventario#super[G] e degli ordini#super[G].], [capitolato#super[G]],
 
     //Requisiti di Qualità opzionali
 
@@ -1610,7 +1610,7 @@ _Esempio:_
     [*RQO01/03*], [Le richieste verso i microservizi devono essere autenticate.], [capitolato#super[G]],
     [*RQO01/04*], [Gli scambi di dati tra microservizi devono essere cifrati.], [capitolato#super[G]],
 
-    [*RQO02*], [*Backup#super[G] e ripristino dei dati.*], [capitolato#super[G]],
+    [*RQO02*], [*Backup#super[G] e ripristino#super[G] dei dati.*], [capitolato#super[G]],
     [*RQO02/01*], [I dati dei magazzini devono essere sottoposti a backup#super[G].], [capitolato#super[G]],
     [*RQO02/02*], [I dati aggregati su cloud devono essere sottoposti a backup#super[G].], [capitolato#super[G]],
     [*RQO02/03*], [I magazzini devono mantenere una copia locale dei propri dati.], [capitolato#super[G]],
