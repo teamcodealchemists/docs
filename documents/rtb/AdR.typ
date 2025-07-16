@@ -35,7 +35,7 @@
   [21/06/2025],
   [N. Bolzon],
   [M. Pretto],
-  [Aggiunta super[G] mancanti per collegamento al glossario#super[G] e correzione di alcuni errori minori di battitura],
+  [Aggiunta super[G] mancanti per collegamento al glossario e correzione di alcuni errori minori di battitura],
 
   [0.8.1],
   [16/06/2025],
@@ -207,11 +207,11 @@ Per agevolare la comprensione, verranno utilizzati i Diagrammi dei Casi d'Uso pe
 
 Questo documento è destinato a:
 
-- Il Committente#super[G], per verificare la corretta interpretazione dei requisiti#super[G].;
+- Il Committente#super[G], per verificare#super[G] la corretta interpretazione dei requisiti#super[G].;
 
 - Il Team di Progettisti#super[G] e Programmatori#super[G], come guida per la realizzazione del sistema;
 
-- Il Team di Verificatori#super[G], per definire i test e verificare il corretto funzionamento del prodotto;
+- Il Team di Verificatori#super[G], per definire i test e verificare#super[G] il corretto funzionamento del prodotto;
 
 Potrà inoltre essere consultato da altri soggetti coinvolti nel processo di sviluppo, come Amministratori#super[G] e Responsabili#super[G] di Progetto, al fine di acquisire una comprensione esauriente delle specifiche del sistema.
 
@@ -282,7 +282,7 @@ https://www.multiplayer.app/distributed-systems-architecture/
 === Riferimenti informativi
 - *Diagrammi dei Casi d'Uso:* \ #link("https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")[https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
 - *Analisi dei Requisiti#super[G]:* \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
-- *Glossario:* \ #link("https://teamcodealchemists.github.io/glossario.html")[https://teamcodealchemists.github.io/glossario.html] \ *Ultimo Accesso:* 16 Giugno 2025
+- *Glossario#super[G]:* \ #link("https://teamcodealchemists.github.io/glossario.html")[https://teamcodealchemists.github.io/glossario.html] \ *Ultimo Accesso:* 16 Giugno 2025
 - *Standard IEEE:* \ #link("https://ieeexplore.ieee.org/document/720574")[https://ieeexplore.ieee.org/document/720574] \ *Ultimo Accesso:* 27 Maggio 2025
 
 #pagebreak()
@@ -436,7 +436,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
   - L'Utente non è registrato nel Sistema.
 - *Postcondizione*:
   - L'Utente non è ancora registrato nel Sistema.
-  - Viene fornita all'Utente la possibilità di verificare che Password e Password di conferma corrispondano.
+  - Viene fornita all'Utente la possibilità di verificare#super[G] che Password e Password di conferma corrispondano.
 - *Scenario principale*
   + L'Utente riceve un messaggio di errore.
 
@@ -512,7 +512,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Scenario principale*:
   + Il Supervisore viene disconnesso dal Sistema.
-  + Il Supervisore non più autenticato visualizza la schermata di autenticazione.
+  + Il Supervisore non più autenticato visualizza la schermata di autenticazione#super[G].
 
 - *Trigger*:
   - Il Supervisore preme sul pulsante di Logout.
@@ -775,7 +775,7 @@ Identificativo univoco del caso d’uso, composto da un ID principale che identi
 
 - *Scenario principale*:
   + Il Supervisore seleziona la tipologia di merce da rimuovere.
-  + Il Supervisore verifica che la tipologia di merce selezionata abbia globalmente quantità nulla.
+  + Il Supervisore verifica#super[G] che la tipologia di merce selezionata abbia globalmente quantità nulla.
   + Il Supervisore conferma l'eliminazione.
 
 - *Scenario alternativo*:
@@ -1285,7 +1285,7 @@ Verranno ora elencati i requisiti#super[G] del sistema, che sono stati suddivisi
 == Classificazione dei requisiti
 - *Requisiti#super[G] Funzionali:* descrivono le funzionalità specifiche che il sistema deve offrire. Definiscono i comportamenti attesi in risposta a determinati input o situazioni, specificando cosa il sistema deve fare per soddisfare i bisogni degli utenti e degli stakeholder.
 
-- *Requisiti#super[G] di Qualità:* detti anche non funzionali, definiscono le caratteristiche generali del sistema che ne influenzano l’efficacia, l’efficienza e l’affidabilità. Rientrano in questa categoria aspetti come la sicurezza, l’usabilità, la manutenibilità, la scalabilità e l’affidabilità complessiva del sistema.
+- *Requisiti#super[G] di Qualità:* detti anche non funzionali, definiscono le caratteristiche generali del sistema che ne influenzano l’efficacia, l’efficienza e l’affidabilità. Rientrano in questa categoria aspetti come la sicurezza, l’usabilità, la manutenibilità, la scalabilità#super[G] e l’affidabilità complessiva del sistema.
 
 - *Requisiti#super[G] di Vincolo:* specificano le limitazioni imposte da fattori esterni o immutabili, che il sistema o il processo di sviluppo devono rispettare. Tali vincoli possono derivare da normative, tecnologie obbligatorie, standard industriali, vincoli temporali o economici.
 
@@ -1294,7 +1294,7 @@ Verranno ora elencati i requisiti#super[G] del sistema, che sono stati suddivisi
 == Fonti dei requisiti
 Le fonti dei requisiti#super[G] rappresentano i documenti e le informazioni da cui sono stati estratti i requisiti#super[G] stessi. Tra le principali fonti si annoverano il capitolato#super[G] d'appalto, le riunioni con il committente#super[G], l’analisi dello stato dell’arte e l’analisi dei casi d’uso.
 
-Ogni requisito#super[G] riportato sarà accompagnato dall’indicazione esplicita della propria fonte di provenienza, al fine di garantirne la tracciabilità e la verificabilità.
+Ogni requisito#super[G] riportato sarà accompagnato dall’indicazione esplicita della propria fonte di provenienza, al fine di garantirne la tracciabilità e la verificabilità#super[G].
 
 == Struttura della codifica dei requisiti
 I requisiti#super[G] sono stati codificati al fine di facilitarne la lettura, la gestione e la tracciabilità.
@@ -1307,7 +1307,7 @@ I requisiti#super[G] funzionali sono preceduti dal prefisso "RF", i Requisiti#su
 - *V* sta per "#strong[V]incolo";
 - *P* sta per "#strong[P]restazionale";
 
-Per facilitare la lettura, la tracciabilità e la classificazione dei requisiti#super[G], è stato adottato un sistema di codifica sturtturato. La codifica prevede un prefisso che identifica la tipologia e l'importanza del requisito, seguito da un numero progressivo. In caso di scomposizione, si aggiunge una notazione per indicare i requisiti derivati.
+Per facilitare la lettura, la tracciabilità e la classificazione dei requisiti#super[G], è stato adottato un sistema di codifica sturtturato. La codifica prevede un prefisso che identifica la tipologia e l'importanza del requisito#super[G], seguito da un numero progressivo. In caso di scomposizione, si aggiunge una notazione per indicare i requisiti derivati.
 
 === Tipologia e Importanza
 I requisiti#super[G] sono stati distinti anche in base alla loro importanza o natura, secondo le seguenti convenzioni:
@@ -1363,10 +1363,10 @@ _Esempio:_
     [*RF01/04*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se la password inserita non rispetta la sintassi.], [decisione\ interna],
     [*RF01/05*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se la password e la conferma password non corrispondono.], [decisione\ interna],
 
-    [*RF02*], [*Autenticazione dell'utente.*], [capitolato#super[G]],
+    [*RF02*], [*Autenticazione#super[G] dell'utente.*], [capitolato#super[G]],
     [*RF02/01*], [L'utente deve poter accedere al sistema mediante credenziali (email e password).], [capitolato#super[G]],
     [*RF02/02*], [L'utente deve poter effettuare il logout dal sistema.], [capitolato#super[G]],
-    [*RF02/03*], [L'utente visualizza un messaggio di errore in caso di autenticazione fallita.], [capitolato#super[G]],   
+    [*RF02/03*], [L'utente visualizza un messaggio di errore in caso di autenticazione#super[G] fallita.], [capitolato#super[G]],   
 
     [*RF03*], [*Registrazione di nuovi Supervisori Locali.*], [decisione\ interna],
     [*RF03/01*], [Il Supervisore Globale può registrare a sistema nuovi Supervisori Locali ciascuno con email, numero di cellulare e una password.], [decisione\ interna],
@@ -1428,7 +1428,7 @@ _Esempio:_
     [*RF11/02*], [Ciascun magazzino deve identificare quando le scorte#super[G] salgono sopra una certa soglia.], [capitolato#super[G]],
 
     [*RF12*], [*Gestione degli ordini#super[G].*], [capitolato#super[G]],
-    [*RF12/01*], [Ciascun magazzino deve verificare la disponibilità delle scorte#super[G] per poter soddisfare un ordine#super[G] ricevuto.], [capitolato#super[G]],
+    [*RF12/01*], [Ciascun magazzino deve verificare#super[G] la disponibilità delle scorte#super[G] per poter soddisfare un ordine#super[G] ricevuto.], [capitolato#super[G]],
     [*RF12/02*], [Ciascun magazzino deve identificare l'impossibilità di soddisfare un ordine#super[G].], [capitolato#super[G]],
     [*RF12/03*], [Un magazzino con scorte#super[G] insufficienti per gestire un ordine#super[G], deve richidere un riassortimento#super[G] al sistema.], [decisione\ interna],
     [*RF12/04*], [Ciascun magazzino deve tracciare lo stato degli ordini#super[G].], [capitolato#super[G]],
@@ -1466,7 +1466,7 @@ _Esempio:_
 
     [*RFD04*], [*Interfaccia grafica.*], [capitolato#super[G]],
     [*RFD04/01*], [Deve essere possibile effettuare la registrazione del Supervisore Globale mediante Interfaccia Grafica.], [capitolato#super[G]],
-    [*RFD04/02*], [Deve essere possibile effettuare l'autenticazione dell'utente mediante Interfaccia Grafica.], [capitolato#super[G]],
+    [*RFD04/02*], [Deve essere possibile effettuare l'autenticazione#super[G] dell'utente mediante Interfaccia Grafica.], [capitolato#super[G]],
     [*RFD04/03*], [Deve essere possibile effettuare la registrazione di nuovi Supervisori Locali mediante Interfaccia Grafica.], [capitolato#super[G]],
     [*RFD04/04*], [Deve essere possibile effettuare la gestione manuale delle merci mediante Interfaccia Grafica.], [capitolato#super[G]],
     [*RFD04/05*], [Deve essere possibile effettuare la gestione manuale degli ordini#super[G] mediante Interfaccia Grafica.], [capitolato#super[G]],
@@ -1531,7 +1531,7 @@ _Esempio:_
     [*Codice*], [*Descrizione*], [*Fonti*]),
 
     //Requisiti di Vincolo obbligatori
-    [*RV01*], [L'architettura del sistema deve usare microservizi.], [capitolato#super[G]],
+    [*RV01*], [L'architettura#super[G] del sistema deve usare microservizi#super[G].], [capitolato#super[G]],
     [*RV02*], [Versionamento del codice tramite Git.], [capitolato#super[G]],
 
     //Requisiti di Vincolo desiderabili
@@ -1606,15 +1606,15 @@ _Esempio:_
 
     [*RQO01*], [*Sicurezza del sistema.*], [capitolato#super[G]],
     [*RQO01/01*], [Il sistema deve prevedere la possibilità di autenticazione#super[G] a due fattori (2FA#super[G]) o più (MFA#super[G]) per gli utenti.], [capitolato#super[G]],
-    [*RQO01/02*], [Il sistema deve verificare l'integrità dei dati tramite firme digitali o hashing.], [capitolato#super[G]],
-    [*RQO01/03*], [Le richieste verso i microservizi devono essere autenticate.], [capitolato#super[G]],
-    [*RQO01/04*], [Gli scambi di dati tra microservizi devono essere cifrati.], [capitolato#super[G]],
+    [*RQO01/02*], [Il sistema deve verificare#super[G] l'integrità#super[G] dei dati tramite firme digitali#super[G] o hashing#super[G].], [capitolato#super[G]],
+    [*RQO01/03*], [Le richieste verso i microservizi#super[G] devono essere autenticate.], [capitolato#super[G]],
+    [*RQO01/04*], [Gli scambi di dati tra microservizi#super[G] devono essere cifrati.], [capitolato#super[G]],
 
     [*RQO02*], [*Backup#super[G] e ripristino#super[G] dei dati.*], [capitolato#super[G]],
     [*RQO02/01*], [I dati dei magazzini devono essere sottoposti a backup#super[G].], [capitolato#super[G]],
     [*RQO02/02*], [I dati aggregati su cloud devono essere sottoposti a backup#super[G].], [capitolato#super[G]],
     [*RQO02/03*], [I magazzini devono mantenere una copia locale dei propri dati.], [capitolato#super[G]],
-    [*RQO02/04*], [Il sistema deve mantenere l'integrità e la consistenza dei dati tra i magazzini.], [capitolato#super[G]],
+    [*RQO02/04*], [Il sistema deve mantenere l'integrità#super[G] e la consistenza dei dati tra i magazzini.], [capitolato#super[G]],
     ),
     caption: [Requisiti di Qualità],
   )
