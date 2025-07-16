@@ -1,5 +1,5 @@
-#import "@preview/cetz:0.3.4": *
-#import "@preview/cetz-plot:0.1.1": *
+#import "@preview/cetz:0.4.0": *
+#import "@preview/cetz-plot:0.1.2": *
 
 #let graph_line(
   data_atteso: (),
@@ -47,8 +47,8 @@
   y-max: (),
   y-min: (),
   y-tick-step: (),
-  doc,
-  show-line: false
+  y-dash: (),
+  doc
 ) = {
   set align(center)
 
@@ -63,7 +63,18 @@
       x-label: (label_x),
       y-label: (label_y),
       {
-        plot.add-bar((..data), bar-width: 0.6)
+        plot.add-bar((..data), bar-width: 0.6,style: (
+          fill: rgb("#67abce"),
+          stroke: black,
+          stroke-width: 1
+        ))
+        plot.add-hline(y-dash, style: (
+          stroke: (
+            paint:red,
+            dash:"dashed"
+            
+          )
+        ))
       }
     )
   })

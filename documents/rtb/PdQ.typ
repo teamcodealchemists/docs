@@ -543,7 +543,8 @@ L'indice di prestazione dei tempi (SPI) è calcolato come il rapporto tra il val
   label_y: "Indice di prestazione dei tempi (SPI)",
   y-max: 1.2,
   y-min: 0.5,
-  y-tick-step: 0.1
+  y-tick-step: 0.1,
+  y-dash: 1,
   //potremmo inserire una linea orizzontale a 1 per indicare il valore di riferimento
 ) 
 
@@ -571,7 +572,8 @@ Il grafico dell'indice di Gulpease mostra l'andamento della leggibilità del doc
   label_y: "Indice di Gulpease",
   y-max: 100,
   y-min: 0,
-  y-tick-step: 10
+  y-tick-step: 10,
+  y-dash: 50
 )
 
 Inizialmente l'indice di Gulpease era sotto il valore minimo di 50, indicando una bassa leggibilità del documento. Tuttavia, grazie agli sforzi per migliorare la qualità della documentazione, l'indice è aumentato e si è stabilizzato sopra il valore minimo, raggiungendo un picco di 58 negli ultimi sprint. Questo suggerisce che le modifiche apportate hanno avuto un impatto positivo sulla leggibilità del documento.
