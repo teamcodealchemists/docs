@@ -1713,11 +1713,11 @@ _Esempio:_
   table.header(
     [*Tipologia*], [*Obbligatori*], [*Desiderabili*], [*Opzionali*],
   ),
-    [*Funzionali*],     [69],    [33],    [5],
+    [*Funzionali*],     [84],    [33],    [5],
     [*Qualità*],        [26],    [2],     [10],
     [*Prestazionali*],  [0],     [0],     [0],
     [*Vincolo*],        [2],     [0],     [0],
-    [*Totale*],         [*97*],  [*35*],  [*15*]
+    [*Totale*],         [*112*],  [*35*],  [*15*]
   ),
   caption: [Riepilogo dei casi d'uso],
 )
