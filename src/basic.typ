@@ -237,10 +237,6 @@
 ) = {
   set align(center)
 
-  set box(
-  width: 95%,
-  )
-
   set table(
     align: (center, center, center, center),
     fill:(_,y)=>if y==0 {silver},
@@ -249,7 +245,7 @@
 
   set text(
     size: 11pt,
-    hyphenate: false
+    hyphenate: true,
   )
 
   set table.cell(
@@ -257,19 +253,17 @@
   )
 
   v(4pt)
-  box(
     figure(
-      table(
-        columns: (1fr, 3fr, 1fr, 1fr),
-        table.header(
-          [*Codice*], [*Descrizione*], [*Codice Requisito*], [*Stato*]
-        ),
-        ..voci,
-      ),
+      block(
+        table(
+          columns: (1fr, 2fr, 1fr, 1fr),
+          table.header(
+            [*Codice*], [*Descrizione*], [*Codice \ Requisito*], [*Stato*]
+          ),
+          ..voci,
+      )),
       caption: caption
     )
-  )
-  
   set align(left)
   doc
 }
