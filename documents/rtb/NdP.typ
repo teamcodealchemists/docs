@@ -15,7 +15,7 @@
 #let titolo = "Norme di progetto"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "0.6.0"
+#let versione = "0.7.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -26,6 +26,13 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [0.7.0],
+  [16/07/2025],
+  [A. Shu],
+  [N. Bolzon],
+  [Aggiunte sezioni 3.2.4.2.13.1., 4.2.4., 4.2.5., 4.2.6., 4.2.6.1., 
+  4.3.4. e 4.4.2.2.4., modificate 3.2.3.4. e 3.2.3.6., correzione degli errori ortografici, aggiunta una descrizione più dettagliata su NestJS nella sezione 3.2.3.4.],
+
   [0.6.0],
   [08/07/2025],
   [R. Zangla],
@@ -98,7 +105,7 @@
   == Scopo del documento
   Il presente documento viene redatto per descrivere il _Way of Working_#super[G] adottato dal Team _Code Alchemists_ per lo svolgimento del progetto didattico di Ingegneria del Software. Esso stabilisce le linee guida, i processi, le metodologie e gli standard inerenti ogni attività associata al ciclo di vita del software, così da garantire coerenza, efficienza, efficacia e qualità.
 
-  == Scopo del prodotto#super[G]
+  == Scopo del prodotto
   Il prodotto#super[G], detto anche software, oggetto del presente progetto, consiste nella realizzazione di un sistema distribuito e scalabile per la gestione ottimale (intesa come minimizzazione dei tempi di risposta e di ottimizzazione della distribuzione delle scorte#super[G]) di una rete di magazzini. Ogni singolo magazzino è autonomo, così da favorire l'interoperabilità tra di essi e centralizzare le informazioni in maniera efficiente e sicura. // Inserire riferimento al capitolato#super[G]?
 
   Il presente documento è redatto secondo lo standard _ISO/IEC 12207:1995_, che identifica tre tipologie di processi: 
@@ -114,8 +121,8 @@
   - Il docente, #p.tullio, nel ruolo di _Committente_#super[G]
   - Il team _Code Alchemists_, nel ruolo di _Fornitore#super[G]_
   
-  == Glossario#super[G]
-  Le parole#super[G] contrassegnate in apice con la lettera #super[G] sono intese con la loro definizione specificata nel documento _Glossario#super[G]_.
+  == Glossario
+  Le parole contrassegnate in apice con la lettera #super[G] sono intese con la loro definizione specificata nel documento _Glossario#super[G]_.
   == Riferimenti
     === Riferimenti normativi
     - *Capitolato#super[G] d'appalto* \
@@ -159,7 +166,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
   === Comunicazione con l'azienda proponente
   // Spiegazione di come vengono mantenuti i contatti con l'azienda proponente (+ accenno agli strumenti citati sotto)
 
-  Il team _Code Alchemists_ ritiene essenziale mantenere un dialogo continuo con l'azienda _M31_. Tale dialogo, infatti, garantisce un allineamento efficace sulle esigenze del progetto, prevenire incomprensioni e agevolare la risoluzione di eventuali criticità. A tal fine, verranno programmati incontri bisettimanali su Google Meet, integrati da una continua comunicazione asincrona tramite email.
+  Il team _Code Alchemists_ ritiene essenziale mantenere un dialogo continuo con l'azienda _M31_. Tale dialogo, infatti, garantisce un allineamento efficace sulle esigenze del progetto, prevenire incomprensioni e agevolare la risoluzione di eventuali criticità. A tal fine, verranno programmati incontri su Microsoft teams, integrati da una continua comunicazione asincrona tramite email.
 
   Le interazioni con il proponente saranno focalizzate su aspetti chiave quali definire i requisiti#super[G], pianificare le consegne, raccogliere di feedback, gestire le problematiche tecniche e la definizione delle priorità.
 
@@ -174,7 +181,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
   
   Questo piano facilita la comunicazione tra fornitore#super[G] e proponente, assicurando trasparenza e coordinazione efficace durante l'intero processo.
 
-  === Piano di Qualifica#super[G]
+  === Piano di Qualifica
   // Descrizione documento PdQ
   Il Piano di Qualifica#super[G] definisce le strategie per garantire la qualità del prodotto#super[G], stabilendo standard di sviluppo, criteri di verifica#super[G] e test per la conformità ai requisiti#super[G]. 
   
@@ -191,7 +198,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
   - *Typst*: sistema per la creazione di documenti;
   - *Google Presentazioni*: sistema per la creazione delle slide di presentazione;
   - *Google Calendar*: sistema per tenere traccia dei vari incontri interni ed esterni da svolgere.
-
+  - *GitHub*: piattaforma utilizzata per la gestione del codice sorgente, il versionamento e la collaborazione tra i  membri del team.
 
 == Sviluppo 
   === Scopo
@@ -202,7 +209,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
   
   Il processo di sviluppo ha il compito di assicurare una pianificazione strutturata e un'ottimizzazione delle risorse. Il software deve rispettare vincoli tecnologici, obiettivi di design e superare test di verifica#super[G] e validazione#super[G]. La documentazione, invece, facilita la gestione e il mantenimento del progetto nel tempo.
 
-  === Analisi dei Requisiti#super[G]
+  === Analisi dei Requisiti
     ==== Scopo
     // Descrizione documento AdR
     L'Analisi dei Requisiti#super[G]; è la fase preliminare dello sviluppo software, finalizzata a identificare e documentare in modo accurato le esigenze del proponente e degli utenti. Questo processo consente di definire il fine del prodotto#super[G], gli attori del sistema e le funzionalità chiave, fornendo ai progettisti#super[G] una visione chiara del problema e ai verificatori#super[G] una base per le attività di test. 
@@ -221,29 +228,35 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     - e, se necessario, da un ID del sottocaso.
 
     /******* Da aggiungere una sezione dedicata ai diagrammi dei casi d'uso non appena li avremo fatti ********/
-
-    ==== Requisiti#super[G]
+    #pagebreak()
+    ==== Requisiti
     // Nomenclatura Requisiti#super[G] + riferimento all'AdR
     I requisiti#super[G]; sono stati codificati in modo da facilitarne la lettura e la comprensione. La codifica
     è composta da un prefisso che indica il tipo di requisito#super[G], seguito da un numero progressivo.
     
-    I requisiti#super[G]; funzionali sono preceduti dal prefisso «RF», i requisiti#super[G]; di sicurezza dal prefisso
-    «RS», i requisiti#super[G]; non funzionali dal prefisso «RnF» e i requisiti#super[G]; di vincolo dal prefisso «RV»,
+    I *requisiti#super[G]; funzionali* sono preceduti dal prefisso «RF», i requisiti#super[G]; di sicurezza dal prefisso
+    «RS», i *requisiti#super[G]; non funzionali* dal prefisso «RnF» e i requisiti#super[G]; di vincolo dal prefisso «RV»,
     dove:
     - *R* sta per «Requisito#super[G]»
     - *F* sta per «Funzionale»
     - *S* sta per «Sicurezza»
     - *nF* sta per «non Funzionale»
-    
+  
     Alcuni requisiti#super[G]; funzionali sono stati definiti come *«desiderabili»*, in quanto non strettamente
     necessari ma in grado di apportare un valore aggiunto riconoscibile.
-    Per indicare che un requisito#super[G]; è desiderabile, è stato deciso di aggiungere la lettera *«D»* (Desiderabile) al prefisso del requisito#super[G];, per indicare che il requisitoG è desiderabile.
+    Per indicare che un requisito#super[G]; è desiderabile, è stato deciso di aggiungere la lettera *«D»* (Desiderabile) al prefisso del requisito#super[G];, per indicare che il requisito#super[G] è desiderabile.
     *RFD*, ad esempio, sta per «Requisito#super[G]; Funzionale Desiderabile».
     
     Essendoci presenti anche dei requisiti#super[G]; *opzionali*, è stato deciso di aggiungere la lettera
     *«O»* (Opzionale) al prefisso del requisito#super[G];, per indicare che il requisito#super[G]; è opzionale.
     *RFO*, ad esempio, sta per «Requisito#super[G]; Funzionale Opzionale».
-    
+
+    Mentre per i requisiti#super[G] non funzionali comprendono diverse categorie, tra cui:
+
+    - *Requisiti di qualità*: indicano caratteristiche desiderabili del sistema come usabilità, manutenibilità e affidabilità;
+    - *Requisiti prestazionali*: specificano tempi di risposta, throughput, scalabilità o capacità del sistema sotto carico;
+    - *Requisiti di vincolo* : impongono limitazioni sull’ambiente operativo, sulle tecnologie da utilizzare o su standard da rispettare.
+
     Inoltre, i requisiti#super[G]; forniti dal capitolato#super[G]; sono molto generali e non specificano in modo
     dettagliato le funzionalità richieste. Per questo motivo, è stato deciso di scomporre i requisiti#super[G];
     in requisiti#super[G]; più specifici, cioè chi deve fare cosa, e in che modo.
@@ -291,16 +304,16 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     
     ==== Framework e tecnologie utilizzate
     - *NATS*: Dato che utilizziamo comunicazione asincrona con messaggi, serve un message broker. La scelta naturale ricade su NATS in quanto è più rapido in termini di latenza (dato che non garantisce l'ordine corretto di arrivo dei messaggi) ed è più “semplice”.
-    - *Go*:  come linguaggio di programmazione dei microservizi#super[G]. Ogni servizio#super[G] potrebbe avere il proprio stack tecnologico, ma Go è la scelta naturale in quanto il server NATS è programmato in Go, e quindi fornisce maggior supporto, minore latenza, prestazioni migliori ecc.
+    - *NestJS*: Ogni microservizio può adottare il proprio stack, ma NestJS è la scelta naturale grazie al suo supporto nativo per NATS, che assicura integrazione fluida e bassa latenza. Basato su Node.js e potenziato da TypeScript, offre tipizzazione forte e struttura modulare. Facilita la scalabilità, la manutenzione e l’evoluzione indipendente dei servizi. Le sue astrazioni semplificano lo sviluppo di architetture distribuite complesse. Inoltre, NestJS si presta particolarmente bene ai microservizi grazie al suo sistema di trasporto altamente estensibile, che consente una comunicazione sia asincrona che sincrona tra i servizi, adattandosi a diversi scenari applicativi e garantendo interoperabilità con vari sistemi esterni. È quindi ideale per sistemi reattivi ed estensibili in ambienti dinamici.
     - *Docker e Kurbenetes*: per il deploy, dato che sono le tecnologie più adatte al nostro caso. 
 
     ==== Pratiche di programmazione
     /********** Convenzioni su metodi, import, commenti... ***********/
 
-    ==== PoC#super[G]
+    ==== PoC
     // Descrizione PoC#super[G]
     Il Proof of Concept#super[G] (PoC#super[G]) è una fase fondamentale dello sviluppo in cui progettisti#super[G] e programmatori#super[G] valutano la validità di una soluzione prima della sua implementazione definitiva. Il suo scopo è dimostrare la fattibilità del progetto, assicurando che le tecnologie scelte siano adeguate e compatibili con i requisiti#super[G] tecnici e operativi. Inoltre, offre all'azienda proponente un feedback tempestivo e concreto, minimizzando i rischi e ottimizzando le decisioni. 
-  
+    Per il team di sviluppo, il PoC#super[G] rappresenta anche una fase di studio e sperimentazione delle tecnologie coinvolte, in cui vengono analizzati i limiti, le potenzialità e le integrazioni tra i diversi componenti del sistema. Ciò consente di acquisire familiarità con gli strumenti adottati, validare le scelte architetturali iniziali e definire le basi tecniche per le successive fasi progettuali.
   === Codifica
     ==== Scopo
     // Descrizione Codifica
@@ -369,10 +382,17 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       /******************* TODO: DA DECIDERE *************/
       /*Il nome dei file deve essere formattato in //Camel Case, 
       senza spazi, per mantenere coerenza nel progetto. */
-
+      ====== Nomenclatura dei file
+      Per garantire coerenza, leggibilità e chiarezza all’interno del progetto, i file devono essere nominati seguendo la convenzione strutturata nel formato:
+      #align(center, block[*nome.tipo.estensione*])
+      - *nome* descrive il contenuto:
+        - Se è una sola parola, si usa il *PascalCase*
+        - Se è composto da più parole, si usa il *camelCase*
+      - *tipo* indica la funzione del file.
+      - *estensione* definisce il formato, ad esempio .ts, .json
     === Tecnologie utilizzate
     // Cos'è VS Code e cosa permette
-    Visual Studio Code (o VS Code) è un potente ambiente di sviluppo (IDE) ed è stato adottato come principale strumento di sviluppo software da parte dell'intero team.     
+    *Visual Studio Code* (o VS Code) è un potente ambiente di sviluppo (IDE) ed è stato adottato come principale strumento di sviluppo software da parte dell'intero team.     
     Esso supporta numerosi linguaggi di programmazione e framework. Inoltre, offre funzionalità avanzate come il completamento automatico intelligente, il debugging integrato, il controllo della versione con Git e un ampio ecosistema di estensioni che permette di personalizzare l'esperienza di sviluppo. 
 
   = Processi di supporto
@@ -406,7 +426,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       === Nomenclatura documenti
       // Formato data nei documenti, ...
-      I file devono possedere dei nomi adeguati, coerentemente con gli acronimi stabiliti nella sezione 4.1.5.1.      
+      I file devono possedere dei nomi adeguati, coerentemente con gli acronimi stabiliti nella sezione *#link(label("4.1.5.1"), underline("4.1.5.1"))*.      
       I verbali sia interni che esterni, però, fanno eccezione e adottano il formato di nomenclatura *"YYYY_MM_DD_TIPO"* o *"YYYY_MM_DD_TIPO_x"*, dove:
       - *YYYY-MM-DD*: si riferisce alla data dell'incontro. 
       - *TIPO*: si riferisce all'acronimo corrispettivo al tipo di verbale (VI o VE).
@@ -415,6 +435,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         - _signed_: i documenti esterni necessitano di una approvazione da parte di un ente terzo. Questo suffisso starà ad indicare che quel documento esterno è stato approvato dall'ente terzo e contiene la corrispondente firma di approvazione.
 
         ==== Acronimi per la documentazione
+        #label("4.1.5.1")
         Per facilitare la fruizione dei vari documenti, sono state assegnate delle sigle alle varie tipologie di documento. Gli acronimi adottati sono:
         - *VI*: Verbale Interno;
         - *VE*: Verbale Esterno;
@@ -452,9 +473,9 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         // In che modo dividiamo i documenti nella repo docs (in x cartella sono contenuti...)
           La nostra repository#super[G] _docs_ contiene al suo interno la cartella "documents", la quale contiene tutti i documenti redatti, ed è a sua volta è suddivisa in varie sottocartelle, tra cui:
           - *"candidatura/"*: raccoglie tutti i documenti redatti in fase di candidatura;
-          - *"glossario#super[G]/"*: contiene il file .typ del glossario#super[G];
+          - *"glossario/"*: contiene il file .typ del glossario#super[G];
           - *"presentazioni/"*: raccoglie tutti i file in formato .pdf dei vari Diari di Bordo redatti;
-          - *"rtb#super[G]/"*: contiene al suo interno in formato .typ i vari documenti informali e formali (interni ed esterni), come ad esempio l'AdR oppure i vari verbali;
+          - *"rtb/"*: contiene al suo interno in formato .typ i vari documenti informali e formali (interni ed esterni), come ad esempio l'AdR oppure i vari verbali;
           - *"src/"*: contiene al suo interno i template che vengono importati in altri file .typ.
         /************* TODO: Immagino più avanti ci sarà la cartella pb ************/
 
@@ -462,6 +483,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         // In che cartella sono tenute le immagini...
         Le immagini e vari elementi grafici che compaiono all'interno dei documenti, come ad esempio il nostro logo, vengono raccolte all'interno delle cartelle denominate "assets".
       === Metriche
+      #label("4.1.10")
       // Quelle gestite tramite le Actions
       I documenti sono sottoposti a dei controlli di qualità, le quali sono:
 
@@ -477,7 +499,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       Tale discussione coinvolge tutto il team se necessario;
       - *Aggiornamento della documentazione*: una volta constatato che l'impatto migliorativo è positivo, viene applicata la modifica e il documento viene aggiornato confermando l'accuratezza delle informazioni e l'allineamento delle modifiche con quanto già presente;
       - *Push della modifica*: viene creata una pull request nella repository#super[G] su GitHub per la nuova versione del documento da parte di chi ha operato la modifica;
-      - *Verifica#super[G] e validazione#super[G]*: a supporto del processo di verifica#super[G], viene fatta partire un'azione automatizzata che esegue diversi script di controllo del testo, le cui metriche si possono trovare alla sezione 4.1.10. Se tale operazione ha esito positivo, se necessario, il documento viene posto ad ulteriore validazione#super[G] con l'ente esterno a cui è destinato il documento. Se sia la verifica#super[G] che la eventuale validazione#super[G] hanno avuto esito positivo, le modifiche vengono pubblicate attraverso l'accettazione della pull request da parte del revisore. Se una delle due operazioni non ha esito positivo, la pull request viene respinta e l'autore delle modifiche è incaricato di apportare le correzioni necessarie e di ripetere i passaggi precedentemente descritti.
+      - *Verifica e validazione*: a supporto del processo di verifica#super[G], viene fatta partire un'azione automatizzata che esegue diversi script di controllo del testo, le cui metriche si possono trovare alla sezione *#link(label("4.1.10"), underline("4.1.10"))*. Se tale operazione ha esito positivo, se necessario, il documento viene posto ad ulteriore validazione#super[G] con l'ente esterno a cui è destinato il documento. Se sia la verifica#super[G] che la eventuale validazione#super[G] hanno avuto esito positivo, le modifiche vengono pubblicate attraverso l'accettazione della pull request da parte del revisore. Se una delle due operazioni non ha esito positivo, la pull request viene respinta e l'autore delle modifiche è incaricato di apportare le correzioni necessarie e di ripetere i passaggi precedentemente descritti.
 
         ==== Procedure di revisione
         Il processo di revisione è un'attività fondamentale per verificare la conformità del lavoro svolto agli standard di qualità e ai requisiti#super[G] fondamentali. Questa fase prevede diverse operazioni: la revisione del codice#super[G], l'esecuzione dei test di accettazione e la risoluzione di eventuali discrepanze. 
@@ -522,22 +544,19 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       -- *PATCH*: il valore viene incrementato *solamente* per modifiche di entità minore, quali correzioni ortografiche, di sintassi...
       
-      === Struttura repository#super[G]
+      === Struttura repository
       /******** Aggiungere il link alla nostra repo? ********/
       La repository#super[G] GitHub configurata ad Organizzazione è strutturato in diverse repository#super[G] in base alla finalità d'uso delle stesse. 
       All'interno di esse è possibile trovare varie directories descritte dai file README.md presenti, tra cui:
     
-      - *docs*: repository#super[G] contenente tutti i file .typ con la documentazione. In essa sono presenti delle Github Action che permettono il supporto alla verifica#super[G] 
-      e l'auto compilazione dei file per essere caricati su Github Pages come .pdf;
+      - *docs*: repository#super[G] contenente tutti i file .typ con la documentazione. In essa sono presenti delle Github Action che permettono il supporto alla verifica#super[G] e l'auto compilazione dei file per essere caricati su Github Pages come .pdf;
     
-      - *teamcodealchemists.github.io*:  repository#super[G] dove si trova il sito web con tutta la documentazione. All'interno di essa sono state definite delle GitHub Action che 
-      permettono di tenere sincronizzato il glossario#super[G] nel sito con quello in formato .pdf della documentazione e di aggiornare automaticamente i link alla documentazione.
+      - *teamcodealchemists.github.io*:  repository#super[G] dove si trova il sito web con tutta la documentazione. All'interno di essa sono state definite delle GitHub Action che permettono di tenere sincronizzato il glossario#super[G] nel sito con quello in formato .pdf della documentazione e di aggiornare automaticamente i link alla documentazione.
 
-      - *poc*: repository#super[G] contenente il PoC#super[G] del progetto, che include le tecnologie e le architetture#super[G] scelte. Essa è stata creata per testare le tecnologie e 
-      le architetture#super[G], così da poterle validare prima della loro implementazione definitiva nel progetto.
+      - *poc*: repository#super[G] contenente il PoC#super[G] del progetto, che include le tecnologie e le architetture#super[G] scelte. Essa è stata creata per testare le tecnologie e le architetture#super[G], così da poterle validare prima della loro implementazione definitiva nel progetto.
 
 
-        ==== Organizzazione Repository#super[G]
+        ==== Organizzazione Repository
           ===== Modello di branching
           È stato adottato il modello di branching *Git Flow* per la gestione delle repository#super[G] di progetto. 
     
@@ -545,36 +564,47 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
           Ogni membro è a conoscenza delle _best practice_ per la creazione, l'unione e la cancellazione dei rami, così da promuovere una collaborazione efficace e strutturata all'interno del team.
 
-          ===== Nomenclatura dei branch#super[G]
+          ===== Nomenclatura dei branch
+          #label("4.2.4.1.2")
           È stata raccomandata, ove possibile, l'associazione dei branch#super[G] relativi a nuove funzionalità (ovvero i branch#super[G] _feature_) alle corrispondenti issue tracciate su *Jira*, adottando una convenzione di nomenclatura coerente _(ad esempio: *feature/Sprint#super[G];-55-nome-feature*)_.
 
-          ===== Branch#super[G] principali
+          ===== Branch principali
           La struttura è basata sui rami principali _main_ e _develop_.
 
           Il ramo _main_ è destinato alle versioni stabili del progetto, verificate, testate e pronte per essere rilasciate. Ogni commit#super[G] su _main_ dovrebbe quindi rappresentare una versione stabile e testata del software e/o del documento in questione.
 
           Il ramo _develop_, invece, è destinato a raccogliere tutte le nuove funzionalità che saranno incluse nel prossimo rilascio. I commit#super[G] sul _develop_ possono contenere codice#super[G] che si trova ancora in fase di sviluppo e test.
 
-          ===== Feature branch#super[G]
+          ===== Feature branch
           I branch#super[G] secondari _feature_ sono dedicati allo sviluppo delle singole nuove funzionalità.
           Essi devono essere creati a partire dal ramo _develop_ e, una volta completati, deve essere effettuato il merge#super[G] in _develop_. 
     
-          La convenzione di nomenclatura per questi branch#super[G] è consultabile alla sezione 4.2.4.1.2 ("Nomenclatura dei branch#super[G]").
+          La convenzione di nomenclatura per questi branch#super[G] è consultabile alla sezione *#link(label("4.2.4.1.2"), underline("4.2.4.1.2 "))*("Nomenclatura dei branch#super[G]").
 
       === GitHub Action
+      Al fine di automatizzare e garantire la qualità del processo di produzione documentale, il flusso di lavoro è stato strutturato mediante l’utilizzo di GitHub Actions, suddivise in più controlli specifici. In particolare:
+      - Viene effettuato un controllo sul glossario, per verificarne l’ordinamento alfabetico e garantire che tutte le voci siano coerentemente strutturate
+      - Un secondo controllo analizza i documenti, assicurandosi che ogni parola contenuta nel glossario sia effettivamente assegnata e utilizzata nei testi in modo corretto
+      - Viene calcolato l'indice di Gulpease, al fine di valutare il livello di leggibilità dei documenti prodotti
       // Azioni per controllare glossario#super[G] e per indice gulpease, di cui si parla anche a 4.1.10
       // Attenderei di ultimarle per scrivere questa parte, in modo da essere più precisi
-
-        === Procedure di commit#super[G] e merge#super[G]
-          ==== Messaggi di commit#super[G] // formato e convenzioni
-          ==== Dimensione dei commit#super[G] //linee guida
-          ==== Pull/Merge#super[G] request // processo e approvazioni
-          ==== Gestione dei conflitti // procedure e responsabilità
-
-        === Baseline#super[G] e rilasci
-          ==== Definizione di baseline#super[G] // cosa costituisce una baseline#super[G]
-          ==== Note di rilascio //contenuto e formato
-
+      === Best Practice su GitHub
+        Al fine di garantire un flusso di lavoro strutturato, tracciabile e facilmente manutenibile, sono state adottate le seguenti best practice nell'utilizzo di GitHub:
+        - *Pull Request verso branch di sviluppo* : ogni modifica viene integrata tramite pull request indirizzate al branch feature-develop. Questa procedura consente una revisione preventiva da parte di un verificatore, il quale ha il compito di controllare la correttezza, la qualità e la coerenza delle modifiche proposte prima della loro integrazione.
+        - *Commit verbosi e significativi* : si è scelto di utilizzare messaggi di commit chiari, descrittivi e coerenti con le modifiche effettuate. Questo approccio facilita la lettura della cronologia del progetto, la comprensione degli intenti delle modifiche e l'individuazione di eventuali regressioni o problemi
+        - *README completi e informativi* : ogni repository è corredata da un file README.MD esaustivo, che descrive in maniera dettagliata :
+          - Lo scopo del progetto o della repository;
+          - Le istruzioni per la configurazione e l'esecuzione;
+          - Eventuali dipendenze;
+          - La struttura della directory;
+          - Ogni altra informazioni utile alla compresione e al corretto utilizzo del progetto. 
+      === Procedure di commit e merge
+        Le procedure di commit vengono eseguite ogniqualvolta si completi una frase di scrittura del codice che sia stata verificata e testata in modo funzionale. In alternativa, è possibile eseguire commit intermedi in stato di pending, qualora si sia in attesa dell'intervento di un altro membro del team, con cui si intende integrare le rispettive parti di codice all'interno della stessa funzionalità.
+        Il merge viene effettuato solo quando si è certi che le feature sviluppata all'interno del branch dedicato sia stata completata e pienamente validata. Dopo aver condotto i necessari test di verifica, si procede con l'unione del codice: il contenuto del branch *feature/[nome-branch]* viene fuso con il branch *develop*, assicurando così l'integrazione stabile e controllata delle nuove funzionalità nel ramo di sviluppo principale
+        ==== Gestione dei conflitti // procedure e responsabilità
+        Durante la fase di merge, può accadere che si verifichino dei conflitti su una o più righe di codice all'interno dei file modificati. Questo si verifica quando Git non è in grado di determinare automaticamente quale versione del contenuto mantenere, a causa di modifiche concorrenti effettuate su uno stesso frammento di codice da branch differenti.
+        In tali casi, la risoluzione dei conflitti richiede un intervento manuale da parte dei membri del team. I colleghi incaricati dovranno analizzare il contenuto, modificare il file risolvendo i funzionante del codice.
+        Una volta risolti tutti i conflitti, è necessario eseguire il git add dei file modificati e completare l'operazione di merge tramite git commit.
 
     == Gestione della qualità
       === Scopo
@@ -586,7 +616,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       Per mantenere elevati standard di qualità, adottiamo un approccio di miglioramento continuo, monitorando i progressi e utilizzando verifiche retrospettive per identificare opportunità di ottimizzazione. 
       Questo metodo ci permette di affinare costantemente i nostri processi e garantire risultati sempre più performanti.
 
-      === Piano di Qualifica#super[G]
+      === Piano di Qualifica
       // Descrizione PdQ (che copre gli obiettivi di questo processo)
       Il Piano di Qualifica#super[G]; è un documento che definisce strategie, obiettivi e attività per garantire la qualità del prodotto#super[G] e del processo di sviluppo. 
       Tali parametri vengono stabiliti in accordo ai requisiti#super[G] e alle aspettative del proponente e talvolta a discrezione del team sulla base delle valutazioni fatte nel corso di studi.
@@ -608,25 +638,33 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       - *Test d'integrazione*: analizza il modo in cui le diverse componenti interagiscono tra loro, assicurandosi che funzionino correttamente anche in collaborazione.
 
-      - *Test di regressione*: verifica#super[G] che le nuove funzionalità siano operative e che quelle già integrate continuino a comportarsi come previsto.
-
       - *Test di sistema*: valuta il comportamento complessivo del software, verificando la conformità ai requisiti#super[G] definiti.
 
       - *Test di accettazione*: ultimo step di verifica#super[G], attuato dopo aver completato tutti i test precedenti e risolto eventuali problemi, per confermare il corretto funzionamento del prodotto#super[G].
 
       Alla fine del processo, viene redatto un resoconto contenente i risultati delle verifiche sulla qualità del processo, del prodotto#super[G] e del software. 
       Grazie alle varie analisi metriche e alla costruzione di grafici, è possibile visualizzare l'evoluzione degli indicatori nel tempo. 
-      Questi dati sono consultabili nella sezione Metriche (4.3.4), dove sono descritte le formule e i criteri di valutazione.
+      Questi dati sono consultabili nella sezione Metriche *#link(label("4.3.4"), underline("4.3.4"))*, dove sono descritte le formule e i criteri di valutazione.
 
-      === Metriche // Metriche del processo di Gestione Qualità   
-        ==== Codifica
-        /****DA STABILIRE ***/
+     === Metriche // Metriche del processo di Gestione Qualità
+    #label("4.3.4")
+      Le metriche costituiscono uno strumento oggettivo per valutare il livello di qualità raggiunto nel corso del progetto, sia in termini di prodotto che di processo. Permettono di misurare parametri rilevanti come copertura del codice, successo dei test, affidabilità, usabilità e leggibilità della documentazione.
+      I valori raccolti durante lo sviluppo vengono confrontati con soglie di accettazione predefinite, al fine di valutare l’efficacia delle attività svolte. Di seguito sono descritte le principali metriche utilizzate, con il relativo criterio di calcolo.
 
-        ==== Descrizione
-        /****DA STABILIRE ***/
-    
+      - *Code Coverage (PSV01)*: rappresenta la percentuale di codice effettivamente eseguito durante i test. Si calcola dividendo il numero di righe di codice che sono state eseguite almeno una volta durante i test per il numero totale di righe di codice, moltiplicando poi il risultato per cento.
 
-    == Verifica#super[G]
+      - *Grado di successo dei test (PSV02)*: misura la percentuale di test che sono stati superati. Si ottiene dividendo il numero di test superati per il numero totale di test eseguiti, e moltiplicando il risultato per cento.
+
+      - *Failure Density (QPA03)*: indica il numero medio di guasti rilevati nel software, in rapporto alla dimensione del codice. Si calcola dividendo il numero di guasti rilevati per il numero di migliaia di linee di codice (KLOC) del sistema.
+
+      - *Time on Task (QPU01)*: rappresenta il tempo medio necessario a un utente per completare un’operazione specifica. Questo dato viene ricavato dai test di usabilità, facendo la media dei tempi impiegati da tutti gli utenti.
+
+      - *Error Rate (QPU02)*: indica la percentuale di errori commessi dagli utenti durante l’utilizzo del sistema. Si calcola dividendo il numero di errori totali per il numero complessivo di azioni svolte dagli utenti, moltiplicando il risultato per cento.
+
+      - *Indice di Gulpease (PSD01)*: valuta la leggibilità di un testo. Il suo valore è calcolato in base al numero di lettere, parole e frasi contenute nel testo. Più alto è il valore, più il testo è ritenuto leggibile. Un valore superiore a 50 è considerato accettabile.
+      Tutte queste metriche vengono monitorate nel tempo e visualizzate nel Cruscotto di Valutazione (é presente nella sezione 5 del file Piano di Qualifica#super[G]), dove sono messi a confronto i valori reali con quelli attesi. L’analisi dei dati consente al team di individuare le aree di miglioramento e pianificare eventuali azioni correttive.
+
+    == Verifica
       === Scopo
       // Descrizione Verifica#super[G]
 
@@ -704,7 +742,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       - *Test di unità*: verifica#super[G] il funzionamento di singole componenti.
       - *Test d'integrazione*: analizza le interazioni tra i moduli.
       - *Test di sistema*: valuta la conformità del software ai requisiti#super[G].
-      - *Test di regressione*: controlla che le modifiche non introducano nuovi errori.
+      - *Test di accettazione*: ultimo step di verifica#super[G], attuato dopo aver completato tutti i test precedenti e risolto eventuali problemi, per confermare il corretto funzionamento del prodotto#super[G].
 
       Per garantire un'analisi efficace, è fondamentale stabilire e regolamentare le condizioni dell'ambiente di esecuzione dei test.
 
@@ -744,19 +782,22 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       Attraverso questi test, si controlla la correttezza e l'efficacia del sistema rispetto ai requisiti#super[G] stabiliti, assicurando che l'applicazione sia conforme alle specifiche e pronta per l'utilizzo finale.
 
-      ===== Test di regressione
-      I test di regressione sono una metodologia di verifica#super[G] essenziale per garantire che le modifiche apportate al software non introducano nuovi errori o alterino il corretto funzionamento delle funzionalità già integrate. 
-      Durante il processo di sviluppo, può accadere che un test evidenzi un problema: in questi casi, è necessario analizzarlo, sviluppare una soluzione, implementarla e verificare che il difetto sia stato risolto eseguendo nuovamente il test.
-      
-      Per evitare regressioni, ovvero il ripresentarsi di problemi precedentemente risolti, non ci si limita a testare esclusivamente la parte modificata. Infatti, si eseguono tutti i test già implementati, tra cui test di unità, di integrazione e di sistema. 
-      Questo approccio garantisce l'integrità#super[G] del software e previene anomalie derivanti da aggiornamenti o nuove funzionalità.
+      ===== Test di accettazione
+      I test di accettazione rappresentano l’ultima fase del processo di verifica#super[G] del software prima del rilascio ufficiale e dell’utilizzo in ambiente operativo. Il loro obiettivo principale è confermare che il prodotto sviluppato sia conforme ai criteri di accettazione concordati con il committente#super[G] o con gli stakeholder#super[G], garantendo la soddisfazione delle aspettative funzionali e non funzionali.
 
-      Grazie ai test di regressione, è possibile mantenere un alto livello di affidabilità del prodotto#super[G], assicurando che ogni miglioramento apportato non comprometta le prestazioni e la stabilità dell'intero sistema.
+      Questi test vengono eseguiti dopo i test di sistema, e costituiscono il collaudo formale del software, spesso in contesti simulati o reali che riflettono l’ambiente d’uso previsto. Possono essere condotti dal team di sviluppo insieme al cliente, oppure da figure indipendenti incaricate della qualità, come i collaudatori esterni o i rappresentanti dell’utente finale.
 
-      === Metriche
-      // Metriche del processo di Verifica#super[G]
+      I test di accettazione rientrano nella categoria dei test funzionali (black-box) e si concentrano sull’uso del software dal punto di vista dell’utente. Non analizzano la struttura interna dell’applicazione, ma si focalizzano sul comportamento osservabile e sulla rispondenza ai requisiti#super[G] contrattuali o specificati nei documenti di accettazione.
 
-    == Validazione#super[G]
+      Questa fase consente di:
+      - Validare che tutte le funzionalità principali siano disponibili e funzionanti come previsto.
+      - Verificare la rispondenza a requisiti legali, normativi o aziendali.
+      - Rilevare eventuali disallineamenti tra quanto implementato e quanto atteso dal committente.
+      - Approvare formalmente il passaggio del software alla fase di rilascio o di esercizio.
+
+      Il superamento con esito positivo dei test di accettazione rappresenta il presupposto fondamentale per la consegna del prodotto e la chiusura del progetto dal punto di vista tecnico.
+
+    == Validazione
       === Scopo
       // Descrizione Validazione#super[G]
       La Validazione#super[G] del software è il processo di valutazione finalizzato a garantire che il prodotto#super[G] soddisfi i requisiti#super[G] predefiniti e le aspettative degli utenti e del committente#super[G]. 
@@ -776,6 +817,8 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     == Gestione dei processi
       === Scopo
       // Descrizione processi organizzativi
+      Lo scopo dei processi organizzativi è definire un sistema strutturato per la gestione, il monitoraggio e il miglioramento continuo dei processi aziendali, al fine di garantire coerenza operativa, efficienza organizzativa e il raggiungimento degli obiettivi strategici dell'organizzazione.
+      Consiste nell’organizzare la progettazione, l’attuazione, il controllo e la revisione dei processi in modo sistematico e documentato.
       === Pianificazione delle risorse umane
         ==== Ruoli e Responsabilità
         I ruoli all'interno del team sono suddivisi tra i seguenti:
@@ -823,22 +866,22 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         All'interno della cartella Drive del team è stato creato il documento *"Orari disponibilità"* su Google Sheets nel quale, settimanalmente, i membri del gruppo aggiornano la loro corrispettiva riga con gli orari di disponibilità nel corso della settimana entrante.
         Tale documento permette di organizzare riunioni e sessioni di lavoro in base alle disponibilità di tutti, evitando sovrapposizioni, e permette l'accesso immediato a quelle informazioni.
         
-        ==== Bilanciamento#super[G] del carico di lavoro
+        ==== Bilanciamento del carico di lavoro
         // Come vengono bilanciati i carichi di lavoro
         Il carico di lavoro assegnato ad ogni membro del team viene deciso in base alla complessità e al livello di priorità di completamento delle determinate task da assegnare.
         Nell'assegnare le task ad ogni Sprint#super[G] si cerca il più possibile di non sfociare nel sovraccarico. In caso di qualsiasi imprevisti o difficoltà, ogni membro potrà comunicare tale disagio al Responsabile#super[G] in carica.
 
-      === Sprint#super[G]
-        ==== Durata degli Sprint#super[G]
+      === Sprint
+        ==== Durata degli Sprint
         Ogni Sprint#super[G] ha tendenzialmente durata di due settimane. Questa durata permette al team di concentrarsi su obiettivi concreti per un lasso di tempo sufficientemente ampio e di valutare i progressi in modo regolare, così da permettere un equilibrio tra flessibilità e stabilità.
 
-        ==== Pianificazione dello Sprint#super[G]
+        ==== Pianificazione dello Sprint
         Pianificare gli Sprint#super[G] implica definire gli obiettivi e le attività da completare durante lo Sprint#super[G]. Durante questa fase, vengono identificati i requisiti#super[G], assegnate le responsabilità e stabilite le priorità. Una buona pianificazione è essenziale per il successo dello Sprint#super[G].
 
-        ==== Review dello Sprint#super[G]
-        La review dello Sprint#super[G] è una riunione che si tiene alla fine di ogni Sprint#super[G] secondo quanto descritto al punto 5.2.3. Durante tale riunione, il team discute a grandi linee su ciò a cui si è lavorato e stabilisce il materiale da presentare agli stakeholder, i quali daranno dei feedback su quanto svolto così da identificare eventuali miglioramenti per il prossimo Sprint#super[G].
+        ==== Review dello Sprint
+        La review dello Sprint#super[G] è una riunione che si tiene alla fine di ogni Sprint#super[G] secondo quanto descritto al punto *#link(label("5.2.3"), underline("5.2.3"))*. Durante tale riunione, il team discute a grandi linee su ciò a cui si è lavorato e stabilisce il materiale da presentare agli stakeholder, i quali daranno dei feedback su quanto svolto così da identificare eventuali miglioramenti per il prossimo Sprint#super[G].
     
-        ==== Retrospettiva dello Sprint#super[G]
+        ==== Retrospettiva dello Sprint
         La retrospettiva dello Sprint#super[G] è una fase in cui il team analizza nel dettaglio il proprio lavoro realizzato durante lo Sprint#super[G]. L'obiettivo di questa fase è di identificare ciò che ha funzionato bene e quel che può essere migliorato, promuovendo un continuo miglioramento della qualità del prodotto#super[G] in sviluppo.
 
     == Procedure di comunicazione   
@@ -861,6 +904,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       - *Microsoft Teams*: per comunicare in modalità sincrona con il proponente.
 
       === Riunioni interne
+      #label("5.2.3")
       // In che modo si svolgono le riunioni tra di noi, come sono organizzate...
       Le riunioni interne possono essere indette durante vari momenti strategici dello sviluppo del progetto, soprattutto tra uno Sprint#super[G] e l'altro. 
   
