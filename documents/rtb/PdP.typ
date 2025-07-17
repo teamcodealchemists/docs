@@ -123,7 +123,7 @@ Il documento è molto importante per permettere una corretta pianificazione del 
 
 Il progetto riguarda lo sviluppo di un sistema di gestione per magazzini distribuiti, con l'obiettivo di ottimizzare la gestione dell'inventario#super[G] in una rete di magazzini geograficamente separati. Questo sistema deve garantire che i flussi di materiali e prodotti tra i magazzini siano gestiti in tempo reale, evitando rotture di stock e migliorando la distribuzione delle scorte#super[G]. Il sistema dovrà anche ridurre i livelli medi di inventario#super[G], mantenendo però scorte#super[G] di sicurezza per gestire variazioni nella domanda o ritardi nelle consegne.
 
-La soluzione proposta si baserà su un'architettura#super[G] a microservizi#super[G], che permetterà a ogni magazzino di gestire autonomamente il proprio inventario#super[G], mentre le informazioni verranno sincronizzate in tempo reale con un sistema centrale. Il sistema dovrà essere in grado di monitorare i livelli di inventario#super[G], gestire conflitti derivanti da aggiornamenti simultanei, implementare riassortimenti#super[G] predittivi basati su machine learning e garantire una visibilità centralizzata in tempo reale delle operazioni. Inoltre, saranno utilizzate tecnologie moderne e scalabili come Node.js, Typescript, Nats e Docker, per garantire prestazioni elevate e l'interoperabilità tra i magazzini.
+La soluzione proposta si baserà su un'architettura#super[G] a microservizi#super[G], che permetterà a ogni magazzino di gestire autonomamente il proprio inventario#super[G], mentre le informazioni verranno sincronizzate in tempo reale con un sistema centrale. Il sistema dovrà essere in grado di monitorare i livelli di inventario#super[G], gestire conflitti derivanti da aggiornamenti simultanei, implementare riassortimenti#super[G] predittivi basati su machine learning e garantire una visibilità centralizzata in tempo reale delle operazioni. Inoltre, saranno utilizzate tecnologie moderne e scalabili come Nest js, Typescript, NATS e Docker, per garantire prestazioni elevate e l'interoperabilità tra i magazzini.
 
 In sintesi, il progetto si propone di migliorare l'efficienza operativa della gestione logistica, riducendo i rischi legati alla gestione delle scorte#super[G] e ottimizzando i flussi tra i magazzini.
 
@@ -137,9 +137,19 @@ La realizzazione di un software richiede, ancor prima dello sviluppo, una fase d
 
 Si potrà dedurre che questi documenti potrebbero contenere parole o frasi che non sono di uso comune, ma che sono state scelte per essere più specifiche e per evitare ambiguità. Per questo motivo è stato creato un glossario#super[G] che contiene le definizioni di tali termini, al seguente #link("https://teamcodealchemists.github.io/glossario")[#underline[indirizzo]]. 
 
+#pagebreak()
+
 == Riferimenti   //Inserire riferimenti al capitolato#super[G] del progetto e a lezioni/slide del professore se necessario
+#v(1em)
 - *Capitolato#super[G] d'appalto C6 - Gestione di un magazzino distribuito - _M31_*\
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")
+
+- *Processi di ciclo di vita del software*\
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf")
+
+- *Gestione di progetto*\
+  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")
+
 
   //TODO: da completare
 
@@ -211,7 +221,7 @@ Ogni rischio è identificato tramite un codice univoco, strutturato come segue:
 
 Dove:
 
-+ *Categoria*: Rappresenta la tipologia del rischio, che puo essere:
++ *Categoria*: Rappresenta il tipo di rischio, che puo essere:
 
   - *P*: per i rischi di pianificazione;
 
@@ -221,9 +231,9 @@ Dove:
 
   - *T*: per i rischi tecnologici.
 
-+ *Indice*: Identificativo progressivo univoco all'interno della categoria.
++ *Indice*: ID progressivo unico all'interno della categoria.
 
-+ *Nome*: Una breve descrizione del rischio.
++ *Nome*: Una descrizione basilare del rischio
 
 == Rischi tecnologici //tecnologie utilizzate ed eventuali errori
 
@@ -236,7 +246,7 @@ Dove:
     [RT1],
 
     [*Gravità*],
-    [Media],
+    [Bassa],
 
     [*Probabilità*],
     [Media],
@@ -265,7 +275,7 @@ Dove:
     [RT2],
 
     [*Gravità*],
-    [Bassa],
+    [Media],
 
     [*Probabilità*],
     [Media],
@@ -360,7 +370,7 @@ Dove:
     [Media],
 
     [*Probabilità*],
-    [Bassa],
+    [Media],
 
     [*Descrizione*],
     [Rischio legato ad una comunicazione lenta da parte di uno o più componenti del team al fine della risoluzione 
@@ -597,11 +607,11 @@ Dove:
 
 #tabella_riassuntiva_rischi(
   dati: (
-    [RT1],[Inesperienza nell'uso delle tecnologie nel progetto.],[Media],[Media],
-    [RT2],[Utilizzo errato o non ottimale delle tecnologie.],[Bassa],[Media],
+    [RT1],[Inesperienza nell'uso delle tecnologie nel progetto.],[Bassa],[Media],
+    [RT2],[Utilizzo errato o non ottimale delle tecnologie.],[Media],[Media],
     [RT3],[Errori di programmazione.],[Bassa],[Alta],
     [RT4],[Supporto e versione delle tecnologie.],[Alta],[Bassa],
-    [RC1],[Tempi di risposta lunghi.],[Media],[Bassa],
+    [RC1],[Tempi di risposta lunghi.],[Media],[Media],
     [RC2],[Incomprensione degli obbiettivi.],[Alta],[Bassa],
     [RC3],[Mancanza di comunicazione con l'azienda.],[Alta],[Bassa],
     [RI1],[Impegni personali, universitari e indisponibilità.],[Media],[Alta],
@@ -695,24 +705,24 @@ Durante l'RTB#super[G] sono previste due attività principali:
 
 La prima verra portata avanti durante tutti gli sprint#super[G] a seconda
 delle esigenze e necessità del momento.
-La seconda verra iniziata successivamente alla produzione di:
-Analisi dei Requisiti#super[G]; Casi d'uso; Architettura#super[G] preliminare.
+La seconda verra iniziata successivamente alla produzione di:\
+Analisi dei Requisiti#super[G] ; Casi d'uso; Architettura#super[G] preliminare.
 
 Di seguito vengono indicate le più nel dettaglio le principali 
 attività previste durante la fase RTB#super[G] del progetto: 
 
-
+#v(1em)
 1. *Redazione Analisi dei Requisiti#super[G]* (in stesura)
 
   - Stesura della struttura;
 
-  - Lettura accurata del capitolato#super[G];
+  - Lettura accurata del capitolato#super[G] ;
 
-  - Estrapolazione dei requisiti#super[G];
+  - Estrapolazione dei requisiti#super[G] ;
 
   - Creazione dei casi d'uso.
 
-
+#v(1em)
 2. *Redazione Piano di progetto* (in stesura)
 
   - Stesura della struttura;
@@ -733,12 +743,12 @@ attività previste durante la fase RTB#super[G] del progetto:
 
   - Redazione continua degli sprint#super[G].
 
-
+#v(1em)
 3. *Redazione piano di Qualifica#super[G]* (in stesura)
 
   - Stesura della struttura;
 
-  - Metriche di monitoraggio#super[G];
+  - Metriche di monitoraggio#super[G] ;
 
   - Implementazione del cruscotto di valutazione;
 
@@ -748,17 +758,24 @@ attività previste durante la fase RTB#super[G] del progetto:
 
   - Definizione di test sulla base dell'analisi dei requisiti#super[G]. 
 
+#v(1em)
 4. *Redazione Norme di progetto* (in stesura)
 
   - Stesura della struttura;
+
     - Test delle tecnologie scelte.
+
   - Processi Primari;
+
   - Processi di Supporto;
+
   - Processi Organizzativi;
+
   - Metriche utilizzate.
 
 5. *Redazione del Glossario#super[G]* (in stesura)
   - Stesura della struttura;
+
   - Aggiunta automatizzata dei termini.
 
 6. *Sviluppo POC#super[G] (Proof of concept#super[G])* (in stesura)
@@ -808,8 +825,10 @@ riducendo al minimo i potenziali rischi e massimizzando le possibilità di succe
 Inoltre alcune particolari caratteristiche che il team ha deciso di adottare dopo un primo periodo di prova includono:
 
 - L'uso di sottoresponsabili informali per responsabilizzare maggiormente più membri e ottenere una comunicazione più efficace e diretta;
+
 - La redazione di una "Lettera di sprint#super[G]" da parte del responsabile#super[G] entrante per definire meglio gli obbiettivi attuali, la quale
    viene redatta e presentata almeno il giorno prima dell'inizio del nuovo sprint#super[G];
+
 - Un cambio di ruoli per sprint#super[G] basato sul ruolo della persona e dalle competenze ottenute nello sprint#super[G] appena terminato.
    Questo permette in particolare, oltre a ruotare i ruoli tra i membri, di svolgere una transizione molto più fluida e funzionale tra sprint#super[G].
 #v(1em)
@@ -819,14 +838,23 @@ per discutere progressi ed eventuali modifiche in corso d'opera.
 Le riunioni garantiranno che il lavoro svolto rimanga coerente con le aspettative 
 del cliente#super[G] ottenendo feedback su quanto realizzato.
 
+#pagebreak()
 Di seguito vengono riportate le caratteristiche previste per ogni sprint#super[G] successivamente descritte:
-- Informazioni generali;
+
+- Informazioni generali; 
+
 - Attività da svolgere;
+
 - Previsione di ore e costi;
+
 - Rischi attesi;
+
 - Ore e costi effettivi;
+
 - Aggiornamento delle risorse rimanenti;
+
 - Rischi incontrati;
+
 - Retrospettiva.
 
 #pagebreak()
@@ -849,6 +877,7 @@ Successivamente, avverrà la redazione dei primi documenti
 necessari per iniziare i lavori.
 
 In particolare, le attività previste sono:
+
 - Miglioramento grafico del sito web;
 - Miglioramento della navigabilità delle risorse del sito web;
 - Indicazione dei criteri di rotazione dei ruoli;
@@ -864,6 +893,7 @@ In particolare, le attività previste sono:
 #v(1em)
 
 I possibili rischi :
+
 - RT1: Rischio Tecnologico legato alla tecnologia utilizzata;
 - RI1: Rischio Individuale derivante dalle altre attività;
 - RG1: Rischio Globale derivato da incomprensione del capitolato#super[G] ;
