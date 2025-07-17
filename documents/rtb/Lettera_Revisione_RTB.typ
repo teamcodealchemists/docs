@@ -66,7 +66,7 @@ All'interno è possibile trovare, nella sezione RTB, i documenti sviluppati fino
 
   - documenti interni:\
    - *Norme di progetto 1.0*
-   - *Glossario 1.0*\
+   - *Glossario 0.5.0*\
    
   - documenti esterni:\
    - *Analisi dei Requisiti 1.0*

@@ -1,6 +1,12 @@
-![err_parole_glossario_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Fmain%2F.github%2Fbadges%2Ferr_parole_glossario_badge.json)
-![gulpease_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Fmain%2F.github%2Fbadges%2Fgulpease_badge.json)
-![ordinamento_glossario_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Fmain%2F.github%2Fbadges%2Fordinamento_glossario_badge.json)
+<<<<<<< HEAD
+![err_parole_glossario_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Fdevelop%2F.github%2Fbadges%2Ferr_parole_glossario_badge.json)
+![gulpease_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Fdevelop%2F.github%2Fbadges%2Fgulpease_badge.json)
+![ordinamento_glossario_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Fdevelop%2F.github%2Fbadges%2Fordinamento_glossario_badge.json)
+=======
+![err_parole_glossario_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Fdevelop%2F.github%2Fbadges%2Ferr_parole_glossario_badge.json)
+![gulpease_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Fdevelop%2F.github%2Fbadges%2Fgulpease_badge.json)
+![ordinamento_glossario_badge](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fteamcodealchemists%2Fdocs%2Frefs%2Fheads%2Fdevelop%2F.github%2Fbadges%2Fordinamento_glossario_badge.json)
+>>>>>>> 9220d7a8fd5d358ec1741b4290da7c88c80b3e32
 
 # 🧪 Repository Typst per la Documentazione del Progetto - Code Alchemists (Gruppo 21)
 
