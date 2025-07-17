@@ -2,24 +2,26 @@
   dati: array,
   didascalia: text
 ) = {
-      show table.cell: cl => if cl.x == 0 and cl.y != 0 {
-      align(left, cl)
-      } else if cl.x == 0 {
-        align(bottom + left, cl)
-      } else if cl.y == 0 {
-        rotate(-65deg, reflow: false, align(left, cl))
-      } else {
-        align(bottom + center, cl)
+      show table.cell: cl => {
+        if cl.x == 0 and cl.y != 0 {
+          align(left, cl)
+        } else if cl.x == 0 {
+          align(bottom + left, cl)
+        } else if cl.y == 0 {
+          box(
+            width: 3.5cm,
+            height: 2.5cm,
+            align(bottom + center, rotate(-45deg, reflow: true, cl.body))
+          )
+        } else {
+          align(center, cl)
+        }
       }
 
       figure(
         table(
           columns: (2.1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
-          inset: (x, y) => if y == 0 {
-            (x: -2em, y: 3.5em)
-          } else {
-            (x: 1.1em, y: 0.7em)
-          },
+          inset: 1.1em,
           fill: (x, y) => if calc.rem(y, 2) == 1 {
             luma(235)
           },
@@ -49,7 +51,7 @@
 ) = {
       figure(
         table(
-          columns: (auto, auto, auto, auto, auto, auto),
+          columns: (3.2fr, 2fr, 2fr, 2fr, 2.5fr, 3.5fr),
           inset:0.6em,
           fill: (x, y) => if y==0 {
             luma(235)
@@ -63,9 +65,9 @@
             [*Ruolo*],
             [*Costo/ora*],
             [*Ore*],
-            [*Costo totale*],
-            [*Ore rimanenti*],
-            [*Budget rimanente*]
+            [*Costo \ totale*],
+            [*Ore\ rimanenti*],
+            [*Budget\  rimanente*]
           ),
           ..dati
         ),
