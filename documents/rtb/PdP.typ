@@ -34,29 +34,37 @@
   [],
   [Rivisitazione contenuti Sprint],
 
+  [0.8.0],
+  [15/07/2025],
+  [N. Moretto],
+  [M. Pretto],
+  [Aggiunta del contenuto: Sprint 8, preventivo e pianificazione Sprint 9.],
+
   [0.7.0],
   [04/07/2025],
   [N. Moretto],
   [M. Pretto],
-  [Aggiunta del contenuto: Sprint 7.],
+  [Aggiunta del contenuto: Sprint 7, preventivo e pianificazione Sprint 8.],
+  
 
   [0.6.0],
   [20/06/2025],
   [R. Zangla],
   [M. Dalla Pozza],
-  [Aggiunta del contenuto: Sprint 6.],
+  [Aggiunta del contenuto: Sprint 6. Preventivo e pianificazione Sprint 7.],
+
 
   [0.5.0],
   [06/06/2025],
   [S. Speranza],
   [R. Zangla],
-  [Aggiunta del contenuto: Sprint 5.],
+  [Aggiunta del contenuto: Sprint 5. Preventivo e pianificazione Sprint 6.],
 
   [0.4.0],
   [25/05/2025],
   [S. Speranza],
   [R. Zangla],
-  [Aggiunta del contenuto: Sprint 3 e Sprint 4.],
+  [Aggiunta del contenuto: Sprint 3 e Sprint 4. Preventivo e pianificazione Sprint 5.],
 
   [0.3.0],
   [23/05/2025],
@@ -970,10 +978,10 @@ In particolare, le attività previste sono:
 - Continuazione dell'ipotesi architetturale e tecnologica;
   - Approfondimento delle tecnologie proposte.
 - Redazione dei casi d'uso;
-- Continuazione del Glossario#super[G];
+- Continuazione del Glossario#super[G] ;
 - Continuazione delle Norme di Progetto;
 - Continuazione del Piano di Progetto;
-- Continuazione dell'Analisi dei Requisiti#super[G];
+- Continuazione dell'Analisi dei Requisiti#super[G] ;
 - Miglioramento dell'utilizzo di JIRA ;
 - Automazioni Github.
 
@@ -1076,12 +1084,12 @@ Giorni di ritardo: #h(0.15cm)*0*
 
 In particolare, le attività previste sono:
 
-- Inizio sviluppo architettura#super[G] POC#super[G];
+- Inizio sviluppo architettura#super[G] POC#super[G] ;
 - Continuazione stesura documenti;
   - Piano di progetto;
-  - Piano di qualifica#super[G];
-  - Glossario#super[G];
-  - Analisi dei requisiti#super[G];
+  - Piano di qualifica#super[G] ;
+  - Glossario#super[G] ;
+  - Analisi dei requisiti#super[G] ;
   - Norme di progetto.
 
 
@@ -1194,13 +1202,13 @@ Giorni di ritardo: #h(0.15cm)*0*
 Le attività previste sono:
 
 - Continuazione dello sviluppo dell'architettura#super[G] ad alto livello;
-- Creazione della Repository per il POC#super[G];
-- Primo studio delle tecnologie per il POC#super[G];
+- Creazione della Repository per il POC#super[G] ;
+- Primo studio delle tecnologie per il POC#super[G] ;
 - Continuazione della stesura dei documenti:
   - Piano di progetto;
-  - Piano di qualifica#super[G];
-  - Glossario#super[G];
-  - Analisi dei requisiti#super[G];
+  - Piano di qualifica#super[G] ;
+  - Glossario#super[G] ;
+  - Analisi dei requisiti#super[G] ;
   - Norme di progetto;
 
 ==== Rischi attesi
@@ -1305,9 +1313,9 @@ Giorni di ritardo: #h(0.15cm)*0*
 ==== Informazioni generali e attività da svolgere
 #v(1em)
 
-- Ultimare l'analisi dei requisiti#super[G];
+- Ultimare l'analisi dei requisiti#super[G] ;
 - Ultimare l'architettura#super[G] ad alto livello;
-- Collaborazione tra progettisti#super[G] e programmatori#super[G] per aggiornarsi sulle tecnologie e sull'architettura#super[G];
+- Collaborazione tra progettisti#super[G] e programmatori#super[G] per aggiornarsi sulle tecnologie e sull'architettura#super[G] ;
 - Attuare un primo studio e configurazione delle tecnologie;
 - Sviluppo di POC;
 
@@ -1426,10 +1434,10 @@ Giorni di ritardo: #h(0.15cm)*0*
 ==== Informazioni generali e attività da svolgere
 #v(1em)
 
-- Studio dei microservizi#super[G] di aggregazione e di ordini da parte dei progettisti#super[G];
+- Studio dei microservizi#super[G] di aggregazione e di ordini da parte dei progettisti#super[G] ;
 - Continuazione lavori sul PoC#super[G] e sviluppo del primo microservizio#super[G] di inventario;
 - Verifica e riscrittura dei casi d'uso#super[G] ;
-- Conclusione dell'analisi dei requisiti#super[G];
+- Conclusione dell'analisi dei requisiti#super[G] .
 
 ==== Rischi attesi
 #v(1em)
@@ -1526,7 +1534,7 @@ Giorni di ritardo: #h(0.15cm)*0*
   - Inventario aggregato;
   - Microservizio di ordini;
   - API Gateway;
-- Correggere i punti indicati dal secondo ricevimento con il #p.cardin riguardo l'analisi dei requisiti#super[G] ;
+- Correggere i punti indicati dal secondo ricevimento con il #p.cardin riguardo l'analisi dei requisiti#super[G] .
 
 ==== Rischi attesi
 #v(1em)
@@ -1610,7 +1618,7 @@ In riferimento all'Analisi dei Requisiti#super[G], dopo aver analizzato attentam
 In conclusione si prevede che per l'ottavo sprint#super[G] si presenti il POC#super[G] all'azienda proponente in vista della candidatura RTB#super[G].
 
 //-----------
-
+#pagebreak()
 === Sprint 8
 #v(1em)
 Inizio: #h(1.99cm)*04-07-2025*\
@@ -1620,6 +1628,10 @@ Giorni di ritardo: #h(0.15cm)*0*
 
 ==== Informazioni generali e attività da svolgere
 #v(1em)
+- Verificare la correttezza e la funzionalità del PoC#super[G], ultimandolo;
+- Presentazione del PoC#super[G] all'azienda proponente;
+- Preparare la documentazione necessaria per la candidatura RTB#super[G] .
+
 
 
 ==== Rischi attesi
@@ -1629,6 +1641,7 @@ I possibili rischi :
 - RT2: Rischio Tecnologico derivato dall'utilizzo errato o non ottimale delle tecnologie;
 - RT3: Rischio Tecnologico legato ad errori di programmazione;
 - RI1: Rischio Individuale legato a impegni personali, universitari e indisponibilità;
+- RC1: Rischio dovuto a tempi di risposta lunghi da parte dell'azienda proponente;
 
 
 ==== Preventivo
@@ -1636,14 +1649,14 @@ I possibili rischi :
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
-    [Nicolò Bolzon],[],[],[],[],[],[x],
-      [Mattia Dalla Pozza],[],[],[],[],[x],[],
-      [Sebastiano Marana],[],[],[],[],[x],[],
-      [Nicholas Moretto],[],[],[],[],[x],[],
-      [Matteo Pretto],[x],[],[],[],[],[],
-      [Alex Shu],[],[x],[],[],[],[],
-      [Stefano Speranza],[],[],[],[],[x],[],
-      [Ramona Zangla],[],[],[],[],[x],[],
+    [Nicolò Bolzon],[],[],[],[],[],[10],
+      [Mattia Dalla Pozza],[],[],[],[],[4],[],
+      [Sebastiano Marana],[],[],[],[],[4],[],
+      [Nicholas Moretto],[],[],[],[],[4],[],
+      [Matteo Pretto],[5],[],[],[],[],[],
+      [Alex Shu],[],[4],[],[],[],[],
+      [Stefano Speranza],[],[],[],[],[4],[],
+      [Ramona Zangla],[],[],[],[],[4],[],
   ),
   didascalia: "Sprint 8 - Preventivo ore per ciascun componente"
 )
@@ -1656,14 +1669,14 @@ I possibili rischi :
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
-    [Nicolò Bolzon],        [], [], [], [], [], [x],
-    [Mattia Dalla Pozza],   [], [], [], [], [x], [],
-    [Sebastiano Marana],    [], [], [], [], [x], [],
-    [Nicholas Moretto],     [], [], [], [], [x], [],
-    [Matteo Pretto],        [x], [], [], [], [], [],
-    [Alex Shu],             [], [x], [], [], [], [],
-    [Stefano Speranza],     [], [], [], [], [x], [],
-    [Ramona Zangla],        [], [], [], [], [x], [],
+    [Nicolò Bolzon],        [], [], [], [], [], [10],
+    [Mattia Dalla Pozza],   [], [], [], [], [4(-2)], [],
+    [Sebastiano Marana],    [], [], [], [], [4(-2)], [],
+    [Nicholas Moretto],     [], [], [], [], [4(-2)], [],
+    [Matteo Pretto],        [5], [], [], [], [], [],
+    [Alex Shu],             [], [4], [], [], [], [],
+    [Stefano Speranza],     [], [], [], [], [4(-2)], [],
+    [Ramona Zangla],        [], [], [], [], [4(-2)], [],
   ),
   didascalia: "Sprint 8 - Consuntivo ore per ciascun componente"
 )
@@ -1676,13 +1689,13 @@ I possibili rischi :
 #align(center)[
   #tabella_aggiornamento_risorse(
     dati: (
-      [Responsabile#super[G]],    [30€/h],   [x],   [x€],   [32(-)],   [960€ (-€)],
-      [Amministratore#super[G]],  [20€/h],   [x],   [x€],    [37(-)],   [740€ (-€)],
+      [Responsabile#super[G]],    [30€/h],   [5],   [150€],   [32(-5)],   [960€ (-150€)],
+      [Amministratore#super[G]],  [20€/h],   [4],   [80€],    [37(-4)],   [740€ (-80€)],
       [Analista#super[G]],        [25€/h],   [-],   [-],   [0],    [0€],
       [Progettista#super[G]],     [25€/h],   [-],  [-],   [101], [2525€],
-      [Programmatore#super[G]],   [15€/h],   [x],   [x€],  [136(-)], [2035€ (-€)],
-      [Verificatore#super[G]],    [15€/h],   [x],   [x€],   [73(-)],  [1125€ (-€)],
-      [*Totale*],                 [*-*],     [*X*],[*X€*],[*438 (-)*],[*7385€ (-€)*],
+      [Programmatore#super[G]],   [15€/h],   [10],   [150€],  [136(-10)], [2035€ (-150€)],
+      [Verificatore#super[G]],    [15€/h],   [10],   [150€],   [73(-10)],  [1125€ (-150€)],
+      [*Totale*],                 [*-*],     [*29*],[*530€*],[*438 (-29)*],[*7385€ (-530€)*],
     ),
     didascalia: "Sprint 8 - Aggiornamento delle risorse disponibili"
   )
@@ -1691,8 +1704,51 @@ I possibili rischi :
 
 ==== Rischi incontrati
 #v(1em)
+Durante questo sprint#super[G] non sono stati riscontrati rischi critici, ma si è verificato un leggero rallentamento dovuto all'attesa di una risposta da parte dell'azienda proponente riguardo alla presentazione del PoC#super[G]. Fortunatamente in pochi giorni si è ricevuta una risposta positiva, permettendo di proseguire con la candidatura RTB#super[G].
 
 ==== Retrospettiva
 #v(1em)
+Durante questo sprint#super[G] il team verificato la correttezza e la funzionalità del Proof of Concept (PoC)#super[G], ultimandolo e preparandolo per la presentazione all'azienda proponente. Il PoC#super[G] ha dimostrato le funzionalità chiave del sistema, inclusi i microservizi#super[G] di inventario aggregato e ordini, nonché l'API Gateway per la gestione delle comunicazioni tra i servizi.\
+Il PoC#super[G] è stato presentato all'azienda proponente, che ha espresso un feedback positivo, apprezzando l'approccio e le funzionalità implementate. Questo ha permesso di consolidare la fiducia tra il team e l'azienda, aprendo la strada per la candidatura RTB#super[G].\
+Inoltre, il team ha lavorato alla preparazione della documentazione necessaria per la candidatura RTB#super[G], assicurandosi che tutti i requisiti e le specifiche fossero correttamente documentati e presentati in modo chiaro e professionale.
+
 
 //-----------
+#pagebreak()
+=== Sprint 9
+#v(1em)
+Inizio: #h(1.99cm)*18-07-2025*\
+Fine Prevista: #h(0.65cm)*01-08-2025*\
+Fine Reale: #h(1.12cm)**\
+Giorni di ritardo: #h(0.15cm)*0*
+
+==== Informazioni generali e attività da svolgere
+#v(1em)
+- Presentazione RTB#super[G] con i docenti;
+- Inizio della progettazione dettagliata dell'MVP#super[G] ;
+- Inizio della programmazione dell'MVP#super[G] .
+
+==== Rischi attesi
+#v(1em)
+I possibili rischi :
+- RT1: Rischio Tecnologico derivato da inesperienza nell'uso delle tecnologie nel progetto;
+- RT2: Rischio Tecnologico derivato dall'utilizzo errato o non ottimale delle tecnologie;
+- RT3: Rischio Tecnologico legato ad errori di programmazione;
+- RI1: Rischio Individuale legato a impegni personali, universitari e indisponibilità;
+
+==== Preventivo
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],[],[],[],[8],[],[],
+    [Mattia Dalla Pozza],[],[],[],[],[8],[],
+    [Sebastiano Marana],[5],[],[],[],[],[],
+    [Nicholas Moretto],[],[4],[],[],[],[],
+    [Matteo Pretto],[],[],[],[8],[],[],
+    [Alex Shu],[],[],[],[],[8],[],
+    [Stefano Speranza],[],[],[],[],[],[10],
+    [Ramona Zangla],[],[],[],[8],[],[],
+  ),
+  didascalia: "Sprint 9 - Preventivo ore per ciascun componente"
+)
+]
