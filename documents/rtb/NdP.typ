@@ -13,9 +13,9 @@
 */
 
 #let titolo = "Norme di progetto"
-#let status = "In redazione"
+#let status = "Approvato"
 #let destinatario = "M31"
-#let versione = "0.7.0"
+#let versione = "1.0.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -26,6 +26,18 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [1.0.0],
+  [17/07/2025],
+  [-],
+  [N. Bolzon],
+  [Approvazione del documento],
+
+  [0.8.0],
+  [17/07/2025],
+  [S. Marana],
+  [N. Bolzon],
+  [Correzione di alcuni errori ortografici, migliorie nelle sezioni 3.1.5 e 3.2.2],
+
   [0.7.0],
   [16/07/2025],
   [A. Shu],
@@ -180,8 +192,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
   === Piano di Progetto
   // Descrizione documento PdP
-  Il Piano di Progetto è un documento strategico che guida la pianificazione e l'esecuzione del progetto, garantendo un utilizzo ottimale delle risorse e il rispetto degli obiettivi. 
-  
+  Il Piano di Progetto è un documento strategico che guida la pianificazione e l'esecuzione del progetto, garantendo un utilizzo ottimale delle risorse e il rispetto degli obiettivi.
 
   Redatto dal Responsabile#super[G]; con il supporto degli Amministratori#super[G], include l'analisi dei rischi, la metodologia di sviluppo basata su Scrum#super[G], la roadmap delle attività e la gestione dei costi. Inoltre, il piano prevede monitoraggio#super[G] continuo attraverso un confronto costante tra il preventivo e il consuntivo volto ad analizzare la fase attuale e migliorare le fasi future. 
   
@@ -189,22 +200,22 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
   === Piano di Qualifica
   // Descrizione documento PdQ
-  Il Piano di Qualifica#super[G] definisce le strategie per garantire la qualità del prodotto#super[G], stabilendo standard di sviluppo, criteri di verifica#super[G] e test per la conformità ai requisiti#super[G]. 
+  Il Piano di Qualifica#super[G] definisce le strategie per garantire la qualità del prodotto#super[G], stabilendo standard di sviluppo, criteri di verifica#super[G] e test per la conformità ai requisiti#super[G].
   
   Redatto dall'Amministratore#super[G];, include metodologie di Verifica#super[G] e Validazione#super[G], il monitoraggio#super[G] delle metriche e gli esiti dei test, assicurando il rispetto degli obiettivi qualitativi e il miglioramento continuo del progetto.
 
   === Strumenti
-  // Google Calendar, Google Meet, Jira (in generale. Verrà approfondito in Processi organizzativi)
+  // Google Calendar, Microsoft Teams, Jira (in generale. Verrà approfondito in Processi organizzativi)
 
-  Di seguito sono riportati i software impiegati nel processo di fornitura:
-  - *Discord*: piattaforma utilizzata per le riunioni interne tra i membri del team;
-  - *Google Meet*: piattaforma utilizzata per le riunioni esterne con l'azienda proponente;
-  - *Telegram*: piattaforma per la comunicazione informale tra i membri del team;
-  - *Jira*: sistema di issue tracking per la gestione e organizzazione delle varie task.
-  - *Typst*: sistema per la creazione di documenti;
-  - *Google Presentazioni*: sistema per la creazione delle slide di presentazione;
-  - *Google Calendar*: sistema per tenere traccia dei vari incontri interni ed esterni da svolgere.
-  - *GitHub*: piattaforma utilizzata per la gestione del codice sorgente, il versionamento e la collaborazione tra i  membri del team.
+  Di seguito sono elencati i software utilizzati nel contesto del processo di fornitura:
+  - *Discord*: piattaforma impiegata per lo svolgimento delle riunioni interne tra i membri del team;
+  - *Microsoft Teams*: piattaforma utilizzata per le riunioni con l’azienda proponente;
+  - *Telegram*: strumento adoperato per la comunicazione informale tra i membri del team;
+  - *Jira*: sistema di issue tracking adottato per la gestione e l’organizzazione delle diverse attività;
+  - *Typst*: sistema utilizzato per la redazione della documentazione;
+  - *Google Presentazioni*: strumento impiegato per la realizzazione delle presentazioni;
+  - *Google Calendar*: applicativo utilizzato per pianificare e monitorare gli incontri, sia interni che con l’azienda;
+  - *GitHub*: piattaforma utilizzata per la gestione del codice sorgente, il controllo delle versioni e la collaborazione tra i membri del team.
 
 == Sviluppo 
   === Scopo
@@ -218,9 +229,8 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
   === Analisi dei Requisiti
     ==== Scopo
     // Descrizione documento AdR
-    L'Analisi dei Requisiti#super[G]; è la fase preliminare dello sviluppo software, finalizzata a identificare e documentare in modo accurato le esigenze del proponente e degli utenti. Questo processo consente di definire il fine del prodotto#super[G], gli attori del sistema e le funzionalità chiave, fornendo ai progettisti#super[G] una visione chiara del problema e ai verificatori#super[G] una base per le attività di test. 
+    L'Analisi dei Requisiti#super[G] è la fase preliminare dello sviluppo software, finalizzata a identificare e documentare in modo accurato le esigenze del proponente e degli utenti. Questo processo consente di definire il fine del prodotto#super[G], gli attori del sistema e le funzionalità chiave, fornendo ai progettisti#super[G] una visione chiara del problema e ai verificatori#super[G] una base per le attività di test.
     
-
     L'analisi si concretizza in un documento strutturato che raccoglie i casi d'uso, i requisiti#super[G] funzionali e non funzionali, e le fonti da cui sono stati derivati. Questo documento rappresenta un riferimento essenziale per la progettazione, la pianificazione e la fase di verifica#super[G], garantendo che il sistema soddisfi pienamente le aspettative del cliente#super[G] e gli obiettivi stabiliti. Inoltre, è strettamente collegato al Piano di Qualifica#super[G], che consente di monitorare la conformità ai requisiti#super[G] attraverso test specifici.
 
     ==== Casi d'uso
@@ -235,34 +245,34 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
     Ogni caso d’uso è costituito da un diagramma UML e da una descrizione testuale dettagliata, utile a chiarire le funzionalità attese dal sistema. La descrizione riporta, inoltre, le informazioni previste nella tabella sottostante, fatta eccezione per i campi che, in base alla natura del caso d’uso, risultano non applicabili _(ad esempio, se non sono previste situazioni di errore, non saranno presenti scenari alternativi)_.
 
-#show figure: set block(breakable: true)
-#set table.cell(breakable: true)
+    #show figure: set block(breakable: true)
+    #set table.cell(breakable: true)
 
-#set table(
-  fill: (x, y) => if y == 0 {gray} else if x == 0 {luma(235)},
-  align: (x, _) => if x == 0 {center} else {left},
-)
+    #set table(
+      fill: (x, y) => if y == 0 {gray} else if x == 0 {luma(235)},
+      align: (x, _) => if x == 0 {center} else {left},
+    )
 
-#figure(
-  table(
-  columns: (1.3fr, 4fr),
-  inset: 10pt,
-  table.header(
-    [*Campo*], [*Descrizione*]
-  ),
-    [*Titolo*], [Breve descrizione del caso d'uso.],
-    [*Attori*], [Sono coloro che interagiscono attivamente con il Sistema e svolgono l’azione indicata dal caso d’uso.],
-    [*Attori\ Secondari*], [Sono coloro che interagiscono passivamente con il Sistema.],
-    [*Precondizioni*],[Lista di condizioni che sono *necessarie* affinché l’attore possa compiere l’azione indicata dal caso d’uso.],
-    [*Postcondizioni*],[Lista di condizioni che si verificano successivamente alla modifica dello stato del sistema, a seguito dell’azione eseguita con successo dall’attore secondo quanto previsto dal caso d’uso.],
-    [*Scenario\ Principale*],[È la sequenza di iterazioni ideale tra l’attore e il sistema, in cui tutto procede come previsto e l’obiettivo del caso d’uso viene raggiunto con successo.],
-    [*Scenario\ Alternativo*],[Sono variazioni dello scenario principale che si verificano quando una delle operazioni previste non va a buon fine.],
-    [*Inclusioni*],[Indicano che un caso d’uso utilizza un altro caso d’uso. Servono a spezzare comportamenti comuni tra più casi d’uso, inserendoli in uno separato che viene “incluso” quando serve.],
-    [*Estensioni*],[Indicano che un caso d’uso può estendere il comportamento di un altro in situazioni particolari. Il caso d’uso base funziona da solo, ma può essere arricchito opzionalmente da quello estensore, se si verifica#super[G] una certa condizione.],
-    [*Trigger*],[È l’evento iniziale che fa partire il caso d’uso. Può essere un’azione dell’utente, un evento di sistema o un cambiamento di stato che attiva il comportamento descritto nel caso d’uso.],
-  ),
-  caption: [Componenti del caso d’uso e loro descrizione],
-)
+    #figure(
+      table(
+      columns: (1.3fr, 4fr),
+      inset: 10pt,
+      table.header(
+        [*Campo*], [*Descrizione*]
+      ),
+        [*Titolo*], [Breve descrizione del caso d'uso.],
+        [*Attori*], [Sono coloro che interagiscono attivamente con il Sistema e svolgono l’azione indicata dal caso d’uso.],
+        [*Attori\ Secondari*], [Sono coloro che interagiscono passivamente con il Sistema.],
+        [*Precondizioni*],[Lista di condizioni che sono *necessarie* affinché l’attore possa compiere l’azione indicata dal caso d’uso.],
+        [*Postcondizioni*],[Lista di condizioni che si verificano successivamente alla modifica dello stato del sistema, a seguito dell’azione eseguita con successo dall’attore secondo quanto previsto dal caso d’uso.],
+        [*Scenario\ Principale*],[È la sequenza di iterazioni ideale tra l’attore e il sistema, in cui tutto procede come previsto e l’obiettivo del caso d’uso viene raggiunto con successo.],
+        [*Scenario\ Alternativo*],[Sono variazioni dello scenario principale che si verificano quando una delle operazioni previste non va a buon fine.],
+        [*Inclusioni*],[Indicano che un caso d’uso utilizza un altro caso d’uso. Servono a spezzare comportamenti comuni tra più casi d’uso, inserendoli in uno separato che viene “incluso” quando serve.],
+        [*Estensioni*],[Indicano che un caso d’uso può estendere il comportamento di un altro in situazioni particolari. Il caso d’uso base funziona da solo, ma può essere arricchito opzionalmente da quello estensore, se si verifica#super[G] una certa condizione.],
+        [*Trigger*],[È l’evento iniziale che fa partire il caso d’uso. Può essere un’azione dell’utente, un evento di sistema o un cambiamento di stato che attiva il comportamento descritto nel caso d’uso.],
+      ),
+      caption: [Componenti del caso d’uso e loro descrizione],
+    )
 
     /******* Da aggiungere una sezione dedicata ai diagrammi dei casi d'uso non appena li avremo fatti ********/
     #pagebreak()
@@ -282,23 +292,23 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     ===== Fonti dei requisiti
     Le fonti dei requisiti#super[G] rappresentano i documenti e le informazioni da cui vengono estratti i requisiti#super[G] stessi. Tra le principali fonti si annoverano il capitolato#super[G] d'appalto, le riunioni con il committente#super[G], l’analisi dello stato dell’arte e l’analisi dei casi d’uso.
 
-    Ogni requisito#super[G] riportato è accompagnato dall’indicazione esplicita della propria fonte di provenienza, al fine di garantirne la tracciabilità e la verificabilità#super[G].
+    Ogni requisito#super[G] riportato va accompagnato dall’indicazione esplicita della propria fonte di provenienza, al fine di garantirne la tracciabilità e la verificabilità#super[G].
 
     ===== Struttura della codifica dei requisiti
-    I requisiti#super[G] verranno codificati al fine di facilitarne la lettura, la gestione e la tracciabilità.
+    I requisiti#super[G] vanno codificati al fine di facilitarne la lettura, la gestione e la tracciabilità.
     Ogni codice è composto da un prefisso che indica la tipologia del requisito#super[G], seguito da un numero progressivo univoco.
 
-    I requisiti#super[G] funzionali sono preceduti dal prefisso "RF", i Requisiti#super[G] di Qualità dal prefisso "RQ", i Requistiti#super[G] di Vincolo dal prefisso "RV" e i Requisiti#super[G] Prestazionali dal prefisso "RP", dove:
+    I requisiti#super[G] funzionali sono preceduti dal prefisso "RF", i Requisiti#super[G] di Qualità dal prefisso "RQ", i Requisiti#super[G] di Vincolo dal prefisso "RV" e i Requisiti#super[G] Prestazionali dal prefisso "RP", dove:
       - *R* sta per "#strong[R]equisito";
       - *F* sta per "#strong[F]unzionale";
       - *Q* sta per "#strong[Q]ualità";
       - *V* sta per "#strong[V]incolo";
       - *P* sta per "#strong[P]restazionale";
 
-    Per facilitare la lettura, la tracciabilità e la classificazione dei requisiti#super[G], è stato adottato un sistema di codifica sturtturato. La codifica prevede un prefisso che identifica la tipologia e l'importanza del requisito#super[G], seguito da un numero progressivo. In caso di scomposizione, si aggiunge una notazione per indicare i requisiti derivati.
+    Per facilitare la lettura, la tracciabilità e la classificazione dei requisiti#super[G], si adotta un sistema di codifica strutturato. La codifica prevede un prefisso che identifica la tipologia e l'importanza del requisito#super[G], seguito da un numero progressivo. In caso di scomposizione, si aggiunge una notazione per indicare i requisiti derivati.
 
     ===== Tipologia e Importanza
-    I requisiti#super[G] sono stati distinti anche in base alla loro importanza o natura, secondo le seguenti convenzioni:
+    I requisiti#super[G] si distinguano anche in base alla loro importanza o natura, secondo le seguenti convenzioni:
       - *Standard*: requisiti#super[G] strettamente necessari al corretto funzionamento del sistema.
         - _Esempio:_ RF01 → Requisito Funzionale 01.
       - *Desiderabili (D)*: requisiti#super[G] non obbligatori, ma in grado di apportare un valore aggiunto al sistema.
@@ -307,8 +317,8 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         - _Esempio:_ RFO03 → Requisito Funzionale Opzionale 02.
 
     ===== Scomposizione dei Requisiti Generali
-    Poichè molti requistiti derivati dal capitolato#super[G] risultano generici, è stato necessario *scomporli* in requisiti#super[G] più specifici, che chiariscano chi deve fare cosa e in quale modalità.
-    Per indicare questa relazione di derivazione, si utilizza la notazione *"/nr"*, dove _nr_ rappresenta un numero progressivo riferito al requisito#super[G] secondario.
+    Qualora alucuni requisiti derivanti dal capitolato#super[G] risultassero generici, è necessario *scomporli* in requisiti#super[G] più specifici, che chiariscano chi deve fare cosa e in quale modalità.
+    Per indicare questa relazione di derivazione, verrà utilizzata la notazione *"/nr"*, dove _nr_ rappresenta un numero progressivo riferito al requisito#super[G] secondario.
 
     _Esempio:_
       - RF04 → Requisito principale.
@@ -323,7 +333,6 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     - *Indicatore opzionale:* D (Desiderabile), O (Opzionale).
     - *Numero progressivo:* numero univoco del requisito#super[G] all'interno della categoria.
     - *\/nr:* numero del requisito#super[G] secondario, se presente.
-
 
   === Progettazione
     ==== Scopo
@@ -355,17 +364,18 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     Il documento include anche la pianificazione delle attività, con stime di tempi e risorse, e le procedure di testing, assicurando che il prodotto#super[G] finale rispetti i requisiti#super[G] tecnici e le aspettative del cliente#super[G].
     
     ==== Framework e tecnologie utilizzate
-    - *NATS*: Dato che utilizziamo comunicazione asincrona con messaggi, serve un message broker. La scelta naturale ricade su NATS in quanto è più rapido in termini di latenza (dato che non garantisce l'ordine corretto di arrivo dei messaggi) ed è più “semplice”.
-    - *NestJS*: Ogni microservizio può adottare il proprio stack, ma NestJS è la scelta naturale grazie al suo supporto nativo per NATS, che assicura integrazione fluida e bassa latenza. Basato su Node.js e potenziato da TypeScript, offre tipizzazione forte e struttura modulare. Facilita la scalabilità, la manutenzione e l'evoluzione indipendente dei servizi. Le sue astrazioni semplificano lo sviluppo di architetture distribuite complesse. Inoltre, NestJS si presta particolarmente bene ai microservizi grazie al suo sistema di trasporto altamente estensibile, che consente una comunicazione sia asincrona che sincrona tra i servizi, adattandosi a diversi scenari applicativi e garantendo interoperabilità con vari sistemi esterni. È quindi ideale per sistemi reattivi ed estensibili in ambienti dinamici.
-    - *Docker e Kurbenetes*: per il deploy, dato che sono le tecnologie più adatte al nostro caso. 
+    - *NATS*: Poiché l’architettura del sistema si basa su una comunicazione asincrona tramite messaggi, è necessario adottare un message broker. La scelta è ricaduta su NATS, in quanto si distingue per la sua elevata velocità e bassa latenza, resa possibile anche dal fatto che non garantisce l’ordinamento dei messaggi in fase di consegna. Inoltre, NATS si contraddistingue per la sua semplicità di utilizzo e per un’architettura leggera, risultando ideale per ambienti distribuiti ad alte prestazioni.
+    - *NestJS*: Sebbene ogni microservizio possa adottare uno stack differente, NestJS rappresenta la scelta privilegiata per la sua perfetta integrazione con NATS, che consente una comunicazione fluida e a bassa latenza tra i servizi. Basato su Node.js e potenziato da TypeScript, NestJS offre una tipizzazione forte e una struttura modulare che favorisce la scalabilità, la manutenibilità e l’evoluzione indipendente dei singoli servizi. Le sue astrazioni semplificano la realizzazione di architetture distribuite complesse, mentre il sistema di trasporto altamente estensibile supporta sia la comunicazione asincrona che sincrona tra microservizi. Questo lo rende particolarmente adatto a sistemi reattivi, dinamici ed eterogenei, dove l’interoperabilità con componenti esterni è un requisito fondamentale.
+    - *Docker*: Per la fase di deployment, è stata adottata la tecnologia Docker, in quanto rappresenta lo standard de facto per la containerizzazione. Docker consente di isolare le applicazioni all'interno di container leggeri e indipendenti, rendendone la distribuzione più portabile, riproducibile e coerente tra diversi ambienti.
 
-    ==== Pratiche di programmazione
+    // ==== Pratiche di programmazione
     /********** Convenzioni su metodi, import, commenti... ***********/
 
     ==== PoC
     // Descrizione PoC#super[G]
     Il Proof of Concept#super[G] (PoC#super[G]) è una fase fondamentale dello sviluppo in cui progettisti#super[G] e programmatori#super[G] valutano la validità di una soluzione prima della sua implementazione definitiva. Il suo scopo è dimostrare la fattibilità del progetto, assicurando che le tecnologie scelte siano adeguate e compatibili con i requisiti#super[G] tecnici e operativi. Inoltre, offre all'azienda proponente un feedback tempestivo e concreto, minimizzando i rischi e ottimizzando le decisioni. 
     Per il team di sviluppo, il PoC#super[G] rappresenta anche una fase di studio e sperimentazione delle tecnologie coinvolte, in cui vengono analizzati i limiti, le potenzialità e le integrazioni tra i diversi componenti del sistema. Ciò consente di acquisire familiarità con gli strumenti adottati, validare le scelte architetturali iniziali e definire le basi tecniche per le successive fasi progettuali.
+  
   === Codifica
     ==== Scopo
     // Descrizione Codifica
@@ -376,13 +386,11 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     
     ==== Convenzioni di sintassi
     // Nomi da assegnare, in che lingua, che stile di case seguire, indentazione, spaziatura...
-    Le norme di scrittura del codice#super[G] del prodotto#super[G] software mirano a garantire leggibilità, uniformità e manutenibilità. Di seguito sono definite le principali 
-    convenzioni da seguire.
+    Le norme di scrittura del codice#super[G] del prodotto#super[G] software mirano a garantire leggibilità, uniformità e manutenibilità. Di seguito sono definite le principali convenzioni da seguire.
 
     // ***************** SEZIONI DA RIFINIRE CON CIO' CHE SI DECIDE EFFETTIVAMENTE *******/
       ===== Lingua
-      La lingua utilizzata per scrivere i commenti al codice e i nomi dei metodi, di variabili, classi e tipi è l'inglese, in modo da garantire una maggiore comprensibilità e 
-      uniformità all'interno del team e per facilitare la collaborazione con altri sviluppatori. 
+      La lingua utilizzata per scrivere i commenti al codice e i nomi dei metodi, di variabili, classi e tipi è l'inglese, in modo da garantire una maggiore comprensibilità e uniformità all'interno del team e per facilitare la collaborazione con altri sviluppatori. 
 
       ===== Formattazione
       Ogni riga di codice#super[G] non deve superare gli 80 caratteri così da mantenere la leggibilità e da rendere più rapida ed efficace la revisione.
@@ -432,8 +440,11 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       ===== File
       /******************* TODO: DA DECIDERE *************/
-      /*Il nome dei file deve essere formattato in //Camel Case, 
-      senza spazi, per mantenere coerenza nel progetto. */
+      /*
+      Il nome dei file deve essere formattato in //Camel Case, 
+      senza spazi, per mantenere coerenza nel progetto.
+      */
+
       ====== Nomenclatura dei file
       Per garantire coerenza, leggibilità e chiarezza all'interno del progetto, i file devono essere nominati seguendo la convenzione strutturata nel formato:
       #align(center, block[*nome.tipo.estensione*])
@@ -442,7 +453,8 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         - Se è composto da più parole, si usa il *camelCase*
       - *tipo* indica la funzione del file.
       - *estensione* definisce il formato, ad esempio .ts, .json
-    === Tecnologie utilizzate
+
+    ==== Tecnologie utilizzate
     // Cos'è VS Code e cosa permette
     *Visual Studio Code* (o VS Code) è un potente ambiente di sviluppo (IDE) ed è stato adottato come principale strumento di sviluppo software da parte dell'intero team.     
     Esso supporta numerosi linguaggi di programmazione e framework. Inoltre, offre funzionalità avanzate come il completamento automatico intelligente, il debugging integrato, il controllo della versione con Git e un ampio ecosistema di estensioni che permette di personalizzare l'esperienza di sviluppo. 
@@ -519,7 +531,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       === Strumenti per stesura
       // Typst su VSCode
-      Per la stesura dei documenti viene usato il linguaggio Typst, un linguaggio di markup versatile e abbastanza semplice. Durante le fasi di scrittura, è stata adottato l'utilizzo di Visual Studio Code, un IDE che supporta numerose estensioni, tra cui Typst, per la compilazione di sorgenti ".typ". Inoltre, l'estensione "Tinymist Typst" facilita il processo di redazione permettendo di visualizzare l'anteprima del documento in formato ”.pdf” direttamente all'interno di VSCode con modifiche applicate in tempo reale.
+      Per la stesura della documentazione è stato adottato il linguaggio Typst, un linguaggio di markup versatile e relativamente semplice da apprendere. Durante le fasi di redazione, è stato utilizzato Visual Studio Code come ambiente di sviluppo, grazie al supporto di numerose estensioni, tra cui quella dedicata a Typst, che consente la compilazione dei file con estensione “.typ”. In particolare, l’estensione Tinymist Typst ha facilitato il processo di scrittura permettendo la visualizzazione in anteprima del documento in formato “.pdf” direttamente all’interno dell’IDE, con aggiornamenti applicati in tempo reale.
 
       === Struttura della documentazione
         // In che modo dividiamo i documenti nella repo docs (in x cartella sono contenuti...)
@@ -537,11 +549,11 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       === Metriche
       #label("4.1.10")
       // Quelle gestite tramite le Actions
-      I documenti sono sottoposti a dei controlli di qualità, le quali sono:
+      I documenti sono sottoposti a dei controlli di qualità, tra cui:
 
-      - *Parole#super[G] del Glossario#super[G] non segnate*: Indica il numero di parole#super[G] trovate nella documentazione che sono presenti nel glossario#super[G] ma non contrassegnate con la lettera "G" come apice.
-      - *Indice Gulpease*: Fornisce un punteggio da 0 a 100 basato sull'indice di leggibilità Gulpease della documentazione.
-      - *Ordinamento del Glossario#super[G]*: Verifica#super[G] che il glossario#super[G] sia ordinato alfabeticamente.
+      - *Parole#super[G] del Glossario#super[G] non segnate*: Verifica il numero di termini presenti nella documentazione che compaiono anche nel Glossario#super[G], ma che non sono opportunamente marcati con l’apice “G”.
+      - *Indice Gulpease*: Calcola un punteggio compreso tra 0 e 100, basato sull’indice di leggibilità Gulpease, al fine di valutare la chiarezza e l’accessibilità del testo redatto.
+      - *Ordinamento del Glossario#super[G]*: Controlla che i termini presenti nel Glossario#super[G] siano disposti in ordine alfabetico, garantendo coerenza e facilità di consultazione.
       
       === Manutenzione
       // Fasi di manutenzione di un documento 
@@ -556,7 +568,8 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         ==== Procedure di revisione
         Il processo di revisione è un'attività fondamentale per verificare la conformità del lavoro svolto agli standard di qualità e ai requisiti#super[G] fondamentali. Questa fase prevede diverse operazioni: la revisione del codice#super[G], l'esecuzione dei test di accettazione e la risoluzione di eventuali discrepanze. 
         
-          Il materiale da sottoporre a revisione viene definito e assegnato ai revisori tramite Jira. Una volta completata la revisione, le modifiche vengono proposte ai responsabili#super[G] di quello specifico materiale e, se necessario, ricevono feedback anche dal resto del team. Infine, i risultati della revisione e le problematiche individuate vengono documentati attraverso un verbale interno.
+          Il materiale da sottoporre a revisione viene definito e assegnato ai verificatori tramite Jira.
+
           ===== Revisione tecnica
           // Revisione software
           La revisione tecnica serve a garantire che il software sia corretto, sicuro e conforme agli standard. Il codice#super[G] viene analizzato allo scopo di individuare errori, migliorare le prestazioni e assicurare la manutenibilità del sistema. Inoltre, si effettuano test per verificare la stabilità e il rispetto dei requisiti#super[G] tecnici. 
@@ -567,14 +580,13 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
           
           ===== Approvazione 
           // Workflow di approvazione
-          Quando tutte le sezioni sono state verificate e il documento è pronto per la pubblicazione, si procede con l'approvazione da parte del responsabile#super[G], seguendo questi passaggi: 
-          - Il verificatore#super[G] che ha esaminato l'ultima sezione completata avvia una Pull Request per effettuare il merge#super[G] dal branch#super[G] del documento al main;
-          - Il responsabile#super[G] rilegge ed analizza l'intero documento;
-          - Se rileva errori o problemi, il responsabile#super[G] segnala le correzioni necessarie e si procede con le modifiche secondo la procedura indicata.
-          - Il registro delle modifiche viene aggiornato aggiungendo la versione di pubblicazione e contrassegnando lo stato del documento come "Approvato".
-          - Per i verbali esterni, genera il file ".pdf" e lo invia al destinatario, che lo approva con una firma e lo restituisce per consentirne il caricamento da approvato nella repository#super[G].
-          - Infine, il responsabile#super[G] approva la pull request e unisce il branch#super[G] del documento al main. Una volta effettuato il push sul main, bisognerà far partire manualmente l'azione di aggiornamento dei link del sito contenente la documentazione, così da poter rendere il documento approvato disponibile pubblicamente in formato .pdf.
-
+          - L’autore del documento, o della modifica, segnala tramite Jira al Verificatore#super[G] la necessità di una revisione del contenuto;
+          - Il Verificatore#super[G], ricevuta la notifica, esamina il documento e lo sposta nella fase "Revisione" all’interno di Jira;
+          - Al termine dell’attività di revisione, la relativa task viene contrassegnata come completata e il documento può essere sottoposto al processo di approvazione finale;
+          - Il Responsabile#super[G] procede con l’approvazione del documento chiudendo la relativa task su Jira e completando così il processo di gestione.
+          - Il registro delle modifiche viene aggiornato, riportando il numero di versione e contrassegnando lo stato del documento come "Approvato";
+          - Nel caso di Verbali Esterni, viene generato il file in formato “.pdf” e inviato al destinatario designato, il quale approva il documento mediante firma e lo restituisce, autorizzandone così il caricamento nella repository#super[G] come documento approvato;
+          - Infine, il Responsabile#super[G] esegue la release finale del documento, unendo il branch#super[G] di lavoro al main. Una volta completata la release sul ramo principale, è necessario avviare manualmente l’azione di aggiornamento dei collegamenti del sito contenente la documentazione, al fine di rendere disponibile pubblicamente il documento approvato in formato “.pdf”.
 
     == Gestione della Configurazione
       === Scopo
