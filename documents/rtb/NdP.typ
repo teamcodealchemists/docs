@@ -100,6 +100,12 @@
   block(it)
 }
 
+/* INDICE DELLE TABELLE*/
+#outline(
+  title: [Lista delle Tabelle],
+  target: figure.where(kind: table),
+)
+
 /* SEZIONE 1 - Introduzione */
 = Introduzione
   == Scopo del documento
@@ -149,15 +155,15 @@
 
 = Struttura dei processi
 Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 12207:1995*, che definisce il ciclo di vita del software suddividendolo in 3 categorie principali:
-- i *processi primari* riguardano le attività fondamentali di sviluppo, acquisizione e manutenzione del software;
-- i *processi di supporto* forniscono strumenti e metodologie per garantire qualità, verifica#super[G], convalida e gestione della configurazione;
-- i *processi organizzativi*, infine, includono la gestione del progetto, la formazione del personale e il miglioramento continuo, assicurando un approccio sistematico ed efficiente alla produzione software.
+- I *processi primari* riguardano le attività fondamentali di sviluppo, acquisizione e manutenzione del software;
+- I *processi di supporto* forniscono strumenti e metodologie per garantire qualità, verifica#super[G], convalida e gestione della configurazione;
+- I *processi organizzativi*, infine, includono la gestione del progetto, la formazione del personale e il miglioramento continuo, assicurando un approccio sistematico ed efficiente alla produzione software.
 
 = Processi primari
 == Fornitura
   === Scopo
   // Descrizione Fornitura
-  Il processo di fornitura è l'insieme di attività che regolano la collaborazione tra fornitore#super[G] e cliente#super[G] per la creazione e consegna di un prodotto#super[G] software. 
+  Il processo di fornitura è l'insieme di attività che regolano la collaborazione tra fornitore#super[G] e cliente#super[G] per la creazione e consegna di un prodotto#super[G] software.
   
   Attraverso l'analisi dei requisiti#super[G], la pianificazione delle operazioni e la gestione delle risorse, questo processo garantisce il rispetto dei tempi, dei costi e degli standard di qualità. 
   
@@ -227,50 +233,96 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     - un ID principale che identifica il caso principale 
     - e, se necessario, da un ID del sottocaso.
 
+    Ogni caso d’uso è costituito da un diagramma UML e da una descrizione testuale dettagliata, utile a chiarire le funzionalità attese dal sistema. La descrizione riporta, inoltre, le informazioni previste nella tabella sottostante, fatta eccezione per i campi che, in base alla natura del caso d’uso, risultano non applicabili _(ad esempio, se non sono previste situazioni di errore, non saranno presenti scenari alternativi)_.
+
+#show figure: set block(breakable: true)
+#set table.cell(breakable: true)
+
+#set table(
+  fill: (x, y) => if y == 0 {gray} else if x == 0 {luma(235)},
+  align: (x, _) => if x == 0 {center} else {left},
+)
+
+#figure(
+  table(
+  columns: (1.3fr, 4fr),
+  inset: 10pt,
+  table.header(
+    [*Campo*], [*Descrizione*]
+  ),
+    [*Titolo*], [Breve descrizione del caso d'uso.],
+    [*Attori*], [Sono coloro che interagiscono attivamente con il Sistema e svolgono l’azione indicata dal caso d’uso.],
+    [*Attori\ Secondari*], [Sono coloro che interagiscono passivamente con il Sistema.],
+    [*Precondizioni*],[Lista di condizioni che sono *necessarie* affinché l’attore possa compiere l’azione indicata dal caso d’uso.],
+    [*Postcondizioni*],[Lista di condizioni che si verificano successivamente alla modifica dello stato del sistema, a seguito dell’azione eseguita con successo dall’attore secondo quanto previsto dal caso d’uso.],
+    [*Scenario\ Principale*],[È la sequenza di iterazioni ideale tra l’attore e il sistema, in cui tutto procede come previsto e l’obiettivo del caso d’uso viene raggiunto con successo.],
+    [*Scenario\ Alternativo*],[Sono variazioni dello scenario principale che si verificano quando una delle operazioni previste non va a buon fine.],
+    [*Inclusioni*],[Indicano che un caso d’uso utilizza un altro caso d’uso. Servono a spezzare comportamenti comuni tra più casi d’uso, inserendoli in uno separato che viene “incluso” quando serve.],
+    [*Estensioni*],[Indicano che un caso d’uso può estendere il comportamento di un altro in situazioni particolari. Il caso d’uso base funziona da solo, ma può essere arricchito opzionalmente da quello estensore, se si verifica#super[G] una certa condizione.],
+    [*Trigger*],[È l’evento iniziale che fa partire il caso d’uso. Può essere un’azione dell’utente, un evento di sistema o un cambiamento di stato che attiva il comportamento descritto nel caso d’uso.],
+  ),
+  caption: [Componenti del caso d’uso e loro descrizione],
+)
+
     /******* Da aggiungere una sezione dedicata ai diagrammi dei casi d'uso non appena li avremo fatti ********/
     #pagebreak()
     ==== Requisiti
     // Nomenclatura Requisiti#super[G] + riferimento all'AdR
-    I requisiti#super[G]; sono stati codificati in modo da facilitarne la lettura e la comprensione. La codifica
-    è composta da un prefisso che indica il tipo di requisito#super[G], seguito da un numero progressivo.
-    
-    I *requisiti#super[G]; funzionali* sono preceduti dal prefisso «RF», i requisiti#super[G]; di sicurezza dal prefisso
-    «RS», i *requisiti#super[G]; non funzionali* dal prefisso «RnF» e i requisiti#super[G]; di vincolo dal prefisso «RV»,
-    dove:
-    - *R* sta per «Requisito#super[G]»
-    - *F* sta per «Funzionale»
-    - *S* sta per «Sicurezza»
-    - *nF* sta per «non Funzionale»
-  
-    Alcuni requisiti#super[G]; funzionali sono stati definiti come *«desiderabili»*, in quanto non strettamente
-    necessari ma in grado di apportare un valore aggiunto riconoscibile.
-    Per indicare che un requisito#super[G]; è desiderabile, è stato deciso di aggiungere la lettera *«D»* (Desiderabile) al prefisso del requisito#super[G];, per indicare che il requisito#super[G] è desiderabile.
-    *RFD*, ad esempio, sta per «Requisito#super[G]; Funzionale Desiderabile».
-    
-    Essendoci presenti anche dei requisiti#super[G]; *opzionali*, è stato deciso di aggiungere la lettera
-    *«O»* (Opzionale) al prefisso del requisito#super[G];, per indicare che il requisito#super[G]; è opzionale.
-    *RFO*, ad esempio, sta per «Requisito#super[G]; Funzionale Opzionale».
+    I requisiti#super[G]; vanno codificati in modo da facilitarne la lettura e la comprensione. Verranno suddivisi in quattro categorie principali: Requisiti#super[G] Funzionali, Requisiti#super[G] di Qualità, Requisiti#super[G] di Vincolo, Requisiti#super[G] Prestazionali.
 
-    Mentre per i requisiti#super[G] non funzionali comprendono diverse categorie, tra cui:
+    ===== Classificazione dei requisiti
+    - *Requisiti#super[G] Funzionali:* descrivono le funzionalità specifiche che il sistema deve offrire. Definiscono i comportamenti attesi in risposta a determinati input o situazioni, specificando cosa il sistema deve fare per soddisfare i bisogni degli utenti e degli stakeholder.
 
-    - *Requisiti di qualità*: indicano caratteristiche desiderabili del sistema come usabilità, manutenibilità e affidabilità;
-    - *Requisiti prestazionali*: specificano tempi di risposta, throughput, scalabilità o capacità del sistema sotto carico;
-    - *Requisiti di vincolo* : impongono limitazioni sull'ambiente operativo, sulle tecnologie da utilizzare o su standard da rispettare.
+    - *Requisiti#super[G] di Qualità:* detti anche non funzionali, definiscono le caratteristiche generali del sistema che ne influenzano l’efficacia, l’efficienza e l’affidabilità. Rientrano in questa categoria aspetti come la sicurezza, l’usabilità, la manutenibilità, la scalabilità#super[G] e l’affidabilità complessiva del sistema.
 
-    Inoltre, i requisiti#super[G]; forniti dal capitolato#super[G]; sono molto generali e non specificano in modo
-    dettagliato le funzionalità richieste. Per questo motivo, è stato deciso di scomporre i requisiti#super[G];
-    in requisiti#super[G]; più specifici, cioè chi deve fare cosa, e in che modo.
-    
-    Per indicare che un requisito#super[G]; è secondario, è stato deciso di aggiungere la dicitura *«/nr»* al
-    codice#super[G]; del requisito#super[G]; principale, dove *nr* è il numero progressivo del requisito#super[G]; secondario.
-    
-    Quindi, la struttura del codice#super[G]; di un requisito#super[G]; è la seguente:
-    - RF01: Requisito#super[G]; Funzionale principale 01
-    - RF01/01: Requisito#super[G]; Funzionale secondario 01/01
-    - RS01: Requisito#super[G]; di Sicurezza principale 01
-    - RS01/01: Requisito#super[G]; di Sicurezza secondario 01/01
-    - RnF01: Requisito#super[G]; non Funzionale principale 01
-    - RnF01/01: Requisito#super[G]; non Funzionale secondario 01/01
+    - *Requisiti#super[G] di Vincolo:* specificano le limitazioni imposte da fattori esterni o immutabili, che il sistema o il processo di sviluppo devono rispettare. Tali vincoli possono derivare da normative, tecnologie obbligatorie, standard industriali, vincoli temporali o economici.
+
+    - *Requisiti#super[G] di Prestazionali:* definiscono le aspettative in termini di prestazioni del sistema, come tempi di risposta, capacità di carico, throughput e uso delle risorse. Questi requisiti#super[G] sono fondamentali per garantire un’esperienza utente adeguata anche sotto carico elevato.
+
+    ===== Fonti dei requisiti
+    Le fonti dei requisiti#super[G] rappresentano i documenti e le informazioni da cui vengono estratti i requisiti#super[G] stessi. Tra le principali fonti si annoverano il capitolato#super[G] d'appalto, le riunioni con il committente#super[G], l’analisi dello stato dell’arte e l’analisi dei casi d’uso.
+
+    Ogni requisito#super[G] riportato è accompagnato dall’indicazione esplicita della propria fonte di provenienza, al fine di garantirne la tracciabilità e la verificabilità#super[G].
+
+    ===== Struttura della codifica dei requisiti
+    I requisiti#super[G] verranno codificati al fine di facilitarne la lettura, la gestione e la tracciabilità.
+    Ogni codice è composto da un prefisso che indica la tipologia del requisito#super[G], seguito da un numero progressivo univoco.
+
+    I requisiti#super[G] funzionali sono preceduti dal prefisso "RF", i Requisiti#super[G] di Qualità dal prefisso "RQ", i Requistiti#super[G] di Vincolo dal prefisso "RV" e i Requisiti#super[G] Prestazionali dal prefisso "RP", dove:
+      - *R* sta per "#strong[R]equisito";
+      - *F* sta per "#strong[F]unzionale";
+      - *Q* sta per "#strong[Q]ualità";
+      - *V* sta per "#strong[V]incolo";
+      - *P* sta per "#strong[P]restazionale";
+
+    Per facilitare la lettura, la tracciabilità e la classificazione dei requisiti#super[G], è stato adottato un sistema di codifica sturtturato. La codifica prevede un prefisso che identifica la tipologia e l'importanza del requisito#super[G], seguito da un numero progressivo. In caso di scomposizione, si aggiunge una notazione per indicare i requisiti derivati.
+
+    ===== Tipologia e Importanza
+    I requisiti#super[G] sono stati distinti anche in base alla loro importanza o natura, secondo le seguenti convenzioni:
+      - *Standard*: requisiti#super[G] strettamente necessari al corretto funzionamento del sistema.
+        - _Esempio:_ RF01 → Requisito Funzionale 01.
+      - *Desiderabili (D)*: requisiti#super[G] non obbligatori, ma in grado di apportare un valore aggiunto al sistema.
+        - _Esempio:_ RFD04 → Requisito Funzionale Desiderabile 02.
+      - *Opzionali (O)*: requisiti#super[G] implementabili solo in presenza di tempo o risorse sufficienti.
+        - _Esempio:_ RFO03 → Requisito Funzionale Opzionale 02.
+
+    ===== Scomposizione dei Requisiti Generali
+    Poichè molti requistiti derivati dal capitolato#super[G] risultano generici, è stato necessario *scomporli* in requisiti#super[G] più specifici, che chiariscano chi deve fare cosa e in quale modalità.
+    Per indicare questa relazione di derivazione, si utilizza la notazione *"/nr"*, dove _nr_ rappresenta un numero progressivo riferito al requisito#super[G] secondario.
+
+    _Esempio:_
+      - RF04 → Requisito principale.
+      - RF04/01, RF04/02 → Requisiti#super[G] secondari specifici derivati dal requisito RF04.
+
+    ===== Sintesi della struttura del codice
+    \
+    #align(center)[
+      *[Prefisso][Indicatore opzionale][Numero progressivo][/nr]*
+    ]\
+    - *Prefisso:* RF (Funzionale), RQ (Qualità), RV (Vincolo), RP (Prestazionale).
+    - *Indicatore opzionale:* D (Desiderabile), O (Opzionale).
+    - *Numero progressivo:* numero univoco del requisito#super[G] all'interno della categoria.
+    - *\/nr:* numero del requisito#super[G] secondario, se presente.
 
 
   === Progettazione
