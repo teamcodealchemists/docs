@@ -233,7 +233,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     - un ID principale che identifica il caso principale 
     - e, se necessario, da un ID del sottocaso.
 
-    Ogni caso d’uso è costituito da un diagramma UML e da una descrizione testuale dettagliata, utile a chiarire le funzionalità attese dal sistema. La descrizione riporta, inoltre, le informazioni previste nella tabella sottostante, fatta eccezione per i campi che, in base alla natura del caso d’uso, risultano non applicabili _(ad esempio, se non sono previste situazioni di errore, non saranno presenti scenari alternativi)_.
+    Ogni caso d'uso è costituito da un diagramma UML e da una descrizione testuale dettagliata, utile a chiarire le funzionalità attese dal sistema. La descrizione riporta, inoltre, le informazioni previste nella tabella sottostante, fatta eccezione per i campi che, in base alla natura del caso d'uso, risultano non applicabili _(ad esempio, se non sono previste situazioni di errore, non saranno presenti scenari alternativi)_.
 
 #show figure: set block(breakable: true)
 #set table.cell(breakable: true)
@@ -251,17 +251,17 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     [*Campo*], [*Descrizione*]
   ),
     [*Titolo*], [Breve descrizione del caso d'uso.],
-    [*Attori*], [Sono coloro che interagiscono attivamente con il Sistema e svolgono l’azione indicata dal caso d’uso.],
+    [*Attori*], [Sono coloro che interagiscono attivamente con il Sistema e svolgono l'azione indicata dal caso d'uso.],
     [*Attori\ Secondari*], [Sono coloro che interagiscono passivamente con il Sistema.],
-    [*Precondizioni*],[Lista di condizioni che sono *necessarie* affinché l’attore possa compiere l’azione indicata dal caso d’uso.],
-    [*Postcondizioni*],[Lista di condizioni che si verificano successivamente alla modifica dello stato del sistema, a seguito dell’azione eseguita con successo dall’attore secondo quanto previsto dal caso d’uso.],
-    [*Scenario\ Principale*],[È la sequenza di iterazioni ideale tra l’attore e il sistema, in cui tutto procede come previsto e l’obiettivo del caso d’uso viene raggiunto con successo.],
+    [*Precondizioni*],[Lista di condizioni che sono *necessarie* affinché l'attore possa compiere l'azione indicata dal caso d'uso.],
+    [*Postcondizioni*],[Lista di condizioni che si verificano successivamente alla modifica dello stato del sistema, a seguito dell'azione eseguita con successo dall'attore secondo quanto previsto dal caso d'uso.],
+    [*Scenario\ Principale*],[È la sequenza di iterazioni ideale tra l'attore e il sistema, in cui tutto procede come previsto e l'obiettivo del caso d'uso viene raggiunto con successo.],
     [*Scenario\ Alternativo*],[Sono variazioni dello scenario principale che si verificano quando una delle operazioni previste non va a buon fine.],
-    [*Inclusioni*],[Indicano che un caso d’uso utilizza un altro caso d’uso. Servono a spezzare comportamenti comuni tra più casi d’uso, inserendoli in uno separato che viene “incluso” quando serve.],
-    [*Estensioni*],[Indicano che un caso d’uso può estendere il comportamento di un altro in situazioni particolari. Il caso d’uso base funziona da solo, ma può essere arricchito opzionalmente da quello estensore, se si verifica#super[G] una certa condizione.],
-    [*Trigger*],[È l’evento iniziale che fa partire il caso d’uso. Può essere un’azione dell’utente, un evento di sistema o un cambiamento di stato che attiva il comportamento descritto nel caso d’uso.],
+    [*Inclusioni*],[Indicano che un caso d'uso utilizza un altro caso d'uso. Servono a spezzare comportamenti comuni tra più casi d'uso, inserendoli in uno separato che viene “incluso” quando serve.],
+    [*Estensioni*],[Indicano che un caso d'uso può estendere il comportamento di un altro in situazioni particolari. Il caso d'uso base funziona da solo, ma può essere arricchito opzionalmente da quello estensore, se si verifica#super[G] una certa condizione.],
+    [*Trigger*],[È l'evento iniziale che fa partire il caso d'uso. Può essere un'azione dell'utente, un evento di sistema o un cambiamento di stato che attiva il comportamento descritto nel caso d'uso.],
   ),
-  caption: [Componenti del caso d’uso e loro descrizione],
+  caption: [Componenti del caso d'uso e loro descrizione],
 )
 
     /******* Da aggiungere una sezione dedicata ai diagrammi dei casi d'uso non appena li avremo fatti ********/
@@ -273,16 +273,16 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     ===== Classificazione dei requisiti
     - *Requisiti#super[G] Funzionali:* descrivono le funzionalità specifiche che il sistema deve offrire. Definiscono i comportamenti attesi in risposta a determinati input o situazioni, specificando cosa il sistema deve fare per soddisfare i bisogni degli utenti e degli stakeholder.
 
-    - *Requisiti#super[G] di Qualità:* detti anche non funzionali, definiscono le caratteristiche generali del sistema che ne influenzano l’efficacia, l’efficienza e l’affidabilità. Rientrano in questa categoria aspetti come la sicurezza, l’usabilità, la manutenibilità, la scalabilità#super[G] e l’affidabilità complessiva del sistema.
+    - *Requisiti#super[G] di Qualità:* detti anche non funzionali, definiscono le caratteristiche generali del sistema che ne influenzano l'efficacia, l'efficienza e l'affidabilità. Rientrano in questa categoria aspetti come la sicurezza, l'usabilità, la manutenibilità, la scalabilità#super[G] e l'affidabilità complessiva del sistema.
 
     - *Requisiti#super[G] di Vincolo:* specificano le limitazioni imposte da fattori esterni o immutabili, che il sistema o il processo di sviluppo devono rispettare. Tali vincoli possono derivare da normative, tecnologie obbligatorie, standard industriali, vincoli temporali o economici.
 
-    - *Requisiti#super[G] di Prestazionali:* definiscono le aspettative in termini di prestazioni del sistema, come tempi di risposta, capacità di carico, throughput e uso delle risorse. Questi requisiti#super[G] sono fondamentali per garantire un’esperienza utente adeguata anche sotto carico elevato.
+    - *Requisiti#super[G] di Prestazionali:* definiscono le aspettative in termini di prestazioni del sistema, come tempi di risposta, capacità di carico, throughput e uso delle risorse. Questi requisiti#super[G] sono fondamentali per garantire un'esperienza utente adeguata anche sotto carico elevato.
 
     ===== Fonti dei requisiti
-    Le fonti dei requisiti#super[G] rappresentano i documenti e le informazioni da cui vengono estratti i requisiti#super[G] stessi. Tra le principali fonti si annoverano il capitolato#super[G] d'appalto, le riunioni con il committente#super[G], l’analisi dello stato dell’arte e l’analisi dei casi d’uso.
+    Le fonti dei requisiti#super[G] rappresentano i documenti e le informazioni da cui vengono estratti i requisiti#super[G] stessi. Tra le principali fonti si annoverano il capitolato#super[G] d'appalto, le riunioni con il committente#super[G], l'analisi dello stato dell'arte e l'analisi dei casi d'uso.
 
-    Ogni requisito#super[G] riportato è accompagnato dall’indicazione esplicita della propria fonte di provenienza, al fine di garantirne la tracciabilità e la verificabilità#super[G].
+    Ogni requisito#super[G] riportato è accompagnato dall'indicazione esplicita della propria fonte di provenienza, al fine di garantirne la tracciabilità e la verificabilità#super[G].
 
     ===== Struttura della codifica dei requisiti
     I requisiti#super[G] verranno codificati al fine di facilitarne la lettura, la gestione e la tracciabilità.
