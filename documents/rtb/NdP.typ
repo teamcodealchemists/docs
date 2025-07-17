@@ -255,7 +255,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
     - *Requisiti di qualità*: indicano caratteristiche desiderabili del sistema come usabilità, manutenibilità e affidabilità;
     - *Requisiti prestazionali*: specificano tempi di risposta, throughput, scalabilità o capacità del sistema sotto carico;
-    - *Requisiti di vincolo* : impongono limitazioni sull’ambiente operativo, sulle tecnologie da utilizzare o su standard da rispettare.
+    - *Requisiti di vincolo* : impongono limitazioni sull'ambiente operativo, sulle tecnologie da utilizzare o su standard da rispettare.
 
     Inoltre, i requisiti#super[G]; forniti dal capitolato#super[G]; sono molto generali e non specificano in modo
     dettagliato le funzionalità richieste. Per questo motivo, è stato deciso di scomporre i requisiti#super[G];
@@ -282,14 +282,14 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     - *Progettazione Logica*, che motiva la scelta di tecnologie e framework e include il PoC#super[G];
     - *Progettazione di dettaglio*, che specifica l'architettura#super[G] con diagrammi delle classi e test di unità. 
   
-    Per garantire un sistema efficiente e scalabile, la progettazione segue principi di modularità#super[G], flessibilità e affidabilità, assicurando una struttura chiara e facilmente manutenibile prima della fase di sviluppo.
+    Per garantire un sistema efficiente e scalabile, la progettazione segue principi di modularità#super[G], flessibilità e affidabilità, assicurando una struttura chiara e facilmente mantenibile prima della fase di sviluppo.
     ==== Fasi di Progettazione  
       ===== Progettazione logica
       // Descrizione progett. logica
 
       La progettazione logica definisce la struttura di alto livello del software, traducendo i requisiti#super[G] in un'architettura#super[G] chiara e coerente. Comprende la scelta di framework, tecnologie e librerie, validandone l'adeguatezza tramite un Proof of Concept#super[G] (PoC#super[G]). Inoltre, include diagrammi UML per rappresentare l'interazione tra i componenti. 
       
-      I progettisti#super[G] devono garantire l'assegnazione e il dettaglio dei requisiti#super[G], progettare interfacce e strutture dati, definire test di integrazione e revisionare l'architettura#super[G] in collaborazione con il team e il cliente#super[G], assicurando che il sistema sia ben strutturato e facilmente manutenibile.
+      I progettisti#super[G] devono garantire l'assegnazione e il dettaglio dei requisiti#super[G], progettare interfacce e strutture dati, definire test di integrazione e revisionare l'architettura#super[G] in collaborazione con il team e il cliente#super[G], assicurando che il sistema sia ben strutturato e facilmente mantenibile.
       ===== Progettazione di dettaglio
       // Descrizione progett. di dettaglio
       La progettazione di dettaglio suddivide il sistema in unità architetturali funzionali, garantendo una codifica efficiente e verificabile. Essa assicura che i componenti software siano ben definiti e coerenti con la progettazione logica, evitando complessità eccessive. 
@@ -304,7 +304,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
     
     ==== Framework e tecnologie utilizzate
     - *NATS*: Dato che utilizziamo comunicazione asincrona con messaggi, serve un message broker. La scelta naturale ricade su NATS in quanto è più rapido in termini di latenza (dato che non garantisce l'ordine corretto di arrivo dei messaggi) ed è più “semplice”.
-    - *NestJS*: Ogni microservizio può adottare il proprio stack, ma NestJS è la scelta naturale grazie al suo supporto nativo per NATS, che assicura integrazione fluida e bassa latenza. Basato su Node.js e potenziato da TypeScript, offre tipizzazione forte e struttura modulare. Facilita la scalabilità, la manutenzione e l’evoluzione indipendente dei servizi. Le sue astrazioni semplificano lo sviluppo di architetture distribuite complesse. Inoltre, NestJS si presta particolarmente bene ai microservizi grazie al suo sistema di trasporto altamente estensibile, che consente una comunicazione sia asincrona che sincrona tra i servizi, adattandosi a diversi scenari applicativi e garantendo interoperabilità con vari sistemi esterni. È quindi ideale per sistemi reattivi ed estensibili in ambienti dinamici.
+    - *NestJS*: Ogni microservizio può adottare il proprio stack, ma NestJS è la scelta naturale grazie al suo supporto nativo per NATS, che assicura integrazione fluida e bassa latenza. Basato su Node.js e potenziato da TypeScript, offre tipizzazione forte e struttura modulare. Facilita la scalabilità, la manutenzione e l'evoluzione indipendente dei servizi. Le sue astrazioni semplificano lo sviluppo di architetture distribuite complesse. Inoltre, NestJS si presta particolarmente bene ai microservizi grazie al suo sistema di trasporto altamente estensibile, che consente una comunicazione sia asincrona che sincrona tra i servizi, adattandosi a diversi scenari applicativi e garantendo interoperabilità con vari sistemi esterni. È quindi ideale per sistemi reattivi ed estensibili in ambienti dinamici.
     - *Docker e Kurbenetes*: per il deploy, dato che sono le tecnologie più adatte al nostro caso. 
 
     ==== Pratiche di programmazione
@@ -383,7 +383,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       /*Il nome dei file deve essere formattato in //Camel Case, 
       senza spazi, per mantenere coerenza nel progetto. */
       ====== Nomenclatura dei file
-      Per garantire coerenza, leggibilità e chiarezza all’interno del progetto, i file devono essere nominati seguendo la convenzione strutturata nel formato:
+      Per garantire coerenza, leggibilità e chiarezza all'interno del progetto, i file devono essere nominati seguendo la convenzione strutturata nel formato:
       #align(center, block[*nome.tipo.estensione*])
       - *nome* descrive il contenuto:
         - Se è una sola parola, si usa il *PascalCase*
@@ -582,14 +582,14 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
           La convenzione di nomenclatura per questi branch#super[G] è consultabile alla sezione *#link(label("4.2.4.1.2"), underline("4.2.4.1.2 "))*("Nomenclatura dei branch#super[G]").
 
       === GitHub Action
-      Al fine di automatizzare e garantire la qualità del processo di produzione documentale, il flusso di lavoro è stato strutturato mediante l’utilizzo di GitHub Actions, suddivise in più controlli specifici. In particolare:
-      - Viene effettuato un controllo sul glossario, per verificarne l’ordinamento alfabetico e garantire che tutte le voci siano coerentemente strutturate
+      Al fine di automatizzare e garantire la qualità del processo di produzione documentale, il flusso di lavoro è stato strutturato mediante l'utilizzo di GitHub Actions, suddivise in più controlli specifici. In particolare:
+      - Viene effettuato un controllo sul glossario, per verificarne l'ordinamento alfabetico e garantire che tutte le voci siano coerentemente strutturate
       - Un secondo controllo analizza i documenti, assicurandosi che ogni parola contenuta nel glossario sia effettivamente assegnata e utilizzata nei testi in modo corretto
       - Viene calcolato l'indice di Gulpease, al fine di valutare il livello di leggibilità dei documenti prodotti
       // Azioni per controllare glossario#super[G] e per indice gulpease, di cui si parla anche a 4.1.10
       // Attenderei di ultimarle per scrivere questa parte, in modo da essere più precisi
       === Best Practice su GitHub
-        Al fine di garantire un flusso di lavoro strutturato, tracciabile e facilmente manutenibile, sono state adottate le seguenti best practice nell'utilizzo di GitHub:
+        Al fine di garantire un flusso di lavoro strutturato, tracciabile e facilmente mantenibile, sono state adottate le seguenti best practice nell'utilizzo di GitHub:
         - *Pull Request verso branch di sviluppo* : ogni modifica viene integrata tramite pull request indirizzate al branch feature-develop. Questa procedura consente una revisione preventiva da parte di un verificatore, il quale ha il compito di controllare la correttezza, la qualità e la coerenza delle modifiche proposte prima della loro integrazione.
         - *Commit verbosi e significativi* : si è scelto di utilizzare messaggi di commit chiari, descrittivi e coerenti con le modifiche effettuate. Questo approccio facilita la lettura della cronologia del progetto, la comprensione degli intenti delle modifiche e l'individuazione di eventuali regressioni o problemi
         - *README completi e informativi* : ogni repository è corredata da un file README.MD esaustivo, che descrive in maniera dettagliata :
@@ -597,7 +597,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
           - Le istruzioni per la configurazione e l'esecuzione;
           - Eventuali dipendenze;
           - La struttura della directory;
-          - Ogni altra informazioni utile alla compresione e al corretto utilizzo del progetto. 
+          - Ogni altra informazioni utile alla comprensione e al corretto utilizzo del progetto. 
       === Procedure di commit e merge
         Le procedure di commit vengono eseguite ogniqualvolta si completi una frase di scrittura del codice che sia stata verificata e testata in modo funzionale. In alternativa, è possibile eseguire commit intermedi in stato di pending, qualora si sia in attesa dell'intervento di un altro membro del team, con cui si intende integrare le rispettive parti di codice all'interno della stessa funzionalità.
         Il merge viene effettuato solo quando si è certi che le feature sviluppata all'interno del branch dedicato sia stata completata e pienamente validata. Dopo aver condotto i necessari test di verifica, si procede con l'unione del codice: il contenuto del branch *feature/[nome-branch]* viene fuso con il branch *develop*, assicurando così l'integrazione stabile e controllata delle nuove funzionalità nel ramo di sviluppo principale
@@ -649,7 +649,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
      === Metriche // Metriche del processo di Gestione Qualità
     #label("4.3.4")
       Le metriche costituiscono uno strumento oggettivo per valutare il livello di qualità raggiunto nel corso del progetto, sia in termini di prodotto che di processo. Permettono di misurare parametri rilevanti come copertura del codice, successo dei test, affidabilità, usabilità e leggibilità della documentazione.
-      I valori raccolti durante lo sviluppo vengono confrontati con soglie di accettazione predefinite, al fine di valutare l’efficacia delle attività svolte. Di seguito sono descritte le principali metriche utilizzate, con il relativo criterio di calcolo.
+      I valori raccolti durante lo sviluppo vengono confrontati con soglie di accettazione predefinite, al fine di valutare l'efficacia delle attività svolte. Di seguito sono descritte le principali metriche utilizzate, con il relativo criterio di calcolo.
 
       - *Code Coverage (PSV01)*: rappresenta la percentuale di codice effettivamente eseguito durante i test. Si calcola dividendo il numero di righe di codice che sono state eseguite almeno una volta durante i test per il numero totale di righe di codice, moltiplicando poi il risultato per cento.
 
@@ -657,12 +657,12 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       - *Failure Density (QPA03)*: indica il numero medio di guasti rilevati nel software, in rapporto alla dimensione del codice. Si calcola dividendo il numero di guasti rilevati per il numero di migliaia di linee di codice (KLOC) del sistema.
 
-      - *Time on Task (QPU01)*: rappresenta il tempo medio necessario a un utente per completare un’operazione specifica. Questo dato viene ricavato dai test di usabilità, facendo la media dei tempi impiegati da tutti gli utenti.
+      - *Time on Task (QPU01)*: rappresenta il tempo medio necessario a un utente per completare un'operazione specifica. Questo dato viene ricavato dai test di usabilità, facendo la media dei tempi impiegati da tutti gli utenti.
 
-      - *Error Rate (QPU02)*: indica la percentuale di errori commessi dagli utenti durante l’utilizzo del sistema. Si calcola dividendo il numero di errori totali per il numero complessivo di azioni svolte dagli utenti, moltiplicando il risultato per cento.
+      - *Error Rate (QPU02)*: indica la percentuale di errori commessi dagli utenti durante l'utilizzo del sistema. Si calcola dividendo il numero di errori totali per il numero complessivo di azioni svolte dagli utenti, moltiplicando il risultato per cento.
 
       - *Indice di Gulpease (PSD01)*: valuta la leggibilità di un testo. Il suo valore è calcolato in base al numero di lettere, parole e frasi contenute nel testo. Più alto è il valore, più il testo è ritenuto leggibile. Un valore superiore a 50 è considerato accettabile.
-      Tutte queste metriche vengono monitorate nel tempo e visualizzate nel Cruscotto di Valutazione (é presente nella sezione 5 del file Piano di Qualifica#super[G]), dove sono messi a confronto i valori reali con quelli attesi. L’analisi dei dati consente al team di individuare le aree di miglioramento e pianificare eventuali azioni correttive.
+      Tutte queste metriche vengono monitorate nel tempo e visualizzate nel Cruscotto di Valutazione (é presente nella sezione 5 del file Piano di Qualifica#super[G]), dove sono messi a confronto i valori reali con quelli attesi. L'analisi dei dati consente al team di individuare le aree di miglioramento e pianificare eventuali azioni correttive.
 
     == Verifica
       === Scopo
@@ -675,7 +675,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       Ogni produzione viene sottoposta a controlli prima di essere pubblicata nel repository#super[G] GitHub, con verificatori#super[G] indipendenti per evitare conflitti di interesse.
 
-      Questo processo viene applicato continuamente, sia nella documentazione che nello sviluppo del software, con verifiche specifiche per garantire l’accuratezza delle attività svolte. 
+      Questo processo viene applicato continuamente, sia nella documentazione che nello sviluppo del software, con verifiche specifiche per garantire l'accuratezza delle attività svolte. 
 
       /******** // Potrebbe essere inserito
       === Stima e preventivazione
@@ -734,7 +734,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
 
       ==== Analisi dinamica
       L'Analisi dinamica è una metodologia di verifica#super[G] che prevede l'esecuzione del software per valutarne il comportamento, le performance e la correttezza. 
-      A differenza dell'Analisi statica, che si concentra su aspetti strutturali e sintattici, l'analisi dinamica permette di identificare errori direttamente durante l'esecuzione, rilevando failure e correggendo i fault reche causano comportamenti inattesi.
+      A differenza dell'Analisi statica, che si concentra su aspetti strutturali e sintattici, l'analisi dinamica permette di identificare errori direttamente durante l'esecuzione, rilevando failure e correggendo i fault che causano comportamenti inattesi.
       
       Questa attività si basa su test ripetibili e automatizzabili, garantendo che le correzioni applicate vengano verificate con nuove esecuzioni. 
       
@@ -783,11 +783,11 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       Attraverso questi test, si controlla la correttezza e l'efficacia del sistema rispetto ai requisiti#super[G] stabiliti, assicurando che l'applicazione sia conforme alle specifiche e pronta per l'utilizzo finale.
 
       ===== Test di accettazione
-      I test di accettazione rappresentano l’ultima fase del processo di verifica#super[G] del software prima del rilascio ufficiale e dell’utilizzo in ambiente operativo. Il loro obiettivo principale è confermare che il prodotto sviluppato sia conforme ai criteri di accettazione concordati con il committente#super[G] o con gli stakeholder#super[G], garantendo la soddisfazione delle aspettative funzionali e non funzionali.
+      I test di accettazione rappresentano l'ultima fase del processo di verifica#super[G] del software prima del rilascio ufficiale e dell'utilizzo in ambiente operativo. Il loro obiettivo principale è confermare che il prodotto sviluppato sia conforme ai criteri di accettazione concordati con il committente#super[G] o con gli stakeholder#super[G], garantendo la soddisfazione delle aspettative funzionali e non funzionali.
 
-      Questi test vengono eseguiti dopo i test di sistema, e costituiscono il collaudo formale del software, spesso in contesti simulati o reali che riflettono l’ambiente d’uso previsto. Possono essere condotti dal team di sviluppo insieme al cliente, oppure da figure indipendenti incaricate della qualità, come i collaudatori esterni o i rappresentanti dell’utente finale.
+      Questi test vengono eseguiti dopo i test di sistema, e costituiscono il collaudo formale del software, spesso in contesti simulati o reali che riflettono l'ambiente d'uso previsto. Possono essere condotti dal team di sviluppo insieme al cliente, oppure da figure indipendenti incaricate della qualità, come i collaudatori esterni o i rappresentanti dell'utente finale.
 
-      I test di accettazione rientrano nella categoria dei test funzionali (black-box) e si concentrano sull’uso del software dal punto di vista dell’utente. Non analizzano la struttura interna dell’applicazione, ma si focalizzano sul comportamento osservabile e sulla rispondenza ai requisiti#super[G] contrattuali o specificati nei documenti di accettazione.
+      I test di accettazione rientrano nella categoria dei test funzionali (black-box) e si concentrano sull'uso del software dal punto di vista dell'utente. Non analizzano la struttura interna dell'applicazione, ma si focalizzano sul comportamento osservabile e sulla rispondenza ai requisiti#super[G] contrattuali o specificati nei documenti di accettazione.
 
       Questa fase consente di:
       - Validare che tutte le funzionalità principali siano disponibili e funzionanti come previsto.
@@ -818,7 +818,7 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
       === Scopo
       // Descrizione processi organizzativi
       Lo scopo dei processi organizzativi è definire un sistema strutturato per la gestione, il monitoraggio e il miglioramento continuo dei processi aziendali, al fine di garantire coerenza operativa, efficienza organizzativa e il raggiungimento degli obiettivi strategici dell'organizzazione.
-      Consiste nell’organizzare la progettazione, l’attuazione, il controllo e la revisione dei processi in modo sistematico e documentato.
+      Consiste nell'organizzare la progettazione, l'attuazione, il controllo e la revisione dei processi in modo sistematico e documentato.
       === Pianificazione delle risorse umane
         ==== Ruoli e Responsabilità
         I ruoli all'interno del team sono suddivisi tra i seguenti:
@@ -940,8 +940,8 @@ Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 122
         Il processo di Infrastruttura è responsabile#super[G] della creazione, gestione e mantenimento dei componenti hardware e software necessari per supportare tutti gli altri processi. 
         Include strumenti organizzativi che facilitano comunicazione, coordinamento e pianificazione, permettendo al team di operare in modo efficace ed efficiente.
 
-        Questo processo documenta l’infrastruttura utilizzata, definendo le modalità di implementazione e manutenzione. 
-        Inoltre, garantisce la gestione ottimale delle risorse, assicurando che l’infrastruttura sia adeguata a tutte le fasi del ciclo di vita del software.
+        Questo processo documenta l'infrastruttura utilizzata, definendo le modalità di implementazione e manutenzione. 
+        Inoltre, garantisce la gestione ottimale delle risorse, assicurando che l'infrastruttura sia adeguata a tutte le fasi del ciclo di vita del software.
 
       === Strumenti
         ==== GitHub
