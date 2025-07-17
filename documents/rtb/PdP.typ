@@ -31,13 +31,13 @@
   [1.0.0],
   [16/07/2025],
   [M. Dalla Pozza],
-  [],
+  [N. Bolzon],
   [Rivisitazione contenuti Sprint],
 
   [0.8.0],
   [15/07/2025],
   [N. Moretto],
-  [M. Pretto],
+  [N. Bolzon],
   [Aggiunta del contenuto: Sprint 8, preventivo e pianificazione Sprint 9.],
 
   [0.7.0],
@@ -711,10 +711,11 @@ Durante l'RTB#super[G] sono previste due attività principali:
 
   - Sviluppo.
 
-La prima verra portata avanti durante tutti gli sprint#super[G] a seconda
-delle esigenze e necessità del momento.
+La prima verra portata avanti durante tutti gli sprint#super[G] a seconda delle esigenze e necessità del momento.
 La seconda verra iniziata successivamente alla produzione di:\
-Analisi dei Requisiti#super[G] ; Casi d'uso; Architettura#super[G] preliminare.
+- Analisi dei Requisiti#super[G] ; 
+- Casi d'uso; 
+- Architettura#super[G] preliminare.
 
 Di seguito vengono indicate le più nel dettaglio le principali 
 attività previste durante la fase RTB#super[G] del progetto: 
@@ -788,7 +789,7 @@ attività previste durante la fase RTB#super[G] del progetto:
 
 6. *Sviluppo POC#super[G] (Proof of concept#super[G])* (in stesura)
 
-  - Definizione di una possibile architettura#super[G];
+  - Definizione di una possibile architettura#super[G] ;
   
   - Sviluppo;
 
