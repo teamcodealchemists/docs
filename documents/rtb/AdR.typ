@@ -127,19 +127,6 @@
   [N. Moretto],
   [Aggiunta dei casi d'uso fino al UC 10.5.],
 
-  [0.1.3],
-  [23/05/2025],
-  [A. Shu],
-  [N. Moretto],
-  [Completamento della documentazione dei casi d'uso],
-
-  [0.1.2],
-  [22/05/2025],
-  [A. Shu],
-  [N. Moretto],
-  [Aggiunta i casi d'uso fino al UC 10.5],
-
-
   [0.1.1],
   [13/05/2025],
   [N. Bolzon],
