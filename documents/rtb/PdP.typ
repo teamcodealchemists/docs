@@ -1769,12 +1769,12 @@ I possibili rischi :
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
-    [Nicolò Bolzon],[],[],[],[8],[],[],
+    [Nicolò Bolzon],[],[],[],[],[8],[],
     [Mattia Dalla Pozza],[],[],[],[],[8],[],
     [Sebastiano Marana],[5],[],[],[],[],[],
     [Nicholas Moretto],[],[4],[],[],[],[],
     [Matteo Pretto],[],[],[],[8],[],[],
-    [Alex Shu],[],[],[],[],[8],[],
+    [Alex Shu],[],[],[],[8],[],[],
     [Stefano Speranza],[],[],[],[],[],[10],
     [Ramona Zangla],[],[],[],[8],[],[],
   ),
