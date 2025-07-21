@@ -2,7 +2,7 @@
 
 // VARIABILI
 #let titolo = "Verbale interno del "
-#let data = "04/07/2025"
+#let data = "18/07/2025"
 #let titolo = titolo + data
 #let status = "Approvato"
 #let versione = "1.0.0"
