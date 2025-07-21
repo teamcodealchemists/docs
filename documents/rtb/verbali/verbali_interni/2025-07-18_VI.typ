@@ -62,16 +62,17 @@
   == 2.1 Lavori svolti durante lo sprint RTB 8
   Nell'ottavo sprint#super[G] il team, dopo aver completato lo sviluppo del PoC _(Proof of Concept)_, si è concentrato sul completamento e sulla relativa verifica dei documenti inerenti alla candidatura RTB. Dopo aver effettuato tali attività ha quindi proceduto con la candidatura stessa. \
 
-  === 2.1.1 Completamento e verifica documenti
+ === 2.1.1 Completamento e verifica documenti
  Dopo aver terminato lo sviluppo del Proof of Concept (PoC), il team ha lavorato sull'ultimazione dei documenti necessari alla candidatura RTB, verificandoli e ultimandoli alla versione 1.0. Ecco i documenti sui quali si è lavorato:
  - Analisi dei Requisiti
  - Piano di Progetto
  - Piano di Qualifica
  - Norme di Progetto
- - Glossario \
+ - Glossario
 
-  === 2.1.2 Presentazione domanda candidatura RTB
-Oltre all'ultimazione dei documenti, si è inoltre proceduto con la presentazione della domanda di candidatura per la fase di RTB. Si è perciò scritta la relativa ad essa ed una mail al #p.cardin.
+ === 2.1.2 Presentazione domanda candidatura RTB
+ Oltre all'ultimazione dei documenti, si è inoltre proceduto con la presentazione della domanda di candidatura per la fase di RTB. Si è perciò scritta la relativa lettera e si è inviato una mail al #p.cardin con la richiesta di revisione.
+
 
   == 2.2 Analisi delle criticità e valutazione avanzamento del lavoro
   Durante la riunione, il team ha fornito un aggiornamento sulla situazione attuale, sottolineando la criticità rappresentata dal rallentamento delle attività dovuto alla sessione estiva degli esami. Tale circostanza, attesa e coerente con quanto previsto nel Piano di Progetto, ha avuto un impatto meno significativo nell’ultimo sprint, grazie al fatto che molti membri del team hanno concluso i propri esami e risultano ora maggiormente disponibili. Il rallentamento è stato avvertito in particolare nello sviluppo del Proof of Concept (PoC). Tale criticità non sarà più rilevata nel prossimo sprint.
