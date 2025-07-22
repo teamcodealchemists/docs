@@ -1724,7 +1724,7 @@ I possibili rischi :
       [Progettista#super[G]],     [25€/h],   [-],  [-],   [101], [2525€],
       [Programmatore#super[G]],   [15€/h],   [10],   [150€],  [136(-10)], [2040€ (-150€)],
       [Verificatore#super[G]],    [15€/h],   [10],   [150€],   [73(-10)],  [1125€ (-150€)],
-      [*Totale*],                 [*-*],     [*29*],[*530€*],[*438 (-29)*],[*7390€ (-530€)*],
+      [*Totale*],                 [*-*],     [*29*],[*530€*],[*379 (-29)*],[*7390€ (-530€)*],
     ),
     didascalia: "Sprint 8 - Aggiornamento delle risorse disponibili"
   )
