@@ -1072,7 +1072,7 @@ I possibili rischi :
       [Progettista#super[G]], [25€/h], [-], [-], [156], [3900€],
       [Programmatore#super[G]], [15€/h], [-], [-], [215], [3225€],
       [Verificatore#super[G]], [15€/h], [9], [135€], [130 (-9)], [1980€ (-135€)],
-      [*Totale*], [*-*], [*38*], [*865€*], [*675 (-35)*], [*13460€ (-790€)*],
+      [*Totale*], [*-*], [*38*], [*790€*], [*675 (-35)*], [*13460€ (-790€)*],
   ),
     didascalia: "Sprint 2 - Aggiornamento delle risorse disponibili"
   )
@@ -1182,7 +1182,7 @@ I possibili rischi :
       [Progettista#super[G]], [25€/h], [16], [400€], [156(-16)], [3900€ (-400€)],
       [Programmatore#super[G]], [15€/h], [-], [-], [215], [3225€],
       [Verificatore#super[G]], [15€/h], [9], [135€], [121(-9)], [1845€ (-135€)],
-      [*Totale*], [*-*], [*49*], [*1140€*], [*640 (-49)*], [*12670€ (-865€)*],
+      [*Totale*], [*-*], [*49*], [*1140€*], [*640 (-49)*], [*12670€ (-1140€)*],
   ),
     didascalia: "Sprint 3 - Aggiornamento delle risorse disponibili"
   )
@@ -1303,7 +1303,7 @@ I possibili rischi:
       [Progettista#super[G]],     [25€/h],   [24],  [600€],   [140(-24)], [3500€ (-600€)],
       [Programmatore#super[G]],   [15€/h],   [6],   [90€],      [215(-6)],      [3225€ (-90€)],
       [Verificatore#super[G]],    [15€/h],   [10],   [150€],   [112(-10)],  [1710€ (-150€)],
-      [*Totale*],                 [*-*],     [*55*],[*1220€*],[*591 (-55)*],[*11805€ (-1220€)*],
+      [*Totale*],                 [*-*],     [*55*],[*1220€*],[*591 (-55)*],[*11530€ (-1220€)*],
     ),
     didascalia: "Sprint 4 - Aggiornamento delle risorse disponibili"
   )
@@ -1408,9 +1408,9 @@ I possibili rischi :
       [Amministratore#super[G]],  [20€/h],   [4],   [80€],    [49(-4)],   [980€ (-80€)],
       [Analista#super[G]],        [25€/h],   [6],   [150€],   [13(-6)],    [325€ (-150€)],
       [Progettista#super[G]],     [25€/h],   [8],  [200€],   [116(-8)], [2900€ (-200€)],
-      [Programmatore#super[G]],   [15€/h],   [15],   [225€],  [209(-15)],      [3130€ (-225€)],
+      [Programmatore#super[G]],   [15€/h],   [15],   [225€],  [209(-15)],      [3135€ (-225€)],
       [Verificatore#super[G]],    [15€/h],   [10],   [150€],   [102(-10)],  [1560€ (-150€)],
-      [*Totale*],                 [*-*],     [*48*],[*955€*],[*536 (-48)*],[*10585€ (-955€)*],
+      [*Totale*],                 [*-*],     [*48*],[*955€*],[*536 (-48)*],[*10310€ (-955€)*],
     ),
     didascalia: "Sprint 5 - Aggiornamento delle risorse disponibili"
   )
@@ -1528,9 +1528,9 @@ I possibili rischi :
       [Amministratore#super[G]],  [20€/h],   [4],   [80€],    [45(-4)],   [900€ (-80€)],
       [Analista#super[G]],        [25€/h],   [7],   [175€],   [7(-7)],    [175€ (-175€)],
       [Progettista#super[G]],     [25€/h],   [7],  [175€],   [108(-7)], [2700€ (-175€)],
-      [Programmatore#super[G]],   [15€/h],   [18],   [270€],  [194(-18)],      [2905€ (-270€)],
+      [Programmatore#super[G]],   [15€/h],   [18],   [270€],  [194(-18)],      [2910€ (-270€)],
       [Verificatore#super[G]],    [15€/h],   [9],   [135€],   [92(-9)],  [1410€ (-135€)],
-      [*Totale*],                 [*-*],     [*50*],[*985€*],[*488 (-50)*],[*9630€ (-985€)*],
+      [*Totale*],                 [*-*],     [*50*],[*985€*],[*488 (-50)*],[*9355€ (-985€)*],
     ),
     didascalia: "Sprint 6 - Aggiornamento delle risorse disponibili"
   )
@@ -1626,9 +1626,9 @@ I possibili rischi :
       [Amministratore#super[G]],  [20€/h],   [4],   [80€],    [41(-4)],   [820€ (-80€)],
       [Analista#super[G]],        [25€/h],   [-],   [-],   [0],    [0€],
       [Progettista#super[G]],     [25€/h],   [-],  [-],   [101], [2525€],
-      [Programmatore#super[G]],   [15€/h],   [40],   [600€],  [176(-40)], [2635€ (-600€)],
+      [Programmatore#super[G]],   [15€/h],   [40],   [600€],  [176(-40)], [2640€ (-600€)],
       [Verificatore#super[G]],    [15€/h],   [10],   [150€],   [83(-10)],  [1275€ (-150€)],
-      [*Totale*],                 [*-*],     [*59*],[*980€*],[*438 (-59)*],[*8645€ (-980€)*],
+      [*Totale*],                 [*-*],     [*59*],[*980€*],[*438 (-59)*],[*8370€ (-980€)*],
     ),
     didascalia: "Sprint 7 - Aggiornamento delle risorse disponibili"
   )
@@ -1724,9 +1724,9 @@ I possibili rischi :
       [Amministratore#super[G]],  [20€/h],   [4],   [80€],    [37(-4)],   [740€ (-80€)],
       [Analista#super[G]],        [25€/h],   [-],   [-],   [0],    [0€],
       [Progettista#super[G]],     [25€/h],   [-],  [-],   [101], [2525€],
-      [Programmatore#super[G]],   [15€/h],   [10],   [150€],  [136(-10)], [2035€ (-150€)],
+      [Programmatore#super[G]],   [15€/h],   [10],   [150€],  [136(-10)], [2040€ (-150€)],
       [Verificatore#super[G]],    [15€/h],   [10],   [150€],   [73(-10)],  [1125€ (-150€)],
-      [*Totale*],                 [*-*],     [*29*],[*530€*],[*438 (-29)*],[*7385€ (-530€)*],
+      [*Totale*],                 [*-*],     [*29*],[*530€*],[*438 (-29)*],[*7390€ (-530€)*],
     ),
     didascalia: "Sprint 8 - Aggiornamento delle risorse disponibili"
   )
