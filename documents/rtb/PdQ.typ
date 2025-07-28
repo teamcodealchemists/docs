@@ -88,6 +88,7 @@
 )
 #show: indice
 #show: indice_tabelle
+#show: indice_grafici
 
 = 1. Introduzione
 == 1.1 Scopo del documento
@@ -554,6 +555,7 @@ Il cruscotto di valutazione dei costi permette di monitorare l'andamento dei cos
 )
 #show figure: set block(breakable: false)
 #show : graph_line.with(
+  caption: "Valutazione dei costi",
   data_atteso: valori_grafico_costi_atteso,
   data_reale: valori_grafico_costi_reale,
   label_atteso: "Costo atteso",
@@ -581,6 +583,7 @@ Partendo dal budget iniziale di 14.430€, il valore atteso ed effettivo diminui
 )
 #show figure: set block(breakable: false)
 #show : graph_line.with(
+  caption: "Valore atteso ed effettivo",
   data_atteso: valori_grafico_valore_atteso,
   data_reale: valori_grafico_valore_effettivo,
   label_atteso: "Valore atteso",
@@ -607,6 +610,7 @@ L'indice di prestazione dei tempi (SPI) è calcolato come il rapporto tra il val
 )
 #show figure: set block(breakable: false)
 #show : graph_bar.with(
+  caption: "Indice di prestazione dei tempi",
   data: valori_grafico_spi,
   label_x: "Sprint",
   label_y: "Indice di prestazione dei tempi (SPI)",
@@ -631,6 +635,7 @@ Il grafico dell'indice di stabilità dei requisiti mostra l'andamento della stab
 )
 #show figure: set block(breakable: false)
 #show : graph_bar.with(
+  caption: "Indice di stabilità dei requisiti",
   data: valori_grafico_stabilita_requisiti,
   label_x: "Sprint",
   label_y: "Indice di stabilità dei requisiti (%)",
@@ -651,6 +656,7 @@ Il grafico dell'indice di Gulpease mostra l'andamento della leggibilità del doc
 )
 #show figure: set block(breakable: false)
 #show : graph_bar.with(
+  caption: "Indice di Gulpease",
   data: valori_grafico_gulpease,
   label_x: "Sprint",
   label_y: "Indice di Gulpease",
