@@ -1,7 +1,7 @@
 #import "../../src/basic.typ": *
 
 // VARIABILI
-#let title = "Analisi dell’Avanzamento del Progetto Didattico"
+#let title = "Analisi dell'Avanzamento del Progetto Didattico"
 
 // IMPOSTAZIONI TESTO
 #set text(
@@ -35,13 +35,14 @@
 
 // PRIMA PAGINA
 #page(background: image("../../assets/logoUnipdSfondo.png"))[
-  #align(center)[ // Imposta tutto il testo centrato di default
+  #align(center)[
+    // Imposta tutto il testo centrato di default
 
     #image("../../assets/Logo-nome-motto.png", width: 8cm)
 
     //TITOLO
     #text(size: 22pt)[
-       *#title*
+      *#title*
     ]
     #set text(size: 15pt)
   ]
@@ -70,7 +71,7 @@ Il gruppo rimane motivato e consapevole, con l’obiettivo di recuperare in modo
 Di seguito la tabella con i macro-obiettivi per i prossimi quattro sprint:
 
 #set table(
-  fill:(x,y)=> if y==0 {rgb("#2599ff")} else if x == 0 {luma(235)},
+  fill: (x, y) => if y == 0 { rgb("#2599ff") } else if x == 0 { luma(235) },
 )
 
 #figure(
@@ -78,16 +79,36 @@ Di seguito la tabella con i macro-obiettivi per i prossimi quattro sprint:
     columns: (2fr, 4fr),
     inset: 10pt,
     align: center,
-    table.header(
-    [*Sprint*], [*Obiettivi*]),
+    table.header([*Sprint*], [*Obiettivi*]),
 
-    [*Sprint 9 - Parte 2* \ _(dal 28/07 al 01/08)_],  [],
-    [*Sprint 10 - Parte 1* \ _(dal 01/08 al 08/08)_], [],
-    [*Sprint 10 - Parte 2* \ _(dal 08/08 al 18/08)_], [],
-    [*Sprint 11 - Parte 1* \ _(dal 18/08 al 25/08)_], [],
-    [*Sprint 11 - Parte 2* \ _(dal 25/08 al 01/09)_], [],
-    [*Sprint 12 - Parte 1* \ _(dal 01/09 al 08/09)_], [],
-    [*Sprint 12 - Parte 2* \ _(dal 08/09 al 12/09)_], [],
+    [*Sprint 9 - Parte 2* \ _(dal 28/07 al 01/08)_],
+    [Continuazione di progettazione a dettaglio. Stesura dei primi documenti PB. Effettuare incontro RTB.],
+
+    [*Sprint 10 - Parte 1* \ _(dal 01/08 al 08/08)_],
+    [Stesura della progettazione in dettaglio dei microservizi di Magazzino e la loro successiva Codifica accompagnato da Testing. Implementazione Api Gateway e uniformazione comunicazione tra microservizi.],
+
+    [*Sprint 10 - Parte 2* \ _(dal 08/08 al 18/08)_],
+    [Continuazione della progettazione in dettaglio del Cloud e successiva Codifica con Testing. Inizio testing avanzato di Sistema. ],
+
+    [*Sprint 11 - Parte 1* \ _(dal 18/08 al 25/08)_],
+    [Continuazione della progettazione in dettaglio del Sistema Centralizzato e successiva Codifica con Testing.
+      Verifica dello Stato dei lavori e successiva considerazione di implementazione di una GUI.
+    ],
+
+    [*Sprint 11 - Parte 2* \ _(dal 25/08 al 01/09)_],
+    [Test di Sistema e di Integrazione approfonditi. Inizio compilazione Test Book e Manuale Utente.
+      Codifica di miglioramento e possibile debugging.
+      Possibile incontro con l'azienda proponente per mostrare lo stato dei lavori.
+    ],
+
+    [*Sprint 12 - Parte 1* \ _(dal 01/09 al 08/09)_],
+    [Deadline per la codifica e per la progettazione.
+      Conclusione della documentazione generale e specifica del PB.],
+
+    [*Sprint 12 - Parte 2* \ _(dal 08/09 al 12/09)_],
+    [Validazione del MVP durante l'incontro con l'azienda proponente.
+      Prenotazione consegna del PB.],
+
     [12/09/2025], [*Consegna del Progetto*],
-    ),
-  )
+  ),
+)
