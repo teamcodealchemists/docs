@@ -29,7 +29,13 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
-  [1.0.0], [09/07/2025], [-], [N. Bolzon], [Approvazione del documento],
+  [1.0.0], [18/07/2025], [-], [N. Bolzon], [Approvazione del documento],
+
+  [0.8.3],
+  [17/07/2025],
+  [A. Shu],
+  [N. Bolzon],
+  [Correzione di alcuni errori minori],  
 
   [0.8.2],
   [21/06/2025],
@@ -275,15 +281,15 @@ https://www.multiplayer.app/distributed-systems-architecture/
 
 === Riferimenti normativi
 /*Da cambiare al cambio di versione*/
-- *Norme di Progetto:* \ #link("https://teamcodealchemists.github.io/docs/rtb/NdP_0.5.0.pdf")[https://teamcodealchemists.github.io/docs/rtb/NdP_0.5.0.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
+- *Norme di Progetto:* \ #underline[#link("https://teamcodealchemists.github.io/docs/rtb/NdP_1.0.0.pdf")[https://teamcodealchemists.github.io/docs/rtb/NdP_1.0.0.pdf]] \ *Ultimo Accesso:* 17 Luglio 2025
 
-- *Capitolato#super[G] d'appalto C6 _Sistema di Gestione di un Magazzino Distribuito_*: #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf]\ *Ultimo Accesso:* 27 Maggio 2025
+- *Capitolato#super[G] d'appalto C6 _Sistema di Gestione di un Magazzino Distribuito_*: #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf]] \ *Ultimo Accesso:* 27 Maggio 2025
 
 === Riferimenti informativi
-- *Diagrammi dei Casi d'Uso:* \ #link("https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")[https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
-- *Analisi dei Requisiti#super[G]:* \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
-- *Glossario#super[G]:* \ #link("https://teamcodealchemists.github.io/glossario.html")[https://teamcodealchemists.github.io/glossario.html] \ *Ultimo Accesso:* 16 Giugno 2025
-- *Standard IEEE:* \ #link("https://ieeexplore.ieee.org/document/720574")[https://ieeexplore.ieee.org/document/720574] \ *Ultimo Accesso:* 27 Maggio 2025
+- *Diagrammi dei Casi d'Uso:* \ #underline[#link("https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")[https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf]] \ *Ultimo Accesso:* 27 Maggio 2025
+- *Analisi dei Requisiti#super[G]:* \ #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf]] \ *Ultimo Accesso:* 27 Maggio 2025
+- *Glossario#super[G]:* \ #underline[#link("https://teamcodealchemists.github.io/glossario.html")[https://teamcodealchemists.github.io/glossario.html]] \ *Ultimo Accesso:* 17 Luglio 2025
+- *Standard IEEE:* \ #underline[#link("https://ieeexplore.ieee.org/document/720574")[https://ieeexplore.ieee.org/document/720574]] \ *Ultimo Accesso:* 27 Maggio 2025
 
 #pagebreak()
 = Casi d'uso
@@ -1354,34 +1360,34 @@ _Esempio:_
     inset: 10pt,
     align: center,
     table.header(
-    [*Codice*], [*Descrizione*], [*Fonti*]),
+    [*Codice*], [*Descrizione*], [*Riferimenti*]),
 
-    [*RF01*], [*Registrazione del Supervisore Globale.*], [decisione\ interna],
-    [*RF01/01*], [Il Supervisore Globale deve registrarsi al primo avvio del sistema inserendo indirizzo email, numero di cellulare e una password.], [decisione\ interna],
-    [*RF01/02*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se l'email inserita è sintatticamente errata.], [decisione\ interna],
-    [*RF01/03*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se il numero di cellulare inserito è sintatticamente errato.], [decisione\ interna],
-    [*RF01/04*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se la password inserita non rispetta la sintassi.], [decisione\ interna],
-    [*RF01/05*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se la password e la conferma password non corrispondono.], [decisione\ interna],
+    [*RF01*], [*Registrazione del Supervisore Globale.*], [],
+    [*RF01/01*], [Il Supervisore Globale deve registrarsi al primo avvio del sistema inserendo indirizzo email, numero di cellulare e una password.], [#link(label("uc-1"), underline("[UC 1]"))],
+    [*RF01/02*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se l'email inserita è sintatticamente errata.], [#link(label("uc-1.1"), underline("[UC 1.1]"))],
+    [*RF01/03*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se il numero di cellulare inserito è sintatticamente errato.], [#link(label("uc-1.2"), underline("[UC 1.2]"))],
+    [*RF01/04*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se la password inserita non rispetta la sintassi.], [#link(label("uc-1.3"), underline("[UC 1.3]"))],
+    [*RF01/05*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se la password e la conferma password non corrispondono.], [#link(label("uc-1.4"), underline("[UC 1.4]"))],
 
-    [*RF02*], [*Autenticazione#super[G] dell'utente.*], [capitolato#super[G]],
-    [*RF02/01*], [L'utente deve poter accedere al sistema mediante credenziali (email e password).], [capitolato#super[G]],
-    [*RF02/02*], [L'utente deve poter effettuare il logout dal sistema.], [capitolato#super[G]],
-    [*RF02/03*], [L'utente visualizza un messaggio di errore in caso di autenticazione#super[G] fallita.], [capitolato#super[G]],   
+    [*RF02*], [*Autenticazione#super[G] dell'utente.*], [],
+    [*RF02/01*], [L'utente deve poter accedere al sistema mediante credenziali (email e password).], [#link(label("uc-2"), underline("[UC 2]"))],
+    [*RF02/02*], [L'utente deve poter effettuare il logout dal sistema.], [#link(label("uc-4"), underline("[UC 4]"))],
+    [*RF02/03*], [L'utente visualizza un messaggio di errore in caso di autenticazione#super[G] fallita.], [#link(label("uc-3"), underline("[UC 3]"))],   
 
-    [*RF03*], [*Registrazione di nuovi Supervisori Locali.*], [decisione\ interna],
-    [*RF03/01*], [Il Supervisore Globale può registrare a sistema nuovi Supervisori Locali ciascuno con email, numero di cellulare e una password.], [decisione\ interna],
-    [*RF03/02*], [Il Supervisore Globale deve assegnare il/i magazzino/i a cui il Supervisore Locale ha accesso in fase di registrazione.], [decisione\ interna],
-    [*RF03/03*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se l'email inserita è sintatticamente errata.], [decisione\ interna],
-    [*RF03/04*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se la password inserita non rispetta la sintassi.], [decisione\ interna],
-    [*RF03/05*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se il numero di cellulare inserito è sintatticamente errato.], [decisione\ interna],
+    [*RF03*], [*Registrazione di nuovi Supervisori Locali.*], [],
+    [*RF03/01*], [Il Supervisore Globale può registrare a sistema nuovi Supervisori Locali ciascuno con email, numero di cellulare e una password.], [#link(label("uc-5"), underline("[UC 5]"))],
+    [*RF03/02*], [Il Supervisore Globale deve assegnare il/i magazzino/i a cui il Supervisore Locale ha accesso in fase di registrazione.], [#link(label("uc-5"), underline("[UC 5]"))],
+    [*RF03/03*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se l'email inserita è sintatticamente errata.], [#link(label("uc-5.1"), underline("[UC 5.1]"))],
+    [*RF03/04*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se la password inserita non rispetta la sintassi.], [#link(label("uc-5.2"), underline("[UC 5.2]"))],
+    [*RF03/05*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se il numero di cellulare inserito è sintatticamente errato.], [#link(label("uc-5.3"), underline("[UC 5.3]"))],
 
-    [*RF04*], [*Gestione manuale dei magazzini.*], [capitolato#super[G]],
-    [*RF04/01*], [Il Supervisore Globale deve poter aggiungere un nuovo magazzino a sistema inserendo il suo indirizzo fisico.], [capitolato#super[G]],
-    [*RF04/02*], [Il Supervisore Globale deve poter rimuovere un magazzino dal sistema.], [capitolato#super[G]],
-    [*RF04/03*], [Il Supervisore Globale deve poter modificare le informazioni di un magazzino, quali indirizzo del magazzino e/o Supervisore Locale associato.], [capitolato#super[G]],
-    [*RF04/04*], [Ciascun magazzino deve essere identificato univocamente.], [capitolato#super[G]],
+    [*RF04*], [*Gestione manuale dei magazzini.*], [],
+    [*RF04/01*], [Il Supervisore Globale deve poter aggiungere un nuovo magazzino a sistema inserendo il suo indirizzo fisico.], [#link(label("uc-6"), underline("[UC 6]"))],
+    [*RF04/02*], [Il Supervisore Globale deve poter rimuovere un magazzino dal sistema.], [#link(label("uc-7"), underline("[UC 7]"))],
+    [*RF04/03*], [Il Supervisore Globale deve poter modificare le informazioni di un magazzino, quali indirizzo del magazzino e/o Supervisore Locale associato.], [#link(label("uc-8"), underline("[UC 8]"))],
+    [*RF04/04*], [Ciascun magazzino deve essere identificato univocamente.], [#link(label("uc-6"), underline("[UC 6]"))],
 
-    [*RF05*], [*Gestione manuale delle merci.*], [capitolato#super[G]],
+    [*RF05*], [*Gestione manuale delle merci.*], [],
     [*RF05/01*], [I Supervisori possono inserire un nuovo tipo di merce nell'inventario#super[G] di un magazzino, ciascuna con codice EAN e nome prodotto#super[G].], [capitolato#super[G]],
     [*RF05/02*], [I Supervisori visualizzano un messaggio di errore se il codice EAN non rispetta la sintassi prevista.], [capitolato#super[G]],
     [*RF05/03*], [I Supervisori possono definire il prezzo unitario all'inserimento di un nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [capitolato#super[G]],
