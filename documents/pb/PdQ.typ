@@ -88,16 +88,17 @@
 )
 #show: indice
 #show: indice_tabelle
+#show: indice_grafici
 
 = 1. Introduzione
 == 1.1 Scopo del documento
 
-Il presente documento ha lo scopo di definire le modalità di qualifica e verifica del prodotto#super[G] software. Esso rappresenta un indice di valutazione del prodotto#super[G] software, delle sue componenti e degli strumenti utilizzati. L'obiettivo è quello di garantire la qualità del prodotto#super[G] finale.
+Il presente documento ha lo scopo di definire le modalità di qualifica e verifica del prodotto software. Esso rappresenta un indice di valutazione del prodotto software, delle sue componenti e degli strumenti utilizzati. L'obiettivo è quello di garantire la qualità del prodotto finale.
 
 Il Piano di Qualifica#super[G] si basa su tre aspetti principali:
 
 === 1.1.1 Piano della Qualità
-- Fissare gli standard del prodotto#super[G] e i tipi di test da effettuare;
+- Fissare gli standard del prodotto e i tipi di test da effettuare;
 - Indicare gli obiettivi e le modalità di qualifica;
 - Stabilire le regole a cui attenersi.
 
@@ -107,7 +108,7 @@ Il Piano di Qualifica#super[G] si basa su tre aspetti principali:
 - Effettuare il Quality Assurance passo-passo per prevenire e mitigare i rischi e verificare la soddisfazione dei requisiti#super[G].
 
 == 1.2 Glossario
-Per una corretta comprensione del documento, viene fornito un glossario dei termini utilizzati. Ogni termine è indicato da una "#super[G]" in apice alla parola#super[G].
+Per una corretta comprensione del documento, viene fornito un glossario dei termini utilizzati. Ogni termine è indicato da una "#super[G]" in apice alla parola.
 Per trovare il significato del termine, è possibile consultare il glossario al seguente indirizzo: 
 #underline[#link("https://teamcodealchemists.github.io/glossario.html")]\
 == 1.3 Riferimenti
@@ -116,23 +117,31 @@ Per trovare il significato del termine, è possibile consultare il glossario al 
 
 - *Capitolato#super[G] d'appalto* \
   *C6 - Sistema di Gestione di un Magazzino Distribuito* \
-  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")]\
+  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")]
+  \ *Ultimo Accesso:* 17 Luglio 2025
 
 === 1.3.2 Riferimenti informativi
 
 - *Qualità del software* \
-  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf")]\
+  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T07.pdf")]
+  \ *Ultimo Accesso:* 17 Luglio 2025
+
 
 - *Qualità del processo* \
-  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf")]\
+  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T08.pdf")]
+  \ *Ultimo Accesso:* 17 Luglio 2025
 
 - *Verifica#super[G] e Validazione#super[G]* \
-  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T09.pdf")]\
-  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T10.pdf")]\
-  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T11.pdf")]\
+  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T09.pdf")]
+  \ *Ultimo Accesso:* 17 Luglio 2025
+  \ #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T10.pdf")]
+  \ *Ultimo Accesso:* 17 Luglio 2025
+  \ #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T11.pdf")]
+  \ *Ultimo Accesso:* 17 Luglio 2025
 
 - *Glossario#super[G]* \
-  #underline[#link("https://teamcodealchemists.github.io/glossario#super[G].html")]
+  #underline[#link("https://teamcodealchemists.github.io/glossario.html")]
+  \ *Ultimo Accesso:* 17 Luglio 2025
 
 #pagebreak()
 
@@ -554,6 +563,7 @@ Il cruscotto di valutazione dei costi permette di monitorare l'andamento dei cos
 )
 #show figure: set block(breakable: false)
 #show : graph_line.with(
+  caption: "Valutazione dei costi",
   data_atteso: valori_grafico_costi_atteso,
   data_reale: valori_grafico_costi_reale,
   label_atteso: "Costo atteso",
@@ -581,6 +591,7 @@ Partendo dal budget iniziale di 14.430€, il valore atteso ed effettivo diminui
 )
 #show figure: set block(breakable: false)
 #show : graph_line.with(
+  caption: "Valore atteso ed effettivo",
   data_atteso: valori_grafico_valore_atteso,
   data_reale: valori_grafico_valore_effettivo,
   label_atteso: "Valore atteso",
@@ -607,6 +618,7 @@ L'indice di prestazione dei tempi (SPI) è calcolato come il rapporto tra il val
 )
 #show figure: set block(breakable: false)
 #show : graph_bar.with(
+  caption: "Indice di prestazione dei tempi",
   data: valori_grafico_spi,
   label_x: "Sprint",
   label_y: "Indice di prestazione dei tempi (SPI)",
@@ -631,6 +643,7 @@ Il grafico dell'indice di stabilità dei requisiti mostra l'andamento della stab
 )
 #show figure: set block(breakable: false)
 #show : graph_bar.with(
+  caption: "Indice di stabilità dei requisiti",
   data: valori_grafico_stabilita_requisiti,
   label_x: "Sprint",
   label_y: "Indice di stabilità dei requisiti (%)",
@@ -651,6 +664,7 @@ Il grafico dell'indice di Gulpease mostra l'andamento della leggibilità del doc
 )
 #show figure: set block(breakable: false)
 #show : graph_bar.with(
+  caption: "Indice di Gulpease",
   data: valori_grafico_gulpease,
   label_x: "Sprint",
   label_y: "Indice di Gulpease",
