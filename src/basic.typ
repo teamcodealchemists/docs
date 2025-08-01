@@ -149,6 +149,15 @@
   doc
 }
 
+#let indice_grafici(doc) = {
+  outline(
+    title: [*Indice Grafici*],
+    target: figure.where(kind: image)
+  )
+  pagebreak()
+  doc
+}
+
 #let firma(
   destinatario: [],
   doc

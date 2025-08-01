@@ -9,6 +9,7 @@
 #let presenze = (
   /* formato: <p.nome,> oppure <"nome",> */
   p.nicolo,
+  p.mattia,
   p.sebastiano,
   p.matteo,
   p.alex,
