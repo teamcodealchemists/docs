@@ -21,8 +21,8 @@
 )
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
-    //[1.0.0], [01/08/2025], [-], [S. Speranza], [],
-    [0.1.0], [01/08/2025], [],  [S. Speranza], []
+    //[1.0.0], [01/08/2025], [-], [S. Speranza], [Approvazione del documento],
+    [0.1.0], [01/08/2025], [N. Bolzon],  [S. Speranza], [Prima stesura del documento]
 
 )
 #let contenuto = (
@@ -44,69 +44,64 @@
 #show: indice
 
 // INSERIRE QUI CONTENUTO
-= 1. Informazioni generali
-    In data *13 giugno 2025*, dalle ore *14:30* alle ore *15:30*, si è svolta, in modalità telematica sulla piattaforma _Discord_, la riunione interna del _Team Code Alchemists_.\
-    La riunione si è tenuta a metà del sesto sprint#super[G] per fare il punto della situazione e discutere le prossime attività da intraprendere.
+  = 1. Informazioni generali
+    In data *1 agosto 2025*, dalle ore *9:30* alle ore *10:30*, è stata svolta, in modalità telematica sulla piattaforma _Discord_, la riunione interna del _Team Code Alchemists_.\
+    La riunione si è svolta al termine del nono sprint#super[G] per fare il punto della situazione, discutere le prossime attività da intraprendere e definire ruoli e responsabilità di ciascun membro del team. \
 
-== 1.1 Ordine del Giorno
-  + Discussione sui lavori svolti durante la prima settimana dello sprint#super[G] RTB#super[G] 6.
-  + Analisi delle criticità emerse.
-  + Valutazione dello stato di avanzamento del lavoro.
-  + Contatti con l'azienda e il professore.
+    == 1.1 Ordine del Giorno
+    + Discussione sui lavori svolti durante lo sprint#super[G] RTB#super[G] 9.
+    + Analisi delle valutazioni ricevute nelle revisioni RTB.
+    + Valutazione dello stato di avanzamento del lavoro.
+    + Pianificazione del prossimo sprint#super[G] e delle attività da intraprendere.
+    + Assegnazione di ruoli e responsabilità ai membri del team.
     
   #pagebreak()
-= 2. Dettagli della riunione
-  Il verbale iniziale viene redatto da *#p.nicholas* e verificato da *#p.mattia*. La riunione è stata moderata dal responsabile *#p.stefano*.\
+  = 2. Dettagli della riunione
+  Il verbale iniziale viene redatto da *#p.nicolo* e verificato da *#p.stefano*. La riunione è stata moderata dal responsabile uscente, *#p.sebastiano*. \
 
-== 2.1 Lavori svolti durante lo sprint RTB 6
-  Nell'ambito della prima settimana di questo sprint#super[G], il team si è concentrato sullo sviluppo del PoC e sul miglioramento del documento di Analisi dei Requisiti.\
+  == 2.1 Lavori svolti durante lo sprint RTB 9
+  Nel nono sprint#super[G], il team ha svolto due incontri di revisione. Il primo si è tenuto il *21 luglio 2025* con il Prof. #p.cardin; in seguito, ottenuto il parere favorevole, si è svolto un secondo incontro il *31 luglio 2025* con il Prof. #p.tullio. Entrambe le revisioni si sono concluse con esito complessivamente positivo. \
 
-=== 2.1.1 Lavoro svolto dall'analista e dal progettista
-  Ora il documento “Analisi dei Requisiti” è pronto per l'approvazione da parte del proponente.
-  L'analista, con l'aiuto del progettista, ha completato i requisiti e i casi d'uso sulla base delle linee guida ricevute dall'ultimo incontro con il Professore Cardin. È stato rimosso il sistema come attore dei casi d'uso, in quanto i casi d'uso riflettono le azione compiute da parte dell'utente. \  
-  Durante questo lavoro, il progettista ha sollevato alcune scelte di progettazione fatte precedentemente e, sulla base dei nuovi requisiti e casi d'uso, ha apportato alcune modifiche per semplificare e/o chiarire degli aspetti della progettazione per renderla conforme con i requisiti e i casi d'uso.\
-  Nei prossimi giorni il progettista renderà effettive queste modifiche e le fornirà ai programmatori per l'implementazione.
+  Contestualmente, il team ha lavorato alla preparazione delle presentazioni da esporre durante le due revisioni con i docenti. A seguito delle valutazioni positive ricevute, gli esiti degli incontri sono stati comunicati all’azienda.
 
-=== 2.1.2 Lavoro svolto dai programmatori
-  I programmatori durante questa settimana hanno riscontrato diversi problemi: non conoscendo le tecnologie hanno dovuto documentarsi esaustivamente, come già previsto in precedenza. Nonostante questo, tuttavia, va considerato che sono tecnologie e modalità di lavoro che nessuno all'interno del team ha mai affrontato in precedenza. Dunque, anche dopo una preparazione teorica, la prima implementazione è risultata comunque lenta, auspicando però un'accelerazione nel momento in cui le tecnologie verrano conosciute e padroneggiate meglio.
+  Dopo aver ottenuto il parere favorevole nella prima parte della revisione *RTB*#super[G], i progettisti e i programmatori hanno proseguito con le attività di progettazione per la fase *PB*#super[G], avviando contestualmente la configurazione software finalizzata alla realizzazione dell’*MVP*#super[G].
 
-  Fino ad ora i programmatori hanno cercato di capire come strutturare la repository, ed è stato inoltre fatto il setup di tutta l'infrastruttura.\
-  È stata fatta una divisione del lavoro tra i programmatori, che ha portato alle seguenti realizzazioni:
-  - Iniziato il documento per i test;
-  - Studiato MongoDB, e creati i primi database;
-  - Iniziata la logica di business del servizio di inventario;
-  - Implementato Docker, il quale funziona completamente.
+  == 2.2 Analisi delle valutazioni ricevute nelle revisioni RTB
+  Durante la riunione, il team ha revisionato e discusso su quanto ci è stato riportato dai docenti nella valutazione ricevuta a seguito del superamento della fase RTB.
 
-  I programmatori sono consapevoli di questo rallentamento dovuto allo studio e all'implementazione di queste nuove tecnologie, e alla sessione d'esami appena iniziata.\ Per questo è stato richiesto un contributo anche da parte degli altri membri che non sono programmatori. 
-  Per quanto possibile, avere un contributo anche dagli altri membri permette di velocizzare i tempi di implementazione, e quindi anche di consegna del PoC.
+  == 2.3 Valutazione dello stato di avanzamento del lavoro
 
-== 2.2 Definizione delle attività da intraprendere
-  Il responsabile ha accolto la richiesta dei programmatori, e la settimana prossima ci sarà qualche programmatore in più che si occuperà del PoC. 
-  Si procederà principalmente con lo sviluppo del PoC, e, se serve, con la scrittura della documentazione.
 
-== 2.3 Contatti con l'azienda e il professore
-  È stato deciso di contattare il Professore Cardin per informarlo dell'aggiornamento dell'AdR e per richiedere un incontro per discutere su quanto modificato.
+  == 2.4 Definizione del prossimo sprint
+  Dopo aver considerato concluso il nono sprint, il team ha provveduto all’assegnazione dei ruoli e delle responsabilità ai membri, come riportato nella sezione seguente del presente documento.
+  Il decimo sprint, anch’esso della durata di due settimane, avrà inizio il *1 agosto* e si concluderà il *15 agosto*. A questo sprint#super[G] si farà riferimento come Sprint#super[G] PB#super[G] 10.
 
-  Infine è stato deciso di contattare anche M31 per chiedere un'approvazione dei soli requisiti e per aggiornarli sullo stato del PoC.
+  === 2.4.1 Assegnazione di ruoli e responsabilità ai membri del team
+  Durante la riunione, il team ha discusso e assegnato i ruoli e le responsabilità di ciascun membro, conformemente a quanto stabilito nelle Norme di Progetto. In linea con tali indicazioni, la rotazione dei ruoli è avvenuta come segue:
+  - *Responsabile#super[G]*: #p.mattia
+  - *Amministratore#super[G]*: #p.
+  - *Programmatori#super[G]*: #p.
+  - *Progettisti#super[G]*: #p.
+  - *Verificatore#super[G]*: #p.
+
+  === 2.3.2 Definizione delle attività da intraprendere
+  Al termine della riunione, il team ha discusso circa le attività da svolgere all'interno del nono sprint. Attività che riguardano il proseguo della fase di PB del progetto, dopo approvazione e superamento della fase RTB.
   
   #pagebreak()
-= 3. Esiti della riunione
-  La riunione si è conclusa con l'assegnazione dei compiti e la definizione delle decisioni e delle azioni intraprese, ponendo particolare attenzione alle attività che il team dovrà svolgere durante la prossima settimana, come indicato al punto *2.2* del presente documento.
+  = 3. Esiti della riunione
+  La riunione si è conclusa con l’assegnazione dei compiti e la definizione delle decisioni e delle azioni intraprese, ponendo particolare attenzione alle attività che il team dovrà svolgere durante il prossimo sprint, come indicato al punto *2.3* del presente documento.
 
   Eventuali risultati emersi o criticità riscontrate saranno affrontati e formalizzati nei prossimi incontri. Il responsabile resta a disposizione per supportare il team in caso di eventuali difficoltà.
 
-
-// DA SISTEMARE
-  #pagebreak()
-= 4. Tabella delle decisioni e azioni
+#pagebreak()
+  = 4. Tabella delle decisioni e azioni
     #let voci_tabella = (
-    [D34], [Decisione di aumentare ulteriormente il numero di programmatori per velocizzare lo sviluppo del PoC.],
-    [D35], [Decisione di contattare il Prof. Cardin per informarlo dell'aggiornamento dell'AdR e richiedere un incontro.],
-    [D36], [Decisione di contattare M31 per chiedere un'approvazione dei requisiti e aggiornamenti sullo stato del PoC.],
-    [DOC26], [Stesura del Verbale Interno del 13-06-2025.],
+    [], [],
+    [], [],
+    [DOC31], [Stesura del verbale interno in data 01/08/2025]
   )
 
   #show: decision_table.with(
   voci: voci_tabella
-)
+  )
   
