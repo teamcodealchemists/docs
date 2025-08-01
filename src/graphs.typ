@@ -4,6 +4,7 @@
 
 
 #let graph_line(
+  caption: (),
   data_atteso: (),
   data_reale: (),
   label_atteso: (),
@@ -16,7 +17,9 @@
   doc,
 ) = {
   set align(center)
-  figure(block(canvas({
+  figure(
+    caption: (caption),
+    block(canvas({
     plot.plot(
       size: (13, 7),
       x-max: 11,
@@ -44,6 +47,7 @@
 }
 
 #let graph_bar(
+  caption: (),
   data: (),
   label_x: (),
   label_y: (),
@@ -56,6 +60,7 @@
   set align(center)
 
   figure(
+    caption: (caption),
     block(
       canvas({
       plot.plot(
@@ -86,7 +91,8 @@
           ))
         },
     )
-  })))
+  }))
+  )
 
   set align(left)
   doc
