@@ -16,7 +16,7 @@
 #let titolo = "Piano di Progetto"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "1.2.0"
+#let versione = "1.2.1"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -28,6 +28,12 @@
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
 
+  [1.2.1],
+  [18/08/2025],
+  [N. Bolzon],
+  [M. Dalla Pozza],
+  [Piccola correzione grafica di visualizzazione tabelle Sprint 10.],  
+  
   [1.2.0],
   [18/08/2025],
   [N. Bolzon],
@@ -1861,7 +1867,7 @@ I possibili rischi :
     [Sebastiano Marana],    [], [], [], [],  [],  [10],
     [Nicholas Moretto],     [], [], [], [8], [],  [],
     [Matteo Pretto],        [], [4],[], [],  [],  [],
-    [Alex Shu],[],          [], [], [], [],  [8], [],
+    [Alex Shu],             [], [], [], [],  [8], [],
     [Stefano Speranza],     [], [], [], [8], [],  [],
     [Ramona Zangla],        [], [], [], [8], [],  [],
   ),
@@ -1878,9 +1884,9 @@ I possibili rischi :
     [Sebastiano Marana],    [],   [],   [],   [],       [],         [10],
     [Nicholas Moretto],     [],   [],   [],   [8],      [],         [],
     [Matteo Pretto],        [],   [4],  [],   [],       [],         [],
-    [Alex Shu],             [],   [],   [],   [],       [10 (+2)],  [],
+    [Alex Shu],             [],   [],   [],   [],       [10(+2)],  [],
     [Stefano Speranza],     [],   [],   [],   [8],      [],         [],
-    [Ramona Zangla],        [],   [],   [],   [10 (+2)],[],         [],
+    [Ramona Zangla],        [],   [],   [],   [10(+2)], [],         [],
   ),
   didascalia: "Sprint 10 - Consuntivo ore per ciascun componente"
 )
@@ -1936,7 +1942,7 @@ I possibili rischi :
     [Sebastiano Marana],    [], [], [], [],  [10],[],
     [Nicholas Moretto],     [5],[], [], [],  [],  [],
     [Matteo Pretto],        [], [], [], [],  [10],[],
-    [Alex Shu],[],          [], [], [], [8], [],  [],
+    [Alex Shu],             [], [], [], [8], [],  [],
     [Stefano Speranza],     [], [], [], [8], [],  [],
     [Ramona Zangla],        [], [], [], [],  [10],[],
   ),
