@@ -58,7 +58,7 @@ def verifica_file(file_path, glossario):
 def verifica_documenti(documenti_dir, glossario):
     """Verifica tutti i file nella cartella documenti, ignorando file datati più di due settimane."""
     blacklist_file = {"Gls.typ"}
-    blacklist_cartella = {"candidatura", "presentazioni"}
+    blacklist_cartella = {"candidatura", "presentazioni", "rtb"}
     errori_totali = 0
     oggi = datetime.datetime.now().date()
 
