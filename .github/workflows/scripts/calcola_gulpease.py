@@ -23,7 +23,7 @@ def ripulisci_contenuto(testo):
 
 # Funzione per scansionare tutte le cartelle e calcolare Gulpease
 def analizza_documenti(directory):
-    blacklist = ["candidatura"]  # Aggiungi qui le cartelle da escludere
+    blacklist = ["candidatura","rtb"]  # Aggiungi qui le cartelle da escludere
     indici_gulpease = []
     for root, _, files in os.walk(directory):
         # Salta le cartelle nella blacklist
