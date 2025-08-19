@@ -108,8 +108,8 @@ Il Piano di Qualifica#super[G] si basa su tre aspetti principali:
 - Effettuare il Quality Assurance passo-passo per prevenire e mitigare i rischi e verificare la soddisfazione dei requisiti#super[G].
 
 == 1.2 Glossario
-Per una corretta comprensione del documento, viene fornito un glossario dei termini utilizzati. Ogni termine è indicato da una "#super[G]" in apice alla parola.
-Per trovare il significato del termine, è possibile consultare il glossario al seguente indirizzo: 
+Per una corretta comprensione del documento, viene fornito un glossario#super[G] dei termini utilizzati. Ogni termine è indicato da una "#super[G]" in apice alla parola.
+Per trovare il significato del termine, è possibile consultare il glossario#super[G] al seguente indirizzo: 
 #underline[#link("https://teamcodealchemists.github.io/glossario.html")]\
 == 1.3 Riferimenti
 
@@ -159,7 +159,7 @@ L'adozione di un approccio sistematico e quantitativo consente di ridurre la sog
 
 == 2.1 Processi Primari
 
-I processi primari sono quelli che riguardano direttamente la realizzazione del prodotto#super[G] software. Essi comprendono le attività di fornitura e sviluppo.
+I processi primari sono quelli che riguardano direttamente la realizzazione del prodotto software. Essi comprendono le attività di fornitura e sviluppo.
 
 È stato deciso di utilizzare la seguente nomenclatura per identificare in modo univoco le metriche di qualità:
 - *PPF*: Processi Primari di Fornitura;
@@ -199,7 +199,7 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
 )
 
 == 2.2 Processi di Supporto
-I processi di supporto sono quelli che non riguardano direttamente la realizzazione del prodotto#super[G] software, ma che sono comunque necessari per il suo sviluppo. Essi comprendono le attività di documentazione, verifica e gestione della qualità.
+I processi di supporto sono quelli che non riguardano direttamente la realizzazione del prodotto software, ma che sono comunque necessari per il suo sviluppo. Essi comprendono le attività di documentazione, verifica e gestione della qualità.
 I processi di supporto sono identificati dalla seguente nomenclatura:
 - *PSD*: Processi di Supporto alla Documentazione;
 - *PSV*: Processi di Supporto alla Verifica;
@@ -210,8 +210,8 @@ Per ogni categoria, i codici#super[G] definiti precedentemente sono seguiti da u
 
 #let voci_tabella_documentazione = (
     [PSD01], [Indice di Gulpease], [>= 50%], [100%],
-    [PSD02], [Parole#super[G] del glossario contrassegnate con #super[G]], [>= 60%], [100%],
-    [PSD03], [Glossario ordinato], [ordinato], [ordinato],
+    [PSD02], [Parole#super[G] del glossario#super[G] contrassegnate con #super[G]], [>= 60%], [100%],
+    [PSD03], [Glossario#super[G] ordinato], [ordinato], [ordinato],
   )
 #let caption_documentazione = (
   [Metriche di qualità per il processo di documentazione]
@@ -249,7 +249,7 @@ Per ogni categoria, i codici#super[G] definiti precedentemente sono seguiti da u
 )
 
 == 2.3 Processi Organizzativi
-I processi organizzativi sono quelli che riguardano la gestione del progetto e delle risorse. Essi comprendono le attività di pianificazione, monitoraggio e controllo del progetto, gestione delle risorse umane e gestione dei fornitori.
+I processi organizzativi sono quelli che riguardano la gestione del progetto e delle risorse. Essi comprendono le attività di pianificazione, monitoraggio#super[G] e controllo del progetto, gestione delle risorse umane e gestione dei fornitori.
 I processi organizzativi sono identificati dalla seguente nomenclatura:
 - *POG*: Gestione dei processi
 
@@ -296,7 +296,7 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
     [QPF03], [Requisiti opzionali soddisfatti], [>= 0%], [100%],
   )
 #let caption_prodotto_funzionale = (
-  [Metriche per la funzionalità del prodotto#super[G] software]
+  [Metriche per la funzionalità del prodotto software]
 )
 #show: qualifica_table.with(
   voci: voci_tabella_prodotto_funzionale,
@@ -317,7 +317,7 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
     [QPA03], [Failure density], [<= 0.5], [<= 0.1],
   )
 #let caption_prodotto_affidabile = (
-  [Metriche per l'affidabilità del prodotto#super[G] software]
+  [Metriche per l'affidabilità del prodotto software]
 )
 #show: qualifica_table.with(
   voci: voci_tabella_prodotto_affidabile,
@@ -337,7 +337,7 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
     [QPM03], [Coefficient of coupling], [<= 0.5], [<= 0.3],
 )
 #let caption_prodotto_manutenibile = (
-  [Metriche per la manutenibilità del prodotto#super[G] software]
+  [Metriche per la manutenibilità del prodotto software]
 )
 #show: qualifica_table.with(
   voci: voci_tabella_prodotto_manutenibile,
@@ -357,7 +357,7 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
     [QPE03], [Throughput], [>= 100 operazioni/s], [>= 200 operazioni/s],
   )
 #let caption_prodotto_efficiente = (
-  [Metriche per l'efficienza del prodotto#super[G] software]
+  [Metriche per l'efficienza del prodotto software]
 )
 #show: qualifica_table.with(
   voci: voci_tabella_prodotto_efficiente,
@@ -376,7 +376,7 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
     [QPU02], [Error rate], [<= 5%], [<= 2%],
   )
 #let caption_prodotto_usabile = (
-  [Metriche per l'usabilità del prodotto#super[G] software]
+  [Metriche per l'usabilità del prodotto software]
 )
 #show: qualifica_table.with(
   voci: voci_tabella_prodotto_usabile,
@@ -394,7 +394,7 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
     [QPP02], [Cross-platform compatibility], [100%], [100%],
   )
 #let caption_prodotto_portabile = (
-  [Metriche per la portabilità del prodotto#super[G] software]
+  [Metriche per la portabilità del prodotto software]
 )
 #show: qualifica_table.with(
   voci: voci_tabella_prodotto_portabile,
@@ -403,7 +403,7 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
 
 #pagebreak()
 = 4. Metodologie di Testing
-Per garantire la qualità del prodotto#super[G] software, è fondamentale adottare metodologie di testing adeguate.
+Per garantire la qualità del prodotto software, è fondamentale adottare metodologie di testing adeguate.
 
 Ad ogni test è stato attribuito un codice#super[G] univoco per facilitarne l'identificazione e la tracciabilità. Il codice#super[G] è strutturato come segue: tipoXX, dove "tipo" rappresenta il tipo di test e "XX" è un numero progressivo che identifica il test specifico. I tipi di test sono i seguenti:
 - *TdU*: Test di unità;
@@ -461,10 +461,10 @@ I test di sistema valutano il comportamento del software nel suo complesso, simu
     [TdS06], [Verificare che il supervisore globale riceva un avviso nel caso in cui il numero di cellulare è errato dal punto di vista della forma.], [RF01/03], [NI],
     [TdS07], [Verificare che il supervisore globale riceva un avviso nel caso in cui la password non rispetti la sintassi.], [RF01/04], [NI],
     [TdS08], [Verificare che il supervisore globale riceva un avviso nel caso in cui la password e conferma password non corrispondono.], [RF01/05], [NI],
-    [TdS09], [Verificare che l'utente non autenticato possa effettuare l'autenticazione.], [RF02/01], [NI],
+    [TdS09], [Verificare che l'utente non autenticato possa effettuare l'autenticazione#super[G].], [RF02/01], [NI],
     [TdS10], [Verificare che l'utente non autenticato abbia inserito l'email.], [RF02/01], [NI],
     [TdS11], [Verificare che l'utente non autenticato abbia inserito la password.], [RF02/01], [NI],
-    [TdS12], [Verificare che l'utente non autenticato riceva un avviso in caso di errore di autenticazione.], [RF02/03], [NI],
+    [TdS12], [Verificare che l'utente non autenticato riceva un avviso in caso di errore di autenticazione#super[G].], [RF02/03], [NI],
     [TdS13], [Verificare che l'utente possa effettuare il logout dal sistema.], [RF02/02], [NI],
     [TdS14], [Verificare che il supervisore globale possa registrare nuovi supervisori locali.], [RF03/01], [NI],
     [TdS15], [Verificare che il supervisore globale abbia inserito l'email per la registrazione di un nuovo supervisore locale.], [RF03/01], [NI],
@@ -479,50 +479,50 @@ I test di sistema valutano il comportamento del software nel suo complesso, simu
     [TdS24], [Verificare che il supervisore globale abbia inserito il supervisore locale al magazzino.], [RF04/03], [NI],
     [TdS25], [Verificare che ogni magazzino sia identificato univocamente.], [RF04/04], [NI],
     [TdS26], [Verificare che il supervisore globale possa modificare le informazioni del magazzino], [RF04/03], [NI],
-    [TdS27], [Verificare che, per l’inserimento di un nuovo tipo di merce nell’inventario, questa abbia un codice EAN univoco.], [RF05/01], [NI],
-    [TdS28], [Verificare che, per l’inserimento di un nuovo tipo di merce nell'inventario, questa abbia un nome.], [RF05/01], [NI],
-    [TdS29], [Verificare che, per l’inserimento di un nuovo tipo di merce nell’inventario, sia presente un avviso nel caso in cui il codice EAN non rispetti la sintassi prevista.], [RF05/02], [NI],
-    [TdS30], [Verificare che, per l’inserimento di un nuovo tipo di merce nell’inventario, in caso di inserimento o modifica del prezzo unitario, sia presente un avviso nel caso in cui quest’ultimo non rispetti la forma corretta.], [RF05/03 RF05/04 RF05/10], [NI],
-    [TdS31], [Verificare che, per l’inserimento di un nuovo tipo di merce nell’inventario, in caso di inserimento o modifica della quantità, sia presente un avviso nel caso in cui quest’ultima non rispetti la forma corretta.], [RF05/05 RF05/06 RF05/08 RF05/09], [NI],
-    [TdS32], [Verificare che i supervisori possano rimuovere un tipo di prodotto dall’inventario solo se la quantità di quel prodotto è zero.], [RF05/07], [NI],
-    [TdS33], [Verificare che, per l’inserimento di un ordine di trasferimento interno, sia selezionato il magazzino di partenza.], [RF06/01], [NI],
-    [TdS34], [Verificare che, per l’inserimento di un ordine di vendita verso l’esterno, sia inserito l’indirizzo del destinatario.], [RF06/02], [NI],
-    [TdS35], [Verificare che, per l’inserimento di un ordine, siano inseriti uno o più prodotti.], [RF06/01 RF06/02], [NI],
-    [TdS36], [Verificare che, per l’inserimento di un ordine, sia presente un avviso se la quantità di prodotto non è corretta nella forma.], [RF06/03], [NI],
+    [TdS27], [Verificare che, per l’inserimento di un nuovo tipo di merce nell’inventario#super[G], questa abbia un codice EAN univoco.], [RF05/01], [NI],
+    [TdS28], [Verificare che, per l’inserimento di un nuovo tipo di merce nell'inventario#super[G], questa abbia un nome.], [RF05/01], [NI],
+    [TdS29], [Verificare che, per l’inserimento di un nuovo tipo di merce nell’inventario#super[G], sia presente un avviso nel caso in cui il codice EAN non rispetti la sintassi prevista.], [RF05/02], [NI],
+    [TdS30], [Verificare che, per l’inserimento di un nuovo tipo di merce nell’inventario#super[G], in caso di inserimento o modifica del prezzo unitario, sia presente un avviso nel caso in cui quest’ultimo non rispetti la forma corretta.], [RF05/03 RF05/04 RF05/10], [NI],
+    [TdS31], [Verificare che, per l’inserimento di un nuovo tipo di merce nell’inventario#super[G], in caso di inserimento o modifica della quantità, sia presente un avviso nel caso in cui quest’ultima non rispetti la forma corretta.], [RF05/05 RF05/06 RF05/08 RF05/09], [NI],
+    [TdS32], [Verificare che i supervisori possano rimuovere un tipo di prodotto#super[G] dall’inventario#super[G] solo se la quantità di quel prodotto#super[G] è zero.], [RF05/07], [NI],
+    [TdS33], [Verificare che, per l’inserimento di un ordine#super[G] di trasferimento#super[G] interno, sia selezionato il magazzino di partenza.], [RF06/01], [NI],
+    [TdS34], [Verificare che, per l’inserimento di un ordine#super[G] di vendita verso l’esterno, sia inserito l’indirizzo del destinatario.], [RF06/02], [NI],
+    [TdS35], [Verificare che, per l’inserimento di un ordine#super[G], siano inseriti uno o più prodotti.], [RF06/01 RF06/02], [NI],
+    [TdS36], [Verificare che, per l’inserimento di un ordine#super[G], sia presente un avviso se la quantità di prodotto#super[G] non è corretta nella forma.], [RF06/03], [NI],
     [TdS37], [Verificare che i supervisori possano annullare ordini “in attesa” o “in elaborazione”.], [RF06/04], [NI],
-    [TdS38], [Verificare che il supervisore globale possa visualizzare correttamente l’inventario globale.], [RF07/01], [NI],
-    [TdS39], [Verificare che il supervisore globale possa visualizzare correttamente l’inventario di ciascun magazzino.], [RF07/02], [NI],
+    [TdS38], [Verificare che il supervisore globale possa visualizzare correttamente l’inventario#super[G] globale.], [RF07/01], [NI],
+    [TdS39], [Verificare che il supervisore globale possa visualizzare correttamente l’inventario#super[G] di ciascun magazzino.], [RF07/02], [NI],
     [TdS40], [Verificare che il supervisore globale possa visualizzare correttamente un report degli ordini globali.], [RF07/03], [NI],
     [TdS41], [Verificare che il supervisore globale possa visualizzare correttamente un report degli ordini di ciascun magazzino.], [RF07/04], [NI],
-    [TdS42], [Verificare che i supervisori locali possano visualizzare correttamente l’inventario del/dei magazzino/i a loro assegnato/i.], [RF07/05], [NI],
+    [TdS42], [Verificare che i supervisori locali possano visualizzare correttamente l’inventario#super[G] del/dei magazzino/i a loro assegnato/i.], [RF07/05], [NI],
     [TdS43], [Verificare che i supervisori locali possano visualizzare correttamente un report degli ordini del/dei magazzino/i a loro assegnato/i.], [RF07/06], [NI],
     [TdS44], [Verificare che i supervisori possano visualizzare correttamente lo stato di tutti i magazzini.], [RF08], [NI],
     [TdS45], [Verificare che i supervisori possano visualizzare correttamente le notifiche informative prodotte dal sistema.], [RF09/01], [NI],
     [TdS46], [Verificare che il supervisore globale possa accettare le richieste decisionali prodotte dal sistema.], [RF09/02], [NI],
     [TdS47], [Verificare che il supervisore globale possa rifiutare le richieste decisionali prodotte dal sistema.], [RF09/03], [NI],
-    [TdS48], [Verificare che, in caso di inserimento o modifica del valore di soglia minima in un prodotto da parte dei supervisori, si riceva un avviso nel caso in cui il valore di soglia minima non sia nella forma corretta.], [RF10/01 RF10/03 RF10/04 RF10/05 RF10/06 RF10/07], [NI],
-    [TdS49], [Verificare che, in caso di inserimento o modifica del valore di soglia massima in un prodotto da parte dei supervisori, si riceva un avviso nel caso in cui il valore di soglia massima non sia nella forma corretta.], [RF10/02 RF10/03 RF10/04 RF10/05 RF10/06 RF10/07], [NI],
-    [TdS50], [Verificare che ogni magazzino identifichi quando le scorte di un determinato prodotto scendono sotto una certa soglia.], [RF11/01], [NI],
-    [TdS51], [Verificare che ogni magazzino identifichi quando le scorte di un determinato prodotto salgono sopra una certa soglia.], [RF11/02], [NI],
-    [TdS52], [Verificare che ogni magazzino verifichi la disponibilità delle scorte prima di soddisfare un ordine.], [RF12/01], [NI],
-    [TdS53], [Verificare che ogni magazzino identifichi l’impossibilità di soddisfare un ordine.], [RF12/02], [NI],
-    [TdS54], [Verificare che ogni magazzino identifichi l’insufficienza di scorte per ciascun prodotto.], [RF12/03], [NI],
-    [TdS55], [Verificare che, in caso di insufficienza di scorte per un determinato prodotto, il magazzino in questione richieda un riassortimento al sistema.], [RF12/03], [NI],
+    [TdS48], [Verificare che, in caso di inserimento o modifica del valore di soglia minima in un prodotto#super[G] da parte dei supervisori, si riceva un avviso nel caso in cui il valore di soglia minima non sia nella forma corretta.], [RF10/01 RF10/03 RF10/04 RF10/05 RF10/06 RF10/07], [NI],
+    [TdS49], [Verificare che, in caso di inserimento o modifica del valore di soglia massima in un prodotto#super[G] da parte dei supervisori, si riceva un avviso nel caso in cui il valore di soglia massima non sia nella forma corretta.], [RF10/02 RF10/03 RF10/04 RF10/05 RF10/06 RF10/07], [NI],
+    [TdS50], [Verificare che ogni magazzino identifichi quando le scorte#super[G] di un determinato prodotto#super[G] scendono sotto una certa soglia.], [RF11/01], [NI],
+    [TdS51], [Verificare che ogni magazzino identifichi quando le scorte#super[G] di un determinato prodotto#super[G] salgono sopra una certa soglia.], [RF11/02], [NI],
+    [TdS52], [Verificare che ogni magazzino verifichi la disponibilità delle scorte#super[G] prima di soddisfare un ordine#super[G].], [RF12/01], [NI],
+    [TdS53], [Verificare che ogni magazzino identifichi l’impossibilità di soddisfare un ordine#super[G].], [RF12/02], [NI],
+    [TdS54], [Verificare che ogni magazzino identifichi l’insufficienza di scorte#super[G] per ciascun prodotto#super[G].], [RF12/03], [NI],
+    [TdS55], [Verificare che, in caso di insufficienza di scorte#super[G] per un determinato prodotto#super[G], il magazzino in questione richieda un riassortimento#super[G] al sistema.], [RF12/03], [NI],
     [TdS56], [Verificare che ogni magazzino abbia un tracciamento dello stato degli ordini.], [RF12/04], [NI],
-    [TdS57], [Verificare che i magazzini possono inviare merce tramite un ordine.], [RF12/05], [NI],
-    [TdS58], [Verificare che i magazzini possono ricevere un approvvigionamento di merce dall’esterno tramite un ordine.], [RF12/06], [NI],
-    [TdS59], [Verificare che i magazzini possono inviare merce verso l’esterno tramite un ordine.], [RF12/07], [NI],
+    [TdS57], [Verificare che i magazzini possono inviare merce tramite un ordine#super[G].], [RF12/05], [NI],
+    [TdS58], [Verificare che i magazzini possono ricevere un approvvigionamento#super[G] di merce dall’esterno tramite un ordine#super[G].], [RF12/06], [NI],
+    [TdS59], [Verificare che i magazzini possono inviare merce verso l’esterno tramite un ordine#super[G].], [RF12/07], [NI],
     [TdS60], [Verificare che il magazzino di destinazione notifichi l’arrivo della merce al magazzino di origine.], [RF12/08], [NI],
-    [TdS61], [Verificare che venga rispettata la forma dello stato dell’ordine. Sono ammessi i seguenti stati: “in attesa”, “in elaborazione”, “in transito”, “annullato”, “consegnato”.], [RF12/09], [NI],
+    [TdS61], [Verificare che venga rispettata la forma dello stato dell’ordine#super[G]. Sono ammessi i seguenti stati: “in attesa”, “in elaborazione”, “in transito”, “annullato”, “consegnato”.], [RF12/09], [NI],
     [TdS62], [Verificare che venga rispettata la forma dello stato del magazzino. Sono ammessi i seguenti stati: “online”, “offline”.], [RF14/01], [NI],
     [TdS63], [Verificare che il sistema mostri un avviso di un eventuale cambio di stato del magazzino.], [RF14/02], [NI],
     [TdS64], [Verificare che il sistema identifichi eventuali disconnessioni di uno o più magazzini segnandoli come offline.], [RF14/03], [NI],
-    [TdS65], [Verificare che il sistema sia in grado di programmare trasferimenti interni in caso di raggiungimento di una soglia critica di un prodotto in un magazzino.], [RF13/01], [NI],
+    [TdS65], [Verificare che il sistema sia in grado di programmare trasferimenti interni in caso di raggiungimento di una soglia critica di un prodotto#super[G] in un magazzino.], [RF13/01], [NI],
     [TdS66], [Verificare che, nel caso di un magazzino offline, quest’ultimo annulli gli ordini che non può soddisfare dopo un periodo di tempo predefinito.], [RF15/01], [NI],
-    [TdS67], [Verificare che il supervisore globale possa definire il periodo di tempo dopo cui l'ordine di un magazzino offline viene annullato.], [RF15/02], [NI],
+    [TdS67], [Verificare che il supervisore globale possa definire il periodo di tempo dopo cui l'ordine#super[G] di un magazzino offline viene annullato.], [RF15/02], [NI],
     [TdS68], [Verificare che il sistema riconosca il ritorno di un magazzino da “offline” a “online”.], [RF16/01], [NI],
-    [TdS69], [Verificare che un ordine “in transito” cambi il suo stato in “annullato” dopo il superamento di una soglia temporale predefinita.], [RF17/01], [NI],
-    [TdS70], [Verificare che il supervisore globale possa definire la soglia temporale dopo cui un ordine “in transito” cambi il suo stato in “annullato”.], [RF17/02], [NI],
+    [TdS69], [Verificare che un ordine#super[G] “in transito” cambi il suo stato in “annullato” dopo il superamento di una soglia temporale predefinita.], [RF17/01], [NI],
+    [TdS70], [Verificare che il supervisore globale possa definire la soglia temporale dopo cui un ordine#super[G] “in transito” cambi il suo stato in “annullato”.], [RF17/02], [NI],
   )
 #let caption_test_sistema = (
   [Test di sistema]
