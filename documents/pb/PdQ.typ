@@ -204,7 +204,7 @@ I processi di supporto sono identificati dalla seguente nomenclatura:
 - *PSD*: Processi di Supporto alla Documentazione;
 - *PSV*: Processi di Supporto alla Verifica;
 - *PSQ*: Processi di Supporto alla Qualità.
-Per ogni categoria, i codici#super[G] definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
+Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
 
 === 2.2.1 Documentazione
 
@@ -253,7 +253,7 @@ I processi organizzativi sono quelli che riguardano la gestione del progetto e d
 I processi organizzativi sono identificati dalla seguente nomenclatura:
 - *POG*: Gestione dei processi
 
-Per ogni categoria, i codici#super[G] definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
+Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
 //in caso potremmo aggiungere altre metriche
 === 2.3.1 Gestione dei processi
 #let voci_tabella_processi = (
@@ -326,8 +326,8 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
 
 == 3.3 Manutenibilità
 /*
-  Cyclomatic complexity: misura la complessità del codice#super[G] in base al numero di percorsi indipendenti.
-  Code smell: indicatori di potenziali problemi nel codice#super[G] che potrebbero influenzare la manutenibilità.
+  Cyclomatic complexity: misura la complessità del codice in base al numero di percorsi indipendenti.
+  Code smell: indicatori di potenziali problemi nel codice che potrebbero influenzare la manutenibilità.
   Coefficient of coupling: misura il grado di dipendenza tra moduli o classi.
 */
 
@@ -405,7 +405,7 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
 = 4. Metodologie di Testing
 Per garantire la qualità del prodotto software, è fondamentale adottare metodologie di testing adeguate.
 
-Ad ogni test è stato attribuito un codice#super[G] univoco per facilitarne l'identificazione e la tracciabilità. Il codice#super[G] è strutturato come segue: tipoXX, dove "tipo" rappresenta il tipo di test e "XX" è un numero progressivo che identifica il test specifico. I tipi di test sono i seguenti:
+Ad ogni test è stato attribuito un codice univoco per facilitarne l'identificazione e la tracciabilità. Il codice è strutturato come segue: tipoXX, dove "tipo" rappresenta il tipo di test e "XX" è un numero progressivo che identifica il test specifico. I tipi di test sono i seguenti:
 - *TdU*: Test di unità;
 - *TdI*: Test di integrazione;
 - *TdS*: Test di sistema;
@@ -420,7 +420,7 @@ Per ogni test viene specificato uno stato, che può essere:
 
 == 4.1 Test di unità
 
-I test di unità verificano il comportamento corretto delle singole unità di codice#super[G], come funzioni, metodi o classi. Vengono scritti e mantenuti dagli sviluppatori durante la fase di sviluppo e servono a garantire che ogni componente, isolato dal resto, produca il risultato atteso per diversi input. Sono fondamentali per individuare rapidamente errori logici a livello di codice#super[G] sorgente.
+I test di unità verificano il comportamento corretto delle singole unità di codice, come funzioni, metodi o classi. Vengono scritti e mantenuti dagli sviluppatori durante la fase di sviluppo e servono a garantire che ogni componente, isolato dal resto, produca il risultato atteso per diversi input. Sono fondamentali per individuare rapidamente errori logici a livello di codice sorgente.
 
 #let voci_test_unità = (
     [---], [---], [---], [NI]
@@ -435,7 +435,7 @@ I test di unità verificano il comportamento corretto delle singole unità di co
 
 == 4.2 Test di integrazione
 
-I test di integrazione servono a verificare che più unità di codice#super[G] funzionino correttamente insieme. L'obiettivo è individuare problemi che emergono quando i vari moduli interagiscono tra loro, ad esempio errori di comunicazione tra componenti o malintesi sui formati di dati scambiati. Questi test sono particolarmente utili quando si integrano sistemi esterni come database, API o servizi#super[G] di terze parti.
+I test di integrazione servono a verificare che più unità di codice funzionino correttamente insieme. L'obiettivo è individuare problemi che emergono quando i vari moduli interagiscono tra loro, ad esempio errori di comunicazione tra componenti o malintesi sui formati di dati scambiati. Questi test sono particolarmente utili quando si integrano sistemi esterni come database, API o servizi#super[G] di terze parti.
 
 #let voci_test_integrazione = (
     [---], [---], [---], [NI]
@@ -630,7 +630,7 @@ L'indice di prestazione dei tempi (SPI) è calcolato come il rapporto tra il val
 ) 
 
 L'indice di prestazione dei tempi mostra una tendenza al ribasso, indicando che il progetto sta procedendo più lentamente del previsto. Tuttavia, l'SPI è ancora superiore a 0.5, il che significa che il progetto sta comunque rispettando i tempi pianificati in modo accettabile.\
-Come si può notare dal grafico, abbiamo subito dei rallentamenti negli sprint centrali, dovuti allo studio delle tecnologie non conosciute e alla complessità dell'Analisi dei Requisiti#super[G] e della Progettazione#super[G]. \
+Come si può notare dal grafico, abbiamo subito dei rallentamenti negli sprint centrali, dovuti allo studio delle tecnologie non conosciute e alla complessità dell'Analisi dei Requisiti#super[G] e della progettazione. \
 Tuttavia, nell'ultimo sprint, che riguarda la fase di sviluppo del PoC, abbiamo recuperato parte del tempo perso, portando l'indice di prestazione dei tempi a 0.8. Il team prevede di mantenere questo ritmo di recupero anche nei prossimi sprint, cercando di migliorare ulteriormente l'efficienza.
 
 
