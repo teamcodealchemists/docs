@@ -22,7 +22,7 @@
     block(canvas({
     plot.plot(
       size: (13, 7),
-      x-max: 11,
+      x-max: 12,
       x-min: 1,
       y-max: (y-max),
       y-min: (y-min),
