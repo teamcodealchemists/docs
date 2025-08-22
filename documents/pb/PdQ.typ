@@ -626,7 +626,7 @@ Il grafico dell'indice di prestazione dei tempi mostra l'andamento del tempo pia
 L'indice di prestazione dei tempi (SPI) è calcolato come il rapporto tra il valore pianificato e il valore effettivo. Se l'SPI è maggiore di 1, significa che il progetto sta procedendo più velocemente del previsto; se è inferiore a 1, significa che il progetto sta procedendo più lentamente del previsto.
 
 #let valori_grafico_spi = (
-  (1, 1.0), (2, 0.95), (3, 0.9), (4, 0.85), (5, 0.8), (6, 0.75), (7, 0.8), (8, 0.85)
+  (1, 1.0), (2, 0.95), (3, 0.9), (4, 0.85), (5, 0.8), (6, 0.75), (7, 0.8), (8, 0.85), (9, 0.85), (10, 0.8)
 )
 #show figure: set block(breakable: false)
 #show : graph_bar.with(
@@ -651,7 +651,7 @@ Tuttavia, nell'ultimo sprint, che riguarda la fase di sviluppo del PoC, abbiamo 
 Il grafico dell'indice di stabilità dei requisiti mostra l'andamento della stabilità dei requisiti nel tempo. L'indice di stabilità dei requisiti è calcolato come il rapporto tra il numero di requisiti stabili e il numero totale di requisiti. Un indice più alto indica una maggiore stabilità dei requisiti, mentre un indice più basso indica una minore stabilità.
 
 #let valori_grafico_stabilita_requisiti = (
-  (1, 0.43), (2, 0.64), (3, 0.86), (4, 0.81), (5, 0.55), (6, 0.68), (7, 0.82), (8, 0.82)
+  (1, 0.43), (2, 0.64), (3, 0.86), (4, 0.81), (5, 0.55), (6, 0.68), (7, 0.82), (8, 0.82), (9, 0.82),
 )
 #show figure: set block(breakable: false)
 #show : graph_bar.with(
@@ -672,7 +672,7 @@ L'indice di stabilità dei requisiti mostra una tendenza al ribasso nel quinto s
 Il grafico dell'indice di Gulpease mostra l'andamento della leggibilità del documento nel tempo. Un indice più alto indica una maggiore leggibilità, mentre un indice più basso indica una minore leggibilità. L'obiettivo è mantenere l'indice sopra il valore minimo di 50 per garantire che il documento sia facilmente comprensibile.
 
 #let valori_grafico_gulpease = (
-  (1, 40), (2, 38), (3, 50), (4, 55), (5, 58), (6, 58), (7, 58), (8, 61)
+  (1, 40), (2, 38), (3, 50), (4, 55), (5, 58), (6, 58), (7, 58), (8, 61), (9, 60), (10, 60)
 )
 #show figure: set block(breakable: false)
 #show : graph_bar.with(
