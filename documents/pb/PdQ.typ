@@ -14,9 +14,9 @@
 */
 
 #let titolo = "Piano di Qualifica"
-#let status = "Approvato per RTB"
+#let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "1.0.0"
+#let versione = "1.2.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -27,6 +27,18 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+
+  [1.2.0],
+  [18/08/2025],
+  [N. Bolzon],
+  [M. Dalla Pozza],
+  [Aggiornamento dati dei grafici "valutazione dei costi" e "grafico valore atteso ed effettivo" realativi allo Sprint 10.],
+
+  [1.1.0],
+  [01/08/2025],
+  [N. Bolzon],
+  [S. Marana],
+  [Aggiornamento dati dei grafici "valutazione dei costi" e "grafico valore atteso ed effettivo" realativi allo Sprint 9.],
 
   [1.0.0],
   [17/07/2025],
@@ -108,8 +120,8 @@ Il Piano di Qualifica#super[G] si basa su tre aspetti principali:
 - Effettuare il Quality Assurance passo-passo per prevenire e mitigare i rischi e verificare la soddisfazione dei requisiti#super[G].
 
 == 1.2 Glossario
-Per una corretta comprensione del documento, viene fornito un glossario dei termini utilizzati. Ogni termine è indicato da una "#super[G]" in apice alla parola.
-Per trovare il significato del termine, è possibile consultare il glossario al seguente indirizzo: 
+Per una corretta comprensione del documento, viene fornito un glossario#super[G] dei termini utilizzati. Ogni termine è indicato da una "#super[G]" in apice alla parola.
+Per trovare il significato del termine, è possibile consultare il glossario#super[G] al seguente indirizzo: 
 #underline[#link("https://teamcodealchemists.github.io/glossario.html")]\
 == 1.3 Riferimenti
 
@@ -159,7 +171,7 @@ L'adozione di un approccio sistematico e quantitativo consente di ridurre la sog
 
 == 2.1 Processi Primari
 
-I processi primari sono quelli che riguardano direttamente la realizzazione del prodotto#super[G] software. Essi comprendono le attività di fornitura e sviluppo.
+I processi primari sono quelli che riguardano direttamente la realizzazione del prodotto software. Essi comprendono le attività di fornitura e sviluppo.
 
 È stato deciso di utilizzare la seguente nomenclatura per identificare in modo univoco le metriche di qualità:
 - *PPF*: Processi Primari di Fornitura;
@@ -199,19 +211,19 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
 )
 
 == 2.2 Processi di Supporto
-I processi di supporto sono quelli che non riguardano direttamente la realizzazione del prodotto#super[G] software, ma che sono comunque necessari per il suo sviluppo. Essi comprendono le attività di documentazione, verifica e gestione della qualità.
+I processi di supporto sono quelli che non riguardano direttamente la realizzazione del prodotto software, ma che sono comunque necessari per il suo sviluppo. Essi comprendono le attività di documentazione, verifica e gestione della qualità.
 I processi di supporto sono identificati dalla seguente nomenclatura:
 - *PSD*: Processi di Supporto alla Documentazione;
 - *PSV*: Processi di Supporto alla Verifica;
 - *PSQ*: Processi di Supporto alla Qualità.
-Per ogni categoria, i codici#super[G] definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
+Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
 
 === 2.2.1 Documentazione
 
 #let voci_tabella_documentazione = (
     [PSD01], [Indice di Gulpease], [>= 50%], [100%],
-    [PSD02], [Parole#super[G] del glossario contrassegnate con #super[G]], [>= 60%], [100%],
-    [PSD03], [Glossario ordinato], [ordinato], [ordinato],
+    [PSD02], [Parole#super[G] del glossario#super[G] contrassegnate con #super[G]], [>= 60%], [100%],
+    [PSD03], [Glossario#super[G] ordinato], [ordinato], [ordinato],
   )
 #let caption_documentazione = (
   [Metriche di qualità per il processo di documentazione]
@@ -249,11 +261,11 @@ Per ogni categoria, i codici#super[G] definiti precedentemente sono seguiti da u
 )
 
 == 2.3 Processi Organizzativi
-I processi organizzativi sono quelli che riguardano la gestione del progetto e delle risorse. Essi comprendono le attività di pianificazione, monitoraggio e controllo del progetto, gestione delle risorse umane e gestione dei fornitori.
+I processi organizzativi sono quelli che riguardano la gestione del progetto e delle risorse. Essi comprendono le attività di pianificazione, monitoraggio#super[G] e controllo del progetto, gestione delle risorse umane e gestione dei fornitori.
 I processi organizzativi sono identificati dalla seguente nomenclatura:
 - *POG*: Gestione dei processi
 
-Per ogni categoria, i codici#super[G] definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
+Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero progressivo che identifica la metrica specifica.
 //in caso potremmo aggiungere altre metriche
 === 2.3.1 Gestione dei processi
 #let voci_tabella_processi = (
@@ -296,7 +308,7 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
     [QPF03], [Requisiti opzionali soddisfatti], [>= 0%], [100%],
   )
 #let caption_prodotto_funzionale = (
-  [Metriche per la funzionalità del prodotto#super[G] software]
+  [Metriche per la funzionalità del prodotto software]
 )
 #show: qualifica_table.with(
   voci: voci_tabella_prodotto_funzionale,
@@ -317,7 +329,7 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
     [QPA03], [Failure density], [<= 0.5], [<= 0.1],
   )
 #let caption_prodotto_affidabile = (
-  [Metriche per l'affidabilità del prodotto#super[G] software]
+  [Metriche per l'affidabilità del prodotto software]
 )
 #show: qualifica_table.with(
   voci: voci_tabella_prodotto_affidabile,
@@ -326,8 +338,8 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
 
 == 3.3 Manutenibilità
 /*
-  Cyclomatic complexity: misura la complessità del codice#super[G] in base al numero di percorsi indipendenti.
-  Code smell: indicatori di potenziali problemi nel codice#super[G] che potrebbero influenzare la manutenibilità.
+  Cyclomatic complexity: misura la complessità del codice in base al numero di percorsi indipendenti.
+  Code smell: indicatori di potenziali problemi nel codice che potrebbero influenzare la manutenibilità.
   Coefficient of coupling: misura il grado di dipendenza tra moduli o classi.
 */
 
@@ -337,7 +349,7 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
     [QPM03], [Coefficient of coupling], [<= 0.5], [<= 0.3],
 )
 #let caption_prodotto_manutenibile = (
-  [Metriche per la manutenibilità del prodotto#super[G] software]
+  [Metriche per la manutenibilità del prodotto software]
 )
 #show: qualifica_table.with(
   voci: voci_tabella_prodotto_manutenibile,
@@ -357,7 +369,7 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
     [QPE03], [Throughput], [>= 100 operazioni/s], [>= 200 operazioni/s],
   )
 #let caption_prodotto_efficiente = (
-  [Metriche per l'efficienza del prodotto#super[G] software]
+  [Metriche per l'efficienza del prodotto software]
 )
 #show: qualifica_table.with(
   voci: voci_tabella_prodotto_efficiente,
@@ -376,7 +388,7 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
     [QPU02], [Error rate], [<= 5%], [<= 2%],
   )
 #let caption_prodotto_usabile = (
-  [Metriche per l'usabilità del prodotto#super[G] software]
+  [Metriche per l'usabilità del prodotto software]
 )
 #show: qualifica_table.with(
   voci: voci_tabella_prodotto_usabile,
@@ -394,7 +406,7 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
     [QPP02], [Cross-platform compatibility], [100%], [100%],
   )
 #let caption_prodotto_portabile = (
-  [Metriche per la portabilità del prodotto#super[G] software]
+  [Metriche per la portabilità del prodotto software]
 )
 #show: qualifica_table.with(
   voci: voci_tabella_prodotto_portabile,
@@ -403,9 +415,9 @@ Per ogni categoria, i codici definiti precedentemente sono seguiti da un numero 
 
 #pagebreak()
 = 4. Metodologie di Testing
-Per garantire la qualità del prodotto#super[G] software, è fondamentale adottare metodologie di testing adeguate.
+Per garantire la qualità del prodotto software, è fondamentale adottare metodologie di testing adeguate.
 
-Ad ogni test è stato attribuito un codice#super[G] univoco per facilitarne l'identificazione e la tracciabilità. Il codice#super[G] è strutturato come segue: tipoXX, dove "tipo" rappresenta il tipo di test e "XX" è un numero progressivo che identifica il test specifico. I tipi di test sono i seguenti:
+Ad ogni test è stato attribuito un codice univoco per facilitarne l'identificazione e la tracciabilità. Il codice è strutturato come segue: tipoXX, dove "tipo" rappresenta il tipo di test e "XX" è un numero progressivo che identifica il test specifico. I tipi di test sono i seguenti:
 - *TdU*: Test di unità;
 - *TdI*: Test di integrazione;
 - *TdS*: Test di sistema;
@@ -420,7 +432,7 @@ Per ogni test viene specificato uno stato, che può essere:
 
 == 4.1 Test di unità
 
-I test di unità verificano il comportamento corretto delle singole unità di codice#super[G], come funzioni, metodi o classi. Vengono scritti e mantenuti dagli sviluppatori durante la fase di sviluppo e servono a garantire che ogni componente, isolato dal resto, produca il risultato atteso per diversi input. Sono fondamentali per individuare rapidamente errori logici a livello di codice#super[G] sorgente.
+I test di unità verificano il comportamento corretto delle singole unità di codice, come funzioni, metodi o classi. Vengono scritti e mantenuti dagli sviluppatori durante la fase di sviluppo e servono a garantire che ogni componente, isolato dal resto, produca il risultato atteso per diversi input. Sono fondamentali per individuare rapidamente errori logici a livello di codice sorgente.
 
 #let voci_test_unità = (
     [---], [---], [---], [NI]
@@ -435,7 +447,7 @@ I test di unità verificano il comportamento corretto delle singole unità di co
 
 == 4.2 Test di integrazione
 
-I test di integrazione servono a verificare che più unità di codice#super[G] funzionino correttamente insieme. L'obiettivo è individuare problemi che emergono quando i vari moduli interagiscono tra loro, ad esempio errori di comunicazione tra componenti o malintesi sui formati di dati scambiati. Questi test sono particolarmente utili quando si integrano sistemi esterni come database, API o servizi#super[G] di terze parti.
+I test di integrazione servono a verificare che più unità di codice funzionino correttamente insieme. L'obiettivo è individuare problemi che emergono quando i vari moduli interagiscono tra loro, ad esempio errori di comunicazione tra componenti o malintesi sui formati di dati scambiati. Questi test sono particolarmente utili quando si integrano sistemi esterni come database, API o servizi#super[G] di terze parti.
 
 #let voci_test_integrazione = (
     [---], [---], [---], [NI]
@@ -461,10 +473,10 @@ I test di sistema valutano il comportamento del software nel suo complesso, simu
     [TdS06], [Verificare che il supervisore globale riceva un avviso nel caso in cui il numero di cellulare è errato dal punto di vista della forma.], [RF01/03], [NI],
     [TdS07], [Verificare che il supervisore globale riceva un avviso nel caso in cui la password non rispetti la sintassi.], [RF01/04], [NI],
     [TdS08], [Verificare che il supervisore globale riceva un avviso nel caso in cui la password e conferma password non corrispondono.], [RF01/05], [NI],
-    [TdS09], [Verificare che l'utente non autenticato possa effettuare l'autenticazione.], [RF02/01], [NI],
+    [TdS09], [Verificare che l'utente non autenticato possa effettuare l'autenticazione#super[G].], [RF02/01], [NI],
     [TdS10], [Verificare che l'utente non autenticato abbia inserito l'email.], [RF02/01], [NI],
     [TdS11], [Verificare che l'utente non autenticato abbia inserito la password.], [RF02/01], [NI],
-    [TdS12], [Verificare che l'utente non autenticato riceva un avviso in caso di errore di autenticazione.], [RF02/03], [NI],
+    [TdS12], [Verificare che l'utente non autenticato riceva un avviso in caso di errore di autenticazione#super[G].], [RF02/03], [NI],
     [TdS13], [Verificare che l'utente possa effettuare il logout dal sistema.], [RF02/02], [NI],
     [TdS14], [Verificare che il supervisore globale possa registrare nuovi supervisori locali.], [RF03/01], [NI],
     [TdS15], [Verificare che il supervisore globale abbia inserito l'email per la registrazione di un nuovo supervisore locale.], [RF03/01], [NI],
@@ -479,50 +491,50 @@ I test di sistema valutano il comportamento del software nel suo complesso, simu
     [TdS24], [Verificare che il supervisore globale abbia inserito il supervisore locale al magazzino.], [RF04/03], [NI],
     [TdS25], [Verificare che ogni magazzino sia identificato univocamente.], [RF04/04], [NI],
     [TdS26], [Verificare che il supervisore globale possa modificare le informazioni del magazzino], [RF04/03], [NI],
-    [TdS27], [Verificare che, per l’inserimento di un nuovo tipo di merce nell’inventario, questa abbia un codice EAN univoco.], [RF05/01], [NI],
-    [TdS28], [Verificare che, per l’inserimento di un nuovo tipo di merce nell'inventario, questa abbia un nome.], [RF05/01], [NI],
-    [TdS29], [Verificare che, per l’inserimento di un nuovo tipo di merce nell’inventario, sia presente un avviso nel caso in cui il codice EAN non rispetti la sintassi prevista.], [RF05/02], [NI],
-    [TdS30], [Verificare che, per l’inserimento di un nuovo tipo di merce nell’inventario, in caso di inserimento o modifica del prezzo unitario, sia presente un avviso nel caso in cui quest’ultimo non rispetti la forma corretta.], [RF05/03 RF05/04 RF05/10], [NI],
-    [TdS31], [Verificare che, per l’inserimento di un nuovo tipo di merce nell’inventario, in caso di inserimento o modifica della quantità, sia presente un avviso nel caso in cui quest’ultima non rispetti la forma corretta.], [RF05/05 RF05/06 RF05/08 RF05/09], [NI],
-    [TdS32], [Verificare che i supervisori possano rimuovere un tipo di prodotto dall’inventario solo se la quantità di quel prodotto è zero.], [RF05/07], [NI],
-    [TdS33], [Verificare che, per l’inserimento di un ordine di trasferimento interno, sia selezionato il magazzino di partenza.], [RF06/01], [NI],
-    [TdS34], [Verificare che, per l’inserimento di un ordine di vendita verso l’esterno, sia inserito l’indirizzo del destinatario.], [RF06/02], [NI],
-    [TdS35], [Verificare che, per l’inserimento di un ordine, siano inseriti uno o più prodotti.], [RF06/01 RF06/02], [NI],
-    [TdS36], [Verificare che, per l’inserimento di un ordine, sia presente un avviso se la quantità di prodotto non è corretta nella forma.], [RF06/03], [NI],
+    [TdS27], [Verificare che, per l’inserimento di un nuovo tipo di merce nell’inventario#super[G], questa abbia un codice EAN univoco.], [RF05/01], [NI],
+    [TdS28], [Verificare che, per l’inserimento di un nuovo tipo di merce nell'inventario#super[G], questa abbia un nome.], [RF05/01], [NI],
+    [TdS29], [Verificare che, per l’inserimento di un nuovo tipo di merce nell’inventario#super[G], sia presente un avviso nel caso in cui il codice EAN non rispetti la sintassi prevista.], [RF05/02], [NI],
+    [TdS30], [Verificare che, per l’inserimento di un nuovo tipo di merce nell’inventario#super[G], in caso di inserimento o modifica del prezzo unitario, sia presente un avviso nel caso in cui quest’ultimo non rispetti la forma corretta.], [RF05/03 RF05/04 RF05/10], [NI],
+    [TdS31], [Verificare che, per l’inserimento di un nuovo tipo di merce nell’inventario#super[G], in caso di inserimento o modifica della quantità, sia presente un avviso nel caso in cui quest’ultima non rispetti la forma corretta.], [RF05/05 RF05/06 RF05/08 RF05/09], [NI],
+    [TdS32], [Verificare che i supervisori possano rimuovere un tipo di prodotto#super[G] dall’inventario#super[G] solo se la quantità di quel prodotto#super[G] è zero.], [RF05/07], [NI],
+    [TdS33], [Verificare che, per l’inserimento di un ordine#super[G] di trasferimento#super[G] interno, sia selezionato il magazzino di partenza.], [RF06/01], [NI],
+    [TdS34], [Verificare che, per l’inserimento di un ordine#super[G] di vendita verso l’esterno, sia inserito l’indirizzo del destinatario.], [RF06/02], [NI],
+    [TdS35], [Verificare che, per l’inserimento di un ordine#super[G], siano inseriti uno o più prodotti.], [RF06/01 RF06/02], [NI],
+    [TdS36], [Verificare che, per l’inserimento di un ordine#super[G], sia presente un avviso se la quantità di prodotto#super[G] non è corretta nella forma.], [RF06/03], [NI],
     [TdS37], [Verificare che i supervisori possano annullare ordini “in attesa” o “in elaborazione”.], [RF06/04], [NI],
-    [TdS38], [Verificare che il supervisore globale possa visualizzare correttamente l’inventario globale.], [RF07/01], [NI],
-    [TdS39], [Verificare che il supervisore globale possa visualizzare correttamente l’inventario di ciascun magazzino.], [RF07/02], [NI],
+    [TdS38], [Verificare che il supervisore globale possa visualizzare correttamente l’inventario#super[G] globale.], [RF07/01], [NI],
+    [TdS39], [Verificare che il supervisore globale possa visualizzare correttamente l’inventario#super[G] di ciascun magazzino.], [RF07/02], [NI],
     [TdS40], [Verificare che il supervisore globale possa visualizzare correttamente un report degli ordini globali.], [RF07/03], [NI],
     [TdS41], [Verificare che il supervisore globale possa visualizzare correttamente un report degli ordini di ciascun magazzino.], [RF07/04], [NI],
-    [TdS42], [Verificare che i supervisori locali possano visualizzare correttamente l’inventario del/dei magazzino/i a loro assegnato/i.], [RF07/05], [NI],
+    [TdS42], [Verificare che i supervisori locali possano visualizzare correttamente l’inventario#super[G] del/dei magazzino/i a loro assegnato/i.], [RF07/05], [NI],
     [TdS43], [Verificare che i supervisori locali possano visualizzare correttamente un report degli ordini del/dei magazzino/i a loro assegnato/i.], [RF07/06], [NI],
     [TdS44], [Verificare che i supervisori possano visualizzare correttamente lo stato di tutti i magazzini.], [RF08], [NI],
     [TdS45], [Verificare che i supervisori possano visualizzare correttamente le notifiche informative prodotte dal sistema.], [RF09/01], [NI],
     [TdS46], [Verificare che il supervisore globale possa accettare le richieste decisionali prodotte dal sistema.], [RF09/02], [NI],
     [TdS47], [Verificare che il supervisore globale possa rifiutare le richieste decisionali prodotte dal sistema.], [RF09/03], [NI],
-    [TdS48], [Verificare che, in caso di inserimento o modifica del valore di soglia minima in un prodotto da parte dei supervisori, si riceva un avviso nel caso in cui il valore di soglia minima non sia nella forma corretta.], [RF10/01 RF10/03 RF10/04 RF10/05 RF10/06 RF10/07], [NI],
-    [TdS49], [Verificare che, in caso di inserimento o modifica del valore di soglia massima in un prodotto da parte dei supervisori, si riceva un avviso nel caso in cui il valore di soglia massima non sia nella forma corretta.], [RF10/02 RF10/03 RF10/04 RF10/05 RF10/06 RF10/07], [NI],
-    [TdS50], [Verificare che ogni magazzino identifichi quando le scorte di un determinato prodotto scendono sotto una certa soglia.], [RF11/01], [NI],
-    [TdS51], [Verificare che ogni magazzino identifichi quando le scorte di un determinato prodotto salgono sopra una certa soglia.], [RF11/02], [NI],
-    [TdS52], [Verificare che ogni magazzino verifichi la disponibilità delle scorte prima di soddisfare un ordine.], [RF12/01], [NI],
-    [TdS53], [Verificare che ogni magazzino identifichi l’impossibilità di soddisfare un ordine.], [RF12/02], [NI],
-    [TdS54], [Verificare che ogni magazzino identifichi l’insufficienza di scorte per ciascun prodotto.], [RF12/03], [NI],
-    [TdS55], [Verificare che, in caso di insufficienza di scorte per un determinato prodotto, il magazzino in questione richieda un riassortimento al sistema.], [RF12/03], [NI],
+    [TdS48], [Verificare che, in caso di inserimento o modifica del valore di soglia minima in un prodotto#super[G] da parte dei supervisori, si riceva un avviso nel caso in cui il valore di soglia minima non sia nella forma corretta.], [RF10/01 RF10/03 RF10/04 RF10/05 RF10/06 RF10/07], [NI],
+    [TdS49], [Verificare che, in caso di inserimento o modifica del valore di soglia massima in un prodotto#super[G] da parte dei supervisori, si riceva un avviso nel caso in cui il valore di soglia massima non sia nella forma corretta.], [RF10/02 RF10/03 RF10/04 RF10/05 RF10/06 RF10/07], [NI],
+    [TdS50], [Verificare che ogni magazzino identifichi quando le scorte#super[G] di un determinato prodotto#super[G] scendono sotto una certa soglia.], [RF11/01], [NI],
+    [TdS51], [Verificare che ogni magazzino identifichi quando le scorte#super[G] di un determinato prodotto#super[G] salgono sopra una certa soglia.], [RF11/02], [NI],
+    [TdS52], [Verificare che ogni magazzino verifichi la disponibilità delle scorte#super[G] prima di soddisfare un ordine#super[G].], [RF12/01], [NI],
+    [TdS53], [Verificare che ogni magazzino identifichi l’impossibilità di soddisfare un ordine#super[G].], [RF12/02], [NI],
+    [TdS54], [Verificare che ogni magazzino identifichi l’insufficienza di scorte#super[G] per ciascun prodotto#super[G].], [RF12/03], [NI],
+    [TdS55], [Verificare che, in caso di insufficienza di scorte#super[G] per un determinato prodotto#super[G], il magazzino in questione richieda un riassortimento#super[G] al sistema.], [RF12/03], [NI],
     [TdS56], [Verificare che ogni magazzino abbia un tracciamento dello stato degli ordini.], [RF12/04], [NI],
-    [TdS57], [Verificare che i magazzini possono inviare merce tramite un ordine.], [RF12/05], [NI],
-    [TdS58], [Verificare che i magazzini possono ricevere un approvvigionamento di merce dall’esterno tramite un ordine.], [RF12/06], [NI],
-    [TdS59], [Verificare che i magazzini possono inviare merce verso l’esterno tramite un ordine.], [RF12/07], [NI],
+    [TdS57], [Verificare che i magazzini possono inviare merce tramite un ordine#super[G].], [RF12/05], [NI],
+    [TdS58], [Verificare che i magazzini possono ricevere un approvvigionamento#super[G] di merce dall’esterno tramite un ordine#super[G].], [RF12/06], [NI],
+    [TdS59], [Verificare che i magazzini possono inviare merce verso l’esterno tramite un ordine#super[G].], [RF12/07], [NI],
     [TdS60], [Verificare che il magazzino di destinazione notifichi l’arrivo della merce al magazzino di origine.], [RF12/08], [NI],
-    [TdS61], [Verificare che venga rispettata la forma dello stato dell’ordine. Sono ammessi i seguenti stati: “in attesa”, “in elaborazione”, “in transito”, “annullato”, “consegnato”.], [RF12/09], [NI],
+    [TdS61], [Verificare che venga rispettata la forma dello stato dell’ordine#super[G]. Sono ammessi i seguenti stati: “in attesa”, “in elaborazione”, “in transito”, “annullato”, “consegnato”.], [RF12/09], [NI],
     [TdS62], [Verificare che venga rispettata la forma dello stato del magazzino. Sono ammessi i seguenti stati: “online”, “offline”.], [RF14/01], [NI],
     [TdS63], [Verificare che il sistema mostri un avviso di un eventuale cambio di stato del magazzino.], [RF14/02], [NI],
     [TdS64], [Verificare che il sistema identifichi eventuali disconnessioni di uno o più magazzini segnandoli come offline.], [RF14/03], [NI],
-    [TdS65], [Verificare che il sistema sia in grado di programmare trasferimenti interni in caso di raggiungimento di una soglia critica di un prodotto in un magazzino.], [RF13/01], [NI],
+    [TdS65], [Verificare che il sistema sia in grado di programmare trasferimenti interni in caso di raggiungimento di una soglia critica di un prodotto#super[G] in un magazzino.], [RF13/01], [NI],
     [TdS66], [Verificare che, nel caso di un magazzino offline, quest’ultimo annulli gli ordini che non può soddisfare dopo un periodo di tempo predefinito.], [RF15/01], [NI],
-    [TdS67], [Verificare che il supervisore globale possa definire il periodo di tempo dopo cui l'ordine di un magazzino offline viene annullato.], [RF15/02], [NI],
+    [TdS67], [Verificare che il supervisore globale possa definire il periodo di tempo dopo cui l'ordine#super[G] di un magazzino offline viene annullato.], [RF15/02], [NI],
     [TdS68], [Verificare che il sistema riconosca il ritorno di un magazzino da “offline” a “online”.], [RF16/01], [NI],
-    [TdS69], [Verificare che un ordine “in transito” cambi il suo stato in “annullato” dopo il superamento di una soglia temporale predefinita.], [RF17/01], [NI],
-    [TdS70], [Verificare che il supervisore globale possa definire la soglia temporale dopo cui un ordine “in transito” cambi il suo stato in “annullato”.], [RF17/02], [NI],
+    [TdS69], [Verificare che un ordine#super[G] “in transito” cambi il suo stato in “annullato” dopo il superamento di una soglia temporale predefinita.], [RF17/01], [NI],
+    [TdS70], [Verificare che il supervisore globale possa definire la soglia temporale dopo cui un ordine#super[G] “in transito” cambi il suo stato in “annullato”.], [RF17/02], [NI],
   )
 #let caption_test_sistema = (
   [Test di sistema]
@@ -556,10 +568,10 @@ I test di accettazione vengono eseguiti per verificare che il software soddisfi 
 Il cruscotto di valutazione dei costi permette di monitorare l'andamento dei costi rispetto a quelli pianificati, evidenziando eventuali scostamenti e permettendo una gestione più efficace del budget. Le metriche principali includono il valore atteso, il costo attuale, il valore effettivo, l'indice di prestazione dei costi e il preventivo al completamento.
 
 #let valori_grafico_costi_atteso = (
-  (1,970), (2,1020), (3,1145), (4,1160), (5,1090), (6,1150), (7,980), (8,680)
+  (1,970), (2,1020), (3,1145), (4,1160), (5,1090), (6,1150), (7,980), (8,680), (9,1220), (10,1540), (11,1790), (12,1470)
 )
 #let valori_grafico_costi_reale = (
-  (1,970), (2,790), (3,1140), (4,1220), (5,955), (6,985), (7,980), (8,530)
+  (1,970), (2,790), (3,1140), (4,1220), (5,955), (6,985), (7,980), (8,530), (9,1205), (10,1380)
 )
 #show figure: set block(breakable: false)
 #show : graph_line.with(
@@ -570,7 +582,7 @@ Il cruscotto di valutazione dei costi permette di monitorare l'andamento dei cos
   label_reale: "Costo reale",
   label_x: "Sprint",
   label_y: "Costo",
-  y-max: 1400,
+  y-max: 1900,
   y-min: 0,
   y-tick-step: 100
 )
@@ -584,10 +596,10 @@ Il grafico del valore atteso ed effettivo mostra l'andamento del valore pianific
 Partendo dal budget iniziale di 14.430€, il valore atteso ed effettivo diminuisce progressivamente, in base ai costi sostenuti per ogni sprint. Il valore atteso rappresenta il budget pianificato per ogni sprint, mentre il valore effettivo rappresenta i costi reali sostenuti fino a quel momento.
 
 #let valori_grafico_valore_atteso = (
-  (0, 14430), (1, 13460), (2, 12440), (3, 11295), (4, 10135), (5, 9045), (6, 7895), (7, 6915), (8, 6235)
+  (0, 14430), (1, 13460), (2, 12440), (3, 11295), (4, 10135), (5, 9045), (6, 7895), (7, 6915), (8, 6235), (9,5640), (10,4100), (11,2310)
 )
 #let valori_grafico_valore_effettivo = (
-  (0, 14430), (1, 13460), (2, 12670), (3, 11530), (4, 10310), (5, 9355), (6, 8370), (7, 7390), (8, 6860)
+  (0, 14430), (1, 13460), (2, 12670), (3, 11530), (4, 10310), (5, 9355), (6, 8370), (7, 7390), (8, 6860), (9,5655), (10,4275)
 )
 #show figure: set block(breakable: false)
 #show : graph_line.with(
@@ -614,7 +626,7 @@ Il grafico dell'indice di prestazione dei tempi mostra l'andamento del tempo pia
 L'indice di prestazione dei tempi (SPI) è calcolato come il rapporto tra il valore pianificato e il valore effettivo. Se l'SPI è maggiore di 1, significa che il progetto sta procedendo più velocemente del previsto; se è inferiore a 1, significa che il progetto sta procedendo più lentamente del previsto.
 
 #let valori_grafico_spi = (
-  (1, 1.0), (2, 0.95), (3, 0.9), (4, 0.85), (5, 0.8), (6, 0.75), (7, 0.8), (8, 0.85)
+  (1, 1.0), (2, 0.95), (3, 0.9), (4, 0.85), (5, 0.8), (6, 0.75), (7, 0.8), (8, 0.85), (9, 0.85), (10, 0.8)
 )
 #show figure: set block(breakable: false)
 #show : graph_bar.with(
@@ -630,7 +642,7 @@ L'indice di prestazione dei tempi (SPI) è calcolato come il rapporto tra il val
 ) 
 
 L'indice di prestazione dei tempi mostra una tendenza al ribasso, indicando che il progetto sta procedendo più lentamente del previsto. Tuttavia, l'SPI è ancora superiore a 0.5, il che significa che il progetto sta comunque rispettando i tempi pianificati in modo accettabile.\
-Come si può notare dal grafico, abbiamo subito dei rallentamenti negli sprint centrali, dovuti allo studio delle tecnologie non conosciute e alla complessità dell'Analisi dei Requisiti#super[G] e della Progettazione#super[G]. \
+Come si può notare dal grafico, abbiamo subito dei rallentamenti negli sprint centrali, dovuti allo studio delle tecnologie non conosciute e alla complessità dell'Analisi dei Requisiti#super[G] e della progettazione. \
 Tuttavia, nell'ultimo sprint, che riguarda la fase di sviluppo del PoC, abbiamo recuperato parte del tempo perso, portando l'indice di prestazione dei tempi a 0.8. Il team prevede di mantenere questo ritmo di recupero anche nei prossimi sprint, cercando di migliorare ulteriormente l'efficienza.
 
 
@@ -639,7 +651,7 @@ Tuttavia, nell'ultimo sprint, che riguarda la fase di sviluppo del PoC, abbiamo 
 Il grafico dell'indice di stabilità dei requisiti mostra l'andamento della stabilità dei requisiti nel tempo. L'indice di stabilità dei requisiti è calcolato come il rapporto tra il numero di requisiti stabili e il numero totale di requisiti. Un indice più alto indica una maggiore stabilità dei requisiti, mentre un indice più basso indica una minore stabilità.
 
 #let valori_grafico_stabilita_requisiti = (
-  (1, 0.43), (2, 0.64), (3, 0.86), (4, 0.81), (5, 0.55), (6, 0.68), (7, 0.82), (8, 0.82)
+  (1, 0.43), (2, 0.64), (3, 0.86), (4, 0.81), (5, 0.55), (6, 0.68), (7, 0.82), (8, 0.82), (9, 0.82),
 )
 #show figure: set block(breakable: false)
 #show : graph_bar.with(
@@ -660,7 +672,7 @@ L'indice di stabilità dei requisiti mostra una tendenza al ribasso nel quinto s
 Il grafico dell'indice di Gulpease mostra l'andamento della leggibilità del documento nel tempo. Un indice più alto indica una maggiore leggibilità, mentre un indice più basso indica una minore leggibilità. L'obiettivo è mantenere l'indice sopra il valore minimo di 50 per garantire che il documento sia facilmente comprensibile.
 
 #let valori_grafico_gulpease = (
-  (1, 40), (2, 38), (3, 50), (4, 55), (5, 58), (6, 58), (7, 58), (8, 61)
+  (1, 40), (2, 38), (3, 50), (4, 55), (5, 58), (6, 58), (7, 58), (8, 61), (9, 60), (10, 60)
 )
 #show figure: set block(breakable: false)
 #show : graph_bar.with(

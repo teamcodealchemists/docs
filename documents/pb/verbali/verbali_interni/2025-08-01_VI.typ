@@ -1,7 +1,7 @@
 #import "../../../../src/basic.typ": *
 
 // VARIABILI
-#let titolo = "Verbale interno del "
+#let titolo = "Verbale Interno del "
 #let data = "01/08/2025"
 #let titolo = titolo + data
 #let status = "Approvato"

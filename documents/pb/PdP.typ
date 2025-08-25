@@ -16,7 +16,7 @@
 #let titolo = "Piano di Progetto"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "1.0.0"
+#let versione = "1.2.1"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -27,6 +27,24 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+
+  [1.2.1],
+  [18/08/2025],
+  [N. Bolzon],
+  [M. Dalla Pozza],
+  [Piccola correzione grafica di visualizzazione tabelle Sprint 10.],  
+  
+  [1.2.0],
+  [18/08/2025],
+  [N. Bolzon],
+  [M. Dalla Pozza],
+  [Aggiunta del contenuto: Sprint 10, preventivo e pianificazione Sprint 11.],
+
+  [1.1.0],
+  [01/08/2025],
+  [N. Bolzon],
+  [S. Marana],
+  [Aggiunta del contenuto: Sprint 9, preventivo e pianificazione Sprint 10.],
 
   [1.0.0],
   [16/07/2025],
@@ -1652,7 +1670,7 @@ In conclusione si prevede che per l'ottavo sprint#super[G] si presenti il POC#su
 #v(1em)
 Inizio: #h(1.99cm)*04-07-2025*\
 Fine Prevista: #h(0.65cm)*18-07-2025*\
-Fine Reale: #h(1.12cm)**\
+Fine Reale: #h(1.12cm)*18-07-2025*\
 Giorni di ritardo: #h(0.15cm)*0*
 
 ==== Informazioni generali e attività da svolgere
@@ -1699,13 +1717,13 @@ I possibili rischi :
 #tabella_preventivo_consuntivo(
   dati: (
     [Nicolò Bolzon],        [], [], [], [], [], [10],
-    [Mattia Dalla Pozza],   [], [], [], [], [4(-2)], [],
-    [Sebastiano Marana],    [], [], [], [], [4(-2)], [],
-    [Nicholas Moretto],     [], [], [], [], [4(-2)], [],
+    [Mattia Dalla Pozza],   [], [], [], [], [4 (-2)], [],
+    [Sebastiano Marana],    [], [], [], [], [4 (-2)], [],
+    [Nicholas Moretto],     [], [], [], [], [4 (-2)], [],
     [Matteo Pretto],        [5], [], [], [], [], [],
     [Alex Shu],             [], [4], [], [], [], [],
-    [Stefano Speranza],     [], [], [], [], [4(-2)], [],
-    [Ramona Zangla],        [], [], [], [], [4(-2)], [],
+    [Stefano Speranza],     [], [], [], [], [4 (-2)], [],
+    [Ramona Zangla],        [], [], [], [], [4 (-2)], [],
   ),
   didascalia: "Sprint 8 - Consuntivo ore per ciascun componente"
 )
@@ -1718,13 +1736,13 @@ I possibili rischi :
 #align(center)[
   #tabella_aggiornamento_risorse(
     dati: (
-      [Responsabile#super[G]],    [30€/h],   [5],   [150€],   [32(-5)],   [960€ (-150€)],
-      [Amministratore#super[G]],  [20€/h],   [4],   [80€],    [37(-4)],   [740€ (-80€)],
+      [Responsabile#super[G]],    [30€/h],   [5],   [150€],   [32 (-5)],    [960€ (-150€)],
+      [Amministratore#super[G]],  [20€/h],   [4],   [80€],    [37 (-4)],    [740€ (-80€)],
       [Analista#super[G]],        [25€/h],   [-],   [-],   [0],    [0€],
-      [Progettista#super[G]],     [25€/h],   [-],  [-],   [101], [2525€],
-      [Programmatore#super[G]],   [15€/h],   [10],   [150€],  [136(-10)], [2040€ (-150€)],
-      [Verificatore#super[G]],    [15€/h],   [10],   [150€],   [73(-10)],  [1125€ (-150€)],
-      [*Totale*],                 [*-*],     [*29*],[*530€*],[*438 (-29)*],[*7390€ (-530€)*],
+      [Progettista#super[G]],     [25€/h],   [-],  [-],   [101],            [2525€],
+      [Programmatore#super[G]],   [15€/h],   [10],   [150€],  [136 (-10)],  [2040€ (-150€)],
+      [Verificatore#super[G]],    [15€/h],   [10],   [150€],   [73 (-10)],  [1125€ (-150€)],
+      [*Totale*],                 [*-*],     [*29*],[*530€*],[*438 (-29)*], [*7390€ (-530€)*],
     ),
     didascalia: "Sprint 8 - Aggiornamento delle risorse disponibili"
   )
@@ -1748,14 +1766,14 @@ Inoltre, il team ha lavorato alla preparazione della documentazione necessaria p
 #v(1em)
 Inizio: #h(1.99cm)*18-07-2025*\
 Fine Prevista: #h(0.65cm)*01-08-2025*\
-Fine Reale: #h(1.12cm)**\
+Fine Reale: #h(1.12cm)*01-08-2025*\
 Giorni di ritardo: #h(0.15cm)*0*
 
 ==== Informazioni generali e attività da svolgere
 #v(1em)
 - Presentazione RTB#super[G] con i docenti;
 - Inizio della progettazione dettagliata dell'MVP#super[G] ;
-- Inizio della programmazione dell'MVP#super[G] .
+- Inizio della programmazione del MVP#super[G].
 
 ==== Rischi attesi
 #v(1em)
@@ -1779,5 +1797,155 @@ I possibili rischi :
     [Ramona Zangla],[],[],[],[8],[],[],
   ),
   didascalia: "Sprint 9 - Preventivo ore per ciascun componente"
+)
+]
+
+==== Consuntivo
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],        [],   [],   [],   [],   [8],  [],
+    [Mattia Dalla Pozza],   [],   [],   [],   [],   [8],  [],
+    [Sebastiano Marana],    [5],  [],   [],   [],   [],   [],
+    [Nicholas Moretto],     [],   [4],  [],   [],   [],   [],
+    [Matteo Pretto],        [],   [],   [],   [8],  [],   [],
+    [Alex Shu],             [],   [],   [],   [8],  [],   [],
+    [Stefano Speranza],     [],   [],   [],   [],   [],   [9 (-1)],
+    [Ramona Zangla],        [],   [],   [],   [8],  [],   [],
+  ),
+  didascalia: "Sprint 9 - Consuntivo ore per ciascun componente"
+)
+]
+
+==== Aggiornamento delle risorse rimanenti  
+#v(1em)
+#align(center)[
+  #tabella_aggiornamento_risorse(
+    dati: (
+      [Responsabile#super[G]],    [30€/h],   [5],       [150€],         [27 (-5)],     [810€ (-150€)],
+      [Amministratore#super[G]],  [20€/h],   [4],       [80€],          [33 (-4)],     [660€ (-80€)],
+      [Analista#super[G]],        [25€/h],   [-],       [-],            [0],           [0€],
+      [Progettista#super[G]],     [25€/h],   [24],      [600€],         [101 (-24)],   [2525€ (-600€)],
+      [Programmatore#super[G]],   [15€/h],   [16],      [240€],         [126 (-16)],   [1890€ (-240€)],
+      [Verificatore#super[G]],    [15€/h],   [9],       [135€],         [65 (-9)],     [975€ (-135€)],
+      [*Totale*],                 [*-*],     [*58*],    [*1205€*],      [*352 (-58)*], [*6860€ (-1205€)*],
+    ),
+    didascalia: "Sprint 9 - Aggiornamento delle risorse disponibili"
+  )
+]
+
+//-----------
+#pagebreak()
+=== Sprint 10
+#v(1em)
+Inizio: #h(1.99cm)*01-08-2025*\
+Fine Prevista: #h(0.65cm)*16-08-2025*\
+Fine Reale: #h(1.12cm)*16-08-2025*\
+Giorni di ritardo: #h(0.15cm)*0*
+
+==== Informazioni generali e attività da svolgere
+#v(1em)
+- Revisione esiti della RTB#super[G] ricevuti dai docenti;
+- Aggiornamento della documentazione sulla base dei feedback ricevuti durante la revisione RTB#super[G];
+- Progettazione dettagliata del MVP#super[G];
+- Esercitazione pratica di programmazione.
+
+==== Rischi attesi
+#v(1em)
+I possibili rischi :
+- RT1: Rischio Tecnologico derivato da inesperienza nell'uso delle tecnologie nel progetto;
+- RT2: Rischio Tecnologico derivato dall'utilizzo errato o non ottimale delle tecnologie;
+- RC1: Tempi di risposta lunghi
+- RI1: Rischio Individuale legato a impegni personali, universitari e indisponibilità;
+
+==== Preventivo
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],        [], [], [], [8], [],  [],
+    [Mattia Dalla Pozza],   [5],[], [], [],  [],  [],
+    [Sebastiano Marana],    [], [], [], [],  [],  [10],
+    [Nicholas Moretto],     [], [], [], [8], [],  [],
+    [Matteo Pretto],        [], [4],[], [],  [],  [],
+    [Alex Shu],             [], [], [], [],  [8], [],
+    [Stefano Speranza],     [], [], [], [8], [],  [],
+    [Ramona Zangla],        [], [], [], [8], [],  [],
+  ),
+  didascalia: "Sprint 10 - Preventivo ore per ciascun componente"
+)
+]
+
+==== Consuntivo
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],        [],   [],   [],   [8],      [],         [],
+    [Mattia Dalla Pozza],   [5],  [],   [],   [],       [],         [],
+    [Sebastiano Marana],    [],   [],   [],   [],       [],         [10],
+    [Nicholas Moretto],     [],   [],   [],   [8],      [],         [],
+    [Matteo Pretto],        [],   [4],  [],   [],       [],         [],
+    [Alex Shu],             [],   [],   [],   [],       [10(+2)],  [],
+    [Stefano Speranza],     [],   [],   [],   [8],      [],         [],
+    [Ramona Zangla],        [],   [],   [],   [10(+2)], [],         [],
+  ),
+  didascalia: "Sprint 10 - Consuntivo ore per ciascun componente"
+)
+]
+
+==== Aggiornamento delle risorse rimanenti  
+#v(1em)
+#align(center)[
+  #tabella_aggiornamento_risorse(
+    dati: (
+      [Responsabile#super[G]],    [30€/h],   [5],       [150€],         [22 (-5)],     [660€ (-150€)],
+      [Amministratore#super[G]],  [20€/h],   [4],       [80€],          [29 (-4)],     [580€ (-80€)],
+      [Analista#super[G]],        [25€/h],   [-],       [-],            [0],           [0€],
+      [Progettista#super[G]],     [25€/h],   [34],      [850€],         [77 (-34)],    [1925€ (-850€)],
+      [Programmatore#super[G]],   [15€/h],   [10],      [150€],         [110 (-10)],   [1650€ (-150€)],
+      [Verificatore#super[G]],    [15€/h],   [10],      [150€],         [56 (-10)],    [840€ (-150€)],
+      [*Totale*],                 [*-*],     [*63*],    [*1380€*],      [*294 (-63)*], [*5655€ (-1380€)*],
+    ),
+    didascalia: "Sprint 10 - Aggiornamento delle risorse disponibili"
+  )
+]
+
+//-----------
+#pagebreak()
+=== Sprint 11
+#v(1em)
+Inizio: #h(1.99cm)*18-08-2025*\
+Fine Prevista: #h(0.65cm)*29-08-2025*\
+Fine Reale: #h(1.12cm)**\
+Giorni di ritardo: #h(0.15cm)**
+
+==== Informazioni generali e attività da svolgere
+#v(1em)
+- Completamento della progettazione dettagliata dell’MVP#super[G];
+- Programmazione dei microservizi del MVP#super[G].
+- Continuazione della stesura dei documenti (Piano di Progetto, Specifica Tecnica)
+
+==== Rischi attesi
+#v(1em)
+I possibili rischi :
+- RT1: Rischio Tecnologico derivato da inesperienza nell'uso delle tecnologie nel progetto;
+- RT2: Rischio Tecnologico derivato dall'utilizzo errato o non ottimale delle tecnologie;
+- RT3: Errori di codifica o programmazione;
+- RT4: Rischio di supporto e versione delle tecnologie;
+- RI3: Difficoltà di "comprensione" o lavoro;
+
+==== Preventivo
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],        [], [], [], [8], [],  [],
+    [Mattia Dalla Pozza],   [], [], [], [],  [],  [10],
+    [Sebastiano Marana],    [], [], [], [],  [10],[],
+    [Nicholas Moretto],     [5],[], [], [],  [],  [],
+    [Matteo Pretto],        [], [], [], [],  [10],[],
+    [Alex Shu],             [], [], [], [8], [],  [],
+    [Stefano Speranza],     [], [], [], [8], [],  [],
+    [Ramona Zangla],        [], [], [], [],  [10],[],
+  ),
+  didascalia: "Sprint 11 - Preventivo ore per ciascun componente"
 )
 ]
