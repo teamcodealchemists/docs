@@ -27,7 +27,7 @@
   /* formato:  [text],  OPPURE  "text",  */
   
   [2.0.0], [27/08/2025], [_M31_], [-], [Approvazione del documento da parte di _M31_],
-  [1.0.0], [26/08/2025], [-], [M. Dalla Pozza], [Approvazione interna del documento],
+  [1.0.0], [26/08/2025], [N. Moretto], [M. Dalla Pozza], [Approvazione interna del documento],
   [0.1.0], [26/08/2025], [N. Bolzon],[M. Dalla Pozza], [Redazione iniziale del documento]
 
 )
