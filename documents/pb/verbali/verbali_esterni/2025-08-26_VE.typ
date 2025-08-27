@@ -74,17 +74,17 @@
 La riunione si è tenuta in modalità online per necessità del Team _Code Alchemists_ al fine di limitare il tempo degli spostamenti e ottimizzare il tmepo di lavoro necessario per lo svolgimento dei lavori di gruppo.
 
 == 2.1 Presentazione dello stato di avanzamento del progetto didattico
-L'attuale responsabile#super[G] del team, *#p.nicholas*, ha illustrato ai rappresentanti di _M31_ lo stato di avanzamento del progetto, evidenziando sia la progettazione dettagliata sia l’implementazione. Sono stati designati i seguenti microservizi#super[G]: inventario#super[G], inventario#super[G] aggregato, ordini, ordini aggregato, stato, stato aggregato, autenticazione#super[G], sistema centralizzato e routing.
+L'attuale responsabile#super[G] del team, *#p.nicholas*, ha illustrato ai rappresentanti di _M31_ lo stato di avanzamento del progetto, evidenziando sia la progettazione dettagliata sia l’implementazione. Sono stati designati i seguenti microservizi#super[G]: inventario#super[G], inventario#super[G] aggregato, ordini#super[G], ordini#super[G] aggregato, stato, stato aggregato, autenticazione#super[G], sistema centralizzato e routing.
 
 È stata quindi presentata la *saga ordine#super[G]*, distinguendo due scenari principali:
 
  - *Vendite*: riserva della merce disponibile; spedizione immediata se completa, altrimenti avvio di riassortimento#super[G]; annullamento dell’ordine#super[G] in caso di indisponibilità generale.
- - *Trasferimento Interno#super[G]*: riserva della merce; creazione dell’ordine#super[G] in arrivo nel magazzino di destinazione se disponibile; annullamento e notifica al supervisore in caso contrario.
+ - *Trasferimento#super[G] Interno*: riserva della merce; creazione dell’ordine#super[G] in arrivo nel magazzino di destinazione se disponibile; annullamento e notifica al supervisore in caso contrario.
 
 Sono stati infine illustrati i due tipi di *riassortimento*#super[G]:
 
- - *Ordine#super[G] non soddisfacibile*: verifica tramite ordini aggregati e reperimento merce tramite inventario#super[G] aggregato, dal magazzino più vicino a quello più lontano.
- - *Superamento soglia critica*: controllo tramite ordini aggregati e reperimento merce tramite inventario#super[G] aggregato, secondo lo stesso criterio di prossimità.
+ - *Ordine#super[G] non soddisfacibile*: verifica tramite ordini#super[G] aggregati e reperimento merce tramite inventario#super[G] aggregato, dal magazzino più vicino a quello più lontano.
+ - *Superamento soglia critica*: controllo tramite ordini#super[G] aggregati e reperimento merce tramite inventario#super[G] aggregato, secondo lo stesso criterio di prossimità.
 
 == 2.2 Discussione relativa all'autenticazione con ResGate
 Come suggerito dal *#p.cardin*, *#p.sebastiano* ha presentato all’azienda _M31_ la proposta di utilizzo di *ResGate*, un API Gateway che fornisce anche il servizio di autenticazione#super[G].
@@ -107,7 +107,7 @@ All’interno del progetto è stata predisposta una cartella Summary, contenente
 
 È stato sottolineato, da parte di _M31_ che i *test di accettazione* rivestono un’importanza fondamentale, in quanto dimostrano che chiunque può eseguirli e che i committenti#super[G] possono verificarne l’esito in fase di consegna. Ogni test deve indicare chiaramente le precondizioni _(ciò che serve per eseguirlo)_ e le postcondizioni _(i risultati attesi)_. L'azienda si aspetta che i test siano redatti in maniera accurata e completa, poiché rappresentano una dimostrazione concreta della corretta implementazione delle funzionalità. È stato inoltre evidenziato che, oltre al contenuto, anche la forma di redazione è ritenuta rilevante.
 
-Nel processo di sviluppo software, la consegna al cliente è vincolata al superamento dei test: chi sviluppa afferma che _“tutto funziona”_, ma è il cliente a verificarlo mediante il Test Book _(o Test di Validazione/Accettazione)_. Tale documento raccoglie l’elenco dei test da eseguire alla consegna del progetto.
+Nel processo di sviluppo software, la consegna al cliente è vincolata al superamento dei test: chi sviluppa afferma che _“tutto funziona”_, ma è il cliente a verificarlo mediante il Test Book _(o Test di Validazione#super[G]/Accettazione)_. Tale documento raccoglie l’elenco dei test da eseguire alla consegna del progetto.
 
 Si è concordato con l’azienda _M31_ che non si accetteranno Test Book con errori critici, ma potrà tollerare una quota massima del 5% di test non critici falliti (ad esempio, 2 su 30), a condizione che vengano corretti prima della consegna definitiva.
 
