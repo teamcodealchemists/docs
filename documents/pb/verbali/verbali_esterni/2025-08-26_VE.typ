@@ -60,9 +60,9 @@
   In data *26 agosto 2025*, dalle ore *15:00* alle ore *15:45*, si è svolta, in modalità virtuale tramite la piattaforma _Microsoft Teams_, una riunione con l'azienda _M31_ per presentare lo stato attuale di avanzamento del progetto didattico.
   
   A questo incontro hanno partecipato per conto di _M31_:
-  - Moones Mobaraki
-  - Cristian Pirlog
-  - Luca Cossaro
+  - Moones Mobaraki,
+  - Cristian Pirlog,
+  - Luca Cossaro.
 
 == 1.1 Ordine del Giorno
  + Presentazione dello stato di avanzamento del progetto didattico.
@@ -112,12 +112,12 @@ Nel processo di sviluppo software, la consegna al cliente è vincolata al supera
 Si è concordato con l’azienda _M31_ che non si accetteranno Test Book con errori critici, ma potrà tollerare una quota massima del 5% di test non critici falliti (ad esempio, 2 su 30), a condizione che vengano corretti prima della consegna definitiva.
 
 Il Test Book deve contenere per ciascun test:
-- Identificativo del test
-- Prerequisiti
-- Procedura di esecuzione _(descritta passo per passo)_
-- Risultato atteso
-- Esito _(PASS/FAIL)_
-- Eventuali note, con indicazione della criticità in caso di FAIL
+- Identificativo del test,
+- Prerequisiti,
+- Procedura di esecuzione _(descritta passo per passo)_,
+- Risultato atteso,
+- Esito _(PASS/FAIL)_,
+- Eventuali note, con indicazione della criticità in caso di FAIL.
 
 In forma opzionale, può essere allegata una tabella riassuntiva dei test.
 
@@ -139,7 +139,7 @@ Per garantire l’efficacia dei test, la loro esecuzione dovrebbe essere affidat
 
     #let voci_tabella = (
     [A34], [Relizzare il Test Book da consegnare all'azienda qualche giorno prima della consegna.],
-    [DOC33], [Stesura del Verbale Esterno del 26-08-2025],
+    [DOC33], [Stesura del Verbale Esterno del 26-08-2025.],
   )
   
   #show: decision_table.with(
