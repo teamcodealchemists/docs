@@ -16,7 +16,7 @@
 #let status = "In redazione"
 #let destinatario = "M31"
 
-#let versione = "0.1.0"
+#let versione = "0.2.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -30,17 +30,17 @@
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
 
-  [0.0.2],
-  [],
-  [M. Dalla Pozza],
-  [-],
-  [Tecnologie utilizzate e architettura],
-
-  [0.0.1],
+  [0.2.0],
   [13/08/2025],
   [N. Bolzon \ A. Shu],
   [S. Marana],
   [Stesura del documento, sezioni Introduzione, Tecnologie, Architettura.],
+
+  [0.1.0],
+  [09/08/2025],
+  [M. Dalla Pozza],
+  [S. Marana],
+  [Stesura del documento, sezioni Tecnologie utilizzate e architettura.],
 
   [0.0.1],
   [30/07/2025],
@@ -179,31 +179,27 @@ in categorie in base al loro ruolo all'interno dell'architettura:
 - soluzioni per la virtualizzazione e il deployment
 - piattaforme per il monitoraggio del sistema.
 
+
+// ATTENZIONE!!!!!!!!!!!!!!!!!!!! LE VERSIONI SONO TUTTE DA CONTROLLARE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 == Linguaggi di programmazione
 #v(1em)
 
 #figure(
   table(
-    columns: (1fr, 0.60fr, 3.5fr, 1fr),
-
-    
+    columns: (1fr, 1fr, 4fr),
     align: center + horizon,
     inset: 8pt,
 
     // Header row
-    text(white)[*Nome*], text(white)[*Versione*], text(white)[*Descrizione*], text(black)[*Impiego*],
+    [*Tecnologia*], [*Versione*], [*Descrizione*],
 
     //table row
-    [*Typescript*], [1.24.0], [Linguaggio di programmazione superset di JavaScript, progettato per aggiungere tipizzazione statica e altre funzionalità.
-Sviluppo di applicazioni scalabili, miglioramento della qualità del codice, utilizzo con framework come Angular, React e Node.js.], [Test],
-    [*JavaScript*], [1.24.0], [Linguaggio di programmazione interpretato, principalmente utilizzato per il lato client nelle applicazioni web.
-Sviluppo frontend, dinamismo e interattività delle pagine web, utilizzato con framework come React, Vue.js, Angular.], [Test],
-    [*YAML*], [1.24.0], [Formato di serializzazione dei dati leggibile dall'uomo, spesso usato per configurazioni.
-Definizione di file di configurazione, deployment automation, utilizzato con sistemi come Kubernetes, Docker e CI/CD pipelines.], [Test],
-    [*JSON*], [1.24.0], [Formato di scambio dati basato su testo, semplice e leggero, ampiamente utilizzato per la comunicazione tra server e client.
-Scambio di dati tra server e applicazioni web, configurazione di API, utilizzato in contesti come RESTful services e architetture microservizi.], [Test],
+    [*Typescript*], [1.24.0], [Linguaggio di programmazione superset di JavaScript, progettato per aggiungere tipizzazione statica e altre funzionalità. Sviluppo di applicazioni scalabili, miglioramento della qualità del codice, utilizzo con framework come Angular, React e Node.js.],
+    [*JavaScript*], [1.24.0], [Linguaggio di programmazione interpretato, principalmente utilizzato per il lato client nelle applicazioni web. Sviluppo frontend, dinamismo e interattività delle pagine web, utilizzato con framework come React, Vue.js, Angular.],
+    [*YAML*], [1.24.0], [Formato di serializzazione dei dati leggibile dall'uomo, spesso usato per configurazioni. Definizione di file di configurazione, deployment automation, utilizzato con sistemi come Kubernetes, Docker e CI/CD pipelines.],
+    [*JSON*], [1.24.0], [Formato di scambio dati basato su testo, semplice e leggero, ampiamente utilizzato per la comunicazione tra server e client. Scambio di dati tra server e applicazioni web, configurazione di API, utilizzato in contesti come RESTful services e architetture microservizi.],
   ),
-  caption: [Linguaggi di programmazione],
+  caption: [Linguaggi di programmazione.],
 )
 
 
@@ -212,21 +208,17 @@ Scambio di dati tra server e applicazioni web, configurazione di API, utilizzato
 
 #figure(
   table(
-    columns: (1fr, 0.60fr, 3.5fr, 1fr),
-
-    
+    columns: (1fr, 1fr, 4fr),
     align: center + horizon,
     inset: 8pt,
 
     // Header row
-    text(white)[*Nome*], text(white)[*Versione*], text(white)[*Descrizione*], text(black)[*Impiego*],
+    [*Tecnologia*], [*Versione*], [*Descrizione*],
 
     //table row
-    [*NestJs*], [1.24.0], [Framework per applicazioni Node.js basato su TypeScript, progettato per costruire applicazioni scalabili e modulari.
-Sviluppo di backend robusti e mantenibili, costruzione di API RESTful, utilizzo con TypeORM, GraphQL, microservizi.]
-
+    [*NestJs*], [1.24.0], [Framework per applicazioni Node.js basato su TypeScript, progettato per costruire applicazioni scalabili e modulari. Sviluppo di backend robusti e mantenibili, costruzione di API RESTful, utilizzo con TypeORM, GraphQL, microservizi.]
   ),
-  caption: [Frameworks],
+  caption: [Frameworks.],
 )
 
 
@@ -235,21 +227,18 @@ Sviluppo di backend robusti e mantenibili, costruzione di API RESTful, utilizzo 
 
 #figure(
   table(
-    columns: (1fr, 0.60fr, 3.5fr, 1fr),
-
-    
+    columns: (1fr, 1fr, 4fr),
     align: center + horizon,
     inset: 8pt,
 
     // Header row
-    text(white)[*Nome*], text(white)[*Versione*], text(white)[*Descrizione*], text(black)[*Impiego*],
+    [*Tecnologia*], [*Versione*], [*Descrizione*],
 
     //table row
-    [*MongoDB*], [1.24.0], [Database NoSQL orientato ai documenti, progettato per gestire grandi volumi di dati non strutturati o semi-strutturati.
-                            Archiviazione flessibile di dati JSON-like, scalabilità orizzontale, ideale per applicazioni web moderne, sistemi distribuiti, e gestione di dati in tempo reale.]
+    [*MongoDB*], [1.24.0], [Database NoSQL orientato ai documenti, progettato per gestire grandi volumi di dati non strutturati o semi-strutturati. Archiviazione flessibile di dati JSON-like, scalabilità orizzontale, ideale per applicazioni web moderne, sistemi distribuiti, e gestione di dati in tempo reale.]
 
   ),
-  caption: [Persistenza dei dati],
+  caption: [Tecnologie per la gestione dei dati.],
 )
 
 //DB
@@ -258,21 +247,17 @@ Sviluppo di backend robusti e mantenibili, costruzione di API RESTful, utilizzo 
 
 #figure(
   table(
-    columns: (1fr, 0.60fr, 3.5fr, 1fr),
-
-    
+    columns: (1fr, 1fr, 4fr),
     align: center + horizon,
     inset: 8pt,
 
     // Header row
-    text(white)[*Nome*], text(white)[*Versione*], text(white)[*Descrizione*], text(black)[*Impiego*],
+    [*Tecnologia*], [*Versione*], [*Descrizione*],
 
     //table row
-    [*NATS*], [1.24.0], [Sistemi di messaggistica leggeri e ad alte prestazioni per la comunicazione asincrona tra microservizi.
-                        Gestione di eventi, comunicazione in tempo reale, utilizzato in architetture a microservizi, IoT, e applicazioni distribuite.]
-
+    [*NATS*], [1.24.0], [Sistemi di messaggistica leggeri e ad alte prestazioni per la comunicazione asincrona tra microservizi. Gestione di eventi, comunicazione in tempo reale, utilizzato in architetture a microservizi, IoT, e applicazioni distribuite.]
   ),
-  caption: [messaggistica],
+  caption: [Tecnologie per la comunicazione e per la messaggistica.],
 )
 
 //NATS
@@ -281,21 +266,18 @@ Sviluppo di backend robusti e mantenibili, costruzione di API RESTful, utilizzo 
 
 #figure(
   table(
-    columns: (1fr, 0.60fr, 3.5fr, 1fr),
-
-    
+    columns: (1fr, 1fr, 4fr),
     align: center + horizon,
     inset: 8pt,
 
     // Header row
-    text(white)[*Nome*], text(white)[*Versione*], text(white)[*Descrizione*], text(black)[*Impiego*],
+    [*Tecnologia*], [*Versione*], [*Descrizione*],
 
     //table row
-    [*Docker*], [1.24.0], [Piattaforma per la creazione, distribuzione e gestione di container, che permette di isolare applicazioni e dipendenze.
-                          Virtualizzazione leggera, gestione di ambienti di sviluppo e produzione, automazione del deployment, utilizzato in DevOps e CI/CD pipelines.]
+    [*Docker*], [1.24.0], [Piattaforma per la creazione, distribuzione e gestione di container, che permette di isolare applicazioni e dipendenze. Virtualizzazione leggera, gestione di ambienti di sviluppo e produzione, automazione del deployment, utilizzato in DevOps e CI/CD pipelines.]
 
   ),
-  caption: [Virtualizzazione],
+  caption: [Tecnologie per la virtualizzazione.],
 )
 
 //Docker
@@ -305,20 +287,18 @@ Sviluppo di backend robusti e mantenibili, costruzione di API RESTful, utilizzo 
 
 #figure(
   table(
-    columns: (1fr, 0.60fr, 3.5fr, 1fr),
-
-    
+    columns: (1fr, 1fr, 4fr),
     align: center + horizon,
     inset: 8pt,
 
     // Header row
-    text(white)[*Nome*], text(white)[*Versione*], text(white)[*Descrizione*], text(black)[*Impiego*],
+    [*Tecnologia*], [*Versione*], [*Descrizione*],
 
     //table row
-    [**], [1.24.0], []
+    [**], [], []
 
   ),
-  caption: [Monitoraggio],
+  caption: [Tecnologie per il monitoraggio dei microservizi.],
 )
 
 
@@ -329,20 +309,18 @@ Sviluppo di backend robusti e mantenibili, costruzione di API RESTful, utilizzo 
 
 #figure(
   table(
-    columns: (1fr, 0.60fr, 3.5fr, 1fr),
-
-    
+    columns: (1fr, 1fr, 4fr),
     align: center + horizon,
     inset: 8pt,
 
     // Header row
-    text(white)[*Nome*], text(white)[*Versione*], text(white)[*Descrizione*], text(black)[*Impiego*],
-
+    [*Tecnologia*], [*Versione*], [*Descrizione*],
+    
     //table row
-    [**], [1.24.0], []
+    [**], [], []
 
   ),
-  caption: [Analisi statica],
+  caption: [Tecnologie per l'analisi statica.],
 )
 
 == Tecnologie per l'analisi dinamica
@@ -350,21 +328,21 @@ Sviluppo di backend robusti e mantenibili, costruzione di API RESTful, utilizzo 
 
 #figure(
   table(
-    columns: (1fr, 0.60fr, 3.5fr, 1fr),
-
-    
+    columns: (1fr, 1fr, 4fr),
     align: center + horizon,
     inset: 8pt,
 
     // Header row
-    text(white)[*Nome*], text(white)[*Versione*], text(white)[*Descrizione*], text(black)[*Impiego*],
-
+    [*Tecnologia*], [*Versione*], [*Descrizione*],
+    
     //table row
-    [**], [1.24.0], []
+    [**], [], []
 
   ),
-  caption: [Analisi dinamica],
+  caption: [Tecnologie per l'analisi dinamica.],
 )
+
+
 //dire cosa abbiamo usato per fare i test
 
 == Librerie
@@ -372,20 +350,18 @@ Sviluppo di backend robusti e mantenibili, costruzione di API RESTful, utilizzo 
 
 #figure(
   table(
-    columns: (1fr, 0.60fr, 3.5fr, 1fr),
-
-    
+    columns: (1fr, 1fr, 4fr),
     align: center + horizon,
     inset: 8pt,
 
     // Header row
-    text(white)[*Nome*], text(white)[*Versione*], text(white)[*Descrizione*], text(black)[*Impiego*],
-
+    [*Tecnologia*], [*Versione*], [*Descrizione*],
+    
     //table row
-    [**], [1.24.0], []
+    [**], [], []
 
   ),
-  caption: [Analisi dinamica],
+  caption: [Librerie.],
 )
 
 = Architettura
@@ -403,16 +379,14 @@ I tre principi fondamentali su cui si basa L'architettura esagonale sono:
 
 - Indipendenza della logica di business: Il cuore dell'applicazione è separato dai dettagli tecnici esterni.
 
-- Porte e adattatori: Le porte definiscono le interfacce che permettono la comunicazione tra il nucleo centrale e l'esterno, mentre gli adattatori 
-                      implementano queste interfacce per tecnologie specifiche.
+- Porte e adattatori: Le porte definiscono le interfacce che permettono la comunicazione tra il nucleo centrale e l'esterno, mentre gli adattatori implementano queste interfacce per tecnologie specifiche.
 
-- Sostituibilità delle dipendenze: È possibile sostituire facilmente componenti come database, framework o altre dipendenze senza influenzare 
-                                   la logica di business centrale.
+- Sostituibilità delle dipendenze: È possibile sostituire facilmente componenti come database, framework o altre dipendenze senza influenzare la logica di business centrale.
 
 E di conseguenza l'architettura si articola in tre componenti principali:
 
 - Core (Dominio e Logica di Business): Il nucleo dell'applicazione che contiene le regole fondamentali e la logica di business, 
-                                      completamente disaccoppiato dalle tecnologie esterne.
+                                       completamente disaccoppiato dalle tecnologie esterne.
 
 - Porte (Ports): Definiscono i punti di accesso e uscita, regolando come il sistema interagisce con l'esterno.
 
@@ -448,9 +422,7 @@ Le principali ragioni che hanno portato a questa scelta includono:
   aggiungendo nuove funzionalità o migliorando quelle esistenti senza dover riscrivere completamente l'applicazione. 
   Inoltre, è possibile scalare i microservizi in modo indipendente in base al carico di lavoro.
 
-- Adattamento alle esigenze future: L'architettura a microservizi offre la possibilità di integrare facilmente nuove tecnologie, 
-  strumenti o piattaforme, senza compromettere la stabilità dell'intero sistema. Ciò consente al sistema di evolvere in modo agile 
-  e rispondere rapidamente alle esigenze del business.
+- Adattamento alle esigenze future: L'architettura a microservizi offre la possibilità di integrare facilmente nuove tecnologie, strumenti o piattaforme, senza compromettere la stabilità dell'intero sistema. Ciò consente al sistema di evolvere in modo agile  e rispondere rapidamente alle esigenze del business.
 
 In conclusione, l'architettura esagonale rappresenta una scelta ideale per garantire modularità, sostenibilità a lungo termine e un'elevata capacità di adattamento alle esigenze future del sistema.
 
@@ -464,10 +436,75 @@ In conclusione, l'architettura esagonale rappresenta una scelta ideale per garan
 ==== Motivazioni dell'utilizzo del (nome pattern)
 
 == Microservizi sviluppati
+// Schema di tutti i microservizi - introduzione
+
+
+=== Microservizio Inventario (Inventory Service)
+// Breve spiegazione + Immagine
+
+==== PrdocutId
+ + Rappresenta l'identificatore univoco del prodotto,
+ + Incapsula il campo _id: string_,
+ + Espone il metodo _getId()_,
+ + È stato isolato per facilitare il confronto tra entità e manterere l'identità coerente anche in fase di serializzazione/deserializzazione _(es. tramite DTO)_, ad esempio per permettere il corretto funzionamento di _removeProduct_.
+
+Descrizione degli attributi della struttura:
+ - *id*: string \
+  È il codice EAN del prodotto.
+
+E può invocare le seguenti funzioni:
+- *getId()*: string \
+  Metodo pubblico per ottenere il codice EAN del prodotto.
+
+==== Product
+ + Contiene tutti gli attributi modificabili del prodotto: _name, unitPrice, quantity, minThres, maxThres_,
+ + I campi _name_ e _unitPrice_ sono modificabili solo dal Supervisore Globale in quanto dati sensibili e che verranno riflessi in tutit i magazzini in caso di modifica,
+ + I campi _quantity_, _minThres_, _maxThres_ sono modificabili anche dai Supervisori Locali: tali modifiche non verranno riflesse negli altri magazzini ma riguarderanno solo il magazzino di pertinenza.
+
+ Descrizione degli attributi della struttura:
+  - *id*: ProductId \
+    Rappresenta l'Id del prodotto.
+  - *name*: string \
+    Rappresenta il nome del prodotto.
+  - *unitPrice*: number \
+    Rappresenta il prezzo unitario del prodotto.
+  - *quantity*: number \
+    È la quantità attualmente disponibile del prodotto.
+  - *minThres*: number \
+    Soglia minima di sicurezza relativa alla quantità del prodotto.
+  - *maxThres*: number \
+    Soglia massima di sicurezza relativa alla quantità del prodotto.
+
+  E può invocare le seguenti funzioni:
+  - *addDeltaQuantity(quantity: number)*: void \
+    Metodo per sommare o sottrarre una quantità positiva ad un prodotto.
+  - *getId()*: ProductId; \
+    Restituisce il codice EAN del prodotto.
+  - *getName()*: string; \
+    Restituisce il nome del prodotto.
+  - *getUnitPrice()*: number; \
+    Restituisce il prezzo unitario del prodotto.
+  - *getQuantity()*: number; \
+    Restituisce la quantità disponibile del prodotto.
+  - *getMinThres()*: number; \
+    Restituisce la soglia minima di sicurezza relativa alla quantità del prodotto.
+  - *getMaxThres()*: number; \
+    Restituisce la soglia massima di sicurezza relativa alla quantità del prodotto.
+  - *setName(name: string)*: void; \
+    Restituisce il nome del prodotto.
+  - *setUnitPrice(unitPrice: number)*: void; \
+    Metodo che permette di modificare il prezzo unitario.
+  - *setQuantity(quantity: number)*: void; \
+    Metodo per modificare la quantità disponibile del prodotto.
+  - *setMinThres(minThres: number)*: void; \
+    Metodo per modificare la soglia minima di sicurezza relativa alla quantità del prodotto.
+  - *setMaxThres(maxThres: number)*: void; \
+    Metodo per modificare la soglia massima di sicurezza relativa alla quantità del prodotto.
+
+Questa separazione segue i principi della *Domain-Driven Design* (DDD): i DTO vengono convertiti in entità complete (Product) già nei livelli più alti (es. nel controller), evitando che il livello *Application Service* debba conoscere i dettagli della rappresentazione dati in entrata/uscita. Si garantisce così la *separazione dei livelli* e una migliore *manutenibilità* del codice.
+
 // Spiegare i vari microservizi utilizzati, e tutti gli oggetti di ogni microservizio.
-
 //Prima presentare gli oggetti comuni tra i microservizi, e poi gli oggetti comuni di ogni microservizio (sarà una lista molto lunga)
-
 //ogni oggetto avrà la sua figura (diagramma di classe)
 
 
