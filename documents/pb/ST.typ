@@ -16,7 +16,7 @@
 #let status = "In redazione"
 #let destinatario = "M31"
 
-#let versione = "0.0.1"
+#let versione = "0.1.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -31,9 +31,15 @@
   /* formato:  [text],  OPPURE  "text",  */
 
   [0.0.1],
+  [13/08/2025],
+  [N. Bolzon \ A. Shu],
+  [S. Marana],
+  [Stesura del documento, sezioni Introduzione, Tecnologie, Architettura.],
+
+  [0.0.1],
   [30/07/2025],
   [N. Moretto],
-  [-],
+  [S. Speranza],
   [Creazione template e struttura del documento.]
 )
 
@@ -91,17 +97,37 @@ Per trovare il significato del termine, è possibile consultare il glossario al 
 === Riferimenti normativi
 #v(1em)
 - *Capitolato#super[G] d'appalto C6 - Gestione di un magazzino distribuito - _M31_*\
-  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")
+  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")]
 
-- *Norme di Progetto#super[G] - versione 2.0.0*
-  #link("") //TODO: inserire link al documento Norme di Progetto
+//DA SISTEMARE!!!!
+- *Norme di Progetto#super[G] - versione 1.0.0*  \
+  #underline[#link("https://teamcodealchemists.github.io/docs/pb/NdP_1.0.0.pdf")]
+  \ *Ultimo Accesso:* 27 agosto 2025
   
 === Riferimenti informativi
+- *Lezione rovesciata - Documentazione* \
+  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/FC1.pdf")]
+  \ *Ultimo Accesso:* 1 agosto 2025
+
+- *Regolamento del Progetto Didattico* \
+  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/PD1.pdf")]
+  \ *Ultimo Accesso:* 1 agosto 2025
+
+//DA SISTEMARE!!!!
+-  *Glossario* \
+  #underline[#link("https://teamcodealchemists.github.io/glossario.html")]
+  \ *Ultimo Accesso:* 27 agosto 2025
 
 
+#pagebreak()
 = Tecnologie
+
 == Linguaggi di programmazione
+// Typscript
+
 == Framework
+// NestJS? NodeJS?
+
 == Tecnologie per la gestione dei dati
 //DB
 == Tecnologie per la comunicazione e per la messaggistica
@@ -119,6 +145,8 @@ Per trovare il significato del termine, è possibile consultare il glossario al 
 //== Librerie
 
 = Architettura
+
+
 == Architettura generale
 == Architettura logica
 == Architettura di deployment
