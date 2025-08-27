@@ -441,8 +441,19 @@ In conclusione, l'architettura esagonale rappresenta una scelta ideale per garan
 
 === Microservizio Inventario (Inventory Service)
 // Breve spiegazione + Immagine
+#figure(
+  image("assets/Inventory.svg", width: 110%),
+  caption: [Schema UML - Microservizio Inventario]
+)
 
-==== PrdocutId
+==== ProdcutId
+/*
+#figure(
+  image("", width: 60%),
+  caption: [Microservizio Inventario - ProductId]
+)
+*/
+
  + Rappresenta l'identificatore univoco del prodotto,
  + Incapsula il campo _id: string_,
  + Espone il metodo _getId()_,
@@ -501,7 +512,205 @@ E può invocare le seguenti funzioni:
   - *setMaxThres(maxThres: number)*: void; \
     Metodo per modificare la soglia massima di sicurezza relativa alla quantità del prodotto.
 
-Questa separazione segue i principi della *Domain-Driven Design* (DDD): i DTO vengono convertiti in entità complete (Product) già nei livelli più alti (es. nel controller), evitando che il livello *Application Service* debba conoscere i dettagli della rappresentazione dati in entrata/uscita. Si garantisce così la *separazione dei livelli* e una migliore *manutenibilità* del codice.
+Questa separazione segue i principi della *Domain-Driven Design* (DDD): i DTO vengono convertiti in entità complete (`Product`) già nei livelli più alti (es. nel controller), evitando che il livello *Application Service* debba conoscere i dettagli della rappresentazione dati in entrata/uscita. Si garantisce così la *separazione dei livelli* e una migliore *manutenibilità* del codice.
+
+==== InventoryService
++ Rappresenta il servizio applicativo responsabile della logica di business relativa alla gestione dell’inventario di un magazzino.
++ Espone operazioni per l’aggiunta, rimozione, modifica e consultazione dei prodotti, oltre a controlli di soglia e disponibilità.
++ Ogni modifica ai prodotti genera un evento che viene propagato al sistema.
+
+Descrizione degli attributi della struttura:
+  - *warehouseId*: WarehouseId \
+    Identificativo univoco del magazzino a cui appartiene l’inventario gestito dal servizio.
+
+E può invocare le seguenti funzioni:
+  - *checkProductExistence(productId: ProductId)*: bool \
+    Verifica se un prodotto è presente nell’inventario del magazzino.
+  - *checkProductThres(product: Product)*: bool \
+    Controlla se la quantità del prodotto rispetta le soglie minime e massime definite.
+  - *addProduct(product: Product)*: void \
+    Aggiunge un nuovo prodotto all’inventario e pubblica un evento di aggiunta.
+  - *removeProduct(productId: ProductId)*: bool \
+    Rimuove un prodotto dall’inventario e pubblica un evento di rimozione. Restituisce true se l’operazione è andata a buon fine.
+  - *editProduct(product: Product)*: void \
+    Modifica i dati di un prodotto già presente e pubblica un evento di modifica.
+  - *getProduct(productId: ProductId)*: Product \
+    Restituisce il prodotto corrispondente all’Id specificato.
+  - *getInventory()*: Inventory \
+    Restituisce la lista completa dei prodotti presenti nell’inventario.
+  - *getWarehouseId()*: number \
+    Restituisce l’identificativo del magazzino.
+  - *checkProductAvailability(productQuantities: ProductQuantity[])*: bool \
+    Verifica la disponibilità di uno o più prodotti nelle quantità richieste.
+
+==== WarehouseId
++ È stato separato da `InventoryService` in quanto l’identificativo del magazzino è necessario principalmente in fase di sincronizzazione sul cloud durante operazioni di modifica, aggiunta o rimozione di prodotti.
++ Non è quindi necessario che il DTO di `InventoryService` contenga sempre l’id del magazzino.
+
+Descrizione degli attributi della struttura:
+  - *warehouseId*: number \
+    Identificativo univoco del magazzino.
+
+E può invocare le seguenti funzioni:
+  - *getId()*: number \
+    Restituisce l’identificativo del magazzino.
+
+==== WarehouseIdDTO
+Descrizione degli attributi della struttura:
+  - *warehouseId*: number \
+    Identificativo del magazzino, rappresentato come DTO.
+
+==== ProductIdDTO
+Descrizione degli attributi della struttura:
+  - *id*: string \
+    Identificativo del prodotto, rappresentato come DTO.
+
+==== ProductDTO
+Descrizione degli attributi della struttura:
+ - *id*: string \
+    Identificativo del prodotto, rappresentato come DTO.
+ - *name*: string \
+    Nome del prodotto, rappresentato come DTO.
+ - *unitPrice*: number \
+    Prezzo unitario del prodotto, rappresentato come DTO.
+ - *quantity*: number \
+    Quantità attualmente disponibile del prodotto, rappresentata come DTO.
+ - *minThres*: number \
+    Soglia minima di sicurezza relativa alla quantità del prodotto, rappresentata come DTO.
+ - *maxThres*: number \
+    Soglia massima di sicurezza relativa alla quantità del prodotto, rappresentata come DTO.
+
+==== InventoryDTO
+Descrizione degli attributi della struttura:
+ - *productList*: ProductDTO[] \
+    Elenco dei prodotti presenti nell’inventario, rappresentato come DTO.
+
+==== BelowMinThresDTO
+Descrizione degli attributi della struttura:
+ - *id*: string \
+    Identificativo del prodotto, rappresentato come DTO.
+ - *quantity*: number \
+    Quantità attualmente disponibile del prodotto, rappresentata come DTO.
+ - *minThres*: number \
+    Soglia minima di sicurezza del prodotto, rappresentata come DTO.
+
+==== AboveMaxThresDTO
+Descrizione degli attributi della struttura:
+ - *id*: string \
+    Identificativo del prodotto, rappresentato come DTO.
+ - *quantity*: number \
+    Quantità attualmente disponibile del prodotto, rappresentata come DTO.
+ - *maxThres*: number \
+    Soglia massima di sicurezza del prodotto, rappresentata come DTO.
+
+==== ProductQuantityDTO
++ Rappresenta una coppia _(prodotto, quantità)_ utilizzata nei casi d’uso e nella comunicazione tra livelli applicativi.
+
+Descrizione degli attributi della struttura:
+ - *productId*: string \
+    Identificativo del prodotto, rappresentato come DTO.
+ - *quantity*: number \
+    Quantità richiesta o disponibile del prodotto, rappresentata come DTO.
+
+==== ProductQuantityArrayDTO
++ Rappresenta un array di coppie _(prodotto, quantità)_, utile per operazioni batch (es. richieste d’ordine).
+
+Descrizione degli attributi della struttura:
+ - *productQuantityArray*: ProductQuantityDTO[] \
+    Elenco delle quantità dei prodotti, rappresentato come DTO. 
+
+==== DataMapper
++ Classe di utilità che si occupa della conversione tra DTO e oggetti di dominio.
++ Garantisce l’isolamento del dominio dai dettagli di rappresentazione dati (DTO).
+
+Metodi statici:
+ - *toDomain(productDTO: ProductDTO)*: Product \
+    Converte un DTO ProductDTO nell’entità di dominio _Product_.
+ - *toDomain(productIdDTO: ProductIdDTO)*: ProductId \
+    Converte un DTO ProductIdDTO nell’oggetto di dominio _ProductId_.
+ - *toDomain(inventoryDTO: InventoryDTO)*: Inventory \
+    Converte un DTO InventoryDTO nell’oggetto di dominio _Inventory_.
+ - *toDTO(product: Product)*: ProductDTO \
+    Converte un’entità di dominio Product nel corrispondente _ProductDTO_.
+ - *toDTO(productId: ProductId)*: ProductIdDTO \
+    Converte un oggetto di dominio ProductId nel corrispondente _ProductIdDTO_.
+ - *toDTO(inventory: Inventory)*: InventoryDTO \
+    Converte un oggetto di dominio Inventory nel corrispondente _InventoryDTO_.
+ - *toDTO(warehouseId: WarehouseId)*: WarehouseIdDTO \
+    Converte un oggetto di dominio WarehouseId nel corrispondente _WarehouseIdDTO_.
+ - *toBelowMinDTO(product: Product)*: BelowMinThresDTO \
+    Converte un’entità Product in BelowMinThresDTO, filtrando i campi non rilevanti _(es. name, unitPrice)_.
+ - *toAboveMaxDTO(product: Product)*: AboveMaxThresDTO \
+    Converte un’entità Product in AboveMaxThresDTO, filtrando i campi non rilevanti _(es. name, unitPrice)_.
+ - *toDTO(productId: ProductId, quantity: number)*: QuantityRequestedDTO \
+    Converte una coppia (ProductId, quantità) in un _QuantityRequestedDTO_.
+
+==== ProductAddQuantityUseCase
++ Definisce il caso d’uso relativo all’aggiunta di una quantità a un prodotto già presente nell’inventario.
+
+Metodi:
+ - *addQuantity(productQuantityDTO: ProductQuantityDTO)*: void \
+    Aggiunge la quantità specificata al prodotto indicato, previa conversione del DTO in _ProductQuantity[]_.
+
+==== OrderRequestedUseCase
++ Definisce il caso d’uso relativo alla gestione delle richieste d’ordine _(es. richiesta multiprodotto)_.
+
+Metodi:
+ - *orderRequest(productQuantityArrayDTO: ProductQuantityArrayDTO)*: void \
+    Gestisce una richiesta di ordine a partire da un array di coppie _(prodotto, quantità)_.
+
+==== InboundEventHandler
++ Responsabile della gestione degli eventi in ingresso _(ad esempio, eventi provenienti da altri servizi o dal cloud)_.
++ Coordina l’invocazione dei casi d’uso applicativi in risposta a tali eventi.
+
+==== NewStockUseCase
++ Definisce il caso d’uso relativo all’aggiunta di un nuovo prodotto all’interno dell’inventario.
+
+Metodi:
+ - *newStock(productDTO: ProductDTO)*: void \
+    Aggiunge un nuovo prodotto all’inventario, previa conversione del DTO in _Product_.
+
+==== RemoveStockUseCase
++ Definisce il caso d’uso relativo alla rimozione di un prodotto dall’inventario.
+
+Metodi:
+ - *removeStock(productIdDTO: ProductIdDTO)*: void \
+    Rimuove un prodotto dall’inventario, previa conversione del DTO in _ProductId_.
+
+==== EditStockUseCase
++ Definisce il caso d’uso relativo alla modifica dei dati di un prodotto nell’inventario.
+
+Metodi:
+ - *editStock(productDTO: ProductDTO)*: void \
+    Modifica uno o più campi di un prodotto esistente, previa conversione del DTO in _Product_.
+
+==== GetProductUseCase
++ Definisce il caso d’uso relativo all’ottenimento di un prodotto specifico dall’inventario.
+
+Metodi:
+ - *getProduct(productIdDTO: ProductIdDTO)*: void \
+    Restituisce un prodotto a partire dal suo identificativo, previa conversione del DTO in _ProductId_.
+
+==== GetInventoryUseCase
++ Definisce il caso d’uso relativo all’ottenimento della lista completa dei prodotti presenti nell’inventario.
+
+Metodi:
+ - *getInventory()*: void \
+    Restituisce l’elenco dei prodotti dell’inventario.
+
+Queste interfacce definiscono i *casi d’uso dell’applicazione*, e sono tipicamente implementate da un Application Service (es. `InventoryService`, nel caso del PoC, `inventoryHandler.service`), che coordina la logica e interagisce col dominio.
+
+==== CommandHandler
++ Responsabile della gestione degli eventi in ingresso.
++ Implementa i casi d’uso: NewStockUseCase, EditStockUseCase, RemoveStockUseCase, GetProductUseCase e GetInventoryUseCase.
++ Riceve i DTO dall’esterno, li converte negli oggetti di dominio corrispondenti e li inoltra tramite la relativa chiamata all’InventoryService.
++ In questo modo funge da adattatore di ingresso (Input Port), mantenendo separati i dettagli di trasporto dei dati dalla logica di business.
+
+
+
+
+
+
 
 // Spiegare i vari microservizi utilizzati, e tutti gli oggetti di ogni microservizio.
 //Prima presentare gli oggetti comuni tra i microservizi, e poi gli oggetti comuni di ogni microservizio (sarà una lista molto lunga)
