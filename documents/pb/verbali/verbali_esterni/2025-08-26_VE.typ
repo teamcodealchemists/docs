@@ -66,7 +66,7 @@
 
 == 1.1 Ordine del Giorno
  + Presentazione dello stato di avanzamento del progetto didattico.
- + Discussione relativa all'autenticazione con ResGate.
+ + Discussione relativa all'autenticazione#super[G] con ResGate.
  + Discussione relativa alla fase di testing.
 
 #pagebreak()
@@ -74,28 +74,28 @@
 La riunione si è tenuta in modalità online per necessità del Team _Code Alchemists_ al fine di limitare il tempo degli spostamenti e ottimizzare il tmepo di lavoro necessario per lo svolgimento dei lavori di gruppo.
 
 == 2.1 Presentazione dello stato di avanzamento del progetto didattico
-L'attuale responsabile del team, *#p.nicholas*, ha illustrato ai rappresentanti di _M31_ lo stato di avanzamento del progetto, evidenziando sia la progettazione dettagliata sia l’implementazione. Sono stati designati i seguenti microservizi: inventario, inventario aggregato, ordini, ordini aggregato, stato, stato aggregato, autenticazione, sistema centralizzato e routing.
+L'attuale responsabile#super[G] del team, *#p.nicholas*, ha illustrato ai rappresentanti di _M31_ lo stato di avanzamento del progetto, evidenziando sia la progettazione dettagliata sia l’implementazione. Sono stati designati i seguenti microservizi#super[G]: inventario#super[G], inventario#super[G] aggregato, ordini, ordini aggregato, stato, stato aggregato, autenticazione#super[G], sistema centralizzato e routing.
 
-È stata quindi presentata la *saga ordine*, distinguendo due scenari principali:
+È stata quindi presentata la *saga ordine#super[G]*, distinguendo due scenari principali:
 
- - *Vendite*: riserva della merce disponibile; spedizione immediata se completa, altrimenti avvio di riassortimento; annullamento dell’ordine in caso di indisponibilità generale.
- - *Trasferimento Interno*: riserva della merce; creazione dell’ordine in arrivo nel magazzino di destinazione se disponibile; annullamento e notifica al supervisore in caso contrario.
+ - *Vendite*: riserva della merce disponibile; spedizione immediata se completa, altrimenti avvio di riassortimento#super[G]; annullamento dell’ordine#super[G] in caso di indisponibilità generale.
+ - *Trasferimento Interno#super[G]*: riserva della merce; creazione dell’ordine#super[G] in arrivo nel magazzino di destinazione se disponibile; annullamento e notifica al supervisore in caso contrario.
 
-Sono stati infine illustrati i due tipi di *riassortimento*:
+Sono stati infine illustrati i due tipi di *riassortimento*#super[G]:
 
- - *Ordine non soddisfacibile*: verifica tramite ordini aggregati e reperimento merce tramite inventario aggregato, dal magazzino più vicino a quello più lontano.
- - *Superamento soglia critica*: controllo tramite ordini aggregati e reperimento merce tramite inventario aggregato, secondo lo stesso criterio di prossimità.
+ - *Ordine#super[G] non soddisfacibile*: verifica tramite ordini aggregati e reperimento merce tramite inventario#super[G] aggregato, dal magazzino più vicino a quello più lontano.
+ - *Superamento soglia critica*: controllo tramite ordini aggregati e reperimento merce tramite inventario#super[G] aggregato, secondo lo stesso criterio di prossimità.
 
 == 2.2 Discussione relativa all'autenticazione con ResGate
-Come suggerito dal *#p.cardin*, *#p.sebastiano* ha presentato all’azienda _M31_ la proposta di utilizzo di *ResGate*, un API Gateway che fornisce anche il servizio di autenticazione.
-Prima dell’implementazione, è stato definito uno standard comune per tutti i microservizi, in modo da garantire una gestione coerente e sicura delle richieste di autenticazione.
+Come suggerito dal *#p.cardin*, *#p.sebastiano* ha presentato all’azienda _M31_ la proposta di utilizzo di *ResGate*, un API Gateway che fornisce anche il servizio di autenticazione#super[G].
+Prima dell’implementazione, è stato definito uno standard comune per tutti i microservizi#super[G], in modo da garantire una gestione coerente e sicura delle richieste di autenticazione#super[G].
 
-Lo studio della tecnologia si è rivelato piuttosto complesso a causa della scarsa documentazione disponibile. In sintesi, il funzionamento previsto prevede che il client invii la richiesta di autenticazione a uno dei microservizi del sistema. Tale microservizio, invece di rispondere direttamente al client (cosa che potrebbe comportare rischi di sicurezza), inoltra la richiesta a ResGate. ResGate, tramite un token, verifica la connessione e le credenziali dell’utente. Ogni richiesta successiva verso un microservizio viene accompagnata dal token generato da ResGate, che il microservizio utilizza per controllare i permessi e la possibilità di accesso alle risorse richieste.
+Lo studio della tecnologia si è rivelato piuttosto complesso a causa della scarsa documentazione disponibile. In sintesi, il funzionamento previsto prevede che il client invii la richiesta di autenticazione#super[G] a uno dei microservizi#super[G] del sistema. Tale microservizio#super[G], invece di rispondere direttamente al client _(cosa che potrebbe comportare rischi di sicurezza)_, inoltra la richiesta a ResGate. ResGate, tramite un token, verifica la connessione e le credenziali dell’utente. Ogni richiesta successiva verso un microservizio#super[G] viene accompagnata dal token generato da ResGate, che il microservizio#super[G] utilizza per controllare i permessi e la possibilità di accesso alle risorse richieste.
 
-Questa soluzione è stata ritenuta valida da _M31_, anche perché consente di ridurre i tempi di sviluppo della componente di autenticazione.
+Questa soluzione è stata ritenuta valida da _M31_, anche perché consente di ridurre i tempi di sviluppo della componente di autenticazione#super[G].
 
 == 2.3 Discussione relativa alla fase di testing
-*#p.alex* ha presentato all’azienda i test previsti dal Team Code Alchemists.
+*#p.alex* ha presentato all’azienda i test previsti dal _Team Code Alchemists_.
 Per la misurazione della percentuale di copertura del codice viene utilizzato CodeCoverage, che aggiorna automaticamente i dati tramite le GitHub Actions.
 
 All’interno del progetto è stata predisposta una cartella Summary, contenente:
@@ -105,9 +105,9 @@ All’interno del progetto è stata predisposta una cartella Summary, contenente
 
 È stato comunicato all’azienda che, parallelamente alla scrittura del codice, si prosegue anche con lo sviluppo di ulteriori test.
 
-È stato sottolineato, da parte di _M31_ che i *test di accettazione* rivestono un’importanza fondamentale, in quanto dimostrano che chiunque può eseguirli e che i committenti possono verificarne l’esito in fase di consegna. Ogni test deve indicare chiaramente le precondizioni _(ciò che serve per eseguirlo)_ e le postcondizioni _(i risultati attesi)_. L'azienda si aspetta che i test siano redatti in maniera accurata e completa, poiché rappresentano una dimostrazione concreta della corretta implementazione delle funzionalità. È stato inoltre evidenziato che, oltre al contenuto, anche la forma di redazione è ritenuta rilevante.
+È stato sottolineato, da parte di _M31_ che i *test di accettazione* rivestono un’importanza fondamentale, in quanto dimostrano che chiunque può eseguirli e che i committenti#super[G] possono verificarne l’esito in fase di consegna. Ogni test deve indicare chiaramente le precondizioni _(ciò che serve per eseguirlo)_ e le postcondizioni _(i risultati attesi)_. L'azienda si aspetta che i test siano redatti in maniera accurata e completa, poiché rappresentano una dimostrazione concreta della corretta implementazione delle funzionalità. È stato inoltre evidenziato che, oltre al contenuto, anche la forma di redazione è ritenuta rilevante.
 
-Nel processo di sviluppo software, la consegna al cliente è vincolata al superamento dei test: chi sviluppa afferma che _“tutto funziona”_, ma è il cliente a verificarlo mediante il Test Book (o Test di Validazione/Accettazione). Tale documento raccoglie l’elenco dei test da eseguire alla consegna del progetto.
+Nel processo di sviluppo software, la consegna al cliente è vincolata al superamento dei test: chi sviluppa afferma che _“tutto funziona”_, ma è il cliente a verificarlo mediante il Test Book _(o Test di Validazione/Accettazione)_. Tale documento raccoglie l’elenco dei test da eseguire alla consegna del progetto.
 
 Si è concordato con l’azienda _M31_ che non si accetteranno Test Book con errori critici, ma potrà tollerare una quota massima del 5% di test non critici falliti (ad esempio, 2 su 30), a condizione che vengano corretti prima della consegna definitiva.
 
@@ -117,13 +117,12 @@ Il Test Book deve contenere per ciascun test:
 - Procedura di esecuzione _(descritta passo per passo)_
 - Risultato atteso
 - Esito _(PASS/FAIL)_
-
-Eventuali note, con indicazione della criticità in caso di FAIL
+- Eventuali note, con indicazione della criticità in caso di FAIL
 
 In forma opzionale, può essere allegata una tabella riassuntiva dei test.
 
 È stato inoltre concordato che:
-- Verranno predisposti circa 20/30 test di accettazione, sufficienti a coprire le funzionalità principali e i requisiti fondamentali del capitolato.
+- Verranno predisposti circa 20/30 test di accettazione, sufficienti a coprire le funzionalità principali e i requisiti#super[G] fondamentali del capitolato#super[G].
 - Il draft del Test Book dovrà essere fornito qualche giorno prima della consegna, per consentire la revisione da parte di _M31_ e verificarne chiarezza e completezza.
 
 Per garantire l’efficacia dei test, la loro esecuzione dovrebbe essere affidata a una persona che non abbia partecipato alla loro stesura, così da validarne realmente la comprensibilità.
@@ -131,7 +130,7 @@ Per garantire l’efficacia dei test, la loro esecuzione dovrebbe essere affidat
 #pagebreak()
 = 3. Esiti della riunione
   L'incontro si è concluso con l'apprezzamento, da parte dei rappresentanti di M31, per il lavoro svolto fino ad oggi e per quanto presentato durante la riunione odierna.
-  Si è concordato di proseguire con la realizzazione del MVP#super[G], tenendo conto dei suggerimenti ricevuti. Il team si impegna inoltre a redigere il Test Book sopracitato e a consegnarlo all'azienda M31 alcuni giorni prima della consegna del progetto, in modo da concordare congiuntamente la fase di testing.
+  Si è concordato di proseguire con la realizzazione del MVP#super[G], tenendo conto dei suggerimenti ricevuti. Il team si impegna inoltre a redigere il Test Book sopracitato e a consegnarlo all'azienda _M31_ alcuni giorni prima della consegna del progetto, in modo da concordare congiuntamente la fase di testing.
 
   Il team desidera ringraziare i rappresentanti di M31 per la loro costante disponibilità e per i preziosi consigli finora forniti.
 
