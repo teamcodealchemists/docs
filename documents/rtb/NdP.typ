@@ -145,25 +145,25 @@
     === Riferimenti normativi
     - *Capitolato#super[G] d'appalto* \
       *C6 - Sistema di Gestione di un Magazzino Distribuito* \
-      #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")]\
-      //Ultimo Accesso: \
+      #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")]
+      \ *Ultimo Accesso:* 17 Luglio 2025
     
     - *Standard ISO/IEC 12207:1995* \
-      #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")]\
-      //Ultimo Accesso: \
-    
+      #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")]
+      \ *Ultimo Accesso:* 17 Luglio 2025
+
     === Riferimenti informativi
     - *Glossario#super[G]* \
-      #underline[#link("https://teamcodealchemists.github.io/glossario.html")] \ 
-      //Ultimo Accesso: \
+      #underline[#link("https://teamcodealchemists.github.io/glossario.html")]
+      \ *Ultimo Accesso:* 17 Luglio 2025
 
     - *Piano di Qualifica#super[G]* \
-      #underline[#link("https://teamcodealchemists.github.io/docs/rtb/PdQ.pdf")] \
-      //Ultimo Accesso: \
+      #underline[#link("https://teamcodealchemists.github.io/docs/rtb/PdQ.pdf")]
+      \ *Ultimo Accesso:* 17 Luglio 2025
 
     - *Piano di Progetto* \
-      #underline[#link("https://teamcodealchemists.github.io/docs/rtb/PdP.pdf")] \
-      //Ultimo Accesso: \
+      #underline[#link("https://teamcodealchemists.github.io/docs/rtb/PdP.pdf")]
+      \ *Ultimo Accesso:* 17 Luglio 2025
 
 = Struttura dei processi
 Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 12207:1995*, che definisce il ciclo di vita del software suddividendolo in 3 categorie principali:

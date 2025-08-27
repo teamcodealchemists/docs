@@ -150,13 +150,16 @@ Si potrà dedurre che questi documenti potrebbero contenere parole#super[G] o fr
 == Riferimenti   //Inserire riferimenti al capitolato#super[G] del progetto e a lezioni/slide del professore se necessario
 #v(1em)
 - *Capitolato#super[G] d'appalto C6 - Gestione di un magazzino distribuito - _M31_*\
-  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")
+  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")]
+  \ *Ultimo Accesso:* 16 Luglio 2025
 
 - *Processi di ciclo di vita del software*\
-  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf")
+  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf")]
+  \ *Ultimo Accesso:* 16 Luglio 2025
 
 - *Gestione di progetto*\
-  #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")
+  #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")]
+  \ *Ultimo Accesso:* 16 Luglio 2025
 
 
   //TODO: da completare
@@ -1724,7 +1727,7 @@ I possibili rischi :
       [Progettista#super[G]],     [25€/h],   [-],  [-],   [101], [2525€],
       [Programmatore#super[G]],   [15€/h],   [10],   [150€],  [136(-10)], [2040€ (-150€)],
       [Verificatore#super[G]],    [15€/h],   [10],   [150€],   [73(-10)],  [1125€ (-150€)],
-      [*Totale*],                 [*-*],     [*29*],[*530€*],[*438 (-29)*],[*7390€ (-530€)*],
+      [*Totale*],                 [*-*],     [*29*],[*530€*],[*379 (-29)*],[*7390€ (-530€)*],
     ),
     didascalia: "Sprint 8 - Aggiornamento delle risorse disponibili"
   )
