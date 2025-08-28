@@ -16,7 +16,7 @@
 #let status = "In redazione"
 #let destinatario = "M31"
 
-#let versione = "0.2.0"
+#let versione = "0.3.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -29,6 +29,11 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [0.3.0],
+  [28/08/2025],
+  [A. Shu \ N. Bolzon],
+  [M. Dalla Pozza],
+  [Aggiunta una documentanzione basica del Microservizio Routing, correzioni granulari di stile e uniformità lessicale sulla stesura],
 
   [0.2.0],
   [27/08/2025],
@@ -1177,13 +1182,13 @@ E può invocare le seguenti funzioni:
 ==== OrderItem
  + Rappresenta in maniera sintetica i prodotti ordinati.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *itemId*: ItemId \
    Identificativo del prodotto.
  - *quantity*: number \
    Quantità ordinata.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *getItemId(): ItemId* \
    Restituisce l’id del prodotto ordinato.
  - *getQuantity(): number* \
@@ -1194,7 +1199,7 @@ Metodi:
 ==== OrderItemDetail
  + Rappresenta nel dettaglio i prodotti ordinati.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *item*: OrderItem
    Rappresenta l’id del prodotto e la quantità ordinata.
  - *quantityReserved*: number \
@@ -1202,7 +1207,7 @@ Attributi:
  - *unitPrice*: number \
    Prezzo unitario del prodotto ordinato.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *getItemId(): ItemId* \
    Restituisce l’id del prodotto.
  - *getQuantity(): number* \
@@ -1222,7 +1227,7 @@ Metodi:
  + Classe astratta per ordini di vendita o interni.
  + È stato scelto questo approccio in quanto ci sono due tipi di ordini: gli ordini di vendita e gli ordini interni.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *orderId*: OrderId
   Rappresenta l’id dell’ordine.
  - *items*: OrderItemDetail[]
@@ -1234,7 +1239,7 @@ Attributi:
  - *warehouseDeparture*: number
  Rappresenta il magazzino di partenza dell’ordine.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *getItems(): OrderItem[]* \
    Restituisce l’array dei prodotti ordinati.
  - *getOrderState(): string* \
@@ -1255,10 +1260,10 @@ Metodi:
 ==== SellOrder
  + Classe concreta che rappresenta gli ordini di vendita.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *destinationAddress*: string
    Rappresenta l’indirizzo di destinazione dell’ordine.
-Metodi:
+E può invocare le seguenti funzioni:
  - *getDestinationAddress(): string* \
    Restituisce l’indirizzo di destinazione.
  - *setDestinationAddress(address: string): void* \
@@ -1267,10 +1272,10 @@ Metodi:
 ==== InternalOrder
  + Classe concreta che rappresenta gli ordini interni, di riassortimento.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *warehouseDestination*: number
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *getWarehouseDestination(): number* \
    Restituisce il magazzino di destinazione.
  - *setWarehouseDestination(warehouseDestination: number): void* \
@@ -1280,13 +1285,13 @@ Metodi:
  + Classe che accorpa tutti gli ordini.
  + È utile, ad esempio, per una visualizzazione complessiva degli ordini.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *sellOrders*: SellOrder[]
    Rappresenta l’array degli ordini di vendita.
  - *internalOrders*: InternalOrder[]
    Rappresenta l’array degli ordini interni.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *getSellOrders(): SellOrder[]* \
    Restituisce gli ordini di vendita.
  - *getInternalOrders(): InternalOrder[]* \
@@ -1299,7 +1304,7 @@ Metodi:
 ==== OrderService
  + Logica di business del microservizio ordini.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *checkOrderExistence(OrderId): bool* \
    Verifica l’esistenza dell’ordine.
  - *updateOrderState(OrderId, OrderState): void* \
@@ -1329,7 +1334,7 @@ Metodi:
  + Gestisce le saghe degli ordini.
  + In seguito verrà spiegata nel dettaglio: per ogni tipologia di ordine (di vendita o di trasferimento interno), c’è un diverso modo di procedere, utilizzando eventi e metodi presenti in questo microservizio.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *startSellOrder(orderId: OrderId): void* \
    Esegue la saga per un ordine di vendita.
  - *startInternalOrder(orderId: OrderId): void* \
@@ -1338,21 +1343,21 @@ Metodi:
 ==== OrderIdDTO
  + Rappresenta l’identificativo dell’ordine sotto forma di DTO.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *id*: string \
    Codice identificativo dell’ordine.
 
 ==== `<<enum>>` OrderStateDTO
  + Rappresenta lo stato dell’ordine sotto forma di DTO.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *orderState*: string \
    Stato dell’ordine ("PENDING", "PROCESSING", "SHIPPED", "CANCELLED" ,"COMPLETED").
 
 ==== OrderItemDTO
  + Rappresenta un prodotto ordinato sotto forma di DTO.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *itemId*: string \
    Identificativo del prodotto.
  - *quantity*: number \
@@ -1361,7 +1366,7 @@ Attributi:
 ==== OrderItemDetailDTO
  + Rappresenta nel dettaglio un prodotto ordinato sotto forma di DTO.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *item*: OrderItemDTO \
    Informazioni sul prodotto ordinato.
  - *quantityReserved*: number \
@@ -1372,7 +1377,7 @@ Attributi:
 ==== InternalOrderDTO
  + Rappresenta un ordine interno sotto forma di DTO.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *orderId*: OrderIdDTO \
    Identificativo dell’ordine.
  - *items*: OrderItemDetailDTO[] \
@@ -1389,7 +1394,7 @@ Attributi:
 ==== SellOrderDTO
  + Rappresenta un ordine di vendita sotto forma di DTO.
 
-Attributi:
+Descrizione degli attributi della struttura::
  - *orderId*: OrderIdDTO \
    Identificativo dell’ordine.
  - *items*: OrderItemDetailDTO[] \
@@ -1406,7 +1411,7 @@ Attributi:
 ==== OrderQuantityDTO
  + Rappresenta l’ordine con quantità dei prodotti sotto forma di DTO.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *id*: OrderIdDTO \
    Identificativo dell’ordine.
  - *items*: OrderItemDTO[] \
@@ -1415,7 +1420,7 @@ Attributi:
 ==== OrdersDTO
  + Rappresenta tutti gli ordini aggregati sotto forma di DTO.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *sell*: SellOrderDTO[] \
    Array degli ordini di vendita.
  - *internal*: InternalOrderDTO[] \
@@ -1424,7 +1429,7 @@ Attributi:
 ==== DataMapper
  + Gestisce la conversione tra DTO e oggetti di dominio e viceversa.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *internalOrderToDomain(dto: InternalOrderDTO): InternalOrder* \
    Converte un DTO InternalOrder in oggetto di dominio.
  - *sellOrderToDomain(dto: SellOrderDTO): SellOrder* \
@@ -1457,28 +1462,28 @@ Metodi:
 ==== ReservationEventListener
  + Gestisce gli eventi relativi alla richiesta di riservare stock per un ordine.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *stockReserved(order: OrderQuantityDTO): void* \
    Richiede la quantità di prodotti riservati per un ordine.
 
 ==== SellOrderEventListener
  + Gestisce gli eventi relativi all’aggiunta di ordini di vendita.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *addSellOrder(order: SellOrderDTO): void* \
    Richiede l’aggiunta di un ordine di vendita.
 
 ==== InternalOrderEventListener
  + Gestisce gli eventi relativi all’aggiunta di ordini interni.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *addInternalOrder(order: InternalOrderDTO): void* \
    Richiede l’aggiunta di un ordine di trasferimento interno.
 
 ==== ShipmentEventListener
  + Gestisce gli eventi di spedizione e ricezione degli ordini.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *waitingForStock(orderId: OrderIdDTO): void* \
    Comunica al magazzino di partenza che il magazzino di destinazione attende la merce.
  - *stockShipped(orderId: OrderIdDTO): void* \
@@ -1491,14 +1496,14 @@ Metodi:
 ==== UpdateOrderStateUseCase
  + Gestisce l’aggiornamento dello stato degli ordini.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *updateOrderState(orderId: OrderIdDTO, state: OrderStateDTO): void* \
    Richiede l’aggiornamento dello stato di un ordine.
 
 ==== OrderStatusEventListener
  + Gestisce gli eventi relativi allo stato finale degli ordini.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *cancelOrder(orderId: OrderIdDTO): void* \
    Richiede la cancellazione di un ordine.
  - *completeOrder(orderId: OrderIdDTO): void* \
@@ -1507,28 +1512,28 @@ Metodi:
 ==== GetOrderStateUseCase
  + Gestisce la richiesta di stato di un ordine.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *getOrderState(orderId: OrderIdDTO): OrderStateDTO* \
    Richiede lo stato corrente dell’ordine.
 
 ==== GetOrderUseCase
  + Gestisce la richiesta di visualizzazione di un ordine.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *getOrder(orderId: OrderIdDTO): InternalOrderDTO | SellOrderDTO* \
    Richiede i dettagli di un ordine specifico.
 
 ==== GetAllOrderUseCase
  + Gestisce la richiesta di visualizzazione di tutti gli ordini.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *getAllOrders(): OrdersDTO* \
    Richiede la lista completa degli ordini.
 
 ==== OrdersController
  + Gestisce gli eventi in ingresso e coordina i DTO verso il servizio.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - Implementa i metodi di 
   - *ReservationEventListener*, 
   - *SellOrderEventListener*, 
@@ -1544,14 +1549,14 @@ Metodi:
 ==== ReserveStockCommandPublisher
  + Gestisce la pubblicazione di eventi per riservare stock.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *publishReserveStock(orderId: OrderId, items: OrderItem[]): void* \
    Pubblica l’evento di richiesta di riserva prodotti dal magazzino.
 
 ==== ShipStockCommandPublisher
  + Gestisce la pubblicazione degli eventi di spedizione.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *publishShipment(orderId: OrderId, items: OrderItem[]): void* \
    Pubblica l’evento di spedizione della merce.
  - *receiveShipment(orderId: OrderId, items: OrderItem[], destination: number): void* \
@@ -1560,21 +1565,21 @@ Metodi:
 ==== RequestStockReplenishmentPublisher
  + Gestisce la pubblicazione degli eventi di riassortimento.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *publishStockRepl(orderId: OrderId, items: OrderItem[]): void* \
    Pubblica l’evento di riassortimento dello stock.
 
 ==== OrderUpdateEventPublisher
  + Gestisce la pubblicazione degli eventi di aggiornamento degli ordini.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *orderUpdated(order: Order): void* \
    Pubblica l’evento di aggiornamento di un ordine.
 
 ==== OrderStatusEventPublisher
  + Gestisce la pubblicazione degli eventi relativi allo stato finale degli ordini.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *orderCancelled(orderId: OrderId, warehouse: number): void* \
    Pubblica l’evento di cancellazione di un ordine.
  - *orderCompleted(orderId: OrderId, warehouse: number): void* \
@@ -1583,7 +1588,7 @@ Metodi:
 ==== InternalOrderEventPublisher
  + Gestisce la pubblicazione degli ordini interni.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *publishInternalOrder(order: InternalOrder): void* \
    Pubblica l’ordine interno.
  - *publishInternalOrderCopy(order: InternalOrder, warehouse: number): void* \
@@ -1592,7 +1597,7 @@ Metodi:
 ==== SellOrderEventPublisher
  + Gestisce la pubblicazione degli ordini di vendita.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *publishSellOrder(order: SellOrder): void* \
    Pubblica l’ordine di vendita.
  - *publishSellOrderCopy(order: SellOrder, warehouse: number): void* \
@@ -1601,14 +1606,14 @@ Metodi:
 ==== OutboundEventAdapter
  + Gestisce gli eventi in uscita.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - Implementa i metodi di ReserveStockCommandPublisher, ShipStockCommandPublisher, RequestStockReplenishmentPublisher, OrderUpdateEventPublisher, OrderStatusEventPublisher, InternalOrderEventPublisher, SellOrderEventPublisher.
   - Converte gli oggetti di dominio nei rispettivi DTO.
 
 ==== OrdersRepository
  + Gestisce l’accesso e la persistenza degli ordini.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *getById(id: OrderId): InternalOrder | SellOrder* \
    Restituisce un ordine tramite id.
  - *getState(id: OrderId): OrderState* \
@@ -1641,11 +1646,11 @@ Metodi:
 ==== SyncOrderId
  + Rappresenta l’identificativo dell’ordine sincronizzato.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *id*: string \
    Codice identificativo dell’ordine.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *getId(): string* \
    Restituisce l’id dell’ordine.
  - *getOrderType(): char* \
@@ -1654,31 +1659,31 @@ Metodi:
 ==== `<<enum>>` SyncOrderState
  + Rappresenta lo stato dell’ordine sincronizzato.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *orderState*: string \
    Stato dell’ordine ("PENDING", "PROCESSING", "SHIPPED", "CANCELLED" ,"COMPLETED").
 
 ==== SyncItemId
  + Rappresenta l’identificativo del prodotto presente nell’ordine sincronizzato.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *id*: string \
    Codice identificativo del prodotto.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *getId(): string* \
    Restituisce l’id del prodotto.
 
 ==== SyncOrderItem
  + Rappresenta un prodotto ordinato in forma semplificata.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *itemId*: SyncItemId \
    Identificativo del prodotto.
  - *quantity*: number \
    Quantità ordinata.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *getItemId(): SyncItemId* \
    Restituisce l’id del prodotto.
  - *getQuantity(): number* \
@@ -1687,7 +1692,7 @@ Metodi:
 ==== SyncOrderItemDetail
  + Rappresenta un prodotto ordinato in forma dettagliata.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *item*: SyncOrderItem \
    Informazioni sul prodotto ordinato.
  - *quantityReserved*: number \
@@ -1695,7 +1700,7 @@ Attributi:
  - *unitPrice*: number \
    Prezzo unitario del prodotto ordinato.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *getItemId(): SyncItemId* \
    Restituisce l’id del prodotto.
  - *getQuantity(): number* \
@@ -1708,7 +1713,7 @@ Metodi:
 ==== {abstract} SyncOrder
  + Classe astratta per gli ordini sincronizzati (vendita e interni).
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *orderId*: SyncOrderId \
    Identificativo dell’ordine.
  - *items*: SyncOrderItemDetail[] \
@@ -1720,7 +1725,7 @@ Attributi:
  - *warehouseDeparture*: number \
    Magazzino di partenza.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *getItems(): SyncOrderItem[]* \
    Restituisce l’array dei prodotti ordinati.
  - *getOrderState(): string* \
@@ -1733,35 +1738,35 @@ Metodi:
 ==== SyncSellOrder
  + Rappresenta un ordine di vendita sincronizzato.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *destinationAddress*: string \
    Indirizzo di destinazione.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *getDestinationAddress(): string* \
    Restituisce l’indirizzo di destinazione.
 
 ==== SyncInternalOrder
  + Rappresenta un ordine interno sincronizzato (riassortimento).
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *warehouseDestination*: number \
    Magazzino di destinazione.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *getWarehouseDestination(): number* \
    Restituisce il magazzino di destinazione.
 
 ==== SyncOrders
  + Accorpa tutti gli ordini sincronizzati.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *sellOrders*: SyncSellOrder[] \
    Array degli ordini di vendita.
  - *internalOrders*: SyncInternalOrder[] \
    Array degli ordini interni.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *getSellOrders(): SyncSellOrder[]* \
    Restituisce l’array degli ordini di vendita.
  - *getInternalOrders(): SyncInternalOrder[]* \
@@ -1770,7 +1775,7 @@ Metodi:
 ==== CloudOrderService
  + Logica di business del microservizio Aggregate Orders.
 
-Metodi:
+E può invocare le seguenti funzioni:
  - *syncUpdateOrderState(orderId: SyncOrderId, state: SyncOrderState): void* \
    Sincronizza l’aggiornamento dello stato di un ordine.
  - *syncCreateSellOrder(order: SyncSellOrder): Promise`<void>`* \
@@ -1785,21 +1790,21 @@ Metodi:
 ==== SyncOrderIdDTO
  + DTO per l’id dell’ordine sincronizzato.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *id*: string \
    Codice identificativo dell’ordine.
 
 ==== `<<enum>>` SyncOrderStateDTO
  + DTO per lo stato dell’ordine sincronizzato.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *orderState*: string \
    Stato dell’ordine.
 
 ==== SyncOrderItemDTO
  + DTO per un prodotto ordinato.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *itemId*: string \
    Id del prodotto.
  - *quantity*: number \
@@ -1808,7 +1813,7 @@ Attributi:
 ==== SyncOrderItemDetailDTO
  + DTO per un prodotto ordinato in dettaglio.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *item*: SyncOrderItemDTO \
    Id e quantità del prodotto.
  - *quantityReserved*: number \
@@ -1819,7 +1824,7 @@ Attributi:
 ==== SyncInternalOrderDTO
  + DTO per un ordine interno sincronizzato.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *orderId*: SyncOrderIdDTO \
    Id dell’ordine.
  - *items*: SyncOrderItemDetailDTO[] \
@@ -1836,7 +1841,7 @@ Attributi:
 ==== SyncSellOrderDTO
  + DTO per un ordine di vendita sincronizzato.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *orderId*: SyncOrderIdDTO \
    Id dell’ordine.
  - *items*: SyncOrderItemDetailDTO[] \
@@ -1852,8 +1857,8 @@ Attributi:
 
 ==== SyncOrderQuantityDTO
  + DTO per quantità dei prodotti ordinati.
-
-Attributi:
+ 
+Descrizione degli attributi della struttura:
  - *id*: SyncOrderIdDTO \
    Id dell’ordine.
  - *items*: SyncOrderItemDTO[] \
@@ -1862,7 +1867,7 @@ Attributi:
 ==== SyncOrdersDTO
  + DTO aggregato per tutti gli ordini sincronizzati.
 
-Attributi:
+Descrizione degli attributi della struttura:
  - *sell*: SyncSellOrderDTO[] \
    Array degli ordini di vendita.
  - *internal*: SyncInternalOrderDTO[] \
@@ -1871,92 +1876,92 @@ Attributi:
 === DataMapper
  + Gestisce la conversione tra DTO e oggetti di dominio per gli ordini sincronizzati.
 
-Metodi:
- - *syncInternalOrderToDomain(dto: SyncInternalOrderDTO): SyncInternalOrder* \
+E può invocare le seguenti funzioni:
+ - *syncInternalOrderToDomain(dto: SyncInternalOrderDTO)* : SyncInternalOrder\
    Converte un DTO di ordine interno in oggetto di dominio.
- - *syncSellOrderToDomain(dto: SyncSellOrderDTO): SyncSellOrder* \
+ - *syncSellOrderToDomain(dto: SyncSellOrderDTO)* : SyncSellOrder \
    Converte un DTO di ordine di vendita in oggetto di dominio.
- - *syncOrderItemToDomain(item: SyncOrderItemDTO): SyncOrderItem* \
+ - *syncOrderItemToDomain(item: SyncOrderItemDTO)* : SyncOrderItem \
    Converte un DTO di prodotto in oggetto di dominio.
- - *syncOrderIdToDomain(orderId: SyncOrderIdDTO): SyncOrderId* \
+ - *syncOrderIdToDomain(orderId: SyncOrderIdDTO)* : SyncOrderId \
    Converte un DTO dell’id ordine in oggetto di dominio.
- - *syncOrderStateToDomain(state: SyncOrderStateDTO): SyncOrderState* \
+ - *syncOrderStateToDomain(state: SyncOrderStateDTO)* : SyncOrderState \
    Converte un DTO dello stato ordine in oggetto di dominio.
- - *syncOrderItemDetailtoDomain(dto: SyncOrderItemDetailDTO): SyncOrderItemDetail* \
+ - *syncOrderItemDetailtoDomain(dto: SyncOrderItemDetailDTO)*: SyncOrderItemDetail\
    Converte un DTO di prodotto dettagliato in oggetto di dominio.
- - *syncInternalOrderToDTO(order: SyncInternalOrder): SyncInternalOrderDTO* \
+ - *syncInternalOrderToDTO(order: SyncInternalOrder)* : SyncInternalOrderDTO \
    Converte un oggetto di dominio InternalOrder in DTO.
- - *syncSellOrderToDTO(order: SyncSellOrder): SyncSellOrderDTO* \
+ - *syncSellOrderToDTO(order: SyncSellOrder)* : SyncSellOrderDTO \
    Converte un oggetto di dominio SellOrder in DTO.
- - *syncOrderItemToDTO(item: SyncOrderItem): SyncOrderItemDTO* \
+ - *syncOrderItemToDTO(item: SyncOrderItem)* : SyncOrderItemDTO \
    Converte un oggetto di dominio OrderItem in DTO.
- - *syncOrderIdToDTO(orderId: SyncOrderId): SyncOrderIdDTO* \
+ - *syncOrderIdToDTO(orderId: SyncOrderId)* : SyncOrderIdDTO \
    Converte un oggetto di dominio OrderId in DTO.
- - *syncOrderStateToDTO(state: SyncOrderState): SyncOrderStateDTO* \
+ - *syncOrderStateToDTO(state: SyncOrderState)* : SyncOrderStateDTO \
    Converte un oggetto di dominio OrderState in DTO.
- - *syncOrderItemDetailToDTO(order: SyncOrderItemDetail): SyncOrderItemDetailDTO* \
+ - *syncOrderItemDetailToDTO(order: SyncOrderItemDetail)* : SyncOrderItemDetailDTO \
    Converte un oggetto di dominio OrderItemDetail in DTO.
- - *syncOrderQuantityToDTO(orderId: SyncOrderId, items: SyncOrderItem[]): SyncOrderQuantityDTO* \
+ - *syncOrderQuantityToDTO(orderId: SyncOrderId, items: SyncOrderItem[])* : SyncOrderQuantityDTO \
    Converte l’insieme OrderId + prodotti in DTO SyncOrderQuantityDTO.
- - *syncOrdersToDTO(orders: SyncOrders): SyncOrdersDTO* \
+ - *syncOrdersToDTO(orders: SyncOrders)* : SyncOrdersDTO \
    Converte l’oggetto SyncOrders in DTO aggregato.
 
 ==== SyncReservationEventListener
  + Gestisce gli eventi in ingresso relativi alla riservazione dei prodotti.
 
-Metodi:
- - *stockReserved(dto: SyncOrderQuantityDTO): void* \
+E può invocare le seguenti funzioni:
+ - *stockReserved(dto: SyncOrderQuantityDTO)* : void \
    Richiede la sincronizzazione delle quantità di prodotti riservati per un ordine.
 
 ==== SyncSellOrderEventListener
  + Gestisce gli eventi in ingresso relativi agli ordini di vendita.
 
-Metodi:
- - *addSellOrder(dto: SyncSellOrderDTO): void* \
+E può invocare le seguenti funzioni:
+ - *addSellOrder(dto: SyncSellOrderDTO)* : void \
    Richiede la sincronizzazione dell’aggiunta di un ordine di vendita.
 
 ==== SyncInternalOrderEventListener
  + Gestisce gli eventi in ingresso relativi agli ordini interni.
 
-Metodi:
- - *addInternalOrder(dto: SyncInternalOrderDTO): void* \
+E può invocare le seguenti funzioni:
+ - *addInternalOrder(dto: SyncInternalOrderDTO)* : void \
    Richiede la sincronizzazione dell’aggiunta di un ordine di trasferimento interno.
 
 ==== SyncUpdateOrderStateUseCase
  + Gestisce gli eventi in ingresso per aggiornamento dello stato degli ordini.
 
-Metodi:
- - *updateOrderState(orderIdDTO: SyncOrderIdDTO, stateDTO: SyncOrderStateDTO): void* \
+E può invocare le seguenti funzioni:
+ - *updateOrderState(orderIdDTO: SyncOrderIdDTO, stateDTO: SyncOrderStateDTO)* : void \
    Richiede la sincronizzazione dell’aggiornamento dello stato dell’ordine.
 
 ==== SyncOrderStatusEventListener
  + Gestisce gli eventi in ingresso relativi allo stato finale dell’ordine.
 
-Metodi:
- - *cancelOrder(orderIdDTO: SyncOrderIdDTO): void* \
+E può invocare le seguenti funzioni:
+ - *cancelOrder(orderIdDTO: SyncOrderIdDTO)* : void \
    Richiede la sincronizzazione della cancellazione dell’ordine.
- - *completeOrder(orderIdDTO: SyncOrderIdDTO): void* \
+ - *completeOrder(orderIdDTO: SyncOrderIdDTO)* : void \
    Contrassegna lo stato dell’ordine come completato.
 
 ==== GetOrderStateUseCase
  + Permette di richiedere lo stato di un ordine.
 
-Metodi:
- - *getOrderState(orderIdDTO: SyncOrderIdDTO): SyncOrderStateDTO* \
+E può invocare le seguenti funzioni:
+ - *getOrderState(orderIdDTO: SyncOrderIdDTO)* : SyncOrderStateDTO \
    Restituisce lo stato dell’ordine specificato.
 
 ==== GetOrderUseCase
  + Permette di richiedere la visualizzazione di un ordine specifico.
 
-Metodi:
- - *getOrder(orderIdDTO: SyncOrderIdDTO): SyncInternalOrderDTO | SyncSellOrderDTO* \
+E può invocare le seguenti funzioni:
+ - *getOrder(orderIdDTO: SyncOrderIdDTO)* : SyncInternalOrderDTO | SyncSellOrderDTO \
    Restituisce l’ordine interno o di vendita corrispondente.
 
 ==== GetAllOrderUseCase
  + Permette di richiedere la visualizzazione di tutti gli ordini.
 
-Metodi:
- - *getAllOrders(): SyncOrdersDTO* \
+E può invocare le seguenti funzioni:
+ - *getAllOrders()* : SyncOrdersDTO \
    Restituisce tutti gli ordini sincronizzati.
 
 ==== CloudOrdersController
@@ -1969,17 +1974,17 @@ Descrizione:
 ==== SyncOrderUpdateEventPublisher
  + Gestisce la pubblicazione degli eventi di aggiornamento degli ordini sincronizzati.
 
-Metodi:
- - *orderUpdated(order: SyncOrder): void* \
+E può invocare le seguenti funzioni:
+ - *orderUpdated(order: SyncOrder)* : void \
    Pubblica l’evento di avvenuta sincronizzazione dell’aggiornamento dell’ordine.
 
 ==== SyncOrderStatusEventPublisher
  + Gestisce la pubblicazione degli eventi sullo stato finale degli ordini sincronizzati.
 
-Metodi:
- - *orderCancelled(orderId: SyncOrderId, warehouse: number): void* \
+E può invocare le seguenti funzioni:
+ - *orderCancelled(orderId: SyncOrderId, warehouse: number)* : void \
    Pubblica l’evento di avvenuta sincronizzazione della cancellazione dell’ordine.
- - *orderCompleted(orderId: SyncOrderId, warehouse: number): void* \
+ - *orderCompleted(orderId: SyncOrderId, warehouse: number)* : void \
    Pubblica l’evento di avvenuta sincronizzazione del completamento dell’ordine.
 
 ==== OutboundEventAdapter
@@ -1993,22 +1998,22 @@ Descrizione:
 ==== CloudOrdersRepository
  + Gestisce la persistenza e l’accesso ai dati degli ordini sincronizzati.
 
-Metodi:
- - *getById(id: SyncOrderId): SyncInternalOrder | SyncSellOrder* \
+E può invocare le seguenti funzioni:
+ - *getById(id: SyncOrderId)* : SyncInternalOrder | SyncSellOrder \
    Restituisce l’ordine corrispondente all’id.
- - *getState(id: SyncOrderId): SyncOrderState* \
+ - *getState(id: SyncOrderId)* : SyncOrderState \
    Restituisce lo stato dell’ordine.
- - *getAllOrders(): SyncOrders* \
+ - *getAllOrders()* : SyncOrders \
    Restituisce tutti gli ordini.
- - *syncAddSellOrder(order: SyncSellOrder): void* \
+ - *syncAddSellOrder(order: SyncSellOrder)* : void \
    Sincronizza l’aggiunta di un ordine di vendita.
- - *syncAddInternalOrder(order: SyncInternalOrder): void* \
+ - *syncAddInternalOrder(order: SyncInternalOrder)* : void \
    Sincronizza l’aggiunta di un ordine interno.
- - *syncRemoveById(id: SyncOrderId): bool* \
+ - *syncRemoveById(id: SyncOrderId)* : bool \
    Sincronizza la rimozione di un ordine, fornendo true/false alla rimozione.
- - *syncUpdateOrderState(id: SyncOrderId, state: SyncOrderState): SyncInternalOrder | SyncSellOrder* \
+ - *syncUpdateOrderState(id: SyncOrderId, state: SyncOrderState)* : SyncInternalOrder | SyncSellOrder \
    Sincronizza l’aggiornamento dello stato di un ordine.
- - *syncUpdateReservedStock(orderId: SyncOrderId, items: SyncOrderItem[]): SyncInternalOrder | SyncSellOrder* \
+ - *syncUpdateReservedStock(orderId: SyncOrderId, items: SyncOrderItem[])* : SyncInternalOrder | SyncSellOrder \
    Sincronizza l’aggiornamento delle quantità riservate.
 
 ==== CloudOrdersRepositoryImpl
@@ -2021,74 +2026,74 @@ Metodi:
 === CentralSystemController
  + Gestisce tutti gli eventi in ingresso dal cloud e dai magazzini.
 
-Metodi:
- - *CloudOrder(dto: OrderQuantityDTO): void*   \
+E può invocare le seguenti funzioni:
+ - *CloudOrder(dto: OrderQuantityDTO)* : void   \
    Riceve un evento di ordine aggregato (OrdersDTO) dal microservizio Orders.
 
- - *CloudInventory(dto: InventoryDTO): void*   \
+ - *CloudInventory(dto: InventoryDTO)* : void   \
    Riceve un evento di inventario aggregato (InventoryDTO) dal microservizio Inventory.
 
- - *handleInsufficientQuantity(dto: OrderQuantityDTO): void*   \
+ - *handleInsufficientQuantity(dto: OrderQuantityDTO)* : void   \
    Gestisce gli ordini per cui il magazzino destinato non ha quantità sufficiente.
 
- - *handleCriticalQuantity(dto: ProductQuantityDTO, warehouseIdDTO: WarehouseIdDTO): void*  \ 
+ - *handleCriticalQuantity(dto: ProductQuantityDTO, warehouseIdDTO: WarehouseIdDTO)* : void  \ 
    Gestisce le situazioni critiche di scorta minima dei prodotti in magazzino.
 
- - *getWarehouseDistanceArr(dto: WarehouseStateDTO): void*   \
+ - *getWarehouseDistanceArr(dto: WarehouseStateDTO)* : void   \
    Riceve le distanze tra il magazzino gestito e tutti gli altri magazzini.
 
- - *getWarehouseState(dto: WarehouseStateDTO): void*   \
+ - *getWarehouseState(dto: WarehouseStateDTO)* : void   \
    Riceve lo stato di un magazzino (online/offline).
 
 === Sistema Centralizzato \
  + Contiene la logica di business del sistema centralizzato.
 
-Attributi:
- - *order: Order[]* \
+Descrizione degli attributi della struttura:
+ - *order* : Order[] \
    Lista degli ordini ricevuti.
- - *inventory: Inventory[]*  \
+ - *inventory* : Inventory[]  \
    Lista degli inventari gestiti.
- - *warehouseId: WarehouseId* \
+ - *warehouseId* : WarehouseId \
    Identificativo del magazzino.
- - *warehouseState: WarehouseState[]* \
+ - *warehouseState* : WarehouseState[] \
    Lista degli stati dei magazzini.
- - *orderQuantity: OrderQuantity*   \
+ - *orderQuantity* : OrderQuantity   \
    Contiene le quantità degli ordini.
- - *distance: WarehouseState[]*   \
+ - *distance* : WarehouseState[]   \
    Contiene informazioni sulle distanze tra i magazzini.
 
 Metodi:
- - *RequestAllNeededData(): void*   \
+ - *RequestAllNeededData()* : void   \
    Richiede dati a Inventory Aggregato, Orders Aggregato e Routing.
 
- - *checkRestocking(order, inventory, distance, productQuantity): void*  \ 
+ - *checkRestocking(order, inventory, distance, productQuantity)* : void  \ 
     Il metodo gestisce la problematica del criticalQuantity. Esso avendo distance possiamo determinare la distanza dei magazzini partendo da quello più vicino, verificando se ciascun magazzino dispone di una quantità sufficiente del prodotto per soddisfare la richiesta. Appena un magazzino dà la conferma di disponibilità, verrà selezionato quel magazzino.
     Contestualmente, il metodo esegue un controllo sugli ordini presenti per il magazzino. Se esiste un ordine relativo allo stesso prodotto, viene sottratta la quantità impegnata dagli ordini alla disponibilità effettiva del prodotto, verificando quindi se la quantità residua è ancora sufficiente a soddisfare la richiesta.
- - *CheckInsufficientQuantity(order, inventory, distance, orderQuantity): void*  \ 
+ - *CheckInsufficientQuantity(order, inventory, distance, orderQuantity)* : void  \ 
     Il metodo gestisce la problematica del InsufficientQuantity. Esso avendo distance possiamo determinare la distanza dei magazzini partendo da quello più vicino, verificando se ciascun magazzino dispone di una quantità sufficiente del prodotto per soddisfare la richiesta. Appena un magazzino dà la conferma di disponibilità, verrà selezionato quel magazzino.  Contestualmente, il metodo esegue un controllo sugli ordini presenti per il magazzino. Se esiste un ordine relativo allo stesso prodotto, viene sottratta la quantità impegnata dagli ordini alla disponibilità effettiva del prodotto, verificando quindi se la quantità residua è ancora sufficiente a soddisfare la richiesta.
- - *sendNotification(message: string): void*   \
+ - *sendNotification(message: string)* : void   \
    Invia notifiche a entità interessate.
 
 === CentralSystemEventAdapter
  + Gestisce la pubblicazione degli eventi verso i microservizi esterni.
 
-Metodi:
- - *createInternalOrder(order: InternalOrder): void*  \ 
+E può invocare le seguenti funzioni:
+ - *createInternalOrder(order: InternalOrder)* : void  \ 
    Pubblica un ordine interno verso il microservizio corrispondente.
 
- - *CloudInventoryRequest(inventory: Inventory): void*  \ 
+ - *CloudInventoryRequest(inventory: Inventory)* : void  \ 
    Richiede report inventario dal microservizio aggregato.
 
- - *CloudOrderRequest(order: Order): void*   \
+ - *CloudOrderRequest(order: Order)* : void   \
    Richiede report ordini dal microservizio aggregato.
 
- - *RequestWarehouseState(id: WarehouseId): void*  \ 
+ - *RequestWarehouseState(id: WarehouseId)* : void  \ 
    Richiede lo stato di un magazzino.
 
- - *SendNotification(message: string): void*   \
+ - *SendNotification(message: string)* : void   \
    Pubblica notifiche a più enti interessati.
 
- - *RequestDistanceWarehouse(warehouseId: WarehouseId): void*  \ 
+ - *RequestDistanceWarehouse(warehouseId: WarehouseId)* : void  \ 
    Richiede al microservizio Routing la distanza tra il magazzino passato e tutti gli altri.
 
 ==== DataMapper
@@ -2097,54 +2102,54 @@ Metodi:
  + Garantisce la consistenza tra modelli interni e rappresentazioni esterne.
 
 Descrizione dei metodi principali:
-- *internalOrderToDomain(order: InternalOrderDTO): InternalOrder* \
+- *internalOrderToDomain(order: InternalOrderDTO)* : InternalOrder \
   Converte un DTO di ordine interno in entità InternalOrder.
-- *sellOrderToDomain(order: SellOrderDTO): SellOrder* \
+- *sellOrderToDomain(order: SellOrderDTO)* : SellOrder \
   Converte un DTO di ordine di vendita in entità SellOrder.
-- *orderItemToDomain(item: OrderItemDTO): OrderItem* \
+- *orderItemToDomain(item: OrderItemDTO)* : OrderItem \
   Converte un DTO di item d’ordine in OrderItem.
-- *orderIdToDomain(orderId: OrderIdDTO): OrderId* \
+- *orderIdToDomain(orderId: OrderIdDTO)* : OrderId \
   Converte un identificativo d’ordine DTO in OrderId.
-- *orderStateToDomain(state: OrderStateDTO): OrderState* \
+- *orderStateToDomain(state: OrderStateDTO)* : OrderState \
   Converte un DTO di stato in enum OrderState.
-- *orderItemDetailToDomain(item: OrderItemDetailDTO): OrderItemDetail* \
+- *orderItemDetailToDomain(item: OrderItemDetailDTO)* : OrderItemDetail \
   Converte un DTO con dettaglio item in entità di dominio.
-- *productQuantityToDomain(pq: ProductQuantityDTO): ProductQuantity* \
+- *productQuantityToDomain(pq: ProductQuantityDTO)* : ProductQuantity \
   Converte un DTO di quantità prodotto in entità ProductQuantity.
-- *warehouseIdToDomain(warehouseId: WarehouseIdDTO): WarehouseId* \
+- *warehouseIdToDomain(warehouseId: WarehouseIdDTO)* : WarehouseId \
   Converte un DTO di magazzino in WarehouseId.
-- *productToDomain(product: ProductDTO): Product* \
+- *productToDomain(product: ProductDTO)* : Product \
   Converte un DTO prodotto in Product.
-- *productIdToDomain(productId: ProductIdDTO): ProductId* \
+- *productIdToDomain(productId: ProductIdDTO)* : ProductId \
   Converte un DTO identificativo in ProductId.
-- *inventoryToDomain(inventory: InventoryDTO): Inventory* \
+- *inventoryToDomain(inventory: InventoryDTO)* : Inventory \
   Converte un inventario DTO in entità Inventory.
 
-- *internalOrderToDTO(order: InternalOrder): InternalOrderDTO* \
+- *internalOrderToDTO(order: InternalOrder)* : InternalOrderDTO \
   Serializza un InternalOrder in DTO.
-- *sellOrderToDTO(order: SellOrder): SellOrderDTO* \
+- *sellOrderToDTO(order: SellOrder)* : SellOrderDTO \
   Serializza un SellOrder in DTO.
-- *orderItemToDTO(item: OrderItem): OrderItemDTO* \
+- *orderItemToDTO(item: OrderItem)* : OrderItemDTO \
   Serializza un OrderItem in DTO.
-- *orderIdToDTO(orderId: OrderId): OrderIdDTO* \
+- *orderIdToDTO(orderId: OrderId)* : OrderIdDTO \
   Serializza un OrderId in DTO.
-- *orderStateToDTO(state: OrderState): OrderStateDTO* \
+- *orderStateToDTO(state: OrderState)* : OrderStateDTO \
   Serializza uno stato ordine in DTO.
-- *orderItemDetailToDTO(item: OrderItemDetail): OrderItemDetailDTO* \
+- *orderItemDetailToDTO(item: OrderItemDetail)* : OrderItemDetailDTO \
   Serializza un dettaglio item ordine in DTO.
-- *orderQuantityToDTO(orderId: OrderId, items: OrderItem[]): OrderQuantityDTO* \
+- *orderQuantityToDTO(orderId: OrderId, items: OrderItem[])* : OrderQuantityDTO\
   Costruisce un DTO di quantità ordini da entità di dominio.
-- *ordersToDTO(orders: Orders): OrdersDTO* \
+- *ordersToDTO(orders: Orders)* : OrdersDTO \
   Serializza un aggregato Orders in DTO.
-- *productQuantityToDTO(pq: ProductQuantity): ProductQuantityDTO* \
+- *productQuantityToDTO(pq: ProductQuantity)* : ProductQuantityDTO \
   Serializza un ProductQuantity in DTO.
-- *warehouseIdToDTO(warehouseId: WarehouseId): WarehouseIdDTO* \
+- *warehouseIdToDTO(warehouseId: WarehouseId)* : WarehouseIdDTO \
   Serializza un WarehouseId in DTO.
-- *productToDTO(product: Product): ProductDTO* \
+- *productToDTO(product: Product)* : ProductDTO \
   Serializza un Product in DTO.
-- *productIdToDTO(productId: ProductId): ProductIdDTO* \
+- *productIdToDTO(productId: ProductId)* : ProductIdDTO \
   Serializza un ProductId in DTO.
-- *inventoryToDTO(inventory: Inventory): InventoryDTO* \
+- *inventoryToDTO(inventory: Inventory)* : InventoryDTO \
   Serializza un inventario in DTO.
 
 ==== OrderQuantityDTO
@@ -2161,7 +2166,7 @@ Descrizione degli attributi:
  + Contiene la rappresentazione serializzata di tutti gli ordini,
  + Distingue tra ordini di vendita e ordini interni.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *sell*: SellOrderDTO[] \
   Lista di ordini di vendita.
 - *internal*: InternalOrderDTO[] \
@@ -2171,7 +2176,7 @@ Attributi:
  + Identifica un singolo articolo presente in un ordine,
  + Trasporta informazioni essenziali per quantità e riferimento.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *itemId*: string \
   Identificativo univoco dell’oggetto.
 - *quantity*: number \
@@ -2180,21 +2185,21 @@ Attributi:
 ==== OrderIdDTO
  + Incapsula l’identificativo univoco di un ordine nella versione DTO.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *id*: string \
   Identificativo univoco dell’ordine.
 
 ==== OrderStateDTO `<<enum>>`
  + Rappresenta lo stato di un ordine nella versione DTO.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *orderState*: string \
   Indica lo stato attuale (pending, processing, ecc.).
 
 ==== OrderItemDetailDTO
  + Fornisce i dettagli di un item d’ordine con quantità e prezzo unitario.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *orderItem*: OrderItemDTO \
   Oggetto ordine di riferimento.
 - *productReserved*: number \
@@ -2205,7 +2210,7 @@ Attributi:
 ==== SellOrderDTO
  + DTO per rappresentare un ordine di vendita.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *orderId*: OrderIdDTO \
   Identificativo dell’ordine.
 - *orderItem*: OrderItemDTO \
@@ -2222,7 +2227,7 @@ Attributi:
 ==== InternalOrderDTO
  + DTO per rappresentare un ordine interno.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *orderId*: OrderIdDTO
 - *orderItem*: OrderItemDTO
 - *orderState*: OrderStateDTO
@@ -2233,7 +2238,7 @@ Attributi:
 ==== WarehouseIdDTO
  + Identificativo del magazzino nella versione DTO.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *warehouseId*: number \
   Id numerico del magazzino.
 
@@ -2241,7 +2246,7 @@ Attributi:
  + Rappresentazione serializzata di un prodotto,
  + Trasporta le informazioni di base per comunicazione tra servizi.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *id*: string \
   Codice EAN del prodotto.
 - *name*: string \
@@ -2256,7 +2261,7 @@ Attributi:
 ==== ProductQuantityDTO
  + Associa un prodotto alla sua quantità in forma DTO.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *id*: ProductIdDTO \
   Identificativo del prodotto.
 - *quantity*: number \
@@ -2265,14 +2270,14 @@ Attributi:
 ==== ProductIdDTO
  + Incapsula l’identificativo univoco di un prodotto (EAN) in forma DTO.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *id*: string \
   Identificativo univoco del prodotto.
 
 ==== InventoryDTO
  + Contiene la collezione di prodotti di un magazzino in forma DTO.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *productList*: ProductDTO[] \
   Lista di prodotti con i relativi attributi.
 
@@ -2280,7 +2285,7 @@ Attributi:
 ==== WarehouseStateDTO
  + Rappresenta lo stato di un magazzino (online/offline).
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *warehouseId*: WarehouseDTO \
   Identificativo del magazzino.
 - *state*: string \
@@ -2290,13 +2295,13 @@ Attributi:
  + Entità che lega un prodotto ad una quantità,
  + Utilizzata negli ordini e nella gestione scorte.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *id*: ProductId \
   Identificativo prodotto.
 - *quantity*: number \
   Quantità associata.
 
-Metodi:
+E può invocare le seguenti funzioni:
 - *getId()*: ProductId \
   Restituisce l’identificativo del prodotto.
 - *getQuantity()*: number \
@@ -2306,7 +2311,7 @@ Metodi:
  + Entità di dominio che incapsula i dati e comportamenti di un prodotto,
  + Gestisce aspetti quantitativi e soglie di sicurezza.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *id*: ProductId \
   Identificativo univoco del prodotto (EAN).
 - *name*: string \
@@ -2322,7 +2327,7 @@ Attributi:
 - *quantityReserved*: number \
   Quantità riservata.
 
-Metodi:
+E può invocare le seguenti funzioni:
 - *addDeltaQuantity(quantity: number)*: void \
   Aggiorna la quantità disponibile incrementandola o decrementandola.
 - *getId()*: ProductId \
@@ -2356,11 +2361,11 @@ Metodi:
  + Value Object che incapsula l’identificativo univoco di un prodotto,
  + Garantisce consistenza logica e comparabilità.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *id*: string \
   Identificativo univoco del prodotto.
 
-Metodi:
+E può invocare le seguenti funzioni:
 - *getId()*: string \
   Restituisce il valore dell’identificativo.
 
@@ -2368,13 +2373,13 @@ Metodi:
  + Aggregato che rappresenta l’insieme degli ordini del sistema,
  + Comprende ordini interni e di vendita.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *sellOrders*: SellOrder[] \
   Lista ordini di vendita.
 - *internalOrders*: InternalOrder[] \
   Lista ordini interni.
 
-Metodi:
+E può invocare le seguenti funzioni:
 - *getSellOrders()*: SellOrder[] \
   Restituisce la lista ordini di vendita.
 - *getInternalOrders()*: InternalOrder[] \
@@ -2388,11 +2393,11 @@ Metodi:
  + Collezione di prodotti gestiti da un magazzino,
  + Permette di recuperare o aggiungere articoli all’inventario.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *productList*: Product[] \
   Lista dei prodotti gestiti.
 
-Metodi:
+E può invocare le seguenti funzioni:
 - *getInventory(productId: ProductId): Product* \
   Restituisce il prodotto corrispondente all’ID.
 - *addProductItem(product: Product)*: void \
@@ -2402,11 +2407,11 @@ Metodi:
  + Oggetto che incapsula l’identificativo univoco di un ordine,
  + Assicura consistenza e comparabilità.
 
-Attributi:
+Descrizione degli attributi della struttura:
 - *id: string* \
   Identificativo univoco dell’ordine.
 
-Metodi:
+E può invocare le seguenti funzioni:
 - *getId()*: string \
   Restituisce l’identificativo dell’ordine.
 - *getOrderType()*: char \
@@ -2423,24 +2428,23 @@ Valori possibili:
 - *CANCELLED*: Ordine annullato.
 - *COMPLETED*: Ordine completato.
 
-
 ==== ItemId
   + Rappresenta il Value Object che incapsula l’identificativo univoco di un item (riga d’ordine o riferimento a risorsa). Garantisce confronti di uguaglianza affidabili e coerenza nella serializzazione/deserializzazione.
-  Attributi:
+  Descrizione degli attributi della struttura:
   - *id: string* \
     Identificativo univoco dell’item.
-  Metodi:
+E può invocare le seguenti funzioni:
   - *getId(): string* \
     Restituisce l’identificativo univoco dell’item.
 
   ==== OrderItem
   + Rappresenta un singolo prodotto presente in un ordine e la quantità associata.
-  Attributi:
+  Descrizione degli attributi della struttura:
   - *itemId: ItemId[]* \
     Lista dei prodotti contenuti nell’ordine.
   - *quantity: number* \
     Quantità ordinata del prodotto.
-  Metodi:
+E può invocare le seguenti funzioni:
   - *getItemId(): ItemId* \
     Restituisce la lista dei prodotti presenti nell’ordine.
   - *getQuantity(): number* \
@@ -2450,14 +2454,14 @@ Valori possibili:
 
   ==== OrderItemDetail
   + Rappresenta il dettaglio di un item di un ordine, includendo il prodotto, la quantità riservata e il prezzo unitario.
-  Attributi:
+  Descrizione degli attributi della struttura:
   - *item: OrderItem* \
     L’item d’ordine associato.
   - *quantityReserved: number* \
     La quantità riservata di quel prodotto per l’ordine.
   - *unitPrice: number* \
     Prezzo unitario del prodotto.
-  Metodi:
+E può invocare le seguenti funzioni:
   - *getItem(): OrderItem* \
     Restituisce l’item d’ordine.
   - *getQuantityReserved(): number* \
@@ -2471,7 +2475,7 @@ Valori possibili:
 
   ==== Order (abstract)
   + Rappresenta l’entità astratta comune a tutti i tipi di ordine, gestendo gli attributi fondamentali come ID, lista degli item, stato, data di creazione e magazzino di partenza.
-  Attributi:
+  Descrizione degli attributi della struttura:
   - *orderId: OrderId* \
     Identificativo univoco dell’ordine.
   - *items: OrderItemDetail[]* \
@@ -2482,7 +2486,7 @@ Valori possibili:
     Data e ora di creazione dell’ordine.
   - *warehouseDeparture: number* \
     ID del magazzino di partenza dell’ordine.
-  Metodi:
+E può invocare le seguenti funzioni:
   - *getOrderId(): OrderId* \
     Restituisce l’identificativo dell’ordine.
   - *getItemsDetail(): OrderItemDetail[]* \
@@ -2504,10 +2508,10 @@ Valori possibili:
 
   ==== SellOrder
   + Rappresenta un ordine di vendita effettuato da un cliente, con indirizzo di destinazione e dettagli dei prodotti ordinati.
-  Attributi:
+  Descrizione degli attributi della struttura:
   - *destinationAddress: string* \
     Indirizzo di spedizione dell’ordine.
-  Metodi:
+E può invocare le seguenti funzioni:
   - *getDestinationAddress(): string* \
     Restituisce l’indirizzo di destinazione.
   - *setDestinationAddress(address: string): void* \
@@ -2515,10 +2519,10 @@ Valori possibili:
 
   ==== InternalOrder
   + Rappresenta un ordine interno di trasferimento di prodotti tra magazzini.
-  Attributi:
+  Descrizione degli attributi della struttura:
   - *warehouseDestination: number* \
     ID del magazzino di destinazione.
-  Metodi:
+E può invocare le seguenti funzioni:
   - *getWarehouseDestination(): number* \
     Restituisce il magazzino di destinazione.
   - *setWarehouseDestination(warehouseDestination: number): void* \
@@ -2526,25 +2530,192 @@ Valori possibili:
 
   ==== WarehouseId
   + Rappresenta un magazzino fisico all’interno del sistema.
-  Attributi:
+  Descrizione degli attributi della struttura:
   - *warehouseId: number* \
     Identificativo univoco del magazzino.
-  Metodi:
+E può invocare le seguenti funzioni:
   - *getWarehouseId(): number* \
     Restituisce l’ID del magazzino.
 
   ==== WarehouseState
   + Rappresenta lo stato operativo di un magazzino, utile per determinare la disponibilità di stock.
-  Attributi:
+  Descrizione degli attributi della struttura:
   - *state: string* \
     Stato operativo del magazzino (es. online/offline).
   - *warehouseId: WarehouseId* \
     Magazzino a cui si riferisce lo stato.
-  Metodi:
+E può invocare le seguenti funzioni:
   - *getState(): string* \
     Restituisce lo stato del magazzino.
   - *getId(): number* \
     Restituisce l’ID del magazzino associato
+
+=== Microservizio Routing
+// Breve spiegazione + Immagine
+
+==== RoutingController
++ Rappresenta il controller incaricato della gestione degli indirizzi di magazzino e della ricezione di eventi legati allo stato dei magazzini.
+
+E può invocare le seguenti funzioni:
+- *updateAddress(warehouseAddress: WarehouseAddressDTO)*: void \
+  Aggiorna un indirizzo di magazzino già registrato nel sistema.
+- *removeAddress(warehouseAddress: WarehouseAddressDTO)*: void \
+  Rimuove un indirizzo di magazzino non più attivo.
+- *addAddress(warehouseAddress: WarehouseAddressDTO)*: void \
+  Aggiunge un nuovo indirizzo di magazzino al sistema di routing.
+
+==== QuantitaCriticaEvent
++ Rappresenta l’evento emesso dal sistema centralizzato quando si verifica una criticità di quantità.  
+  Viene ascoltato dal microservizio *Routing* e viene suddiviso due casi:  
+  - quando uno o più prodotti dell'inventario di un magazzino scendono sotto la soglia minima,  
+  - quando un ordine effettuato in un magazzino richiede prodotti e risultano insufficienti.    
++ In entrambi i casi, il sistema centralizzato emette questo evento e il microservizio Routing lo riceve per avviare le azioni conseguenti.
+
+E può invocare le seguenti funzioni:
+- *receiveRequest(warehouseId: WarehouseIdDTO)*: void \
+  Riceve dal sistema centralizzato l’ID di un magazzino critico e lo inoltra al *RoutingService* per calcolare la sequenza di distanza rispetto agli altri magazzini.
+
+==== ReceiveWarehouseState
++ Rappresenta il componente che gestisce l’aggiornamento dello stato di un magazzino in base ai dati ricevuti.
+
+E può invocare le seguenti funzioni:
+- *updateWarehouseState(warehouseState: WarehouseStateDTO)*: void \
+  Aggiorna lo stato di un magazzino in base ai dati ricevuti.
+
+==== RoutingService
++ Rappresenta il servizio applicativo che si occupa della logica di business relativa al calcolo delle distanze tra magazzini e alla gestione degli indirizzi.
+
+Descrizione degli attributi della struttura:
+- *warehouseId*: WarehouseId \
+  L’identificativo del magazzino di riferimento per le operazioni.
+- *warehouseAddress[]*: WarehouseAddress \
+  Un array contenente gli indirizzi di tutti i magazzini noti al sistema.
+
+E può invocare le seguenti funzioni:
+- *calculateDistance()*: WarehouseId[] \
+  Esegue il calcolo della distanza tra il magazzino di riferimento e tutti gli altri, restituendo un array di WarehouseId ordinato per distanza.
+
+==== RoutingRepository
++ Rappresenta il repository incaricato della persistenza e recupero delle informazioni relative ai magazzini, indirizzi e stati.
+
+E può invocare le seguenti funzioni:
+- *saveWarehouse(warehouse: WarehouseId)*: void \
+  Salva un nuovo magazzino.
+- *getWarehouseById(id: WarehouseId)*: WarehouseId \
+  Recupera un magazzino tramite il suo ID.
+- *getAllWarehouses()*: WarehouseId[] \
+  Recupera tutti i magazzini.
+- *saveWarehouseAddress(address: WarehouseAddress)*: void \
+  Salva l’indirizzo di un magazzino.
+- *removeWarehouseAddress(id: WarehouseId)*: void \
+  Rimuove l’indirizzo di un magazzino.
+- *updateWarehouseAddress(address: WarehouseAddress)*: void \
+  Aggiorna l’indirizzo di un magazzino.
+- *getWarehouseAddressById(id: WarehouseId)*: WarehouseAddress \
+  Recupera un indirizzo tramite l’ID del magazzino.
+- *getAllWarehouseAddresses()*: WarehouseAddress[] \
+  Recupera tutti gli indirizzi dei magazzini.
+- *saveWarehouseState(state: WarehouseState)*: void \
+  Salva lo stato di un magazzino.
+- *getWarehouseStateById(id: WarehouseId)*: WarehouseState \
+  Recupera lo stato di un magazzino tramite il suo ID.
+- *getAllWarehouseStates()*: WarehouseState[] \
+  Recupera gli stati di tutti i magazzini.
+
+==== DataMapper
++ Rappresenta il componente che si occupa della conversione tra oggetti di dominio e DTO, assicurando la separazione dei livelli applicativi.
+
+E può invocare le seguenti funzioni:
+- *toDomain(warehouseState: WarehouseStateDTO)*: WarehouseState \
+  Converte un DTO WarehouseStateDTO in un oggetto di dominio WarehouseState.
+- *toDomain(warehouseId: WarehouseIdDTO)*: WarehouseId \
+  Converte un DTO WarehouseIdDTO in un oggetto di dominio WarehouseId.
+- *toDomain(warehouseAddress: WarehouseAddressDTO)*: WarehouseAddress \
+  Converte un DTO WarehouseAddressDTO in un oggetto di dominio WarehouseAddress.
+- *toDTO(warehouseState: WarehouseState)*: WarehouseStateDTO \
+  Converte un oggetto di dominio WarehouseState in un DTO WarehouseStateDTO.
+- *toDTO(warehouseId: WarehouseId)*: WarehouseIdDTO \
+  Converte un oggetto di dominio WarehouseId in un DTO WarehouseIdDTO.
+- *toDTO(warehouseAddress: WarehouseAddress)*: WarehouseAddressDTO \
+  Converte un oggetto di dominio WarehouseAddress in un DTO WarehouseAddressDTO.
+
+==== RoutingEventAdapter
++ Rappresenta l’adapter responsabile della pubblicazione degli eventi relativi agli indirizzi e alle distanze dei magazzini.
+
+E può invocare le seguenti funzioni:
+- *sendAddress(warehouseAddress: WarehouseAddress)*: void \
+  Invia un evento con i dati di un indirizzo.
+- *sendWarehouseDistance(warehouseId: WarehouseId)*: void \
+  Invia un evento con le distanze calcolate.
+
+==== WarehouseIdDTO
++ DTO per trasferire l’identificativo di un magazzino.
+
+Descrizione degli attributi della struttura:
+- *warehouseId*: number \
+  L’ID del magazzino.
+
+==== WarehouseStateDTO
++ DTO per trasferire lo stato di un magazzino.
+
+Descrizione degli attributi della struttura:
+- *warehouseId*: WarehouseIdDTO \
+  L’ID del magazzino a cui si riferisce lo stato.
+- *state*: string \
+  Lo stato del magazzino.
+
+==== WarehouseAddressDTO
++ DTO per trasferire l’indirizzo di un magazzino.
+
+Descrizione degli attributi della struttura:
+- *warehouseState*: WarehouseStateDTO \
+  Lo stato del magazzino associato.
+- *address*: string \
+  L’indirizzo del magazzino.
+
+==== WarehouseId
++ Rappresenta l’identificativo univoco di un magazzino.
+
+Descrizione degli attributi della struttura:
+- *warehouseId*: number \
+  L’ID numerico del magazzino.
+
+E può invocare le seguenti funzioni:
+- *getId()*: number \
+  Restituisce l’ID del magazzino.
+
+==== WarehouseState
++ Rappresenta lo stato operativo di un magazzino.
+
+Descrizione degli attributi della struttura:
+- *state*: string \
+  Lo stato attuale del magazzino.
+- *warehouseId*: WarehouseId \
+  Il riferimento all’ID del magazzino a cui lo stato appartiene.
+
+E può invocare le seguenti funzioni:
+- *getState()*: string \
+  Restituisce lo stato.
+- *getId()*: number \
+  Restituisce l’ID del magazzino associato.
+
+==== WarehouseAddress
++ Rappresenta l’indirizzo fisico di un magazzino, combinando lo stato e l’indirizzo stesso.
+
+Descrizione degli attributi della struttura:
+- *warehouseState*: WarehouseState \
+  Lo stato del magazzino associato a questo indirizzo.
+- *address*: string \
+  L’indirizzo fisico completo.
+
+E può invocare le seguenti funzioni:
+- *getState()*: string \
+  Restituisce lo stato del magazzino.
+- *getId()*: number \
+  Restituisce l’ID del magazzino.
+- *getAddress()*: string \
+  Restituisce l’indirizzo.
+
 
 = Stato dei requisiti funzionali
 == Stato per requisito
