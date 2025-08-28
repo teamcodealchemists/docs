@@ -451,7 +451,7 @@ In conclusione, l'architettura esagonale rappresenta una scelta ideale per garan
 === Microservizio Inventario (Inventory Service)
 // Breve spiegazione + Immagine
 #figure(
-  image("assets/Inventory.svg", width: 110%),
+  image("assets/Inventory.drawio.svg", width: 110%),
   caption: [Schema UML - Microservizio Inventario]
 )
 
