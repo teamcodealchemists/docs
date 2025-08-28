@@ -2440,114 +2440,114 @@ E può invocare le seguenti funzioni:
   ==== OrderItem
   + Rappresenta un singolo prodotto presente in un ordine e la quantità associata.
   Descrizione degli attributi della struttura:
-  - *itemId: ItemId[]* \
+  - *itemId*: ItemId[] \
     Lista dei prodotti contenuti nell’ordine.
-  - *quantity: number* \
+  - *quantity*: number \
     Quantità ordinata del prodotto.
 E può invocare le seguenti funzioni:
-  - *getItemId(): ItemId* \
+  - *getItemId()*: ItemId \
     Restituisce la lista dei prodotti presenti nell’ordine.
-  - *getQuantity(): number* \
+  - *getQuantity()*: number \
     Restituisce la quantità del prodotto.
-  - *setQuantity(quantity: number): void* \
+  - *setQuantity(quantity: number)*: void \
     Imposta la quantità del prodotto.
 
   ==== OrderItemDetail
   + Rappresenta il dettaglio di un item di un ordine, includendo il prodotto, la quantità riservata e il prezzo unitario.
   Descrizione degli attributi della struttura:
-  - *item: OrderItem* \
+  - *item*: OrderItem\
     L’item d’ordine associato.
-  - *quantityReserved: number* \
+  - *quantityReserved*: number \
     La quantità riservata di quel prodotto per l’ordine.
-  - *unitPrice: number* \
+  - *unitPrice*: number \
     Prezzo unitario del prodotto.
 E può invocare le seguenti funzioni:
-  - *getItem(): OrderItem* \
+  - *getItem()*: OrderItem \
     Restituisce l’item d’ordine.
-  - *getQuantityReserved(): number* \
+  - *getQuantityReserved()*: number \
     Restituisce la quantità riservata per l’item.
-  - *getUnitPrice(): number* \
+  - *getUnitPrice()*: number \
     Restituisce il prezzo unitario del prodotto.
-  - *setQuantityReserved(quantityReserved: number): void* \
+  - *setQuantityReserved(quantityReserved: number)*: void \
     Imposta la quantità riservata dell’item.
-  - *setUnitPrice(unitPrice: number): void* \
+  - *setUnitPrice(unitPrice: number)*: void \
     Imposta il prezzo unitario dell’item.
 
   ==== Order (abstract)
   + Rappresenta l’entità astratta comune a tutti i tipi di ordine, gestendo gli attributi fondamentali come ID, lista degli item, stato, data di creazione e magazzino di partenza.
   Descrizione degli attributi della struttura:
-  - *orderId: OrderId* \
+  - *orderId*: OrderId \
     Identificativo univoco dell’ordine.
-  - *items: OrderItemDetail[]* \
+  - *items*: OrderItemDetail[] \
     Lista dei dettagli dei prodotti contenuti nell’ordine.
-  - *orderState: OrderState* \
+  - *orderState*: OrderState \
     Stato corrente dell’ordine (Pending, Processing, Shipping, Cancelled, Completed).
-  - *creationDate: DateTime* \
+  - *creationDate*: DateTime \
     Data e ora di creazione dell’ordine.
-  - *warehouseDeparture: number* \
+  - *warehouseDeparture*: number \
     ID del magazzino di partenza dell’ordine.
 E può invocare le seguenti funzioni:
-  - *getOrderId(): OrderId* \
+  - *getOrderId()*: OrderId \
     Restituisce l’identificativo dell’ordine.
-  - *getItemsDetail(): OrderItemDetail[]* \
+  - *getItemsDetail()*: OrderItemDetail[]\
     Restituisce la lista dettagliata degli item dell’ordine.
-  - *getOrderState(): string* \
+  - *getOrderState()*: string \
     Restituisce lo stato corrente dell’ordine.
-  - *getCreationDate(): DateTime* \
+  - *getCreationDate()*: DateTime \
     Restituisce la data di creazione dell’ordine.
-  - *getWarehouseDeparture(): number* \
+  - *getWarehouseDeparture()*: number \
     Restituisce il magazzino di partenza.
-  - *setItemsDetail(items: OrderItemDetail[]): void* \
+  - *setItemsDetail(items: OrderItemDetail[])*: void \
     Aggiorna la lista degli item dell’ordine.
-  - *setOrderState(orderState: OrderState): void* \
+  - *setOrderState(orderState: OrderState)*: void \
     Aggiorna lo stato dell’ordine.
-  - *setCreationDate(creationDate: DateTime): void* \
+  - *setCreationDate(creationDate: DateTime)*: void \
     Imposta la data di creazione dell’ordine.
-  - *setWarehouseDeparture(warehouseDeparture: number): void* \
+  - *setWarehouseDeparture(warehouseDeparture: number)*: void \
     Imposta il magazzino di partenza dell’ordine.
 
   ==== SellOrder
   + Rappresenta un ordine di vendita effettuato da un cliente, con indirizzo di destinazione e dettagli dei prodotti ordinati.
   Descrizione degli attributi della struttura:
-  - *destinationAddress: string* \
+  - *destinationAddress*: string\
     Indirizzo di spedizione dell’ordine.
 E può invocare le seguenti funzioni:
-  - *getDestinationAddress(): string* \
+  - *getDestinationAddress()*: string \
     Restituisce l’indirizzo di destinazione.
-  - *setDestinationAddress(address: string): void* \
+  - *setDestinationAddress(address: string)*: void \
     Imposta l’indirizzo di destinazione dell’ordine.
 
   ==== InternalOrder
   + Rappresenta un ordine interno di trasferimento di prodotti tra magazzini.
   Descrizione degli attributi della struttura:
-  - *warehouseDestination: number* \
+  - *warehouseDestination*: number \
     ID del magazzino di destinazione.
 E può invocare le seguenti funzioni:
-  - *getWarehouseDestination(): number* \
+  - *getWarehouseDestination()*: number \
     Restituisce il magazzino di destinazione.
-  - *setWarehouseDestination(warehouseDestination: number): void* \
+  - *setWarehouseDestination(warehouseDestination: number)*: void \
     Imposta il magazzino di destinazione.
 
   ==== WarehouseId
   + Rappresenta un magazzino fisico all’interno del sistema.
   Descrizione degli attributi della struttura:
-  - *warehouseId: number* \
+  - *warehouseId*: number \
     Identificativo univoco del magazzino.
 E può invocare le seguenti funzioni:
-  - *getWarehouseId(): number* \
+  - *getWarehouseId()*: number \
     Restituisce l’ID del magazzino.
 
   ==== WarehouseState
   + Rappresenta lo stato operativo di un magazzino, utile per determinare la disponibilità di stock.
   Descrizione degli attributi della struttura:
-  - *state: string* \
+  - *state*: string \
     Stato operativo del magazzino (es. online/offline).
-  - *warehouseId: WarehouseId* \
+  - *warehouseId*: WarehouseId \
     Magazzino a cui si riferisce lo stato.
 E può invocare le seguenti funzioni:
-  - *getState(): string* \
+  - *getState()*: string \
     Restituisce lo stato del magazzino.
-  - *getId(): number* \
+  - *getId()*: number \
     Restituisce l’ID del magazzino associato
 
 === Microservizio Routing
