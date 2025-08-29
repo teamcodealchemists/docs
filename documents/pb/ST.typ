@@ -442,19 +442,53 @@ In conclusione, l'architettura esagonale rappresenta una scelta ideale per garan
 
 == Microservizi sviluppati
 // Schema di tutti i microservizi - introduzione
-
+Ogni microservizio è stato progettato per assolvere a un compito ben definito, 
+garantendo un contributo essenziale all’interno del sistema complessivo del progetto e favorendo la collaborazione tra i vari moduli.
+L’architettura dei *Microservizi* segue un approccio a casi d’uso e servizi di dominio, con separazione tra logica applicativa, logica di dominio e interfacce di comunicazione esterne.\
+I microservizi sviluppati sono:
+- *#link(label("Inventory"),"Inventory")*
+- *#link(label("State"), "State")*
+- *#link(label("Cloud State"), "Cloud State")*
+- *#link(label("Orders"), "Orders")*
+- *#link(label("Orders Aggregate"), "Orders Aggregate")*
+- *#link(label("Central System"), "Central System (Sistema Centralizzato)")*
+- *#link(label("Routing"), "Routing")*
+//- *#link(label("Inventary Aggreggate"), "Inventary Aggreggate")*
+//- *#link(label("Auth"), "Auth")*
+Ogni microservizio possiede il proprio file 
+- *`*`service* : Contiene la logica applicativa principale, orchestrando i casi d’uso e coordinando le entità di dominio.
+- *`*`DTO* : Strutture leggere dedicate allo scambio di dati tra microservizi o verso l’esterno, senza esporre direttamente le entità di dominio.
+- *`*`DataMapper* : Componente responsabile della conversione bidirezionale tra entità di dominio e DTO. Garantisce separazione tra logica interna e interfacce esterne.
+- *`*`Adapter* : Moduli che implementano le interfacce per la comunicazione esterna (eventi, API, messaggistica). Seguono il pattern Ports & Adapters.
+- *`*`Controller* : Punto di ingresso del microservizio per la gestione delle richieste provenienti dall’esterno (es. REST controller, listener di eventi).
+- *`*`Repository* : Strato di accesso ai dati per la gestione della persistenza delle entità di dominio.
+  - Nota: il _Sistema Centralizzato_ non possiede la repository perchè non ha persistenza locale ma agisce come orchestratore.
+- *Domini* : Le entità e i value object che rappresentano il cuore del microservizio. Sono indipendenti dalla tecnologia e descrivono il linguaggio del dominio
 /*
 =================================================
              MICROSERVIZIO INVENTARIO
 =================================================
 */
+#label("Inventory")
 === Microservizio Inventario (Inventory Service)
 // Breve spiegazione + Immagine
 #figure(
   image("assets/Inventory.drawio.svg", width: 110%),
   caption: [Schema UML - Microservizio Inventario]
 )
-
+==== Descrizione del microservizio
+Il *Microservizio Inventario* rappresenta il componente responsabile della gestione delle scorte all’interno di un singolo magazzino.
+Il suo compito principale è quello di mantenere la coerenza dello stato dei prodotti, verificare la disponibilità rispetto alle soglie minime e
+massime configurate e coordinare le operazioni di movimentazione delle quantità.
+===== Funzionalità principali
+- *Gestione dello stock prodotti*: inserimento, rimozione, aggiornamento e consultazione delle quantità.
+- *Verifica disponibilità*: controllo delle soglie di giacenza (minime e massime) e identificazione di eventuali criticità.
+- *Gestione richieste ordini*: elaborazione delle richieste provenienti dai magazzini o dal sistema centralizzato per soddisfare ordini cliente.
+- *Pubblicazione eventi*: emissione di notifiche verso gli altri microservizi quando avvengono variazioni di stato significative.
+- *Interoperabilità*: interazione con microservizi esterni quali:
+  - _Sistema Centralizzato_, che coordina gli eventi critici e la logica di alto livello.
+  - _Microservizio Ordini_, per validare la disponibilità dei prodotti richiesti.
+  - _Inventario Aggregato_, per fornire una vista complessiva delle giacenze multi-magazzino.
 ==== ProdcutId
 /*
 #figure(
@@ -807,8 +841,19 @@ Metodi:
              MICROSERVIZIO STATO
 =================================================
 */
+#label("State")
 === Microservizio State (Warehouse State Service)
 // Breve spiegazione + Immagine
+==== Descrizione del microservizio
+Il *Microservizio Stato* rappresenta il componente responsabile del monitoraggio e della gestione dello stato di un magazzino.  
+Il suo compito principale è quello di rilevare la disponibilità operativa attraverso heartbeat periodici, mantenere aggiornato lo stato corrente e inviare tali informazioni al microservizio *Cloud State*.  
+
+===== Funzionalità principali
+- *Gestione heartbeat*: raccolta, validazione e aggiornamento delle informazioni di stato provenienti dal magazzino.
+- *Aggiornamento stato*: mantenimento della coerenza delle informazioni sullo stato operativo del magazzino.
+- *Trasmissione a Cloud State*: invio degli heartbeat al Cloud State per l’elaborazione e il coordinamento.
+- *Interoperabilità*: interazione con microservizi esterni quali:
+  - _Cloud State_, per la gestione e il coordinamento degli stati.
 
 ==== WarehouseId
  + Rappresenta l'identificatore univoco del magazzino,
@@ -967,8 +1012,22 @@ E può invocare le seguenti funzioni:
              MICROSERVIZIO CLOUD STATE
 =================================================
 */
+#label("Cloud State")
 === Microservizio Cloud State
 // Breve spiegazione + Immagine
+==== Descrizione del microservizio
+Il *Microservizio Cloud State* rappresenta il componente centralizzato responsabile della raccolta, aggregazione e gestione degli stati provenienti dai singoli magazzini.  
+Il suo compito principale è ricevere i segnali di heartbeat inviati dal *Microservizio Stato*, mantenere una visione coerente e aggiornata della disponibilità complessiva e renderla disponibile agli altri microservizi che necessitano di queste informazioni.  
+
+===== Funzionalità principali
+- *Ricezione heartbeat*: acquisizione dei segnali di stato inviati dai singoli magazzini.
+- *Aggregazione stati*: consolidamento delle informazioni per costruire una visione globale del sistema.
+- *Aggiornamento stato centralizzato*: mantenimento della coerenza e sincronizzazione degli stati dei magazzini.
+- *Consultazione stato aggregato*: esposizione delle informazioni verso microservizi che richiedono lo stato complessivo.
+- *Pubblicazione eventi*: invio di notifiche verso i microservizi interessati quando avvengono variazioni di stato.
+- *Interoperabilità*: interazione con microservizi esterni quali:
+  - _Microservizio Stato_, per ricevere heartbeat e aggiornamenti.
+  - _Microservizio Routing_, per ricevere lo stato di un magazzino specifico.
 
 ==== CloudWarehouseId
  + Rappresenta l’identificatore univoco del magazzino nel cloud,
@@ -1143,9 +1202,11 @@ E può invocare le seguenti funzioni:
              MICROSERVIZIO ORDERS
 =================================================
 */
+#label("Orders")
 === Microservizio Orders
 // Breve spiegazione + Immagine
-
+==== Descrizione del microservizio
+===== Funzionalità principali
 ==== OrderId
  + Rappresenta l’identificativo univoco dell’ordine,
  + Incapsula il campo _id: string_,
@@ -1641,8 +1702,10 @@ E può invocare le seguenti funzioni:
         MICROSERVIZIO ORDINE AGGREGATO
 =================================================
 */
+#label("Orders Aggregate")
 === Microservizio Ordine Aggreggato
-
+==== Descrizione del microservizio
+===== Funzionalità principali
 ==== SyncOrderId
  + Rappresenta l’identificativo dell’ordine sincronizzato.
 
@@ -2023,6 +2086,9 @@ E può invocare le seguenti funzioni:
     MICROSERVIZIO SISTEMA CENTRALIZZATO
 =================================================
 */
+#label("Central System")
+==== Descrizione del microservizio
+===== Funzionalità principali
 === CentralSystemController
  + Gestisce tutti gli eventi in ingresso dal cloud e dai magazzini.
 
@@ -2550,7 +2616,10 @@ E può invocare le seguenti funzioni:
   - *getId()*: number \
     Restituisce l’ID del magazzino associato
 
+#label("Routing")
 === Microservizio Routing
+==== Descrizione del microservizio
+===== Funzionalità principali
 // Breve spiegazione + Immagine
 
 ==== RoutingController
@@ -2640,13 +2709,15 @@ E può invocare le seguenti funzioni:
   Converte un oggetto di dominio WarehouseAddress in un DTO WarehouseAddressDTO.
 
 ==== RoutingEventAdapter
-+ Rappresenta l’adapter responsabile della pubblicazione degli eventi relativi agli indirizzi e alle distanze dei magazzini.
++ Rappresenta l’adapter responsabile della pubblicazione degli eventi relativi agli indirizzi, alle distanze dei magazzini e lo stato dei magazzini.
 
 E può invocare le seguenti funzioni:
 - *sendAddress(warehouseAddress: WarehouseAddress)*: void \
   Invia un evento con i dati di un indirizzo.
 - *sendWarehouseDistance(warehouseId: WarehouseId)*: void \
   Invia un evento con le distanze calcolate.
+- *RequestWarehouseState(WarehouseState)*:void \
+  Invia una richiesta al microservizio *Cloud State* per essere a conoscenza dello stato di un/o più Warehouse.
 
 ==== WarehouseIdDTO
 + DTO per trasferire l’identificativo di un magazzino.
