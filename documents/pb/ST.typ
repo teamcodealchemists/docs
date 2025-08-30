@@ -16,7 +16,7 @@
 #let status = "In redazione"
 #let destinatario = "M31"
 
-#let versione = "0.3.0"
+#let versione = "0.4.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -29,6 +29,13 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+
+  [0.4.0],
+  [30/08/2025],
+  [A. Shu],
+  [N. Moretto],
+  [Aggiunta breve descrizioni sui microservizi (inventario, state, Cloud State, Sistema centralizzato e Routing)],
+
   [0.3.0],
   [28/08/2025],
   [A. Shu \ N. Bolzon],
@@ -2088,7 +2095,19 @@ E può invocare le seguenti funzioni:
 */
 #label("Central System")
 ==== Descrizione del microservizio
+Il *Sistema Centralizzato* rappresenta il componente core dell’architettura, responsabile del coordinamento delle operazioni e 
+della gestione integrata delle informazioni provenienti dai diversi microservizi.  
+Il suo compito principale è orchestrare i flussi legati agli ordini, monitorare lo stato dei magazzini e gestire i casi di criticità, come giacenze sotto soglia o indisponibilità operative.  
+
 ===== Funzionalità principali
+- *Gestione soglie minime*: monitoraggio degli eventi emessi dagli inventari in caso di criticità sulle quantità di uno o più prodotti e applicazione di azioni correttive.
+- *Gestione ordini critici*: elaborazione e instradamento delle richieste d’ordine con prodotti insufficienti, valutando magazzini alternativi (priorità a quelli più vicini) e integrando dati di inventario e routing.
+- *Aggregazione dati (Inventari e Ordini)*: consolidamento delle informazioni di giacenza e ordini dai diversi magazzini, a supporto del bilanciamento delle soglie e della gestione delle criticità.
+- *Coordinamento stati operativi*: utilizzo delle informazioni del Cloud State per garantire disponibilità e operatività dei magazzini.
+- *Routing e strategia di instradamento*: valutazione delle distanze tra magazzini tramite il microservizio Routing e definizione della sequenza ottimale per bilanciamento delle soglie per inventari o criticità degli ordini.
+- *Pubblicazione eventi*: emissione di notifiche verso i microservizi interessati quando vengono rilevate criticità o applicate strategie di bilanciamento.
+- *Interoperabilità*: interazione con microservizi esterni (Cloud State, Routing, Inventario Aggregato, Ordine Aggregato) per integrare dati e decisioni.
+
 === CentralSystemController
  + Gestisce tutti gli eventi in ingresso dal cloud e dai magazzini.
 
@@ -2111,7 +2130,7 @@ E può invocare le seguenti funzioni:
  - *getWarehouseState(dto: WarehouseStateDTO)* : void   \
    Riceve lo stato di un magazzino (online/offline).
 
-=== Sistema Centralizzato \
+==== CentralSystemService \
  + Contiene la logica di business del sistema centralizzato.
 
 Descrizione degli attributi della struttura:
@@ -2127,7 +2146,10 @@ Descrizione degli attributi della struttura:
    Contiene le quantità degli ordini.
  - *distance* : WarehouseState[]   \
    Contiene informazioni sulle distanze tra i magazzini.
-
+- *idInternalOrderCounter* : number
+   Contiene informazioni sull'ultimo id arrivato per ordini interni
+- *idSellOrderCounter* : number
+   Contiene informazioni sull'ultimo id arrivato per ordini di vendita
 Metodi:
  - *RequestAllNeededData()* : void   \
    Richiede dati a Inventory Aggregato, Orders Aggregato e Routing.
@@ -2618,10 +2640,14 @@ E può invocare le seguenti funzioni:
 
 #label("Routing")
 === Microservizio Routing
-==== Descrizione del microservizio
-===== Funzionalità principali
 // Breve spiegazione + Immagine
-
+==== Descrizione del microservizio
+Il microservizio di Routing è il componente dedicato alla logica di calcolo della distanza e della sequenza ottimale dei magazzini. 
+La sua funzione principale è fornire al Sistema Centralizzato le informazioni necessarie per prendere decisioni rapide ed efficaci in merito 
+bilanciamento delle scorte o gestione degli ordini critici. Questo servizio opera in modo indipendente, 
+concentrandosi unicamente sulle funzionalità di routing, e comunica con gli altri microservizi per ottenere i dati necessari.
+===== Funzionalità principali
+- *Determinazione delle distanze*: calcolo della distanza tra i magazzini, sulla base delle informazioni disponibili.
 ==== RoutingController
 + Rappresenta il controller incaricato della gestione degli indirizzi di magazzino e della ricezione di eventi legati allo stato dei magazzini.
 
