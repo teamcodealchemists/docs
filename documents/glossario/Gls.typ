@@ -213,6 +213,11 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 
 - *Iterativo*:\
   Un processo iterativo è un ciclo di lavoro ripetuto in cui un team crea, prototipizza, testa e migliora un prodotto o un progetto fino a raggiungere il risultato desiderato. Questo approccio è molto comune nello sviluppo software, dove si suddivide il progetto in cicli o iterazioni più piccoli, permettendo di ricevere feedback e apportare modifiche in corso d'opera.
+
+#pagebreak()
+= J
+- *JSON Web Token (JWT)*:\
+  Abbreviato _JWT_, è uno standard aperto _(RFC 7519)_ per la trasmissione sicura di informazioni tra due parti sotto forma di oggetto JSON. È composto da tre parti: header, payload e signature. Viene comunemente utilizzato per autenticazione e autorizzazione nelle applicazioni web, permettendo al server di verificare l'identità di un utente senza memorizzare lo stato della sessione.
   
 #pagebreak()
 = L
@@ -327,6 +332,9 @@ La nomenclatura adottata per indicare che un termine è presente nel glossario �
 
 - *Sprint*:\
   Periodo di tempo specifico (timebox) in cui un team di sviluppo lavora in modo coordinato, seguendo una metodologia agile come Scrum, per completare una determinata quantità di lavoro. 
+
+- *Subject Claim (sub)*:\
+  Abbreviato _sub_, è un campo presente nel payload di un JSON Web Token _(JWT)_ che identifica in modo univoco il soggetto a cui il token si riferisce, tipicamente l’ID dell’utente o dell’entità autenticata.
 
 #pagebreak()
 = T
