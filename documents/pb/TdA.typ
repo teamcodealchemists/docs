@@ -89,18 +89,17 @@ Il documento si applica al processo di validazione del prodotto sviluppato, con 
 == Criteri di Accettazione
 - Non saranno accettati Test Book contenenti *errori critici*.
 - È tollerata una quota massima del *5% di test non critici falliti* (es. 2 su 30), a condizione che vengano corretti prima della consegna definitiva.
-- Il numero complessivo dei test dovrà garantire la copertura delle funzionalità principali e dei requisiti fondamentali.
+- Il numero complessivo dei test dovrà garantire la fruibilità del sistema e la copertura delle funzionalità principali.
 
 = Guida alla configurazione e all'esecuzione dei test
-Questa sezione del documento fornisce le indicazioni necessarie per configurare l’ambiente di test e per eseguire i casi di test definiti nella sezione seguente. L’obiettivo è garantire che ogni test venga eseguito in un ambiente controllato e riproducibile, riducendo al minimo errori dovuti a configurazioni locali o dati residui. La guida copre la clonazione del progetto, l’avvio dei servizi tramite Docker Compose, il reset dell’ambiente e l’esecuzione dei test tramite Postman.
+Questa sezione del documento dichiara le istruzioni necessarie che verranno utilizzate per configurare l’ambiente di test e per eseguire i casi di test definiti nella sezione seguente. L’obiettivo è chiarire il "_modus operandi"_ dei test e affinchè venga eseguito in un ambiente controllato e riproducibile, riducendo al minimo errori dovuti a configurazioni locali o dati residui. La guida copre la clonazione del progetto, l’avvio dei servizi tramite Docker Compose, il reset dell’ambiente e l’esecuzione dei test tramite Postman.
 
 == Clonare la repository
 1. Aprire un terminale e spostarsi nella cartella di lavoro desiderata, ad esempio:
 #align(center)[`cd ~/workspace`]
 
 2. Clonare la repository del progetto:
-#align(center)[`git clone https://github.com/teamcodealchemists/MVP.git
-`]
+#align(center)[`git clone https://github.com/teamcodealchemists/MVP.git`]
 
 3. Entrare nella cartella del progetto appena clonata:
 #align(center)[`cd MVP`]
@@ -124,12 +123,14 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 \
 
 == Eseguire i test con Postman
-1. Aprire Postman o l’estensione Postman in VS Code _(strumento principale)_.
-2. Importare o creare la collection fornita dal team di progetto.
-3. Selezionare la richiesta da eseguire _(ad esempio: registrazione, login, gestione magazzini, ecc.)_.
-4. Inserire eventuali parametri richiesti _(corpo della richiesta, header, ecc.)_.
-5. Premere Send per inviare la richiesta.
-6. Verificare la risposta mostrata da Postman confrontandola con i risultati attesi indicati nei casi di test.
+1. Aprire Postman \
+  1.1 Usare l’estensione di VsCode _(Il nostro strumento principale)_.\
+  1.2 Usare il sito e l’agent di Postman locale.
+2. Importare o creare il workspace fornito dal team di progetto.
+3. Selezionare il test da eseguire _(esempio: registrazione, login, gestione magazzini, ecc.)_.
+4. Leggere la documentazione del test.
+5. Eseguire la collection del test.
+6. Verificare la risposta mostrata da Postman confrontandola con i risultati attesi indicati nei casi di test o il controllo automatico di Postman.
 
 = Elenco Test di Accettazione
 #show figure: set block(breakable: true)
