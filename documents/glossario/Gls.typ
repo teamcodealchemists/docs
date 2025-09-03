@@ -221,7 +221,6 @@ La nomenclatura adottata per indicare che un termine Ã¨ presente nel glossario Ã
   
 #pagebreak()
 = L
-
 - *Log*:\
   Registro cronologico di eventi e operazioni eseguite su un sistema.
 
