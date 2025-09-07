@@ -479,10 +479,10 @@ Ogni microservizio possiede il proprio file
 #label("Inventory")
 === Microservizio Inventario (Inventory Service)
 // Breve spiegazione + Immagine
-#figure(
+/*#figure(
   image("assets/Inventory.drawio.svg", width: 110%),
   caption: [Schema UML - Microservizio Inventario]
-)
+) DA AGGIORNARE IMMAGINE */ 
 ==== Descrizione del microservizio
 Il *Microservizio Inventario* rappresenta il componente responsabile della gestione delle scorte all’interno di un singolo magazzino.
 Il suo compito principale è quello di mantenere la coerenza dello stato dei prodotti, verificare la disponibilità rispetto alle soglie minime e
@@ -496,7 +496,7 @@ massime configurate e coordinare le operazioni di movimentazione delle quantità
   - _Sistema Centralizzato_, che coordina gli eventi critici e la logica di alto livello.
   - _Microservizio Ordini_, per validare la disponibilità dei prodotti richiesti.
   - _Inventario Aggregato_, per fornire una vista complessiva delle giacenze multi-magazzino.
-==== ProdcutId
+==== ProductId
 /*
 #figure(
   image("", width: 60%),
@@ -535,6 +535,8 @@ E può invocare le seguenti funzioni:
     Soglia minima di sicurezza relativa alla quantità del prodotto.
   - *maxThres*: number \
     Soglia massima di sicurezza relativa alla quantità del prodotto.
+  - *quantityReserved*: number \
+    È la quantità riservata di quel prodotto. Può essere NULL.
 
   E può invocare le seguenti funzioni:
   - *addDeltaQuantity(quantity: number)*: void \
@@ -561,8 +563,44 @@ E può invocare le seguenti funzioni:
     Metodo per modificare la soglia minima di sicurezza relativa alla quantità del prodotto.
   - *setMaxThres(maxThres: number)*: void; \
     Metodo per modificare la soglia massima di sicurezza relativa alla quantità del prodotto.
+  - *getQuantityReserved()*: number \
+    Restituisce la quantità riservata del prodotto.
+  - *setQuantityReserved(quantityReserved : number)*: void
+    Metodo per modificare la quantità riservata del prodotto.
 
 Questa separazione segue i principi della *Domain-Driven Design* (DDD): i DTO vengono convertiti in entità complete (`Product`) già nei livelli più alti (es. nel controller), evitando che il livello *Application Service* debba conoscere i dettagli della rappresentazione dati in entrata/uscita. Si garantisce così la *separazione dei livelli* e una migliore *manutenibilità* del codice.
+
+==== ProductQuantity
+
++ Rappresenta un oggetto di dominio che associa l'id di un prodotto ad una quantità numerica.
++ Non ha un uso specifico ma è utilizzabile in più contesti.
+
+Descrizione degli attributi della struttura:
+- *id*: ProductId
+  Rappresenta l'id del prodotto.
+- *quantity*: number
+  Rappresenta la quantità numerica associata al prodotto.
+
+E può invocare le seguenti funzioni:
+- *getId()*: ProductId; \
+  Restituisce il codice EAN del prodotto.
+- *getQuantity()*: number \
+  Restituisce la quantità associata al prodotto.
+
+==== Inventory
++ Rappresenta una lista di prodotti.
++ Usato principalmente per restituire l'intero inventario di un magazzino.
+
+Descrizione degli attributi della struttura:
+- *productList*: Product[]
+  Rappresenta la lista di prodotti.
+
+E può invocare le seguenti funzioni:
+- *getInventory()*: ProductId[]; \
+  Restituisce la lista di prodotti.
+- *addProductItem(Product)*:  \
+  Aggiunge un prodotto nella lista di prodotti.
+
 
 ==== InventoryService
 + Rappresenta il servizio applicativo responsabile della logica di business relativa alla gestione dell’inventario di un magazzino.
@@ -592,6 +630,14 @@ E può invocare le seguenti funzioni:
     Restituisce l’identificativo del magazzino.
   - *checkProductAvailability(productQuantities: ProductQuantity[])*: bool \
     Verifica la disponibilità di uno o più prodotti nelle quantità richieste.
+  - *addProductQuantity(ProductQuantity)*: void
+    ???
+  - *shipOrder(OrderId, ProductQuantity[])*: void
+    Spedisce l'ordine sottraendo le quantità richieste da quelle riservate e pubblica un evento di avvenuta spedizione.
+  - *receiveStock(OrderId, ProductQuantity[])*: void
+    Processa il ricevimento di merce da parte di un ordine e pubblica un evento di avvenuta ricezione.
+  - *reserveStock(OrderId, ProductQuantity[])*: void
+    Riserva la merce richiesta da un ordine e pubblica un evento con le quantità riservate.
 
 ==== WarehouseId
 + È stato separato da `InventoryService` in quanto l’identificativo del magazzino è necessario principalmente in fase di sincronizzazione sul cloud durante operazioni di modifica, aggiunta o rimozione di prodotti.
