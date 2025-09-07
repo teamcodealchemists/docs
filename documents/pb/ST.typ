@@ -601,6 +601,20 @@ E può invocare le seguenti funzioni:
 - *addProductItem(Product)*:  \
   Aggiunge un prodotto nella lista di prodotti.
 
+==== OrderId
++ Rappresenta l'id di un ordine.
++ È incluso anche nel servizio di inventario perché è necessario per mantenere l'assocazione tra un ordine e gli elementi di un ordine nella comunicazione asincrona con il microservizio di Ordini.
++ Il carattere iniziale rappresenta il tipo di ordine. Questo è molto utile per identificare il tipo di ordine per logiche di controllo.
+
+Descrizione degli attributi della struttura:
+- *id*: string
+Rappresenta l'id di un ordine; il primo carattere rappresenta il tipo di ordine, i rimanenti sono un UUID
+
+E può invocare le seguenti funzioni:
+  - getId(): string
+  Restituisce l'id dell'ordine
+  - getOrderType(): string
+  Restituisce il tipo di ordine
 
 ==== InventoryService
 + Rappresenta il servizio applicativo responsabile della logica di business relativa alla gestione dell’inventario di un magazzino.
@@ -656,6 +670,11 @@ Descrizione degli attributi della struttura:
   - *warehouseId*: number \
     Identificativo del magazzino, rappresentato come DTO.
 
+=== OrderIdDTO
+Descrizione degli attributi della struttura:
+  - *id*: string UUID \
+    Identificativo dell'ordine, rappresentato come DTO.
+
 ==== ProductIdDTO
 Descrizione degli attributi della struttura:
   - *id*: string \
@@ -663,18 +682,22 @@ Descrizione degli attributi della struttura:
 
 ==== ProductDTO
 Descrizione degli attributi della struttura:
- - *id*: string \
+  - *id*: string \
     Identificativo del prodotto, rappresentato come DTO.
- - *name*: string \
+  - *name*: string \
     Nome del prodotto, rappresentato come DTO.
- - *unitPrice*: number \
+  - *unitPrice*: number \
     Prezzo unitario del prodotto, rappresentato come DTO.
- - *quantity*: number \
+  - *quantity*: number \
     Quantità attualmente disponibile del prodotto, rappresentata come DTO.
- - *minThres*: number \
+  - *minThres*: number \
     Soglia minima di sicurezza relativa alla quantità del prodotto, rappresentata come DTO.
- - *maxThres*: number \
+  - *maxThres*: number \
     Soglia massima di sicurezza relativa alla quantità del prodotto, rappresentata come DTO.
+  - *quantityReserved*: number
+    Quantità riservata nel magazzino di un prodotto.
+  - *warehouseId*: warehouseIdDTO
+    Identificativo del magazzino.
 
 ==== InventoryDTO
 Descrizione degli attributi della struttura:
@@ -709,9 +732,11 @@ Descrizione degli attributi della struttura:
     Quantità richiesta o disponibile del prodotto, rappresentata come DTO.
 
 ==== ProductQuantityArrayDTO
-+ Rappresenta un array di coppie _(prodotto, quantità)_, utile per operazioni batch (es. richieste d’ordine).
++ Associa un ordine ad un array di coppie _(prodotto, quantità)_, utile per operazioni batch (es. richieste d’ordine).
 
 Descrizione degli attributi della struttura:
+  - *orderId*: OrderIdDTO \
+    Rappresenta l'id dell'ordine.
  - *productQuantityArray*: ProductQuantityDTO[] \
     Elenco delle quantità dei prodotti, rappresentato come DTO. 
 
