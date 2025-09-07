@@ -645,7 +645,7 @@ E può invocare le seguenti funzioni:
   - *checkProductAvailability(productQuantities: ProductQuantity[])*: bool \
     Verifica la disponibilità di uno o più prodotti nelle quantità richieste.
   - *addProductQuantity(ProductQuantity)*: void
-    ???
+    Aggiunge una quantità numerica alla quantità disponibile un prodotto.
   - *shipOrder(OrderId, ProductQuantity[])*: void
     Spedisce l'ordine sottraendo le quantità richieste da quelle riservate e pubblica un evento di avvenuta spedizione.
   - *receiveStock(OrderId, ProductQuantity[])*: void
@@ -773,12 +773,17 @@ Metodi:
  - *addQuantity(productQuantityDTO: ProductQuantityDTO)*: void \
     Aggiunge la quantità specificata al prodotto indicato, previa conversione del DTO in _ProductQuantity[]_.
 
-==== OrderRequestedUseCase
+==== OrderRequestUseCase
 + Definisce il caso d’uso relativo alla gestione delle richieste d’ordine _(es. richiesta multiprodotto)_.
 
 Metodi:
- - *orderRequest(productQuantityArrayDTO: ProductQuantityArrayDTO)*: void \
-    Gestisce una richiesta di ordine a partire da un array di coppie _(prodotto, quantità)_.
+  - *orderRequest(productQuantityArrayDTO: ProductQuantityArrayDTO)*: void \
+    Gestisce la richiesta iniziale di ordine a partire da un array di coppie _(prodotto, quantità)_.
+  - *shipOrderRequest(ProductQuantityArrayDTO)*: void
+    Processa l'evento di spedire della merce per un ordine. 
+  - *receiveShipment(ProductQuantityArrayDTO)*: void
+    Processa l'evento di ricevere della merce per via di un ordine. 
+
 
 ==== InboundEventHandler
 + Responsabile della gestione degli eventi in ingresso _(ad esempio, eventi provenienti da altri servizi o dal cloud)_.
@@ -827,12 +832,25 @@ Queste interfacce definiscono i *casi d’uso dell’applicazione*, e sono tipic
 + Riceve i DTO dall’esterno, li converte negli oggetti di dominio corrispondenti e li inoltra tramite la relativa chiamata all’InventoryService.
 + In questo modo funge da adattatore di ingresso (Input Port), mantenendo separati i dettagli di trasporto dei dati dalla logica di business.
 
-==== RestockingRequestPort
-+ Definisce la porta di uscita per la pubblicazione di eventi di riassortimento prodotti.
+==== ResultProductAvailabilityPublisher
++ Definisce la porta di uscita per la pubblicazione di eventi dell'esito di riservamento prodotti.
+Metodi:
+  - *sufficientProductAvailability(OrderId)*: void
+    Pubblica un evento per comunicare l'avvenuto riservamento di tutte le quantità richieste per tutti i prodotti di un ordine.
+
+==== OrderStatusEventPublisher
++ Definisce la porta di uscita per la pubblicazione di eventi relativi agli aggiornamenti di stato di un ordine (_e.g._ spedizione)
+  - *stockShipped(OrderId)*: void
+  Pubblica l'evento di avvenuta spedizione della merce relativa a un ordine.
+  - *stockReceived(OrderId)*: void
+  Pubblica l'evento di avvenuta ricezione di merce da parte di un ordine in entrata.
+
+==== ReservationPort
++ Definisce la porta di uscita per la pubblicazione di eventi di riservamento prodotti.
 
 Metodi:
- - *requestRestock(productId: ProductId, quantity: number)*: void \
-    Pubblica un evento che notifica la necessità di riassortimento di un prodotto in base all’Id e alla quantità richiesta.
+ - *reservedQuantities(orderId: OrderId, pq: ProductQuantity[])*: void \
+    Pubblica un evento che notifica le quantità di prodotti riservate per un ordine.
 
 ==== CriticalThresEventPort
 + Definisce la porta di uscita per la pubblicazione di eventi relativi al superamento delle soglie critiche di inventario.
