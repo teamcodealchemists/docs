@@ -479,10 +479,10 @@ Ogni microservizio possiede il proprio file
 #label("Inventory")
 === Microservizio Inventario (Inventory Service)
 // Breve spiegazione + Immagine
-/*#figure(
-  image("assets/Inventory.drawio.svg", width: 110%),
+#figure(
+  image("assets/Inventory.svg", width: 120%),
   caption: [Schema UML - Microservizio Inventario]
-) DA AGGIORNARE IMMAGINE */ 
+)
 ==== Descrizione del microservizio
 Il *Microservizio Inventario* rappresenta il componente responsabile della gestione delle scorte all’interno di un singolo magazzino.
 Il suo compito principale è quello di mantenere la coerenza dello stato dei prodotti, verificare la disponibilità rispetto alle soglie minime e
