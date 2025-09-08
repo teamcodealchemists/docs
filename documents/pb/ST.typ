@@ -16,7 +16,7 @@
 #let status = "In redazione"
 #let destinatario = "M31"
 
-#let versione = "0.6.0"
+#let versione = "0.6.1"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -29,6 +29,12 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+
+  [0.6.1],
+  [08/09/2025],
+  [S. Speranza],
+  [],
+  [Iniziata specifica del Microservizio di Autenticazione],
 
   [0.6.0],
   [08/09/2025],
@@ -2798,6 +2804,127 @@ Può invocare le seguenti funzioni:
     Restituisce lo stato del magazzino.
   - *getId()*: number \
     Restituisce l’ID del magazzino associato
+
+/*
+=================================================
+    MICROSERVIZIO AUTENTICAZIONE
+=================================================
+*/
+#label("Auth")
+#pagebreak()
+=== Microservizio Autenticazione
+// Breve spiegazione + Immagine
+==== Descrizione del microservizio
+Il microservizio di Autenticazione si occupa della gestione degli utenti del sistema e della loro autenticazione.
+===== Funzionalità principali
+- *Determinazione delle distanze*: calcolo della distanza tra i magazzini, sulla base delle informazioni disponibili.
+
+==== WarehouseId
+ + Rappresenta l'identificatore univoco del magazzino,
+ + Incapsula il campo _warehouseId: number_,
+ + Espone il metodo _getId()_,
+ + È stato isolato per facilitare il confronto tra entità e mantenere l'identità coerente anche in fase di serializzazione/deserializzazione.
+
+Descrizione degli attributi della struttura:
+ - *warehouseId*: number \
+   È l’identificativo numerico del magazzino.
+
+Può invocare le seguenti funzioni:
+- *getId()*: number \
+  Metodo pubblico per ottenere l’id del magazzino.
+
+==== `<<enum>>` role
++ Enumerazione che rappresenta il ruolo dei supervisori del sistema.
++ I ruoli possono essere:
+  - *GLOBAL*: number \
+    Rappresenta il ruolo di Supervisore Globale.
+  - *LOCAL*: number \
+    Rappresenta il ruolo di Supervisore Locale.
+
+==== Authentication
++ Rappresenta le credenziali di un utente del sistema.
+
+Descrizione degli attributi della struttura:
+- *email*: string \
+  Rappresenta l'email dell'utente.
+- *password*: string \
+  Rappresenta la password dell'utente.
+
+Può invocare le seguenti funzioni:
+- *getEmail()*: string \
+  Restituisce l'email dell'utente.
+- *getPassword()*: string \
+  Restituisce la password dell'utente.
+
+==== {abstract} User
++ Rappresenta i dati comuni degli utenti del sistema
++ Contiene informazioni personali dell'utente, le sue credenziali e il suo ruolo
++ Uno _User_ concreto può essere solo o un _Global Supervisor_ o un _Local Supervisor_
+
+Descrizione degli attributi della struttura:
+- *name*: string \
+  Rappresenta il nome dell'utente.
+- *surname*: string \
+  Rappresenta il cognome dell'utente.
+- *phone*: string \
+  Rappresenta il numero di telefono dell'utente.
+- *authentication*: Authentication \
+  Rappresenta le credenziali dell'utente.
+- *role*: Role \
+  Rappresenta il ruolo dell'utente.
+
+Può invocare le seguenti funzioni:
+- *getName()*: string \
+  Restituisce il nome dell'utente.
+- *getSurname()*: string \
+  Restituisce il cognome dell'utente.
+- *getPhone()*: string \
+  Restituisce il numero di telefono dell'utente.
+- *getAuthentication()*: Authentication \
+  Restituisce le credenziali dell'utente.
+- *getRole()*: Role \
+  Restituisce il ruolo dell'utente.
+
+==== Global Supervisor
++ Derivazione di _User_.
++ Rappresenta un Supervisore Globale del sistema.
++ Permette di registrare nuovi Supervisori Locali nel sistema.
+
+Può invocare le seguenti funzioni:
+- *registerLocalSupervisor(name: string, surname: string, phone: string, authentication: Authentication, warehouses: WarehouseId[])*: LocalSupervisor \
+  Registra un nuovo Supervisore Locale nel sistema.
+
+==== Local Supervisor
++ Derivazione di _User_.
++ Rappresenta un Supervisore Locale del sistema.
++ Contiene la lista di magazzini assegnati a quel Supervisore Locale
+
+Descrizione degli attributi della struttura:
+- *warehouseAssigned[]*: WarehouseId \
+  Rappresenta la lista di magazzini assegnati al Supervisore Locale.
+
+Può invocare le seguenti funzioni:
+- *getWarehouseAssigned()*: WarehouseId[]
+  Restituisce la lista di magazzini assegnati al Supervisore Locale.
+
+==== UserId
++ Rappresenta il codice identificativo di un utente del sistema.
+
+Descrizione degli attributi della struttura:
+- *id*: number \
+  Rappresenta il codice identificativo di un utente.
+
+Può invocare le seguenti funzioni:
+- *getId*: number \
+  Restituisce il codice identificativo di un utente.
+
+==== `<<enum>>` tokenStatus
++ Enumerazione che rappresenta lo stato di un token utilizzato per l'autenticazione.
++ Gli stati del token possono essere:
+  - *ACTIVE*: number \
+    Rappresenta un token valido.
+  - *REVOKED*: number \
+    Rappresenta un token non valido.
 
 /*
 =================================================
