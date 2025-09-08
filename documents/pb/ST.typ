@@ -16,7 +16,7 @@
 #let status = "In redazione"
 #let destinatario = "M31"
 
-#let versione = "0.4.0"
+#let versione = "0.5.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -29,6 +29,18 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+
+  /*[0.6.0],
+  [08/09/2025],
+  [S. Speranza],
+  [],
+  [Completata specifica del Microservizio Ordini],*/
+
+  [0.5.0],
+  [07/09/2025],
+  [S. Speranza],
+  [],
+  [Completata specifica del Microservizio Inventario],
 
   [0.4.0],
   [30/08/2025],
@@ -670,7 +682,7 @@ Descrizione degli attributi della struttura:
   - *warehouseId*: number \
     Identificativo del magazzino, rappresentato come DTO.
 
-=== OrderIdDTO
+==== OrderIdDTO
 Descrizione degli attributi della struttura:
   - *id*: string UUID \
     Identificativo dell'ordine, rappresentato come DTO.
@@ -1302,7 +1314,26 @@ E può invocare le seguenti funzioni:
 === Microservizio Orders
 // Breve spiegazione + Immagine
 ==== Descrizione del microservizio
+
+Il *Microservizio Ordini* rappresenta il componente responsabile della gestione degli ordini di un magazzino.
+Il suo compito principale è quello di orchestrare la gestione degli ordini dal momento in cui sono inseriti al momento in cui la merce arriva a destinazione. Si occupa inoltre di comunicare con il sistema centrale per la richiesta di sopperimento merce questa merce non sia sufficiente per soddsfare un ordine.
 ===== Funzionalità principali
+- *Gestione degli ordini*: inserimento, annullamento, aggiornamento dello stato e consultazione degli ordini di vendita e degli ordini di trasferimento.
+- *Saga degli ordini di vendita*: gestisce la saga per la gestione degli ordini di vendita a partire dal momento in cui sono inseriti. Si occupa in particolare di ordinare:
+  - Controllo e riservamento di merce nell'inventario locale.
+  - Richiedere merce al sistema centrale qualora fosse necessario.
+  - Spedizione della merce.
+- *Saga degli ordini di trasferimento*: gestisce la saga per la gestione degli ordini di trasferimento a partire dal momento in cui sono inseriti. Si occupa in particolare di ordinare:
+  - Controllo e riservamento di merce nell'inventario locale.
+  - Spedizione della merce.
+  - Tracciatura dell'ordine anche nel magazzino di destinazione.
+- *Pubblicazione eventi*: emissione di notifiche verso gli altri microservizi quando avvengono variazioni di stato dell'ordine.
+- *Interoperabilità*: interazione con microservizi esterni quali:
+  - _Sistema Centralizzato_, che coordina gli eventi critici e la logica di alto livello.
+  - _Microservizio Inventario_, per verificare la disponibilità dei prodotti richiesti.
+  - _Ordini Aggregato_, per fornire una vista globale degli ordini nell'intero sistema.
+  - _Microservizio Ordini_ di altri magazzini, per la gestione di traferimenti interni tra magazzini.
+
 ==== OrderId
  + Rappresenta l’identificativo univoco dell’ordine,
  + Incapsula il campo _id: string_,
