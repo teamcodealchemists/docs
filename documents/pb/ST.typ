@@ -1313,6 +1313,10 @@ E può invocare le seguenti funzioni:
 #label("Orders")
 === Microservizio Orders
 // Breve spiegazione + Immagine
+#figure(
+  image("assets/Orders.svg", width: 120%),
+  caption: [Schema UML - Microservizio Ordini]
+)
 ==== Descrizione del microservizio
 
 Il *Microservizio Ordini* rappresenta il componente responsabile della gestione degli ordini di un magazzino.
