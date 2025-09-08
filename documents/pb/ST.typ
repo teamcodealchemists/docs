@@ -92,6 +92,7 @@
 
 #set heading(numbering: "1.1.")
 
+
 /* INDICE DELLE IMMAGINI*/
 #outline(
 title: [Lista delle Immagini],
@@ -483,11 +484,13 @@ Ogni microservizio possiede il proprio file
 - *`*`Repository* : Strato di accesso ai dati per la gestione della persistenza delle entità di dominio.
   - Nota: il _Sistema Centralizzato_ non possiede la repository perchè non ha persistenza locale ma agisce come orchestratore.
 - *Domini* : Le entità e i value object che rappresentano il cuore del microservizio. Sono indipendenti dalla tecnologia e descrivono il linguaggio del dominio
+
 /*
 =================================================
              MICROSERVIZIO INVENTARIO
 =================================================
 */
+#pagebreak()
 #label("Inventory")
 === Microservizio Inventario (Inventory Service)
 // Breve spiegazione + Immagine
@@ -949,6 +952,7 @@ Metodi:
              MICROSERVIZIO STATO
 =================================================
 */
+#pagebreak()
 #label("State")
 === Microservizio State (Warehouse State Service)
 // Breve spiegazione + Immagine
@@ -1120,6 +1124,7 @@ E può invocare le seguenti funzioni:
              MICROSERVIZIO CLOUD STATE
 =================================================
 */
+#pagebreak()
 #label("Cloud State")
 === Microservizio Cloud State
 // Breve spiegazione + Immagine
@@ -1310,6 +1315,7 @@ E può invocare le seguenti funzioni:
              MICROSERVIZIO ORDERS
 =================================================
 */
+#pagebreak()
 #label("Orders")
 === Microservizio Orders
 // Breve spiegazione + Immagine
@@ -1833,6 +1839,7 @@ E può invocare le seguenti funzioni:
         MICROSERVIZIO ORDINE AGGREGATO
 =================================================
 */
+#pagebreak()
 #label("Orders Aggregate")
 === Microservizio Ordine Aggreggato
 ==== Descrizione del microservizio
@@ -2067,7 +2074,7 @@ Descrizione degli attributi della struttura:
  - *internal*: SyncInternalOrderDTO[] \
    Array degli ordini interni.
 
-=== DataMapper
+==== DataMapper
  + Gestisce la conversione tra DTO e oggetti di dominio per gli ordini sincronizzati.
 
 E può invocare le seguenti funzioni:
@@ -2217,7 +2224,9 @@ E può invocare le seguenti funzioni:
     MICROSERVIZIO SISTEMA CENTRALIZZATO
 =================================================
 */
+#pagebreak()
 #label("Central System")
+=== Sistema Centrale
 ==== Descrizione del microservizio
 Il *Sistema Centralizzato* rappresenta il componente core dell’architettura, responsabile del coordinamento delle operazioni e 
 della gestione integrata delle informazioni provenienti dai diversi microservizi.  
@@ -2232,7 +2241,8 @@ Il suo compito principale è orchestrare i flussi legati agli ordini, monitorare
 - *Pubblicazione eventi*: emissione di notifiche verso i microservizi interessati quando vengono rilevate criticità o applicate strategie di bilanciamento.
 - *Interoperabilità*: interazione con microservizi esterni (Cloud State, Routing, Inventario Aggregato, Ordine Aggregato) per integrare dati e decisioni.
 
-=== CentralSystemController
+#pagebreak()
+==== CentralSystemController
  + Gestisce tutti gli eventi in ingresso dal cloud e dai magazzini.
 
 E può invocare le seguenti funzioni:
@@ -2286,7 +2296,7 @@ Metodi:
  - *sendNotification(message: string)* : void   \
    Invia notifiche a entità interessate.
 
-=== CentralSystemEventAdapter
+==== CentralSystemEventAdapter
  + Gestisce la pubblicazione degli eventi verso i microservizi esterni.
 
 E può invocare le seguenti funzioni:
@@ -2762,7 +2772,13 @@ E può invocare le seguenti funzioni:
   - *getId()*: number \
     Restituisce l’ID del magazzino associato
 
+/*
+=================================================
+    MICROSERVIZIO ROUTING
+=================================================
+*/
 #label("Routing")
+#pagebreak()
 === Microservizio Routing
 // Breve spiegazione + Immagine
 ==== Descrizione del microservizio
