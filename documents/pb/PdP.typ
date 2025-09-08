@@ -16,7 +16,7 @@
 #let titolo = "Piano di Progetto"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "1.2.1"
+#let versione = "1.3.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -27,6 +27,12 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+
+  [1.3.0],
+  [18/08/2025],
+  [N. Bolzon],
+  [N. Moretto],
+  [Aggiunta del contenuto: Sprint 11, preventivo e pianificazione Sprint 12.], 
 
   [1.2.1],
   [18/08/2025],
