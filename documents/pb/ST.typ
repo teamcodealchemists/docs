@@ -2455,8 +2455,8 @@ Descrizione degli attributi della struttura:
 Descrizione degli attributi della struttura:
 - *orderId*: OrderIdDTO \
   Identificativo dell’ordine.
-- *orderItem*: OrderItemDTO \
-  Articolo incluso nell’ordine.
+- *orderItem*: OrderItemDTO[] \
+  Prodotti inclusi nell’ordine.
 - *orderState*: OrderStateDTO \
   Stato dell’ordine.
 - *destinationAddress*: string \
@@ -2470,12 +2470,19 @@ Descrizione degli attributi della struttura:
  + DTO per rappresentare un ordine interno.
 
 Descrizione degli attributi della struttura:
-- *orderId*: OrderIdDTO
-- *orderItem*: OrderItemDTO
-- *orderState*: OrderStateDTO
-- *warehouseDeparture*: number
+- *orderId*: OrderIdDTO \
+  Identificativo dell’ordine.
+- *orderItem*: OrderItemDTO[] \
+  Prodotti inclusi nell’ordine.
+- *orderState*: OrderStateDTO \
+  Stato dell’ordine.
+- *warehouseDeparture*: number \
+  Magazzino di partenza.
 - *warehouseDestination*: number \
   Magazzino di destinazione.
+- *sellOrderReference*: OrderIdDTO \
+  Riferimento a ordine di vendita.
+
 
 ==== WarehouseIdDTO
  + Identificativo del magazzino nella versione DTO.
