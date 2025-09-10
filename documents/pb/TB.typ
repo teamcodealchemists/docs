@@ -382,10 +382,21 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
   + Eseguire il comando ``. \
   + 
 - *Processo:*
-  + 
+  - Per verificare la gestione dei magazzini online/offline, seguire questi passaggi:
+    + Eseguire la registrazione del Supervisore Globale#super[G] ;
+    + Eseguire il login del Supervisore Globale#super[G] ;
+    + Aggiungere due nuovi magazzini al sistema;
+    + Dopo questo passaggio, sarà possibile vedere dai log dei microservizi di Stalo locale e aggregato che avviene un controllo periodico dello stato dei magazzini (online/offline);
+    + Impostare uno dei due magazzini come offline (ad esempio chiudendo il container Docker, così da simulare un guasto);
+    + Il magazzino sarà impostato come offline dopo il timeout di 10 secondi (per testing);
+    + A questo punto, il cambiamento di stato del magazzino sarà riportato anche nel servizio di Routing;
+    + Quando il magazzino torna online (ad esempio riavviando il container Docker), il sistema lo rileverà automaticamente e aggiornerà lo stato nel servizio di Routing;
+  - Per verificare l’annullamento degli ordini interni da offline, seguire questi passaggi:
+    + 
+
 - *Risultato atteso:*
 - *Esito:*
-- *Note:*
+- *Note:* Per visualizzare i log dei microservizi, usare il comando `docker logs -f <nome_container>`. 
 
 == TdA-22
 - *Identificativo:* TdA-22
