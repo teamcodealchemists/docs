@@ -146,8 +146,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-03
 - *Identificativo:* TdA-03
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Autenticazione Utente
+- *Descrizione:* Verificare la funzionalità di login con le credenziali corrette.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -156,8 +156,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-04
 - *Identificativo:* TdA-04
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Errori Login Utente
+- *Descrizione:* Verificare che al login dell’utente vengano gestiti gli errori di inserimento dati.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -166,8 +166,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-05
 - *Identificativo:* TdA-05
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Logout Utente
+- *Descrizione:* Verificare funzionalità logout dal sistema.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -176,8 +176,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-06
 - *Identificativo:* TdA-06
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Registrazione Supervisore Locale 
+- *Descrizione:* Verificare funzionalità di registrazione di un nuovo Supervisore Locale con dati corretti.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -186,8 +186,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-07
 - *Identificativo:* TdA-07
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Errori Registrazione Supervisore Locale
+- *Descrizione:* Verificare che alla registrazione del supervisore locale vengano gestiti gli errori di inserimento dati.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -196,8 +196,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-08
 - *Identificativo:* TdA-08
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Assegnazione Magazzini
+- *Descrizione:* Verificare l’assegnazione dei magazzini a un Supervisore Locale.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -206,8 +206,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-09
 - *Identificativo:* TdA-09
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Aggiunta Magazzino
+- *Descrizione:* Verificare l’aggiunta di un nuovo magazzino con indirizzo valido.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -216,8 +216,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-10
 - *Identificativo:* TdA-10
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Modifica Magazzino
+- *Descrizione:* Verificare la modifica dei dati di un magazzino.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -226,8 +226,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-11
 - *Identificativo:* TdA-11
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Inserimento Merce
+- *Descrizione:* Verificare l’inserimento di una nuova merce con dati corretti.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -236,8 +236,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-12
 - *Identificativo:* TdA-12
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Modifica Quantità Merce
+- *Descrizione:* Verificare la definizione e la modifica della quantità di una merce.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -246,8 +246,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-13
 - *Identificativo:* TdA-13
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Rimozione Merce
+- *Descrizione:* Verificare la rimozione di una merce dall’inventario.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -256,8 +256,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-14
 - *Identificativo:* TdA-14
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Inserimento Ordine Interno
+- *Descrizione:* Verificare l’inserimento di un ordine interno (trasferimento tra magazzini).
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -266,8 +266,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-15
 - *Identificativo:* TdA-15
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Inserimento Ordine Esterno
+- *Descrizione:* Verificare l’inserimento di un ordine di vendita esterno.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -276,8 +276,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-16
 - *Identificativo:* TdA-16
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Annullamento Ordini
+- *Descrizione:* Verificare l’annullamento degli ordini in attesa o in elaborazione.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -286,8 +286,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-17
 - *Identificativo:* TdA-17
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Gestione Stati Ordini
+- *Descrizione:* Verificare il tracciamento e la corretta gestione degli stati degli ordini.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -296,8 +296,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-18
 - *Identificativo:* TdA-18
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Visualizzazione Inventario
+- *Descrizione:* Verificare la visualizzazione dell’inventario globale e per singolo magazzino.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -306,8 +306,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-19
 - *Identificativo:* TdA-19
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Visualizzazione Report Ordini
+- *Descrizione:* Verificare la visualizzazione dei report ordini globali e per singolo magazzino.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -316,8 +316,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-20
 - *Identificativo:* TdA-20
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Modifica Soglie Critiche
+- *Descrizione:* Verificare la modifica dei valori di soglia minima e massima.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -326,8 +326,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-21
 - *Identificativo:* TdA-21
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Gestione Magazzini Offline/Online
+- *Descrizione:* Verificare la gestione dei magazzini online/offline, annullamento ordini interni da offline e riattivazione.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -336,8 +336,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-22
 - *Identificativo:* TdA-22
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Riassortimento Automatico Ordine
+- *Descrizione:* Verificare il riassortimento automatico in caso di ordine non soddisfacibile.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -346,9 +346,9 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-23
 - *Identificativo:* TdA-23
-- *Titolo del test:* 
-- *Descrizione:*
-- *Prerequisito:*
+- *Titolo del test:* Riassortimento Soglia Minima
+- *Descrizione:* Verificare il riassortimento automatico al raggiungimento della soglia minima di un prodotto.
+- *Prerequisito:* 
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
 - *Esito:*
@@ -356,8 +356,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-24
 - *Identificativo:* TdA-24
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Riassortimento Soglia Massima
+- *Descrizione:* Verificare il riassortimento automatico al raggiungimento della soglia massima di un prodotto.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -366,8 +366,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 == TdA-25
 - *Identificativo:* TdA-25
-- *Titolo del test:* 
-- *Descrizione:*
+- *Titolo del test:* Gestione Conflitti Ordini Simultanei
+- *Descrizione:* Verificare la corretta gestione di ordini simultanei da parte di un magazzino.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
 - *Risultato atteso:*
@@ -380,41 +380,41 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 
 #set table(
   fill: (x, y) => if y == 0 {gray} else if x == 0 {luma(235)},
-  align: (x, _) => if x <= 1 or x > 2 {center} else {left},
+  align: center
 )
 
 #figure(
   table(
-  columns: (1fr, 2fr, 4fr, 1fr),
+  columns: (1fr, 3fr, 1.5fr),
   inset: 10pt,
   table.header(
-    [*ID \ Test*], [*Area Funzionale*], [*Obiettivo del Test*], [*Esito*]
+    [*ID Test*], [*Nome Test*], [*Esito*]
   ),
-    [*TdA-01*],[Registrazione \ Supervisore Globale],[Verificare che all’avvio del sistema il supervisore globale possa registrarsi con successo.],[],
-    [*TdA-02*],[Registrazione \ Supervisore Globale],[Verificare che alla registrazione del supervisore globale vengano gestiti gli errori di inserimento dati.],[],
-    [*TdA-03*],[Autenticazione \ Utente],[Verificare la funzionalità di login con le credenziali corrette.],[],
-    [*TdA-04*],[Autenticazione \ Utente],[Verificare che al login dell’utente vengano gestiti gli errori di inserimento dati.],[],
-    [*TdA-05*],[Autenticazione \ Utente],[Verificare funzionalità logout dal sistema.],[],
-    [*TdA-06*],[Registrazione \ Supervisore Locale],[Verificare funzionalità di  registrazione di un nuovo Supervisore Locale con dati corretti.],[],
-    [*TdA-07*],[Registrazione \ Supervisore Locale],[Verificare che alla registrazione del supervisore locale vengano gestiti gli errori di inserimento dati.],[],
-    [*TdA-08*],[Registrazione \ Supervisore Locale],[Verificare l’assegnazione dei magazzini a un Supervisore Locale.],[],
-    [*TdA-09*],[Gestione \ Magazzini],[Verificare l’aggiunta di un nuovo magazzino con indirizzo valido.],[],
-    [*TdA-10*],[Gestione \ Magazzini],[Verificare la modifica dei dati di un magazzino.],[],
-    [*TdA-11*],[Gestione \ Merci],[Verificare l’inserimento di una nuova merce con dati corretti.],[],
-    [*TdA-12*],[Gestione \ Merci],[Verificare la definizione e la modifica della quantità di una merce.],[],
-    [*TdA-13*],[Gestione \ Merci],[Verificare la rimozione di una merce dall’inventario.],[],
-    [*TdA-14*],[Gestione \ Ordini],[Verificare l’inserimento di un ordine interno (trasferimento tra magazzini).],[],
-    [*TdA-15*],[Gestione \ Ordini],[Verificare l’inserimento di un ordine di vendita esterno.],[],
-    [*TdA-16*],[Gestione \ Ordini],[Verificare l’annullamento degli ordini in attesa o in elaborazione.],[],
-    [*TdA-17*],[Gestione \ Ordini],[Verificare il tracciamento e la corretta gestione degli stati degli ordini.],[],
-    [*TdA-18*],[Auditing \ e Report],[Verificare la visualizzazione dell’inventario globale e per singolo magazzino.],[],
-    [*TdA-19*],[Auditing \ e Report],[Verificare la visualizzazione dei report ordini globali e per singolo magazzino.],[],
-    [*TdA-20*],[Gestione \ Soglie Critiche],[Verificare la modifica dei valori di soglia minima e massima.],[],
-    [*TdA-21*],[Gestione Disservizi \ e Stati Magazzino],[Verificare la gestione dei magazzini online/offline, annullamento ordini interni da offline e riattivazione.],[],
-    [*TdA-22*],[Gestione \ Riassortimento],[Verificare il riassortimento automatico in caso di ordine non soddisfacibile.],[],
-    [*TdA-23*],[Gestione \ Riassortimento],[Verificare il riassortimento automatico al raggiungimento della soglia minima di un prodotto.],[],
-    [*TdA-24*],[Gestione \ Riassortimento],[Verificare il riassortimento automatico al raggiungimento della soglia massima di un prodotto.],[],
-    [*TdA-25*],[Gestione Conflitti \ Ordini Simultanei],[Verificare la corretta gestione di ordini simultanei da parte di un magazzino.],[],
+    [*TdA-01*],[Registrazione Supervisore Globale.],[],
+    [*TdA-02*],[Errori Registrazione Supervisore Globale.],[],
+    [*TdA-03*],[Autenticazione Utente.],[],
+    [*TdA-04*],[Errori Login Utente.],[],
+    [*TdA-05*],[Logout Utente.],[],
+    [*TdA-06*],[Registrazione Supervisore Locale.],[],
+    [*TdA-07*],[Errori Registrazione Supervisore Locale.],[],
+    [*TdA-08*],[Assegnazione Magazzini.],[],
+    [*TdA-09*],[Aggiunta Magazzino.],[],
+    [*TdA-10*],[Modifica Magazzino.],[],
+    [*TdA-11*],[Inserimento Merce.],[],
+    [*TdA-12*],[Modifica Quantità Merce.],[],
+    [*TdA-13*],[Rimozione Merce.],[],
+    [*TdA-14*],[Inserimento Ordine Interno.],[],
+    [*TdA-15*],[Inserimento Ordine Esterno.],[],
+    [*TdA-16*],[Annullamento Ordini.],[],
+    [*TdA-17*],[Gestione Stati Ordini.],[],
+    [*TdA-18*],[Visualizzazione Inventario.],[],
+    [*TdA-19*],[Visualizzazione Report Ordini.],[],
+    [*TdA-20*],[Modifica Soglie Critiche.],[],
+    [*TdA-21*],[Gestione Magazzini Offline/Online.],[],
+    [*TdA-22*],[Riassortimento Automatico Ordine.],[],
+    [*TdA-23*],[Riassortimento Soglia Minima.],[],
+    [*TdA-24*],[Riassortimento Soglia Massima.],[],
+    [*TdA-25*],[Gestione Conflitti Ordini Simultanei.],[],
   ),
   caption: [Elenco dei test di accettazione e relativo esito.],
 )
