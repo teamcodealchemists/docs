@@ -16,7 +16,7 @@
 #let titolo = "Piano di Progetto"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "1.2.1"
+#let versione = "1.3.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -27,6 +27,11 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [1.3.0],
+  [18/08/2025],
+  [N. Bolzon],
+  [N. Moretto],
+  [Aggiunta del contenuto: Sprint 11, preventivo e pianificazione Sprint 12.], 
 
   [1.2.1],
   [18/08/2025],
@@ -1915,8 +1920,8 @@ I possibili rischi :
 #v(1em)
 Inizio: #h(1.99cm)*18-08-2025*\
 Fine Prevista: #h(0.65cm)*29-08-2025*\
-Fine Reale: #h(1.12cm)**\
-Giorni di ritardo: #h(0.15cm)**
+Fine Reale: #h(1.12cm)*29-08-2025*\
+Giorni di ritardo: #h(0.15cm)*0*
 
 ==== Informazioni generali e attività da svolgere
 #v(1em)
@@ -1948,4 +1953,38 @@ I possibili rischi :
   ),
   didascalia: "Sprint 11 - Preventivo ore per ciascun componente"
 )
+]
+
+==== Consuntivo
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],        [],   [],   [],   [12(+4)],[],      [],
+    [Mattia Dalla Pozza],   [],   [],   [],   [],      [],      [10],
+    [Sebastiano Marana],    [],   [],   [],   [],      [14(+4)],[],
+    [Nicholas Moretto],     [5],  [],   [],   [],      [],      [],
+    [Matteo Pretto],        [],   [],   [],   [],      [10],    [],
+    [Alex Shu],             [],   [],   [],   [12(+4)],[],      [],
+    [Stefano Speranza],     [],   [],   [],   [8],     [],      [],
+    [Ramona Zangla],        [],   [],   [],   [],      [14(+4)],[],
+  ),
+  didascalia: "Sprint 11 - Consuntivo ore per ciascun componente"
+)
+]
+
+==== Aggiornamento delle risorse rimanenti  
+#v(1em)
+#align(center)[
+  #tabella_aggiornamento_risorse(
+    dati: (
+      [Responsabile#super[G]],    [30€/h],   [5],       [150€],         [17 (-5)],    [],
+      [Amministratore#super[G]],  [20€/h],   [-],       [-],            [25],         [],
+      [Analista#super[G]],        [25€/h],   [-],       [-],            [0],          [],
+      [Progettista#super[G]],     [25€/h],   [32],      [800€],         [],           [1925€ (-850€)],
+      [Programmatore#super[G]],   [15€/h],   [38],      [570€],         [],           [1650€ (-150€)],
+      [Verificatore#super[G]],    [15€/h],   [10],      [150€],         [],           [840€ (-150€)],
+      [*Totale*],                 [*-*],     [*85*],    [*1670€*],      [**],         [*5655€ (-1380€)*],
+    ),
+    didascalia: "Sprint 11 - Aggiornamento delle risorse disponibili"
+  )
 ]
