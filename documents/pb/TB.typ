@@ -14,9 +14,9 @@
 */
 
 #let titolo = "Test Book"
-#let status = "In redazione"
+#let status = "Approvato"
 #let destinatario = "M31"
-#let versione = "0.1.0"
+#let versione = "1.0.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -26,14 +26,26 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [1.0.0],
+  [08/09/2025],
+  [R. Zangla],
+  [N. Moretto],
+  [Documento approvato interamente.],
+  
+  [0.2.0],
+  [08/09/2025],
+  [N. Bolzon],
+  [N. Moretto],
+  [Completamento sezione "struttura del Test Book".],
+
   [0.1.0],
-  [03/09/2025],
+  [08/09/2025],
   [N. Bolzon],
   [N. Moretto],
   [Inserimento sezioni informative del documento. Inizializzazione template sezione test.],
   
   [0.0.1],
-  [03/09/2025],
+  [07/09/2025],
   [N. Bolzon],
   [N. Moretto],
   [Creazione template e struttura del documento.]
@@ -70,8 +82,6 @@ Il presente documento ha lo scopo di *definire e descrivere i casi di test previ
 == Ambito del Testing
 Il testing riguarda le funzionalità e i requisiti descritti nel documento di Analisi dei Requisiti e nei casi d'uso associati.
 In particolare, il Test Book copre le *funzionalità principali del sistema e i requisiti funzionali*, le condizioni di input e output significative per validare il comportamento del software.
-
-== Riferimenti
 
 = Strategia di esecuzione dei test
 
@@ -132,7 +142,7 @@ Al termine di ogni test, eseguire i seguenti compandi per resettare l'ambiente (
 2. Ricreare l’ambiente da zero:
 #align(center)[`docker compose up --build -d`]
 
-_*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’ambiente da zero. *Dopo che l'ambiente è stato resettato, attendere almeno 30 secondi affinchè tutti i container vengano riavviati interamente*._ \
+_*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’ambiente da zero. *Dopo che l'ambiente è stato resettato, attendere almeno 60 secondi affinchè tutti i container vengano riavviati interamente*._ \
 
 = Struttura del Test Book
 \
@@ -161,7 +171,7 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
   + Registrazione di un Supervisore Globale con email errata; \
   + Registrazione di un Supervisore Globale con password errata; \
   + Registrazione di un Supervisore Globale con password errata; \
-  + Registrazione di un Supervisore Globale con numero di telefono errato; \
+  + Registrazione di un Supervisore Globale con numero di telefono sintatticamente errato; \
   + Registrazione di un Supervisore Globale con parametro mancante (cognome); \
   + Registrazione di un Supervisore Globale con parametro di tipo errato (telefono come numero) \
 - *Risultato atteso:* Visualizzazione di errori di inserimento in fase di Registrazione di un Supervisore Globale.
@@ -171,7 +181,7 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 - *Identificativo:* TdA-03
 - *Titolo del test:* Autenticazione Utente
 - *Descrizione:* Verificare la funzionalità di login con le credenziali corrette.
-- *Prerequisito:* Essersi registrati come Supervisore Globale
+- *Prerequisito:* Registrato il Supervisore Globale.
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/46314414-7f79b291-6fac-490d-8361-5779e0428d17`.
 - *Processo:* 
   + Accesso del Supervisore Globale con credenziali corrette.
@@ -183,9 +193,13 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 - *Titolo del test:* Errori Login Utente
 - *Descrizione:* Verificare che al login dell’utente vengano gestiti gli errori di inserimento dati.
 - *Prerequisito:*
+  + Registrazione Supervisore Globale;
+  + Login come Supervisore Globale;
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/46314414-b3078c6e-ecdc-4542-bc4e-c4fde61f06f7`.
 - *Processo:*
-  + 
+  + Accesso con password errata;
+  + Accesso con password errata;
+  + Accesso con credenziali di un Supervisore già autenticato;
 - *Risultato atteso:*
 - *Esito:* #text(green,"PASSATO")
 
@@ -194,168 +208,208 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 - *Titolo del test:* Logout Utente
 - *Descrizione:* Verificare funzionalità logout dal sistema.
 - *Prerequisito:*
+  + Registrazione Supervisore Globale;
+  + Login come Supervisore Globale;
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/46314414-97d57106-2823-42a4-a2e9-1fd2ea80b8f8`.
 - *Processo:*
-  + 
-- *Risultato atteso:*
+  + Logout con Supervisore non autenticato;
+  + Logout di un Supervisore;
+- *Risultato atteso:* Logout effettuato con successo.
 - *Esito:* #text(green,"PASSATO")
-- *Note:*
 
 == TdA-06
 - *Identificativo:* TdA-06
 - *Titolo del test:* Registrazione Supervisore Locale 
 - *Descrizione:* Verificare funzionalità di registrazione di un nuovo Supervisore Locale con dati corretti.
 - *Prerequisito:*
+  + Registrazione Supervisore Globale;
+  + Login come Supervisore Globale;
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/46314414-720032e1-b087-437a-a233-719820a0c2e5`.
 - *Processo:*
-  + 
-- *Risultato atteso:*
+  + Registrazione di un nuovo Supervisore Locale;
+- *Risultato atteso:* Nuovo Supervisore Locale registrato correttamente.
 - *Esito:* #text(green,"PASSATO")
-- *Note:*
 
 == TdA-07
 - *Identificativo:* TdA-07
 - *Titolo del test:* Errori Registrazione Supervisore Locale
-- *Descrizione:* Verificare che alla registrazione del supervisore locale vengano gestiti gli errori di inserimento dati.
+- *Descrizione:* Verificare che alla registrazione del Supervisore Locale vengano gestiti gli errori di inserimento dati.
 - *Prerequisito:*
+  + Registrazione Supervisore Globale;
+  + Login come Supervisore Globale;
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/46314414-e17c10a6-7cd6-4f7f-975b-a1902da699a1`.
 - *Processo:*
-  + 
-- *Risultato atteso:*
+  + Registrazione di un Supervisore Locale con email errata; \
+  + Registrazione di un Supervisore Locale con password errata; \
+  + Registrazione di un Supervisore Locale con cellulare sintatticamente errato; \
+  + Registrazione di un Supervisore Locale con parametro mancante (cognome); \
+  + Registrazione di un Supervisore Locale con wharehouseId errato; \
+- *Risultato atteso:* Visualizzazione errori di inserimento nel momento di registrazione di un nuovo Supervisore Locale.
 - *Esito:* #text(green,"PASSATO")
-- *Note:*
 
 == TdA-08
 - *Identificativo:* TdA-08
 - *Titolo del test:* Assegnazione Magazzini
 - *Descrizione:* Verificare l’assegnazione dei magazzini a un Supervisore Locale.
 - *Prerequisito:*
+  + Registrazione Supervisore Globale;
+  + Login come Supervisore Globale;
+  + Registrazione Supervisore Locale;
+  + Logout come Supervisore Globale;
+  + Login come Supervisore Locale.
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/46314414-ed141d34-fa3a-41e5-b64b-f7d620eb3ddd`.
 - *Processo:*
-  + 
-- *Risultato atteso:*
+  + Verifica accesso al Magazzino 1;
+  + Verifica accesso al Magazzino 2;
+- *Risultato atteso:* Il Supervisore Globale riesce ad accedere ai magazzini a lui assegnati.
 - *Esito:* #text(green,"PASSATO")
-- *Note:*
 
 == TdA-09
 - *Identificativo:* TdA-09
 - *Titolo del test:* Aggiunta Magazzino
 - *Descrizione:* Verificare l’aggiunta di un nuovo magazzino con indirizzo valido.
 - *Prerequisito:*
+  + Registrazione Supervisore Globale;
+  + Login come Supervisore Globale.
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/46314414-71140295-16ac-4838-809c-312e65efcddf`.
 - *Processo:*
-  + 
-- *Risultato atteso:*
+  + Aggiunta di un nuovo magazzino;
+- *Risultato atteso:* Nuovo magazzino aggiunto con indirizzo valido.
 - *Esito:* #text(green,"PASSATO")
-- *Note:*
 
 == TdA-10
 - *Identificativo:* TdA-10
 - *Titolo del test:* Modifica Magazzino
 - *Descrizione:* Verificare la modifica dei dati di un magazzino.
 - *Prerequisito:*
+  + Registrazione Supervisore Globale;
+  + Login come Supervisore Globale;
+  + Aggiunta di un nuovo magazzino.
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/46314414-556f9785-a851-4938-ad87-59407da3e261`.
 - *Processo:*
-  + 
-- *Risultato atteso:*
+  + Aggiornamento informazioni del magazzino;
+- *Risultato atteso:* Dati di un magazzino modificati correttamente.
 - *Esito:* #text(green,"PASSATO")
-- *Note:*
 
 == TdA-11
 - *Identificativo:* TdA-11
 - *Titolo del test:* Inserimento Merce
 - *Descrizione:* Verificare l’inserimento di una nuova merce con dati corretti.
 - *Prerequisito:*
+  + Registrazione Supervisore Globale;
+  + Login come Supervisore Globale;
+  + Registrazione nuovo Supervisore Locale;
+  + Logout Supervisore Globale;
+  + Login come Supervisore Locale.
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/46314414-59a7db71-5576-482f-bc69-3ce1777f03c5`.
 - *Processo:*
-  + 
-- *Risultato atteso:*
+  + Aggiunta nuova tipologia di merce;
+  + Ottenere informazioni sulle merci disponibili;
+- *Risultato atteso:* Inserimento di una nuova merce effettuato correttamente.
 - *Esito:* #text(green,"PASSATO")
-- *Note:*
 
 == TdA-12
 - *Identificativo:* TdA-12
 - *Titolo del test:* Modifica Quantità Merce
 - *Descrizione:* Verificare la definizione e la modifica della quantità di una merce.
 - *Prerequisito:*
+  + Registrazione Supervisore Globale;
+  + Login come Supervisore Globale;
+  + Registrazione nuovo Supervisore Locale;
+  + Logout Supervisore Globale;
+  + Login come Supervisore Locale.
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/46314414-0f81c552-8d30-40f1-a113-dc6a30384218`.
 - *Processo:*
-  + 
-- *Risultato atteso:*
+  + Aggiunta nuova tipologia di merce;
+  + Ottenere informazioni sulle merci disponibili;
+  + Modificare quantità merce appena aggiunta;
+  + Ottenere informazioni quantità sulla merce appena modificata;
+- *Risultato atteso:* Quantità di merce modificata correttamente.
 - *Esito:* #text(green,"PASSATO")
-- *Note:*
 
 == TdA-13
 - *Identificativo:* TdA-13
 - *Titolo del test:* Rimozione Merce
 - *Descrizione:* Verificare la rimozione di una merce dall’inventario.
 - *Prerequisito:*
+  + Registrazione Supervisore Globale;
+  + Login come Supervisore Globale;
+  + Registrazione nuovo Supervisore Locale;
+  + Logout Supervisore Globale;
+  + Login come Supervisore Locale.
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/46314414-3aa88988-fc47-45eb-ab2c-e86ca85da7eb`.
 - *Processo:*
-  + 
-- *Risultato atteso:*
+  + Aggiunta nuova tipologia di merce;
+  + Ottenere informazioni sulle merci disponibili;
+  + Eliminare tipologia di merce;
+  + Ottenere informazioni sulle tipologie di merci disponibili, dopo la rimozione.
+- *Risultato atteso:* Tipo di merce rimossa dall'inventario.
 - *Esito:* #text(green,"PASSATO")
-- *Note:*
 
 == TdA-14
 - *Identificativo:* TdA-14
 - *Titolo del test:* Inserimento Ordine Interno
 - *Descrizione:* Verificare l’inserimento di un ordine interno (trasferimento tra magazzini).
-- *Prerequisito:*
+- *Prerequisito:* Registrazione Supervisore Globale, Login come Supervisore Globale, Aggiunta merce in Magazzino 1, Aggiunta merce in Magazzino 2.
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/48206755-6358d821-7469-4a1f-9663-a332b59e291a`.
 - *Processo:*
-  + 
-- *Risultato atteso:*
+  + Inserimento di ordine interno (trasferimento tra magazzini);
+  + Ottenere informazioni sulle merci disponibili nel Magazzino 1;
+  + Ottenere informazioni sulle merci disponibili nel Magazzino 2;
+- *Risultato atteso:* Ordine interno (trasferimento tra magazzini) inserito correttamente. Quantità merce decrementata nel magazzino 1 e aumentata nel magazzino 2.
 - *Esito:* #text(green,"PASSATO")
-- *Note:*
 
 == TdA-15
 - *Identificativo:* TdA-15
 - *Titolo del test:* Inserimento Ordine Esterno
 - *Descrizione:* Verificare l’inserimento di un ordine di vendita esterno.
-- *Prerequisito:*
+- *Prerequisito:* Registrazione Supervisore Globale, Login come Supervisore Globale, Aggiunta merce in Magazzino 1.
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/48206755-c109561e-e7d6-44ae-a40f-1ce551ad6a62`.
 - *Processo:*
-  + 
-- *Risultato atteso:*
+  + Aggiunta di merce nel Magazzino 1;
+  + Inserimento ordine di vendita;
+  + Ottenere informazioni su ordine di vendita inserito;
+  + Ottenere informazioni sulle merci disponibili nel Magazzino 1;
+- *Risultato atteso:* Ordine di vendita inserito correttamente. Quantità merce decrementata correttamente dal magazzino 1.
 - *Esito:* #text(green,"PASSATO")
-- *Note:*
 
 == TdA-16
 - *Identificativo:* TdA-16
 - *Titolo del test:* Annullamento Ordini
 - *Descrizione:* Verificare l’annullamento degli ordini in attesa o in elaborazione.
-- *Prerequisito:*
+- *Prerequisito:* Registrazione Supervisore Globale, Login come Supervisore Globale, Aggiunta merce in Magazzino 1, Aggiunta merce in Magazzino 2.
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/48206755-0fdf004a-7631-4c1d-a1fa-da4c5f977739`.
 - *Processo:*
-  + 
-- *Risultato atteso:*
+  + Inserimento di ordine interno (trasferimento tra magazzini);
+  + Ottenere informazioni sullo stato dell'ordine;
+  + Ottenere informazioni sulle merci disponibili nel Magazzino 1;
+  + Ottenere informazioni sulle merci disponibili nel Magazzino 2;
+- *Risultato atteso:* Ordini in attesa o in elaborazione annullati correttamente.
 - *Esito:* #text(green,"PASSATO")
-- *Note:*
 
 == TdA-17
 - *Identificativo:* TdA-17
 - *Titolo del test:* Gestione Stati Ordini
 - *Descrizione:* Verificare il tracciamento e la corretta gestione degli stati degli ordini.
-- *Prerequisito:*
-- *Procedura di esecuzione:* Eseguire il comando ``.
+- *Prerequisito:* Registrazione Supervisore Globale, Login come Supervisore Globale, Aggiunta merce in Magazzino 1, Aggiunta ulteriore merce in Magazzino 1, Aggiunta merce in Magazzino 2, Aggiunta ulteriore merce in Magazzino 2, Aggiunta ulteriore merce in Magazzino 2, Aggiunta ordine interno (trasferimento tra magazzini), Aggiunta di un altro ordine interno (trasferimento tra magazzini), Aggiunta ordine di vendita.
+- *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/46314414-f834efac-afbf-4ae3-b57b-412ca00d716a`.
 - *Processo:*
-  + 
-- *Risultato atteso:*
-- *Esito:* 
-- *Note:*
+  + Ottenere informazioni sullo stato dell'ordine interno (trasferimento tra magazzini) 1;
+  + Ottenere informazioni sullo stato dell'ordine interno (trasferimento tra magazzini) 2;
+  + Ottenere informazioni sullo stato dell'ordine di vendita;
+- *Risultato atteso:* Ottenuto stato degli ordini corretto.
+- *Esito:* #text(green,"PASSATO")
 
 == TdA-18
 - *Identificativo:* TdA-18
 - *Titolo del test:* Visualizzazione Inventario
 - *Descrizione:* Verificare la visualizzazione dell’inventario globale e per singolo magazzino.
-- *Prerequisito:*
+- *Prerequisito:* 
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/46314414-c71e13e4-d581-40d4-831c-0b436836fe37`.
 - *Processo:*
   + 
-- *Risultato atteso:*
+- *Risultato atteso:* Visulizzazione corretta dell'inventario globale e del singolo magazzino.
 - *Esito:* #text(green,"PASSATO")
-- *Note:*
 
 == TdA-19
 - *Identificativo:* TdA-19
@@ -367,7 +421,6 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
   + 
 - *Risultato atteso:*
 - *Esito:*
-- *Note:*
 
 == TdA-20
 - *Identificativo:* TdA-20
@@ -379,12 +432,11 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
   + 
 - *Risultato atteso:*
 - *Esito:* #text(green,"PASSATO")
-- *Note:*
 
 == TdA-21
 - *Identificativo:* TdA-21
 - *Titolo del test:* Gestione Magazzini Offline/Online
-- *Descrizione:* Verificare la gestione dei magazzini online/offline, annullamento ordini interni da offline e riattivazione.
+- *Descrizione:* Verificare la gestione dei magazzini online/offline.
 - *Prerequisito:*
 - *Procedura di esecuzione:*
   + Eseguire il comando ``. \
@@ -399,11 +451,9 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
     + Il magazzino sarà impostato come offline dopo il timeout di 10 secondi (per testing);
     + A questo punto, il cambiamento di stato del magazzino sarà riportato anche nel servizio di Routing;
     + Quando il magazzino torna online (ad esempio riavviando il container Docker), il sistema lo rileverà automaticamente e aggiornerà lo stato nel servizio di Routing;
-  - Per verificare l’annullamento degli ordini interni da offline, seguire questi passaggi:
-    + 
 
 - *Risultato atteso:*
-- *Esito:*
+- *Esito:* #text(green,"PASSATO")
 - *Note:* Per visualizzare i log dei microservizi, usare il comando `docker logs -f <nome_container>`. 
 
 == TdA-22
@@ -416,7 +466,6 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
   + 
 - *Risultato atteso:*
 - *Esito:*
-- *Note:*
 
 == TdA-23
 - *Identificativo:* TdA-23
@@ -428,7 +477,6 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
   + 
 - *Risultato atteso:*
 - *Esito:*
-- *Note:*
 
 == TdA-24
 - *Identificativo:* TdA-24
@@ -440,7 +488,6 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
   + 
 - *Risultato atteso:*
 - *Esito:*
-- *Note:*
 
 == TdA-25
 - *Identificativo:* TdA-25
@@ -452,7 +499,6 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
   + 
 - *Risultato atteso:*
 - *Esito:*
-- *Note:*
  
 = Riepilogo esecuzione test
 #show figure: set block(breakable: true)
@@ -486,9 +532,9 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
     [*TdA-14*],[Inserimento Ordine Interno.],[#text(green,"PASSATO")],
     [*TdA-15*],[Inserimento Ordine Esterno.],[#text(green,"PASSATO")],
     [*TdA-16*],[Annullamento Ordini.],[#text(green,"PASSATO")],
-    [*TdA-17*],[Gestione Stati Ordini.],[],
+    [*TdA-17*],[Gestione Stati Ordini.],[#text(green,"PASSATO")],
     [*TdA-18*],[Visualizzazione Inventario.],[#text(green,"PASSATO")],
-    [*TdA-19*],[Visualizzazione Report Ordini.],[],
+    [*TdA-19*],[Visualizzazione Report Ordini.],[#text(green,"PASSATO")],
     [*TdA-20*],[Modifica Soglie Critiche.],[#text(green,"PASSATO")],
     [*TdA-21*],[Gestione Magazzini Offline/Online.],[#text(green,"PASSATO")],
     [*TdA-22*],[Riassortimento Automatico Ordine.],[],
