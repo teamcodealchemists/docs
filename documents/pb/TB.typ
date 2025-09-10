@@ -97,7 +97,11 @@ Questa sezione del documento dichiara le istruzioni necessarie che verranno util
 3. Entrare nella cartella del progetto appena clonata:
 #align(center)[`cd MVP`]
 
+=== Avviare Docker
+1. Avviare Docker Engine
+
 === Avviare Docker Compose
+
 1. Avviare i servizi del progetto in background:
 #align(center)[`docker compose up --build -d`]
 
@@ -120,7 +124,8 @@ Oppure sulle collezioni del workspace _(sostituire il collection-id)_:
 _*Nota:* Si può anche usare l'opzione `--verbose` per ottenere più informazioni sul ritorno delle richieste._\
 
 === Resettare l’ambiente ad ogni test
-Per ripartire da zero e resettare i volumi:
+Al termine di ogni test, eseguire i seguenti compandi per resettare l'ambiente (ripartire da zero e resettare i volumi)
+
 1. Fermare i container e rimuovere i volumi:
 #align(center)[`docker compose down`]
 
@@ -140,7 +145,7 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 - *Prerequisito:* Il sistema è stato avviato.
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/46314414-5b9d7b5f-f2fc-4218-8553-b768cfd5fb6e`.
 - *Processo:*
-  + Tentativo di login per verificare il primo avvio del sistema \
+  + Tentativo di login per verificare il primo avvio del sistema; \
   + Registrazione del Supervisore Globale.
 - *Risultato atteso:* Registrazione del Supervisore Globale effettuata.
 - *Esito:* #text(green,"PASSATO")
@@ -149,25 +154,29 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 - *Identificativo:* TdA-02
 - *Titolo del test:* Errori Registrazione Supervisore Globale.
 - *Descrizione:* Verificare che alla registrazione del supervisore globale vengano gestiti gli errori di inserimento dati.
-- *Prerequisito:* 
+- *Prerequisito:* Il sistema è stato avviato.
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/46314414-9f74ea49-1a0a-4352-b295-41e41bef69e9`.
 - *Processo:* 
-  + 
-- *Risultato atteso:*
+  + Verifica che siamo nella fase di Startup; \
+  + Registrazione di un Supervisore Globale con email errata; \
+  + Registrazione di un Supervisore Globale con password errata; \
+  + Registrazione di un Supervisore Globale con password errata; \
+  + Registrazione di un Supervisore Globale con numero di telefono errato; \
+  + Registrazione di un Supervisore Globale con parametro mancante (cognome); \
+  + Registrazione di un Supervisore Globale con parametro di tipo errato (telefono come numero) \
+- *Risultato atteso:* Visualizzazione di errori di inserimento in fase di Registrazione di un Supervisore Globale.
 - *Esito:* #text(green,"PASSATO")
-- *Note:*
 
 == TdA-03
 - *Identificativo:* TdA-03
 - *Titolo del test:* Autenticazione Utente
 - *Descrizione:* Verificare la funzionalità di login con le credenziali corrette.
-- *Prerequisito:* 
+- *Prerequisito:* Essersi registrati come Supervisore Globale
 - *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/46314414-7f79b291-6fac-490d-8361-5779e0428d17`.
 - *Processo:* 
-  + 
-- *Risultato atteso:*
+  + Accesso del Supervisore Globale con credenziali corrette.
+- *Risultato atteso:* Accesso del Supervisore Globale effettuato correttamente.
 - *Esito:* #text(green,"PASSATO")
-- *Note:*
 
 == TdA-04
 - *Identificativo:* TdA-04
@@ -179,7 +188,6 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
   + 
 - *Risultato atteso:*
 - *Esito:* #text(green,"PASSATO")
-- *Note:*
 
 == TdA-05
 - *Identificativo:* TdA-05
@@ -298,7 +306,7 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 - *Processo:*
   + 
 - *Risultato atteso:*
-- *Esito:* 
+- *Esito:* #text(green,"PASSATO")
 - *Note:*
 
 == TdA-15
@@ -310,7 +318,7 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 - *Processo:*
   + 
 - *Risultato atteso:*
-- *Esito:* 
+- *Esito:* #text(green,"PASSATO")
 - *Note:*
 
 == TdA-16
@@ -322,7 +330,7 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 - *Processo:*
   + 
 - *Risultato atteso:*
-- *Esito:* 
+- *Esito:* #text(green,"PASSATO")
 - *Note:*
 
 == TdA-17
@@ -366,11 +374,11 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 - *Titolo del test:* Modifica Soglie Critiche
 - *Descrizione:* Verificare la modifica dei valori di soglia minima e massima.
 - *Prerequisito:*
-- *Procedura di esecuzione:* Eseguire il comando ``.
+- *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/48219992-bc457ed4-a383-48e4-a874-c188801bf08f`.
 - *Processo:*
   + 
 - *Risultato atteso:*
-- *Esito:*
+- *Esito:* #text(green,"PASSATO")
 - *Note:*
 
 == TdA-21
@@ -384,7 +392,7 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 - *Processo:*
   + 
 - *Risultato atteso:*
-- *Esito:*
+- *Esito:* #text(green,"PASSATO")
 - *Note:*
 
 == TdA-22
@@ -464,14 +472,14 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
     [*TdA-11*],[Inserimento Merce.],[#text(green,"PASSATO")],
     [*TdA-12*],[Modifica Quantità Merce.],[#text(green,"PASSATO")],
     [*TdA-13*],[Rimozione Merce.],[#text(green,"PASSATO")],
-    [*TdA-14*],[Inserimento Ordine Interno.],[],
-    [*TdA-15*],[Inserimento Ordine Esterno.],[],
-    [*TdA-16*],[Annullamento Ordini.],[],
+    [*TdA-14*],[Inserimento Ordine Interno.],[#text(green,"PASSATO")],
+    [*TdA-15*],[Inserimento Ordine Esterno.],[#text(green,"PASSATO")],
+    [*TdA-16*],[Annullamento Ordini.],[#text(green,"PASSATO")],
     [*TdA-17*],[Gestione Stati Ordini.],[],
     [*TdA-18*],[Visualizzazione Inventario.],[#text(green,"PASSATO")],
     [*TdA-19*],[Visualizzazione Report Ordini.],[],
-    [*TdA-20*],[Modifica Soglie Critiche.],[],
-    [*TdA-21*],[Gestione Magazzini Offline/Online.],[],
+    [*TdA-20*],[Modifica Soglie Critiche.],[#text(green,"PASSATO")],
+    [*TdA-21*],[Gestione Magazzini Offline/Online.],[#text(green,"PASSATO")],
     [*TdA-22*],[Riassortimento Automatico Ordine.],[],
     [*TdA-23*],[Riassortimento Soglia Minima.],[],
     [*TdA-24*],[Riassortimento Soglia Massima.],[],
