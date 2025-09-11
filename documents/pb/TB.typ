@@ -27,13 +27,13 @@
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
   [1.0.0],
-  [08/09/2025],
+  [10/09/2025],
   [R. Zangla],
   [N. Moretto],
   [Documento approvato interamente.],
   
   [0.2.0],
-  [08/09/2025],
+  [09/09/2025],
   [N. Bolzon \ S. Marana],
   [N. Moretto],
   [Completamento sezione "struttura del Test Book".],
@@ -124,11 +124,7 @@ _*Nota:* Non usare Postman per le run automatiche (poichè richiede account a pa
 1. Installare Newman _(solo la prima volta)_
 #align(center)[`npm install -g newman`]
 
-2. Spostarsi nella cartella dove sono presenti i file dei test di accettazione.
-  \ Per eseguire i test localmente sui file json tramite Newman, usare il seguente comando _(sostituire il nome del file)_:
-#align(center)[`newman run <nome_file>`]
-
-Oppure sulle collezioni del workspace _(sostituire il collection-id)_:
+2. Eseguire il test sulle collezioni del workspace _(sostituire il collection-id)_:
 #align(center)[`newman run https://www.postman.com/collections/<collection-id>`]
 
 _*Nota:* Si può anche usare l'opzione `--verbose` per ottenere più informazioni sul ritorno delle richieste._\
@@ -483,8 +479,8 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
   + Visualizzazione merce nell'inventario locale del Magazzino 2;
   + Aggiornamento soglia di un prodotto del Magazzino 1;
   + Aggiornamento soglia di un prodotto del Magazzino 2;
-  + Visualizzazione inventario locale del Magazzino 1;
-  + Visualizzazione inventario locale del Magazzino 2;
+  + Visualizzazione inventario locale del Magazzino 1 dopo aggiornamento soglia di un prodotto;
+  + Visualizzazione inventario locale del Magazzino 2 dopo aggiornamento soglia di un prodotto;
 - *Risultato atteso:* Valori di soglia minima e massima modificati correttamente
 - *Esito:* #text(green,"PASSATO")
 
@@ -493,7 +489,7 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 - *Titolo del test:* Gestione Magazzini Offline/Online
 - *Descrizione:* Verificare la gestione dei magazzini online/offline.
 - *Procedura di esecuzione:*
-  + Eseguire il comando ``.
+  + Eseguire il comando `newman run https://www.postman.com/collections/46314242-3124d581-f801-41bb-91c6-c6f17a723441`.
 - *Processo:*
   - Per verificare la gestione dei magazzini online/offline, seguire questi passaggi:
     + Eseguire la registrazione del Supervisore Globale;
@@ -513,44 +509,87 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
 - *Titolo del test:* Riassortimento Automatico Ordine
 - *Descrizione:* Verificare il riassortimento automatico in caso di ordine non soddisfacibile.
 - *Prerequisito:*
-- *Procedura di esecuzione:* Eseguire il comando ``.
+  + Registrazione Supervisore Globale;
+  + Login come Supervisore Globale;
+  + Aggiunta di un Magazzino 1 nel sistema di routing;
+  + Aggiunta di un ulteriore Magazzino 2 nel sistema di routing;
+  + Aggiunta di un ulteriore Magazzino 3 nel sistema di routing;
+  + Aggiunta merce in Magazzino 1;
+  + Aggiunta merce in Magazzino 2;
+  + Inserimento ordine di vendita;
+- *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/48219992-0dc600df-28c7-4287-9c05-a863c28953c7`.
 - *Processo:*
-  + 
-- *Risultato atteso:*
-- *Esito:*
+  + Inserimento nuovo ordine di vendita;
+  + Visualizzazione ordini del Magazzino 1 dopo il processo di inserimento ordine;
+  + Visualizzazione ordini del Magazzino 2 dopo il processo di inserimento ordine;
+  + Visualizzazione ordini (cloud) di tutti i magazzini (aggregato);
+- *Risultato atteso:* Il riassortimento automatico funziona in caso di ordine non soddisfacibile.
+- *Esito:* #text(green,"PASSATO")
 
 == TdA-23
 - *Identificativo:* TdA-23
 - *Titolo del test:* Riassortimento Soglia Minima
 - *Descrizione:* Verificare il riassortimento automatico al raggiungimento della soglia minima di un prodotto.
-- *Prerequisito:* 
-- *Procedura di esecuzione:* Eseguire il comando ``.
+- *Prerequisito:*
+  + Registrazione Supervisore Globale;
+  + Login come Supervisore Globale;
+  + Aggiunta di un Magazzino 1 nel sistema di routing;
+  + Aggiunta di un ulteriore Magazzino 2 nel sistema di routing;
+  + Aggiunta di un ulteriore Magazzino 3 nel sistema di routing;
+  + Aggiunta merce in Magazzino 1;
+  + Aggiunta merce in Magazzino 2;
+- *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/48219992-aa8a02ea-8028-4b6d-bc1a-4e70a1eb9d4e`.
 - *Processo:*
-  + 
-- *Risultato atteso:*
-- *Esito:*
+  + Visualizzazione inventario Magazzino 1 prima del riassortimento;
+  + Visualizzazione inventario Magazzino 2 prima del riassortimento;
+  + Aggiunta ordine di vendita;
+  + Visualizzazione inventario del Magazzino 1 dopo il riassortimento;
+  + Visualizzazione inventario del Magazzino 2 dopo il riassortimento;
+- *Risultato atteso:* Riassortimento automatico al raggiungimento della soglia minima di un prodotto funziona correttamente.
+- *Esito:* #text(green,"PASSATO")
 
 == TdA-24
 - *Identificativo:* TdA-24
 - *Titolo del test:* Riassortimento Soglia Massima
 - *Descrizione:* Verificare il riassortimento automatico al raggiungimento della soglia massima di un prodotto.
 - *Prerequisito:*
-- *Procedura di esecuzione:* Eseguire il comando ``.
+  + Registrazione Supervisore Globale;
+  + Login come Supervisore Globale;
+  + Aggiunta di un Magazzino 1 nel sistema di routing;
+  + Aggiunta di un ulteriore Magazzino 2 nel sistema di routing;
+  + Aggiunta di un ulteriore Magazzino 3 nel sistema di routing;
+  + Aggiunta merce in Magazzino 1;
+  + Aggiunta merce in Magazzino 2;
+  + Aggiunta ordine di vendita dal magazzino 1; _(per avere un oggetto in ordine aggregato.)_
+- *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/48219992-0863d874-d052-4e2e-97ef-bba6663e6b33`.
 - *Processo:*
-  + 
-- *Risultato atteso:*
-- *Esito:*
+  + Visualizzazione inventario Magazzino 1 prima del riassortimento;
+  + Visualizzazione inventario Magazzino 2 prima del riassortimento;
+  + Modifica Merce 1 nel Magazzino 1;
+  + Visualizzazione inventario del Magazzino 1 dopo il riassortimento;
+  + Visualizzazione ordini del Magazzino 2 dopo il riassortimento;
+- *Risultato atteso:* Riassortimento automatico al raggiungimento della soglia massima di un prodotto funziona correttamente.
+- *Esito:* #text(green,"PASSATO")
 
 == TdA-25
 - *Identificativo:* TdA-25
 - *Titolo del test:* Gestione Conflitti Ordini Simultanei
 - *Descrizione:* Verificare la corretta gestione di ordini simultanei da parte di un magazzino.
 - *Prerequisito:*
-- *Procedura di esecuzione:* Eseguire il comando ``.
+  + Registrazione Supervisore Globale;
+  + Login come Supervisore Globale;
+  + Aggiunta merce in Magazzino 1;
+  + Aggiunta merce in Magazzino 2;
+  + Inserimento di ordine interno (trasferimento tra magazzini);
+  + Inserimento di un ulteriore ordine interno (trasferimento tra magazzini);
+- *Procedura di esecuzione:* Eseguire il comando `newman run https://www.postman.com/collections/46314414-b592467c-b6a6-4557-9634-b4764a25d63e`.
 - *Processo:*
-  + 
-- *Risultato atteso:*
-- *Esito:*
+  + Ottenere informazioni sulle merci disponibili nel Magazzino 1;
+  + Ottenere informazioni sulle merci disponibili nel Magazzino 2;
+  + Visualizzazione Stato ordini (1);
+  + Visualizzazione Stato ordini (2);
+- *Risultato atteso:* Gestione corretta di ordini simultanei in un magazzino.
+- *Esito:* #text(green,"PASSATO")
  
 = Riepilogo esecuzione test
 #show figure: set block(breakable: true)
@@ -589,10 +628,10 @@ _*Nota:* Questo procedimento ferma i container, rimuove i volumi e ricrea l’am
     [*TdA-19*],[Visualizzazione Report Ordini.],[#text(green,"PASSATO")],
     [*TdA-20*],[Modifica Soglie Critiche.],[#text(green,"PASSATO")],
     [*TdA-21*],[Gestione Magazzini Offline/Online.],[#text(green,"PASSATO")],
-    [*TdA-22*],[Riassortimento Automatico Ordine.],[],
-    [*TdA-23*],[Riassortimento Soglia Minima.],[],
-    [*TdA-24*],[Riassortimento Soglia Massima.],[],
-    [*TdA-25*],[Gestione Conflitti Ordini Simultanei.],[],
+    [*TdA-22*],[Riassortimento Automatico Ordine.],[#text(green,"PASSATO")],
+    [*TdA-23*],[Riassortimento Soglia Minima.],[#text(green,"PASSATO")],
+    [*TdA-24*],[Riassortimento Soglia Massima.],[#text(green,"PASSATO")],
+    [*TdA-25*],[Gestione Conflitti Ordini Simultanei.],[#text(green,"PASSATO")],
   ),
   caption: [Elenco dei test di accettazione e relativo esito.],
 )
