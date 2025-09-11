@@ -2969,39 +2969,39 @@ Può invocare le seguenti funzioni:
 - *generateJWT(user: User)*: string \
   Genera il token JWT per l'utente.
 
-=== WarehouseIdDTO
+==== WarehouseIdDTO
 + Rappresenta il DTO relativo al codice identificativo del magazzino.
 Descrizione degli attributi della struttura:
 - *warehouseId*: number \
-=== UserIdDTO
+==== UserIdDTO
 + Rappresenta il DTO relativo al codice identificativo dell'utente.
 Descrizione degli attributi della struttura:
 - *id*: number \
-=== JwtDTO
+==== JwtDTO
 + Rappresenta il DTO relativo al token JWT usato per l'autenticazione.
 Descrizione degli attributi della struttura:
 - *jwt*: string \
-=== SubDTO
+==== SubDTO
 + Rappresenta il DTO relativo al subject dell'autenticazione.
 Descrizione degli attributi della struttura:
 - *sub*: string \
-=== CidDTO
+==== CidDTO
 + Rappresenta il DTO relativo al CID utilizzato per l'autenticazione.
 Descrizione degli attributi della struttura:
 - *cid*: string \
-=== AuthenticationDTO
+==== AuthenticationDTO
 + Rappresenta il DTO relativo alle credenziali dell'utente.
 Descrizione degli attributi della struttura:
 - *email*: string \
 - *password*: string \
-=== GlobalSupervisorDTO
+==== GlobalSupervisorDTO
 + Rappresenta il DTO relativo al Supervisore Globale
 Descrizione degli attributi della struttura:
 - *name*: string \
 - *surname*: string \
 - *phone*: string \
 - *authentication*: AuthenticationDTO \
-=== LocalSupervisorDTO
+==== LocalSupervisorDTO
 + Rappresenta il DTO relativo al Supervisore Locale
 Descrizione degli attributi della struttura:
 - *name*: string \
@@ -3010,7 +3010,7 @@ Descrizione degli attributi della struttura:
 - *authentication*: AuthenticationDTO \
 - *warehouseAssigned*: WarehouseIdDTO[] \
 
-=== DataMapper
+==== DataMapper
 + Rappresenta la classe in cui sono definiti i metodi per la conversione da oggetti di dominio a DTO e viceversa.
 Può invocare le seguenti funzioni:
 - *globalSupervisorToDomain(GlobalSupervisorDTO)*: GlobalSupervisor \
@@ -3032,14 +3032,14 @@ Può invocare le seguenti funzioni:
 - *userIdToDTO(UserId)*: UserIdDTO \
   Converte un oggetto di dominio di tipo _UserId_ al rispettivo DTO.
 
-=== JwtHeaderAuthenticationListener
+==== JwtHeaderAuthenticationListener
 + Porta in entrata per l'autenticazione tramite token JWT e CID.
 
 Può invocare le seguenti funzioni:
 - *authenticate(JwtDTO,CidDTO)*: string \
   Delega al service l'autenticazione.
 
-=== AuthenticationEventListener
+==== AuthenticationEventListener
 + Porta in entrata per l'ascolto di eventi di login e logout dell'utente.
 
 Può invocare le seguenti funzioni:
@@ -3048,35 +3048,35 @@ Può invocare le seguenti funzioni:
 - *logout(SubDTO)*: string \
   Delega al service il logut dell'utente.
 
-=== RegisterGlobalSupervisorEventListener
+==== RegisterGlobalSupervisorEventListener
 + Porta in entrata per l'ascolto di comandi di registrazione di un nuovo Supervisore Globale.
 Può invocare le seguenti funzioni:
 - *registerGlobalSupervisor(GlobalSupervisorDTO)*: UserID
 
-=== RegisterLocalSupervisorEventListener
+==== RegisterLocalSupervisorEventListener
 + Porta in entrata per l'ascolto di comandi di registrazione di un nuovo Supervisore Locale.
 Può invocare le seguenti funzioni:
 - *registerLocalSupervisor(LocalSupervisorDTO)*: UserID
 
-=== AuthController
+==== AuthController
 + Adapter in entrata che implementa le seguenti interfacce:
 - *JwtHeaderAuthenticationListener*
 - *AuthenticationEventListener*
 - *RegisterGlobalSupervisorEventListener*
 - *RegisterLocalSupervisorEventListener*
 
-=== SetTokenPortPublisher
+==== SetTokenPortPublisher
 + Porta in entrata per l'invio di token d'accesso.
 Può invocare le seguenti funzioni:
 - *emitAccessToken(token:string, cid:string)*: void
   Invia il il token.
 
-=== RegisteredLocalSupervisorEventPublisher
+==== RegisteredLocalSupervisorEventPublisher
 + Porta in entrata per comunicare l'avvenuta registrazione di un nuovo Supervisore Locale.
 Può invocare le seguenti funzioni:
 - *publishRegisteredLocal(LocalSupervisor)*: void
 
-=== AuthEventHandler
+==== AuthEventHandler
 + Adapter in uscita che implementa le seguenti interfacce:
 - *SetTokenPortPublisher*
 - *RegisteredLocalSupervisorEventPublisher*
