@@ -16,7 +16,7 @@
 #let status = "In redazione"
 #let destinatario = "M31"
 
-#let versione = "0.6.1"
+#let versione = "0.7.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -29,6 +29,12 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+
+  [0.7.0],
+  [11/09/2025],
+  [S. Speranza],
+  [],
+  [Completata specifica del Microservizio di Autenticazione],
 
   [0.6.1],
   [08/09/2025],
@@ -2918,13 +2924,164 @@ Può invocare le seguenti funzioni:
 - *getId*: number \
   Restituisce il codice identificativo di un utente.
 
-==== `<<enum>>` tokenStatus
+==== `<<enum>>` TokenStatus
 + Enumerazione che rappresenta lo stato di un token utilizzato per l'autenticazione.
 + Gli stati del token possono essere:
   - *ACTIVE*: number \
     Rappresenta un token valido.
   - *REVOKED*: number \
     Rappresenta un token non valido.
+
+==== Token
++ Rappresenta il token da restituire ai microservizi per la validazione dell'autenticazione dell'utente.
+
+Descrizione degli attributi della struttura:
+- *sub*: string \
+  Rappresenta il subject del token, ossia l'utente identificato.
+- *status*: TokenStatus \
+  Rappresenta lo stato del token.
+
+Può invocare le seguenti funzioni:
+- *getSub()*: string \
+  Restituisce il subject del token.
+- *getStatus()*: TokenStatus \
+  Restituisce lo stato del token.
+
+==== AuthService
++ Rappresenta la logica di business del microservizio di autenticazione.
++ Si occupa di:
+  - Registrazione, degli utenti.
+  - Autenticazione degli utenti.
+
+Può invocare le seguenti funzioni:
+- *login(authentication: Authentication)*: string \
+  Si occupa dell'autenticazione dell'utente date le sue credenziali.
+- *logout(sub: string)*: string \
+  Si occupa di gestire la fine della sessione dell'utente.
+- *registerGlobalSupervisor(GlobalSupervisor)*: UserId \
+  Registra un nuovo Supervisore Globale a sistema.
+- *registerLocalSupervisor(LocalSupervisor)*: UserId \
+  Registra un nuovo Supervisore Locale a sistema.
+- *authenticate(jwt: string,cid: string)*: string \
+  Si occupa di gestire l'autenticazione mediante il token JWT e il CID.
+- *isGlobalSet()*: boolean \
+  Verifica se esiste già un Supervisore Globale registrato a sistema.
+- *generateJWT(user: User)*: string \
+  Genera il token JWT per l'utente.
+
+=== WarehouseIdDTO
++ Rappresenta il DTO relativo al codice identificativo del magazzino.
+Descrizione degli attributi della struttura:
+- *warehouseId*: number \
+=== UserIdDTO
++ Rappresenta il DTO relativo al codice identificativo dell'utente.
+Descrizione degli attributi della struttura:
+- *id*: number \
+=== JwtDTO
++ Rappresenta il DTO relativo al token JWT usato per l'autenticazione.
+Descrizione degli attributi della struttura:
+- *jwt*: string \
+=== SubDTO
++ Rappresenta il DTO relativo al subject dell'autenticazione.
+Descrizione degli attributi della struttura:
+- *sub*: string \
+=== CidDTO
++ Rappresenta il DTO relativo al CID utilizzato per l'autenticazione.
+Descrizione degli attributi della struttura:
+- *cid*: string \
+=== AuthenticationDTO
++ Rappresenta il DTO relativo alle credenziali dell'utente.
+Descrizione degli attributi della struttura:
+- *email*: string \
+- *password*: string \
+=== GlobalSupervisorDTO
++ Rappresenta il DTO relativo al Supervisore Globale
+Descrizione degli attributi della struttura:
+- *name*: string \
+- *surname*: string \
+- *phone*: string \
+- *authentication*: AuthenticationDTO \
+=== LocalSupervisorDTO
++ Rappresenta il DTO relativo al Supervisore Locale
+Descrizione degli attributi della struttura:
+- *name*: string \
+- *surname*: string \
+- *phone*: string \
+- *authentication*: AuthenticationDTO \
+- *warehouseAssigned*: WarehouseIdDTO[] \
+
+=== DataMapper
++ Rappresenta la classe in cui sono definiti i metodi per la conversione da oggetti di dominio a DTO e viceversa.
+Può invocare le seguenti funzioni:
+- *globalSupervisorToDomain(GlobalSupervisorDTO)*: GlobalSupervisor \
+  Converte un DTO relativo ad un _GlobalSupervisor_ al rispettivo oggetto di dominio.
+- *localSupevisorToDomain(LocalSupervisorDTO)*: LocalSupervisor \
+  Converte un DTO relativo ad un _LocalSupervisor_ al rispettivo oggetto di dominio.
+- *warehouseIdToDomain(WarehouseIdDTO)*: WharehouseId \
+  Converte un DTO relativo ad un _WarehouseId_ al rispettivo oggetto di dominio.
+- *authenticationToDomain(AuthenticationDTO)*: Authentication \
+  Converte un DTO relativo ad un _Authentication_ al rispettivo oggetto di dominio.
+- *globalSupervisorToDTO(GlobalSupervisor)*: GlobalSupervisorDTO \
+  Converte un oggetto di dominio di tipo _GlobalSupervisor_ al rispettivo DTO.
+- *localSupervisorToDTO(LocalSupervisor)*: LocalSupervisorDTO \
+  Converte un oggetto di dominio di tipo _LocalSupervisor_ al rispettivo DTO.
+- *warehouseIdToDTO(WarehouseId)*: WarehouseIdDTO \
+  Converte un oggetto di dominio di tipo _WarehouseId_ al rispettivo DTO.
+- *authenticationToDTO(Authentication)*: AuthenticationDTO \
+  Converte un oggetto di dominio di tipo _Authentication_ al rispettivo DTO.
+- *userIdToDTO(UserId)*: UserIdDTO \
+  Converte un oggetto di dominio di tipo _UserId_ al rispettivo DTO.
+
+=== JwtHeaderAuthenticationListener
++ Porta in entrata per l'autenticazione tramite token JWT e CID.
+
+Può invocare le seguenti funzioni:
+- *authenticate(JwtDTO,CidDTO)*: string \
+  Delega al service l'autenticazione.
+
+=== AuthenticationEventListener
++ Porta in entrata per l'ascolto di eventi di login e logout dell'utente.
+
+Può invocare le seguenti funzioni:
+- *login(AuthenticationDTO)*: string \
+  Delega al service il login dell'utente.
+- *logout(SubDTO)*: string \
+  Delega al service il logut dell'utente.
+
+=== RegisterGlobalSupervisorEventListener
++ Porta in entrata per l'ascolto di comandi di registrazione di un nuovo Supervisore Globale.
+Può invocare le seguenti funzioni:
+- *registerGlobalSupervisor(GlobalSupervisorDTO)*: UserID
+
+=== RegisterLocalSupervisorEventListener
++ Porta in entrata per l'ascolto di comandi di registrazione di un nuovo Supervisore Locale.
+Può invocare le seguenti funzioni:
+- *registerLocalSupervisor(LocalSupervisorDTO)*: UserID
+
+=== AuthController
++ Adapter in entrata che implementa le seguenti interfacce:
+- *JwtHeaderAuthenticationListener*
+- *AuthenticationEventListener*
+- *RegisterGlobalSupervisorEventListener*
+- *RegisterLocalSupervisorEventListener*
+
+=== SetTokenPortPublisher
++ Porta in entrata per l'invio di token d'accesso.
+Può invocare le seguenti funzioni:
+- *emitAccessToken(token:string, cid:string)*: void
+  Invia il il token.
+
+=== RegisteredLocalSupervisorEventPublisher
++ Porta in entrata per comunicare l'avvenuta registrazione di un nuovo Supervisore Locale.
+Può invocare le seguenti funzioni:
+- *publishRegisteredLocal(LocalSupervisor)*: void
+
+=== AuthEventHandler
++ Adapter in uscita che implementa le seguenti interfacce:
+- *SetTokenPortPublisher*
+- *RegisteredLocalSupervisorEventPublisher*
+
+
 
 /*
 =================================================
