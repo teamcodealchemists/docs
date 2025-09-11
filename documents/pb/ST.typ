@@ -2820,6 +2820,10 @@ Può invocare le seguenti funzioni:
 #pagebreak()
 === Microservizio Autenticazione
 // Breve spiegazione + Immagine
+#figure(
+  image("assets/Auth.svg", width: 120%),
+  caption: [Schema UML - Microservizio Autenticazione]
+)
 ==== Descrizione del microservizio
 Il microservizio di Autenticazione si occupa della gestione degli utenti del sistema e della loro autenticazione.
 ===== Funzionalità principali
