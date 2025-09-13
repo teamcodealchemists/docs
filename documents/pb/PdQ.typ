@@ -434,13 +434,121 @@ Per ogni test viene specificato uno stato, che può essere:
 
 I test di unità verificano il comportamento corretto delle singole unità di codice, come funzioni, metodi o classi. Vengono scritti e mantenuti dagli sviluppatori durante la fase di sviluppo e servono a garantire che ogni componente, isolato dal resto, produca il risultato atteso per diversi input. Sono fondamentali per individuare rapidamente errori logici a livello di codice sorgente.
 
+Di seguito sono riportati i test di unità: per una migliore leggibilità, sono stati suddivisi in più tabelle, una per ogni microservizio.
+
+=== 4.1.1 Microservizio di Autenticazione
+
 #let voci_test_unità = (
-    [---], [---], [---], [NI]
+    [TdU01], [---], [---], [NI]
   )
 #let caption_test_unità = (
-  [Test di unità]
+  [Test di unità di Autenticazione]
 )
-#show: test_table.with(
+#show: unit_table.with(
+  voci: voci_test_unità,
+  caption: caption_test_unità
+)
+
+=== 4.1.2 Microservizio di Sistema Centralizzato
+
+#let voci_test_unità = (
+    [TdU80], [---], [---], [NI]
+  )
+#let caption_test_unità = (
+  [Test di unità di Sistema Centralizzato]
+)
+#show: unit_table.with(
+  voci: voci_test_unità,
+  caption: caption_test_unità
+)
+
+=== 4.1.3 Microservizio di Stato Aggregato
+
+#let voci_test_unità = (
+    [TdU220], [---], [---], [NI]
+  )
+#let caption_test_unità = (
+  [Test di unità di Stato Aggregato]
+)
+#show: unit_table.with(
+  voci: voci_test_unità,
+  caption: caption_test_unità
+)
+
+=== 4.1.4 Microservizio di Routing
+
+#let voci_test_unità = (
+    [TdU273], [---], [---], [NI]
+  )
+#let caption_test_unità = (
+  [Test di unità di Routing]
+)
+#show: unit_table.with(
+  voci: voci_test_unità,
+  caption: caption_test_unità
+)
+
+=== 4.1.5 Microservizio di Inventario Aggregato
+
+#let voci_test_unità = (
+    [TdU340], [---], [---], [NI]
+  )
+#let caption_test_unità = (
+  [Test di unità di Inventario Aggregato]
+)
+#show: unit_table.with(
+  voci: voci_test_unità,
+  caption: caption_test_unità
+)
+
+=== 4.1.6 Microservizio di Ordine Aggregato
+
+#let voci_test_unità = (
+    [TdU400], [---], [---], [NI]
+  )
+#let caption_test_unità = (
+  [Test di unità di Ordine Aggregato]
+)
+#show: unit_table.with(
+  voci: voci_test_unità,
+  caption: caption_test_unità
+)
+
+=== 4.1.7 Microservizio di Inventario
+
+#let voci_test_unità = (
+    [TdU506], [---], [---], [NI]
+  )
+#let caption_test_unità = (
+  [Test di unità di Inventario]
+)
+#show: unit_table.with(
+  voci: voci_test_unità,
+  caption: caption_test_unità
+)
+
+=== 4.1.8 Microservizio di Ordini
+
+#let voci_test_unità = (
+    [TdU592], [---], [---], [NI]
+  )
+#let caption_test_unità = (
+  [Test di unità di Ordini]
+)
+#show: unit_table.with(
+  voci: voci_test_unità,
+  caption: caption_test_unità
+)
+
+=== 4.1.9 Microservizio di State
+
+#let voci_test_unità = (
+    [TdU799], [---], [---], [NI]
+  )
+#let caption_test_unità = (
+  [Test di unità di State]
+)
+#show: unit_table.with(
   voci: voci_test_unità,
   caption: caption_test_unità
 )
