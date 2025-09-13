@@ -89,31 +89,6 @@
     === Riferimenti informativi
     // Link al capitolato del progetto
 
-
-/* = Nozioni generali
-  == Magazzino
-
-  == Prodotti
-
-  == Inventario
-
-  == Ordini
-
-    === Ordini interni 
-
-    === Ordini di vendita
-
-  == Riassortimento
-
-  == Trasferimento merce per superamento della soglia massima o minima
-
-  == Tipologie di utenti      
-  // Introduzione sull'esistenza di due tipi di supervisori
-    === Supervisore locale  
-    // Permessi del s. locale
-    === Supervisore globale
-    // Permessi del s. globale */
-
   = Requisiti di sistema      
     == Requisiti hardware
 
