@@ -444,13 +444,27 @@ I test di unità verificano il comportamento corretto delle singole unità di co
   voci: voci_test_unità,
   caption: caption_test_unità
 )
+#pagebreak()
 
 == 4.2 Test di integrazione
 
 I test di integrazione servono a verificare che più unità di codice funzionino correttamente insieme. L'obiettivo è individuare problemi che emergono quando i vari moduli interagiscono tra loro, ad esempio errori di comunicazione tra componenti o malintesi sui formati di dati scambiati. Questi test sono particolarmente utili quando si integrano sistemi esterni come database, API o servizi#super[G] di terze parti.
 
 #let voci_test_integrazione = (
-    [---], [---], [---], [NI]
+    [TdI01], [Testare la verifica del JWT(Json Web Token) tramite il microservizio autenticazione, Resgate e accesso ad un dato microservizio], [] , [S],
+    [TdI02], [Testare la sincronizzazione da Inventario a Inventario Aggregato dopo un operazione di aggiunta/modifica/rimozione], [] , [S],
+    [TdI03], [Testare la sincronizzazione da Ordine a Ordine Aggregato dopo un operazione di aggiunta/modifica], [] , [S],
+    [TdI04], [Testare interazione tra microservizi stato e microservizio stato Aggregato], [] , [S],
+    [TdI05], [Testare interazione tra Magazzini differenti in caso di ordine interno], [] , [S],
+    [TdI06], [Testare interazione tra microservizio Ordini e Inventario], [] , [S],
+    [TdI07], [Testare interazione tra microservizio Inventario a Inventario], [] , [S],
+    [TdI08], [Testare interazione tra microservizio Inventario e Sistema centralizzato in caso di criticità soglia Min o Max], [] , [S],
+    [TdI09], [Testare interazione tra microservizio Ordine e Sistema centralizzato in caso di insufficienza Prodotti], [] , [S],
+    [TdI09], [Testare interazione tra microservizio Sistema centralizzato e Inventario aggregato per ottenere inventario], [] , [S],
+    [TdI10], [Testare interazione tra microservizio Sistema centralizzato e Ordine aggregato per ottenere ordini], [] , [S],
+    [TdI11], [Testare interazione tra microservizio Sistema centralizzato e Routing per ottenere informazioni sulla distanza dei magazzini], [] , [S],
+    [TdI12], [Testare interazione tra Inventario e MongoDB per archiviazione prodotti], [] , [S],
+    [TdI13], [Testare interazione tra Ordini e MongoDB per archiviazione ordini], [] , [S]
   )
 #let caption_test_integrazione = (
   [Test di integrazione]
