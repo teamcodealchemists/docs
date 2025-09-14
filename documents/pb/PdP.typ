@@ -16,7 +16,7 @@
 #let titolo = "Piano di Progetto"
 #let status = "Approvato"
 #let destinatario = "M31"
-#let versione = "2.0.0"
+#let versione = "1.3.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -27,6 +27,7 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  /*
   [2.0.0],
   [14/09/2025],
   [R. Zangla],
@@ -37,7 +38,7 @@
   [12/09/2025],
   [N. Bolzon],
   [S. Speranza],
-  [Completamento Sprint 12.], 
+  [Completamento Sprint 12.], */
 
   [1.3.0],
   [18/08/2025],
@@ -1864,6 +1865,13 @@ I possibili rischi :
   )
 ]
 
+==== Retrospettiva
+#v(1em)
+  Nel nono sprint#super[G], il team ha svolto due incontri di revisione. Il primo si è tenuto il *21 luglio 2025* con il #p.cardin; in seguito, ottenuto il parere favorevole, si è svolto un secondo incontro il *31 luglio 2025* con il #p.tullio. Entrambe le revisioni si sono concluse con esito complessivamente positivo. \
+  Contestualmente, il team ha lavorato alla preparazione delle presentazioni da esporre durante le due revisioni con i docenti. A seguito delle valutazioni positive ricevute, gli esiti degli incontri sono stati comunicati all’azienda.
+  Dopo aver ottenuto il parere favorevole nella prima parte della revisione *RTB*#super[G], i progettisti e i programmatori hanno proseguito con le attività di progettazione per la fase *PB*#super[G], avviando contestualmente la configurazione software finalizzata alla realizzazione dell’*MVP*#super[G].
+
+
 //-----------
 #pagebreak()
 === Sprint 10
@@ -1939,6 +1947,10 @@ I possibili rischi :
   )
 ]
 
+==== Retrospettiva
+#v(1em)
+Nel decimo sprint#super[G], il team ha concentrato l’attenzione sulla progettazione dettagliata dei microservizi#super[G], con l’obiettivo di consolidare le basi architetturali del sistema e definire in modo chiaro le responsabilità dei singoli componenti. Sono stati completati i moduli Inventory, Inventory Aggregate, Orders, State e Cloud State, risultato che ha permesso di affinare la comprensione delle interazioni tra i servizi e di ridurre il rischio di incoerenze a livello architetturale. È emersa tuttavia l’esigenza di anticipare alcune scelte tecnologiche, così da evitare possibili attività di rework nelle fasi successive. Parallelamente è proseguita l’attività documentale: il documento di Analisi dei Requisiti#super[G] è stato rivisto e migliorato sulla base delle osservazioni del #p.cardin nella fase RTB#super[G], mentre il Piano di Progetto#super[G] è stato aggiornato rafforzando gli strumenti di rendicontazione e monitoraggio#super[G]. Contestualmente è stata avviata la stesura del documento di Specifica Tecnica, destinato a definire in dettaglio l’architettura#super[G] del sistema. Questa attività ha messo in evidenza la necessità di un coordinamento più stretto tra la progettazione e la documentazione, in modo da mantenere un allineamento costante lungo l’intero ciclo di sviluppo. Nel complesso, lo sprint ha portato a risultati concreti e tangibili sia sul fronte progettuale sia su quello documentale, evidenziando punti di forza del team nella gestione della complessità architetturale e aprendo al contempo spunti di miglioramento legati alla pianificazione tecnica anticipata e all’integrazione continua tra le diverse attività.
+
 //-----------
 #pagebreak()
 === Sprint 11
@@ -2002,14 +2014,57 @@ I possibili rischi :
 #align(center)[
   #tabella_aggiornamento_risorse(
     dati: (
-      [Responsabile#super[G]],    [30€/h],   [5],       [150€],         [17 (-5)],    [],
-      [Amministratore#super[G]],  [20€/h],   [-],       [-],            [25],         [],
-      [Analista#super[G]],        [25€/h],   [-],       [-],            [0],          [],
-      [Progettista#super[G]],     [25€/h],   [32],      [800€],         [],           [1925€ (-850€)],
-      [Programmatore#super[G]],   [15€/h],   [38],      [570€],         [],           [1650€ (-150€)],
-      [Verificatore#super[G]],    [15€/h],   [10],      [150€],         [],           [840€ (-150€)],
-      [*Totale*],                 [*-*],     [*85*],    [*1670€*],      [**],         [*5655€ (-1380€)*],
+      [Responsabile#super[G]],    [30€/h],   [5],       [150€],         [],           [],
+      [Amministratore#super[G]],  [20€/h],   [-],       [-],            [],           [],
+      [Analista#super[G]],        [25€/h],   [-],       [-],            [],           [],
+      [Progettista#super[G]],     [25€/h],   [32],      [800€],         [],           [],
+      [Programmatore#super[G]],   [15€/h],   [38],      [570€],         [],           [],
+      [Verificatore#super[G]],    [15€/h],   [10],      [150€],         [],           [],
+      [*Totale*],                 [*-*],     [*85*],    [*1670€*],      [**],         [**],
     ),
     didascalia: "Sprint 11 - Aggiornamento delle risorse disponibili"
   )
+]
+
+==== Retrospettiva
+#v(1em)
+Nel corso dell’undicesimo sprint#super[G], il team ha concentrato le attività sul completamento della progettazione dettagliata e sull’avanzamento della fase di codifica, mentre in parallelo è proseguita la redazione della documentazione tecnica e si è svolto un incontro di aggiornamento con l’azienda M31. La progettazione dei microservizi#super[G] ha visto il completamento di quelli relativi alla gestione degli ordini#super[G] aggregati, all’autenticazione#super[G], al sistema centralizzato e al routing. L’analisi del microservizio#super[G] di autenticazione#super[G] mediante ResGate ha però evidenziato alcune criticità, principalmente legate alla complessità della tecnologia adottata e alla limitata disponibilità di documentazione ufficiale. In questa fase è stato definito il flusso architetturale che prevede l’invio della richiesta di autenticazione#super[G] dal client a un microservizio#super[G] del sistema, il quale la inoltra a ResGate: quest’ultimo, tramite token, verifica la validità della connessione e delle credenziali dell’utente, consentendo successivamente a ogni microservizio destinatario di validare i permessi e autorizzare l’accesso alle risorse richieste. Sul fronte della codifica, è stato completato il microservizio#super[G] di inventario#super[G] sia in implementazione che in testing, mentre lo sviluppo del microservizio#super[G] di ordini#super[G] è attualmente in fase di completamento. In parallelo, è proseguita la redazione della documentazione di progetto, con particolare attenzione al Piano di Progetto e alla Specifica Tecnica. Nel complesso, lo sprint ha consolidato i progressi sia a livello architetturale sia implementativo, pur facendo emergere alcuni rischi, in particolare la complessità nell’adozione di tecnologie nuove e poco documentate, la possibile dilatazione delle tempistiche di sviluppo dei microservizi#super[G] più critici e la necessità di mantenere allineate in modo costante le attività di progettazione, codifica e documentazione.
+
+//-----------
+#pagebreak()
+=== Sprint 12
+#v(1em)
+Inizio: #h(1.99cm)*29-08-2025*\
+Fine Prevista: #h(0.65cm)*12-09-2025*\
+Fine Reale: #h(1.12cm)*15-09-2025*\
+Giorni di ritardo: #h(0.15cm)*3*
+
+==== Informazioni generali e attività da svolgere
+#v(1em)
+- Completamento programmazione dei microservizi del MVP#super[G].
+- Ultimazione stesura dei documenti necessari alla fase PB.
+- Approvazione finale dell'MVP da parte dell'azienda.
+- Revisione PB,
+
+==== Rischi attesi
+#v(1em)
+I possibili rischi :
+- RT3: Errori di codifica o programmazione;
+- RI3: Difficoltà di "comprensione" o lavoro;
+
+==== Preventivo
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],        [], [], [], [],  [],  [],
+    [Mattia Dalla Pozza],   [], [], [], [],  [],  [],
+    [Sebastiano Marana],    [], [], [], [],  [],  [],
+    [Nicholas Moretto],     [],[], [], [],  [],  [],
+    [Matteo Pretto],        [], [], [], [],  [],  [],
+    [Alex Shu],             [], [], [], [], [],  [],
+    [Stefano Speranza],     [], [], [], [], [],  [],
+    [Ramona Zangla],        [], [], [], [],  [],  [],
+  ),
+  didascalia: "Sprint 12 - Preventivo ore per ciascun componente"
+)
 ]
