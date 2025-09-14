@@ -28,6 +28,13 @@
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
 
+  [1.3.0],
+  [11/09/2025],
+  [N. Bolzon],
+  [N. Moretto],
+  [Completata sezione Test di Accettazione.],
+
+
   [1.2.0],
   [18/08/2025],
   [N. Bolzon],
