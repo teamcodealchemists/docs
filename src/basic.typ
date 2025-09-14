@@ -12,6 +12,11 @@
   cardin: "Prof. Riccardo Cardin",
 )
 
+
+// PER SPEZZARE TABELLE
+//  show figure: set block(breakable: true)
+//  set table.cell(breakable: true)
+
 // FUNZIONI
 /* Funzione che crea nuova voce in prima pagina, supporta stringhe o array di stringhe */
 #let voce(string1, string2) = {
@@ -277,7 +282,7 @@
   doc
 }
 
-#let unit_table(
+#let test_table_accettazione(
   voci: (),
   caption: (),
   doc
@@ -303,13 +308,56 @@
     figure(
       block(
         table(
-          columns: (1fr, 2fr, 1fr, 1fr),
+          columns: (1fr, 3fr, 1fr),
           table.header(
-            [*Codice*], [*Descrizione*], [*Valore atteso*], [*Stato*]
+            [*Codice*], [*Descrizione*], [*Stato*]
           ),
           ..voci,
       )),
       caption: caption
+    )
+  set align(left)
+  doc
+}
+
+
+#let unit_table(
+  voci: (),
+  caption: (),
+  doc
+) = {
+  set align(center)
+  
+  show figure: set block(breakable: true)
+  set table.cell(breakable: true)
+  set table(
+    align: (center, center, center, center),
+    fill:(_,y)=>if y==0 {silver},
+    inset: (_, y) => if y == 0 { 7pt } else { 10pt }
+  )
+
+  set text(
+    size: 11pt,
+    hyphenate: true,
+  )
+
+  set table.cell(
+    align: horizon
+  )
+
+  v(4pt)
+    figure(
+      block(
+        table(
+          columns: (1fr, 2fr, 2fr, 0.5fr),
+          table.header(
+            [*Codice*], [*Descrizione*], [*Valore atteso*], [*Stato*]
+          ),
+          ..voci,
+      ),
+      breakable: true,
+      ),
+      caption: caption,
     )
   set align(left)
   doc
