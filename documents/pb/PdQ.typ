@@ -1243,8 +1243,33 @@ I test di sistema valutano il comportamento del software nel suo complesso, simu
 I test di accettazione vengono eseguiti per verificare che il software soddisfi i requisiti#super[G] concordati con il cliente#super[G] o l'utente finale. Sono spesso definiti sulla base di scenari realistici o specifiche formali (come le User Story o i Criteri di Accettazione). Questi test rappresentano l'ultima fase di verifica prima del rilascio del prodotto#super[G] e determinano se esso può essere considerato “pronto per l'uso”.
 
 #let voci_test_accettazione = (
-  [---], [---], [TS],
-  )
+  [TdA01], [Verificare che all’avvio del sistema il supervisore globale possa registrarsi con successo], [TS],
+  [TdA02], [Verificare che alla registrazione del supervisore globale vengano gestiti gli errori di inserimento dati], [TS],
+  [TdA03], [Verificare la funzionalità di login con le credenziali corrette], [TS],
+  [TdA04], [Verificare che al login dell’utente vengano gestiti gli errori di inserimento dati], [TS],
+  [TdA05], [Verificare funzionalità logout dal sistema], [TS],
+  [TdA06], [Verificare funzionalità di registrazione di un nuovo Supervisore Locale con dati corretti], [TS],
+  [TdA07], [Verificare che alla registrazione del Supervisore Locale vengano gestiti gli errori di inserimento dati], [TS],
+  [TdA08], [Verificare l’assegnazione dei magazzini a un Supervisore Locale], [TS],
+  [TdA09], [Verificare l’aggiunta di un nuovo magazzino con indirizzo valido], [TS],
+  [TdA10], [Verificare la modifica dei dati di un magazzino], [TS],
+  [TdA11], [Verificare l’inserimento di una nuova merce con dati corretti], [TS],
+  [TdA12], [Verificare la definizione e la modifica della quantità di una merce], [TS],
+  [TdA13], [Verificare la rimozione di una merce dall’inventario], [TS],
+  [TdA14], [Verificare l’inserimento di un ordine interno (trasferimento tra magazzini)], [TS],
+  [TdA15], [Verificare l’inserimento di un ordine di vendita esterno], [TS],
+  [TdA16], [Verificare l’annullamento degli ordini in attesa o in elaborazione], [TS],
+  [TdA17], [Verificare il tracciamento e la corretta gestione degli stati degli ordini], [TS],
+  [TdA18], [Verificare la visualizzazione dell’inventario globale e per singolo magazzino], [TS],
+  [TdA19], [Verificare la visualizzazione dei report ordini globali e per singolo magazzino], [TS],
+  [TdA20], [Verificare la modifica dei valori di soglia minima e massima], [TS],
+  [TdA21], [Verificare la gestione dei magazzini online/offline], [TS],
+  [TdA22], [Verificare il riassortimento automatico in caso di ordine non soddisfacibile], [TS],
+  [TdA23], [Verificare il riassortimento automatico al raggiungimento della soglia minima di un prodotto], [TS],
+  [TdA24], [Verificare il riassortimento automatico al raggiungimento della soglia massima di un prodotto], [TS],
+  [TdA25], [Verificare la corretta gestione di ordini simultanei da parte di un magazzino], [TS],
+)
+
 #let caption_test_accettazione = (
   [Test di Accettazione]
 )
