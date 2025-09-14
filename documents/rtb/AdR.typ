@@ -16,7 +16,7 @@
 #let status = "Approvato"
 #let destinatario = "M31"
 
-#let versione = "1.0.0"
+#let versione = "2.0.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -29,7 +29,18 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
-  [1.0.0], [09/07/2025], [-], [N. Bolzon], [Approvazione del documento],
+
+  [2.0.0], [15/19/2025], [R. Zangla], [S. Speranza], [Approvazione del documento],
+
+  [1.1.0], [08/08/2025], [N. Bolzon], [S. Speranza], [Modifiche al documento a seguito di quanto indicatoci in revisione RTB],  
+
+  [1.0.0], [18/07/2025], [-], [N. Bolzon], [Approvazione del documento],
+
+  [0.8.3],
+  [17/07/2025],
+  [A. Shu],
+  [N. Bolzon],
+  [Correzione di alcuni errori minori],  
 
   [0.8.2],
   [21/06/2025],
@@ -218,15 +229,15 @@ Potrà inoltre essere consultato da altri soggetti coinvolti nel processo di svi
 == Descrizione del prodotto
 Il progetto ha l'obiettivo di sviluppare un sistema intelligente per la gestione distribuita dell'inventario#super[G] in una rete di magazzini geograficamente separati. In scenari logistici complessi, come quelli che prevedono la cooperazione tra più sedi operative, è fondamentale garantire disponibilità continua delle scorte#super[G], ridurre i tempi di inattività e ottimizzare il flusso di materiali.
 
-Il sistema dovrà permettere di rilevare in tempo reale situazioni critiche, come carenze di prodotto#super[G] in una sede e surplus in un'altra, intervenendo automaticamente o suggerendo azioni correttive di trasferimento#super[G] o riassortimento#super[G]. Sarà inoltre in grado di gestire eventi imprevisti, come l'indisponibilità temporanea di un magazzino, garantendo la continuità operativa attraverso un bilanciamento#super[G] intelligente delle risorse nei magazzini vicini.
+Il sistema dovrà permettere di rilevare in tempo reale situazioni critiche, come carenze di prodotto#super[G] in una sede e surplus in un'altra, intervenendo automaticamente o suggerendo azioni correttive di trasferimento#super[G] o riassortimento#super[G]. Sarà inoltre in grado di gestire eventi imprevisti, come l'indisponibilità temporanea di un magazzino, garantendo la continuità operativa attraverso un bilanciamento intelligente delle risorse nei magazzini vicini.
 
 Una delle componenti chiave sarà la *visibilità centralizzata e in tempo reale* di tutte le scorte#super[G] distribuite. Il sistema offrirà funzionalità avanzate per il monitoraggio#super[G], la sincronizzazione e l'aggiornamento dell'inventario#super[G], supportando decisioni rapide e affidabili.
 
-Sarà adottata *un'architettura#super[G] scalabile a microservizi#super[G]*, che garantisca alta disponibilità, interoperabilità tra i nodi#super[G] della rete#super[G], e gestione efficiente del carico, anche in presenza di numerose richieste simultanee. Ogni nodo#super[G] della rete#super[G] – cioè ciascun magazzino – potrà operare in modo autonomo, mantenendo però sincronizzazione con un sistema centrale tramite servizi#super[G] cloud.
+Sarà adottata *un'architettura#super[G] scalabile a microservizi#super[G]*, che garantisca alta disponibilità, interoperabilità tra i nodi#super[G] della rete, e gestione efficiente del carico, anche in presenza di numerose richieste simultanee. Ogni nodo#super[G] della rete – cioè ciascun magazzino – potrà operare in modo autonomo, mantenendo però sincronizzazione con un sistema centrale tramite servizi#super[G] cloud.
 
 Il progetto prevede anche *l'integrazione di modelli predittivi* per il riassortimento#super[G], sfruttando dati storici, pattern di consumo e stagionalità per anticipare la domanda e ridurre il rischio di esaurimento scorte#super[G]. M31 supporterà il progetto fornendo un dataset pubblico e una figura tecnica di riferimento per l'analisi dei dati e lo sviluppo dei modelli.
 
-L'obiettivo finale è realizzare una *piattaforma robusta e flessibile* che migliori la resilienza e l'efficienza dell'intera rete#super[G] logistica, assicurando precisione, tempestività e scalabilità#super[G] nelle operazioni di gestione dell'inventario#super[G].
+L'obiettivo finale è realizzare una *piattaforma robusta e flessibile* che migliori la resilienza e l'efficienza dell'intera rete logistica, assicurando precisione, tempestività e scalabilità#super[G] nelle operazioni di gestione dell'inventario#super[G].
 
 == Analisi dello stato dell'arte
 Prima di procedere con l'analisi dei requisiti#super[G], è stata effettuata un'analisi dello stato dell'arte, al fine di comprendere le tecnologie e le soluzioni già esistenti nel campo della gestione distribuita, dei microservizi#super[G] e della gestione dei dati.\
@@ -249,12 +260,12 @@ Dopo un'esaustiva ricerca, sono stati identificati alcuni punti chiave che saran
   I container#super[G] consentono di isolare le dipendenze e le configurazioni di ciascun microservizio#super[G], semplificando il processo di distribuzione e gestione del sistema.\
   Kubernetes è uno strumento popolare per la gestione dei container#super[G] e l'orchestrazione#super[G] dei microservizi#super[G], che consente di automatizzare il deployment, la scalabilità#super[G] e la gestione dei container#super[G] in un cluster.\
 
-- *Resilienza del sistema:* è fondamentale garantire la resilienza del sistema, in modo da affrontare eventuali guasti o problemi di rete#super[G].\
-  Ci sono diverse strategie per garantire la resilienza del sistema, come il pattern Circuit Breaker, il retry pattern, e l'uso di meccanismi di failover e bilanciamento#super[G] del carico.\
+- *Resilienza del sistema:* è fondamentale garantire la resilienza del sistema, in modo da affrontare eventuali guasti o problemi di rete.\
+  Ci sono diverse strategie per garantire la resilienza del sistema, come il pattern Circuit Breaker, il retry pattern, e l'uso di meccanismi di failover e bilanciamento del carico.\
 - *Logging:* è importante implementare un sistema di logging centralizzato per monitorare le attività e le prestazioni del sistema.\
   Ci sono diversi strumenti e librerie disponibili per implementare il logging centralizzato, come ELK stack (Elasticsearch, Logstash, Kibana), Grafana Loki, o Prometheus.\
 - Valutazione della necessità e della complessità di *API#super[G] Gateway* e *Service Discovery*.\
-  L'API#super[G] Gateway funge da punto di accesso centrale per le richieste degli utenti e può gestire l'autenticazione#super[G], la registrazione, il bilanciamento#super[G] del carico e altre funzionalità.\
+  L'API#super[G] Gateway funge da punto di accesso centrale per le richieste degli utenti e può gestire l'autenticazione#super[G], la registrazione, il bilanciamento del carico e altre funzionalità.\
   La Service Discovery consente ai microservizi#super[G] di trovare e comunicare tra loro in modo dinamico, senza la necessità di configurazioni statiche.
 
 == Glossario
@@ -263,7 +274,7 @@ In questo documento potrebbero essere presenti parole#super[G] e terminologie co
 Le parole#super[G] che possiedono un riferimento al glossario#super[G] vengono evidenziate come segue: *parola#super[G]*.
 
 == Riferimenti
-/* Alcuni link utili per la ricerca di informazioni e documentazione sui microservizi#super[G] e sull'architettura#super[G] distribuita(altri sono presenti nei vari documenti di analisi dello stato dell'arte) 
+/* Alcuni link utili per la ricerca di informazioni e documentazione sui microservizi#super[G] e sull'architettura distribuita(altri sono presenti nei vari documenti di analisi dello stato dell'arte) 
 https://www.sayonetech.com/blog/inventory-management-system-using-microservices/
 Libro: Microservices for the Enterprise - Designing, Developing, and Deploying (Kasun Indrasiri, Prabath Siriwardena)
 https://www.researchgate.net/publication/387822994_Implementing_Microservices_for_Real-Time_Inventory_Tracking_in_Global_Supply_Chains
@@ -275,15 +286,15 @@ https://www.multiplayer.app/distributed-systems-architecture/
 
 === Riferimenti normativi
 /*Da cambiare al cambio di versione*/
-- *Norme di Progetto:* \ #link("https://teamcodealchemists.github.io/docs/rtb/NdP_0.5.0.pdf")[https://teamcodealchemists.github.io/docs/rtb/NdP_0.5.0.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
+- *Norme di Progetto:* \ #underline[#link("https://teamcodealchemists.github.io/docs/pb/NdP_2.0.0.pdf")[https://teamcodealchemists.github.io/docs/pb/NdP_2.0.0.pdf]] \ *Ultimo Accesso:* 14 Settembre 2025
 
-- *Capitolato#super[G] d'appalto C6 _Sistema di Gestione di un Magazzino Distribuito_*: #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf]\ *Ultimo Accesso:* 27 Maggio 2025
+- *Capitolato#super[G] d'appalto C6 _Sistema di Gestione di un Magazzino Distribuito_*: #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf]] \ *Ultimo Accesso:* 14 Settembre 2025
 
 === Riferimenti informativi
-- *Diagrammi dei Casi d'Uso:* \ #link("https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")[https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
-- *Analisi dei Requisiti#super[G]:* \ #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf] \ *Ultimo Accesso:* 27 Maggio 2025
-- *Glossario#super[G]:* \ #link("https://teamcodealchemists.github.io/glossario.html")[https://teamcodealchemists.github.io/glossario.html] \ *Ultimo Accesso:* 16 Giugno 2025
-- *Standard IEEE:* \ #link("https://ieeexplore.ieee.org/document/720574")[https://ieeexplore.ieee.org/document/720574] \ *Ultimo Accesso:* 27 Maggio 2025
+- *Diagrammi dei Casi d'Uso:* \ #underline[#link("https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf")[https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20Use%20Case.pdf]] \ *Ultimo Accesso:* 15 Luglio 2025
+- *Analisi dei Requisiti#super[G]:* \ #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf")[https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T05.pdf]] \ *Ultimo Accesso:* 15 Luglio 2025
+- *Glossario#super[G]:* \ #underline[#link("https://teamcodealchemists.github.io/glossario.html")[https://teamcodealchemists.github.io/glossario.html]] \ *Ultimo Accesso:* 14 Settembre 2025
+- *Standard IEEE:* \ #underline[#link("https://ieeexplore.ieee.org/document/720574")[https://ieeexplore.ieee.org/document/720574]] \ *Ultimo Accesso:* 27 Maggio 2025
 
 #pagebreak()
 = Casi d'uso
@@ -315,7 +326,7 @@ Ogni caso d’uso è costituito da un diagramma UML e da una descrizione testual
     [*Scenario\ Principale*],[È la sequenza di iterazioni ideale tra l’attore e il sistema, in cui tutto procede come previsto e l’obiettivo del caso d’uso viene raggiunto con successo.],
     [*Scenario\ Alternativo*],[Sono variazioni dello scenario principale che si verificano quando una delle operazioni previste non va a buon fine.],
     [*Inclusioni*],[Indicano che un caso d’uso utilizza un altro caso d’uso. Servono a spezzare comportamenti comuni tra più casi d’uso, inserendoli in uno separato che viene “incluso” quando serve.],
-    [*Estensioni*],[Indicano che un caso d’uso può estendere il comportamento di un altro in situazioni particolari. Il caso d’uso base funziona da solo, ma può essere arricchito opzionalmente da quello estensore, se si verifica#super[G] una certa condizione.],
+    [*Estensioni*],[Indicano che un caso d’uso può estendere il comportamento di un altro in situazioni particolari. Il caso d’uso base funziona da solo, ma può essere arricchito opzionalmente da quello estensore, se si verifica una certa condizione.],
     [*Trigger*],[È l’evento iniziale che fa partire il caso d’uso. Può essere un’azione dell’utente, un evento di sistema o un cambiamento di stato che attiva il comportamento descritto nel caso d’uso.],
   ),
   caption: [Componenti del caso d’uso e loro descrizione],
@@ -1300,14 +1311,14 @@ Ogni requisito#super[G] riportato sarà accompagnato dall’indicazione esplicit
 I requisiti#super[G] sono stati codificati al fine di facilitarne la lettura, la gestione e la tracciabilità.
 Ogni codice è composto da un prefisso che indica la tipologia del requisito#super[G], seguito da un numero progressivo univoco.
 
-I requisiti#super[G] funzionali sono preceduti dal prefisso "RF", i Requisiti#super[G] di Qualità dal prefisso "RQ", i Requisiti#super[G] di Vincolo dal prefisso "RV" e i Requisiti#super[G] Prestazionali dal prefisso "RP", dove:
+I requisiti#super[G] funzionali sono preceduti dal prefisso "RF", i Requisiti#super[G] di Qualità dal prefisso "RQ", i Requistiti#super[G] di Vincolo dal prefisso "RV" e i Requisiti#super[G] Prestazionali dal prefisso "RP", dove:
 - *R* sta per "#strong[R]equisito";
 - *F* sta per "#strong[F]unzionale";
 - *Q* sta per "#strong[Q]ualità";
 - *V* sta per "#strong[V]incolo";
 - *P* sta per "#strong[P]restazionale";
 
-Per facilitare la lettura, la tracciabilità e la classificazione dei requisiti#super[G], è stato adottato un sistema di codifica strutturato. La codifica prevede un prefisso che identifica la tipologia e l'importanza del requisito#super[G], seguito da un numero progressivo. In caso di scomposizione, si aggiunge una notazione per indicare i requisiti derivati.
+Per facilitare la lettura, la tracciabilità e la classificazione dei requisiti#super[G], è stato adottato un sistema di codifica sturtturato. La codifica prevede un prefisso che identifica la tipologia e l'importanza del requisito#super[G], seguito da un numero progressivo. In caso di scomposizione, si aggiunge una notazione per indicare i requisiti derivati.
 
 === Tipologia e Importanza
 I requisiti#super[G] sono stati distinti anche in base alla loro importanza o natura, secondo le seguenti convenzioni:
@@ -1319,7 +1330,7 @@ I requisiti#super[G] sono stati distinti anche in base alla loro importanza o na
   - _Esempio:_ RFO03 → Requisito Funzionale Opzionale 02.
 
 === Scomposizione dei Requisiti Generali
-Poichè molti requisiti derivati dal capitolato#super[G] risultano generici, è stato necessario *scomporli* in requisiti#super[G] più specifici, che chiariscano chi deve fare cosa e in quale modalità.
+Poichè molti requistiti derivati dal capitolato#super[G] risultano generici, è stato necessario *scomporli* in requisiti#super[G] più specifici, che chiariscano chi deve fare cosa e in quale modalità.
 Per indicare questa relazione di derivazione, si utilizza la notazione *"/nr"*, dove _nr_ rappresenta un numero progressivo riferito al requisito#super[G] secondario.
 
 _Esempio:_
@@ -1354,80 +1365,80 @@ _Esempio:_
     inset: 10pt,
     align: center,
     table.header(
-    [*Codice*], [*Descrizione*], [*Fonti*]),
+    [*Codice*], [*Descrizione*], [*Riferimenti*]),
 
-    [*RF01*], [*Registrazione del Supervisore Globale.*], [decisione\ interna],
-    [*RF01/01*], [Il Supervisore Globale deve registrarsi al primo avvio del sistema inserendo indirizzo email, numero di cellulare e una password.], [decisione\ interna],
-    [*RF01/02*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se l'email inserita è sintatticamente errata.], [decisione\ interna],
-    [*RF01/03*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se il numero di cellulare inserito è sintatticamente errato.], [decisione\ interna],
-    [*RF01/04*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se la password inserita non rispetta la sintassi.], [decisione\ interna],
-    [*RF01/05*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se la password e la conferma password non corrispondono.], [decisione\ interna],
+    [*RF01*], [*Registrazione del Supervisore Globale.*], [],
+    [*RF01/01*], [Il Supervisore Globale deve registrarsi al primo avvio del sistema inserendo indirizzo email, numero di cellulare e una password.], [#link(label("uc-1"), underline("[UC 1]"))],
+    [*RF01/02*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se l'email inserita è sintatticamente errata.], [#link(label("uc-1.1"), underline("[UC 1.1]"))],
+    [*RF01/03*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se il numero di cellulare inserito è sintatticamente errato.], [#link(label("uc-1.2"), underline("[UC 1.2]"))],
+    [*RF01/04*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se la password inserita non rispetta la sintassi.], [#link(label("uc-1.3"), underline("[UC 1.3]"))],
+    [*RF01/05*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se la password e la conferma password non corrispondono.], [#link(label("uc-1.4"), underline("[UC 1.4]"))],
 
-    [*RF02*], [*Autenticazione#super[G] dell'utente.*], [capitolato#super[G]],
-    [*RF02/01*], [L'utente deve poter accedere al sistema mediante credenziali (email e password).], [capitolato#super[G]],
-    [*RF02/02*], [L'utente deve poter effettuare il logout dal sistema.], [capitolato#super[G]],
-    [*RF02/03*], [L'utente visualizza un messaggio di errore in caso di autenticazione#super[G] fallita.], [capitolato#super[G]],   
+    [*RF02*], [*Autenticazione#super[G] dell'utente.*], [],
+    [*RF02/01*], [L'utente deve poter accedere al sistema mediante credenziali (email e password).], [#link(label("uc-2"), underline("[UC 2]"))],
+    [*RF02/02*], [L'utente deve poter effettuare il logout dal sistema.], [#link(label("uc-4"), underline("[UC 4]"))],
+    [*RF02/03*], [L'utente visualizza un messaggio di errore in caso di autenticazione#super[G] fallita.], [#link(label("uc-3"), underline("[UC 3]"))],   
 
-    [*RF03*], [*Registrazione di nuovi Supervisori Locali.*], [decisione\ interna],
-    [*RF03/01*], [Il Supervisore Globale può registrare a sistema nuovi Supervisori Locali ciascuno con email, numero di cellulare e una password.], [decisione\ interna],
-    [*RF03/02*], [Il Supervisore Globale deve assegnare il/i magazzino/i a cui il Supervisore Locale ha accesso in fase di registrazione.], [decisione\ interna],
-    [*RF03/03*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se l'email inserita è sintatticamente errata.], [decisione\ interna],
-    [*RF03/04*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se la password inserita non rispetta la sintassi.], [decisione\ interna],
-    [*RF03/05*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se il numero di cellulare inserito è sintatticamente errato.], [decisione\ interna],
+    [*RF03*], [*Registrazione di nuovi Supervisori Locali.*], [],
+    [*RF03/01*], [Il Supervisore Globale può registrare a sistema nuovi Supervisori Locali ciascuno con email, numero di cellulare e una password.], [#link(label("uc-5"), underline("[UC 5]"))],
+    [*RF03/02*], [Il Supervisore Globale deve assegnare il/i magazzino/i a cui il Supervisore Locale ha accesso in fase di registrazione.], [#link(label("uc-5"), underline("[UC 5]"))],
+    [*RF03/03*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se l'email inserita è sintatticamente errata.], [#link(label("uc-5.1"), underline("[UC 5.1]"))],
+    [*RF03/04*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se la password inserita non rispetta la sintassi.], [#link(label("uc-5.2"), underline("[UC 5.2]"))],
+    [*RF03/05*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se il numero di cellulare inserito è sintatticamente errato.], [#link(label("uc-5.3"), underline("[UC 5.3]"))],
 
-    [*RF04*], [*Gestione manuale dei magazzini.*], [capitolato#super[G]],
-    [*RF04/01*], [Il Supervisore Globale deve poter aggiungere un nuovo magazzino a sistema inserendo il suo indirizzo fisico.], [capitolato#super[G]],
-    [*RF04/02*], [Il Supervisore Globale deve poter rimuovere un magazzino dal sistema.], [capitolato#super[G]],
-    [*RF04/03*], [Il Supervisore Globale deve poter modificare le informazioni di un magazzino, quali indirizzo del magazzino e/o Supervisore Locale associato.], [capitolato#super[G]],
-    [*RF04/04*], [Ciascun magazzino deve essere identificato univocamente.], [capitolato#super[G]],
+    [*RF04*], [*Gestione manuale dei magazzini.*], [],
+    [*RF04/01*], [Il Supervisore Globale deve poter aggiungere un nuovo magazzino a sistema inserendo il suo indirizzo fisico.], [#link(label("uc-6"), underline("[UC 6]"))],
+    [*RF04/02*], [Il Supervisore Globale deve poter rimuovere un magazzino dal sistema.], [#link(label("uc-7"), underline("[UC 7]"))],
+    [*RF04/03*], [Il Supervisore Globale deve poter modificare le informazioni di un magazzino, quali indirizzo del magazzino e/o Supervisore Locale associato.], [#link(label("uc-8"), underline("[UC 8]"))],
+    [*RF04/04*], [Ciascun magazzino deve essere identificato univocamente.], [#link(label("uc-6"), underline("[UC 6]"))],
 
-    [*RF05*], [*Gestione manuale delle merci.*], [capitolato#super[G]],
-    [*RF05/01*], [I Supervisori possono inserire un nuovo tipo di merce nell'inventario#super[G] di un magazzino, ciascuna con codice EAN e nome prodotto#super[G].], [capitolato#super[G]],
-    [*RF05/02*], [I Supervisori visualizzano un messaggio di errore se il codice EAN non rispetta la sintassi prevista.], [capitolato#super[G]],
-    [*RF05/03*], [I Supervisori possono definire il prezzo unitario all'inserimento di un nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [capitolato#super[G]],
-    [*RF05/04*], [I Supervisori visualizzano un messaggio di errore se il prezzo unitario del prodotto#super[G] è sintatticamente errato.], [capitolato#super[G]],
-    [*RF05/05*], [I Supervisori possono definire la quantità all'inserimento di un nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [capitolato#super[G]],
-    [*RF05/06*], [I Supervisori visualizzano un messaggio di errore se la quantità del prodotto#super[G] è sintatticamente errata.], [capitolato#super[G]],
-    [*RF05/07*], [Il Supervisore Globale può rimuovere un tipo di merce dall'inventario#super[G].], [capitolato#super[G]],
-    [*RF05/08*], [I Supervisori possono modificare la quantità di merce nell'inventario#super[G] dei magazzini.], [capitolato#super[G]],
-    [*RF05/09*], [I Supervisori visualizzano un messaggio di errore se la quantità di merce modificata del prodotto#super[G] è sintatticamente errata.], [capitolato#super[G]], 
-    [*RF05/10*], [Il Supervisore Globale può modificare il prezzo unitario di un prodotto#super[G].], [capitolato#super[G]],
+    [*RF05*], [*Gestione manuale delle merci.*], [],
+    [*RF05/01*], [I Supervisori possono inserire un nuovo tipo di merce nell'inventario#super[G] di un magazzino, ciascuna con codice EAN e nome prodotto#super[G].], [#link(label("uc-9"), underline("[UC 9]"))],
+    [*RF05/02*], [I Supervisori visualizzano un messaggio di errore se il codice EAN non rispetta la sintassi prevista.], [#link(label("uc-9.1"), underline("[UC 9.1]"))],
+    [*RF05/03*], [I Supervisori possono definire il prezzo unitario all'inserimento di un nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [#link(label("uc-9"), underline("[UC 9]"))],
+    [*RF05/04*], [I Supervisori visualizzano un messaggio di errore se il prezzo unitario del prodotto#super[G] è sintatticamente errato.], [#link(label("uc-9.2"), underline("[UC 9.2]"))],
+    [*RF05/05*], [I Supervisori possono definire la quantità all'inserimento di un nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [#link(label("uc-9"), underline("[UC 9]"))],
+    [*RF05/06*], [I Supervisori visualizzano un messaggio di errore se la quantità del prodotto#super[G] è sintatticamente errata.], [#link(label("uc-9.3"), underline("[UC 9.3]"))],
+    [*RF05/07*], [Il Supervisore Globale può rimuovere un tipo di merce dall'inventario#super[G].], [#link(label("uc-10"), underline("[UC 10]"))],
+    [*RF05/08*], [I Supervisori possono modificare la quantità di merce nell'inventario#super[G] dei magazzini.], [#link(label("uc-11"), underline("[UC 11]"))],
+    [*RF05/09*], [I Supervisori visualizzano un messaggio di errore se la quantità di merce modificata del prodotto#super[G] è sintatticamente errata.], [#link(label("uc-11.1"), underline("[UC 11]"))], 
+    [*RF05/10*], [Il Supervisore Globale può modificare il prezzo unitario di un prodotto#super[G].], [#link(label("uc-26"), underline("[UC 26]"))],
 
-    [*RF06*], [*Gestione manuale degli ordini#super[G].*], [capitolato#super[G]],
-    [*RF06/01*], [I Supervisori possono inserire ordini#super[G] di trasferimento#super[G] interno tra magazzini selezionando il magazzino di partenza e inserendo uno o più prodotti#super[G] nell'ordine#super[G].], [capitolato#super[G]],
-    [*RF06/02*], [I Supervisori possono inserire ordini#super[G] di vendita verso l'esterno inserendo l'indirizzo del destinatario e inserendo uno o più prodotto#super[G] nell'ordine#super[G].], [capitolato#super[G]],
-    [*RF06/03*], [I Supervisori visualizzano un messaggio di errore se la quantità di prodotto#super[G] in un ordine#super[G] non rispetta la sintassi prevista.], [capitolato#super[G]],
-    [*RF06/04*], [I Supervisori possono annullare ordini#super[G] "in attesa" e "in elaborazione".], [decisione\ interna],
+    [*RF06*], [*Gestione manuale degli ordini#super[G].*], [],
+    [*RF06/01*], [I Supervisori possono inserire ordini#super[G] di trasferimento#super[G] interno tra magazzini selezionando il magazzino di partenza e inserendo uno o più prodotti#super[G] nell'ordine#super[G].], [#link(label("uc-13"), underline("[UC 13]"))],
+    [*RF06/02*], [I Supervisori possono inserire ordini#super[G] di vendita verso l'esterno inserendo l'indirizzo del destinatario e inserendo uno o più prodotto#super[G] nell'ordine#super[G].], [#link(label("uc-14"), underline("[UC 14]"))],
+    [*RF06/03*], [I Supervisori visualizzano un messaggio di errore se la quantità di prodotto#super[G] in un ordine#super[G] non rispetta la sintassi prevista.], [#link(label("uc-12.1"), underline("[UC 12.1]"))],
+    [*RF06/04*], [I Supervisori possono annullare ordini#super[G] "in attesa" e "in elaborazione".], [#link(label("uc-15"), underline("[UC 15]"))],
 
     [*RF07*], [*Auditing dei dati dei magazzini.*], [], 
-    [*RF07/01*], [Il Supervisore Globale può visualizzare l'inventario#super[G] globale.], [capitolato#super[G]],
-    [*RF07/02*], [Il Supervisore Globale può visualizzare l'inventario#super[G] di ciascun magazzino.], [capitolato#super[G]],
-    [*RF07/03*], [Il Supervisore Globale può visualizzare un report degli ordini#super[G] globali.], [capitolato#super[G]],
-    [*RF07/04*], [Il Supervisore Globale può visualizzare un report degli ordini#super[G] di ciascun magazzino.], [capitolato#super[G]],
-    [*RF07/05*], [I Supervisori Locali possono visualizzare l'inventario#super[G] del/dei magazzino/i a loro assegnato/i.], [capitolato#super[G]],
-    [*RF07/06*], [I Supervisori Locali possono visualizzare un report degli ordini#super[G] del/dei magazzino/i a loro assegnato/i.], [capitolato#super[G]],
+    [*RF07/01*], [Il Supervisore Globale può visualizzare l'inventario#super[G] globale.], [#link(label("uc-16"), underline("[UC 16]"))],
+    [*RF07/02*], [Il Supervisore Globale può visualizzare l'inventario#super[G] di ciascun magazzino.], [#link(label("uc-17"), underline("[UC 17]")) \ #link(label("uc-18"), underline("[UC 18]"))],
+    [*RF07/03*], [Il Supervisore Globale può visualizzare un report degli ordini#super[G] globali.], [#link(label("uc-19"), underline("[UC 19]"))],
+    [*RF07/04*], [Il Supervisore Globale può visualizzare un report degli ordini#super[G] di ciascun magazzino.], [#link(label("uc-20"), underline("[UC 20]")) \ #link(label("uc-21"), underline("[UC 21]"))],
+    [*RF07/05*], [I Supervisori Locali possono visualizzare l'inventario#super[G] del/dei magazzino/i a loro assegnato/i.], [#link(label("uc-17"), underline("[UC 17]")) \ #link(label("uc-18"), underline("[UC 18]"))],
+    [*RF07/06*], [I Supervisori Locali possono visualizzare un report degli ordini#super[G] del/dei magazzino/i a loro assegnato/i.], [#link(label("uc-20"), underline("[UC 20]")) \ #link(label("uc-21"), underline("[UC 21]"))],
 
-    [*RF08*], [I Supervisori possono visualizzare lo stato di tutti i magazzini.], [capitolato#super[G]],
+    [*RF08*], [I Supervisori possono visualizzare lo stato di tutti i magazzini.], [#link(label("uc-22"), underline("[UC 22]"))],
 
-    [*RF09*], [*Gestione delle richieste.*], [capitolato#super[G]], 
-    [*RF09/01*], [I Supervisori possono visualizzare le notifiche informative prodotte dal sistema.], [capitolato#super[G]],
-    [*RF09/02*], [Il Supervisore Globale può accettare le richieste decisionali prodotte dal sistema.], [capitolato#super[G]],
-    [*RF09/03*], [Il Supervisore Globale può rifiutare le richieste decisionali prodotte dal sistema.], [capitolato#super[G]],
+    [*RF09*], [*Gestione delle richieste.*], [], 
+    [*RF09/01*], [I Supervisori possono visualizzare le notifiche informative prodotte dal sistema.], [#link(label("uc-23"), underline("[UC 23]"))],
+    [*RF09/02*], [Il Supervisore Globale può accettare le richieste decisionali prodotte dal sistema.], [#link(label("uc-24"), underline("[UC 24]"))],
+    [*RF09/03*], [Il Supervisore Globale può rifiutare le richieste decisionali prodotte dal sistema.], [#link(label("uc-23"), underline("[UC 23]"))],
 
-    [*RF10*], [*Gestione delle soglie critiche.*], [capitolato#super[G]], 
-    [*RF10/01*], [I Supervisori possono definire i valori di soglia minima all'inserimento di nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [capitolato#super[G]],
-    [*RF10/02*], [I Supervisori possono definire i valori di soglia massima all'inserimento di nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [capitolato#super[G]],
-    [*RF10/03*], [I Supervisori visualizzano un messaggio di errore se i valori di soglia minima e/o massima inseriti sono sintatticamente errati.], [capitolato#super[G]],
-    [*RF10/04*], [Il Supervisore Globale può modificare i valori di soglia minima e massima di ciascun tipo di merce per ciascun magazzino.], [capitolato#super[G]],
-    [*RF10/05*], [Il Supervisore Globale visualizza un messaggio di errore se i valori di soglia minima e/o massima modificati sono sintatticamente errati.], [capitolato#super[G]],
-    [*RF10/06*], [I Supervisori Locali possono modificare i valori di soglia minima e massima di ciascun tipo di merce nel/nei magazzino/i a loro assegnato/i.], [capitolato#super[G]],
-    [*RF10/07*], [I Supervisori Locali visualizzano un messaggio di errore se i valori di soglia minima e/o massima modificati sono sintatticamente errati.], [capitolato#super[G]],
+    [*RF10*], [*Gestione delle soglie critiche.*], [], 
+    [*RF10/01*], [I Supervisori possono definire i valori di soglia minima all'inserimento di nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [#link(label("uc-9"), underline("[UC 9]"))],
+    [*RF10/02*], [I Supervisori possono definire i valori di soglia massima all'inserimento di nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [#link(label("uc-9"), underline("[UC 9]"))],
+    [*RF10/03*], [I Supervisori visualizzano un messaggio di errore se i valori di soglia minima e/o massima inseriti sono sintatticamente errati.], [#link(label("uc-9.4"), underline("[UC 9.4]"))],
+    [*RF10/04*], [Il Supervisore Globale può modificare i valori di soglia minima e massima di ciascun tipo di merce per ciascun magazzino.], [#link(label("uc-11"), underline("[UC 11]"))],
+    [*RF10/05*], [Il Supervisore Globale visualizza un messaggio di errore se i valori di soglia minima e/o massima modificati sono sintatticamente errati.], [#link(label("uc-11.2"), underline("[UC 11.2]"))],
+    [*RF10/06*], [I Supervisori Locali possono modificare i valori di soglia minima e massima di ciascun tipo di merce nel/nei magazzino/i a loro assegnato/i.], [#link(label("uc-11"), underline("[UC 11]"))],
+    [*RF10/07*], [I Supervisori Locali visualizzano un messaggio di errore se i valori di soglia minima e/o massima modificati sono sintatticamente errati.], [#link(label("uc-11.2"), underline("[UC 11.2]"))],
 
-    [*RF11*], [*Rilevamento di carenza di scorte#super[G] di un magazzino.*], [capitolato#super[G]],
+    [*RF11*], [*Rilevamento di carenza di scorte#super[G] di un magazzino.*], [],
     [*RF11/01*], [Ciascun magazzino deve identificare quando le scorte#super[G] scendono sotto una certa soglia.], [capitolato#super[G]],
     [*RF11/02*], [Ciascun magazzino deve identificare quando le scorte#super[G] salgono sopra una certa soglia.], [capitolato#super[G]],
 
-    [*RF12*], [*Gestione degli ordini#super[G].*], [capitolato#super[G]],
+    [*RF12*], [*Gestione degli ordini#super[G].*], [],
     [*RF12/01*], [Ciascun magazzino deve verificare#super[G] la disponibilità delle scorte#super[G] per poter soddisfare un ordine#super[G] ricevuto.], [capitolato#super[G]],
     [*RF12/02*], [Ciascun magazzino deve identificare l'impossibilità di soddisfare un ordine#super[G].], [capitolato#super[G]],
     [*RF12/03*], [Un magazzino con scorte#super[G] insufficienti per gestire un ordine#super[G], deve richidere un riassortimento#super[G] al sistema.], [decisione\ interna],
@@ -1438,33 +1449,33 @@ _Esempio:_
     [*RF12/08*], [Il magazzino di destinazione deve notificare l'arrivo della merce al magazzino di origine.], [decisione\ interna],
     [*RF12/09*], [Un ordine#super[G] deve trovarsi in uno dei seguenti stati: "in attesa", "in elaborazione", "in transito", "annullato", "consegnato".], [decisione\ interna],
 
-    [*RF13*], [*Riassortimento#super[G] delle scorte#super[G] tra magazzini.*], [capitolato#super[G]],
+    [*RF13*], [*Riassortimento#super[G] delle scorte#super[G] tra magazzini.*], [],
     [*RF13/01*], [Il sistema deve programmare trasferimenti interni al raggiungimento di una soglia critica di un prodotto#super[G] in un magazzino al fine di bilanciare le scorte#super[G].], [capitolato#super[G]],
 
-    [*RF14*], [*Individuazione dello stato dei magazzini.*], [capitolato#super[G]],
+    [*RF14*], [*Individuazione dello stato dei magazzini.*], [],
     [*RF14/01*], [Ciascun magazzino può trovarsi in uno dei seguenti stati: "online", "offline".],[capitolato#super[G]],
     [*RF14/02*], [Il sistema deve identificare eventuali cambi di stato dei magazzini.],[capitolato#super[G]],
     [*RF14/03*], [Il sistema deve identificare eventuali disconnessioni di uno o più magazzini segnandoli come "offline".], [capitolato#super[G]],
 
-    [*RF15*], [*Gestione dei disservizi.*], [capitolato#super[G]],
+    [*RF15*], [*Gestione dei disservizi.*], [],
     [*RF15/01*], [Un magazzino offline deve annullare gli ordini#super[G] che non può soddisfare dopo un periodo di tempo predefinito.],[decisione\ interna],
-    [*RF15/02*], [Il Supervisore Globale può definire il periodo di tempo dopo cui l'ordine#super[G] di un magazzino offline viene automaticamente anullato.],[decisione\ interna],
+    [*RF15/02*], [Il Supervisore Globale può definire il periodo di tempo dopo cui l'ordine#super[G] di un magazzino offline viene automaticamente anullato.],[#link(label("uc-25"), underline("[UC 25]"))],
 
-    [*RF16*], [*Gestione magazzino che cambia stato da offline a online.*], [capitolato#super[G]],
-    [*RF16/01*], [Il sistema deve riconoscere quando un magazzino torna online.], [capitolato#super[G]],
+    [*RF16*], [*Gestione magazzino che cambia stato da offline a online.*], [],
+    [*RF16/01*], [Il sistema deve riconoscere quando un magazzino torna online.], [],
 
     [*RF17*], [*Annullamento di ordini#super[G] in transito.*], [concordata\ col proponente],
     [*RF17/01*], [Un ordine#super[G] in stato "in transito" deve cambiare lo stato in "annullato" dopo una soglia temporale predefinita.],[concordata\ col proponente],
-    [*RF17/02*], [Il Supervisore Globale può definire la soglia temporale dopo cui un ordine#super[G] "in transito" cambia automaticamente stato in "annullato".],[decisione\ interna],
+    [*RF17/02*], [Il Supervisore Globale può definire la soglia temporale dopo cui un ordine#super[G] "in transito" cambia automaticamente stato in "annullato".],[#link(label("uc-25"), underline("[UC 25]"))],
 
     //Requisiti Funzionali desiderabili
     [*RFD01*], [Il Supervisore Globale può definire il costo massimo per i trasferimenti eseguibili mediante riassortimento#super[G] automatico.],[concordata\ col proponente],
     [*RFD02*], [Il Supervisore Globale può definire la distanza massima tra magazzini per il riassortimento#super[G] automatico.],[concordata\ col proponente],
 
-    [*RFD03*], [*Suggerimento su azioni di riassortimento#super[G] e trasferimento#super[G] tra magazzini.*], [capitolato#super[G]],
+    [*RFD03*], [*Suggerimento su azioni di riassortimento#super[G] e trasferimento#super[G] tra magazzini.*], [],
     [*RFD03/01*], [Il sistema invia una richiesta decisionale al Supervisore Globale qualora un riassortimento#super[G] superi i costi o le distanze massime.], [concordata\ col proponente],
 
-    [*RFD04*], [*Interfaccia grafica.*], [capitolato#super[G]],
+    [*RFD04*], [*Interfaccia grafica.*], [],
     [*RFD04/01*], [Deve essere possibile effettuare la registrazione del Supervisore Globale mediante Interfaccia Grafica.], [capitolato#super[G]],
     [*RFD04/02*], [Deve essere possibile effettuare l'autenticazione#super[G] dell'utente mediante Interfaccia Grafica.], [capitolato#super[G]],
     [*RFD04/03*], [Deve essere possibile effettuare la registrazione di nuovi Supervisori Locali mediante Interfaccia Grafica.], [capitolato#super[G]],
@@ -1474,7 +1485,7 @@ _Esempio:_
     [*RFD04/07*], [Deve essere possibile effettuare la gestione delle richieste mediante Interfaccia Grafica.], [capitolato#super[G]], 
     [*RFD04/08*], [Deve essere possibile effettuare la gestione delle soglie critiche mediante Interfaccia Grafica.], [capitolato#super[G]],
 
-    [*RFD05*], [*Produzione di notifiche.*], [capitolato#super[G]],
+    [*RFD05*], [*Produzione di notifiche.*], [],
     [*RFD05/01*], [Il Sistema deve notificare i Supervisori al superamento dei livelli minimi e massimi di scorte#super[G].], [capitolato#super[G]],
     [*RFD05/02*], [Il Sistema deve notificare i Supervisori dell'esecuzione del riassortimento#super[G] automatico.], [capitolato#super[G]],
     [*RFD05/03*], [Ciascun magazzino deve notificare i Supervisori dei cambi di stato degli ordini#super[G].], [capitolato#super[G]],
@@ -1485,10 +1496,10 @@ _Esempio:_
     [*RFD05/08*], [L'invio di notifiche deve poter avvenire tramite email.], [capitolato#super[G]],
     [*RFD05/09*], [L'invio di notifiche deve poter avvenire tramite SMS.], [capitolato#super[G]],
 
-    [*RFD06*], [*Produzione di richieste decisionali.*], [capitolato#super[G]],  
+    [*RFD06*], [*Produzione di richieste decisionali.*], [],  
     [*RFD06/01*], [Il Sistema deve inviare al Supervisore Globale le richieste decisionali prodotte dal riassortimento#super[G] predittivo.], [capitolato#super[G]],
 
-    [*RFD07*], [*Riassortimento predittivo.*], [capitolato#super[G]],
+    [*RFD07*], [*Riassortimento predittivo.*], [],
     [*RFD07/01*], [Il sistema deve avere uno storico dei livelli di merce.], [decisione\ interna],
     [*RFD07/02*], [Il sistema deve poter analizzare i dati storici degli ordini#super[G].], [capitolato#super[G]],
     [*RFD07/03*], [Il sistema deve poter analizzare i dati storici di inventario#super[G] dei magazzini.], [capitolato#super[G]],
@@ -1500,7 +1511,7 @@ _Esempio:_
     //Requisiti Funzionali opzionali
     [*RFO01*], [I supervisori devono poter eseguire un ripristino#super[G] manuale dei dati da un backup#super[G].], [capitolato#super[G]],
 
-    [*RFO02*], [*Gestione dei magazzini non operativi.*],[decisione\ interna],
+    [*RFO02*], [*Gestione dei magazzini non operativi.*],[],
     [*RFO02/01*], [Ciascun magazzino può trovarsi nello stato "non operativo".],[decisione\ interna],
     [*RFO02/02*], [Il sistema può annullare ordini#super[G] di un magazzino "non operativo".], [decisione\ interna],
     [*RFO02/03*], [Il sistema può assegnare ordini#super[G] di un magazzino "non operativo" ad altri magazzini.], [decisione\ interna],
@@ -1562,28 +1573,28 @@ _Esempio:_
 
     //Requisiti di Qualità Obbligatori
 
-    [*RQ01*], [*Autonomia dei magazzini.*], [capitolato#super[G]],
+    [*RQ01*], [*Autonomia dei magazzini.*], [],
     [*RQ01/01*], [I magazzini devono poter operare autonomamente.], [capitolato#super[G]],
     [*RQ01/02*], [I magazzini devono poter elaborare localmente le richieste.], [capitolato#super[G]],
     [*RQ01/03*], [Ciascun magazzino deve gestire gli ordini#super[G] concorrenti per uno stesso prodotto secondo una politica predefinita.], [capitolato#super[G]],
 
-    [*RQ02*], [*Robustezza dei magazzini.*], [capitolato#super[G]],
+    [*RQ02*], [*Robustezza dei magazzini.*], [],
     [*RQ02/01*], [I dati di inventario#super[G] e degli ordini#super[G] devono essere coerenti, consistenti e persistenti in tutto il sistema.], [capitolato#super[G]],
     [*RQ02/02*], [I dati di inventario#super[G] devono essere resilienti a modifiche concorrenti.], [capitolato#super[G]],
 
-    [*RQ03*], [*Sicurezza del sistema.*], [capitolato#super[G]],
+    [*RQ03*], [*Sicurezza del sistema.*], [],
     [*RQ03/01*], [Deve essere implementata la cifratura#super[G] end-to-end negli scambi dei dati tra magazzini e con il sistema.], [capitolato#super[G]],
     [*RQ03/02*], [Il sistema deve implementare un log dei tentativi di accesso.], [capitolato#super[G]],
     [*RQ03/03*], [Il sistema deve identificare tentativi di accesso non autorizzati.], [capitolato#super[G]],
     [*RQ03/04*], [Il sistema deve notificare il Supervisore Globale di tentativi di accesso non autorizzati.], [capitolato#super[G]],
 
-    [*RQ04*], [*Unit test e code coverage.*], [capitolato#super[G]],
+    [*RQ04*], [*Unit test e code coverage.*], [],
     [*RQ04/01*], [La correttezza delle funzioni sviluppate deve essere garantita dai test unitari.], [capitolato#super[G]],
     [*RQ04/02*], [La copertura del codice deve essere superiore al 70% (minimo) e 80% (auspicabile).], [concordata\ col proponente],  
     [*RQ04/03*], [Il test devono poter essere eseguiti in maniera automatizzata.], [capitolato#super[G]],
     [*RQ04/04*], [Devono essere eseguiti test di non regressione.], [capitolato#super[G]],
 
-    [*RQ05*], [*Test book dettagliato.*], [capitolato#super[G]],
+    [*RQ05*], [*Test book dettagliato.*], [],
     [*RQ05/01*], [Tutti i test devono essere documentati in un test book.], [capitolato#super[G]],
     [*RQ05/02*], [Il test book deve includere una descrizione dei casi di test.], [capitolato#super[G]],  
     [*RQ05/03*], [Il test book deve includere le condizioni iniziali dei test.], [capitolato#super[G]],
@@ -1604,13 +1615,13 @@ _Esempio:_
 
     //Requisiti di Qualità opzionali
 
-    [*RQO01*], [*Sicurezza del sistema.*], [capitolato#super[G]],
+    [*RQO01*], [*Sicurezza del sistema.*], [],
     [*RQO01/01*], [Il sistema deve prevedere la possibilità di autenticazione#super[G] a due fattori (2FA#super[G]) o più (MFA#super[G]) per gli utenti.], [capitolato#super[G]],
     [*RQO01/02*], [Il sistema deve verificare#super[G] l'integrità#super[G] dei dati tramite firme digitali#super[G] o hashing#super[G].], [capitolato#super[G]],
     [*RQO01/03*], [Le richieste verso i microservizi#super[G] devono essere autenticate.], [capitolato#super[G]],
     [*RQO01/04*], [Gli scambi di dati tra microservizi#super[G] devono essere cifrati.], [capitolato#super[G]],
 
-    [*RQO02*], [*Backup#super[G] e ripristino#super[G] dei dati.*], [capitolato#super[G]],
+    [*RQO02*], [*Backup#super[G] e ripristino#super[G] dei dati.*], [],
     [*RQO02/01*], [I dati dei magazzini devono essere sottoposti a backup#super[G].], [capitolato#super[G]],
     [*RQO02/02*], [I dati aggregati su cloud devono essere sottoposti a backup#super[G].], [capitolato#super[G]],
     [*RQO02/03*], [I magazzini devono mantenere una copia locale dei propri dati.], [capitolato#super[G]],
