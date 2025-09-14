@@ -13,9 +13,9 @@
 */
 
 #let titolo = "Glossario"
-#let status = "In redazione"
+#let status = "Approvato"
 #let destinatario = "M31"
-#let versione = "0.5.0"
+#let versione = "1.0.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -26,6 +26,18 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [1.0.0],
+  [14/09/2025],
+  [R. Zangla],
+  [S. Speranza],
+  [Aggiunta e Modifica di alcune definizioni del glossario, rimozione di alcune che risultavano ambigue, riordino dei vocaboli],
+
+  [0.6.0],
+  [20/08/2025],
+  [N. Bolzon],
+  [M. Dalla Pozza],
+  [Aggiunta e Modifica di alcune definizioni del glossario, rimozione di alcune che risultavano ambigue, riordino dei vocaboli],
+
   [0.5.0],
   [16/07/2025],
   [M. Pretto],

@@ -15,7 +15,7 @@
 #let titolo = "Norme di Progetto"
 #let status = "Approvato"
 #let destinatario = "M31"
-#let versione = "1.0.0"
+#let versione = "2.0.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -26,6 +26,18 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [2.0.0],
+  [14/09/2025],
+  [R. Zangla],
+  [N. Moretto],
+  [Approvazione documento finale],
+
+  [1.1.0],
+  [05/08/2025],
+  [N. Bolzon],
+  [S. Marana],
+  [Aggiornamento documento con indicazioni ricevute in revisione RTB],
+
   [1.0.0],
   [17/07/2025],
   [-],
@@ -146,24 +158,24 @@
     - *Capitolato#super[G] d'appalto* \
       *C6 - Sistema di Gestione di un Magazzino Distribuito* \
       #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")]\
-      //Ultimo Accesso: \
+      Ultimo Accesso: 14 settembre 2025
     
     - *Standard ISO/IEC 12207:1995* \
       #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf")]\
-      //Ultimo Accesso: \
+      Ultimo Accesso: 14 settembre 2025
     
     === Riferimenti informativi
     - *Glossario#super[G]* \
       #underline[#link("https://teamcodealchemists.github.io/glossario.html")] \ 
-      //Ultimo Accesso: \
+      Ultimo Accesso: 14 settembre 2025
 
     - *Piano di Qualifica#super[G]* \
-      #underline[#link("https://teamcodealchemists.github.io/docs/rtb/PdQ.pdf")] \
-      //Ultimo Accesso: \
+      #underline[#link("https://teamcodealchemists.github.io/docs/pb/PdQ.pdf")] \
+      Ultimo Accesso: 14 settembre 2025
 
     - *Piano di Progetto* \
-      #underline[#link("https://teamcodealchemists.github.io/docs/rtb/PdP.pdf")] \
-      //Ultimo Accesso: \
+      #underline[#link("https://teamcodealchemists.github.io/docs/pb/PdP.pdf")] \
+      Ultimo Accesso: 14 settembre 2025
 
 = Struttura dei processi
 Il processo sarà strutturato secondo le linee guida dello standard *ISO/IEC 12207:1995*, che definisce il ciclo di vita del software suddividendolo in 3 categorie principali:

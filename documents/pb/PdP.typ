@@ -14,9 +14,9 @@
 */
 
 #let titolo = "Piano di Progetto"
-#let status = "In redazione"
+#let status = "Approvato"
 #let destinatario = "M31"
-#let versione = "1.3.0"
+#let versione = "2.0.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -27,6 +27,18 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  [2.0.0],
+  [14/09/2025],
+  [R. Zangla],
+  [S. Speranza],
+  [Approvazione del documento.], 
+
+  [1.4.0],
+  [12/09/2025],
+  [N. Bolzon],
+  [S. Speranza],
+  [Completamento Sprint 12.], 
+
   [1.3.0],
   [18/08/2025],
   [N. Bolzon],
@@ -170,19 +182,32 @@ Si potrà dedurre che questi documenti potrebbero contenere parole#super[G] o fr
 
 #pagebreak()
 
-== Riferimenti   //Inserire riferimenti al capitolato#super[G] del progetto e a lezioni/slide del professore se necessario
-#v(1em)
+== Riferimenti
+=== Riferimenti normativi
 - *Capitolato#super[G] d'appalto C6 - Gestione di un magazzino distribuito - _M31_*\
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")
+  \ Ultimo Accesso: 14 settembre 2025
 
 - *Processi di ciclo di vita del software*\
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf")
+  \ Ultimo Accesso: 14 settembre 2025
 
 - *Gestione di progetto*\
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")
+  \ Ultimo Accesso: 14 settembre 2025
 
+=== Riferimenti informativi
+- *Glossario#super[G]* \
+  #underline[#link("https://teamcodealchemists.github.io/glossario.html")]
+  \ Ultimo Accesso: 14 settembre 2025
 
-  //TODO: da completare
+- *Piano di Qualifica#super[G]* \
+  #underline[#link("https://teamcodealchemists.github.io/docs/pb/PdQ.pdf")]
+  \ Ultimo Accesso: 14 settembre 2025
+
+- *Norme di Progetto* \
+  #underline[#link("https://teamcodealchemists.github.io/docs/pb/NdP.pdf")]
+  \ Ultimo Accesso: 14 settembre 2025
 
 #pagebreak()
 = Analisi e gestione dei rischi
@@ -942,7 +967,7 @@ I possibili rischi :
       [Stefano Speranza],[],[],[6],[],[],[],
       [Ramona Zangla],[],[],[6],[],[],[],
   ),
-  didascalia: "Sprint#super[G] 1 - Preventivo ore per ciascun componente"
+  didascalia: "Sprint 1 - Preventivo ore per ciascun componente"
 )
 ]
 
@@ -960,7 +985,7 @@ I possibili rischi :
       [Stefano Speranza],[],[],[6],[],[],[],
       [Ramona Zangla],[],[],[6],[],[],[],
   ),
-  didascalia: "Sprint#super[G] 1 - Consuntivo ore per ciascun componente"
+  didascalia: "Sprint 1 - Consuntivo ore per ciascun componente"
 )
 ]
 #v(1em)
@@ -978,7 +1003,7 @@ I possibili rischi :
       [Verificatore#super[G]], [15€/h], [10], [150€], [142 (-10)], [2130€ (-150€)],
       [*Totale*], [*-*], [*43*], [*970€*], [*720 (-43)*], [*14430€ (-970€)*],
   ),
-    didascalia: "Sprint#super[G] 1 - Aggiornamento delle risorse disponibili"
+    didascalia: "Sprint - Aggiornamento delle risorse disponibili"
   )
 ]
 #pagebreak()
@@ -1060,7 +1085,7 @@ I possibili rischi :
       [Stefano Speranza],[],[],[6],[],[],[],
       [Ramona Zangla],[],[],[],[],[],[6],
   ),
-  didascalia: "Sprint#super[G] 2 - Preventivo ore per ciascun componente"
+  didascalia: "Sprint 2 - Preventivo ore per ciascun componente"
 )
 ]
 
@@ -1078,7 +1103,7 @@ I possibili rischi :
       [Stefano Speranza],[],[],[6 (-1)],[],[],[],
       [Ramona Zangla],[],[],[],[],[],[6 (-1)],
   ),
-  didascalia: "Sprint#super[G] 2 - Preventivo ore per ciascun componente"
+  didascalia: "Sprint 2 - Preventivo ore per ciascun componente"
 )
 ]
 #v(1em)
