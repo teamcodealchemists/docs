@@ -76,19 +76,28 @@
 
 = Introduzione
   == Scopo del documento
+  Lo scopo di questo documento è di riportare le istruzioni per installare correttamente l'applicativo, spiegarne lo scopo generale e illustrare le funzionalità implementate al suo interno.
 
   == Scopo dell'applicativo
+  Il sistema sviluppato consiste in una piattaforma centralizzata per la gestione ottimizzata e in tempo reale di inventari distribuiti di magazzini che ricevono ordini di vendita verso l'esterno. Esso è specializzato nel prevenire le rotture di stock e bilanciare dinamicamente le scorte tra magazzini geograficamente dislocati, garantendo la continuità operativa delle operazioni di vendita di merce.
+  Inoltre, il sistema mitiga i rischi di interruzione (es. indisponibilità di un magazzino) e ottimizza la distribuzione della merce tra i vari magazzini, mantenendo comunque adeguate scorte di sicurezza. 
 
   == Glossario
   // Importanza di avere un glossario, link per rimandare al glossario e nomenclatura con cui si trovano le parole consultabili nel Glossario (la G in apice)
+  Al fine di garantire chiarezza ed evitare incomprensioni, è stato realizzato un glossario (consultabile all'indirizzo #underline[#link("https://teamcodealchemists.github.io/docs/glossario/Gls_1.0.0.pdf")]) contenente le definizioni dei vari termini tecnici e concetti specifici del progetto. Tali parole consultabili nel Glossario vengono contrassegnate nel documento con una G in apice (ad es., "autenticazione#super[G]").
+
 
   == Riferimenti 
     === Riferimenti normativi 
     // Link al regolamento del progetto didattico
+    Regolamento del progetto didattico: \
+    #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T01.pdf")] \
 
     === Riferimenti informativi
     // Link al capitolato del progetto
-
+    Capitolato C6: Sistema di Gestione di un Magazzino Distribuito \
+    #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")] \
+    
   = Requisiti di sistema      
     == Requisiti hardware
 
@@ -162,3 +171,5 @@
 
   = Telemetria
   // inserire sottosezioni
+
+  // Alla fine c'è un riquadro per la firma di M31, deve essere integrata
