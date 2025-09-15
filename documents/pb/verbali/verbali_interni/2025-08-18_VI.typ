@@ -73,10 +73,10 @@
   Inizialmente, come primo momemento dell'incontro odierno, è stato redatto il Diario di Bordo circa quanto svolto nell'ultima settimana di lavoro e successivamente inviato al #p.tullio.\
 
   == Lavori svolti durante lo sprint PB 9
-  Nel decimo sprint#super[G], il team ha focalizzato l’attenzione sulla progettazione dettagliata dei microservizi. Di seguito è presentato il livello di completamento delle attività.
+  Nel decimo sprint#super[G], il team ha focalizzato l’attenzione sulla progettazione dettagliata dei microservizi#super[G]. Di seguito è presentato il livello di completamento delle attività.
 
   === Progettazione dettagliata dei microservizi
-  I microservizi completati nella loro fase progettuale sono:
+  I microservizi#super[G] completati nella loro fase progettuale sono:
   - Inventory;
   - Inventory Aggregate;
   - Orders;
@@ -85,14 +85,14 @@
 
   === Stesura e miglioramento dei documenti
   Il documento di Analisi dei Requisiti#super[G] è stato migliorato sulla base delle osservazioni del #p.cardin emerse durante la revisione della fase RTB#super[G].
-  È stato inoltre aggiornato il Piano di Progetto#super[G], fondamentale per la rendicontazione e il monitoraggio delle attività.
-  Infine, è stata avviata la stesura del documento di Specifica Tecnica, destinato a definire in dettaglio l’architettura del sistema.
+  È stato inoltre aggiornato il Piano di Progetto#super[G], fondamentale per la rendicontazione e il monitoraggio#super[G] delle attività.
+  Infine, è stata avviata la stesura del documento di Specifica Tecnica, destinato a definire in dettaglio l’architettura#super[G] del sistema.
 
   == Analisi delle criticità e valutazione avanzamento del lavoro
  Durante la riunione non sono emersi rallentamenti significativi nello svolgimento delle attività.
-  Una criticità riscontrata in fase di progettazione riguarda la complessità della saga dell’ordine, che richiede il monitoraggio di eventi concorrenti e la gestione dei conflitti derivanti dalle loro interazioni.
+  Una criticità riscontrata in fase di progettazione riguarda la complessità della saga dell’ordine#super[G], che richiede il monitoraggio#super[G] di eventi concorrenti e la gestione dei conflitti derivanti dalle loro interazioni.
 
-  Per ottimizzare l’avanzamento del lavoro, il team ha deciso di assegnare task specifiche a ciascun membro, con scadenza fissata a metà sprint (venerdì *22 agosto*). Tale approccio mira a favorire una maggiore responsabilizzazione individuale, a migliorare la gestione delle attività e a rendere più trasparente il monitoraggio dei progressi. Le task sono riportate nel documento di indicazioni dello Sprint#super[G] PB#super[G] 11, condiviso con il team tramite la piattaforma _Google Drive_.
+  Per ottimizzare l’avanzamento del lavoro, il team ha deciso di assegnare task specifiche a ciascun membro, con scadenza fissata a metà sprint (venerdì *22 agosto*). Tale approccio mira a favorire una maggiore responsabilizzazione individuale, a migliorare la gestione delle attività e a rendere più trasparente il monitoraggio#super[G] dei progressi. Le task sono riportate nel documento di indicazioni dello Sprint#super[G] PB#super[G] 11, condiviso con il team tramite la piattaforma _Google Drive_.
 
   == Definizione del prossimo sprint
   Con la conclusione del decimo sprint, il team ha proceduto all’assegnazione di ruoli e responsabilità ai membri, come riportato nella sezione successiva del presente documento.
@@ -112,13 +112,13 @@
   = Esiti della riunione
   La riunione si è conclusa con l’assegnazione dei compiti e la definizione delle decisioni e delle azioni intraprese, ponendo particolare attenzione alle attività che il team dovrà svolgere durante il prossimo sprint, come indicato al punto *2.4* del presente documento.
 
-  Eventuali risultati emersi o criticità riscontrate saranno affrontati e formalizzati nei prossimi incontri. Il responsabile resta a disposizione per supportare il team in caso di eventuali difficoltà.
+  Eventuali risultati emersi o criticità riscontrate saranno affrontati e formalizzati nei prossimi incontri. Il responsabile#super[G] resta a disposizione per supportare il team in caso di eventuali difficoltà.
 
 #pagebreak()
   = Tabella delle decisioni e azioni
     #let voci_tabella = (
-    [D43], [Portare a tre il numero dei progettisti e dei programmatori, in modo da terminare la progettazione dettagliata e al tempo stesso di iniziare la fase di programmazione.],
-    [A32], [Proseguire e concludere con la progettazione dettagliata dei microservizi rimanenti.],
+    [D43], [Portare a tre il numero dei progettisti#super[G] e dei programmatori#super[G], in modo da terminare la progettazione dettagliata e al tempo stesso di iniziare la fase di programmazione.],
+    [A32], [Proseguire e concludere con la progettazione dettagliata dei microservizi#super[G] rimanenti.],
     [A33], [Iniziare con la programmazione dell'MVP],
     [DOC32], [Stesura del verbale interno in data 18/08/2025]
   )

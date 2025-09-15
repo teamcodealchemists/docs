@@ -14,7 +14,7 @@
 */
 
 #let titolo = "Piano di Progetto"
-#let status = "In redazione"
+#let status = "Approvato"
 #let destinatario = "M31"
 #let versione = "1.3.0"
 
@@ -27,6 +27,24 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+  /*
+  [2.0.0],
+  [14/09/2025],
+  [R. Zangla],
+  [S. Speranza],
+  [Approvazione del documento.], 
+
+  [1.4.0],
+  [12/09/2025],
+  [N. Bolzon],
+  [S. Speranza],
+  [Completamento Sprint 12.], */
+
+  [1.3.0],
+  [18/08/2025],
+  [N. Bolzon],
+  [N. Moretto],
+  [Aggiunta del contenuto: Sprint 11, preventivo e pianificazione Sprint 12.], 
 
   [1.3.0],
   [18/08/2025],
@@ -171,19 +189,32 @@ Si potrà dedurre che questi documenti potrebbero contenere parole#super[G] o fr
 
 #pagebreak()
 
-== Riferimenti   //Inserire riferimenti al capitolato#super[G] del progetto e a lezioni/slide del professore se necessario
-#v(1em)
+== Riferimenti
+=== Riferimenti normativi
 - *Capitolato#super[G] d'appalto C6 - Gestione di un magazzino distribuito - _M31_*\
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")
+  \ Ultimo Accesso: 14 settembre 2025
 
 - *Processi di ciclo di vita del software*\
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T02.pdf")
+  \ Ultimo Accesso: 14 settembre 2025
 
 - *Gestione di progetto*\
   #link("https://www.math.unipd.it/~tullio/IS-1/2024/Dispense/T04.pdf")
+  \ Ultimo Accesso: 14 settembre 2025
 
+=== Riferimenti informativi
+- *Glossario#super[G]* \
+  #underline[#link("https://teamcodealchemists.github.io/glossario.html")]
+  \ Ultimo Accesso: 14 settembre 2025
 
-  //TODO: da completare
+- *Piano di Qualifica#super[G]* \
+  #underline[#link("https://teamcodealchemists.github.io/docs/pb/PdQ.pdf")]
+  \ Ultimo Accesso: 14 settembre 2025
+
+- *Norme di Progetto* \
+  #underline[#link("https://teamcodealchemists.github.io/docs/pb/NdP.pdf")]
+  \ Ultimo Accesso: 14 settembre 2025
 
 #pagebreak()
 = Analisi e gestione dei rischi
@@ -943,7 +974,7 @@ I possibili rischi :
       [Stefano Speranza],[],[],[6],[],[],[],
       [Ramona Zangla],[],[],[6],[],[],[],
   ),
-  didascalia: "Sprint#super[G] 1 - Preventivo ore per ciascun componente"
+  didascalia: "Sprint 1 - Preventivo ore per ciascun componente"
 )
 ]
 
@@ -961,7 +992,7 @@ I possibili rischi :
       [Stefano Speranza],[],[],[6],[],[],[],
       [Ramona Zangla],[],[],[6],[],[],[],
   ),
-  didascalia: "Sprint#super[G] 1 - Consuntivo ore per ciascun componente"
+  didascalia: "Sprint 1 - Consuntivo ore per ciascun componente"
 )
 ]
 #v(1em)
@@ -979,7 +1010,7 @@ I possibili rischi :
       [Verificatore#super[G]], [15€/h], [10], [150€], [142 (-10)], [2130€ (-150€)],
       [*Totale*], [*-*], [*43*], [*970€*], [*720 (-43)*], [*14430€ (-970€)*],
   ),
-    didascalia: "Sprint#super[G] 1 - Aggiornamento delle risorse disponibili"
+    didascalia: "Sprint - Aggiornamento delle risorse disponibili"
   )
 ]
 #pagebreak()
@@ -1061,7 +1092,7 @@ I possibili rischi :
       [Stefano Speranza],[],[],[6],[],[],[],
       [Ramona Zangla],[],[],[],[],[],[6],
   ),
-  didascalia: "Sprint#super[G] 2 - Preventivo ore per ciascun componente"
+  didascalia: "Sprint 2 - Preventivo ore per ciascun componente"
 )
 ]
 
@@ -1079,7 +1110,7 @@ I possibili rischi :
       [Stefano Speranza],[],[],[6 (-1)],[],[],[],
       [Ramona Zangla],[],[],[],[],[],[6 (-1)],
   ),
-  didascalia: "Sprint#super[G] 2 - Preventivo ore per ciascun componente"
+  didascalia: "Sprint 2 - Preventivo ore per ciascun componente"
 )
 ]
 #v(1em)
@@ -1840,6 +1871,13 @@ I possibili rischi :
   )
 ]
 
+==== Retrospettiva
+#v(1em)
+  Nel nono sprint#super[G], il team ha svolto due incontri di revisione. Il primo si è tenuto il *21 luglio 2025* con il #p.cardin; in seguito, ottenuto il parere favorevole, si è svolto un secondo incontro il *31 luglio 2025* con il #p.tullio. Entrambe le revisioni si sono concluse con esito complessivamente positivo. \
+  Contestualmente, il team ha lavorato alla preparazione delle presentazioni da esporre durante le due revisioni con i docenti. A seguito delle valutazioni positive ricevute, gli esiti degli incontri sono stati comunicati all’azienda.
+  Dopo aver ottenuto il parere favorevole nella prima parte della revisione *RTB*#super[G], i progettisti e i programmatori hanno proseguito con le attività di progettazione per la fase *PB*#super[G], avviando contestualmente la configurazione software finalizzata alla realizzazione dell’*MVP*#super[G].
+
+
 //-----------
 #pagebreak()
 === Sprint 10
@@ -1915,14 +1953,18 @@ I possibili rischi :
   )
 ]
 
+==== Retrospettiva
+#v(1em)
+Nel decimo sprint#super[G], il team ha concentrato l’attenzione sulla progettazione dettagliata dei microservizi#super[G], con l’obiettivo di consolidare le basi architetturali del sistema e definire in modo chiaro le responsabilità dei singoli componenti. Sono stati completati i moduli Inventory, Inventory Aggregate, Orders, State e Cloud State, risultato che ha permesso di affinare la comprensione delle interazioni tra i servizi e di ridurre il rischio di incoerenze a livello architetturale. È emersa tuttavia l’esigenza di anticipare alcune scelte tecnologiche, così da evitare possibili attività di rework nelle fasi successive. Parallelamente è proseguita l’attività documentale: il documento di Analisi dei Requisiti#super[G] è stato rivisto e migliorato sulla base delle osservazioni del #p.cardin nella fase RTB#super[G], mentre il Piano di Progetto#super[G] è stato aggiornato rafforzando gli strumenti di rendicontazione e monitoraggio#super[G]. Contestualmente è stata avviata la stesura del documento di Specifica Tecnica, destinato a definire in dettaglio l’architettura#super[G] del sistema. Questa attività ha messo in evidenza la necessità di un coordinamento più stretto tra la progettazione e la documentazione, in modo da mantenere un allineamento costante lungo l’intero ciclo di sviluppo. Nel complesso, lo sprint ha portato a risultati concreti e tangibili sia sul fronte progettuale sia su quello documentale, evidenziando punti di forza del team nella gestione della complessità architetturale e aprendo al contempo spunti di miglioramento legati alla pianificazione tecnica anticipata e all’integrazione continua tra le diverse attività.
+
 //-----------
 #pagebreak()
 === Sprint 11
 #v(1em)
 Inizio: #h(1.99cm)*18-08-2025*\
 Fine Prevista: #h(0.65cm)*29-08-2025*\
-Fine Reale: #h(1.12cm)**\
-Giorni di ritardo: #h(0.15cm)**
+Fine Reale: #h(1.12cm)*29-08-2025*\
+Giorni di ritardo: #h(0.15cm)*0*
 
 ==== Informazioni generali e attività da svolgere
 #v(1em)
@@ -1953,5 +1995,82 @@ I possibili rischi :
     [Ramona Zangla],        [], [], [], [],  [10],[],
   ),
   didascalia: "Sprint 11 - Preventivo ore per ciascun componente"
+)
+]
+
+==== Consuntivo
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],        [],   [],   [],   [12(+4)],[],      [],
+    [Mattia Dalla Pozza],   [],   [],   [],   [],      [],      [10],
+    [Sebastiano Marana],    [],   [],   [],   [],      [14(+4)],[],
+    [Nicholas Moretto],     [5],  [],   [],   [],      [],      [],
+    [Matteo Pretto],        [],   [],   [],   [],      [10],    [],
+    [Alex Shu],             [],   [],   [],   [12(+4)],[],      [],
+    [Stefano Speranza],     [],   [],   [],   [8],     [],      [],
+    [Ramona Zangla],        [],   [],   [],   [],      [14(+4)],[],
+  ),
+  didascalia: "Sprint 11 - Consuntivo ore per ciascun componente"
+)
+]
+
+==== Aggiornamento delle risorse rimanenti  
+#v(1em)
+#align(center)[
+  #tabella_aggiornamento_risorse(
+    dati: (
+      [Responsabile#super[G]],    [30€/h],   [5],       [150€],         [],           [],
+      [Amministratore#super[G]],  [20€/h],   [-],       [-],            [],           [],
+      [Analista#super[G]],        [25€/h],   [-],       [-],            [],           [],
+      [Progettista#super[G]],     [25€/h],   [32],      [800€],         [],           [],
+      [Programmatore#super[G]],   [15€/h],   [38],      [570€],         [],           [],
+      [Verificatore#super[G]],    [15€/h],   [10],      [150€],         [],           [],
+      [*Totale*],                 [*-*],     [*85*],    [*1670€*],      [**],         [**],
+    ),
+    didascalia: "Sprint 11 - Aggiornamento delle risorse disponibili"
+  )
+]
+
+==== Retrospettiva
+#v(1em)
+Nel corso dell’undicesimo sprint#super[G], il team ha concentrato le attività sul completamento della progettazione dettagliata e sull’avanzamento della fase di codifica, mentre in parallelo è proseguita la redazione della documentazione tecnica e si è svolto un incontro di aggiornamento con l’azienda M31. La progettazione dei microservizi#super[G] ha visto il completamento di quelli relativi alla gestione degli ordini#super[G] aggregati, all’autenticazione#super[G], al sistema centralizzato e al routing. L’analisi del microservizio#super[G] di autenticazione#super[G] mediante ResGate ha però evidenziato alcune criticità, principalmente legate alla complessità della tecnologia adottata e alla limitata disponibilità di documentazione ufficiale. In questa fase è stato definito il flusso architetturale che prevede l’invio della richiesta di autenticazione#super[G] dal client a un microservizio#super[G] del sistema, il quale la inoltra a ResGate: quest’ultimo, tramite token, verifica la validità della connessione e delle credenziali dell’utente, consentendo successivamente a ogni microservizio destinatario di validare i permessi e autorizzare l’accesso alle risorse richieste. Sul fronte della codifica, è stato completato il microservizio#super[G] di inventario#super[G] sia in implementazione che in testing, mentre lo sviluppo del microservizio#super[G] di ordini#super[G] è attualmente in fase di completamento. In parallelo, è proseguita la redazione della documentazione di progetto, con particolare attenzione al Piano di Progetto e alla Specifica Tecnica. Nel complesso, lo sprint ha consolidato i progressi sia a livello architetturale sia implementativo, pur facendo emergere alcuni rischi, in particolare la complessità nell’adozione di tecnologie nuove e poco documentate, la possibile dilatazione delle tempistiche di sviluppo dei microservizi#super[G] più critici e la necessità di mantenere allineate in modo costante le attività di progettazione, codifica e documentazione.
+
+//-----------
+#pagebreak()
+=== Sprint 12
+#v(1em)
+Inizio: #h(1.99cm)*29-08-2025*\
+Fine Prevista: #h(0.65cm)*12-09-2025*\
+Fine Reale: #h(1.12cm)*15-09-2025*\
+Giorni di ritardo: #h(0.15cm)*3*
+
+==== Informazioni generali e attività da svolgere
+#v(1em)
+- Completamento programmazione dei microservizi del MVP#super[G].
+- Ultimazione stesura dei documenti necessari alla fase PB.
+- Approvazione finale dell'MVP da parte dell'azienda.
+- Revisione PB,
+
+==== Rischi attesi
+#v(1em)
+I possibili rischi :
+- RT3: Errori di codifica o programmazione;
+- RI3: Difficoltà di "comprensione" o lavoro;
+
+==== Preventivo
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],        [], [], [], [],  [],  [],
+    [Mattia Dalla Pozza],   [], [], [], [],  [],  [],
+    [Sebastiano Marana],    [], [], [], [],  [],  [],
+    [Nicholas Moretto],     [],[], [], [],  [],  [],
+    [Matteo Pretto],        [], [], [], [],  [],  [],
+    [Alex Shu],             [], [], [], [], [],  [],
+    [Stefano Speranza],     [], [], [], [], [],  [],
+    [Ramona Zangla],        [], [], [], [],  [],  [],
+  ),
+  didascalia: "Sprint 12 - Preventivo ore per ciascun componente"
 )
 ]
