@@ -97,25 +97,109 @@
     // Link al capitolato del progetto
     Capitolato C6: Sistema di Gestione di un Magazzino Distribuito \
     #underline[#link("https://www.math.unipd.it/~tullio/IS-1/2024/Progetto/C6.pdf")] \
+
+    Glossario: \
+    #underline[#link("https://teamcodealchemists.github.io/docs/glossario/Gls_1.0.0.pdf")] \
     
   = Requisiti di sistema      
     == Requisiti hardware
+    I requisiti hardware per l'installazione e l'esecuzione del sistema sono i seguenti:
+    #figure(
+      table(
+        columns: (auto, auto),
+        inset: 10pt,
+        align: center,
+        table.header(
+          [*Componente*], [*Requisito minimo*]
+        ),
+        ["Processore"], [Quad-core 2.0 GHz o superiore],
+        ["RAM"], [8 GB o superiore],
+        ["Spazio su disco"], [20 GB di spazio libero o superiore],
+        ["Connessione di rete"], [Connessione Internet stabile per la corretta esecuzione del sistema e per  l'accesso ai servizi cloud.]
+      ), caption: "Requisiti hardware minimi per il sistema"
+    )
 
     == Requisiti software
+    In merito al Sistema Operativo, le componenti del sistema non presentano particolari vincoli e possono essere installate su qualsiasi sistema operativo moderno (Windows, macOS, Linux), in quanto il sistema si appoggia completamente a *Docker* per l'esecuzione dei vari servizi. \
+
+    Per assicurare quindi il corretto funzionamento del sistema, è necessario che il sistema operativo supporti *Docker* e che quest'ultimo sia installato. \
+
+    Di seguito è riportata una tabella con le versioni minime richieste per i vari software necessari al funzionamento del sistema:
+    
+    #figure(
+      table(
+        columns: (auto, auto),
+        inset: 10pt,
+        align: center,
+        table.header(
+          [*Software*], [*Versione minima richiesta*]
+        ),
+        ["Docker"], [>= 22.16.0],
+        ["Docker Compose"], [>= 2.37.x],
+        ["Ambiente Docker"], [node:22-alpine],
+        ["Node.js"], [>= 22.16.0],
+        ["npm"], [>= 9.x]
+      ), caption: "Requisiti software minimi per il sistema"
+    )
+    
 
   
   = Installazione del sistema
     == Clonazione della repository 
+    Per ottenere il codice sorgente del sistema, è necessario clonare la repository GitHub del progetto. Questo può essere fatto utilizzando il comando git clone seguito dall'URL della repository. \
+    Esempio di comando:
+    ```
+    git clone https://github.com/teamcodealchemists/MVP.git
+    ```
+
+    Dopodiché, è necessario navigare nella cartella del progetto clonata utilizzando il comando cd:
+    ```
+    cd MVP
+    ```
+
 
     == Preparazione del sistema
+
 
     == Configurazione // non so se serve?
 
     == Avvio del sistema
+    === Avviare Docker
+    Avviare *Docker Desktop*, o *Docker Engine* a seconda del sistema operativo in uso.
+
+    === Avviare Docker Compose
+    Per avviare il sistema, è necessario eseguire il comando docker compose up --build -d dalla cartella principale del progetto (dove è presente il file docker-compose.yml):
+    ```
+    docker compose up --build -d
+    ```
+
+    In questo modo, *Docker Compose* costruirà le immagini dei vari servizi (se non sono già state costruite) e avvierà i container in modalità detached (in background).
+    Per verificare che i container siano stati avviati correttamente, è possibile utilizzare il comando:
+    ```
+    docker ps
+    ```
+    Questo comando mostrerà una lista dei container in esecuzione. Assicurarsi che tutti i container necessari siano presenti e in stato "Up".
+
+    Da questo momento, il sistema è avviato e funzionante. 
 
     == Spegnimento
+    Per arrestare il sistema, è possibile eseguire il comando docker compose down dalla cartella principale del progetto:
+    ```
+    docker compose down
+    ```
+    Questo comando arresterà e rimuoverà i container, le reti e i volumi creati da *Docker Compose*.
 
     == Ripristino
+    In caso di problemi con il sistema, è possibile eseguire il comando docker compose down dalla cartella principale del progetto per arrestare e rimuovere i container, le reti e i volumi creati da *Docker Compose*:
+    ```
+    docker compose down
+    ```
+    Successivamente, è possibile riavviare il sistema eseguendo nuovamente il comando docker compose up --build -d.
+    In caso di problemi persistenti, è possibile eliminare i volumi associati ai container utilizzando il comando:
+    ```
+    docker compose down -v
+    ```
+    Questo comando rimuoverà anche i volumi, permettendo un ripristino completo del sistema. Tuttavia, si noti che l'eliminazione dei volumi comporta la perdita di tutti i dati memorizzati nei volumi stessi.
 
 
   = Funzionalità implementate
@@ -165,9 +249,39 @@
 
   = Esecuzione Test
     == Test di unità e di integrazione
+    I test di unità e di integrazione sono stati eseguiti utilizzando il framework *Jest*. \
+    I test sono stati organizzati in file separati per ciascun modulo del sistema e sono eseguibili tramite il comando:
+    ```
+    npm run test
+    ```
+
+    Le informazioni riguardanti l'esecuzione dei test di unità e di integrazione sono consultabili nel *Piano di Qualifica*.
+
+    Per verificare la copertura del codice, è possibile eseguire il comando:
+    ```
+    npm run test:cov
+    ```
+    Questo comando genererà un report di copertura del codice per il modulo testato.
+
+    La copertura totale del codice è consultabile dal *README.md* della pagina di _GitHub_ del *MVP*: tramite _CodeCov_ è stato inserito un badge che riporta la percentuale di copertura totale del codice.
 
     == Test di accettazione
+    In accordo con *M31*, è stato stilato un *TestBook* contenente una serie di test di accettazione volti a verificare il corretto funzionamento del sistema secondo le specifiche concordate. \
+    Il *TestBook* è consultabile all'indirizzo #underline[#link("https://daconfermare")].
 
+    I test di accettazione sfruttano NATS e sono eseguibili tramite *Postman*. \
+    Poiché Postman richiede una versione a pagamento per poter essere eseguito in modalità automatica, abbiamo deciso di eseguire i test tramite *Newman*, un tool da linea di comando che permette di eseguire le collezioni di Postman. \
+    Per eseguire i test di accettazione, è necessario installare *Newman* globalmente tramite npm:
+    ```
+    npm install -g newman
+    ```
+    Successivamente, è possibile eseguire i test utilizzando il comando:
+    ```
+    newman run https://www.postman.com/collections/<collection-id>
+    ```
+    _*Nota:* Si può anche usare l'opzione *--verbose* per ottenere più informazioni sul ritorno delle richieste._
+
+    Le informazioni riguardanti l'esecuzione dei test di accettazione sono consultabili nel *TestBook*.
 
   = Telemetria
   // inserire sottosezioni
