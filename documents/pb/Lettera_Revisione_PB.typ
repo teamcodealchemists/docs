@@ -21,7 +21,7 @@
 #show: fireside.with(
   background: rgb("fcfaf5"),
 
-  title: text(font: "New Computer Modern", size: 30pt)[Presentazione RTB \ Code Alchemists],
+  title: text(font: "New Computer Modern", size: 30pt)[Presentazione PB \ Code Alchemists],
   from-details: text(font: "New Computer Modern", size: 11pt)[
     Gruppo 21 \
     Team _Code Alchemists_ \
@@ -45,7 +45,7 @@
 Gentili Proff. Vardanega e Cardin,
 #v(0.5cm)
 
-Con la presente lettera, il Team _Code Alchemists_ desidera candidarsi formalmente alla *revisione PB (Product Basaline)* del progetto:\
+Con la presente lettera, il Team _Code Alchemists_ desidera candidarsi formalmente alla *revisione PB (Product Baseline)* del progetto:\
 
 #v(0.2cm)
 #align(center, text(12pt)[
@@ -78,14 +78,14 @@ All'interno è possibile trovare i seguenti documenti:\
    
   - verbali interni \
   - verbali esterni \
-  Di seguito viene inoltre fornito il link al repository GitHub del team contenente il *Proof of Concept* del progetto:\
+  Di seguito viene inoltre fornito il link al repository GitHub del team contenente il *Minimum Viable Product* del progetto:\
   #align(center, text(12pt)[
-  #link("https://github.com/teamcodealchemists/PoC")
+  #link("https://github.com/teamcodealchemists/MVP")
 ])
 #v(0.2cm)
   
 #v(0.5cm)
-Il costo totale di progetto risulta essere di *13.235€€* a fronte dei *14.430€* preventivati in candidatura.\
+Il costo totale di progetto risulta essere di *13.235€* a fronte dei *14.430€* preventivati in candidatura.\
   
   Di seguito vengono riportati i componenti del team.
   #v(2em)
