@@ -2182,5 +2182,3 @@ La spesa è al di sotto del budget preventivato di *14.430€*, con un risparmio
 
 Dalla tabella sopra possiamo vedere il totale delle ore lavorate da ogni componente del team, suddivise per ruolo.
 Notiamo che è stato necessario modificare il quantitativo di ore preventivate per ciascun ruolo, ma il totale delle ore rimane comunque inferiore a quello preventivato, con un risparmio di *57 ore*.
-
-Anche le ore totali per ciascun componente non superano le 90 ore preventivate, il che dimostra una buona gestione del carico di lavoro da parte del team.
