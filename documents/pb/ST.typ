@@ -2271,7 +2271,7 @@ Può invocare le seguenti funzioni:
   caption: [Schema UML - Microservizio Ordine Aggregato]
 )
 ==== Descrizione del microservizio
-Il Microservizio Invia invia eventi al Microservizio Inventario Aggregato, che ha il compito di:
+Il Microservizio invia eventi al Microservizio Inventario Aggregato, che ha il compito di:
 - Ricevere e consolidare dati sui prodotti provenienti da più magazzini.
 - Offrire una vista centralizzata dello stato dell'inventario.
 - Garantire la quantità tra magazzini differenti al sistema centralizzato.
