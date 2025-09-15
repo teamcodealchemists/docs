@@ -16,7 +16,7 @@
 #let status = "In redazione"
 #let destinatario = "M31"
 
-#let versione = "0.7.0"
+#let versione = "0.8.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -29,6 +29,12 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+
+  [0.8.0],
+  [15/09/2025],
+  [A. Shu],
+  [],
+  [Completata specifica del Microservizio di Inventario Aggregato, Aggiornamento Microservizio di Ordini Aggregato e revisione generale del documento portando aggiornamento dei attributi e metodi mancanti nei microservizi già esistenti, aggiunta immagini mancanti],
 
   [0.7.0],
   [11/09/2025],
@@ -482,8 +488,10 @@ I microservizi sviluppati sono:
 - *#link(label("State"), "State")*
 - *#link(label("Cloud State"), "Cloud State")*
 - *#link(label("Orders"), "Orders")*
+- *#link(label("Inventory Aggregate"), "Inventory Aggregate")*
 - *#link(label("Orders Aggregate"), "Orders Aggregate")*
 - *#link(label("Central System"), "Central System (Sistema Centralizzato)")*
+- *#link(label("Auth"), "Authentication")*
 - *#link(label("Routing"), "Routing")*
 //- *#link(label("Inventary Aggreggate"), "Inventary Aggreggate")*
 //- *#link(label("Auth"), "Auth")*
@@ -967,7 +975,10 @@ Metodi:
 #pagebreak()
 #label("State")
 === Microservizio State (Warehouse State Service)
-// Breve spiegazione + Immagine
+#figure(
+  image("assets/localState.svg", width: 120%),
+  caption: [Schema UML - Microservizio Stato locale]
+)
 ==== Descrizione del microservizio
 Il *Microservizio Stato* rappresenta il componente responsabile del monitoraggio e della gestione dello stato di un magazzino.  
 Il suo compito principale è quello di rilevare la disponibilità operativa attraverso heartbeat periodici, mantenere aggiornato lo stato corrente e inviare tali informazioni al microservizio *Cloud State*.  
@@ -1037,11 +1048,6 @@ Può invocare le seguenti funzioni:
    Sincronizza lo stato del magazzino con il messaggio ricevuto.
  - *sendHeartBeat(heartbeat: Heartbeat)*: boolean \
    Metodo per inviare il messaggio di stato.
- - *getState()*: WarehouseState \
-   Restituisce lo stato corrente del magazzino.
- - *updateState(state: WarehouseState)*: boolean \
-   Aggiorna lo stato del magazzino con quello fornito.
-
 ==== WarehouseStateDTO
  + Rappresenta lo stato del magazzino sotto forma di DTO (Data Transfer Object),
  + Utilizzato per il trasporto dei dati tra livelli dell’applicazione.
@@ -1139,10 +1145,13 @@ Può invocare le seguenti funzioni:
 #pagebreak()
 #label("Cloud State")
 === Microservizio Cloud State
-// Breve spiegazione + Immagine
+#figure(
+  image("assets/CloudState.svg", width: 120%),
+  caption: [Schema UML - Microservizio Cloud State]
+)
 ==== Descrizione del microservizio
 Il *Microservizio Cloud State* rappresenta il componente centralizzato responsabile della raccolta, aggregazione e gestione degli stati provenienti dai singoli magazzini.  
-Il suo compito principale è ricevere i segnali di heartbeat inviati dal *Microservizio Stato*, mantenere una visione coerente e aggiornata della disponibilità complessiva e renderla disponibile agli altri microservizi che necessitano di queste informazioni.  
+Il suo compito principale di mandare eventi ad i stati degli warehouse è ricevere i segnali di heartbeat inviati dal *Microservizio Stato*, mantenere una visione coerente e aggiornata della disponibilità complessiva e renderla disponibile agli altri microservizi che necessitano di queste informazioni.  
 
 ===== Funzionalità principali
 - *Ricezione heartbeat*: acquisizione dei segnali di stato inviati dai singoli magazzini.
@@ -1152,7 +1161,7 @@ Il suo compito principale è ricevere i segnali di heartbeat inviati dal *Micros
 - *Pubblicazione eventi*: invio di notifiche verso i microservizi interessati quando avvengono variazioni di stato.
 - *Interoperabilità*: interazione con microservizi esterni quali:
   - _Microservizio Stato_, per ricevere heartbeat e aggiornamenti.
-  - _Microservizio Routing_, per ricevere lo stato di un magazzino specifico.
+  - _Microservizio Routing_, per ricevere evento per la richiesta dello stato di un magazzino specifico.
 
 ==== CloudWarehouseId
  + Rappresenta l’identificatore univoco del magazzino nel cloud,
@@ -1204,10 +1213,6 @@ Può invocare le seguenti funzioni:
 ==== CloudStateService
  + Costituisce la logica di business del servizio cloud,
  + Gestisce il controllo, la visualizzazione e l’aggiornamento dello stato del magazzino.
-
-Descrizione degli attributi della struttura:
- - *heartbeat*: CloudHeartbeat \
-   Rappresenta lo stato corrente del magazzino.
 
 Può invocare le seguenti funzioni:
  - *checkHeartbeat(heartbeat: CloudHeartbeat)*: boolean \
@@ -1524,8 +1529,6 @@ Può invocare le seguenti funzioni:
     Verifica l’esistenza dell’ordine.
   - *updateOrderState(OrderId, OrderState): void* \
     Aggiorna lo stato dell’ordine.
-  - *checkOrderState(OrderId): void* \
-    Controlla lo stato corrente dell’ordine.
   - *createSellOrder(SellOrder): Promise<void>* \
     Crea un nuovo ordine di vendita.
   - *createInternalOrder(order: InternalOrder): Promise<void>* \
@@ -1702,7 +1705,8 @@ Può invocare le seguenti funzioni:
 Può invocare le seguenti funzioni:
  - *addInternalOrder(order: InternalOrderDTO): void* \
    Richiede l’aggiunta di un ordine di trasferimento interno.
-
+ - *addInternalOrderEvent(order: InternalOrderDTO): void* \
+   Richiede l’aggiunta di un ordine di trasferimento interno.
 ==== ShipmentEventListener
  + Gestisce gli eventi di spedizione e ricezione degli ordini.
 
@@ -1721,6 +1725,8 @@ Può invocare le seguenti funzioni:
 
 Può invocare le seguenti funzioni:
  - *updateOrderState(orderId: OrderIdDTO, state: OrderStateDTO): void* \
+   Richiede l’aggiornamento dello stato di un ordine.
+ - *updateOrderStatEvent(orderId: OrderIdDTO, state: OrderStateDTO): void* \
    Richiede l’aggiornamento dello stato di un ordine.
 
 ==== OrderStatusEventListener
@@ -1750,7 +1756,7 @@ Può invocare le seguenti funzioni:
  + Gestisce la richiesta di visualizzazione di tutti gli ordini.
 
 Può invocare le seguenti funzioni:
- - *getAllOrders(): OrdersDTO* \
+ - *getOrdersCollection(): OrdersDTO* \
    Richiede la lista completa degli ordini.
 
 ==== OrdersController
@@ -1775,7 +1781,10 @@ Può invocare le seguenti funzioni:
 Può invocare le seguenti funzioni:
  - *publishReserveStock(orderId: OrderId, items: OrderItem[]): void* \
    Pubblica l’evento di richiesta di riserva prodotti dal magazzino.
-
+ - *publishUpdatedReserveStock(orderId: OrderId, items: OrderItem[]): void* \
+   Pubblica l’evento di richiesta di aggiornare i prodotti riservati.
+ - *unservedStock(OrderId) : void* \ 
+   Pubblica l’evento di mancata disponibilità dei prodotti richiesti perciò richiede di annullare le quantità riservate fin ora.
 ==== ShipStockCommandPublisher
  + Gestisce la pubblicazione degli eventi di spedizione.
 
@@ -1796,7 +1805,7 @@ Può invocare le seguenti funzioni:
  + Gestisce la pubblicazione degli eventi di aggiornamento degli ordini.
 
 Può invocare le seguenti funzioni:
- - *orderUpdated(order: Order): void* \
+ - *orderStateUpdated(order: Order): void* \
    Pubblica l’evento di aggiornamento di un ordine.
 
 ==== OrderStatusEventPublisher
@@ -1808,19 +1817,20 @@ Può invocare le seguenti funzioni:
  - *orderCompleted(orderId: OrderId, warehouse: number): void* \
    Pubblica l’evento di completamento di un ordine.
 
-==== InternalOrderEventPublisher
- + Gestisce la pubblicazione degli ordini interni.
+==== OrderEventPublisher
+ + Gestisce la pubblicazione degli ordini interni e di vendita.
 
 Può invocare le seguenti funzioni:
   - *publishInternalOrder (InternalOrder, context: { destination: String, warehouseId:
 number = null } ): void* \
     Pubblica l’ordine interno.
-
-==== SellOrderEventPublisher
- + Gestisce la pubblicazione degli ordini di vendita.
+  - *publishSellOrder (SellOrder, context: { destination: String, warehouseId: Integer = null } ): void* \
+    Pubblica l’ordine di vendita.
+==== WaitingStockEventPublisher
+ + Gestisce la pubblicazione degli eventi di attesa della merce.
 
 Può invocare le seguenti funzioni:
-  - *publishSellOrder (SellOrder, context: { destination: String, warehouseId: Integer = null } ): void* \
+  - *waitingForStock(orderId: OrderId, warehouseId: number ): void* \
     Pubblica l’ordine di vendita.
 
 ==== OutboundEventAdapter
@@ -1833,8 +1843,8 @@ Può invocare le seguenti funzioni:
     - RequestStockReplenishmentPublisher,
     - OrderUpdateEventPublisher,
     - OrderStatusEventPublisher,
-    - InternalOrderEventPublisher,
-    - SellOrderEventPublisher.
+    - OrderEventPublisher,
+    - WaitingStockEventPublisher.
   - Converte gli oggetti di dominio nei rispettivi DTO.
 
 ==== OrdersRepository
@@ -1853,6 +1863,8 @@ Può invocare le seguenti funzioni:
     Aggiunge un ordine interno.
   - *removeById(id: OrderId): bool* \
     Rimuove un ordine e restituisce true/false.
+  - *genUniqueId(orderType: string): OrderId*\
+    Genera un id univoco per un ordine.
   - *updateOrderState(id: OrderId, state: OrderState): InternalOrder | SellOrder* \
     Aggiorna lo stato di un ordine.
   - *updateReservedStock(orderId: OrderId, items: OrderItem[]): InternalOrder | SellOrder* \
@@ -1873,9 +1885,20 @@ Può invocare le seguenti funzioni:
 */
 #pagebreak()
 #label("Orders Aggregate")
-=== Microservizio Ordine Aggreggato
+=== Microservizio Ordine Aggregato
+#figure(
+  image("assets/CloudOrders.svg", width: 120%),
+  caption: [Schema UML - Microservizio Ordine Aggregato]
+)
 ==== Descrizione del microservizio
+Il Microservizio Ordini invia eventi al Microservizio Ordini Aggregato, che ha il compito di:
+- Ricevere e consolidare dati sugli ordini provenienti da più magazzini.
+- Offrire una vista centralizzata dello stato degli ordini.
+- Garantire consistenza e tracciabilità nel caso di trasferimenti tra magazzini differenti.
+- Offrire dati al sistema centralizzato per risolvere problemi di criticità.
 ===== Funzionalità principali
+- *Aggregazione ordini*: riceve e consolida dati sugli ordini da più magazzini.
+- *Gestione dati *: Manda i dati richiesti dal sistema centralizzato per supportarlo al compimento del processo.
 ==== SyncOrderId
  + Rappresenta l’identificativo dell’ordine sincronizzato.
 
@@ -2019,7 +2042,8 @@ Può invocare le seguenti funzioni:
    Sincronizza la cancellazione di un ordine.
  - *syncUpdateReservedStock(orderId: SyncOrderId, items: SyncOrderItem[]): SyncOrder* \
    Sincronizza l’aggiornamento delle quantità riservate.
-
+ - *syncUnreserveStock(SyncOrderId): void*\
+   Sincronizza la cancellazione delle quantità riservate.
 ==== SyncOrderIdDTO
  + DTO per l’id dell’ordine sincronizzato.
 
@@ -2145,7 +2169,8 @@ Può invocare le seguenti funzioni:
 Può invocare le seguenti funzioni:
  - *stockReserved(dto: SyncOrderQuantityDTO)* : void \
    Richiede la sincronizzazione delle quantità di prodotti riservati per un ordine.
-
+ - *unreserveStock(SyncOrderIdDTO)* : void \
+   Richiede la sincronizzazione della cancellazione delle quantità riservate.
 ==== SyncSellOrderEventListener
  + Gestisce gli eventi in ingresso relativi agli ordini di vendita.
 
@@ -2196,37 +2221,16 @@ Può invocare le seguenti funzioni:
 Può invocare le seguenti funzioni:
  - *getAllOrders()* : SyncOrdersDTO \
    Restituisce tutti gli ordini sincronizzati.
-
+ - *getAllFilteredOrders(state: SyncOrderStateDTO)* : SyncOrdersDTO \
+   Restituisce tutti gli ordini sincronizzati filtrati per stato. 
+ - *getAllOrdersForCentralized()* : SyncOrdersDTO \
+   Restituisce tutti gli ordini sincronizzati senza filtri, per il sistema centralizzato.
 ==== CloudOrdersController
  + Gestisce tutti gli eventi in ingresso relativi agli ordini sincronizzati.
 
 Descrizione:
  - Implementa i metodi di SyncReservationEventListener, SyncSellOrderEventListener, SyncInternalOrderEventListener, SyncUpdateOrderStateUseCase, SyncOrderStatusEventListener, GetOrderStateUseCase, GetOrderUseCase, GetAllOrderUseCase.
  - Riceve i DTO dall’esterno, li converte in oggetti di dominio e li passa al CloudOrderService.
-
-==== SyncOrderUpdateEventPublisher
- + Gestisce la pubblicazione degli eventi di aggiornamento degli ordini sincronizzati.
-
-Può invocare le seguenti funzioni:
- - *orderUpdated(order: SyncOrder)* : void \
-   Pubblica l’evento di avvenuta sincronizzazione dell’aggiornamento dell’ordine.
-
-==== SyncOrderStatusEventPublisher
- + Gestisce la pubblicazione degli eventi sullo stato finale degli ordini sincronizzati.
-
-Può invocare le seguenti funzioni:
- - *orderCancelled(orderId: SyncOrderId, warehouse: number)* : void \
-   Pubblica l’evento di avvenuta sincronizzazione della cancellazione dell’ordine.
- - *orderCompleted(orderId: SyncOrderId, warehouse: number)* : void \
-   Pubblica l’evento di avvenuta sincronizzazione del completamento dell’ordine.
-
-==== OutboundEventAdapter
- + Gestisce gli eventi in uscita dal microservizio.
-
-Descrizione:
- - Implementa i metodi di SyncOrderUpdateEventPublisher e SyncOrderStatusEventPublisher.
- - Converte gli oggetti di dominio nei rispettivi DTO.
- - Questi use case rappresentano eventi di dominio o output port, utili per pubblicare modifiche ad altri moduli del sistema.
 
 ==== CloudOrdersRepository
  + Gestisce la persistenza e l’accesso ai dati degli ordini sincronizzati.
@@ -2238,6 +2242,8 @@ Può invocare le seguenti funzioni:
    Restituisce lo stato dell’ordine.
  - *getAllOrders()* : SyncOrders \
    Restituisce tutti gli ordini.
+ - *getAllFilteredOrders()* : SyncOrders \
+   Restituisce tutti gli ordini filtrati.
  - *syncAddSellOrder(order: SyncSellOrder)* : void \
    Sincronizza l’aggiunta di un ordine di vendita.
  - *syncAddInternalOrder(order: SyncInternalOrder)* : void \
@@ -2248,9 +2254,278 @@ Può invocare le seguenti funzioni:
    Sincronizza l’aggiornamento dello stato di un ordine.
  - *syncUpdateReservedStock(orderId: SyncOrderId, items: SyncOrderItem[])* : SyncInternalOrder | SyncSellOrder \
    Sincronizza l’aggiornamento delle quantità riservate.
+ - *syncUnreserveStock(SyncOrderId)* : void\
+   Sincronizza la cancellazione delle quantità riservate.
 
 ==== CloudOrdersRepositoryImpl
+/*
+=================================================
+        MICROSERVIZIO INVENTARIO AGGREGATO
+=================================================
+*/
+#pagebreak()
+#label("Inventory Aggregate")
+=== Microservizio Inventario Aggregato
+#figure(
+  image("assets/InventoryAgg.svg", width: 120%),
+  caption: [Schema UML - Microservizio Ordine Aggregato]
+)
+==== Descrizione del microservizio
+Il Microservizio Invia invia eventi al Microservizio Inventario Aggregato, che ha il compito di:
+- Ricevere e consolidare dati sui prodotti provenienti da più magazzini.
+- Offrire una vista centralizzata dello stato dell'inventario.
+- Garantire la quantità tra magazzini differenti al sistema centralizzato.
+===== Funzionalità principali
+- *Aggregazione Inventario *: riceve e consolida dati su prodotti da più magazzini.
+- *Gestione dati *: Manda i dati richiesti dal sistema centralizzato per supportarlo al compimento del processo.
+==== SyncProduct
+  + Rappresenta un prodotto in un magazzino sincronizzato.
 
+Descrizione degli attributi della struttura:
+ - *id*: string \
+    Codice identificativo del prodotto.
+ - *WarehouseId*: number \
+    Codice identificativo del warehouse.
+ - *name*: string \
+    Nome del prodotto.
+ - *uniPrice*: number \
+    Prezzo unitario del prodotto.
+ - *quantity*: number \
+    Quantità disponibile del prodotto.
+ - *minThres*: number \
+    Soglia minima di riordino.
+ - *maxThres*: number \
+    Soglia massima di riordino.
+
+Può invocare le seguenti funzioni:
+ - *getProductId()*: string \
+    Ottiene l’id del prodotto.
+ - *getWarehouseId()*: number \
+    Ottiene l’id del magazzino.
+ - *getName()*: string \
+    Ottiene il nome del prodotto.
+ - *getUnitPrice()*: number \
+    Ottiene il prezzo unitario del prodotto.
+ - *getQuantity()*: number \
+    Ottiene la quantità disponibile del prodotto.
+ - *getQuantityReserved()*: number \
+    Ottiene la quantità riservata del prodotto. 
+ - *getMinThres()*: number \
+    Ottiene la soglia minima di un prodotto.
+ - *getMaxThres()*: number \
+    Ottiene la soglia massima di un prodotto.
+ - *setName(string)*: void \
+    setta il nome del prodotto.
+ - *setUnitPrice(number)*: void \
+    setta il prezzo unitario del prodotto.
+ - *setQuantity(number)*: void \
+    setta la quantità disponibile del prodotto.
+ - *setQuantityReserved(number)*: void \
+    setta la quantità riservata del prodotto.
+ - *setMinThres(number)*: void \
+    setta la soglia minima di un prodotto. 
+ - *setMaxThres(number)*: void \
+    setta la soglia massima di un prodotto.
+
+==== SyncProductId
+ + Rappresenta l’identificativo del prodotto sincronizzato.
+
+Descrizione degli attributi della struttura:
+ - *id*: string \
+    Codice identificativo del prodotto.
+
+Può invocare le seguenti funzioni:
+  - *getId(): string* \
+      Restituisce l’id del prodotto.
+==== SyncWarehouseId
+ + Rappresenta l’identificativo del magazzino sincronizzato.
+
+Descrizione degli attributi della struttura:
+ - *warehouseId*: number \
+   Codice identificativo del magazzino.
+
+Può invocare le seguenti funzioni:
+ - *getId(): number* \
+   Restituisce l’id del magazzino.
+
+==== SyncInventory
+ + Rappresenta l’inventario di un magazzino sincronizzato.
+
+Descrizione degli attributi della struttura:
+ - *productList : SyncProduct[]* \
+   Array dei prodotti presenti nel magazzino. 
+Può invocare le seguenti funzioni:
+ - *getInventory() : SyncProduct[]* \
+   Restituisce l’array dei prodotti presenti nel magazzino.
+
+==== CloudInventoryService
+ + Logica di business del microservizio Aggregate Inventory.
+
+Può invocare le seguenti funzioni:
+  - *syncAddStock(SyncProduct)*: void \
+    Effettua la sincronizzazione dell'aggiunta di un prodotto facendo la chiamata del metodo sulla repository.
+  - *syncRemoveStock(SyncProductId, SyncWarehouseId)*: void \
+    Effettua la sincronizzazione della rimozione di un prodotto facendo la chiamata del metodo sulla repository.
+  - *syncEditStock(SyncProduct)*: void
+    Effettua la sincronizzazione della modifica di un prodotto facendo la chiamata del metodo sulla repository.
+  - *getAllProducts()*: SyncInventoryDTO
+    Effettua la sincronizzazione dell'ottenimento di tutti i prodotti aggregati facendo la chiamata del metodo sulla repository.
+  - *getAll()*: SyncInventoryDTO
+    Effettua la sincronizzazione dell'ottenimento di tutti i prodotti in generale per ognuno il magazzino di appartenenza facendo la chiamata del metodo sulla repository.
+  - *getProductAggregate(id: SyncProductID)*: SyncProduct
+    Effettua la sincronizzazione dell'ottenimento di un prodotto aggregato tramite id facendo la chiamata del metodo sulla repository.
+  - *getProduct(id: SyncProductID, warehouseid: SyncWarehouseId)* : SyncProduct
+    Effettua la sincronizzazione dell'ottenimento di un prodotto tramite id e magazzino facendo la chiamata del metodo sulla repository.
+==== SyncProductDTO
+  + Rappresenta un dto in un magazzino sincronizzato.
+
+Descrizione degli attributi della struttura:
+ - *id*: string \
+    Codice identificativo del prodotto in DTO.
+ - *WarehouseId*: number \
+    Codice identificativo del warehouse in DTO.
+ - *name*: string \
+    Nome del prodotto in DTO.
+ - *uniPrice*: number \
+    Prezzo unitario del prodotto in DTO.
+ - *quantity*: number \
+    Quantità disponibile del prodotto in DTO.
+ - *minThres*: number \
+    Soglia minima di riordino in DTO.
+ - *maxThres*: number \
+    Soglia massima di riordino in DTO.
+==== SyncProductIdDTO
+ + Rappresenta l’identificativo del prodotto sincronizzato in DTO.
+
+Descrizione degli attributi della struttura:
+ - *id*: string \
+    Codice identificativo del prodotto.
+
+==== SyncWarehouseIdDTO
+ + Rappresenta l’identificativo del magazzino sincronizzato in DTO.
+
+Descrizione degli attributi della struttura:
+ - *warehouseId*: number \
+   Codice identificativo del magazzino in DTO.
+
+==== SyncInventoryDTO
+ + Rappresenta l’inventario di un magazzino sincronizzato in DTO.
+
+Descrizione degli attributi della struttura:
+ - *productList : SyncProduct[]* \
+   Array dei prodotti presenti nel magazzino in DTO. 
+==== DataMapper
+ + Gestisce la conversione tra DTO e oggetti di dominio per gli ordini sincronizzati.
+
+== Funzioni di sincronizzazione Inventory/Product
+
+Può invocare le seguenti funzioni:
+- *syncProductToDomain(dto: SyncProductDTO)* : SyncProduct \
+  Converte un DTO di prodotto in oggetto di dominio.
+- *syncProductIdToDomain(dto: SyncProductIdDTO)* : SyncProductId \
+  Converte un DTO di identificativo prodotto in oggetto di dominio.
+- *syncWarehouseIdToDomain(dto: SyncWarehouseIdDTO)* : SyncWarehouseId \
+  Converte un DTO di identificativo magazzino in oggetto di dominio.
+- *syncInventoryToDomain(dto: SyncInventoryDTO)* : SyncInventory \
+  Converte un DTO di inventario in oggetto di dominio.
+- *syncProductToDTO(product: SyncProduct)* : SyncProductDTO \
+  Converte un oggetto di dominio Product in DTO.
+- *syncProductIdToDTO(productId: SyncProductId)* : SyncProductIdDTO \
+  Converte un oggetto di dominio ProductId in DTO.
+- *syncWarehouseIdToDTO(warehouseId: SyncWarehouseId)* : SyncWarehouseIdDTO \
+  Converte un oggetto di dominio WarehouseId in DTO.
+- *syncInventoryToDTO(inventory: SyncInventory)* : SyncInventoryDTO \
+  Converte un oggetto di dominio Inventory in DTO.
+
+==== CloudStockController
+ + Gestisce tutti gli eventi in ingresso relativi ai prodotti sincronizzati.
+
+Può invocare le seguenti funzioni:
+- *syncAddedStock(SyncProductDTO)*: void\
+  Metodo che andrà a chiamare la sincronizza l'aggiunta di un prodotto effettuando un altra chiamata metodo del service.
+- *syncRemovedStock(SyncProductIdDTO, SyncWarehouseIdDTO)*: void\
+  Metodo che andrà a chiamare la sincronizza la rimozione di un prodotto effettuando un altra chiamata metodo del service.
+- *syncEditedStock(SyncProductDTO)*: void\
+  Metodo che andrà a chiamare lasincronizza la modifica di un prodotto effettuando un altra chiamata metodo del service.
+- *getAllProducts()*: SyncInventoryDTO\
+  Metodo che andrà ad ottenere una lista di tutti i prodotti aggregati effettuando un altra chiamata metodo del service.
+- *getAll()*: SyncInventoryDTO\
+  Metodo che andrà ad ottenere una lista di tutti i prodotti in generale per ognuno il magazzino di appartenenza effettuando un altra chiamata metodo del service.
+- *getProductAggregate(id: SyncProductIDDTO)*: SyncProductDTO\
+  Metodo che andrà a ricavare un prodotto aggregato tramite id effettuando un altra chiamata metodo del service.
+- *getProduct(id: SyncProductIDDTO, warehouseid: SyncWarehouseIdDTO)* : SyncProductDTO\
+  Metodo che andrà a ricavare un prodotto tramite id e magazzino effettuando un altra chiamata metodo del service.
+==== SyncAddedStockEvent
+ + Gestisce gli eventi in ingresso relativi all'aggiunta di un prodotto per la sincronizzazione effettuando un altra chiamata metodo del service.
+
+Può invocare le seguenti funzioni:
+- *syncAddedStock(SyncProductDTO)*: void\
+  sincronizza l'aggiunta di un prodotto.
+
+==== SyncRemovedStockEvent
+ + Gestisce gli eventi in ingresso relativi alla rimozione di un prodotto per la sincronizzazione.
+
+Può invocare le seguenti funzioni:
+  - *syncRemovedStock(SyncProductIdDTO, SyncWarehouseIdDTO)*: void\
+    sincronizza la rimozione di un prodotto.
+
+==== SyncEditedStockEvent
+  + Gestisce gli eventi in ingresso relativi alla modifica di un prodotto per la sincronizzazione.
+
+Può invocare le seguenti funzioni:
+  - *syncEditedStock(SyncProductDTO)*: void\
+    sincronizza la modifica di un prodotto.
+
+==== getAllProductsUsecase
+ + Permette di richiedere la visualizzazione di tutti i prodotti aggregati.
+
+Può invocare le seguenti funzioni:
+- *getAllProducts()*: SyncInventoryDTO\
+   ottiene una lista di tutti i prodotti aggregati.
+
+==== GetAllUseCase
+  + Permette di richiedere la visualizzazione di tutti i prodotti in generale per ognuno il magazzino di appartenenza.
+
+Può invocare le seguenti funzioni:
+ - *getOrderState(orderIdDTO: SyncOrderIdDTO)* : SyncOrderStateDTO \
+   Restituisce lo stato dell’ordine specificato.
+
+==== GetOrderUseCase
+ + Permette di richiedere la visualizzazione di un ordine specifico.
+
+- *getAll()*: SyncInventoryDTO\
+    ottiene una lista di tutti i prodotti in generale per ognuno il magazzino di appartenenza.
+
+==== GetStockUseCase
+  + Permette di richiedere la visualizzazione di un prodotto specifico.
+
+Può invocare le seguenti funzioni:
+  - *getProductAggregate(id: SyncProductIDDTO)*: SyncProductDTO\
+      ottiene un prodotto aggregato tramite id.
+  - *getProduct(id: SyncProductIDDTO, warehouseid: SyncWarehouseIdDTO)* : SyncProductDTO\
+      ottiene un prodotto tramite id e magazzino.
+
+==== CloudInventoryRepository
+ + Gestisce la persistenza e l’accesso ai dati degli ordini sincronizzati.
+
+Può invocare le seguenti funzioni:
+- *getAllProducts()* : SyncInventory \
+   Ottieni la lista di tutti i prodotti aggregati.
+- *getAll()* : SyncInventory \ 
+   Ottieni la lista di tutti i prodotti in generale per ognuno il magazzino di appartenenza.
+- *getProduct()* : SyncProduct \
+   Ottiene un prodotto tramite id e magazzino.
+- *getProductAggregate()* : SyncProduct \
+  Ottiene un prodotto aggregato tramite id.
+- *syncAddStock(SyncProduct)* : void \
+   aggiunge un prodotto.
+- *syncRemoveStock(SyncProductId, SyncWarehouseId)* : void \
+    rimuove un prodotto.
+- *syncEditStock(SyncProduct)* : void \
+    modifica un prodotto.
+
+
+==== InventoryRepositoryImpl
 /*
 =================================================
     MICROSERVIZIO SISTEMA CENTRALIZZATO
@@ -2259,6 +2534,10 @@ Può invocare le seguenti funzioni:
 #pagebreak()
 #label("Central System")
 === Sistema Centrale
+#figure(
+  image("assets/CentralSystem.svg", width: 120%),
+  caption: [Schema UML - Microservizio Sistema Centralizzato]
+)
 ==== Descrizione del microservizio
 Il *Sistema Centralizzato* rappresenta il componente core dell’architettura, responsabile del coordinamento delle operazioni e 
 della gestione integrata delle informazioni provenienti dai diversi microservizi.  
@@ -2494,7 +2773,6 @@ Descrizione degli attributi della struttura:
   Magazzino di destinazione.
 - *sellOrderReference*: OrderIdDTO \
   Riferimento a ordine di vendita.
-
 
 ==== WarehouseIdDTO
  + Identificativo del magazzino nella versione DTO.
@@ -2816,8 +3094,8 @@ Può invocare le seguenti funzioni:
     MICROSERVIZIO AUTENTICAZIONE
 =================================================
 */
-#label("Auth")
 #pagebreak()
+#label("Auth")
 === Microservizio Autenticazione
 // Breve spiegazione + Immagine
 #figure(
@@ -3096,6 +3374,10 @@ Può invocare le seguenti funzioni:
 #pagebreak()
 === Microservizio Routing
 // Breve spiegazione + Immagine
+#figure(
+  image("assets/Routing.svg", width: 120%),
+  caption: [Schema UML - Microservizio Routing]
+)
 ==== Descrizione del microservizio
 Il microservizio di Routing è il componente dedicato alla logica di calcolo della distanza e della sequenza ottimale dei magazzini. 
 La sua funzione principale è fornire al Sistema Centralizzato le informazioni necessarie per prendere decisioni rapide ed efficaci in merito 
@@ -3113,8 +3395,13 @@ Può invocare le seguenti funzioni:
   Rimuove un indirizzo di magazzino non più attivo.
 - *addAddress(warehouseAddress: WarehouseAddressDTO)*: void \
   Aggiunge un nuovo indirizzo di magazzino al sistema di routing.
-
-==== QuantitaCriticaEvent
+- *createWarehouse(dto: {state:string, address:string})*: Promise`<string>`\
+  Crea un nuovo magazzino nel sistema di routing.
+- *receiveRequest(warehouseid : WarehouseIdDTO)* : Promise`<void>` \
+  Riceve la richiesta di calcolo delle distanze da un magazzino critico.
+- *updateWarehouseState(warehouseState: WarehouseStateDTO)*: Promise`<void>` \
+  Riceve l'aggiornamento dello stato di un magazzino.
+==== criticQuantityEvent
 + Rappresenta l’evento emesso dal sistema centralizzato quando si verifica una criticità di quantità.  
   Viene ascoltato dal microservizio *Routing* e viene suddiviso due casi:  
   - quando uno o più prodotti dell'inventario di un magazzino scendono sotto la soglia minima,  
@@ -3122,29 +3409,45 @@ Può invocare le seguenti funzioni:
 + In entrambi i casi, il sistema centralizzato emette questo evento e il microservizio Routing lo riceve per avviare le azioni conseguenti.
 
 Può invocare le seguenti funzioni:
-- *receiveRequest(warehouseId: WarehouseIdDTO)*: void \
+- *receiveRequest(warehouseId: WarehouseIdDTO)*: Promise`<void>` \
   Riceve dal sistema centralizzato l’ID di un magazzino critico e lo inoltra al *RoutingService* per calcolare la sequenza di distanza rispetto agli altri magazzini.
 
 ==== ReceiveWarehouseState
 + Rappresenta il componente che gestisce l’aggiornamento dello stato di un magazzino in base ai dati ricevuti.
 
 Può invocare le seguenti funzioni:
-- *updateWarehouseState(warehouseState: WarehouseStateDTO)*: void \
+- *updateWarehouseState(warehouseState: WarehouseStateDTO)*: Promise`<void>` \
   Aggiorna lo stato di un magazzino in base ai dati ricevuti.
+
+==== WarehouseSubscriber
++ Rappresenta il componente che si occupa di ricevere gli eventi relativi alla creazione di un nuovo magazzino.
+
+Può invocare le seguenti funzioni:
+- *createWarehouse(dto: {state:string, address:string})*: Promise`<string>`\
+  Crea un nuovo magazzino nel sistema di routing.
+
+==== WarehouseAddressSubscriber
++ Rappresenta il componente che si occupa di ricevere gli eventi relativi alla gestione degli indirizzi dei magazzini.
+
+Può invocare le seguenti funzioni:
+- *updateAddress(warehouseAddress: WarehouseAddressDTO)*: void \
+  Aggiorna un indirizzo di magazzino già registrato nel sistema.
+- *removeAddress(warehouseAddress: WarehouseAddressDTO)*: void \
+  Rimuove un indirizzo di magazzino non più attivo.
+- *addAddress(warehouseAddress: WarehouseAddressDTO)*: void \
+  Aggiunge un nuovo indirizzo di magazzino al sistema di routing.
 
 ==== RoutingService
 + Rappresenta il servizio applicativo che si occupa della logica di business relativa al calcolo delle distanze tra magazzini e alla gestione degli indirizzi.
 
-Descrizione degli attributi della struttura:
-- *warehouseId*: WarehouseId \
-  L’identificativo del magazzino di riferimento per le operazioni.
-- *warehouseAddress[]*: WarehouseAddress \
-  Un array contenente gli indirizzi di tutti i magazzini noti al sistema.
-
 Può invocare le seguenti funzioni:
 - *calculateDistance()*: WarehouseId[] \
   Esegue il calcolo della distanza tra il magazzino di riferimento e tutti gli altri, restituendo un array di WarehouseId ordinato per distanza.
-
+- *updateWarehouseAddress(warehouseId: WarehouseId, address: string)*: Promise`<void>`
+- *removeWarehouseAddress(warehouseId: WarehouseId)*: Promise`<void>`
+- *saveWarehouseAddress(warehouseId: WarehouseId, address: string)*: Promise`<void>`
+- *updateWarehouseState(warehouseId: WarehouseId, state: string)*: Promise`<void>`
+- *saveWarehouse(state:string, address:string)*: Promise`<string>`
 ==== RoutingRepository
 + Rappresenta il repository incaricato della persistenza e recupero delle informazioni relative ai magazzini, indirizzi e stati.
 
@@ -3171,7 +3474,8 @@ Può invocare le seguenti funzioni:
   Recupera lo stato di un magazzino tramite il suo ID.
 - *getAllWarehouseStates()*: WarehouseState[] \
   Recupera gli stati di tutti i magazzini.
-
+- *updateWarehouseState(state: WarehouseState)*: Promise`<void>` \
+  Aggiorna lo stato di un magazzino.
 ==== DataMapper
 + Rappresenta il componente che si occupa della conversione tra oggetti di dominio e DTO, assicurando la separazione dei livelli applicativi.
 
