@@ -16,7 +16,7 @@
 #let titolo = "Piano di Qualifica"
 #let status = "In redazione"
 #let destinatario = "M31"
-#let versione = "1.2.0"
+#let versione = "2.0.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -27,6 +27,18 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+
+  [2.0.0],
+  [14/09/2025],
+  [A. Shu],
+  [S. Speranza],
+  [Approvazione del documento],
+
+  [1.4.0],
+  [14/09/2025],
+  [N. Moretto],
+  [S. Speranza],
+  [Aggiornamento dei grafici del Cruscotto di Valutazione],
 
   [1.3.0],
   [11/09/2025],
@@ -1465,10 +1477,10 @@ I test di accettazione vengono eseguiti per verificare che il software soddisfi 
 Il cruscotto di valutazione dei costi permette di monitorare l'andamento dei costi rispetto a quelli pianificati, evidenziando eventuali scostamenti e permettendo una gestione più efficace del budget. Le metriche principali includono il valore atteso, il costo attuale, il valore effettivo, l'indice di prestazione dei costi e il preventivo al completamento.
 
 #let valori_grafico_costi_atteso = (
-  (1,970), (2,1020), (3,1145), (4,1160), (5,1090), (6,1150), (7,980), (8,680), (9,1220), (10,1540), (11,1790), (12,1470)
+  (1,970), (2,1020), (3,1145), (4,1160), (5,1090), (6,1150), (7,980), (8,680), (9,1220), (10,1300), (11,1350), (12,1200)
 )
 #let valori_grafico_costi_reale = (
-  (1,970), (2,790), (3,1140), (4,1220), (5,955), (6,985), (7,980), (8,530), (9,1205), (10,1380)
+  (1,970), (2,790), (3,1140), (4,1220), (5,955), (6,985), (7,980), (8,530), (9,1205), (10,1380), (11, 1670), (12,1410)
 )
 #show figure: set block(breakable: false)
 #show : graph_line.with(
@@ -1487,16 +1499,18 @@ Il cruscotto di valutazione dei costi permette di monitorare l'andamento dei cos
 Possiamo osservare che il costo atteso e il costo reale sono molto vicini, con un leggero scostamento nei primi sprint. Questo indica una buona gestione dei costi fino a questo punto del progetto.\
 Gli scostamenti sono minimi e non superano il 10% rispetto al costo atteso, il che è un buon segno di stabilità finanziaria del progetto.
 
+Nella fase PB notiamo uno scostamento più significativo tra costo atteso e costo reale, dovuto principalmente alla fase di programmazione dell'MVP.\
+
 == 5.2 Grafico valore atteso ed effettivo
 
 Il grafico del valore atteso ed effettivo mostra l'andamento del valore pianificato rispetto al valore effettivo ottenuto fino ad oggi.
 Partendo dal budget iniziale di 14.430€, il valore atteso ed effettivo diminuisce progressivamente, in base ai costi sostenuti per ogni sprint. Il valore atteso rappresenta il budget pianificato per ogni sprint, mentre il valore effettivo rappresenta i costi reali sostenuti fino a quel momento.
 
 #let valori_grafico_valore_atteso = (
-  (0, 14430), (1, 13460), (2, 12440), (3, 11295), (4, 10135), (5, 9045), (6, 7895), (7, 6915), (8, 6235), (9,5640), (10,4100), (11,2310)
+  (0, 14430), (1, 13460), (2, 12440), (3, 11295), (4, 10135), (5, 9045), (6, 7895), (7, 6915), (8, 6235), (9,5640), (10,4100), (11,2310), (12,1110)
 )
 #let valori_grafico_valore_effettivo = (
-  (0, 14430), (1, 13460), (2, 12670), (3, 11530), (4, 10310), (5, 9355), (6, 8370), (7, 7390), (8, 6860), (9,5655), (10,4275)
+  (0, 14430), (1, 13460), (2, 12670), (3, 11530), (4, 10310), (5, 9355), (6, 8370), (7, 7390), (8, 6860), (9,5655), (10,4275), (11,2605), (12,1195)
 )
 #show figure: set block(breakable: false)
 #show : graph_line.with(
@@ -1516,6 +1530,8 @@ Dal grafico si evince che il valore atteso diminuisce progressivamente, mentre i
 Abbiamo sempre preventivato in modo conservativo per evitare di sforare il budget iniziale, e questo approccio si è dimostrato efficace fino ad ora.\
 Infatti, mantenendo questa tendenza riguardo il valore effettivo, possiamo notare che il progetto dovrebbe rimanere entro i limiti del budget iniziale di 14.430€.
 
+Dopo aver ultimato la fase di PB, notiamo che il valore effettivo si avvicina molto al valore atteso, segno che la pianificazione è stata accurata e che i costi sono stati gestiti in modo efficace, portando a un risparmio complessivo di 1.195€ rispetto al budget iniziale.
+
 
 == 5.3 Indice di prestazione dei tempi (tempo attuale e tempo pianificato per ogni sprint)
 
@@ -1523,7 +1539,7 @@ Il grafico dell'indice di prestazione dei tempi mostra l'andamento del tempo pia
 L'indice di prestazione dei tempi (SPI) è calcolato come il rapporto tra il valore pianificato e il valore effettivo. Se l'SPI è maggiore di 1, significa che il progetto sta procedendo più velocemente del previsto; se è inferiore a 1, significa che il progetto sta procedendo più lentamente del previsto.
 
 #let valori_grafico_spi = (
-  (1, 1.0), (2, 0.95), (3, 0.9), (4, 0.85), (5, 0.8), (6, 0.75), (7, 0.8), (8, 0.85), (9, 0.85), (10, 0.8)
+  (1, 1.0), (2, 0.95), (3, 0.9), (4, 0.85), (5, 0.8), (6, 0.75), (7, 0.8), (8, 0.85), (9, 0.85), (10, 0.8), (11, 0.85), (12, 0.9)
 )
 #show figure: set block(breakable: false)
 #show : graph_bar.with(
@@ -1542,13 +1558,15 @@ L'indice di prestazione dei tempi mostra una tendenza al ribasso, indicando che 
 Come si può notare dal grafico, abbiamo subito dei rallentamenti negli sprint centrali, dovuti allo studio delle tecnologie non conosciute e alla complessità dell'Analisi dei Requisiti#super[G] e della progettazione. \
 Tuttavia, nell'ultimo sprint, che riguarda la fase di sviluppo del PoC, abbiamo recuperato parte del tempo perso, portando l'indice di prestazione dei tempi a 0.8. Il team prevede di mantenere questo ritmo di recupero anche nei prossimi sprint, cercando di migliorare ulteriormente l'efficienza.
 
+Durante la fase di PB, l'indice di prestazione dei tempi è aumentato rispetto agli sprint precedenti, raggiungendo un valore di 0.9 nell'ultimo sprint. Questo indica che il team è riuscito a recuperare parte del tempo perso in precedenza, grazie a una migliore pianificazione e gestione del lavoro, oltre che ad una fase di studio pressoché completata.\
+
 
 == 5.4 Grafico indice di stabilità dei requisiti
 
 Il grafico dell'indice di stabilità dei requisiti mostra l'andamento della stabilità dei requisiti nel tempo. L'indice di stabilità dei requisiti è calcolato come il rapporto tra il numero di requisiti stabili e il numero totale di requisiti. Un indice più alto indica una maggiore stabilità dei requisiti, mentre un indice più basso indica una minore stabilità.
 
 #let valori_grafico_stabilita_requisiti = (
-  (1, 0.43), (2, 0.64), (3, 0.86), (4, 0.81), (5, 0.55), (6, 0.68), (7, 0.82), (8, 0.82), (9, 0.82),
+  (1, 0.43), (2, 0.64), (3, 0.86), (4, 0.81), (5, 0.55), (6, 0.68), (7, 0.82), (8, 0.82), (9, 0.82), (10, 0.82), (11, 0.82), (12, 0.82)
 )
 #show figure: set block(breakable: false)
 #show : graph_bar.with(
@@ -1563,6 +1581,8 @@ Il grafico dell'indice di stabilità dei requisiti mostra l'andamento della stab
 )
 
 L'indice di stabilità dei requisiti mostra una tendenza al ribasso nel quinto sprint, a causa delle modifiche apportate ai requisiti dopo il primo incontro con il #p.cardin. Tuttavia, negli sprint successivi, l'indice è aumentato nuovamente, raggiungendo un picco dell'82% nell'ultimo sprint. Questo suggerisce che le modifiche apportate grazie ai consigli del #p.cardin hanno avuto un impatto positivo sulla stabilità dei requisiti e che il team sta lavorando per mantenere questa stabilità anche nei prossimi sprint.
+
+Durante la fase di PB, l'indice di stabilità dei requisiti è rimasto costante, indicando che non sono state apportate modifiche significative ai requisiti.
 
 == 5.5 Grafico indice di Gulpease
 

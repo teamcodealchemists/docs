@@ -65,7 +65,7 @@
       canvas({
       plot.plot(
         size: (13, 7),
-        x-max: 11.5,
+        x-max: 12.5,
         x-min: 0.5,
         y-max: (y-max),
         y-min: (y-min),
