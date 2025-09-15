@@ -2109,8 +2109,6 @@ Nel corso del dodicesimo sprint#super[G], il team ha concentrato gli sforzi sul 
 
 = Riassunto delle risorse utilizzate durante il progetto
 
-
-
 #align(center)[
     #figure(
   table(
