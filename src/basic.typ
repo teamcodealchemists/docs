@@ -277,6 +277,48 @@
   doc
 }
 
+#let unit_table(
+  voci: (),
+  caption: (),
+  doc
+) = {
+  set align(center)
+  
+  show figure: set block(breakable: true)
+  set table.cell(breakable: true)
+  set table(
+    align: (center, center, center, center),
+    fill:(_,y)=>if y==0 {silver},
+    inset: (_, y) => if y == 0 { 7pt } else { 10pt }
+  )
+
+  set text(
+    size: 11pt,
+    hyphenate: true,
+  )
+
+  set table.cell(
+    align: horizon
+  )
+
+  v(4pt)
+    figure(
+      block(
+        table(
+          columns: (1fr, 2fr, 2fr, 0.5fr),
+          table.header(
+            [*Codice*], [*Descrizione*], [*Valore atteso*], [*Stato*]
+          ),
+          ..voci,
+      ),
+      breakable: true,
+      ),
+      caption: caption,
+    )
+  set align(left)
+  doc
+}
+
 #let automiglioramento_table(
   header: (),
   voci: (),
