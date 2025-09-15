@@ -14,7 +14,6 @@
   p.nicholas,
   p.matteo,
   p.alex,
-  p.stefano,
   p.ramona,
 )
 #let distribuzione = (
@@ -29,7 +28,7 @@
   
   [2.0.0], [15/09/2025], [_M31_], [-], [Approvazione del documento da parte di _M31_],
   [1.0.0], [15/09/2025], [R. Zangla], [N. Moretto], [Approvazione interna del documento],
-  [0.1.0], [15/09/2025], [],[N. Moretto], [Redazione iniziale del documento],
+  [0.1.0], [15/09/2025], [R. Zangla],[N. Moretto], [Redazione iniziale del documento],
   [0.0.1], [15/09/2025], [N. Bolzon],[N. Moretto], [Creazione template docuemento]
 
 )
@@ -59,7 +58,7 @@
 
 // INSERIRE QUI CONTENUTO
 = 1. Informazioni generali
-  In data *15 sttembre 2025*, dalle ore *11:00* alle ore *12:00*, si è svolta, in modalità virtuale tramite la piattaforma _Microsoft Teams_, una riunione con l'azienda _M31_ per presentare il _MVP_.
+  In data *15 sttembre 2025*, dalle ore *11:00* alle ore *11:50*, si è svolta, in modalità virtuale tramite la piattaforma _Microsoft Teams_, una riunione con l'azienda _M31_ per presentare il _MVP_.
   
   A questo incontro hanno partecipato per conto di _M31_:
   - Moones Mobaraki,
@@ -74,16 +73,16 @@
 = 2. Dettagli della riunione
 
 == 2.1 Presentazione del _Minimum Viable Product_
-Durante la riunione, il _Team Code Alchemist_ ha fornito ad _M31_ alcuni chiarimenti riguardo allo sviluppo delle componenti del Sistema. Successivamente, ha proceduto con l’esecuzione in tempo reale dei test di accettazione, inviati la settimana precedente nel documento Test Book.
+Durante la riunione, il _Team Code Alchemist_ ha fornito ad _M31_ alcuni chiarimenti riguardo allo sviluppo delle componenti del Sistema.\ Successivamente, ha proceduto con l’esecuzione in tempo reale dei test di accettazione che avevano riscontrato un errore, inviati la settimana precedente nel documento Test Book.
 
-*M31* ha potuto constatare che i test producevano i risultati attesi e ha espresso soddisfazione per quanto realizzato.
+*M31* ha potuto constatare che i test che fallivano ora producono i risultati attesi e ha espresso soddisfazione per quanto realizzato.
 
 == 2.2 Accettazione formale del _Minimum Viable Product_
-*M31* dichiara formalmente di essere soddisfatta del lavoro sviluppato dal _Team Code Alchemists_. \
+*M31* dichiara formalmente di essere soddisfatta del lavoro sviluppato dal _Team Code Alchemists_ e di approvare il _Minimum Viable Product_. \
 
 Tale accettazione formale è attestata dalla firma, riportata di seguito, di uno dei rappresentanti dell'azienda e partecipante alla riunione:
 
-
+#firma(destinatario: destinatario)[]
 
 
 #pagebreak()
