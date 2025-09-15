@@ -45,7 +45,7 @@
 Gentili Proff. Vardanega e Cardin,
 #v(0.5cm)
 
-Con la presente lettera, il Team _Code Alchemists_ desidera candidarsi formalmente alla *revisione PB (Product Basaline)* del progetto:\
+Con la presente lettera, il Team _Code Alchemists_ desidera candidarsi formalmente alla *revisione PB (Product Baseline)* del progetto:\
 
 #v(0.2cm)
 #align(center, text(12pt)[
