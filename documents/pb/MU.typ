@@ -203,48 +203,255 @@
 
 
   = Funzionalità implementate
+    == Autenticazione 
+      === Registrarsi come supervisore locale
+      Il sistema prevede l'autenticazione tramite token JWT ...
+
+      === Registrarsi come supervisore globale
+
+      === Accedere come supervisore locale
+
+      === Accedere come supervisore globale
+
     == Gestione di magazzini
       === Creazione di un magazzino
+      Il sistema permette la creazione di un nuovo magazzino locale.
 
       === Visualizzazione dello stato di un magazzino
-      
+      Il sistema permette la visualizzazione dello stato (online/offline) di uno specifico magazzino locale.
+
       === Visualizzazione dello stato di tutti i magazzini presenti in rete
+      Il sistema permette la visualizzazione dello stato di tutti i magazzini presenti in rete.
 
     == Gestione prodotti
-      === Inserimento prodotti in un Inventario
+      === Inserimento prodotto in un Inventario
+      Il sistema permette l'inserimento di un nuovo prodotto nell'inventario di uno specifico magazzino locale. Per aggiungere un nuovo prodotto a un inventario è necessario essere il supervisore locale del magazzino in cui effettuare tale operazione. 
+      
+      Presupponendo che i dati del prodotto da inserire nel magazzino siano di questo tipo: \
+      { \
+           "id": 123, \
+          "name": "Penne", \
+          "unitPrice": 1.99,\
+          "quantity": 0, \
+          "minThres": 0, \
+          "maxThres": 100\
+      },
+
+      il comando da inserire per aggiungere un nuovo prodotto all'interno di uno specifico inventario è del tipo: POST "http:/localhost:8080/api/warehouse/1/stock/new", dove '1' corrisponde al numero di magazzino in cui aggiungere il nuovo prodotto.
+
+      Per poter verificare l'avvenuto inserimento del prodotto nell'inventario, è consigliato consultare la sezione "4.3.2 - Visualizzazione dati di un singolo prodotto".
 
       === Visualizzazione dati di un singolo prodotto
+      Il sistema permette la visualizzazione dei dati di un singolo prodotto, presente all'interno di uno specifico magazzino locale.
+
+      Il comando da inserire per visualizzare i dati di un prodotto esistente all'interno di un inventario locale è del tipo: GET "http:/localhost:8080/api/warehouse/1/stock/123", dove '1' corrisponde al numero di magazzino da cui prelevare i dati del prodotto e '123' è l'id del prodotto interessato.
 
       === Rimozione prodotti da un Inventario
+      Il sistema permette la rimozione di prodotti all'interno dell'Inventario di uno specifico magazzino locale. Per rimuovere un prodotto da un Inventario è necessario essere il supervisore locale del magazzino in cui effettuare tale operazione.
+
+      Il comando da inserire per rimuovere un prodotto esistente dall'inventario è del tipo: DELETE "http:/localhost:8080/api/warehouse/1/stock/123/delete", dove '1' corrisponde al numero di magazzino da cui rimuovere il prodotto e '123' è l'id del prodotto da eliminare.
+
+      Per verificare l'avvenuta rimozione del prodotto dall'inventario, è consigliato consultare la sezione "4.3.2 - Visualizzazione dati di un singolo prodotto" tentando di visualizzare il prodotto rimosso.
       
       === Modifica quantità disponibile di un prodotto da un Inventario
+      Il sistema permette la modifica della quantità disponibile di un prodotto a un Inventario di uno specifico magazzino locale.
+
+      Per modificare la quantità di un prodotto è necessario essere il supervisore locale del magazzino in cui effettuare tale operazione.
+
+      Presupponendo che i dati già presenti nel magazzino del prodotto da modificare siano del tipo: \
+      { \
+          "name": "Penne", \
+          "unitPrice": 45, \
+          "quantity": 10, \
+          "quantityReserved": 0, \
+          "minThres": 0, \
+          "maxThres": 20 \
+      } \
+      
+      e che i dati aggiornati del prodotto da modificare nel magazzino siano del tipo: \
+      { \
+          "name": "Penne", \
+          "unitPrice": 45, \
+          "quantity": 15, \
+          "quantityReserved": 0, \
+          "minThres": 0, \
+          "maxThres": 20 \
+      }, \
+
+      il comando da inserire per modificare la quantità disponibile di un prodotto esistente è del tipo: POST "http:/localhost:8080/api/warehouse/1/stock/123/set", dove '1' corrisponde al numero di magazzino in cui modificare il prodotto e '123' è l'id del prodotto da aggiornare.
+
+      Per verificare l'avvenuta modifica della quantità del prodotto, è consigliato consultare la sezione "4.3.2 - Visualizzazione dati di un singolo prodotto".
 
       === Modifica prezzo unitario di un prodotto
+      Il sistema prevede la modifica del prezzo unitario di un prodotto all'interno del catalogo del magazzino. Per modificare il prezzo unitario di un prodotto è necessario essere il supervisore locale del magazzino in cui effettuare tale operazione.
 
-      === Modifica dei valori di soglia minima e soglia massima di un tipo di prodotto per un magazzino
+      Presupponendo che i dati già presenti nel magazzino del prodotto da modificare siano del tipo: \
+      { \
+          "name": "Penne", \
+          "unitPrice": 1.99, \
+          "quantity": 10, \
+          "quantityReserved": 0, \
+          "minThres": 0, \
+          "maxThres": 20 \
+      } \
+      
+      e che i dati una volta aggiornati del prodotto da modificare nel magazzino siano del tipo: \
+      { \
+          "name": "Penne", \
+          "unitPrice": 4.99, \
+          "quantity": 10, \
+          "quantityReserved": 0, \
+          "minThres": 0, \
+          "maxThres": 20 \
+      }, \
+
+      il comando da inserire per modificare il prezzo unitario di un prodotto esistente è del tipo: POST "http:/localhost:8080/api/warehouse/1/stock/123/set", dove '1' corrisponde al numero di magazzino in cui modificare il prodotto e '123' è l'id del prodotto da aggiornare.
+
+      Per verificare l'avvenuta modifica del prezzo del prodotto, è consigliato consultare la sezione "4.3.2 - Visualizzazione dati di un singolo prodotto".
+
+      === Modifica dei valori di soglia minima e/o soglia massima di un prodotto
+      Il sistema prevede la modifica dei valori di soglia minima e soglia massima di un tipo di prodotto per un magazzino specifico. Per modificare la soglia minima e massima di un prodotto è necessario essere il supervisore locale del magazzino in cui effettuare tale operazione.
+      
+      Presupponendo che i dati già presenti nel magazzino del prodotto da modificare siano del tipo: \
+      { \
+          "name": "Penne", \
+          "unitPrice": 1.99, \
+          "quantity": 10, \
+          "quantityReserved": 0, \
+          "minThres": 0, \
+          "maxThres": 20 \
+      } \
+      
+      e che i dati aggiornati del prodotto da modificare nel magazzino siano del tipo: \
+      { \
+          "name": "Penne", \
+          "unitPrice": 1.99, \
+          "quantity": 10, \
+          "quantityReserved": 0, \
+          "minThres": 5, \
+          "maxThres": 30 \
+      }, \
+
+      il comando da inserire per modificare le soglie di un prodotto esistente è del tipo: POST "http:/localhost:8080/api/warehouse/1/stock/123/set", dove '1' corrisponde al numero di magazzino in cui modificare il prodotto e '123' è l'id del prodotto da aggiornare.
+
+      Per verificare l'avvenuta modifica delle soglie del prodotto, è consigliato consultare la sezione "4.3.2 - Visualizzazione dati di un singolo prodotto".
 
       === Visualizzazione dei prodotti presenti in un magazzino
-      
+      Il sistema prevede la visualizzazione dei prodotti presenti in un magazzino specifico.
+
+      Il comando da inserire per visualizzare tutti i prodotti presenti in un inventario locale è del tipo: GET "http:/localhost:8080/api/warehouse/1/inventory", dove '1' corrisponde al numero di magazzino di cui visualizzare l'intero inventario.
+
       === Visualizzazione di tutti i prodotti presenti in rete
+      Il sistema prevede la visualizzazione di tutti i prodotti presenti in rete, aggregando i dati da tutti i magazzini.
+
+      Il comando da inserire per visualizzare tutti i prodotti presenti nella rete di magazzini è del tipo: GET "http:/localhost:8080/api/aggregatedWarehouses/all", che restituirà l'elenco completo di tutti i prodotti disponibili in tutti i magazzini.
 
     == Gestione ordini
       === Creazione di un nuovo ordine interno
-      
+      Il sistema prevede la creazione di un nuovo ordine interno tra magazzini esistenti in rete.
+      Per creare un ordine interno è necessario essere il supervisore locale del magazzino di partenza.
+
+      Presupponendo che i dati dell'ordine interno da creare siano di questo tipo: \
+      { \
+         "orderId": { \
+            "id": "" \
+         }, \
+         "items": [ \
+            { \
+               "item": { \
+                  "itemId": { \
+                     "id": "1" \
+                  }, \
+                  "quantity": 50 \
+               }, \
+               "quantityReserved": 0, \
+               "unitPrice": 1.22 \
+            } \
+         ], \
+         "orderState": { \
+            "orderState": "PENDING" \
+         }, \
+         "creationDate": "2024-01-16T14:20:00.000Z", \
+         "warehouseDeparture": 1, \
+         "warehouseDestination": 2, \
+         "sellOrderReference": { \
+            "id": "S35d99099-5818-4fee-8df7-d93129eaa869" \
+         } \
+      }, \
+
+      il comando da inserire per creare un nuovo ordine interno è del tipo: POST "http:/localhost:8080/api/warehouse/1/order/internal/new", dove '1' corrisponde al numero del magazzino di partenza.
+
+      Note: l'id dell'orderId da inserire alla creazione è sempre vuoto in quanto viene compilato durante l'esecuzione della creazione stessa. Inoltre, l'id di sellOrderReference dipende dall'id dell'ordine di vendita corrispondente per cui è stato generato questo ordine interno.
+      Infine, l'orderState, al momento della creazione, è sempre "PENDING".
+
       === Creazione di un nuovo ordine di vendita
+      Il sistema prevede la creazione di un nuovo ordine di vendita verso clienti esterni.
+
+      Presupponendo i dati dell'ordine di vendita da creare siano di questo tipo: \
+      { \
+         "orderId": { \
+            "id": "" \
+         }, \
+         "items": [ \
+            { \
+               "item": { \
+                  "itemId": { \
+                     "id": "1" \
+                  }, \
+                  "quantity": 50 \
+               }, \
+               "quantityReserved": 0, \
+               "unitPrice": 1.22 \
+            } \
+         ], \
+         "orderState": { \
+            "orderState": "PENDING" \
+         }, \
+         "creationDate": "2024-01-16T14:20:00.000Z", \
+         "warehouseDeparture": 1, \
+         "destinationAddress": "Via Roma, 123", \
+      }, \
+
+      il comando da inserire per creare un nuovo ordine di vendita è del tipo: POST "http:/localhost:8080/api/warehouse/1/order/sell/new", dove '1' corrisponde al numero del magazzino di partenza.
+
+      Note: l'id dell'orderId da inserire alla creazione è sempre vuoto in quanto viene compilato durante l'esecuzione della creazione stessa. Inoltre, l'orderState, al momento della creazione, è sempre "PENDING".
 
       === Visualizzazione dati di un singolo ordine
+      Il sistema prevede la visualizzazione dei dati di un singolo ordine, sia cercandolo dal suo magazzino locale di partenza, che cercandolo dall'aggregato cloud Ordini.
 
-        ==== Visualizzazione dello stato attuale di un ordine
+      Il comando da inserire per visualizzare i dati di un ordine specifico cercandolo dal suo magazzino di partenza è del tipo: GET "http:/localhost:8080/api/warehouse/1/order/I55e624c5-a87e-4a26-b956-5ed78586987a", dove '1' corrisponde al numero del magazzino di partenza, in cui risiede l'ordine, e 'I55e624c5-a87e-4a26-b956-5ed78586987a' è l'id dell'ordine interessato.
+
+      Invece, il comando da inserire per visualizzare i dati di un ordine specifico cercandolo dall'aggregato cloud Ordini è del tipo: GET "http:/localhost:8080/api/aggregate/order/I55e624c5-a87e-4a26-b956-5ed78586987a", dove 'I55e624c5-a87e-4a26-b956-5ed78586987a' è l'id dell'ordine interessato.
+
+      ==== Visualizzazione dello stato attuale di un ordine
+      Il sistema prevede la visualizzazione dello stato attuale di un ordine specifico, sia cercandolo dal suo magazzino locale di partenza, che cercandolo dall'aggregato cloud Ordini.
+
+      Il comando da inserire per visualizzare lo stato di un ordine specifico cercandolo dal suo magazzino di partenza è del tipo: GET "http:/localhost:8080/api/warehouse/1/order/S35d99099-5818-4fee-8df7-d93129eaa869/state", dove '1' corrisponde al numero del magazzino in cui risiede l'ordine e 'S35d99099-5818-4fee-8df7-d93129eaa869' è l'id dell'ordine interessato.
+
+      Invece, il comando da inserire per visualizzare lo stato di un ordine specifico cercandolo dall'aggregato cloud Ordini è del tipo: GET "http:/localhost:8080/api/aggregate/order/S35d99099-5818-4fee-8df7-d93129eaa869/state", dove '1' corrisponde al numero del magazzino in cui risiede l'ordine e 'S35d99099-5818-4fee-8df7-d93129eaa869' è l'id dell'ordine interessato.
 
       === Visualizzazione di tutti gli ordini in uno specifico magazzino
+      Il sistema prevede la visualizzazione di tutti gli ordini in uno specifico magazzino.
+
+      Il comando da inserire per visualizzare tutti gli ordini di un magazzino specifico è del tipo: GET "http:/localhost:8080/api/warehouse/1/orders", dove '1' corrisponde al numero del magazzino di cui visualizzare tutti gli ordini.
 
       === Visualizzazione di tutti gli ordini presenti in rete
+      Il sistema prevede la visualizzazione di tutti gli ordini presenti in rete.
+
+      Il comando da inserire per visualizzare tutti gli ordini presenti in rete è del tipo: GET "http:/localhost:8080/api/aggregate/orders", che restituirà l'elenco completo di tutti gli ordini in tutti i magazzini in rete.
 
       === Annullamento di un ordine
+      Il sistema prevede la possibilità di annullamento di un ordine esistente (effettuabile con successo se tale ordine si trova in stato PENDING, PROCESSING o SHIPPED). Per annullare un ordine è necessario essere il supervisore locale del magazzino in cui risiede l'ordine.
 
-      === Meccanismo di riassortimento automatico
+      Il comando da inserire per annullare un ordine specifico è del tipo: POST "http:/localhost:8080/api/warehouse/1/order/I55e624c5-a87e-4a26-b956-5ed78586987a/cancel", dove '1' corrisponde al numero del magazzino di partenza, in cui risiede l'ordine, e 'I55e624c5-a87e-4a26-b956-5ed78586987a' è l'id dell'ordine da annullare.
+
+      Per verificare l'avvenuta cancellazione dell'ordine, è consigliato consultare la sezione "4.4.3 - Visualizzazione dati di un singolo ordine".
+
+/*       === Meccanismo di riassortimento automatico   da spiegare solo a livello teorico?
+      Il sistema prevede un meccanismo di riassortimento automatico per mantenere le scorte ottimali.
 
       === Trasferimento merce nel caso di violazione soglia minima o soglia massima
+      Il sistema prevede il trasferimento merce automatico nel caso di violazione della soglia minima o soglia massima. */
 
 
   = Esecuzione Test
@@ -286,4 +493,4 @@
   = Telemetria
   // inserire sottosezioni
 
-  // Alla fine c'è un riquadro per la firma di M31, deve essere integrata
+  // Alla fine c'è un riquadro per la firma di M31, non credo debba esserci?
