@@ -16,7 +16,7 @@
 #let titolo = "Piano di Progetto"
 #let status = "Approvato"
 #let destinatario = "M31"
-#let versione = "1.3.0"
+#let versione = "2.0.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -27,7 +27,7 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
-  /*
+ 
   [2.0.0],
   [14/09/2025],
   [R. Zangla],
@@ -36,9 +36,9 @@
 
   [1.4.0],
   [12/09/2025],
-  [N. Bolzon],
+  [N. Moretto],
   [S. Speranza],
-  [Completamento Sprint 12.], */
+  [Completamento Sprint 12.],
 
   [1.3.0],
   [18/08/2025],
@@ -1858,8 +1858,8 @@ I possibili rischi :
       [Analista#super[G]],        [25€/h],   [-],       [-],            [0],           [0€],
       [Progettista#super[G]],     [25€/h],   [24],      [600€],         [101 (-24)],   [2525€ (-600€)],
       [Programmatore#super[G]],   [15€/h],   [16],      [240€],         [126 (-16)],   [1890€ (-240€)],
-      [Verificatore#super[G]],    [15€/h],   [9],       [135€],         [65 (-9)],     [975€ (-135€)],
-      [*Totale*],                 [*-*],     [*58*],    [*1205€*],      [*352 (-58)*], [*6860€ (-1205€)*],
+      [Verificatore#super[G]],    [15€/h],   [8],       [120€],         [63 (-8)],     [975€ (-120€)],
+      [*Totale*],                 [*-*],     [*57*],    [*1190€*],      [*350 (-57)*], [*6860€ (-1190€)*],
     ),
     didascalia: "Sprint 9 - Aggiornamento delle risorse disponibili"
   )
@@ -1922,9 +1922,9 @@ I possibili rischi :
     [Sebastiano Marana],    [],   [],   [],   [],       [],         [10],
     [Nicholas Moretto],     [],   [],   [],   [8],      [],         [],
     [Matteo Pretto],        [],   [4],  [],   [],       [],         [],
-    [Alex Shu],             [],   [],   [],   [],       [10(+2)],  [],
+    [Alex Shu],             [],   [],   [],   [],       [8(+2)],  [],
     [Stefano Speranza],     [],   [],   [],   [8],      [],         [],
-    [Ramona Zangla],        [],   [],   [],   [10(+2)], [],         [],
+    [Ramona Zangla],        [],   [],   [],   [8(+2)], [],         [],
   ),
   didascalia: "Sprint 10 - Consuntivo ore per ciascun componente"
 )
@@ -1996,14 +1996,14 @@ I possibili rischi :
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
-    [Nicolò Bolzon],        [],   [],   [],   [12(+4)],[],      [],
+    [Nicolò Bolzon],        [],   [],   [],   [8(+4)],[],      [],
     [Mattia Dalla Pozza],   [],   [],   [],   [],      [],      [10],
-    [Sebastiano Marana],    [],   [],   [],   [],      [14(+4)],[],
+    [Sebastiano Marana],    [],   [],   [],   [],      [10(+4)],[],
     [Nicholas Moretto],     [5],  [],   [],   [],      [],      [],
     [Matteo Pretto],        [],   [],   [],   [],      [10],    [],
-    [Alex Shu],             [],   [],   [],   [12(+4)],[],      [],
+    [Alex Shu],             [],   [],   [],   [8(+4)],[],      [],
     [Stefano Speranza],     [],   [],   [],   [8],     [],      [],
-    [Ramona Zangla],        [],   [],   [],   [],      [14(+4)],[],
+    [Ramona Zangla],        [],   [],   [],   [],      [10(+4)],[],
   ),
   didascalia: "Sprint 11 - Consuntivo ore per ciascun componente"
 )
@@ -2014,13 +2014,13 @@ I possibili rischi :
 #align(center)[
   #tabella_aggiornamento_risorse(
     dati: (
-      [Responsabile#super[G]],    [30€/h],   [5],       [150€],         [],           [],
-      [Amministratore#super[G]],  [20€/h],   [-],       [-],            [],           [],
-      [Analista#super[G]],        [25€/h],   [-],       [-],            [],           [],
-      [Progettista#super[G]],     [25€/h],   [32],      [800€],         [],           [],
-      [Programmatore#super[G]],   [15€/h],   [38],      [570€],         [],           [],
-      [Verificatore#super[G]],    [15€/h],   [10],      [150€],         [],           [],
-      [*Totale*],                 [*-*],     [*85*],    [*1670€*],      [**],         [**],
+      [Responsabile#super[G]],    [30€/h],   [5],       [150€],         [17 (-5)],           [510€ (-150€)],
+      [Amministratore#super[G]],  [20€/h],   [-],       [-],            [25],           [500€],
+      [Analista#super[G]],        [25€/h],   [-],       [-],            [0],           [0€],
+      [Progettista#super[G]],     [25€/h],   [32],      [800€],         [43 (-32)],           [1075€ (-800€)],
+      [Programmatore#super[G]],   [15€/h],   [38],      [570€],         [100 (-38)],           [1500€ (-570€)],
+      [Verificatore#super[G]],    [15€/h],   [10],      [150€],         [46 (-10)],           [690€ (-150€)],
+      [*Totale*],                 [*-*],     [*85*],    [*1670€*],      [*231 (-85)*],         [*4275€ (-1670€)*],
     ),
     didascalia: "Sprint 11 - Aggiornamento delle risorse disponibili"
   )
@@ -2056,15 +2056,133 @@ I possibili rischi :
 #align(center)[
 #tabella_preventivo_consuntivo(
   dati: (
-    [Nicolò Bolzon],        [], [], [], [],  [],  [],
-    [Mattia Dalla Pozza],   [], [], [], [],  [],  [],
-    [Sebastiano Marana],    [], [], [], [],  [],  [],
-    [Nicholas Moretto],     [],[], [], [],  [],  [],
-    [Matteo Pretto],        [], [], [], [],  [],  [],
-    [Alex Shu],             [], [], [], [], [],  [],
-    [Stefano Speranza],     [], [], [], [], [],  [],
-    [Ramona Zangla],        [], [], [], [],  [],  [],
+    [Nicolò Bolzon],        [], [], [], [],  [10],  [],
+    [Mattia Dalla Pozza],   [], [], [], [],  [10],  [],
+    [Sebastiano Marana],    [], [], [], [],  [10],  [],
+    [Nicholas Moretto],     [],[], [], [],  [],  [10],
+    [Matteo Pretto],        [], [], [], [],  [10],  [],
+    [Alex Shu],             [], [], [], [], [10],  [],
+    [Stefano Speranza],     [], [], [], [], [],  [10],
+    [Ramona Zangla],        [5], [], [], [],  [],  [],
   ),
   didascalia: "Sprint 12 - Preventivo ore per ciascun componente"
 )
 ]
+
+==== Consuntivo
+#align(center)[
+#tabella_preventivo_consuntivo(
+  dati: (
+    [Nicolò Bolzon],        [],   [],   [],   [],      [10(+2)],   [],
+    [Mattia Dalla Pozza],   [],   [],   [],   [],      [10],   [],
+    [Sebastiano Marana],    [],   [],   [],   [],      [10(+5)],   [],
+    [Nicholas Moretto],     [],   [],   [],   [],      [],         [10(+4)],
+    [Matteo Pretto],        [],   [],   [],   [],      [10],   [],
+    [Alex Shu],             [],   [],   [],   [],      [10(+5)],   [],
+    [Stefano Speranza],     [],   [],   [],   [],      [],         [10(-2)],
+    [Ramona Zangla],        [5],   [],   [],   [],      [],         [],
+  ),
+  didascalia: "Sprint 12 - Consuntivo ore per ciascun componente"
+)
+]
+
+==== Aggiornamento delle risorse rimanenti
+#v(1em)
+#align(center)[
+  #tabella_aggiornamento_risorse(
+    dati: (
+      [Responsabile#super[G]],    [30€/h],   [5],       [150€],         [12 (-5)],           [360€ (-150€)],
+      [Amministratore#super[G]],  [20€/h],   [-],       [-],            [25],           [500€],
+      [Analista#super[G]],      [25€/h],   [-],       [-],            [0],           [0€],
+      [Progettista#super[G]],     [25€/h],   [-],      [-],         [11],           [275€],
+      [Programmatore#super[G]],   [15€/h],   [62],      [930€],         [62 (-62)],           [930€ (-930€)],
+      [Verificatore#super[G]],    [15€/h],   [22],      [330€],         [36 (-22)],           [540€ (-330€)],
+      [*Totale*],                 [*-*],     [*89*],  [*1410€*],      [*146 (-89)*],         [*2605€ (-1410€)*],
+    ),
+    didascalia: "Sprint 12 - Aggiornamento delle risorse disponibili"
+  )
+]
+
+==== Retrospettiva
+#v(1em)
+Nel corso del dodicesimo sprint#super[G], il team ha concentrato gli sforzi sul completamento della programmazione dei microservizi#super[G] previsti per l’MVP#super[G], sull’ultimazione della documentazione tecnica e sulla preparazione per l'accettazione finale da parte dell’azienda. La fase di codifica ha visto il completamento di tutti i microservizi#super[G]. Inoltre, sono stati avviati i test di integrazione per garantire che tutti i microservizi#super[G] funzionassero correttamente insieme. Parallelamente, il team ha lavorato all’ultimazione della documentazione tecnica, con particolare attenzione alla Specifica Tecnica e al Piano di Progetto, assicurandosi che fossero allineati con lo stato attuale del progetto e pronti per la revisione finale. Un incontro di aggiornamento con l’azienda M31 ha permesso di presentare i progressi fatti e di raccogliere feedback preziosi per eventuali aggiustamenti finali.\ Nonostante alcuni ritardi dovuti a imprevisti tecnici e alla necessità di approfondire alcune tecnologie, il team è riuscito a mantenere un buon ritmo di lavoro, dimostrando capacità di adattamento e collaborazione efficace. In conclusione, lo sprint ha portato a risultati significativi sia sul fronte implementativo sia su quello documentale, ponendo solide basi per le fasi successive del progetto.
+
+= Riassunto delle risorse utilizzate durante il progetto
+
+
+
+#align(center)[
+    #figure(
+  table(
+    columns: (1fr, 1fr, 1fr, 1fr),
+    inset: 10pt,
+    align: center,
+    table.header(
+      [*Ruolo*], [*Costo/ora*], [*Ore Totali*], [*Costo Totale*]
+    ),
+    [Responsabile], [30€/h], [60], [1800€],
+    [Amministratore], [20€/h], [36], [720€],
+    [Analista], [25€/h], [76], [1900€],
+    [Progettista], [25€/h], [145], [3625€],
+    [Programmatore], [15€/h], [218], [3270€],
+    [Verificatore], [15€/h], [128], [1920€],
+    [*Totale*], [*-*], [*663*], [*13235€*],
+  ),
+  caption: [Tabella utilizzo delle risorse]
+)
+]
+
+Come possiamo evincere dalla tabella sopra, il team termina la realizzazione di quanto necessario per affrontare la _Product Baseline_ con un costo totale che ammonta a *13.235€* e con un totale di *663 ore* lavorate dai vari membri del team.
+La spesa è al di sotto del budget preventivato di *14.430€*, con un risparmio di *1.195€*.
+
+  #v(4em)
+  #align(center)[
+    #{
+    show table.cell: cl => if cl.x == 0 and cl.y != 0 {
+      align(left, cl)
+    } else if cl.x == 0 {
+      align(bottom + left, cl)
+    } else if cl.y == 0 {
+      rotate(-70deg, reflow: true, align(left, cl))
+    } else {
+      align(bottom + center, cl)
+    }
+    figure(
+      table(
+        columns: (3fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr, 1fr),
+        inset: 1.1em,
+        stroke: (x, y) => if y >= 1 {
+          1pt + black
+        } else {
+          none
+        },
+        table.header(
+          [],
+          [*Responsabile*],
+          [*Amministratore*],
+          [*Analista*],
+          [*Progettista*],
+          [*Programmatore*],
+          [*Verificatore*],
+          [*Totale*],
+        ),
+  
+      [Nicolò Bolzon],[5],[4],[11],[20],[32],[18],[*90*],
+      [Mattia Dalla Pozza],[10],[4],[7],[8],[34],[19],[*82*],
+      [Sebastiano Marana],[10],[4],[13],[8],[39],[19],[*93*],
+      [Nicholas Moretto],[10],[4],[11],[18],[12],[24],[*79*],
+      [Matteo Pretto],[5],[8],[6],[8],[31],[12],[*70*],
+      [Alex Shu],[5],[4],[11],[20],[36],[4],[*80*],
+      [Stefano Speranza],[5],[4],[11],[32],[10],[16],[*78*],
+      [Ramona Zangla],[10],[4],[6],[26],[24],[15],[*85*],
+      [*Totale*],[*60*],[*36*],[*76*],[*140*],[*218*],[*127*],[*657*]
+      ),
+      caption: [Ore di ogni componente per ciascun ruolo],
+    )
+  }
+]
+
+Dalla tabella sopra possiamo vedere il totale delle ore lavorate da ogni componente del team, suddivise per ruolo.
+Notiamo che è stato necessario modificare il quantitativo di ore preventivate per ciascun ruolo, ma il totale delle ore rimane comunque inferiore a quello preventivato, con un risparmio di *57 ore*.
+
+Anche le ore totali per ciascun componente non superano le 90 ore preventivate, il che dimostra una buona gestione del carico di lavoro da parte del team.
