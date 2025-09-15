@@ -33,44 +33,44 @@
   [0.8.0],
   [15/09/2025],
   [A. Shu],
-  [],
+  [N. Moretto],
   [Completata specifica del Microservizio di Inventario Aggregato, Aggiornamento Microservizio di Ordini Aggregato e revisione generale del documento portando aggiornamento dei attributi e metodi mancanti nei microservizi già esistenti, aggiunta immagini mancanti],
 
   [0.7.0],
   [11/09/2025],
   [S. Speranza],
-  [],
+  [N. Moretto],
   [Completata specifica del Microservizio di Autenticazione],
 
   [0.6.1],
   [08/09/2025],
   [S. Speranza],
-  [],
+  [N. Moretto],
   [Iniziata specifica del Microservizio di Autenticazione],
 
   [0.6.0],
   [08/09/2025],
   [S. Speranza],
-  [],
+  [N. Moretto],
   [Completata specifica del Microservizio Ordini],
 
   [0.5.0],
   [07/09/2025],
   [S. Speranza],
-  [],
+  [M. Dalla Pozza],
   [Completata specifica del Microservizio Inventario],
 
   [0.4.0],
   [30/08/2025],
   [A. Shu],
-  [N. Moretto],
+  [M. Dalla Pozza],
   [Aggiunta breve descrizioni sui microservizi (inventario, state, Cloud State, Sistema centralizzato e Routing)],
 
   [0.3.0],
   [28/08/2025],
   [A. Shu \ N. Bolzon],
   [M. Dalla Pozza],
-  [Aggiunta una documentanzione basica del Microservizio Routing, correzioni granulari di stile e uniformità lessicale sulla stesura],
+  [Aggiunta una documentazione basica del Microservizio Routing, correzioni granulari di stile e uniformità lessicale sulla stesura],
 
   [0.2.0],
   [27/08/2025],
@@ -205,7 +205,7 @@ i linguaggi di programmazione, i framework e le risorse tecnologiche impiegate
 durante l’intero ciclo di sviluppo.
 
 Le tecnologie proposte e descritte sono state selezionate dalla necessità di 
-sviluppare un sistema centralzizato composto da magazzini distribuiti, 
+sviluppare un sistema centralizzato composto da magazzini distribuiti, 
 capitolato di progetto C6#super[G], capace di operare in modo efficiente anche sotto carico, 
 variabile e non, mantenendo prestazioni elevate e un'ottima resilienza. 
 
@@ -542,7 +542,7 @@ massime configurate e coordinare le operazioni di movimentazione delle quantità
  + Rappresenta l'identificatore univoco del prodotto,
  + Incapsula il campo _id: string_,
  + Espone il metodo _getId()_,
- + È stato isolato per facilitare il confronto tra entità e manterere l'identità coerente anche in fase di serializzazione/deserializzazione _(es. tramite DTO)_, ad esempio per permettere il corretto funzionamento di _removeProduct_.
+ + È stato isolato per facilitare il confronto tra entità e mantenere l'identità coerente anche in fase di serializzazione/deserializzazione _(es. tramite DTO)_, ad esempio per permettere il corretto funzionamento di _removeProduct_.
 
 Descrizione degli attributi della struttura:
  - *id*: string \
