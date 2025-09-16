@@ -70,10 +70,6 @@
   block(it)
 }
 
-#show: firma.with(
-  destinatario: destinatario
-)
-
 = Introduzione
   == Scopo del documento
   Lo scopo di questo documento è di riportare le istruzioni per installare correttamente l'applicativo, spiegarne lo scopo generale e illustrare le funzionalità implementate al suo interno.
@@ -157,12 +153,6 @@
     cd MVP
     ```
 
-
-    == Preparazione del sistema
-
-
-    == Configurazione // non so se serve?
-
     == Avvio del sistema
     === Avviare Docker
     Avviare *Docker Desktop*, o *Docker Engine* a seconda del sistema operativo in uso.
@@ -222,6 +212,12 @@
 
       === Visualizzazione dello stato di tutti i magazzini presenti in rete
       Il sistema permette la visualizzazione dello stato di tutti i magazzini presenti in rete.
+
+
+      === Visualizzazione dei dati di un singolo magazzino
+      Il sistema permette la visualizzazione dei dati di uno specifico magazzino, quali id, indirizzo e stato (online/offline). 
+
+      Il comando da inserire per visualizzare i dati di un magazzino esistente è del tipo: GET "http:/localhost:8080/api/warehouse/1", dove '1' corrisponde al numero del magazzino interessato.
 
     == Gestione prodotti
       === Inserimento prodotto in un Inventario
@@ -491,6 +487,11 @@
     Le informazioni riguardanti l'esecuzione dei test di accettazione sono consultabili nel *TestBook*.
 
   = Telemetria
-  // inserire sottosezioni
 
-  // Alla fine c'è un riquadro per la firma di M31, non credo debba esserci?
+    == Monitoraggio delle performance
+    Il sistema integra *Prometheus* per il monitoraggio delle performance dei servizi di ordini aggregato e di inventario aggregato. \
+    *Prometheus* raccoglie metriche in tempo reale, consentendo di analizzare l'utilizzo delle risorse e identificare eventuali colli di bottiglia.
+
+    == Visualizzazione dei dati di telemetria
+    I dati raccolti da *Prometheus* possono essere visualizzati tramite Grafana, uno strumento di analisi e monitoraggio. \
+    L'interfaccia di *Prometheus* è accessibile all'indirizzo `http://localhost:9090`, mentre l'interfaccia di *Grafana* è accessibile all'indirizzo `http://localhost:3210`. \
