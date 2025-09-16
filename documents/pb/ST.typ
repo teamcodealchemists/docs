@@ -2268,7 +2268,7 @@ Può invocare le seguenti funzioni:
 === Microservizio Inventario Aggregato
 #figure(
   image("assets/InventoryAgg.svg", width: 120%),
-  caption: [Schema UML - Microservizio Ordine Aggregato]
+  caption: [Schema UML - Microservizio Inventario Aggregato]
 )
 ==== Descrizione del microservizio
 Il Microservizio invia eventi al Microservizio Inventario Aggregato, che ha il compito di:
