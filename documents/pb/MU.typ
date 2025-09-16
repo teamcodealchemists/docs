@@ -194,14 +194,52 @@
 
   = Funzionalità implementate
     == Autenticazione 
-      === Registrarsi come supervisore locale
-      Il sistema prevede l'autenticazione tramite token JWT ...
+    Il sistema prevede due ruoli di supervisore: il supervisore locale, che gestisce un singolo magazzino, e il supervisore globale, che ha una visione d'insieme di tutti i magazzini in rete.
 
+    L'autenticazione avviene tramite token JWT (JSON Web Token), che vengono generati al momento del login e devono essere inclusi nelle richieste successive per accedere alle funzionalità protette del sistema.
       === Registrarsi come supervisore globale
+      Al primo avvio del sistema, non sono presenti utenti registrati. La prima registrazione deve essere effettuata come supervisore globale. \
+      Per registrarsi come supervisore globale, è necessario inviare una richiesta POST all'endpoint /api/auth/register/globalSupervisor con i seguenti dati:
 
-      === Accedere come supervisore locale
+        {\
+            "name": "Mario",\
+            "surname": "Rossi",\
+            "phone": "+39 355372965",\
+            "authentication": {\
+              "email": "email\@example.com",\
+              "password": "{{password}}"\
+            }\
+        }
+      === Registrarsi come supervisore locale
+      Una volta registrato il supervisore globale, quest'ultimo ha la possibilità di registrare nuovi supervisori locali. \
+      
+      Per registrare un supervisore locale, è necessario inviare una richiesta POST all'endpoint /api/auth/register/localSupervisor con i seguenti dati:
+
+       {\
+           "name": "Luigi",\
+           "surname": "Verdi",\
+           "phone": "+39 3661234567",\
+           "authentication": {\
+               "email": "email\@example.com",\
+               "password": "{{password}}"\
+           }\
+       }
 
       === Accedere come supervisore globale
+      Per accedere come supervisore globale, è necessario inviare una richiesta POST all'endpoint /api/auth/login con i seguenti dati:
+
+        {\
+            "email": "email\@example.com",\
+            "password": "{{password}}"\
+        }
+
+      === Accedere come supervisore locale
+      Per accedere come supervisore locale, è necessario inviare una richiesta POST all'endpoint /api/auth/login con i seguenti dati:
+
+        {\
+            "email": "email\@example.com",\
+            "password": "{{password}}"\
+        }
 
     == Gestione di magazzini
       === Creazione di un magazzino
