@@ -3575,3 +3575,320 @@ Può invocare le seguenti funzioni:
 
 = Stato dei requisiti funzionali
 == Stato per requisito
+
+erranno ora elencati i requisiti#super[G] del sistema, che sono stati suddivisi in quattro categorie principali: Requisiti#super[G] Funzionali, Requisiti#super[G] di Qualità, Requisiti#super[G] di Vincolo, Requisiti#super[G] Prestazionali.
+
+== Classificazione dei requisiti
+- *Requisiti#super[G] Funzionali:* descrivono le funzionalità specifiche che il sistema deve offrire. Definiscono i comportamenti attesi in risposta a determinati input o situazioni, specificando cosa il sistema deve fare per soddisfare i bisogni degli utenti e degli stakeholder.
+
+- *Requisiti#super[G] di Qualità:* detti anche non funzionali, definiscono le caratteristiche generali del sistema che ne influenzano l’efficacia, l’efficienza e l’affidabilità. Rientrano in questa categoria aspetti come la sicurezza, l’usabilità, la manutenibilità, la scalabilità#super[G] e l’affidabilità complessiva del sistema.
+
+- *Requisiti#super[G] di Vincolo:* specificano le limitazioni imposte da fattori esterni o immutabili, che il sistema o il processo di sviluppo devono rispettare. Tali vincoli possono derivare da normative, tecnologie obbligatorie, standard industriali, vincoli temporali o economici.
+
+- *Requisiti#super[G] di Prestazionali:* definiscono le aspettative in termini di prestazioni del sistema, come tempi di risposta, capacità di carico, throughput e uso delle risorse. Questi requisiti#super[G] sono fondamentali per garantire un’esperienza utente adeguata anche sotto carico elevato.
+
+== Fonti dei requisiti
+Le fonti dei requisiti#super[G] rappresentano i documenti e le informazioni da cui sono stati estratti i requisiti#super[G] stessi. Tra le principali fonti si annoverano il capitolato#super[G] d'appalto, le riunioni con il committente#super[G], l’analisi dello stato dell’arte e l’analisi dei casi d’uso.
+
+Ogni requisito#super[G] riportato sarà accompagnato dall’indicazione esplicita della propria fonte di provenienza, al fine di garantirne la tracciabilità e la verificabilità#super[G].
+
+== Struttura della codifica dei requisiti
+I requisiti#super[G] sono stati codificati al fine di facilitarne la lettura, la gestione e la tracciabilità.
+Ogni codice è composto da un prefisso che indica la tipologia del requisito#super[G], seguito da un numero progressivo univoco.
+
+I requisiti#super[G] funzionali sono preceduti dal prefisso "RF", i Requisiti#super[G] di Qualità dal prefisso "RQ", i Requistiti#super[G] di Vincolo dal prefisso "RV" e i Requisiti#super[G] Prestazionali dal prefisso "RP", dove:
+- *R* sta per "#strong[R]equisito";
+- *F* sta per "#strong[F]unzionale";
+- *Q* sta per "#strong[Q]ualità";
+- *V* sta per "#strong[V]incolo";
+- *P* sta per "#strong[P]restazionale";
+
+Per facilitare la lettura, la tracciabilità e la classificazione dei requisiti#super[G], è stato adottato un sistema di codifica sturtturato. La codifica prevede un prefisso che identifica la tipologia e l'importanza del requisito#super[G], seguito da un numero progressivo. In caso di scomposizione, si aggiunge una notazione per indicare i requisiti derivati.
+
+=== Tipologia e Importanza
+I requisiti#super[G] sono stati distinti anche in base alla loro importanza o natura, secondo le seguenti convenzioni:
+- *Standard*: requisiti#super[G] strettamente necessari al corretto funzionamento del sistema.
+  - _Esempio:_ RF01 → Requisito Funzionale 01. \
+- *Desiderabili (D)*: requisiti#super[G] non obbligatori, ma in grado di apportare un valore aggiunto al sistema.
+  - _Esempio:_ RFD04 → Requisito Funzionale Desiderabile 02.
+- *Opzionali (O)*: requisiti#super[G] implementabili solo in presenza di tempo o risorse sufficienti.
+  - _Esempio:_ RFO03 → Requisito Funzionale Opzionale 02.
+
+// ===== REQUISITI FUNZIONALI =====
+
+== Requisiti Funzionali
+#show figure: set block(breakable: true)
+#set table.cell(breakable: true)
+
+#set table(
+  fill:(x,y)=> if y==0 {rgb("#2599ff")} else if x == 0 {luma(235)},
+)
+Alcuni requisiti funzionali legati all’interfaccia grafica non sono stati implementati, poiché l’azienda committente ha esplicitamente espresso la volontà di privilegiare lo sviluppo della logica di sistema e dell’architettura software. Tali requisiti sono pertanto classificati come non soddisfatti per motivi di priorità progettuale.
+#figure(
+  table(
+    columns: (1fr, 3.5fr, 1.2fr),
+    inset: 10pt,
+    align: center,
+    table.header(
+    [*Codice*], [*Descrizione*], [*Stato*]),
+
+    [*RF01*], [*Registrazione del Supervisore Globale.*], [],
+    [*RF01/01*], [Il Supervisore Globale deve registrarsi al primo avvio del sistema inserendo indirizzo email, numero di cellulare e una password.], [Soddisfatto],
+    [*RF01/02*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se l'email inserita è sintatticamente errata.], [Soddisfatto],
+    [*RF01/03*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se il numero di cellulare inserito è sintatticamente errato.], [Soddisfatto],
+    [*RF01/04*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se la password inserita non rispetta la sintassi.], [Soddisfatto],
+    [*RF01/05*], [Il Supervisore Globale visualizza, in fase di registrazione, un messaggio di errore se la password e la conferma password non corrispondono.], [Soddisfatto],
+    [*RF02*], [*Autenticazione#super[G] dell'utente.*], [],
+    [*RF02/01*], [L'utente deve poter accedere al sistema mediante credenziali (email e password).], [Soddisfatto],
+    [*RF02/02*], [L'utente deve poter effettuare il logout dal sistema.], [Soddisfatto],
+    [*RF02/03*], [L'utente visualizza un messaggio di errore in caso di autenticazione#super[G] fallita.], [Soddisfatto],   
+
+    [*RF03*], [*Registrazione di nuovi Supervisori Locali.*], [],
+    [*RF03/01*], [Il Supervisore Globale può registrare a sistema nuovi Supervisori Locali ciascuno con email, numero di cellulare e una password.], [Soddisfatto],
+    [*RF03/02*], [Il Supervisore Globale deve assegnare il/i magazzino/i a cui il Supervisore Locale ha accesso in fase di registrazione.], [Soddisfatto],
+    [*RF03/03*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se l'email inserita è sintatticamente errata.], [Non Soddisfatto],
+    [*RF03/04*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se la password inserita non rispetta la sintassi.], [Non Soddisfatto],
+    [*RF03/05*], [Il Supervisore Globale visualizza, in fase di registrazione del nuovo supervisore locale, un messaggio di errore se il numero di cellulare inserito è sintatticamente errato.], [Non Soddisfatto],
+
+    [*RF04*], [*Gestione manuale dei magazzini.*], [],
+    [*RF04/01*], [Il Supervisore Globale deve poter aggiungere un nuovo magazzino a sistema inserendo il suo indirizzo fisico.], [Soddisfatto],
+    [*RF04/02*], [Il Supervisore Globale deve poter rimuovere un magazzino dal sistema.], [Soddisfatto],
+    [*RF04/03*], [Il Supervisore Globale deve poter modificare le informazioni di un magazzino, quali indirizzo del magazzino e/o Supervisore Locale associato.], [Soddisfatto],
+    [*RF04/04*], [Ciascun magazzino deve essere identificato univocamente.], [Soddisfatto],
+
+    [*RF05*], [*Gestione manuale delle merci.*], [],
+    [*RF05/01*], [I Supervisori possono inserire un nuovo tipo di merce nell'inventario#super[G] di un magazzino, ciascuna con codice univoco e nome prodotto#super[G].], [Soddisfatto],
+    [*RF05/02*], [I Supervisori visualizzano un messaggio di errore se il codice univoco non rispetta la sintassi prevista.], [Non Soddisfatto],
+    [*RF05/03*], [I Supervisori possono definire il prezzo unitario all'inserimento di un nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [Soddisfatto],
+    [*RF05/04*], [I Supervisori visualizzano un messaggio di errore se il prezzo unitario del prodotto#super[G] è sintatticamente errato.], [Soddisfatto],
+    [*RF05/05*], [I Supervisori possono definire la quantità all'inserimento di un nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [Soddisfatto],
+    [*RF05/06*], [I Supervisori visualizzano un messaggio di errore se la quantità del prodotto#super[G] è sintatticamente errata.], [Non Soddisfatto],
+    [*RF05/07*], [Il Supervisore Globale può rimuovere un tipo di merce dall'inventario#super[G].], [Soddisfatto],
+    [*RF05/08*], [I Supervisori possono modificare la quantità di merce nell'inventario#super[G] dei magazzini.], [Soddisfatto],
+    [*RF05/09*], [I Supervisori visualizzano un messaggio di errore se la quantità di merce modificata del prodotto#super[G] è sintatticamente errata.], [Non Soddisfatto], 
+    [*RF05/10*], [Il Supervisore Globale può modificare il prezzo unitario di un prodotto#super[G].], [Soddisfatto],
+
+    [*RF06*], [*Gestione manuale degli ordini#super[G].*], [],
+    [*RF06/01*], [I Supervisori possono inserire ordini#super[G] di trasferimento#super[G] interno tra magazzini selezionando il magazzino di partenza e inserendo uno o più prodotti#super[G] nell'ordine#super[G].], [Soddisfatto],
+    [*RF06/02*], [I Supervisori possono inserire ordini#super[G] di vendita verso l'esterno inserendo l'indirizzo del destinatario e inserendo uno o più prodotto#super[G] nell'ordine#super[G].], [Soddisfatto],
+    [*RF06/03*], [I Supervisori visualizzano un messaggio di errore se la quantità di prodotto#super[G] in un ordine#super[G] non rispetta la sintassi prevista.], [Soddisfatto],
+    [*RF06/04*], [I Supervisori possono annullare ordini#super[G] "in attesa" e "in elaborazione".], [Soddisfatto],
+
+    [*RF07*], [*Auditing dei dati dei magazzini.*], [Soddisfatto], 
+    [*RF07/01*], [Il Supervisore Globale può visualizzare l'inventario#super[G] globale.], [Soddisfatto],
+    [*RF07/02*], [Il Supervisore Globale può visualizzare l'inventario#super[G] di ciascun magazzino.], [Soddisfatto],
+    [*RF07/03*], [Il Supervisore Globale può visualizzare un report degli ordini#super[G] globali.], [Soddisfatto],
+    [*RF07/04*], [Il Supervisore Globale può visualizzare un report degli ordini#super[G] di ciascun magazzino.], [Soddisfatto],
+    [*RF07/05*], [I Supervisori Locali possono visualizzare l'inventario#super[G] del/dei magazzino/i a loro assegnato/i.], [Soddisfatto],
+    [*RF07/06*], [I Supervisori Locali possono visualizzare un report degli ordini#super[G] del/dei magazzino/i a loro assegnato/i.], [Soddisfatto],
+
+    [*RF08*], [I Supervisori Globali possono visualizzare lo stato di tutti i magazzini.], [Soddisfatto],
+
+    [*RF09*], [*Gestione delle richieste.*], [], 
+    [*RF09/01*], [I Supervisori possono visualizzare le notifiche informative prodotte dal sistema.], [Soddisfatto],
+    [*RF09/02*], [Il Supervisore Globale può accettare le richieste decisionali prodotte dal sistema.], [Non Soddisfatto],
+    [*RF09/03*], [Il Supervisore Globale può rifiutare le richieste decisionali prodotte dal sistema.], [Non Soddisfatto],
+
+    [*RF10*], [*Gestione delle soglie critiche.*], [], 
+    [*RF10/01*], [I Supervisori possono definire i valori di soglia minima all'inserimento di nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [Soddisfatto],
+    [*RF10/02*], [I Supervisori possono definire i valori di soglia massima all'inserimento di nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [Soddisfatto],
+    [*RF10/03*], [I Supervisori visualizzano un messaggio di errore se i valori di soglia minima e/o massima inseriti sono sintatticamente errati.], [Soddisfatto],
+    [*RF10/04*], [Il Supervisore Globale può modificare i valori di soglia minima e massima di ciascun tipo di merce per ciascun magazzino.], [Soddisfatto],
+    [*RF10/05*], [Il Supervisore Globale visualizza un messaggio di errore se i valori di soglia minima e/o massima modificati sono sintatticamente errati.], [Non Soddisfatto],
+    [*RF10/06*], [I Supervisori Locali possono modificare i valori di soglia minima e massima di ciascun tipo di merce nel/nei magazzino/i a loro assegnato/i.], [Soddisfatto],
+    [*RF10/07*], [I Supervisori Locali visualizzano un messaggio di errore se i valori di soglia minima e/o massima modificati sono sintatticamente errati.], [Non Soddisfatto],
+
+    [*RF11*], [*Rilevamento di carenza di scorte#super[G] di un magazzino.*], [],
+    [*RF11/01*], [Ciascun magazzino deve identificare quando le scorte#super[G] scendono sotto una certa soglia.], [Soddisfatto],
+    [*RF11/02*], [Ciascun magazzino deve identificare quando le scorte#super[G] salgono sopra una certa soglia.], [Soddisfatto],
+
+    [*RF12*], [*Gestione degli ordini#super[G].*], [],
+    [*RF12/01*], [Ciascun magazzino deve verificare#super[G] la disponibilità delle scorte#super[G] per poter soddisfare un ordine#super[G] ricevuto.], [Soddisfatto],
+    [*RF12/02*], [Ciascun magazzino deve identificare l'impossibilità di soddisfare un ordine#super[G].], [Soddisfatto],
+    [*RF12/03*], [Un magazzino con scorte#super[G] insufficienti per gestire un ordine#super[G], deve richidere un riassortimento#super[G] al sistema.], [Soddisfatto],
+    [*RF12/04*], [Ciascun magazzino deve tracciare lo stato degli ordini#super[G].], [Soddisfatto],
+    [*RF12/05*], [I magazzini possono inviare merce verso un altro magazzino tramite un ordine#super[G].],[Soddisfatto],
+    [*RF12/06*], [I magazzini possono ricevere approvvigionamenti#super[G] dall'esterno tramite ordine#super[G].],[Soddisfatto],
+    [*RF12/07*], [I magazzini possono spedire merci verso l'esterno tramite ordine#super[G].],[Soddisfatto],
+    [*RF12/08*], [Il magazzino di destinazione deve notificare l'arrivo della merce al magazzino di origine.], [Soddisfatto],
+    [*RF12/09*], [Un ordine#super[G] deve trovarsi in uno dei seguenti stati: "in attesa", "in elaborazione", "in transito", "annullato", "consegnato".], [Soddisfatto],
+
+    [*RF13*], [*Riassortimento#super[G] delle scorte#super[G] tra magazzini.*], [],
+    [*RF13/01*], [Il sistema deve programmare trasferimenti interni al raggiungimento di una soglia critica di un prodotto#super[G] in un magazzino al fine di bilanciare le scorte#super[G].], [Soddisfatto],
+
+    [*RF14*], [*Individuazione dello stato dei magazzini.*], [],
+    [*RF14/01*], [Ciascun magazzino può trovarsi in uno dei seguenti stati: "online", "offline".],[Soddisfatto],
+    [*RF14/02*], [Il sistema deve identificare eventuali cambi di stato dei magazzini.],[Soddisfatto],
+    [*RF14/03*], [Il sistema deve identificare eventuali disconnessioni di uno o più magazzini segnandoli come "offline".], [Soddisfatto],
+
+    [*RF15*], [*Gestione dei disservizi.*], [],
+    [*RF15/01*], [Un magazzino offline deve annullare gli ordini#super[G] che non può soddisfare dopo un periodo di tempo predefinito.],[Soddisfatto],
+    [*RF15/02*], [Il Supervisore Globale può definire il periodo di tempo dopo cui l'ordine#super[G] di un magazzino offline viene automaticamente anullato.],[Soddisfatto],
+
+    [*RF16*], [*Gestione magazzino che cambia stato da offline a online.*], [],
+    [*RF16/01*], [Il sistema deve riconoscere quando un magazzino torna online.], [Soddisfatto],
+
+    [*RF17*], [*Annullamento di ordini#super[G] in transito.*], [Soddisfatto],
+    [*RF17/01*], [Un ordine#super[G] in stato "in transito" deve cambiare lo stato in "annullato" dopo una soglia temporale predefinita.],[Soddisfatto],
+    [*RF17/02*], [Il Supervisore Globale può definire la soglia temporale dopo cui un ordine#super[G] "in transito" cambia automaticamente stato in "annullato".],[Non Soddisfatto],
+
+    //Requisiti Funzionali desiderabili
+    [*RFD01*], [Il Supervisore Globale può definire il costo massimo per i trasferimenti eseguibili mediante riassortimento#super[G] automatico.],[Non Soddisfatto],
+    [*RFD02*], [Il Supervisore Globale può definire la distanza massima tra magazzini per il riassortimento#super[G] automatico.],[Soddisfatto],
+
+    [*RFD03*], [*Suggerimento su azioni di riassortimento#super[G] e trasferimento#super[G] tra magazzini.*], [],
+    [*RFD03/01*], [Il sistema invia una richiesta decisionale al Supervisore Globale qualora un riassortimento#super[G] superi i costi o le distanze massime.], [Non Soddisfatto],
+
+    [*RFD04*], [*Interfaccia grafica.*], [],
+    [*RFD04/01*], [Deve essere possibile effettuare la registrazione del Supervisore Globale mediante Interfaccia Grafica.], [Non Soddisfatto],
+    [*RFD04/02*], [Deve essere possibile effettuare l'autenticazione#super[G] dell'utente mediante Interfaccia Grafica.], [Non Soddisfatto],
+    [*RFD04/03*], [Deve essere possibile effettuare la registrazione di nuovi Supervisori Locali mediante Interfaccia Grafica.], [Non Soddisfatto],
+    [*RFD04/04*], [Deve essere possibile effettuare la gestione manuale delle merci mediante Interfaccia Grafica.], [Non Soddisfatto],
+    [*RFD04/05*], [Deve essere possibile effettuare la gestione manuale degli ordini#super[G] mediante Interfaccia Grafica.], [Non Soddisfatto],
+    [*RFD04/06*], [Deve essere possibile effettuare l'auditing dei dati dei magazzini mediante Interfaccia Grafica.], [Non Soddisfatto], 
+    [*RFD04/07*], [Deve essere possibile effettuare la gestione delle richieste mediante Interfaccia Grafica.], [Non Soddisfatto], 
+    [*RFD04/08*], [Deve essere possibile effettuare la gestione delle soglie critiche mediante Interfaccia Grafica.], [Non Soddisfatto],
+
+    [*RFD05*], [*Produzione di notifiche.*], [],
+    [*RFD05/01*], [Il Sistema deve notificare i Supervisori al superamento dei livelli minimi e massimi di scorte#super[G].], [Non Soddisfatto],
+    [*RFD05/02*], [Il Sistema deve notificare i Supervisori dell'esecuzione del riassortimento#super[G] automatico.], [Non Soddisfatto],
+    [*RFD05/03*], [Ciascun magazzino deve notificare i Supervisori dei cambi di stato degli ordini#super[G].], [Non Soddisfatto],
+    [*RFD05/04*], [Ciascun magazzino deve notificare i Supervisori dell'impossibilità di soddisfare un ordine#super[G].], [Non Soddisfatto],
+    [*RFD05/05*], [Ciascun magazzino deve notificare i Supervisori quando le scorte#super[G] scendono sotto una certa soglia.], [Non Soddisfatto],
+    [*RFD05/06*], [Ciascun magazzino deve notificare i Supervisori quando le scorte#super[G] salgono sopra una certa soglia.], [Non Soddisfatto],
+    [*RFD05/07*], [Il sistema deve notificare il Supervisore Globale di eventuali cambi di stato dei magazzini.],[Non Soddisfatto],
+    [*RFD05/08*], [L'invio di notifiche deve poter avvenire tramite email.], [Non Soddisfatto],
+    [*RFD05/09*], [L'invio di notifiche deve poter avvenire tramite SMS.], [Non Soddisfatto],
+
+    [*RFD06*], [*Produzione di richieste decisionali.*], [],  
+    [*RFD06/01*], [Il Sistema deve inviare al Supervisore Globale le richieste decisionali prodotte dal riassortimento#super[G] predittivo.], [Non Soddisfatto],
+
+    [*RFD07*], [*Riassortimento predittivo.*], [],
+    [*RFD07/01*], [Il sistema deve avere uno storico dei livelli di merce.], [Non Soddisfatto],
+    [*RFD07/02*], [Il sistema deve poter analizzare i dati storici degli ordini#super[G].], [Non Soddisfatto],
+    [*RFD07/03*], [Il sistema deve poter analizzare i dati storici di inventario#super[G] dei magazzini.], [Non Soddisfatto],
+    [*RFD07/04*], [Il sistema deve implementare un modello di previsione della domanda dei prodotti#super[G].], [Non Soddisfatto],
+    [*RFD07/05*], [Il sistema deve poter pianifiare i riassortimenti#super[G] sulla base del modello di previsione.], [Non Soddisfatto],
+    [*RFD07/06*], [Il sistema deve inviare una richiesta decisionale al Supervisore Globale di approvvigionamento#super[G] sulla base del modello di previsione.], [Non Soddisfatto],
+    [*RFD07/07*], [Il sistema deve inviare una richiesta decisionale al Supervisore Globale di riassortimento#super[G] sulla base del modello di previsione.], [Non Soddisfatto],  
+
+    //Requisiti Funzionali opzionali
+    [*RFO01*], [I supervisori devono poter eseguire un ripristino#super[G] manuale dei dati da un backup#super[G].], [Non Soddisfatto],
+
+    [*RFO02*], [*Gestione dei magazzini non operativi.*],[],
+    [*RFO02/01*], [Ciascun magazzino può trovarsi nello stato "non operativo".],[Non Soddisfatto],
+    [*RFO02/02*], [Il sistema può annullare ordini#super[G] di un magazzino "non operativo".], [Soddisfatto],
+    [*RFO02/03*], [Il sistema può assegnare ordini#super[G] di un magazzino "non operativo" ad altri magazzini.], [Non Soddisfatto],
+
+  ),
+  caption: [Requisiti Funzionali],
+)
+
+// ===== REQUISITI DI VINCOLO ==== 
+
+== Requisiti di Vincolo
+
+#show figure: set block(breakable: true)
+#set table.cell(breakable: true)
+
+#set table(
+  fill:(x,y)=> if y==0 {rgb("#2599ff")} else if x == 0 {luma(235)},
+)
+
+#figure(
+  table(
+    columns: (1fr, 3.5fr, 1.2fr),
+    inset: 10pt,
+    align: center,
+    table.header(
+    [*Codice*], [*Descrizione*], [*Stato*]),
+
+    //Requisiti di Vincolo obbligatori
+    [*RV01*], [L'architettura#super[G] del sistema deve usare microservizi#super[G].], [Soddisfatto],
+    [*RV02*], [Versionamento del codice tramite Git.], [Soddisfatto],
+
+    //Requisiti di Vincolo desiderabili
+    //Requisiti di Vincolo opzionali
+  ),
+  caption: [Requisiti di Vincolo],
+)
+
+// ===== REQUISITI DI QUALITA' ==== 
+
+== Requisiti di Qualità
+
+#show figure: set block(breakable: true)
+#set table.cell(breakable: true)
+
+#set table(
+  fill:(x,y)=> if y==0 {rgb("#2599ff")} else if x == 0 {luma(235)},
+)
+
+#figure(
+  table(
+    columns: (1fr, 3.5fr, 1.2fr),
+    inset: 10pt,
+    align: center,
+    table.header(
+    [*Codice*], [*Descrizione*], [*Stato*]),
+
+    //Requisiti di Qualità Obbligatori
+
+    [*RQ01*], [*Autonomia dei magazzini.*], [],
+    [*RQ01/01*], [I magazzini devono poter operare autonomamente.], [Soddisfatto],
+    [*RQ01/02*], [I magazzini devono poter elaborare localmente le richieste.], [Soddisfatto],
+    [*RQ01/03*], [Ciascun magazzino deve gestire gli ordini#super[G] concorrenti per uno stesso prodotto secondo una politica predefinita.], [Soddisfatto],
+
+    [*RQ02*], [*Robustezza dei magazzini.*], [],
+    [*RQ02/01*], [I dati di inventario#super[G] e degli ordini#super[G] devono essere coerenti, consistenti e persistenti in tutto il sistema.], [Soddisfatto],
+    [*RQ02/02*], [I dati di inventario#super[G] devono essere resilienti a modifiche concorrenti.], [Soddisfatto],
+
+    [*RQ03*], [*Sicurezza del sistema.*], [],
+    [*RQ03/01*], [Deve essere implementata la cifratura#super[G] end-to-end negli scambi dei dati tra magazzini e con il sistema.], [Non Soddisfatto],
+    [*RQ03/02*], [Il sistema deve implementare un log dei tentativi di accesso.], [Soddisfatto],
+    [*RQ03/03*], [Il sistema deve identificare tentativi di accesso non autorizzati.], [Soddisfatto],
+    [*RQ03/04*], [Il sistema deve notificare il Supervisore Globale di tentativi di accesso non autorizzati.], [Non Soddisfatto],
+
+    [*RQ04*], [*Unit test e code coverage.*], [],
+    [*RQ04/01*], [La correttezza delle funzioni sviluppate deve essere garantita dai test unitari.], [Soddisfatto],
+    [*RQ04/02*], [La copertura del codice deve essere superiore al 70% (minimo) e 80% (auspicabile).], [Soddisfatto (83%)],  
+    [*RQ04/03*], [Il test devono poter essere eseguiti in maniera automatizzata.], [Soddisfatto],
+    [*RQ04/04*], [Devono essere eseguiti test di non regressione.], [Soddisfatto],
+
+    [*RQ05*], [*Test book dettagliato.*], [],
+    [*RQ05/01*], [Tutti i test devono essere documentati in un test book.], [Soddisfatto],
+    [*RQ05/02*], [Il test book deve includere una descrizione dei casi di test.], [Soddisfatto],  
+    [*RQ05/03*], [Il test book deve includere le condizioni iniziali dei test.], [Soddisfatto],
+    [*RQ05/04*], [Il test book deve includere i passaggi eseguiti dai test.], [Soddisfatto],    
+    [*RQ05/05*], [Il test book deve includere i risultati attesi e ottenuti dai test.], [Soddisfatto],
+    [*RQ05/06*], [Il test book deve includere criteri di validazione#super[G] dei test.], [Soddisfatto],
+
+    [*RQ06*], [Il Sistema deve essere scalabile orizzontalmente.], [Soddisfatto],
+
+    [*RQ07*], [La gestione dei magazzini deve essere distribuita.], [Soddisfatto],
+
+
+    //Requisiti di Qualità desiderabili
+
+    [*RQD01*], [Il sistema deve automatizzare il processo di riassortimento#super[G] se rispetta il costo e la distanza massima.], [Soddisfatto],
+
+    [*RQD02*], [II magazzino detiene la fonte affidabile dei dati di inventario#super[G] e degli ordini#super[G].], [Soddisfatto],
+
+    //Requisiti di Qualità opzionali
+
+    [*RQO01*], [*Sicurezza del sistema.*], [],
+    [*RQO01/01*], [Il sistema deve prevedere la possibilità di autenticazione#super[G] a due fattori (2FA#super[G]) o più (MFA#super[G]) per gli utenti.], [Non Soddisfatto],
+    [*RQO01/02*], [Il sistema deve verificare#super[G] l'integrità#super[G] dei dati tramite firme digitali#super[G] o hashing#super[G].], [Non Soddisfatto],
+    [*RQO01/03*], [Le richieste verso i microservizi#super[G] devono essere autenticate.], [Soddisfatto],
+    [*RQO01/04*], [Gli scambi di dati tra microservizi#super[G] devono essere cifrati.], [Non Soddisfatto],
+
+    [*RQO02*], [*Backup#super[G] e ripristino#super[G] dei dati.*], [],
+    [*RQO02/01*], [I dati dei magazzini devono essere sottoposti a backup#super[G].], [Non Soddisfatto],
+    [*RQO02/02*], [I dati aggregati su cloud devono essere sottoposti a backup#super[G].], [Non Soddisfatto],
+    [*RQO02/03*], [I magazzini devono mantenere una copia locale dei propri dati.], [Non Soddisfatto],
+    [*RQO02/04*], [Il sistema deve mantenere l'integrità#super[G] e la consistenza dei dati tra i magazzini.], [Soddisfatto],
+    ),
+    caption: [Requisiti di Qualità],
+  )
+
+#pagebreak()
