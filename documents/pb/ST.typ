@@ -546,11 +546,11 @@ massime configurate e coordinare le operazioni di movimentazione delle quantità
 
 Descrizione degli attributi della struttura:
  - *id*: string \
-  È il codice EAN del prodotto.
+  È il codice univoco del prodotto.
 
 Può invocare le seguenti funzioni:
 - *getId()*: string \
-  Metodo pubblico per ottenere il codice EAN del prodotto.
+  Metodo pubblico per ottenere il codice univoco del prodotto.
 
 ==== Product
  + Contiene tutti gli attributi modificabili del prodotto: _name, unitPrice, quantity, minThres, maxThres_,
@@ -577,7 +577,7 @@ Può invocare le seguenti funzioni:
   - *addDeltaQuantity(quantity: number)*: void \
     Metodo per sommare o sottrarre una quantità positiva ad un prodotto.
   - *getId()*: ProductId; \
-    Restituisce il codice EAN del prodotto.
+    Restituisce il codice univoco del prodotto.
   - *getName()*: string; \
     Restituisce il nome del prodotto.
   - *getUnitPrice()*: number; \
@@ -618,7 +618,7 @@ Descrizione degli attributi della struttura:
 
 Può invocare le seguenti funzioni:
 - *getId()*: ProductId; \
-  Restituisce il codice EAN del prodotto.
+  Restituisce il codice univoco del prodotto.
 - *getQuantity()*: number \
   Restituisce la quantità associata al prodotto.
 
@@ -707,7 +707,7 @@ Descrizione degli attributi della struttura:
 
 ==== OrderIdDTO
 Descrizione degli attributi della struttura:
-  - *id*: string UUID \
+  - *id*: string  \
     Identificativo dell'ordine, rappresentato come DTO.
 
 ==== ProductIdDTO
@@ -955,7 +955,7 @@ Metodi:
     Restituisce l’inventario completo del magazzino.
  - *addProduct(product: Product)*: Product \
     Aggiunge un nuovo prodotto all’inventario e restituisce il prodotto inserito.
- - *removeById(id: ProductId)*: boolean \
+ - *removeById(id: ProductId)*: boolunivoco \
     Rimuove un prodotto a partire dal suo identificativo e restituisce true se l’operazione ha avuto successo.
  - *updateProduct(editedProduct: Product)*: Product | null \
     Aggiorna i dati di un prodotto esistente e restituisce l’oggetto aggiornato, oppure null se non trovato.
@@ -1046,7 +1046,7 @@ Descrizione degli attributi della struttura:
 Può invocare le seguenti funzioni:
  - *syncHeartbeat(heartbeat: Heartbeat)*: void \
    Sincronizza lo stato del magazzino con il messaggio ricevuto.
- - *sendHeartBeat(heartbeat: Heartbeat)*: boolean \
+ - *sendHeartBeat(heartbeat: Heartbeat)*: boolunivoco \
    Metodo per inviare il messaggio di stato.
 ==== WarehouseStateDTO
  + Rappresenta lo stato del magazzino sotto forma di DTO (Data Transfer Object),
@@ -1132,7 +1132,7 @@ Può invocare le seguenti funzioni:
 Può invocare le seguenti funzioni:
  - *getState(warehouseId: WarehouseId): WarehouseState* \
    Restituisce lo stato corrente del magazzino.
- - *updateState(state: WarehouseState): boolean* \
+ - *updateState(state: WarehouseState): boolunivoco* \
    Aggiorna lo stato del magazzino e restituisce true/false a seconda del successo dell’operazione.
 
 ==== StateRepositoryImpl
@@ -1215,11 +1215,11 @@ Può invocare le seguenti funzioni:
  + Gestisce il controllo, la visualizzazione e l’aggiornamento dello stato del magazzino.
 
 Può invocare le seguenti funzioni:
- - *checkHeartbeat(heartbeat: CloudHeartbeat)*: boolean \
+ - *checkHeartbeat(heartbeat: CloudHeartbeat)*: boolunivoco \
    Controlla lo stato del magazzino tramite il messaggio di heartbeat.
  - *getState(warehouseId: CloudWarehouseId)*: CloudWarehouseState \
    Restituisce lo stato del magazzino selezionato.
- - *updateState(state: CloudWarehouseState)*: boolean \
+ - *updateState(state: CloudWarehouseState)*: boolunivoco \
    Aggiorna lo stato del magazzino.
 
 ==== CloudWarehouseStateDTO
@@ -1322,7 +1322,7 @@ Può invocare le seguenti funzioni:
 Può invocare le seguenti funzioni:
  - *getState(warehouseId: CloudWarehouseId): CloudWarehouseState* \
    Restituisce lo stato corrente del magazzino.
- - *updateState(state: CloudWarehouseState): boolean* \
+ - *updateState(state: CloudWarehouseState): boolunivoco* \
    Aggiorna lo stato del magazzino e restituisce true/false a seconda del successo dell’operazione.
 
 ==== CloudStateRepositoryImpl
@@ -2787,7 +2787,7 @@ Descrizione degli attributi della struttura:
 
 Descrizione degli attributi della struttura:
 - *id*: string \
-  Codice EAN del prodotto.
+  Codice univoco del prodotto.
 - *name*: string \
   Nome del prodotto.
 - *price*: number \
@@ -2807,7 +2807,7 @@ Descrizione degli attributi della struttura:
   Quantità associata.
 
 ==== ProductIdDTO
- + Incapsula l’identificativo univoco di un prodotto (EAN) in forma DTO.
+ + Incapsula l’identificativo univoco di un prodotto (univoco) in forma DTO.
 
 Descrizione degli attributi della struttura:
 - *id*: string \
@@ -2852,7 +2852,7 @@ Può invocare le seguenti funzioni:
 
 Descrizione degli attributi della struttura:
 - *id*: ProductId \
-  Identificativo univoco del prodotto (EAN).
+  Identificativo univoco del prodotto (univoco).
 - *name*: string \
   Nome del prodotto.
 - *unitPrice*: number \
@@ -3246,7 +3246,7 @@ Può invocare le seguenti funzioni:
   Registra un nuovo Supervisore Locale a sistema.
 - *authenticate(jwt: string,cid: string)*: string \
   Si occupa di gestire l'autenticazione mediante il token JWT e il CID.
-- *isGlobalSet()*: boolean \
+- *isGlobalSet()*: boolunivoco \
   Verifica se esiste già un Supervisore Globale registrato a sistema.
 - *generateJWT(user: User)*: string \
   Genera il token JWT per l'utente.
