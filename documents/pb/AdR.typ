@@ -1394,7 +1394,7 @@ _Esempio:_
 
     [*RF05*], [*Gestione manuale delle merci.*], [],
     [*RF05/01*], [I Supervisori possono inserire un nuovo tipo di merce nell'inventario#super[G] di un magazzino, ciascuna con codice univoco e nome prodotto#super[G].], [#link(label("uc-9"), underline("[UC 9]"))],
-    [*RF05/02*], [I Supervisori visualizzano un messaggio di errore se il codice EAN non rispetta la sintassi prevista.], [#link(label("uc-9.1"), underline("[UC 9.1]"))],
+    [*RF05/02*], [I Supervisori visualizzano un messaggio di errore se il codice univoco non rispetta la sintassi prevista.], [#link(label("uc-9.1"), underline("[UC 9.1]"))],
     [*RF05/03*], [I Supervisori possono definire il prezzo unitario all'inserimento di un nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [#link(label("uc-9"), underline("[UC 9]"))],
     [*RF05/04*], [I Supervisori visualizzano un messaggio di errore se il prezzo unitario del prodotto#super[G] è sintatticamente errato.], [#link(label("uc-9.2"), underline("[UC 9.2]"))],
     [*RF05/05*], [I Supervisori possono definire la quantità all'inserimento di un nuovo tipo di merce nell'inventario#super[G] di un magazzino.], [#link(label("uc-9"), underline("[UC 9]"))],
