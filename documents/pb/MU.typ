@@ -243,19 +243,20 @@
 
     == Gestione di magazzini
       === Creazione di un magazzino
-      Il sistema permette la creazione di un nuovo magazzino locale.
+      Il sistema permette la creazione di un nuovo magazzino locale. Per creare un nuovo magazzino è necessario essere un supervisore globale (ovvero aver effettuato accesso come tale).
+
+      Presupponendo che i dati del magazzino da creare siano di questo tipo: \
+      { \
+       "state": "ONLINE", \
+       "address": "Via Roma 123, Padova" \
+      }, \
+
+      il comando da inserire per creare un nuovo magazzino è del tipo: POST "http:/localhost:8080/api/routing/warehouse/create".
 
       === Visualizzazione dello stato di un magazzino
       Il sistema permette la visualizzazione dello stato (online/offline) di uno specifico magazzino locale.
 
-      === Visualizzazione dello stato di tutti i magazzini presenti in rete
-      Il sistema permette la visualizzazione dello stato di tutti i magazzini presenti in rete.
-
-
-      === Visualizzazione dei dati di un singolo magazzino
-      Il sistema permette la visualizzazione dei dati di uno specifico magazzino, quali id, indirizzo e stato (online/offline). 
-
-      Il comando da inserire per visualizzare i dati di un magazzino esistente è del tipo: GET "http:/localhost:8080/api/warehouse/1", dove '1' corrisponde al numero del magazzino interessato.
+      Il comando da inserire per visualizzare lo stato di un magazzino specifico è del tipo: GET "http:/localhost:8080/api/cloudState/warehouse/1/state/get", dove '1' corrisponde al numero del magazzino interessato.
 
     == Gestione prodotti
       === Inserimento prodotto in un Inventario
