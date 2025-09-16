@@ -12,6 +12,11 @@
   cardin: "Prof. Riccardo Cardin",
 )
 
+
+// PER SPEZZARE TABELLE
+//  show figure: set block(breakable: true)
+//  set table.cell(breakable: true)
+
 // FUNZIONI
 /* Funzione che crea nuova voce in prima pagina, supporta stringhe o array di stringhe */
 #let voce(string1, string2) = {
