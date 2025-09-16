@@ -13,10 +13,10 @@
 */
 
 #let titolo = "Specifica Tecnica"
-#let status = "In redazione"
+#let status = "Approvato"
 #let destinatario = "M31"
 
-#let versione = "0.8.0"
+#let versione = "1.0.0"
 
 #let distribuzione = (
   /* formato:  p.nome,  oppure  "nome",  */
@@ -29,6 +29,12 @@
 
 #let voci_registro = (
   /* formato:  [text],  OPPURE  "text",  */
+
+  [1.0.0],
+  [15/09/2025],
+  [S. Marana \ A. Shu],
+  [N. Moretto],
+  [Revisione finale ed approvazione del documento],
 
   [0.8.0],
   [15/09/2025],
@@ -237,10 +243,10 @@ in categorie in base al loro ruolo all'interno dell'architettura:
     [*Tecnologia*], [*Versione*], [*Descrizione*],
 
     //table row
-    [*Typescript*], [1.24.0], [Linguaggio di programmazione superset di JavaScript, progettato per aggiungere tipizzazione statica e altre funzionalità. Sviluppo di applicazioni scalabili, miglioramento della qualità del codice, utilizzo con framework come Angular, React e Node.js.],
-    [*JavaScript*], [1.24.0], [Linguaggio di programmazione interpretato, principalmente utilizzato per il lato client nelle applicazioni web. Sviluppo frontend, dinamismo e interattività delle pagine web, utilizzato con framework come React, Vue.js, Angular.],
-    [*YAML*], [1.24.0], [Formato di serializzazione dei dati leggibile dall'uomo, spesso usato per configurazioni. Definizione di file di configurazione, deployment automation, utilizzato con sistemi come Kubernetes, Docker e CI/CD pipelines.],
-    [*JSON*], [1.24.0], [Formato di scambio dati basato su testo, semplice e leggero, ampiamente utilizzato per la comunicazione tra server e client. Scambio di dati tra server e applicazioni web, configurazione di API, utilizzato in contesti come RESTful services e architetture microservizi.],
+    [*Typescript*], [5.9], [Linguaggio di programmazione superset di JavaScript, progettato per aggiungere tipizzazione statica e altre funzionalità. Sviluppo di applicazioni scalabili, miglioramento della qualità del codice, utilizzo con framework come Angular, React e Node.js.],
+    [*JavaScript*], [---], [Linguaggio di programmazione interpretato, principalmente utilizzato per il lato client nelle applicazioni web. Sviluppo frontend, dinamismo e interattività delle pagine web, utilizzato con framework come React, Vue.js, Angular.],
+    [*YAML*], [---], [Formato di serializzazione dei dati leggibile dall'uomo, spesso usato per configurazioni. Definizione di file di configurazione, deployment automation, utilizzato con sistemi come Kubernetes, Docker e CI/CD pipelines.],
+    [*JSON*], [---], [Formato di scambio dati basato su testo, semplice e leggero, ampiamente utilizzato per la comunicazione tra server e client. Scambio di dati tra server e applicazioni web, configurazione di API, utilizzato in contesti come RESTful services e architetture microservizi.],
   ),
   caption: [Linguaggi di programmazione.],
 )
@@ -259,7 +265,7 @@ in categorie in base al loro ruolo all'interno dell'architettura:
     [*Tecnologia*], [*Versione*], [*Descrizione*],
 
     //table row
-    [*NestJs*], [1.24.0], [Framework per applicazioni Node.js basato su TypeScript, progettato per costruire applicazioni scalabili e modulari. Sviluppo di backend robusti e mantenibili, costruzione di API RESTful, utilizzo con TypeORM, GraphQL, microservizi.]
+    [*NestJs*], [11.1.6], [Framework per applicazioni Node.js basato su TypeScript, progettato per costruire applicazioni scalabili e modulari. Sviluppo di backend robusti e mantenibili, costruzione di API RESTful, utilizzo con TypeORM, GraphQL, microservizi.]
   ),
   caption: [Frameworks.],
 )
@@ -278,7 +284,7 @@ in categorie in base al loro ruolo all'interno dell'architettura:
     [*Tecnologia*], [*Versione*], [*Descrizione*],
 
     //table row
-    [*MongoDB*], [1.24.0], [Database NoSQL orientato ai documenti, progettato per gestire grandi volumi di dati non strutturati o semi-strutturati. Archiviazione flessibile di dati JSON-like, scalabilità orizzontale, ideale per applicazioni web moderne, sistemi distribuiti, e gestione di dati in tempo reale.]
+    [*MongoDB*], [8.0.14], [Database NoSQL orientato ai documenti, progettato per gestire grandi volumi di dati non strutturati o semi-strutturati. Archiviazione flessibile di dati JSON-like, scalabilità orizzontale, ideale per applicazioni web moderne, sistemi distribuiti, e gestione di dati in tempo reale.]
 
   ),
   caption: [Tecnologie per la gestione dei dati.],
@@ -298,7 +304,7 @@ in categorie in base al loro ruolo all'interno dell'architettura:
     [*Tecnologia*], [*Versione*], [*Descrizione*],
 
     //table row
-    [*NATS*], [1.24.0], [Sistemi di messaggistica leggeri e ad alte prestazioni per la comunicazione asincrona tra microservizi. Gestione di eventi, comunicazione in tempo reale, utilizzato in architetture a microservizi, IoT, e applicazioni distribuite.]
+    [*NATS*], [2.11.8], [Sistemi di messaggistica leggeri e ad alte prestazioni per la comunicazione asincrona tra microservizi. Gestione di eventi, comunicazione in tempo reale, utilizzato in architetture a microservizi, IoT, e applicazioni distribuite.]
   ),
   caption: [Tecnologie per la comunicazione e per la messaggistica.],
 )
@@ -317,7 +323,7 @@ in categorie in base al loro ruolo all'interno dell'architettura:
     [*Tecnologia*], [*Versione*], [*Descrizione*],
 
     //table row
-    [*Docker*], [1.24.0], [Piattaforma per la creazione, distribuzione e gestione di container, che permette di isolare applicazioni e dipendenze. Virtualizzazione leggera, gestione di ambienti di sviluppo e produzione, automazione del deployment, utilizzato in DevOps e CI/CD pipelines.]
+    [*Docker*], [28.3.2], [Piattaforma per la creazione, distribuzione e gestione di container, che permette di isolare applicazioni e dipendenze. Virtualizzazione leggera, gestione di ambienti di sviluppo e produzione, automazione del deployment, utilizzato in DevOps e CI/CD pipelines.]
 
   ),
   caption: [Tecnologie per la virtualizzazione.],
@@ -338,16 +344,15 @@ in categorie in base al loro ruolo all'interno dell'architettura:
     [*Tecnologia*], [*Versione*], [*Descrizione*],
 
     //table row
-    [**], [], []
+    [*Prometheus*], [3.6.0], [Sistema di monitoraggio e allerta open-source, progettato per raccogliere e archiviare metriche in tempo reale. Utilizza un modello di dati basato su serie temporali e offre potenti funzionalità di query per analizzare le metriche raccolte.],
+    [*Grafana*], [12.3.0], [Piattaforma open-source per la visualizzazione e l'analisi di dati, spesso utilizzata in combinazione con sistemi di monitoraggio come Prometheus. Consente di creare dashboard interattive e personalizzate per visualizzare metriche, log e altri dati in tempo reale.]
 
   ),
   caption: [Tecnologie per il monitoraggio dei microservizi.],
 )
 
 
-//tipo grafana, prometheus, ecc.
-
-== Tecnologie per l'analisi statica
+== Tecnologie per il Testing
 #v(1em)
 
 #figure(
@@ -360,26 +365,8 @@ in categorie in base al loro ruolo all'interno dell'architettura:
     [*Tecnologia*], [*Versione*], [*Descrizione*],
     
     //table row
-    [**], [], []
-
-  ),
-  caption: [Tecnologie per l'analisi statica.],
-)
-
-== Tecnologie per l'analisi dinamica
-#v(1em)
-
-#figure(
-  table(
-    columns: (1fr, 1fr, 4fr),
-    align: center + horizon,
-    inset: 8pt,
-
-    // Header row
-    [*Tecnologia*], [*Versione*], [*Descrizione*],
-    
-    //table row
-    [**], [], []
+    [*Jest*], [30.0], [Framework di testing JavaScript sviluppato da Meta, progettato per testare codice JavaScript e TypeScript. Offre funzionalità di test unitari, test di integrazione, mocking e snapshot testing. Utilizzato per garantire affidabilità e qualità del codice nelle applicazioni Node.js e frontend.],
+    [*Postman*], [10.16.2], [Strumento per il testing e lo sviluppo di API, che consente di creare, testare e documentare API in modo semplice ed efficiente. Offre funzionalità per inviare richieste HTTP, gestire collezioni di API, automatizzare test e monitorare le prestazioni delle API. Utilizzato da sviluppatori e team di sviluppo per garantire la qualità e l'affidabilità delle API. Utilizzato anche per test di accettazione.]
 
   ),
   caption: [Tecnologie per l'analisi dinamica.],
@@ -387,25 +374,6 @@ in categorie in base al loro ruolo all'interno dell'architettura:
 
 
 //dire cosa abbiamo usato per fare i test
-
-== Librerie
-#v(1em)
-
-#figure(
-  table(
-    columns: (1fr, 1fr, 4fr),
-    align: center + horizon,
-    inset: 8pt,
-
-    // Header row
-    [*Tecnologia*], [*Versione*], [*Descrizione*],
-    
-    //table row
-    [**], [], []
-
-  ),
-  caption: [Librerie.],
-)
 
 = Architettura
 #v(1em)
@@ -469,14 +437,66 @@ Le principali ragioni che hanno portato a questa scelta includono:
 
 In conclusione, l'architettura esagonale rappresenta una scelta ideale per garantire modularità, sostenibilità a lungo termine e un'elevata capacità di adattamento alle esigenze future del sistema.
 
-== Architettura di deployment
+== Pattern Architetturali
 === Sistema a microservizi
+==== Descrizione del pattern Microservizi
+Il pattern Microservizi è un'architettura che suddivide un'applicazione complessa in una serie di servizi indipendenti, ciascuno responsabile di una specifica funzionalità di business. Ogni microservizio è autonomo, può essere sviluppato, distribuito e scalato in modo indipendente dagli altri, comunica tramite API leggere (tipicamente HTTP/REST o messaggistica asincrona come con  NATS) e possiede il proprio modello di dati e logica di persistenza. Questo approccio favorisce la modularità, la resilienza e la possibilità di adottare tecnologie differenti per ciascun servizio, facilitando l'evoluzione e la manutenzione del sistema.
+==== Motivazioni dell'utilizzo del pattern Microservizi
+L'adozione del pattern Microservizi è stata motivata sia dalla richiesta esplicita dell'azienda proponente, sia dall'analisi delle esigenze di un sistema a magazzini distribuiti. Questo approccio si è rivelato particolarmente adatto per diversi motivi:
+
+- **Scalabilità**: ogni magazzino può essere gestito come un servizio indipendente, facilitando l'espansione del sistema e la gestione di carichi variabili.
+- **Resilienza**: la suddivisione in servizi autonomi riduce l'impatto di eventuali guasti, migliorando la disponibilità complessiva.
+- **Manutenibilità**: i microservizi consentono aggiornamenti e modifiche localizzate senza influenzare l'intero sistema.
+- **Flessibilità tecnologica**: ogni servizio può essere sviluppato e aggiornato con tecnologie e linguaggi diversi, scegliendo la soluzione più adatta al contesto specifico.
+- **Indipendenza dei team**: lo sviluppo parallelo di più microservizi permette una maggiore produttività e una migliore organizzazione del lavoro.
+
+In sintesi, il pattern Microservizi garantisce modularità, adattabilità e robustezza, risultando la scelta ideale per un sistema distribuito come quello richiesto dal progetto.
+
+=== Architettura esagonale
+==== Descrizione dell'architettura esagonale
+L'architettura esagonale, nota anche come Ports and Adapters, è un modello architetturale che promuove la separazione tra la logica di business centrale e le interazioni con servizi esterni, fonti di dati e interfacce utente. Questo approccio consente di creare sistemi modulari, testabili e indipendenti da tecnologie specifiche.
+
+==== Motivazioni dell'utilizzo dell'architettura esagonale
+L'architettura esagonale è stata adottata per i microservizi perché garantisce una netta separazione tra la logica di business e le dipendenze esterne (database, sistemi di messaggistica, API, ecc.), favorendo modularità, testabilità e indipendenza tecnologica. In un contesto a microservizi, questa separazione permette di sviluppare, testare e distribuire ogni servizio in modo autonomo, semplificando l'integrazione con tecnologie diverse e facilitando la sostituzione o l'evoluzione dei componenti esterni senza impattare la logica centrale. Inoltre, l'approccio Ports & Adapters consente di mantenere i microservizi facilmente estendibili e manutenibili, riducendo il rischio di accoppiamento tra le parti e migliorando la resilienza complessiva del sistema.
+
+=== Saga Pattern
+==== Descrizione del Saga Pattern
+È un pattern architetturale usato per gestire le transazioni distribuite nei sistemi a microservizi. Una Saga suddivide una transazione complessa in una serie di transazioni locali, ognuna gestita da un servizio. Se una di queste fallisce, vengono eseguite delle operazioni di compensazione per annullare le modifiche precedenti e mantenere la consistenza dei dati.
+
+==== Motivazioni dell'utilizzo del Saga Pattern
+Nel progetto dei magazzini distribuiti molte operazioni coinvolgono più servizi (ad esempio spostare scorte da un magazzino a un altro, o aggiornare disponibilità e ordini). Non potendo fare affidamento su una transazione globale, il Saga pattern garantisce che il sistema resti consistente tramite compensazioni. Questo rende l'architettura più affidabile e resiliente ai fallimenti parziali, evitando blocchi o incoerenze nei dati.
+Nel nostro sistema abbiamo scelto di seguire un saga pattern orchestrato dove un servizio gestisce il processo delle transizioni della saga.
+
+=== CQRS (Command Query Responsibility Segregation)
+==== Descrizione del pattern CQRS
+Il pattern CQRS separa le operazioni di scrittura (Command) da quelle di lettura (Query), utilizzando modelli e percorsi diversi per ciascun tipo di operazione. I comandi modificano lo stato del sistema, mentre le query si occupano esclusivamente di restituire dati, senza effetti collaterali. Questo approccio permette di ottimizzare e scalare in modo indipendente le operazioni di lettura e scrittura.
+
+==== Motivazioni dell'utilizzo del pattern CQRS
+Nel progetto, la gestione dei dati di magazzino richiede alta scalabilità: le scritture (aggiornamenti di scorte, inserimento ordini) sono meno frequenti ma critiche, mentre le letture (consultazione scorte, statistiche, stato ordini) sono molto più numerose. L'adozione di CQRS consente di ottimizzare le performance di entrambe le parti, facilitando l'integrazione di sistemi distribuiti e l'uso di cache (es. Redis) per le query, senza impattare la coerenza e l'affidabilità delle operazioni di scrittura.
+
+=== Event Sourcing
+==== Descrizione del pattern Event Sourcing
+È un pattern in cui lo stato del sistema non viene salvato direttamente come uno snapshot finale, ma come una sequenza di eventi immutabili che rappresentano ogni cambiamento avvenuto nel sistema. Lo stato corrente può sempre essere ricostruito rigiocando in ordine tutti gli eventi registrati.
+
+==== Motivazioni dell'utilizzo del pattern Event Sourcing
+Nei magazzini distribuiti è fondamentale tenere traccia di ogni cambiamento (ad esempio: arrivo merce, spostamento scorte, evasione di un ordine). L'adozione di Event Sourcing consente di mantenere uno storico completo e auditabile di tutte le operazioni, risultando prezioso per attività di debug, analisi, resilienza e per la ricostruzione dei dati in caso di inconsistenze o errori.
 
 == Design patterns
 // Enuncere i design patterns usati, la descrizione e il motivo della scelta
-=== (nome pattern)
-==== Descrizione del (nome pattern)
-==== Motivazioni dell'utilizzo del (nome pattern)
+=== Domain-Driven Design (DDD)
+==== Descrizione del Domain-Driven Design (DDD)
+È un approccio alla progettazione software che mette al centro il dominio applicativo (in questo caso la gestione dei magazzini) e il linguaggio ubiquitario, cioè un linguaggio condiviso tra sviluppatori e stakeholder. Divide il sistema in bounded context, ognuno con il proprio modello coerente.
+
+==== Motivazioni dell'utilizzo del Domain-Driven Design (DDD)
+Nel progetto dei magazzini distribuiti il dominio è complesso (scorte, sincronizzazione, logistica, ridondanza dei dati). Usare DDD permette di mantenere un modello chiaro e condiviso, riducendo ambiguità e rendendo più facile la comunicazione con l'azienda partner. Inoltre, separando i bounded context (es. gestione ordini, inventario, sincronizzazione) si ottiene un'architettura modulare e più manutenibile.
+
+=== Dependency Injection (DI)
+==== Descrizione del pattern Dependency Injection (DI)
+È un pattern che permette di gestire le dipendenze tra oggetti dall'esterno, invece che crearle direttamente nel codice. Le classi dichiarano le loro dipendenze e un framework o un contenitore DI le fornisce.
+
+==== Motivazioni dell'utilizzo del pattern Dependency Injection (DI)
+In un sistema a microservizi e architettura modulare, la DI semplifica i test (mock delle dipendenze), migliora la manutenibilità e rende i servizi meno accoppiati. Questo è particolarmente utile per il progetto, dove i vari moduli (es. sincronizzazione, gestione ordini, API) devono poter evolvere indipendentemente. Inoltre NestJs supporta nativamente la DI, facilitando l'implementazione di questo pattern.
+
 
 == Microservizi sviluppati
 // Schema di tutti i microservizi - introduzione
@@ -496,13 +516,13 @@ I microservizi sviluppati sono:
 //- *#link(label("Inventary Aggreggate"), "Inventary Aggreggate")*
 //- *#link(label("Auth"), "Auth")*
 Ogni microservizio possiede il proprio file 
-- *`*`service* : Contiene la logica applicativa principale, orchestrando i casi d’uso e coordinando le entità di dominio.
-- *`*`DTO* : Strutture leggere dedicate allo scambio di dati tra microservizi o verso l’esterno, senza esporre direttamente le entità di dominio.
-- *`*`DataMapper* : Componente responsabile della conversione bidirezionale tra entità di dominio e DTO. Garantisce separazione tra logica interna e interfacce esterne.
-- *`*`Adapter* : Moduli che implementano le interfacce per la comunicazione esterna (eventi, API, messaggistica). Seguono il pattern Ports & Adapters.
-- *`*`Controller* : Punto di ingresso del microservizio per la gestione delle richieste provenienti dall’esterno (es. REST controller, listener di eventi).
-- *`*`Repository* : Strato di accesso ai dati per la gestione della persistenza delle entità di dominio.
-  - Nota: il _Sistema Centralizzato_ non possiede la repository perchè non ha persistenza locale ma agisce come orchestratore.
+- *service* : Contiene la logica applicativa principale, orchestrando i casi d’uso e coordinando le entità di dominio.
+- *DTO* : Strutture leggere dedicate allo scambio di dati tra microservizi o verso l’esterno, senza esporre direttamente le entità di dominio.
+- *DataMapper* : Componente responsabile della conversione bidirezionale tra entità di dominio e DTO. Garantisce separazione tra logica interna e interfacce esterne.
+- *Adapter* : Moduli che implementano le interfacce per la comunicazione esterna (eventi, API, messaggistica). Seguono il pattern Ports & Adapters.
+- *Controller* : Punto di ingresso del microservizio per la gestione delle richieste provenienti dall'esterno (es. REST controller, listener di eventi).
+- *Repository* : Strato di accesso ai dati per la gestione della persistenza delle entità di dominio.
+  - Nota: il _Sistema Centralizzato_ non possiede la repository perché non ha persistenza locale ma agisce come orchestratore.
 - *Domini* : Le entità e i value object che rappresentano il cuore del microservizio. Sono indipendenti dalla tecnologia e descrivono il linguaggio del dominio
 
 /*
