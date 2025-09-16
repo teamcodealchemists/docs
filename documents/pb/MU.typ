@@ -495,3 +495,33 @@
     == Visualizzazione dei dati di telemetria
     I dati raccolti da *Prometheus* possono essere visualizzati tramite Grafana, uno strumento di analisi e monitoraggio. \
     L'interfaccia di *Prometheus* è accessibile all'indirizzo `http://localhost:9090`, mentre l'interfaccia di *Grafana* è accessibile all'indirizzo `http://localhost:3210`. \
+
+    == Primo accesso a Grafana
+    Al primo accesso a *Grafana*, è necessario utilizzare le seguenti credenziali:
+    - Username: `admin`
+    - Password: `admin` \
+    Al primo accesso, *Grafana* richiederà di cambiare la password.
+    Successivamente, è possibile accedere alla dashboard di monitoraggio delle performance dei servizi.
+
+    == Aggiungere Prometheus come fonte dati in Grafana
+    Per visualizzare i dati di telemetria in *Grafana*, è necessario aggiungere *Prometheus* come fonte dati. \
+    Questo può essere fatto seguendo questi passaggi:
+    1. Accedere a *Grafana*.
+    2. Cliccare sull'icona dell'ingranaggio (⚙️) nel menu laterale per accedere alle impostazioni.
+    3. Selezionare "Data Sources" (Fonti dati).
+    4. Cliccare su "Add data source" (Aggiungi fonte dati).
+    5. Selezionare "Prometheus" dall'elenco delle fonti dati disponibili.
+    6. Configurare l'URL di *Prometheus* (di default `http://localhost:9090`).
+    7. Cliccare su "Save & Test" (Salva e testa) per verificare la connessione.
+
+    == Importare una dashboard predefinita
+    Per visualizzare i dati di telemetria in modo efficace, è possibile importare una dashboard predefinita in *Grafana*. \
+    Questo può essere fatto seguendo questi passaggi:
+    1. Accedere a *Grafana*.
+    2. Cliccare sull'icona "+" nel menu laterale e selezionare "Import" (Importa).
+    3. Inserire l'ID della dashboard predefinita o caricare un file JSON della dashboard.
+    4. Selezionare la fonte dati *Prometheus* appena configurata.
+    5. Cliccare su "Import" (Importa) per aggiungere la dashboard.
+
+    A questo punto, la dashboard sarà disponibile per la visualizzazione e l'analisi dei dati di telemetria raccolti da *Prometheus*.
+    Si noti che le dashboard possono essere personalizzate ulteriormente in base alle esigenze specifiche di monitoraggio.
