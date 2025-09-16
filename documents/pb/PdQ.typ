@@ -14,7 +14,7 @@
 */
 
 #let titolo = "Piano di Qualifica"
-#let status = "In redazione"
+#let status = "Approvato"
 #let destinatario = "M31"
 #let versione = "2.0.0"
 

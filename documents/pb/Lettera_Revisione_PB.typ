@@ -78,7 +78,7 @@ All'interno è possibile trovare i seguenti documenti:\
    
   - verbali interni \
   - verbali esterni \
-  Di seguito viene inoltre fornito il link al repository GitHub del team contenente il *Proof of Concept* del progetto:\
+  Di seguito viene inoltre fornito il link al repository GitHub del team contenente il *Minimum Viable Product* del progetto:\
   #align(center, text(12pt)[
   #link("https://github.com/teamcodealchemists/MVP")
 ])
