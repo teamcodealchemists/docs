@@ -3596,7 +3596,7 @@ Può invocare le seguenti funzioni:
 = Stato dei requisiti funzionali
 == Stato per requisito
 
-erranno ora elencati i requisiti#super[G] del sistema, che sono stati suddivisi in quattro categorie principali: Requisiti#super[G] Funzionali, Requisiti#super[G] di Qualità, Requisiti#super[G] di Vincolo, Requisiti#super[G] Prestazionali.
+Verranno ora elencati i requisiti#super[G] del sistema, che sono stati suddivisi in quattro categorie principali: Requisiti#super[G] Funzionali, Requisiti#super[G] di Qualità, Requisiti#super[G] di Vincolo, Requisiti#super[G] Prestazionali.
 
 == Classificazione dei requisiti
 - *Requisiti#super[G] Funzionali:* descrivono le funzionalità specifiche che il sistema deve offrire. Definiscono i comportamenti attesi in risposta a determinati input o situazioni, specificando cosa il sistema deve fare per soddisfare i bisogni degli utenti e degli stakeholder.
@@ -3910,5 +3910,3 @@ Alcuni requisiti funzionali legati all’interfaccia grafica non sono stati impl
     ),
     caption: [Requisiti di Qualità],
   )
-
-#pagebreak()
