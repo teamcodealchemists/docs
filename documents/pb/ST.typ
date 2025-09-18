@@ -444,11 +444,11 @@ Il pattern Microservizi è un'architettura che suddivide un'applicazione comples
 ==== Motivazioni dell'utilizzo del pattern Microservizi
 L'adozione del pattern Microservizi è stata motivata sia dalla richiesta esplicita dell'azienda proponente, sia dall'analisi delle esigenze di un sistema a magazzini distribuiti. Questo approccio si è rivelato particolarmente adatto per diversi motivi:
 
-- **Scalabilità**: ogni magazzino può essere gestito come un servizio indipendente, facilitando l'espansione del sistema e la gestione di carichi variabili.
-- **Resilienza**: la suddivisione in servizi autonomi riduce l'impatto di eventuali guasti, migliorando la disponibilità complessiva.
-- **Manutenibilità**: i microservizi consentono aggiornamenti e modifiche localizzate senza influenzare l'intero sistema.
-- **Flessibilità tecnologica**: ogni servizio può essere sviluppato e aggiornato con tecnologie e linguaggi diversi, scegliendo la soluzione più adatta al contesto specifico.
-- **Indipendenza dei team**: lo sviluppo parallelo di più microservizi permette una maggiore produttività e una migliore organizzazione del lavoro.
+- *Scalabilità*: ogni magazzino può essere gestito come un servizio indipendente, facilitando l'espansione del sistema e la gestione di carichi variabili.
+- *Resilienza*: la suddivisione in servizi autonomi riduce l'impatto di eventuali guasti, migliorando la disponibilità complessiva.
+- *Manutenibilità*: i microservizi consentono aggiornamenti e modifiche localizzate senza influenzare l'intero sistema.
+- *Flessibilità tecnologica*: ogni servizio può essere sviluppato e aggiornato con tecnologie e linguaggi diversi, scegliendo la soluzione più adatta al contesto specifico.
+- *Indipendenza dei team*: lo sviluppo parallelo di più microservizi permette una maggiore produttività e una migliore organizzazione del lavoro.
 
 In sintesi, il pattern Microservizi garantisce modularità, adattabilità e robustezza, risultando la scelta ideale per un sistema distribuito come quello richiesto dal progetto.
 
@@ -535,7 +535,7 @@ Ogni microservizio possiede il proprio file
 === Microservizio Inventario (Inventory Service)
 // Breve spiegazione + Immagine
 #figure(
-  image("assets/Inventory.svg", width: 120%),
+  image("assets/Inventory.jpg", width: 120%),
   caption: [Schema UML - Microservizio Inventario]
 )
 ==== Descrizione del microservizio
@@ -996,7 +996,7 @@ Metodi:
 #label("State")
 === Microservizio State (Warehouse State Service)
 #figure(
-  image("assets/localState.svg", width: 120%),
+  image("assets/localState.jpg", width: 110%),
   caption: [Schema UML - Microservizio Stato locale]
 )
 ==== Descrizione del microservizio
@@ -1166,7 +1166,7 @@ Può invocare le seguenti funzioni:
 #label("Cloud State")
 === Microservizio Cloud State
 #figure(
-  image("assets/CloudState.svg", width: 120%),
+  image("assets/CloudState.jpg", width: 110%),
   caption: [Schema UML - Microservizio Cloud State]
 )
 ==== Descrizione del microservizio
@@ -1357,7 +1357,7 @@ Può invocare le seguenti funzioni:
 === Microservizio Orders
 // Breve spiegazione + Immagine
 #figure(
-  image("assets/Orders.svg", width: 120%),
+  image("assets/Orders.jpg", width: 110%),
   caption: [Schema UML - Microservizio Ordini]
 )
 ==== Descrizione del microservizio
@@ -1907,7 +1907,7 @@ Può invocare le seguenti funzioni:
 #label("Orders Aggregate")
 === Microservizio Ordine Aggregato
 #figure(
-  image("assets/CloudOrders.svg", width: 120%),
+  image("assets/CloudOrders.jpg", width: 120%),
   caption: [Schema UML - Microservizio Ordine Aggregato]
 )
 ==== Descrizione del microservizio
@@ -2287,7 +2287,7 @@ Può invocare le seguenti funzioni:
 #label("Inventory Aggregate")
 === Microservizio Inventario Aggregato
 #figure(
-  image("assets/InventoryAgg.svg", width: 120%),
+  image("assets/InventoryAgg.jpg", width: 120%),
   caption: [Schema UML - Microservizio Inventario Aggregato]
 )
 ==== Descrizione del microservizio
@@ -2555,7 +2555,7 @@ Può invocare le seguenti funzioni:
 #label("Central System")
 === Sistema Centrale
 #figure(
-  image("assets/CentralSystem.svg", width: 120%),
+  image("assets/CentralSystem.jpg", width: 120%),
   caption: [Schema UML - Microservizio Sistema Centralizzato]
 )
 ==== Descrizione del microservizio
@@ -3119,7 +3119,7 @@ Può invocare le seguenti funzioni:
 === Microservizio Autenticazione
 // Breve spiegazione + Immagine
 #figure(
-  image("assets/Auth.svg", width: 120%),
+  image("assets/Auth.jpg", width: 120%),
   caption: [Schema UML - Microservizio Autenticazione]
 )
 ==== Descrizione del microservizio
@@ -3395,7 +3395,7 @@ Può invocare le seguenti funzioni:
 === Microservizio Routing
 // Breve spiegazione + Immagine
 #figure(
-  image("assets/Routing.svg", width: 120%),
+  image("assets/Routing.jpg", width: 120%),
   caption: [Schema UML - Microservizio Routing]
 )
 ==== Descrizione del microservizio
