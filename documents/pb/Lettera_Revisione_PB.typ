@@ -85,7 +85,7 @@ All'interno è possibile trovare i seguenti documenti:\
 #v(0.2cm)
   
 #v(0.5cm)
-Il costo totale di progetto risulta essere di *13.235€* a fronte dei *14.430€* preventivati in candidatura.\
+Il costo totale di progetto risulta essere di *13.550€* a fronte dei *14.430€* preventivati in candidatura.\
   
   Di seguito vengono riportati i componenti del team.
   #v(2em)

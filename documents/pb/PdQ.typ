@@ -1560,10 +1560,10 @@ I test di accettazione vengono eseguiti per verificare che il software soddisfi 
 Il cruscotto di valutazione dei costi permette di monitorare l'andamento dei costi rispetto a quelli pianificati, evidenziando eventuali scostamenti e permettendo una gestione più efficace del budget. Le metriche principali includono il valore atteso, il costo attuale, il valore effettivo, l'indice di prestazione dei costi e il preventivo al completamento.
 
 #let valori_grafico_costi_atteso = (
-  (1,970), (2,1020), (3,1145), (4,1160), (5,1090), (6,1150), (7,980), (8,680), (9,1220), (10,1300), (11,1350), (12,1200)
+  (1,970), (2,1020), (3,1145), (4,1160), (5,1090), (6,1150), (7,980), (8,680), (9,1220), (10,1300), (11,1390), (12,1240)
 )
 #let valori_grafico_costi_reale = (
-  (1,970), (2,790), (3,1140), (4,1220), (5,955), (6,985), (7,980), (8,530), (9,1205), (10,1380), (11, 1670), (12,1410)
+  (1,970), (2,790), (3,1140), (4,1220), (5,955), (6,985), (7,1055), (8,530), (9,1315), (10,1380), (11, 1760), (12,1450)
 )
 #show figure: set block(breakable: false)
 #show : graph_line.with(
@@ -1590,10 +1590,10 @@ Il grafico del valore atteso ed effettivo mostra l'andamento del valore pianific
 Partendo dal budget iniziale di 14.430€, il valore atteso ed effettivo diminuisce progressivamente, in base ai costi sostenuti per ogni sprint. Il valore atteso rappresenta il budget pianificato per ogni sprint, mentre il valore effettivo rappresenta i costi reali sostenuti fino a quel momento.
 
 #let valori_grafico_valore_atteso = (
-  (0, 14430), (1, 13460), (2, 12440), (3, 11295), (4, 10135), (5, 9045), (6, 7895), (7, 6915), (8, 6235), (9,5640), (10,4100), (11,2310), (12,1110)
+  (0, 14430), (1, 13460), (2, 12440), (3, 11295), (4, 10135), (5, 9045), (6, 7895), (7, 6915), (8, 6235), (9,5640), (10,4100), (11,2010), (12,950)
 )
 #let valori_grafico_valore_effettivo = (
-  (0, 14430), (1, 13460), (2, 12670), (3, 11530), (4, 10310), (5, 9355), (6, 8370), (7, 7390), (8, 6860), (9,5655), (10,4275), (11,2605), (12,1195)
+  (0, 14430), (1, 13460), (2, 12670), (3, 11530), (4, 10310), (5, 9355), (6, 8370), (7, 7315), (8, 6785), (9,5470), (10,4090), (11,2330), (12,880)
 )
 #show figure: set block(breakable: false)
 #show : graph_line.with(

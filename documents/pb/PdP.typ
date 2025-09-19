@@ -1119,7 +1119,7 @@ I possibili rischi :
       [Progettista#super[G]], [25€/h], [-], [-], [156], [3900€],
       [Programmatore#super[G]], [15€/h], [-], [-], [215], [3225€],
       [Verificatore#super[G]], [15€/h], [9], [135€], [130 (-9)], [1980€ (-135€)],
-      [*Totale*], [*-*], [*38*], [*790€*], [*675 (-35)*], [*13460€ (-790€)*],
+      [*Totale*], [*-*], [*35*], [*790€*], [*677 (-35)*], [*13460€ (-790€)*],
   ),
     didascalia: "Sprint 2 - Aggiornamento delle risorse disponibili"
   )
@@ -1229,7 +1229,7 @@ I possibili rischi :
       [Progettista#super[G]], [25€/h], [16], [400€], [156(-16)], [3900€ (-400€)],
       [Programmatore#super[G]], [15€/h], [-], [-], [215], [3225€],
       [Verificatore#super[G]], [15€/h], [9], [135€], [121(-9)], [1845€ (-135€)],
-      [*Totale*], [*-*], [*49*], [*1140€*], [*640 (-49)*], [*12670€ (-1140€)*],
+      [*Totale*], [*-*], [*49*], [*1140€*], [*642 (-49)*], [*12670€ (-1140€)*],
   ),
     didascalia: "Sprint 3 - Aggiornamento delle risorse disponibili"
   )
@@ -1350,7 +1350,7 @@ I possibili rischi:
       [Progettista#super[G]],     [25€/h],   [24],  [600€],   [140(-24)], [3500€ (-600€)],
       [Programmatore#super[G]],   [15€/h],   [6],   [90€],      [215(-6)],      [3225€ (-90€)],
       [Verificatore#super[G]],    [15€/h],   [10],   [150€],   [112(-10)],  [1710€ (-150€)],
-      [*Totale*],                 [*-*],     [*55*],[*1220€*],[*591 (-55)*],[*11530€ (-1220€)*],
+      [*Totale*],                 [*-*],     [*55*],[*1220€*],[*593 (-55)*],[*11530€ (-1220€)*],
     ),
     didascalia: "Sprint 4 - Aggiornamento delle risorse disponibili"
   )
@@ -1457,7 +1457,7 @@ I possibili rischi :
       [Progettista#super[G]],     [25€/h],   [8],  [200€],   [116(-8)], [2900€ (-200€)],
       [Programmatore#super[G]],   [15€/h],   [15],   [225€],  [209(-15)],      [3135€ (-225€)],
       [Verificatore#super[G]],    [15€/h],   [10],   [150€],   [102(-10)],  [1560€ (-150€)],
-      [*Totale*],                 [*-*],     [*48*],[*955€*],[*536 (-48)*],[*10310€ (-955€)*],
+      [*Totale*],                 [*-*],     [*48*],[*955€*],[*538 (-48)*],[*10310€ (-955€)*],
     ),
     didascalia: "Sprint 5 - Aggiornamento delle risorse disponibili"
   )
@@ -1577,7 +1577,7 @@ I possibili rischi :
       [Progettista#super[G]],     [25€/h],   [7],  [175€],   [108(-7)], [2700€ (-175€)],
       [Programmatore#super[G]],   [15€/h],   [18],   [270€],  [194(-18)],      [2910€ (-270€)],
       [Verificatore#super[G]],    [15€/h],   [9],   [135€],   [92(-9)],  [1410€ (-135€)],
-      [*Totale*],                 [*-*],     [*50*],[*985€*],[*488 (-50)*],[*9355€ (-985€)*],
+      [*Totale*],                 [*-*],     [*50*],[*985€*],[*490 (-50)*],[*9355€ (-985€)*],
     ),
     didascalia: "Sprint 6 - Aggiornamento delle risorse disponibili"
   )
@@ -1653,7 +1653,7 @@ I possibili rischi :
     [Mattia Dalla Pozza],   [], [], [], [], [8], [],
     [Sebastiano Marana],    [], [], [], [], [8], [],
     [Nicholas Moretto],     [], [], [], [], [8], [],
-    [Matteo Pretto],        [], [], [], [], [], [10],
+    [Matteo Pretto],        [], [], [], [], [], [10(+5)],
     [Alex Shu],             [5], [], [], [], [], [],
     [Stefano Speranza],     [], [], [], [], [8], [],
     [Ramona Zangla],        [], [], [], [], [8], [],
@@ -1674,8 +1674,8 @@ I possibili rischi :
       [Analista#super[G]],        [25€/h],   [-],   [-],   [0],    [0€],
       [Progettista#super[G]],     [25€/h],   [-],  [-],   [101], [2525€],
       [Programmatore#super[G]],   [15€/h],   [40],   [600€],  [176(-40)], [2640€ (-600€)],
-      [Verificatore#super[G]],    [15€/h],   [10],   [150€],   [83(-10)],  [1275€ (-150€)],
-      [*Totale*],                 [*-*],     [*59*],[*980€*],[*438 (-59)*],[*8370€ (-980€)*],
+      [Verificatore#super[G]],    [15€/h],   [15],   [225€],   [83(-15)],  [1275€ (-225€)],
+      [*Totale*],                 [*-*],     [*64*],[*1055€*],[*440 (-64)*],[*8370€ (-1055€)*],
     ),
     didascalia: "Sprint 7 - Aggiornamento delle risorse disponibili"
   )
@@ -1772,8 +1772,8 @@ I possibili rischi :
       [Analista#super[G]],        [25€/h],   [-],   [-],   [0],    [0€],
       [Progettista#super[G]],     [25€/h],   [-],  [-],   [101],            [2525€],
       [Programmatore#super[G]],   [15€/h],   [10],   [150€],  [136 (-10)],  [2040€ (-150€)],
-      [Verificatore#super[G]],    [15€/h],   [10],   [150€],   [73 (-10)],  [1125€ (-150€)],
-      [*Totale*],                 [*-*],     [*29*],[*530€*],[*438 (-29)*], [*7390€ (-530€)*],
+      [Verificatore#super[G]],    [15€/h],   [10],   [150€],   [68 (-10)],  [1050€ (-150€)],
+      [*Totale*],                 [*-*],     [*29*],[*530€*],[*376 (-29)*], [*7315€ (-530€)*],
     ),
     didascalia: "Sprint 8 - Aggiornamento delle risorse disponibili"
   )
@@ -1839,7 +1839,7 @@ I possibili rischi :
     [Mattia Dalla Pozza],   [],   [],   [],   [],   [8],  [],
     [Sebastiano Marana],    [5],  [],   [],   [],   [],   [],
     [Nicholas Moretto],     [],   [4],  [],   [],   [],   [],
-    [Matteo Pretto],        [],   [],   [],   [8],  [],   [],
+    [Matteo Pretto],        [],   [],   [],   [8(+5)],  [],   [],
     [Alex Shu],             [],   [],   [],   [8],  [],   [],
     [Stefano Speranza],     [],   [],   [],   [],   [],   [9 (-1)],
     [Ramona Zangla],        [],   [],   [],   [8],  [],   [],
@@ -1856,10 +1856,10 @@ I possibili rischi :
       [Responsabile#super[G]],    [30€/h],   [5],       [150€],         [27 (-5)],     [810€ (-150€)],
       [Amministratore#super[G]],  [20€/h],   [4],       [80€],          [33 (-4)],     [660€ (-80€)],
       [Analista#super[G]],        [25€/h],   [-],       [-],            [0],           [0€],
-      [Progettista#super[G]],     [25€/h],   [24],      [600€],         [101 (-24)],   [2525€ (-600€)],
+      [Progettista#super[G]],     [25€/h],   [29],      [725€],         [101 (-29)],   [2525€ (-725€)],
       [Programmatore#super[G]],   [15€/h],   [16],      [240€],         [126 (-16)],   [1890€ (-240€)],
-      [Verificatore#super[G]],    [15€/h],   [8],       [120€],         [63 (-8)],     [975€ (-120€)],
-      [*Totale*],                 [*-*],     [*57*],    [*1190€*],      [*350 (-57)*], [*6860€ (-1190€)*],
+      [Verificatore#super[G]],    [15€/h],   [8],       [120€],         [58 (-8)],     [900€ (-120€)],
+      [*Totale*],                 [*-*],     [*62*],    [*1315€*],      [*347 (-62)*], [*6785€ (-1315€)*],
     ),
     didascalia: "Sprint 9 - Aggiornamento delle risorse disponibili"
   )
@@ -1938,10 +1938,10 @@ I possibili rischi :
       [Responsabile#super[G]],    [30€/h],   [5],       [150€],         [22 (-5)],     [660€ (-150€)],
       [Amministratore#super[G]],  [20€/h],   [4],       [80€],          [29 (-4)],     [580€ (-80€)],
       [Analista#super[G]],        [25€/h],   [-],       [-],            [0],           [0€],
-      [Progettista#super[G]],     [25€/h],   [34],      [850€],         [77 (-34)],    [1925€ (-850€)],
+      [Progettista#super[G]],     [25€/h],   [34],      [850€],         [72 (-34)],    [1800€ (-850€)],
       [Programmatore#super[G]],   [15€/h],   [10],      [150€],         [110 (-10)],   [1650€ (-150€)],
-      [Verificatore#super[G]],    [15€/h],   [10],      [150€],         [56 (-10)],    [840€ (-150€)],
-      [*Totale*],                 [*-*],     [*63*],    [*1380€*],      [*294 (-63)*], [*5655€ (-1380€)*],
+      [Verificatore#super[G]],    [15€/h],   [10],      [150€],         [50 (-10)],    [780€ (-150€)],
+      [*Totale*],                 [*-*],     [*63*],    [*1380€*],      [*285 (-63)*], [*5470€ (-1380€)*],
     ),
     didascalia: "Sprint 10 - Aggiornamento delle risorse disponibili"
   )
@@ -1982,7 +1982,7 @@ I possibili rischi :
     [Nicolò Bolzon],        [], [], [], [8], [],  [],
     [Mattia Dalla Pozza],   [], [], [], [],  [],  [10],
     [Sebastiano Marana],    [], [], [], [],  [10],[],
-    [Nicholas Moretto],     [5],[], [], [],  [],  [],
+    [Nicholas Moretto],     [5],[2], [], [],  [],  [],
     [Matteo Pretto],        [], [], [], [],  [10],[],
     [Alex Shu],             [], [], [], [8], [],  [],
     [Stefano Speranza],     [], [], [], [8], [],  [],
@@ -1999,10 +1999,10 @@ I possibili rischi :
     [Nicolò Bolzon],        [],   [],   [],   [8(+4)],[],      [],
     [Mattia Dalla Pozza],   [],   [],   [],   [],      [],      [10],
     [Sebastiano Marana],    [],   [],   [],   [],      [10(+4)],[],
-    [Nicholas Moretto],     [5],  [],   [],   [],      [],      [],
+    [Nicholas Moretto],     [5],  [2],   [],   [],      [],      [],
     [Matteo Pretto],        [],   [],   [],   [],      [10],    [],
     [Alex Shu],             [],   [],   [],   [8(+4)],[],      [],
-    [Stefano Speranza],     [],   [],   [],   [8],     [],      [],
+    [Stefano Speranza],     [],   [],   [],   [8(+2)],     [],      [],
     [Ramona Zangla],        [],   [],   [],   [],      [10(+4)],[],
   ),
   didascalia: "Sprint 11 - Consuntivo ore per ciascun componente"
@@ -2015,12 +2015,12 @@ I possibili rischi :
   #tabella_aggiornamento_risorse(
     dati: (
       [Responsabile#super[G]],    [30€/h],   [5],       [150€],         [17 (-5)],           [510€ (-150€)],
-      [Amministratore#super[G]],  [20€/h],   [-],       [-],            [25],           [500€],
+      [Amministratore#super[G]],  [20€/h],   [2],       [40€],            [25 (-2)],           [500 (-40€)],
       [Analista#super[G]],        [25€/h],   [-],       [-],            [0],           [0€],
-      [Progettista#super[G]],     [25€/h],   [32],      [800€],         [43 (-32)],           [1075€ (-800€)],
+      [Progettista#super[G]],     [25€/h],   [34],      [850€],         [38 (-34)],           [950€ (-850€)],
       [Programmatore#super[G]],   [15€/h],   [38],      [570€],         [100 (-38)],           [1500€ (-570€)],
-      [Verificatore#super[G]],    [15€/h],   [10],      [150€],         [46 (-10)],           [690€ (-150€)],
-      [*Totale*],                 [*-*],     [*85*],    [*1670€*],      [*231 (-85)*],         [*4275€ (-1670€)*],
+      [Verificatore#super[G]],    [15€/h],   [10],      [150€],         [40 (-10)],           [630€ (-150€)],
+      [*Totale*],                 [*-*],     [*89*],    [*1760€*],      [*222 (-89)*],         [*4090€ (-1760€)*],
     ),
     didascalia: "Sprint 11 - Aggiornamento delle risorse disponibili"
   )
@@ -2063,7 +2063,7 @@ I possibili rischi :
     [Matteo Pretto],        [], [], [], [],  [10],  [],
     [Alex Shu],             [], [], [], [], [10],  [],
     [Stefano Speranza],     [], [], [], [], [],  [10],
-    [Ramona Zangla],        [5], [], [], [],  [],  [],
+    [Ramona Zangla],        [5], [2], [], [],  [],  [],
   ),
   didascalia: "Sprint 12 - Preventivo ore per ciascun componente"
 )
@@ -2080,7 +2080,7 @@ I possibili rischi :
     [Matteo Pretto],        [],   [],   [],   [],      [10],   [],
     [Alex Shu],             [],   [],   [],   [],      [10(+5)],   [],
     [Stefano Speranza],     [],   [],   [],   [],      [],         [10(-2)],
-    [Ramona Zangla],        [5],   [],   [],   [],      [],         [],
+    [Ramona Zangla],        [5],   [2],   [],   [],      [],         [],
   ),
   didascalia: "Sprint 12 - Consuntivo ore per ciascun componente"
 )
@@ -2092,12 +2092,12 @@ I possibili rischi :
   #tabella_aggiornamento_risorse(
     dati: (
       [Responsabile#super[G]],    [30€/h],   [5],       [150€],         [12 (-5)],           [360€ (-150€)],
-      [Amministratore#super[G]],  [20€/h],   [-],       [-],            [25],           [500€],
+      [Amministratore#super[G]],  [20€/h],   [2],       [40€],            [23(-2)],           [460€ (-40€)],
       [Analista#super[G]],      [25€/h],   [-],       [-],            [0],           [0€],
-      [Progettista#super[G]],     [25€/h],   [-],      [-],         [11],           [275€],
+      [Progettista#super[G]],     [25€/h],   [-],      [-],         [4],           [100€],
       [Programmatore#super[G]],   [15€/h],   [62],      [930€],         [62 (-62)],           [930€ (-930€)],
-      [Verificatore#super[G]],    [15€/h],   [22],      [330€],         [36 (-22)],           [540€ (-330€)],
-      [*Totale*],                 [*-*],     [*89*],  [*1410€*],      [*146 (-89)*],         [*2605€ (-1410€)*],
+      [Verificatore#super[G]],    [15€/h],   [22],      [330€],         [30 (-22)],           [480€ (-330€)],
+      [*Totale*],                 [*-*],     [*91*],  [*1450€*],      [*133 (-91)*],         [*2330€ (-1450€)*],
     ),
     didascalia: "Sprint 12 - Aggiornamento delle risorse disponibili"
   )
@@ -2119,19 +2119,19 @@ Nel corso del dodicesimo sprint#super[G], il team ha concentrato gli sforzi sul 
       [*Ruolo*], [*Costo/ora*], [*Ore Totali*], [*Costo Totale*]
     ),
     [Responsabile], [30€/h], [60], [1800€],
-    [Amministratore], [20€/h], [36], [720€],
+    [Amministratore], [20€/h], [40], [800€],
     [Analista], [25€/h], [76], [1900€],
-    [Progettista], [25€/h], [145], [3625€],
+    [Progettista], [25€/h], [152], [3800€],
     [Programmatore], [15€/h], [218], [3270€],
-    [Verificatore], [15€/h], [128], [1920€],
-    [*Totale*], [*-*], [*663*], [*13235€*],
+    [Verificatore], [15€/h], [132], [1980€],
+    [*Totale*], [*-*], [*678*], [*13550€*],
   ),
   caption: [Tabella utilizzo delle risorse]
 )
 ]
 
-Come possiamo evincere dalla tabella sopra, il team termina la realizzazione di quanto necessario per affrontare la _Product Baseline_ con un costo totale che ammonta a *13.235€* e con un totale di *663 ore* lavorate dai vari membri del team.
-La spesa è al di sotto del budget preventivato di *14.430€*, con un risparmio di *1.195€*.
+Come possiamo evincere dalla tabella sopra, il team termina la realizzazione di quanto necessario per affrontare la _Product Baseline_ con un costo totale che ammonta a *13.550€* e con un totale di *678 ore* lavorate dai vari membri del team.
+La spesa è al di sotto del budget preventivato di *14.430€*, con un risparmio di *880€*.
 
   #v(4em)
   #align(center)[
@@ -2168,16 +2168,16 @@ La spesa è al di sotto del budget preventivato di *14.430€*, con un risparmio
       [Nicolò Bolzon],[5],[4],[11],[20],[32],[18],[*90*],
       [Mattia Dalla Pozza],[10],[4],[7],[8],[34],[19],[*82*],
       [Sebastiano Marana],[10],[4],[13],[8],[39],[19],[*93*],
-      [Nicholas Moretto],[10],[4],[11],[18],[12],[24],[*79*],
-      [Matteo Pretto],[5],[8],[6],[8],[31],[12],[*70*],
+      [Nicholas Moretto],[10],[6],[11],[23],[12],[24],[*86*],
+      [Matteo Pretto],[5],[8],[6],[13],[31],[17],[*80*],
       [Alex Shu],[5],[4],[11],[20],[36],[4],[*80*],
-      [Stefano Speranza],[5],[4],[11],[32],[10],[16],[*78*],
-      [Ramona Zangla],[10],[4],[6],[26],[24],[15],[*85*],
-      [*Totale*],[*60*],[*36*],[*76*],[*140*],[*218*],[*127*],[*657*]
+      [Stefano Speranza],[5],[4],[11],[34],[10],[16],[*80*],
+      [Ramona Zangla],[10],[6],[6],[26],[24],[15],[*87*],
+      [*Totale*],[*60*],[*40*],[*76*],[*152*],[*218*],[*132*],[*678*]
       ),
       caption: [Ore di ogni componente per ciascun ruolo],
     )
   }
 ]
 
-Dalla tabella emerge il totale delle ore effettivamente svolte da ciascun componente del team, suddivise per ruolo. Si osserva che è stato necessario ricalibrare le ore preventivate per ogni ruolo; tuttavia, il monte ore complessivo risulta comunque inferiore a quanto inizialmente stimato, con un risparmio complessivo di *57 ore*.
+Dalla tabella emerge il totale delle ore effettivamente svolte da ciascun componente del team, suddivise per ruolo. Si osserva che è stato necessario ricalibrare le ore preventivate per ogni ruolo; tuttavia, il monte ore complessivo risulta comunque inferiore a quanto inizialmente stimato, con un risparmio complessivo di *42 ore*.
