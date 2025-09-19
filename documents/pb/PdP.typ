@@ -2097,7 +2097,7 @@ I possibili rischi :
       [Progettista#super[G]],     [25€/h],   [-],      [-],         [4],           [100€],
       [Programmatore#super[G]],   [15€/h],   [62],      [930€],         [62 (-62)],           [930€ (-930€)],
       [Verificatore#super[G]],    [15€/h],   [22],      [330€],         [30 (-22)],           [480€ (-330€)],
-      [*Totale*],                 [*-*],     [*91*],  [*1450€*],      [*133 (-91)*],         [*2330€ (-1450€)*],
+      [*Totale*],                 [*-*],     [*91*],  [*1450€*],      [*131 (-91)*],         [*2330€ (-1450€)*],
     ),
     didascalia: "Sprint 12 - Aggiornamento delle risorse disponibili"
   )
