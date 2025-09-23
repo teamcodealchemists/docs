@@ -769,7 +769,7 @@ Di seguito vengono indicate le più nel dettaglio le principali
 attività previste durante la fase RTB#super[G] del progetto: 
 
 #v(1em)
-1. *Redazione Analisi dei Requisiti#super[G]* (in stesura)
+1. *Redazione Analisi dei Requisiti#super[G]*
 
   - Stesura della struttura;
 
@@ -780,7 +780,7 @@ attività previste durante la fase RTB#super[G] del progetto:
   - Creazione dei casi d'uso.
 
 #v(1em)
-2. *Redazione Piano di progetto* (in stesura)
+2. *Redazione Piano di progetto*
 
   - Stesura della struttura;
 
@@ -801,7 +801,7 @@ attività previste durante la fase RTB#super[G] del progetto:
   - Redazione continua degli sprint#super[G].
 
 #v(1em)
-3. *Redazione piano di Qualifica#super[G]* (in stesura)
+3. *Redazione piano di Qualifica#super[G]* 
 
   - Stesura della struttura;
 
@@ -816,7 +816,7 @@ attività previste durante la fase RTB#super[G] del progetto:
   - Definizione di test sulla base dell'analisi dei requisiti#super[G]. 
 
 #v(1em)
-4. *Redazione Norme di progetto* (in stesura)
+4. *Redazione Norme di progetto* 
 
   - Stesura della struttura;
 
@@ -830,12 +830,12 @@ attività previste durante la fase RTB#super[G] del progetto:
 
   - Metriche utilizzate.
 
-5. *Redazione del Glossario#super[G]* (in stesura)
+5. *Redazione del Glossario#super[G]* 
   - Stesura della struttura;
 
   - Aggiunta automatizzata dei termini.
 
-6. *Sviluppo POC#super[G] (Proof of concept#super[G])* (in stesura)
+6. *Sviluppo POC#super[G] (Proof of concept#super[G])*
 
   - Definizione di una possibile architettura#super[G] ;
   
@@ -850,9 +850,129 @@ attività previste durante la fase RTB#super[G] del progetto:
 == Attività previste per la Product Baseline (PB)
 #v(1em)
 
-La redazione di questo paragrafo sarà effettuato in seguito al superamento della
-*Requirements and Technology Baseline#super[G] (RTB#super[G])*.
+Durante la fase di Product Baseline (PB), il team si concentrerà su:
 
+- Consolidamento e finalizzazione del prodotto, sia dal punto di vista tecnico che documentale.
+- Completamento e raffinamento di tutti i documenti fondamentali:
+  - Specifica Tecnica 
+  - Manuale Utente 
+  - Test Book 
+  - Piano di Qualifica 
+  - Piano di Progetto 
+  - Norme di Progetto 
+  - Analisi dei Requisiti 
+  - Glossario
+- Assicurazione della piena tracciabilità dei requisiti e della qualità del prodotto.
+- Sviluppo dell'MVP (Minimum Viable Product), con attenzione all'implementazione, al testing e all'integrazione dei microservizi previsti dall'architettura.
+- Garanzia che il sistema sia conforme alle aspettative del committente e pronto per la fase di revisione finale.
+- Pianificazione dettagliata delle attività, gestione dei rischi residui e continuo aggiornamento della documentazione tecnica.
+
+Di seguito vengono indicate le principali attività previste durante la fase PB#super[G] del progetto:
+
+1. *Redazione Specifica Tecnica*
+
+  - Stesura della struttura;
+
+  - Introduzione;
+
+  - Descrizione generale;
+
+  - Tecnologie utilizzate;
+
+  - Architettura di ogni microservizio#super[G] ;
+
+  - Tracciamento dei requisiti#super[G] .
+
+2. *Redazione Manuale Utente*
+
+  - Stesura della struttura;
+
+  - Introduzione;
+
+  - Requisiti#super[G] di sistema;
+
+  - Installazione del sistema;
+
+  - Descrizione delle funzionalità;
+
+  - Esecuzione dei test;
+
+  - Informazioni sulla telemetria.
+
+3. *Redazione del Test Book*
+  - Stesura della struttura;
+
+  - Introduzione;
+
+  - Strategie di esecuzione dei test;
+
+  - Struttura del Test Book;
+
+  - Test di accettazione;
+
+  - Report dei test eseguiti.
+
+4. *Completamento redazione del Piano di Qualifica#super[G]*
+
+  - Aggiornamento del cruscotto di valutazione;
+
+  - Definizione di nuovi test sulla base dell'analisi dei requisiti#super[G] ;
+
+  - Aggiunta dei Test di accettazione;
+
+  - Aggiunta dei Test di unità;
+
+  - Aggiunta dei Test di integrazione;
+
+  - Aggiunta dei Test di sistema.
+
+5. *Completamento redazione del Piano di Progetto*
+
+  - Aggiornamento della pianificazione a lungo termine;
+
+  - Aggiornamento della pianificazione a breve termine;
+
+  - Aggiornamento continuo degli sprint#super[G] ;
+
+  - Aggiornamento dei consuntivi.
+
+6. *Completamento redazione delle Norme di Progetto*
+
+  - Aggiornamento dei processi primari;
+
+  - Aggiornamento dei processi di supporto;
+
+  - Aggiornamento dei processi organizzativi;
+
+7. *Completamento redazione dell'Analisi dei Requisiti#super[G]*
+
+  - Aggiornamento dei requisiti#super[G] .
+
+8. *Sviluppo MVP (Minimum Viable Product)*
+  - Sviluppo;
+
+    - Magazzino locale;
+      - Inventario;
+      - Ordini;
+      - Stato.
+
+    - Cloud;
+      - Inventario Centralizzato;
+      - Ordini Centralizzato.
+
+    - Sistema centralizzato;
+      - Stato Centralizzato;
+      - Autenticazione;
+      - Riassortimento Centralizzato;
+      - Routing.
+
+    - API Gateway;
+
+    - Configurazione delle API.
+
+9. *Aggiornamento del Glossario#super[G]*
+
+  - Aggiunta di nuovi termini.
 #pagebreak()
 = Pianificazione nel breve termine
 #v(1em)
